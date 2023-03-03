@@ -47,7 +47,7 @@ margin_right = 257.83
 margin_bottom = -67.028
 rect_scale = Vector2( 5, 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press A to talk"
+text = "Press A to talk!!!!!!"
 align = 1
 
 [node name="Timer" type="Timer" parent="Speech"]
