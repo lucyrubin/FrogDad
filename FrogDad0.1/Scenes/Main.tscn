@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Outdoors.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Baby.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node2D"]
+position = Vector2( -1, -2 )
+script = ExtResource( 2 )
+
+[node name="Outdoors" parent="." instance=ExtResource( 3 )]
+z_index = -1000
+
+[node name="Baby" parent="." instance=ExtResource( 4 )]
+position = Vector2( 454, 81 )
+
+[node name="FrogDad" parent="." instance=ExtResource( 1 )]
+position = Vector2( -21, -179 )
+scale = Vector2( 0.3, 0.3 )
+collision_mask = 1
+speed = 200
+
+[node name="Camera2D" type="Camera2D" parent="FrogDad"]
+position = Vector2( 637.571, 976.28 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
