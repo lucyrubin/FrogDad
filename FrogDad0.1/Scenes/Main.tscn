@@ -13,15 +13,13 @@ script = ExtResource( 2 )
 z_index = -1000
 
 [node name="Baby" parent="." instance=ExtResource( 4 )]
-position = Vector2( 454, 81 )
+position = Vector2( 279, 38 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( -21, -179 )
 scale = Vector2( 0.3, 0.3 )
 collision_mask = 1
 speed = 200
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
-position = Vector2( 637.571, 976.28 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
