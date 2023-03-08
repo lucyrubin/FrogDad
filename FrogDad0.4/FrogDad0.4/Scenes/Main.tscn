@@ -15,9 +15,10 @@ script = ExtResource( 2 )
 
 [node name="Home" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1312, 952 )
+z_index = -1000
 
 [node name="Baby" parent="." instance=ExtResource( 4 )]
-position = Vector2( 290, 58 )
+position = Vector2( 532, 674 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -51,13 +52,13 @@ position = Vector2( 246, 93.3333 )
 scale = Vector2( 1, 1 )
 
 [node name="ItemDrop" parent="." instance=ExtResource( 8 )]
-position = Vector2( 124, 69 )
+position = Vector2( 280, 684 )
 
 [node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 476, 57 )
+position = Vector2( 559, 783 )
 
 [node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 399, 139 )
+position = Vector2( 310, 932 )
 
 [node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 596, 76 )
+position = Vector2( 321, 768 )
