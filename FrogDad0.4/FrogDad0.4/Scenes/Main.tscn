@@ -17,13 +17,13 @@ script = ExtResource( 2 )
 position = Vector2( 1312, 952 )
 
 [node name="Baby" parent="." instance=ExtResource( 4 )]
-position = Vector2( 279, 38 )
+position = Vector2( 290, 58 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 736, 727 )
+position = Vector2( 1351, 749 )
 scale = Vector2( 0.3, 0.3 )
 collision_mask = 1
 __meta__ = {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Scripts/Fridge.gd" type="Script" id=4]
 [ext_resource path="res://Art/furniture1_spritesheet.png" type="Texture" id=5]
 [ext_resource path="res://Art/Untitled_Artwork (3).png" type="Texture" id=6]
+[ext_resource path="res://Art/furniture2.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Dresser.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -531,6 +533,46 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=54]
 radius = 30.4631
 
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 768, 0, 384, 512 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1152, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=63]
+extents = Vector2( 86.5, 61.5 )
+
+[sub_resource type="RectangleShape2D" id=64]
+extents = Vector2( 85.5, 60.5 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 384, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=66]
+animations = [ {
+"frames": [ SubResource( 65 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=67]
+extents = Vector2( 78.5, 52.5 )
+
 [node name="Home" type="Node2D"]
 
 [node name="Floor" type="TileMap" parent="."]
@@ -700,7 +742,7 @@ position = Vector2( -858.25, 46 )
 shape = SubResource( 48 )
 
 [node name="Bed" type="StaticBody2D" parent="."]
-position = Vector2( -4, 5 )
+position = Vector2( -9, 20 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -725,6 +767,36 @@ frames = SubResource( 53 )
 position = Vector2( 357, -133 )
 shape = SubResource( 54 )
 
+[node name="Dresser" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Dresser"]
+position = Vector2( 209, -194 )
+scale = Vector2( 0.709635, 0.682617 )
+frames = SubResource( 62 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser"]
+position = Vector2( 212.5, -166.5 )
+shape = SubResource( 63 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Dresser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser/StaticBody2D"]
+position = Vector2( 211.5, -166.5 )
+shape = SubResource( 64 )
+
+[node name="Cradle" type="StaticBody2D" parent="."]
+z_index = 5
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cradle"]
+position = Vector2( -63, 155 )
+frames = SubResource( 66 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cradle"]
+position = Vector2( -59.5, 173.5 )
+shape = SubResource( 67 )
+
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
 [connection signal="input_event" from="Sink" to="Sink" method="_on_Sink_input_event"]
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
+[connection signal="input_event" from="Dresser" to="Dresser" method="_on_Dresser_input_event"]
