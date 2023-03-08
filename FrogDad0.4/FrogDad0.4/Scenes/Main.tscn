@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Baby.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/DialogueBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=9]
+
+[node name="Main" type="Node2D"]
+position = Vector2( -1, -2 )
+script = ExtResource( 2 )
+
+[node name="Home" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1312, 952 )
+
+[node name="Baby" parent="." instance=ExtResource( 4 )]
+position = Vector2( 279, 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FrogDad" parent="." instance=ExtResource( 1 )]
+position = Vector2( 736, 727 )
+scale = Vector2( 0.3, 0.3 )
+collision_mask = 1
+__meta__ = {
+"_edit_group_": true
+}
+speed = 200
+
+[node name="Camera2D" type="Camera2D" parent="FrogDad"]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+
+[node name="DialogueBox" parent="FrogDad" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -683.333, 250 )
+z_index = 1000
+
+[node name="UserInterface" type="CanvasLayer" parent="FrogDad"]
+visible = false
+scale = Vector2( 3, 3 )
+transform = Transform2D( 3, 0, 0, 3, 0, 0 )
+script = ExtResource( 7 )
+
+[node name="Inventory" parent="FrogDad/UserInterface" instance=ExtResource( 6 )]
+position = Vector2( 246, 93.3333 )
+scale = Vector2( 1, 1 )
+
+[node name="ItemDrop" parent="." instance=ExtResource( 8 )]
+position = Vector2( 124, 69 )
+
+[node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 476, 57 )
+
+[node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 399, 139 )
+
+[node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 596, 76 )
