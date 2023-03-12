@@ -13,20 +13,27 @@
 position = Vector2( -1, -2 )
 script = ExtResource( 2 )
 
-[node name="Home" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1312, 952 )
-z_index = -1000
-
 [node name="Baby" parent="." instance=ExtResource( 4 )]
-position = Vector2( 532, 674 )
+position = Vector2( -961, -256 )
 __meta__ = {
 "_edit_group_": true
 }
 
+[node name="ItemDrop" parent="." instance=ExtResource( 8 )]
+position = Vector2( -817, -218 )
+
+[node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -384, 157 )
+
+[node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -649, -198 )
+
+[node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -944, -116 )
+
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1351, 749 )
+position = Vector2( 47, -219 )
 scale = Vector2( 0.3, 0.3 )
-collision_mask = 1
 __meta__ = {
 "_edit_group_": true
 }
@@ -51,14 +58,4 @@ script = ExtResource( 7 )
 position = Vector2( 246, 93.3333 )
 scale = Vector2( 1, 1 )
 
-[node name="ItemDrop" parent="." instance=ExtResource( 8 )]
-position = Vector2( 280, 684 )
-
-[node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 559, 783 )
-
-[node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 310, 932 )
-
-[node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 321, 768 )
+[node name="Home" parent="." instance=ExtResource( 9 )]

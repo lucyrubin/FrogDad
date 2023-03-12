@@ -8,8 +8,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 
-	$Baby.z_index = -$Baby.position.y # behind things lower on the screen
-	print($FrogDad/UserInterface/Inventory.position.x)
+	$Baby.z_index = $Baby.position.y - 60# behind things lower on the screen
+	
 
 func toggle_dialogue_box_visibility():
 	$FrogDad/DialogueBox.visible = !$FrogDad/DialogueBox.visible
@@ -35,6 +35,7 @@ func _input(event):
 		$FrogDad.state = ""
 		$FrogDad/AnimatedSprite.stop()
 	if event.is_action_pressed("pickup"): # if pickup action occurs (press z on keyboard)
+		print("z")
 		if $FrogDad/PickupZone.items_in_range.size() > 0: # if there are items in range
 			var pickup_item = $FrogDad/PickupZone.items_in_range.values()[0] # select the first item in range
 			pickup_item.pick_up_item(self) # pick up the item

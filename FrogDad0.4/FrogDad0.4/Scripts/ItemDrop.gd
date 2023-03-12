@@ -11,6 +11,7 @@ var player = null
 var being_picked_up = false
 
 func _ready():
+	$Sprite.z_index = $Sprite.position.y
 	item_name = "Log"
 
 func _physics_process(delta):

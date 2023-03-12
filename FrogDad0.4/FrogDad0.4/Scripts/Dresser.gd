@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 var current_fram = 0
 var num_frames = 2

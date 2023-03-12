@@ -13,6 +13,7 @@ func _ready():
 #	pass
 
 func _on_Fridge_input_event(viewport, event, shape_idx):
+	print("click")
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed:
