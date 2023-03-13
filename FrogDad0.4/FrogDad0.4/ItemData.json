@@ -11,6 +11,11 @@
     "StackSize": 99,
     "Description": "It smells like medicine."
   },
+  "Cloth": {
+    "ItemCategory": "Resource",
+    "StackSize": 2,
+    "Description": "Use to wrap eggs in a swaddle"
+  },
   "Iron Sword": {
     "ItemCategory": "Sword",
     "ItemAttack": 3,
