@@ -18,7 +18,8 @@ func _ready():
 	$YSort/Chairs.z_index = $YSort/Chairs.position.y - 40
 	
 func _process(delta):	
-	print($YSort/Dresser.z_index)
+	#print($YSort/Dresser.z_index)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
