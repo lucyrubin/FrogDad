@@ -44,4 +44,4 @@ func remove_item(slot: SlotClass):
 	inventory.erase(slot.slot_index) # delete from the inventory dictionary
 	
 func add_item_quantity(slot: SlotClass, quantity_to_add: int):
-	inventory[slot.slot_index][1] += quantity_to_add 
+	inventory[slot.slot_index][1] += quantity_to_add

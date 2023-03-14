@@ -1,7 +1,6 @@
 extends Node2D
 
 const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -28,11 +27,13 @@ func _input(event):
 	if event.is_action_pressed("inventory") && $FrogDad.state == "":
 		$FrogDad/UserInterface.open_inventory()
 		$FrogDad/UserInterface.visible = true
+		$FrogDad/UserInterface/Inventory.inventory_open = true
 		$FrogDad.state = "inventory"
 		$FrogDad/AnimatedSprite.stop()
 	elif event.is_action_pressed("inventory") && $FrogDad.state == "inventory":
 		$FrogDad/UserInterface.open_inventory()
 		$FrogDad/UserInterface.visible = false
+		$FrogDad/UserInterface/Inventory.inventory_open = false
 		$FrogDad.state = ""
 		$FrogDad/AnimatedSprite.stop()
 	if event.is_action_pressed("pickup"): # if pickup action occurs (press z on keyboard)
@@ -40,16 +41,18 @@ func _input(event):
 			var pickup_item = $FrogDad/PickupZone.items_in_range.values()[0] # select the first item in range
 			pickup_item.pick_up_item(self) # pick up the item
 			$FrogDad/PickupZone.items_in_range.erase(pickup_item) # remove the item from in range
-	if event is InputEventMouseButton:
-			if event.button_index == BUTTON_LEFT && event.pressed:
-				if !(event.global_position.x < 300 && event.global_position.y < 270): # throw out if you aren't clicking on the inside ( these numbers correspond to where the inventory is positioned) 
-					#TODO: coordinates should be abstracted ^ 
-					var dropped_item = $FrogDad/UserInterface/Inventory.left_click_outside_inventory()
-					drop_item(dropped_item)
-					
+	if event is InputEventMouseButton \
+	&& $FrogDad/UserInterface/Inventory.inventory_open == true \
+	&& $FrogDad/UserInterface/Inventory.holding_item != null:
+		if event.button_index == BUTTON_LEFT && event.pressed:
+			if !(event.global_position.x < 300 && event.global_position.y < 270): # throw out if you aren't clicking on the inside ( these numbers correspond to where the inventory is positioned) 
+				#TODO: coordinates should be abstracted ^ 
+				var dropped_item = $FrogDad/UserInterface/Inventory.left_click_outside_inventory()
+				drop_item(dropped_item)
+
 func drop_item(item_drop : ItemDropClass):
 	print($FrogDad/AnimatedSprite.global_position.x)
 	item_drop.setup($FrogDad/AnimatedSprite.global_position.x + 100,$FrogDad/AnimatedSprite.global_position.y + 100,"log")
-	add_child(item_drop)				
+	add_child(item_drop)	
 		
 

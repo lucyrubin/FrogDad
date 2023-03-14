@@ -17,8 +17,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=71]
+radius = 8.06226
 
 [node name="Cloth" type="KinematicBody2D"]
+position = Vector2( -1, 0 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -30,4 +32,5 @@ scale = Vector2( 0.38, 0.295 )
 frames = SubResource( 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -1 )
 shape = SubResource( 71 )

@@ -5,11 +5,11 @@ var num_frames = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Cloth/AnimatedSprite.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+	
 
 func _on_Dresser_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
@@ -18,6 +18,9 @@ func _on_Dresser_input_event(viewport, event, shape_idx):
 		current_fram = (current_fram +1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
-			$Cloth/AnimatedSprite.visible = true
+			if $Cloth/AnimatedSprite != null:
+				$Cloth/AnimatedSprite.visible = true
 		else:
-			$Cloth/AnimatedSprite.visible = false
+			if $Cloth/AnimatedSprite != null:
+				$Cloth/AnimatedSprite.visible = false
+			

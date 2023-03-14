@@ -8,7 +8,7 @@
 [ext_resource path="res://Art/Untitled_Artwork (3).png" type="Texture" id=6]
 [ext_resource path="res://Art/furniture2.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Dresser.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Home.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Home.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Cloth.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=55]
@@ -690,7 +690,7 @@ shape = SubResource( 30 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Dresser" type="Area2D" parent="YSort"]
-position = Vector2( 32, 149 )
+position = Vector2( 34, 142 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -711,6 +711,7 @@ position = Vector2( 5, 60 )
 shape = SubResource( 68 )
 
 [node name="Cloth" parent="YSort/Dresser" instance=ExtResource( 10 )]
+position = Vector2( 3, -12 )
 
 [node name="TV Stand" type="StaticBody2D" parent="YSort"]
 position = Vector2( -800, 33 )

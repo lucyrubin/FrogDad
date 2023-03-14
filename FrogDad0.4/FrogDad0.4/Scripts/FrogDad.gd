@@ -6,7 +6,6 @@ export var speed = 400;
 var screen_size
 var state = ""
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -39,5 +38,3 @@ func _physics_process(delta):
 			$AnimatedSprite.stop()
 		
 	var _collision = move_and_collide(velocity*delta)
-	
-	
