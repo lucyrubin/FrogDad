@@ -2,8 +2,10 @@ extends Node2D
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 
 const SlotClass = preload("res://Scripts/Slot.gd")
+var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
 onready var inventory_slots = $GridContainer
 var holding_item = null
+
 
 func _ready():
 	var slots = inventory_slots.get_children()
@@ -12,12 +14,12 @@ func _ready():
 		slots[i].slot_index = i
 	initialize_inventory()
 
+
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):
 		if PlayerInventory.inventory.has(i):
 			slots[i].initialize_item(PlayerInventory.inventory[i][0], PlayerInventory.inventory[i][1])
-
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton: 
 		if event.button_index == BUTTON_LEFT && event.pressed: 
@@ -31,12 +33,25 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 						left_click_same_item(slot)
 			elif slot.item: # not holding an item
 				left_click_not_holding(slot)
-				
+
 # warning-ignore:unused_argument
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
 
+func left_click_outside_inventory():
+	if holding_item: 
+		var dropped_item = ItemDropClass.instance()
+		print("dropped ")
+		var quantity = holding_item.item_quantity - 1
+		#PlayerInventory.remove_item(holding_item)
+		#PlayerInventory.add_item(holding_item.item_name, quantity)
+		#PlayerInventory.update_slot_visual()
+		
+		return dropped_item
+		
+	
+	
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
 	PlayerInventory.add_item_to_empty_slot(holding_item, slot)
 	slot.putIntoSlot(holding_item)

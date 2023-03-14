@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -9,45 +9,6 @@
 [ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=9]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends KinematicBody2D
-
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
-
-const ACCELERATION = 460
-const MAX_SPEED = 225
-var velocity = Vector2.ZERO
-var item_name
-
-var player = null
-var being_picked_up = false
-
-func _ready():
-	$AnimatedSprite.z_index = $AnimatedSprite.position.y
-	item_name = \"Cloth\"
-
-func _physics_process(delta):
-	if being_picked_up == false: # if it's not being picked up, apply gravity
-		pass
-		#velocity = velocity.move_toward(Vector2(0, MAX_SPEED), ACCELERATION * delta)
-	else: # if it is being picked up, move towards the player
-#		var direction = global_position.direction_to(player.global_position) # direction to player
-#		velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta) # apply velocity to go towards the player
-#
-#		var distance = global_position.distance_to(player.global_position)
-#		if distance < 4: # destroy it once it is close enough to the player
-#			PlayerInventory.add_item(item_name, 1)
-#			queue_free()
-		PlayerInventory.add_item(item_name, 1)
-		queue_free()
-	#velocity = move_and_slide(velocity, Vector2.UP)
-
-func pick_up_item(body):
-	player = body
-	being_picked_up = true
-
-"
 
 [node name="Main" type="Node2D"]
 position = Vector2( -1, -2 )
@@ -71,11 +32,8 @@ position = Vector2( -649, -198 )
 [node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
 position = Vector2( -944, -116 )
 
-[node name="Cloth" parent="." instance=ExtResource( 3 )]
-script = SubResource( 1 )
-
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 47, -219 )
+position = Vector2( -50, -343 )
 scale = Vector2( 0.3, 0.3 )
 __meta__ = {
 "_edit_group_": true
@@ -98,7 +56,9 @@ transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 script = ExtResource( 7 )
 
 [node name="Inventory" parent="FrogDad/UserInterface" instance=ExtResource( 6 )]
-position = Vector2( 246, 93.3333 )
 scale = Vector2( 1, 1 )
 
 [node name="Home" parent="." instance=ExtResource( 9 )]
+
+[node name="Cloth2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 130, -43 )

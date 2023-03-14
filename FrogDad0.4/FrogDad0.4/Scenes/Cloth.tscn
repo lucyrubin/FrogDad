@@ -19,18 +19,15 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=71]
 
 [node name="Cloth" type="KinematicBody2D"]
-position = Vector2( -1, 2 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 6, -9 )
+position = Vector2( 0, 5 )
 scale = Vector2( 0.38, 0.295 )
 frames = SubResource( 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5, -16 )
 shape = SubResource( 71 )

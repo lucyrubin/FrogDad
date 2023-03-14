@@ -11,8 +11,19 @@ var player = null
 var being_picked_up = false
 
 func _ready():
-	$Sprite.z_index = $Sprite.position.y
+	#$Sprite.z_index = $Sprite.position.y #default setup
 	item_name = "Log"
+
+func setup(xgiven, ygiven, name):
+	
+	global_position.x = xgiven 
+	global_position.y = ygiven
+	z_index = global_position.y
+	print(global_position.x)
+	
+	item_name = name
+
+	
 
 func _physics_process(delta):
 	if being_picked_up == false: # if it's not being picked up, apply gravity
@@ -33,3 +44,6 @@ func _physics_process(delta):
 func pick_up_item(body):
 	player = body
 	being_picked_up = true
+
+func get_sprite():
+	return $Sprite
