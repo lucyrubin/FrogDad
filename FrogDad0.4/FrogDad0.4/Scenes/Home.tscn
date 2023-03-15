@@ -829,6 +829,11 @@ frames = SubResource( 36 )
 position = Vector2( 10.0625, 50 )
 shape = SubResource( 38 )
 
+[node name="Borders" type="StaticBody2D" parent="."]
+
+[node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
+polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -320, 867, 286, -1130, 283, -1128, -321 )
+
 [connection signal="input_event" from="Sink" to="Sink" method="_on_Sink_input_event"]
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]

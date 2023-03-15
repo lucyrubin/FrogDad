@@ -7,21 +7,25 @@ const MAX_SPEED = 225
 var velocity = Vector2.ZERO
 var item_name
 
+
 var player = null
 var being_picked_up = false
 
 func _ready():
 	#$Sprite.z_index = $Sprite.position.y #default setup
-	item_name = "Log"
+	if(item_name == null):
+		item_name = "Log"
+	$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
+	
 
 func setup(xgiven, ygiven, name):
 	
 	global_position.x = xgiven 
 	global_position.y = ygiven
 	z_index = global_position.y
-	print(global_position.x)
-	
+
 	item_name = name
+	$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
 
 	
 

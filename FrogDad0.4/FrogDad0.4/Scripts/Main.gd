@@ -45,14 +45,13 @@ func _input(event):
 	&& $FrogDad/UserInterface/Inventory.inventory_open == true \
 	&& $FrogDad/UserInterface/Inventory.holding_item != null:
 		if event.button_index == BUTTON_LEFT && event.pressed:
-			if !(event.global_position.x < 300 && event.global_position.y < 270): # throw out if you aren't clicking on the inside ( these numbers correspond to where the inventory is positioned) 
+			if !(event.global_position.x < 320 && event.global_position.y < 300): # throw out if you aren't clicking on the inside ( these numbers correspond to where the inventory is positioned) 
 				#TODO: coordinates should be abstracted ^ 
 				var dropped_item = $FrogDad/UserInterface/Inventory.left_click_outside_inventory()
 				drop_item(dropped_item)
 
 func drop_item(item_drop : ItemDropClass):
-	print($FrogDad/AnimatedSprite.global_position.x)
-	item_drop.setup($FrogDad/AnimatedSprite.global_position.x + 100,$FrogDad/AnimatedSprite.global_position.y + 100,"log")
+	item_drop.setup($FrogDad/AnimatedSprite.global_position.x + 100,$FrogDad/AnimatedSprite.global_position.y + 100,item_drop.item_name)
 	add_child(item_drop)	
 		
 

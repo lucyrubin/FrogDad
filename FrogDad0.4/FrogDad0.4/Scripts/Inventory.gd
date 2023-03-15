@@ -42,11 +42,13 @@ func _input(event):
 func left_click_outside_inventory():
 	if holding_item: 
 		var dropped_item = ItemDropClass.instance()
-		print("dropped")
 		var quantity = holding_item.item_quantity - 1
-		#PlayerInventory.remove_item(holding_item)
-		#PlayerInventory.add_item(holding_item.item_name, quantity)
-		#PlayerInventory.update_slot_visual()
+		holding_item.item_quantity = quantity
+		holding_item.label.text = str(quantity)
+		dropped_item.item_name = holding_item.item_name
+		if quantity == 0:
+			holding_item.queue_free()
+			holding_item = null
 		return dropped_item
 	
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
