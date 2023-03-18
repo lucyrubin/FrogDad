@@ -3,7 +3,8 @@ extends Node2D
 
 var item_name
 var item_quantity
-var label 
+var label
+
 func _ready(): 
 	label = $Label
 	#randomly pick what the item is, this is just for prototyping

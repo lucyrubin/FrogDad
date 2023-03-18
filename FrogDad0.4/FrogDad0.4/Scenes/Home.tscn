@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scripts/Home.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Cloth.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Art/fridgeslotempty.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/FridgeInventory.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -677,6 +678,7 @@ position = Vector2( 74.4445, 5 )
 shape = SubResource( 16 )
 
 [node name="Inventory" type="Node2D" parent="Fridge"]
+script = ExtResource( 12 )
 
 [node name="GridContainer" type="GridContainer" parent="Fridge/Inventory"]
 margin_left = -97.7778
