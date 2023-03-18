@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/Dresser.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Home.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Cloth.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Art/fridgeslotempty.png" type="Texture" id=11]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -414,6 +415,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 77.7778, 130.833 )
 
+[sub_resource type="StyleBoxTexture" id=69]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 111, 110 )
+
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 3 )
@@ -670,6 +675,43 @@ shape = SubResource( 16 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/StaticBody2D"]
 position = Vector2( 74.4445, 5 )
 shape = SubResource( 16 )
+
+[node name="Inventory" type="Node2D" parent="Fridge"]
+
+[node name="GridContainer" type="GridContainer" parent="Fridge/Inventory"]
+margin_left = -97.7778
+margin_top = 78.8889
+margin_right = 260.222
+margin_bottom = 178.889
+custom_constants/hseparation = -14
+columns = 4
+
+[node name="Slot1" type="Panel" parent="Fridge/Inventory/GridContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 69 )
+
+[node name="Slot2" type="Panel" parent="Fridge/Inventory/GridContainer"]
+margin_left = 86.0
+margin_right = 186.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 69 )
+
+[node name="Slot3" type="Panel" parent="Fridge/Inventory/GridContainer"]
+margin_left = 172.0
+margin_right = 272.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 69 )
+
+[node name="Slot4" type="Panel" parent="Fridge/Inventory/GridContainer"]
+margin_left = 258.0
+margin_right = 358.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 69 )
 
 [node name="Stove" type="StaticBody2D" parent="."]
 position = Vector2( -459, -366 )
