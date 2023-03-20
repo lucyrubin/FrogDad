@@ -1,6 +1,6 @@
 extends Area2D
 
-export (PackedScene) var target_scene = load("res://Outdoors.tscn")
+export (PackedScene) var target_scene = load("res://Scenes/Outdoors.tscn")
 
 
 func _input(event):
@@ -22,4 +22,5 @@ func go_outside():
 
 
 func _on_Door_area_entered(area):
+	go_outside()
 	print("this works")
