@@ -16,6 +16,7 @@ func _input(event):
 func go_outside():
 		var ERR = get_tree().change_scene_to(target_scene)
 		
+		
 		if ERR != OK:
 			print("something failed in the door scene")
 
