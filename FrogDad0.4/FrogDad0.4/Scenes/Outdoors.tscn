@@ -183,6 +183,7 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 11/z_index = 0
 
 [node name="Outdoors" type="Node2D"]
+position = Vector2( 0, -381 )
 
 [node name="Grass" type="TileMap" parent="."]
 tile_set = SubResource( 1 )

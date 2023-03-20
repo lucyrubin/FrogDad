@@ -16,12 +16,5 @@ func _ready():
 	$YSort/Couch.z_index = $YSort/Couch.position.y
 	$YSort/Table.z_index = $YSort/Table.position.y - 20
 	$YSort/Chairs.z_index = $YSort/Chairs.position.y - 40
+	$YSort/Door.z_index = $YSort/Door.position.y
 	
-func _process(delta):	
-	#print($YSort/Dresser.z_index)
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

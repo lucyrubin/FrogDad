@@ -70,6 +70,12 @@ pickup={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Home"
+2d_physics/layer_3="Furniture"
+
 [mono]
 
 project/assembly_name="FrogDad0.2"
