@@ -914,3 +914,4 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
 [connection signal="input_event" from="YSort/Dresser" to="YSort/Dresser" method="_on_Dresser_input_event"]
+[connection signal="area_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_area_entered"]

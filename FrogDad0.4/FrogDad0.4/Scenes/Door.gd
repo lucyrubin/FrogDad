@@ -20,5 +20,6 @@ func go_outside():
 			print("something failed in the door scene")
 
 
+
 func _on_Door_area_entered(area):
-	print("it works!")
+	print("this works")
