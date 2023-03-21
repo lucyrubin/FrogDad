@@ -5,6 +5,7 @@ var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
 onready var inventory_slots = $GridContainer
 var holding_item = null
 var inventory_open = false
+var mouse_in_inventory = false
 
 
 func _ready():
@@ -83,3 +84,12 @@ func left_click_not_holding(slot: SlotClass): # remove item from slot and make i
 	holding_item = slot.item
 	slot.pickFromSlot()
 	holding_item.global_position = get_global_mouse_position()	
+
+#This is code for trying to fix the inventory bug
+#func _on_Area2D_mouse_entered():
+#	mouse_in_inventory = true
+#	print(mouse_in_inventory)
+#
+#func _on_Area2D_mouse_exited():
+#	mouse_in_inventory = false
+#	print(mouse_in_inventory)

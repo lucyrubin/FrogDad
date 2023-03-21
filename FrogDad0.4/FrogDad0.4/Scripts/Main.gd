@@ -8,18 +8,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 
-	$Baby.z_index = $Baby.position.y - 60# behind things lower on the screen
+	$BabyGertrude.z_index = $BabyGertrude.position.y - 60# behind things lower on the screen
 	
 
 func toggle_dialogue_box_visibility():
 	$FrogDad/DialogueBox.visible = !$FrogDad/DialogueBox.visible
 
 func _input(event):
-	if event.is_action_pressed("talk")&&  $Baby/Speech.visible && !$FrogDad/DialogueBox.visible: # when A is pressed, open the dialogue box
+	if event.is_action_pressed("talk")&&  $BabyGertrude/Speech.visible && !$FrogDad/DialogueBox.visible: # when A is pressed, open the dialogue box
 		toggle_dialogue_box_visibility()
 		$FrogDad.state = "dialogue"
 		$FrogDad/AnimatedSprite.stop()
-		$Baby/Speech.visible = false
+		$BabyGertrude/Speech.visible = false
 		#$Speech/Timer.start()
 	if event.is_action_pressed("close_dialogue") && $FrogDad/DialogueBox.visible: # when Enter is pressed, close the dialogue box
 		toggle_dialogue_box_visibility()
@@ -45,6 +45,8 @@ func _input(event):
 	&& $FrogDad/UserInterface/Inventory.inventory_open == true \
 	&& $FrogDad/UserInterface/Inventory.holding_item != null:
 		if event.button_index == BUTTON_LEFT && event.pressed:
+			#This if statement is for trying to fix the inventory bug
+			#if !$FrogDad/UserInterface/Inventory.mouse_in_inventory:
 			if !(event.global_position.x < 320 && event.global_position.y < 300): # throw out if you aren't clicking on the inside ( these numbers correspond to where the inventory is positioned) 
 				#TODO: coordinates should be abstracted ^ 
 				var dropped_item = $FrogDad/UserInterface/Inventory.left_click_outside_inventory()
