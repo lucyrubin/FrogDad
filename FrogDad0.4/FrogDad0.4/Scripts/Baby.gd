@@ -8,14 +8,6 @@ var velocity = Vector2.ZERO
 const PlayerClass = preload("res://Scripts/FrogDad.gd")
 var DoneTalking = false
 
-func _ready():
-	pass
-
-func _physics_process(delta):
-	pass
-		
-
-
 func _on_Timer_timeout(): # use this for small dialogue bubbles to make them disappear after a while
 	pass
 #	$Speech.visible = false # toggle speech bubble visibility
@@ -24,6 +16,7 @@ func _on_Timer_timeout(): # use this for small dialogue bubbles to make them dis
 func _on_Area2D_body_entered(body): # if player is nearby, show the action bubble
 	if body is PlayerClass && !DoneTalking:
 		$Speech.visible = true
+	$AnimatedSprite.play("default")
 
 
 func _on_Area2D_body_exited(body): # if the player has left, hide the action bubble

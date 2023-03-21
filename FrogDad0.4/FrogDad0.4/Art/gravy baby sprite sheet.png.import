@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tools.png-c08c7cf60a22e462d67c58acd0818ffe.stex"
+path="res://.import/gravy baby sprite sheet.png-b8d65dc625dff82d94e608103076fe1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Tools.png"
-dest_files=[ "res://.import/Tools.png-c08c7cf60a22e462d67c58acd0818ffe.stex" ]
+source_file="res://Art/gravy baby sprite sheet.png"
+dest_files=[ "res://.import/gravy baby sprite sheet.png-b8d65dc625dff82d94e608103076fe1a.stex" ]
 
 [params]
 

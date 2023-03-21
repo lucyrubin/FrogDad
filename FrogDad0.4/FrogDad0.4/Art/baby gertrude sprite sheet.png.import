@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Water.png-fa583fd4e2216e5fbaf0d61a9e40da73.stex"
+path="res://.import/baby gertrude sprite sheet.png-551b8857b804025bdea05e57842627f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png"
-dest_files=[ "res://.import/Water.png-fa583fd4e2216e5fbaf0d61a9e40da73.stex" ]
+source_file="res://Art/baby gertrude sprite sheet.png"
+dest_files=[ "res://.import/baby gertrude sprite sheet.png-551b8857b804025bdea05e57842627f1.stex" ]
 
 [params]
 
