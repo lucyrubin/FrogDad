@@ -7,9 +7,11 @@ const MAX_SPEED = 225
 var velocity = Vector2.ZERO
 var item_name
 
-
 var player = null
 var being_picked_up = false
+
+export(NodePath) var inventory_path
+onready var inventory_node = get_node(inventory_path)
 
 func _ready():
 	#$Sprite.z_index = $Sprite.position.y #default setup
@@ -39,9 +41,9 @@ func _physics_process(delta):
 #
 #		var distance = global_position.distance_to(player.global_position)
 #		if distance < 4: # destroy it once it is close enough to the player
-#			PlayerInventory.add_item(item_name, 1)
+#			Inventory.add_item(item_name, 1)
 #			queue_free()
-		PlayerInventory.add_item(item_name, 1)
+		inventory_node.add_item(item_name, 1)
 		queue_free()
 	#velocity = move_and_slide(velocity, Vector2.UP)
 

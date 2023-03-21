@@ -18,7 +18,7 @@ func _physics_process(delta):
 	if being_picked_up == false: # if it's not being picked up, apply gravity
 		pass
 	else:
-		PlayerInventory.add_item(item_name, 1)
+		#Inventory.add_item(item_name, 1)
 		queue_free()
 	#velocity = move_and_slide(velocity, Vector2.UP)
 

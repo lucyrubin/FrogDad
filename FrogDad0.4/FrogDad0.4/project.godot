@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "InventoryData",
+"language": "GDScript",
+"path": "res://Scripts/InventoryData.gd"
+} ]
+_global_script_class_icons={
+"InventoryData": ""
+}
+
 [application]
 
 config/name="FrogDad0.4"
@@ -16,7 +26,6 @@ run/main_scene="res://Scenes/Main.tscn"
 [autoload]
 
 JsonData="*res://Scripts/JSONData.gd"
-PlayerInventory="*res://Scripts/PlayerInventory.gd"
 
 [display]
 
