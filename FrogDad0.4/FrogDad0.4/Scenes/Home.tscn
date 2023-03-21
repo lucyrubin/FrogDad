@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Art/fridgeslotempty.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/FridgeInventory.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Door.gd" type="Script" id=13]
+[ext_resource path="res://Art/fridge.png" type="Texture" id=14]
+[ext_resource path="res://Art/door.png" type="Texture" id=15]
+[ext_resource path="res://Art/kitchen.png" type="Texture" id=16]
+[ext_resource path="res://Art/sink.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -328,52 +332,42 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 8/shapes = [  ]
 8/z_index = 0
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=76]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=26]
 animations = [ {
-"frames": [ SubResource( 25 ) ],
+"frames": [ SubResource( 76 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 95.0001, 69.5313 )
+extents = Vector2( 95.0001, 68.2812 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=77]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 512, 384, 512 )
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 384, 512 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=78]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 384, 512, 384, 512 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 768, 512, 384, 512 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1152, 512, 384, 512 )
+atlas = ExtResource( 17 )
+region = Rect2( 384, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 77 ), SubResource( 78 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 175.714, 164.286 )
+extents = Vector2( 175.714, 157.286 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
@@ -396,46 +390,46 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 43, 27 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=71]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 384, 0, 384, 512 )
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 384, 512 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=72]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 768, 0, 384, 512 )
+atlas = ExtResource( 14 )
+region = Rect2( 384, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 71 ), SubResource( 72 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 77.7778, 130.833 )
+extents = Vector2( 78.8889, 131.528 )
 
 [sub_resource type="StyleBoxTexture" id=69]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 111, 110 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=79]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1536, 512, 384, 512 )
+atlas = ExtResource( 16 )
+region = Rect2( 384, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=29]
 animations = [ {
-"frames": [ SubResource( 28 ) ],
+"frames": [ SubResource( 79 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 69, 93 )
+extents = Vector2( 71, 29 )
 
 [sub_resource type="AtlasTexture" id=60]
 flags = 4
@@ -571,8 +565,42 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 101.062, 25 )
 
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 768, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=81]
+animations = [ {
+"frames": [ SubResource( 80 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 58.5, 61 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 384, 512 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 384, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=75]
+animations = [ {
+"frames": [ SubResource( 73 ), SubResource( 74 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=70]
-extents = Vector2( 18.75, 100.75 )
+extents = Vector2( 88, 42 )
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 9 )
@@ -600,18 +628,20 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Counters"]
-scale = Vector2( 1.11, 1.11 )
+position = Vector2( 28.5, -52.5 )
+scale = Vector2( 1.02083, 0.908203 )
+frames = SubResource( 26 )
+flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Counters"]
+position = Vector2( -325, -51.25 )
+scale = Vector2( 1.02083, 0.908203 )
 frames = SubResource( 26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counters"]
-position = Vector2( 0, 2.96878 )
+position = Vector2( 0, 1.71875 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 27 )
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="Counters"]
-position = Vector2( -300, 0 )
-scale = Vector2( 1.11, 1.11 )
-frames = SubResource( 26 )
-flip_h = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Counters"]
 position = Vector2( -311.25, 0.312592 )
@@ -629,10 +659,13 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sink"]
+position = Vector2( -8.57144, -57.1428 )
+scale = Vector2( 2.1, 2.1 )
 frames = SubResource( 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
-position = Vector2( 0, 64 )
+position = Vector2( 0, 56.9998 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 18 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sink"]
@@ -673,26 +706,29 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fridge"]
+position = Vector2( 10, 2.22223 )
 frames = SubResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge"]
-position = Vector2( 74.4445, 16.9445 )
+position = Vector2( 80, -11.1111 )
 shape = SubResource( 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Fridge"]
+position = Vector2( 7.77778, -14.4445 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/StaticBody2D"]
 position = Vector2( 74.4445, 5 )
 shape = SubResource( 16 )
 
 [node name="Inventory" type="Node2D" parent="Fridge"]
+position = Vector2( -2.22222, 81.1111 )
 script = ExtResource( 12 )
 
 [node name="GridContainer" type="GridContainer" parent="Fridge/Inventory"]
-margin_left = -97.7778
-margin_top = 78.8889
-margin_right = 260.222
-margin_bottom = 178.889
+margin_left = -4.44445
+margin_top = -43.3333
+margin_right = 353.556
+margin_bottom = 56.6668
 custom_constants/hseparation = -14
 columns = 4
 
@@ -733,11 +769,12 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Stove"]
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( -6.49998, -23.2 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stove"]
-position = Vector2( 5, 2 )
+position = Vector2( -3, 64 )
 shape = SubResource( 30 )
 
 [node name="YSort" type="YSort" parent="."]
@@ -878,7 +915,6 @@ position = Vector2( -246, -136 )
 z_index = 10
 collision_layer = 4
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -890,20 +926,33 @@ frames = SubResource( 36 )
 position = Vector2( 10.0625, 50 )
 shape = SubResource( 38 )
 
+[node name="Window" type="StaticBody2D" parent="YSort"]
+position = Vector2( 6, -1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Window"]
+position = Vector2( -200, -503 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 81 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Window"]
+position = Vector2( -192.5, -504 )
+shape = SubResource( 82 )
+
 [node name="Door" type="Area2D" parent="YSort"]
 collision_layer = 2
 script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Door"]
+position = Vector2( 494, -472 )
+scale = Vector2( 0.950521, 0.960938 )
+frames = SubResource( 75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door"]
-position = Vector2( 816.25, -20.75 )
+position = Vector2( 506, -524 )
 shape = SubResource( 70 )
-
-[node name="ColorRect" type="ColorRect" parent="YSort/Door"]
-margin_left = 796.0
-margin_top = -123.0
-margin_right = 836.0
-margin_bottom = 77.0
-color = Color( 0.462745, 0.356863, 0.309804, 1 )
 
 [node name="Borders" type="StaticBody2D" parent="."]
 
