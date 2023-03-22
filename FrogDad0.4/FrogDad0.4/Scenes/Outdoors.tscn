@@ -230,6 +230,9 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 14/shapes = [  ]
 14/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 126, 107.5 )
+
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 6 )
@@ -256,9 +259,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 146.282, 81.5484 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 126, 107.5 )
-
 [node name="Outdoors" type="Node2D"]
 position = Vector2( 0, -381 )
 
@@ -282,6 +282,10 @@ margin_right = 249.0
 margin_bottom = 192.0
 color = Color( 0.482353, 0.380392, 0.333333, 1 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutdoorHouse"]
+position = Vector2( 123, 85.5 )
+shape = SubResource( 7 )
+
 [node name="OutdoorDoor" type="Area2D" parent="OutdoorHouse"]
 position = Vector2( 124, 203 )
 scale = Vector2( 0.484375, 0.484375 )
@@ -296,10 +300,6 @@ animation = "close"
 [node name="DoorDetector" type="CollisionShape2D" parent="OutdoorHouse/OutdoorDoor"]
 position = Vector2( 0, -32 )
 shape = SubResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutdoorHouse"]
-position = Vector2( 123, 85.5 )
-shape = SubResource( 7 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
 position = Vector2( 548, 260 )
