@@ -2,10 +2,6 @@ extends Area2D
 const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ClothClass = preload("res://Scripts/Cloth.gd")
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
-func _ready():
-	pass # Replace with function body.
-
-
 
 
 var items_in_range = {} # a dictionary

@@ -10,15 +10,17 @@ var inventory_data = InventoryData.new()
 
 func _ready():
 	var slots = inventory_slots.get_children()
+	# allow slots to be clicked on and give them each an index
 	for i in range(slots.size()):
-		slots[i].connect("gui_input", self, "slot_gui_input", [slots[i]])
+		slots[i].connect("gui_input", self, "slot_gui_input", [slots[i]]) 
 		slots[i].slot_index = i
 	initialize_inventory()
 
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):
-		if inventory_data.inventory.has(i):
+		# if there is something in the slot, initialize the item 
+		if inventory_data.inventory.has(i): 
 			slots[i].initialize_item(inventory_data.inventory[i][0], inventory_data.inventory[i][1])
 
 func slot_gui_input(event: InputEvent, slot: SlotClass):
@@ -40,7 +42,7 @@ func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
 
-func left_click_outside_inventory():
+func drop():
 	if holding_item: 
 		var dropped_item = ItemDropClass.instance()
 		var quantity = holding_item.item_quantity - 1
@@ -114,11 +116,4 @@ func update_slot_visual(slot_index, item_name, new_quantity):
 	else:
 		slot.initialize_item(item_name, new_quantity)
 
-#This is code for trying to fix the inventory bug
-#func _on_Area2D_mouse_entered():
-#	mouse_in_inventory = true
-#	print(mouse_in_inventory)
-#
-#func _on_Area2D_mouse_exited():
-#	mouse_in_inventory = false
-#	print(mouse_in_inventory)
+

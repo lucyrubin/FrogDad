@@ -415,7 +415,6 @@ extents = Vector2( 78.8889, 137.986 )
 
 [sub_resource type="StreamTexture" id=83]
 flags = 4
-load_path = "res://.import/fridgeSlotFull.png-4b17444b0908b94da34e235e5ea59754.stex"
 
 [sub_resource type="StyleBoxTexture" id=69]
 texture = SubResource( 83 )
