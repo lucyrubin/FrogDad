@@ -1,7 +1,6 @@
 extends Area2D
 
-export (PackedScene) var target_scene = load("res://Scenes/Outdoors.tscn")
-
+export (PackedScene) var target_scene = load("res://Scenes/Main.tscn")
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
