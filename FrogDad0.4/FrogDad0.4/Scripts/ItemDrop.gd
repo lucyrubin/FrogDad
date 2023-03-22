@@ -10,6 +10,7 @@ var item_name
 var player = null
 var being_picked_up = false
 
+#Specifies which inventory item is added to
 export(NodePath) var inventory_path
 onready var inventory_node = get_node(inventory_path)
 

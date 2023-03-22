@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fridgeslotempty.png-802cc3a733da03ad9a580ee2699d813f.stex"
+path="res://.import/fridgeEmpty.png-5587481890c3c042d4e56b204d5ab5a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/fridgeslotempty.png"
-dest_files=[ "res://.import/fridgeslotempty.png-802cc3a733da03ad9a580ee2699d813f.stex" ]
+source_file="res://Art/fridgeEmpty.png"
+dest_files=[ "res://.import/fridgeEmpty.png-5587481890c3c042d4e56b204d5ab5a2.stex" ]
 
 [params]
 

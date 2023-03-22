@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fridgeslotfull.png-1ce3416340eccd7dfbdec42afbfe59b1.stex"
+path="res://.import/darkLeaf.png-8b27a77959d39810dcee9e586a7ce9c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/fridgeslotfull.png"
-dest_files=[ "res://.import/fridgeslotfull.png-1ce3416340eccd7dfbdec42afbfe59b1.stex" ]
+source_file="res://Art/darkLeaf.png"
+dest_files=[ "res://.import/darkLeaf.png-8b27a77959d39810dcee9e586a7ce9c6.stex" ]
 
 [params]
 

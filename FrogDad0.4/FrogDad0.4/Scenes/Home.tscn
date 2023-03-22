@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Scripts/Dresser.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Home.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Cloth.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Art/fridgeslotempty.png" type="Texture" id=11]
+[ext_resource path="res://Art/fridgeEmpty.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Door.gd" type="Script" id=13]
 [ext_resource path="res://Art/fridge.png" type="Texture" id=14]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Art/kitchen.png" type="Texture" id=16]
 [ext_resource path="res://Art/sink.png" type="Texture" id=17]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=18]
+[ext_resource path="res://Art/fridgeFull.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -412,8 +413,12 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 78.8889, 137.986 )
 
+[sub_resource type="StreamTexture" id=83]
+flags = 4
+load_path = "res://.import/fridgeSlotFull.png-4b17444b0908b94da34e235e5ea59754.stex"
+
 [sub_resource type="StyleBoxTexture" id=69]
-texture = ExtResource( 11 )
+texture = SubResource( 83 )
 region_rect = Rect2( 0, 0, 111, 110 )
 
 [sub_resource type="AtlasTexture" id=79]
@@ -724,43 +729,51 @@ position = Vector2( -2.22222, 81.1111 )
 script = ExtResource( 12 )
 
 [node name="GridContainer" type="GridContainer" parent="Fridge/Inventory"]
-margin_left = -4.44445
-margin_top = -43.3333
-margin_right = 353.556
-margin_bottom = 56.6668
-custom_constants/hseparation = -14
+margin_left = 1.11111
+margin_top = -24.4445
+margin_right = 180.111
+margin_bottom = 25.5555
+custom_constants/hseparation = -7
 columns = 4
 
 [node name="Slot1" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
+default_tex = ExtResource( 11 )
+empty_tex = ExtResource( 19 )
 
 [node name="Slot2" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_left = 86.0
-margin_right = 186.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 43.0
+margin_right = 93.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
+default_tex = ExtResource( 11 )
+empty_tex = ExtResource( 19 )
 
 [node name="Slot3" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_left = 172.0
-margin_right = 272.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 86.0
+margin_right = 136.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
+default_tex = ExtResource( 11 )
+empty_tex = ExtResource( 19 )
 
 [node name="Slot4" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_left = 258.0
-margin_right = 358.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 129.0
+margin_right = 179.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
+default_tex = ExtResource( 11 )
+empty_tex = ExtResource( 19 )
 
 [node name="Stove" type="StaticBody2D" parent="."]
 position = Vector2( -459, -366 )
