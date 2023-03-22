@@ -9,7 +9,7 @@ func _input(event):
 		if !target_scene:
 			print("no scene in this door")
 			
-		if get_overlapping_bodies().size()>0:
+		if get_overlapping_bodies().size()>1:
 			go_outside()
 			
 

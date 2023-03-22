@@ -274,6 +274,7 @@ format = 1
 tile_data = PoolIntArray( 196608, 3, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, -1610612733, 0, 262144, 5, 0, 262145, 1610612740, 0, 262146, 1610612740, 0, 262147, 1610612740, 0, 262148, 1610612740, 0, 262149, 1610612740, 0, 262150, 1610612739, 0 )
 
 [node name="OutdoorHouse" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="OutdoorHouse"]
 margin_top = -22.0
@@ -284,6 +285,7 @@ color = Color( 0.482353, 0.380392, 0.333333, 1 )
 [node name="OutdoorDoor" type="Area2D" parent="OutdoorHouse"]
 position = Vector2( 124, 203 )
 scale = Vector2( 0.484375, 0.484375 )
+collision_layer = 2
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="OutdoorHouse/OutdoorDoor"]
@@ -293,7 +295,6 @@ animation = "close"
 
 [node name="DoorDetector" type="CollisionShape2D" parent="OutdoorHouse/OutdoorDoor"]
 position = Vector2( 0, -32 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutdoorHouse"]
