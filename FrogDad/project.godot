@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="FrogDad0.4"
+config/name="FrogDad"
 run/main_scene="res://Scenes/Main.tscn"
 
 [autoload]

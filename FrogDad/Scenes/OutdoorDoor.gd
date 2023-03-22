@@ -10,7 +10,7 @@ func _input(event):
 			
 		if get_overlapping_bodies().size()>0:
 			go_outside()
-			
+			#this works for now but worried it may cause issues in future
 
 func go_outside():
 		var ERR = get_tree().change_scene_to(target_scene)
