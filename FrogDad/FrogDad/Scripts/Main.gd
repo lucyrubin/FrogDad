@@ -37,7 +37,7 @@ func _input(event):
 	&& $FrogDad/UserInterface/Inventory.inventory_open == true \
 	&& $FrogDad/UserInterface/Inventory.holding_item != null:
 		var dropped_item = $FrogDad/UserInterface/Inventory.drop()
-		drop_item(dropped_item)
+		#drop_item(dropped_item) this is commented out because we are just deleting the stuff for right now
 
 func drop_item(item_drop : ItemDropClass):
 	item_drop.setup($FrogDad/AnimatedSprite.global_position.x + 100,$FrogDad/AnimatedSprite.global_position.y + 100,item_drop.item_name, $FrogDad/UserInterface/Inventory )
