@@ -1,0 +1,21 @@
+{
+  "Log": {
+    "ItemCategory": "Resource",
+    "StackSize": 99,
+    "Description": "A sturdy tree branch that can be used for crafting."
+  },
+  "Fly": {
+    "ItemCategory": "Consumable",
+    "AddHealth": 5,
+    "AddEnergy": 32,
+    "StackSize": 99,
+    "Description": "It smells like medicine."
+  },
+  "Cloth": {
+    "ItemCategory": "Sword",
+    "ItemAttack": 3,
+    "ItemSpeed": 0.75, 
+    "StackSize": 20,
+    "Description": "Quite a rusty sword, but should be able to get the job done."
+  }
+}
