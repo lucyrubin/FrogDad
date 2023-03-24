@@ -5,17 +5,19 @@ extends KinematicBody2D
 const ACCELERATION = 460
 const MAX_SPEED = 225
 var velocity = Vector2.ZERO
-var item_name
+#var item_name
 
 var player = null
 var being_picked_up = false
 
+export(String) var item_name
 export(NodePath) var inventory_path
 onready var inventory_node = get_node(inventory_path)
 
 func _ready():
 	#$AnimatedSprite.z_index = $AnimatedSprite.position.y
-	item_name = "Cloth"
+	#item_name = "Cloth"
+	pass
 
 func _physics_process(delta):
 	if being_picked_up == false: # if it's not being picked up, apply gravity

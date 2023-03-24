@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scripts/Cloth.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/ItemDrop.gd" type="Script" id=11]
 
 [node name="Main" type="Node2D"]
 position = Vector2( -1, -2 )
@@ -48,18 +48,22 @@ __meta__ = {
 
 [node name="ItemDrop" parent="." instance=ExtResource( 8 )]
 position = Vector2( -817, -218 )
+item_name = "Log"
 inventory_path = NodePath("../FrogDad/UserInterface/Inventory")
 
 [node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
 position = Vector2( -384, 157 )
+item_name = "Log"
 inventory_path = NodePath("../FrogDad/UserInterface/Inventory")
 
 [node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
 position = Vector2( -649, -198 )
+item_name = "Log"
 inventory_path = NodePath("../FrogDad/UserInterface/Inventory")
 
 [node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
 position = Vector2( -944, -116 )
+item_name = "Log"
 inventory_path = NodePath("../FrogDad/UserInterface/Inventory")
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
@@ -98,4 +102,5 @@ position = Vector2( -24, -74 )
 [node name="Cloth2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 130, -43 )
 script = ExtResource( 11 )
+item_name = "Cloth"
 inventory_path = NodePath("../FrogDad/UserInterface/Inventory")

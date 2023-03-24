@@ -5,7 +5,7 @@ extends KinematicBody2D
 const ACCELERATION = 460
 const MAX_SPEED = 225
 var velocity = Vector2.ZERO
-var item_name
+export(String) var item_name
 
 var player = null
 var being_picked_up = false
@@ -20,7 +20,7 @@ func _ready():
 	#$Sprite.z_index = $Sprite.position.y #default setup
 	if(item_name == null):
 		item_name = "Log"
-	$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
+	#$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
 	
 
 func setup(xgiven, ygiven, name, inventory):
@@ -40,7 +40,7 @@ func setup(xgiven, ygiven, name, inventory):
 
 func _physics_process(delta):
 	if being_picked_up == false: # if it's not being picked up, apply gravity
-		print("hey")
+
 		pass
 
 	else: 
