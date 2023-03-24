@@ -3,7 +3,7 @@ extends Node
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 const SlotClass = preload("res://Scripts/Slot.gd")
 const ItemClass = preload("res://Scripts/Item.gd")
-#const NUM_INVENTORY_SLOTS = 20
+const NUM_INVENTORY_SLOTS = 20
 
 var inventory = {
 	0: ["Fly", 1], # slot_index: [item_name, item_quantity]
