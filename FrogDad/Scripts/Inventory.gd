@@ -8,9 +8,11 @@ var inventory_open = false
 var mouse_in_inventory = false
 var inventory_data = InventoryData.new()
 
+export (Dictionary) var item_list
 
 func _ready():
 	var slots = inventory_slots.get_children()
+	inventory_data.setup(slots.size(), item_list)
 	# allow slots to be clicked on and give them each an index
 	for i in range(slots.size()):
 		slots[i].connect("gui_input", self, "slot_gui_input", [slots[i]]) 

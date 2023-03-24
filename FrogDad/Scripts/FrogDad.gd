@@ -24,9 +24,7 @@ func _physics_process(delta):
 			move_right()
 		if Input.is_action_pressed("move_left"):
 			move_left()
-
 			
-
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * speed
 			$AnimatedSprite.play()

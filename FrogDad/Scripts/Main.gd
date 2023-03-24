@@ -6,7 +6,6 @@ func _process(delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 
 	$BabyGertrude.z_index = $BabyGertrude.position.y - 60# behind things lower on the screen
 
-
 func _input(event):
 	if event.is_action_pressed("talk")&&  $BabyGertrude/Speech.visible && !$FrogDad/DialogueBox.visible: # when A is pressed, open the dialogue box
 		toggle_dialogue_box_visibility()

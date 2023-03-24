@@ -4,4 +4,3 @@ extends CanvasLayer
 func open_inventory():
 	#$Inventory.visible = !$Inventory.visible # toggle inventory visibility
 	$Inventory.initialize_inventory()
-

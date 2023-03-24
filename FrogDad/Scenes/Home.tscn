@@ -726,6 +726,9 @@ shape = SubResource( 16 )
 [node name="Inventory" type="Node2D" parent="Fridge"]
 position = Vector2( -2.22222, 81.1111 )
 script = ExtResource( 12 )
+item_list = {
+0: [ "Fly", 3 ]
+}
 
 [node name="GridContainer" type="GridContainer" parent="Fridge/Inventory"]
 margin_left = 1.11111
