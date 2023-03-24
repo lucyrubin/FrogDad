@@ -40,9 +40,11 @@ func setup(xgiven, ygiven, name, inventory):
 
 func _physics_process(delta):
 	if being_picked_up == false: # if it's not being picked up, apply gravity
+		print("hey")
 		pass
 
 	else: 
+		print("pickup")
 		print(inventory_node)
 		inventory_node.add_item(item_name, 1)
 		queue_free()

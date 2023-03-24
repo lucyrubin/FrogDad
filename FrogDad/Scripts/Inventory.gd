@@ -8,6 +8,7 @@ var inventory_open = false
 var mouse_in_inventory = false
 var inventory_data = InventoryData.new()
 
+
 func _ready():
 	var slots = inventory_slots.get_children()
 	# allow slots to be clicked on and give them each an index
