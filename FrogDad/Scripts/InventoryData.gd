@@ -8,7 +8,7 @@ const NUM_INVENTORY_SLOTS = 20
 var inventory = {
 	0: ["Fly", 1], # slot_index: [item_name, item_quantity]
 	1: ["Log", 98],
-	2: ["Cloth", 15]
+	2: ["Cloth", 4]
 }
 
 func add_item_to_empty_slot(item: ItemClass, slot: SlotClass):

@@ -67,7 +67,7 @@ item_name = "Log"
 inventory_path = NodePath("../FrogDad/UserInterface/Inventory")
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( -50, -343 )
+position = Vector2( -334, -421 )
 scale = Vector2( 0.3, 0.3 )
 __meta__ = {
 "_edit_group_": true
@@ -92,8 +92,8 @@ script = ExtResource( 7 )
 scale = Vector2( 1, 1 )
 
 [node name="Quest" parent="FrogDad/UserInterface" instance=ExtResource( 10 )]
-position = Vector2( 200, 100 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 230, 100 )
+scale = Vector2( 0.6, 0.6 )
 z_index = 1000
 
 [node name="Home" parent="." instance=ExtResource( 9 )]
