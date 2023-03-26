@@ -333,6 +333,22 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 8/shapes = [  ]
 8/z_index = 0
 
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 768, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=81]
+animations = [ {
+"frames": [ SubResource( 80 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 61.5, 61 )
+
 [sub_resource type="AtlasTexture" id=76]
 flags = 4
 atlas = ExtResource( 16 )
@@ -434,30 +450,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 71, 29 )
-
-[sub_resource type="AtlasTexture" id=60]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 768, 0, 384, 512 )
-
-[sub_resource type="AtlasTexture" id=61]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 1152, 0, 384, 512 )
-
-[sub_resource type="SpriteFrames" id=62]
-animations = [ {
-"frames": [ SubResource( 60 ), SubResource( 61 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 87, 59.5 )
-
-[sub_resource type="RectangleShape2D" id=68]
-extents = Vector2( 87, 29 )
 
 [sub_resource type="AtlasTexture" id=46]
 flags = 4
@@ -569,22 +561,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 101.062, 25 )
 
-[sub_resource type="AtlasTexture" id=80]
-flags = 4
-atlas = ExtResource( 16 )
-region = Rect2( 768, 0, 384, 512 )
-
-[sub_resource type="SpriteFrames" id=81]
-animations = [ {
-"frames": [ SubResource( 80 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 61.5, 61 )
-
 [sub_resource type="AtlasTexture" id=73]
 flags = 4
 atlas = ExtResource( 15 )
@@ -606,6 +582,30 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 107.5, 38.75 )
 
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 768, 0, 384, 512 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1152, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=63]
+extents = Vector2( 87, 59.5 )
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 87, 29 )
+
 [node name="Home" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -622,10 +622,25 @@ show_collision = true
 format = 1
 tile_data = PoolIntArray( -524305, 1073741830, 0, -524304, 1073741831, 0, -524303, 1073741831, 0, -524302, 1073741831, 0, -524301, 1073741831, 0, -524300, 1073741831, 0, -524299, 1073741831, 0, -524298, 1073741831, 0, -524297, 1073741831, 0, -524296, 1073741831, 0, -524295, 1073741831, 0, -524294, 1073741831, 0, -524293, 1073741831, 0, -524292, 1073741831, 0, -524291, 1073741831, 0, -524290, 1073741831, 0, -524289, 1073741831, 0, -589824, 1073741831, 0, -589823, 1073741831, 0, -589822, 1073741831, 0, -589821, 1073741831, 0, -589820, 1073741831, 0, -589819, 1073741831, 0, -589818, 1073741831, 0, -589817, 1073741831, 0, -589816, 1073741831, 0, -589815, 1073741831, 0, -589814, 1073741831, 0, -589813, 1073741831, 0, -589812, 1073741832, 0, -458769, 1073741827, 0, -458768, 1610612740, 0, -458767, 1610612740, 0, -458766, 1610612740, 0, -458765, 1610612740, 0, -458764, 1610612740, 0, -458763, 1610612740, 0, -458762, 1610612740, 0, -458761, 1610612740, 0, -458760, 1610612740, 0, -458759, 1610612740, 0, -458758, 1610612740, 0, -458757, 1610612740, 0, -458756, 1610612740, 0, -458755, 1610612740, 0, -458754, 1610612740, 0, -458753, 1610612740, 0, -524288, 1610612740, 0, -524287, 1610612740, 0, -524286, 1610612740, 0, -524285, 1610612740, 0, -524284, 1610612740, 0, -524283, 1610612740, 0, -524282, 1610612740, 0, -524281, 1610612740, 0, -524280, 1610612740, 0, -524279, 1610612740, 0, -524278, 1610612740, 0, -524277, 1610612740, 0, -524276, 1073741829, 0, -393233, 1073741827, 0, -393232, 1610612740, 0, -393231, 1610612740, 0, -393230, 1610612740, 0, -393229, 1610612740, 0, -393228, 1610612740, 0, -393227, 1610612740, 0, -393226, 1610612740, 0, -393225, 1610612740, 0, -393224, 1610612740, 0, -393223, 1610612740, 0, -393222, 1610612740, 0, -393221, 1610612740, 0, -393220, 1610612740, 0, -393219, 1610612740, 0, -393218, 1610612740, 0, -393217, 1610612740, 0, -458752, 1610612740, 0, -458751, 1610612740, 0, -458750, 1610612740, 0, -458749, 1610612740, 0, -458748, 1610612740, 0, -458747, 1610612740, 0, -458746, 1610612740, 0, -458745, 1610612740, 0, -458744, 1610612740, 0, -458743, 1610612740, 0, -458742, 1610612740, 0, -458741, 1610612740, 0, -458740, 1073741829, 0, -327697, 1073741824, 0, -327696, 1073741825, 0, -327695, 1610612737, 0, -327694, 1073741825, 0, -327693, 1610612737, 0, -327692, 1073741825, 0, -327691, 1610612737, 0, -327690, 1073741825, 0, -327689, 1610612737, 0, -327688, 1073741825, 0, -327687, 1073741825, 0, -327686, 1073741825, 0, -327685, 1073741825, 0, -327684, 1073741825, 0, -327683, 1073741825, 0, -327682, 1073741825, 0, -327681, 1073741825, 0, -393216, 1073741825, 0, -393215, 1073741825, 0, -393214, 1073741825, 0, -393213, 1610612737, 0, -393212, 1073741825, 0, -393211, 1610612737, 0, -393210, 1073741825, 0, -393209, 1610612737, 0, -393208, 1073741825, 0, -393207, 1610612737, 0, -393206, 1073741825, 0, -393205, 1610612737, 0, -393204, 1073741826, 0 )
 
+[node name="Window" type="StaticBody2D" parent="."]
+position = Vector2( -230, -497 )
+z_index = -500
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Window"]
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 81 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2( 8.5, 0 )
+shape = SubResource( 82 )
+
 [node name="Counters" type="StaticBody2D" parent="."]
 position = Vector2( -71, -329 )
 scale = Vector2( 0.8, 0.8 )
-z_index = -370
+z_index = -500
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -654,7 +669,7 @@ shape = SubResource( 27 )
 [node name="Sink" type="Area2D" parent="."]
 position = Vector2( -192, -351 )
 scale = Vector2( 0.35, 0.35 )
-z_index = -370
+z_index = -500
 collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
@@ -681,7 +696,7 @@ __meta__ = {
 
 [node name="Microwave" type="Area2D" parent="."]
 position = Vector2( -65, -423 )
-z_index = -370
+z_index = -500
 collision_layer = 4
 script = ExtResource( 2 )
 __meta__ = {
@@ -699,7 +714,7 @@ shape = SubResource( 34 )
 [node name="Fridge" type="Area2D" parent="."]
 position = Vector2( 5, -393 )
 scale = Vector2( 0.9, 0.9 )
-z_index = -370
+z_index = -500
 collision_layer = 4
 script = ExtResource( 4 )
 __meta__ = {
@@ -778,7 +793,7 @@ empty_tex = ExtResource( 19 )
 
 [node name="Stove" type="StaticBody2D" parent="."]
 position = Vector2( -459, -366 )
-z_index = -370
+z_index = -500
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true,
@@ -795,28 +810,6 @@ position = Vector2( -3, 64 )
 shape = SubResource( 30 )
 
 [node name="YSort" type="YSort" parent="."]
-
-[node name="Dresser" type="Area2D" parent="YSort"]
-position = Vector2( 34, 142 )
-collision_layer = 4
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Dresser"]
-scale = Vector2( 0.709635, 0.682617 )
-frames = SubResource( 62 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Dresser"]
-position = Vector2( 4, 23.5 )
-shape = SubResource( 63 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Dresser"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Dresser/StaticBody2D"]
-position = Vector2( 5, 60 )
-shape = SubResource( 68 )
 
 [node name="TV Stand" type="StaticBody2D" parent="YSort"]
 position = Vector2( -800, 33 )
@@ -940,20 +933,6 @@ frames = SubResource( 36 )
 position = Vector2( 10.0625, 50 )
 shape = SubResource( 38 )
 
-[node name="Window" type="StaticBody2D" parent="YSort"]
-position = Vector2( -230, -497 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Window"]
-scale = Vector2( 0.6, 0.6 )
-frames = SubResource( 81 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Window"]
-position = Vector2( 8.5, 0 )
-shape = SubResource( 82 )
-
 [node name="Door" type="Area2D" parent="YSort"]
 position = Vector2( 493, -473 )
 collision_layer = 2
@@ -970,6 +949,28 @@ frames = SubResource( 75 )
 position = Vector2( 18.5, 127.25 )
 shape = SubResource( 70 )
 
+[node name="Dresser" type="Area2D" parent="YSort"]
+position = Vector2( 34, 142 )
+collision_layer = 4
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Dresser"]
+scale = Vector2( 0.709635, 0.682617 )
+frames = SubResource( 62 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Dresser"]
+position = Vector2( 4, 23.5 )
+shape = SubResource( 63 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Dresser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Dresser/StaticBody2D"]
+position = Vector2( 5, 60 )
+shape = SubResource( 68 )
+
 [node name="Borders" type="StaticBody2D" parent="."]
 
 [node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
@@ -978,5 +979,5 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="input_event" from="Sink" to="Sink" method="_on_Sink_input_event"]
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
-[connection signal="input_event" from="YSort/Dresser" to="YSort/Dresser" method="_on_Dresser_input_event"]
 [connection signal="area_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_area_entered"]
+[connection signal="input_event" from="YSort/Dresser" to="YSort/Dresser" method="_on_Dresser_input_event"]
