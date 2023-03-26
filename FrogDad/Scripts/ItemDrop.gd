@@ -11,8 +11,9 @@ var player = null
 var being_picked_up = false
 
 #Specifies which inventory item is added to
-export(NodePath) var inventory_path
-onready var inventory_node = get_node(inventory_path)
+export(NodePath) var frog_dad_path
+onready var inventory_node = get_node(frog_dad_path).getInventoryNode()
+#onready var inventory_node = get_node(inventory_path)
 #var inventory_node = load("res://Scripts/Inventory.gd")
 
 

@@ -17,9 +17,9 @@ text = "Quest Text Here"
 
 [node name="CompletedButton" type="Button" parent="."]
 margin_left = 109.0
-margin_right = 226.0
+margin_right = 183.0
 margin_bottom = 20.0
 disabled = true
-text = "Complete Quest"
+text = "Complete"
 
 [connection signal="pressed" from="CompletedButton" to="." method="_on_CompletedButton_pressed"]

@@ -9,9 +9,12 @@ var quest_state = "swaddle"
 var sprite_image = "carrying babies"
 var velocity
 
+export(NodePath) var inventory_path
+
 func _ready():
 	screen_size = get_viewport_rect().size
-
+func getInventoryNode():
+	return $UserInterface/Inventory
 func _physics_process(delta):
 	$QuestLabel.text = "Current quest: " + quest_state + " \nSprite image: " + sprite_image
 	velocity = Vector2.ZERO
