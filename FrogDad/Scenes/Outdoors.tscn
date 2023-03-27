@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/DialogueBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Art/door.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/OutdoorDoor.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/OutdoorDoor.gd" type="Script" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
