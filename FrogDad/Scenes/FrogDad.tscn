@@ -99,7 +99,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 3
+frame = 2
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -146,7 +146,6 @@ texture_normal = ExtResource( 6 )
 [node name="Quest" parent="ToggleQuestButton" instance=ExtResource( 7 )]
 visible = false
 position = Vector2( -2664, 2340 )
-scale = Vector2( 18, 18 )
 z_index = 1000
 inventory_path = NodePath("../../UserInterface/Inventory")
 

@@ -50,6 +50,14 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	$VBoxContainer.add_child(SubQuest)
 	SubQuest.get_node("CompletedButton").connect("pressed", self, "deleteQuest", [SubQuest, QuestName])
 	QuestName.text = quest
+	var dynamic_font = DynamicFont.new()
+	dynamic_font.size = 25
+	dynamic_font.font_data = load("res://Fonts/VCR_OSD_MONO_1.001.ttf")
+	QuestName.add_font_override("font", dynamic_font)
+	SubQuest.add_font_override("font", dynamic_font)
+	QuestName.add_color_override("font_color", Color(0,0,0,1))
+	
+
 	
 	# count up the amount of the item in the inventory
 	var totalItem = 0
@@ -58,7 +66,7 @@ func collectResourceQuest(quest, amountRequired, itemType):
 			totalItem += frog_dad_inventory_data.inventory[item][1]
 	
 	# update GUI based on amount in inventory
-	SubQuest.get_node("Label").text = "Collect " + str(amountRequired) + " pieces of cloth: " + str(totalItem) + "/" + str(amountRequired) 
+	SubQuest.get_node("Label").text = "Collect " + str(amountRequired) + " " + str(itemType) + "s: \n" + str(totalItem) + "/" + str(amountRequired) 
 	
 	# check if the requirements have been satisfied
 	if totalItem >= amountRequired:
