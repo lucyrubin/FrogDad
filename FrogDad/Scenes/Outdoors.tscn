@@ -298,7 +298,6 @@ shape = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutdoorHouse"]
 position = Vector2( 123, 85.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
@@ -325,4 +324,5 @@ scale = Vector2( 3, 3 )
 transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 script = ExtResource( 2 )
 
-[connection signal="body_entered" from="OutdoorHouse/OutdoorDoor" to="OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_body_entered"]
+[connection signal="area_entered" from="OutdoorHouse/OutdoorDoor" to="OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_entered"]
+[connection signal="area_exited" from="OutdoorHouse/OutdoorDoor" to="OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_exited"]
