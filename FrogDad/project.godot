@@ -21,11 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="FrogDad"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/TitleScreen.tscn"
 
 [autoload]
 
 JsonData="*res://Scripts/JSONData.gd"
+SceneTransition="*res://Scenes/SceneTransition.tscn"
 
 [display]
 
