@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/DialogueBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Art/door.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/OutdoorDoor.gd" type="Script" id=7]
@@ -260,6 +261,7 @@ extents = Vector2( 126, 107.5 )
 
 [node name="Outdoors" type="Node2D"]
 position = Vector2( 0, -381 )
+script = ExtResource( 4 )
 
 [node name="Grass" type="TileMap" parent="."]
 tile_set = SubResource( 1 )

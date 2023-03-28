@@ -21,6 +21,7 @@ func _ready():
 	#$Sprite.z_index = $Sprite.position.y #default setup
 	if(item_name == null):
 		item_name = "Log"
+		
 	#$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
 	
 
@@ -32,7 +33,7 @@ func setup(xgiven, ygiven, name, inventory):
 
 	item_name = name
 	inventory_node = inventory
-	print(inventory_node)
+	#print(inventory_node)
 
 	$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
 	

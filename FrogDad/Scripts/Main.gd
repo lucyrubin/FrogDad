@@ -1,6 +1,7 @@
 extends Node2D
 
 const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
+const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
 
 
 
@@ -47,5 +48,8 @@ func drop_item(item_drop : ItemDropClass):
 func toggle_dialogue_box_visibility():
 	$FrogDad/DialogueBox.visible = !$FrogDad/DialogueBox.visible
 
-		
+func add_item_drop(type, x, y):
+	var drop = ItemDropScene.instance()
+	drop.setup(x,y,type, $FrogDad/UserInterface/Inventory)
+	add_child(drop)
 

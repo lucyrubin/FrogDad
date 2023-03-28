@@ -21,7 +21,7 @@ func _ready():
 	frog_dad_inventory = get_node(inventory_path)
 	frog_dad_inventory_data = frog_dad_inventory.inventory_data
 	
-	
+	begin_intro_quest()
 
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from currentQuestArray
@@ -96,3 +96,14 @@ func _on_ToggleQuestButton_pressed():
 			child.queue_free()
 		
 		FrogDadNode.state = ""
+
+
+func begin_intro_quest():
+	print("intro started")
+	$KnockTimer.start()
+
+
+func _on_KnockTimer_timeout():
+	print("Knock knock")
+	var main_node = FrogDadNode.get_parent()
+	#main_node.add_item_drop("Cloth", FrogDadNode.get_node("AnimatedSprite").global_position.x + 100,FrogDadNode.get_node("AnimatedSprite").global_position.y + 100)
