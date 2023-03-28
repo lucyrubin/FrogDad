@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Art/sink.png" type="Texture" id=17]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=18]
 [ext_resource path="res://Art/fridgeFull.png" type="Texture" id=19]
+[ext_resource path="res://Art/bedroom.png" type="Texture" id=20]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -467,6 +468,30 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 71, 29 )
 
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 768, 0, 384, 512 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1152, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=63]
+extents = Vector2( 109, 85 )
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 108.5, 30.5 )
+
 [sub_resource type="AtlasTexture" id=46]
 flags = 4
 atlas = ExtResource( 5 )
@@ -499,37 +524,37 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 78.5, 22.5 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=86]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 512, 0, 256, 384 )
+atlas = ExtResource( 20 )
+region = Rect2( 384, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=53]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 86 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=54]
-radius = 34.0588
+[sub_resource type="RectangleShape2D" id=88]
+extents = Vector2( 43.25, 52 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=87]
 flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 384, 384 )
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=50]
 animations = [ {
-"frames": [ SubResource( 49 ) ],
+"frames": [ SubResource( 87 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 152.5, 122.5 )
+extents = Vector2( 139.5, 90.25 )
 
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
@@ -597,30 +622,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 107.5, 38.75 )
-
-[sub_resource type="AtlasTexture" id=60]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 768, 0, 384, 512 )
-
-[sub_resource type="AtlasTexture" id=61]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 1152, 0, 384, 512 )
-
-[sub_resource type="SpriteFrames" id=62]
-animations = [ {
-"frames": [ SubResource( 60 ), SubResource( 61 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 87, 59.5 )
-
-[sub_resource type="RectangleShape2D" id=68]
-extents = Vector2( 87, 29 )
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 9 )
@@ -826,14 +827,37 @@ frames = SubResource( 29 )
 position = Vector2( -3, 64 )
 shape = SubResource( 30 )
 
+[node name="Dresser" type="Area2D" parent="."]
+position = Vector2( -917, -345 )
+z_index = -500
+collision_layer = 4
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Dresser"]
+position = Vector2( 33.875, -61.125 )
+scale = Vector2( 0.886067, 0.921387 )
+frames = SubResource( 62 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser"]
+position = Vector2( 38, -24 )
+shape = SubResource( 63 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Dresser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser/StaticBody2D"]
+position = Vector2( 38.5, 30.5 )
+shape = SubResource( 68 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="TV Stand" type="StaticBody2D" parent="YSort"]
-position = Vector2( -800, 33 )
+position = Vector2( 248, 41 )
 collision_layer = 4
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/TV Stand"]
@@ -844,7 +868,7 @@ position = Vector2( -18, 0 )
 shape = SubResource( 48 )
 
 [node name="Cradle" type="StaticBody2D" parent="YSort"]
-position = Vector2( -929, -338 )
+position = Vector2( -936, 107 )
 z_index = 5
 collision_layer = 4
 __meta__ = {
@@ -862,7 +886,7 @@ __meta__ = {
 }
 
 [node name="Bedside Table" type="StaticBody2D" parent="YSort"]
-position = Vector2( 443, -120 )
+position = Vector2( -1018, -183 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -873,31 +897,31 @@ scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 53 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Bedside Table"]
-position = Vector2( -42, 45 )
-shape = SubResource( 54 )
+position = Vector2( 7.25, 3 )
+shape = SubResource( 88 )
 
 [node name="Bed" type="StaticBody2D" parent="YSort"]
-position = Vector2( 313, 37 )
+position = Vector2( -971, -109 )
 collision_layer = 4
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Bed"]
-scale = Vector2( 1.0625, 1.12826 )
+position = Vector2( 26, 34.4173 )
+scale = Vector2( 0.927083, 0.993818 )
 frames = SubResource( 50 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Bed"]
-position = Vector2( -12.5, 78.5 )
+position = Vector2( 26.5, 50.75 )
 shape = SubResource( 51 )
 
 [node name="Couch" type="StaticBody2D" parent="YSort"]
-position = Vector2( -603, 21 )
+position = Vector2( 532, 30 )
 collision_layer = 4
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Couch"]
@@ -966,28 +990,6 @@ frames = SubResource( 75 )
 position = Vector2( 18.5, 127.25 )
 shape = SubResource( 70 )
 
-[node name="Dresser" type="Area2D" parent="YSort"]
-position = Vector2( 34, 142 )
-collision_layer = 4
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Dresser"]
-scale = Vector2( 0.709635, 0.682617 )
-frames = SubResource( 62 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Dresser"]
-position = Vector2( 4, 23.5 )
-shape = SubResource( 63 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Dresser"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Dresser/StaticBody2D"]
-position = Vector2( 5, 60 )
-shape = SubResource( 68 )
-
 [node name="Borders" type="StaticBody2D" parent="."]
 
 [node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
@@ -998,6 +1000,6 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
 [connection signal="mouse_entered" from="Fridge" to="Fridge" method="_on_Fridge_mouse_entered"]
 [connection signal="mouse_exited" from="Fridge" to="Fridge" method="_on_Fridge_mouse_exited"]
+[connection signal="input_event" from="Dresser" to="Dresser" method="_on_Dresser_input_event"]
 [connection signal="area_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="YSort/Door" to="YSort/Door" method="_on_Door_area_exited"]
-[connection signal="input_event" from="YSort/Dresser" to="YSort/Dresser" method="_on_Dresser_input_event"]
