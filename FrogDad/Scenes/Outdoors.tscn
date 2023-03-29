@@ -303,7 +303,7 @@ position = Vector2( 123, 85.5 )
 shape = SubResource( 7 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
-position = Vector2( 548, 260 )
+position = Vector2( 112, 108 )
 scale = Vector2( 0.3, 0.3 )
 collision_mask = 14
 collision/safe_margin = 0.05
