@@ -5,6 +5,9 @@ var door_opened = false
 var current_fram = 0
 var num_frames = 2
 
+func _ready():
+	$AnimatedSprite.animation = "default"
+
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if !target_scene:
