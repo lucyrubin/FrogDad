@@ -105,5 +105,6 @@ func begin_intro_quest():
 
 func _on_KnockTimer_timeout():
 	print("Knock knock")
+	$KnockTimer.queue_free()
 	var main_node = FrogDadNode.get_parent()
 	#main_node.add_item_drop("Cloth", FrogDadNode.get_node("AnimatedSprite").global_position.x + 100,FrogDadNode.get_node("AnimatedSprite").global_position.y + 100)
