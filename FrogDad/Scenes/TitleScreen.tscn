@@ -6,7 +6,7 @@
 [ext_resource path="res://Art/baby gertrude.png" type="Texture" id=4]
 [ext_resource path="res://Art/gravy baby.png" type="Texture" id=5]
 [ext_resource path="res://Art/fly doodle.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
