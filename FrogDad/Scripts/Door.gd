@@ -18,11 +18,14 @@ func go_outside():
 			print("something failed in the door scene")
 
 func _on_Door_area_entered(area):
+	$AnimatedSprite.animation = "hover"
 	door_opened = true
-	current_fram = (current_fram +1) % num_frames
+	current_fram = (current_fram+1) % num_frames
 	$AnimatedSprite.set_frame(current_fram)
 
 func _on_Door_area_exited(area):
+	$AnimatedSprite.animation = "default"
 	door_opened = false
 	current_fram = (current_fram-1) % num_frames
 	$AnimatedSprite.set_frame(current_fram)
+	

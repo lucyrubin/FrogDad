@@ -26,4 +26,4 @@ func _on_Fridge_mouse_entered():
 
 func _on_Fridge_mouse_exited():
 	$AnimatedSprite.animation = "default"
-	$AnimatedSprite.set_frame (current_fram)
+	$AnimatedSprite.set_frame(current_fram)

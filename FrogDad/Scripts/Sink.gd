@@ -10,3 +10,11 @@ func _on_Sink_input_event(viewport, event, shape_idx):
 	and event.pressed:
 		current_fram = (current_fram +1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
+
+
+func _on_Sink_mouse_entered():
+	$AnimatedSprite.animation = "hover"
+
+
+func _on_Sink_mouse_exited():
+	$AnimatedSprite.animation = "default"
