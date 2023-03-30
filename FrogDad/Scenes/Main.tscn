@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Cloth.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BabyGertrude.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LogDrop.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/ItemDrop.gd" type="Script" id=11]
@@ -48,16 +49,19 @@ item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
 
 [node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
+visible = false
 position = Vector2( -384, 157 )
 item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
 
 [node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
+visible = false
 position = Vector2( -649, -198 )
 item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
 
 [node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
+visible = false
 position = Vector2( -944, -116 )
 item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
@@ -74,3 +78,6 @@ position = Vector2( 130, -43 )
 script = ExtResource( 11 )
 item_name = "Cloth"
 frog_dad_path = NodePath("../FrogDad")
+
+[node name="LogDrop" parent="." instance=ExtResource( 5 )]
+position = Vector2( 300, -270 )

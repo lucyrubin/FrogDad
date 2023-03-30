@@ -2,6 +2,7 @@ extends Node2D
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 const SlotClass = preload("res://Scripts/Slot.gd")
 var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
+var LogDropScene = preload("res://Scenes/LogDrop.tscn")
 onready var inventory_slots = $GridContainer
 var holding_item = null
 var inventory_open = false

@@ -2,6 +2,7 @@ extends Node2D
 
 const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
+const LogDropScene = preload("res://Scenes/LogDrop.tscn")
 
 
 
@@ -52,4 +53,8 @@ func add_item_drop(type, x, y):
 	var drop = ItemDropScene.instance()
 	drop.setup(x,y,type, $FrogDad/UserInterface/Inventory)
 	add_child(drop)
-
+	
+func add_log_drop(type, x, y):
+	var drop = LogDropScene.instance()
+	drop.setup(x,y,type,$FrogDad/UserInterface/Inventory)
+	add_child(drop)
