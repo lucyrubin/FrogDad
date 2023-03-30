@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "FrogDad",
+"language": "GDScript",
+"path": "res://Scripts/FrogDad.gd"
+}, {
 "base": "Node",
 "class": "InventoryData",
 "language": "GDScript",
 "path": "res://Scripts/InventoryData.gd"
 } ]
 _global_script_class_icons={
+"FrogDad": "",
 "InventoryData": ""
 }
 

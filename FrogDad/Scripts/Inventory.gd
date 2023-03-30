@@ -13,6 +13,7 @@ export (Dictionary) var item_list
 func _ready():
 	var slots = inventory_slots.get_children()
 	inventory_data.setup(slots.size(), item_list)
+	
 	# allow slots to be clicked on and give them each an index
 	for i in range(slots.size()):
 		slots[i].connect("gui_input", self, "slot_gui_input", [slots[i]]) 
@@ -21,6 +22,7 @@ func _ready():
 
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
+	
 	for i in range(slots.size()):
 		# if there is something in the slot, initialize the item 
 		if inventory_data.inventory.has(i): 
@@ -42,21 +44,10 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 
 # warning-ignore:unused_argument
 func _input(event):
+	# make the item that is being held follow the mouse
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
 
-func drop():
-	if holding_item: 
-		var dropped_item = ItemDropClass.instance()
-		var quantity = holding_item.item_quantity - 1
-		holding_item.item_quantity = quantity
-		holding_item.label.text = str(quantity)
-		dropped_item.item_name = holding_item.item_name
-		if quantity == 0:
-			holding_item.queue_free()
-			holding_item = null
-		return dropped_item
-	
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
 	inventory_data.add_item_to_empty_slot(holding_item, slot)
 	slot.putIntoSlot(holding_item)
@@ -119,4 +110,16 @@ func update_slot_visual(slot_index, item_name, new_quantity):
 	else:
 		slot.initialize_item(item_name, new_quantity)
 
-
+### drop is not being used right now
+func drop():
+	if holding_item: 
+		var dropped_item = ItemDropClass.instance()
+		var quantity = holding_item.item_quantity - 1
+		holding_item.item_quantity = quantity
+		holding_item.label.text = str(quantity)
+		dropped_item.item_name = holding_item.item_name
+		if quantity == 0:
+			holding_item.queue_free()
+			holding_item = null
+		return dropped_item
+	

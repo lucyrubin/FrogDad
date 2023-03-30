@@ -8,6 +8,7 @@ var FrogDadNode
 var questDictionary = { 
 	# (key, value) = (integer that represents the order that the quests progress, array)
 	# resource collection quest array template: ["resource collection", "quest name", number of item required, "item name", "sprite image path"]
+	
 	0: ["resource collection", "Make a Swaddle", 5, "Cloth", "carrying babies image"],
 	1: ["resource collection", "Collect Logs for Crib", 100, "Log", "swaddling babies image"]
 	}
@@ -99,12 +100,13 @@ func _on_ToggleQuestButton_pressed():
 
 
 func begin_intro_quest():
-	print("intro started")
 	$KnockTimer.start()
 
 
 func _on_KnockTimer_timeout():
-	print("Knock knock")
+	print("Knock knock") # eventually replace this with a dialogue box showing up
 	$KnockTimer.queue_free()
 	var main_node = FrogDadNode.get_parent()
-	#main_node.add_item_drop("Cloth", FrogDadNode.get_node("AnimatedSprite").global_position.x + 100,FrogDadNode.get_node("AnimatedSprite").global_position.y + 100)
+	var note_sprite = FrogDadNode.get_parent().get_node("Home/YSort/Door/Note")
+	# add the note by the door
+	note_sprite.visible = true

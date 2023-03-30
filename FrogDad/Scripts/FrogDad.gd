@@ -1,3 +1,4 @@
+class_name FrogDad
 # Code without acceleration and friction
 extends KinematicBody2D
 
