@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Info Icons/Z.png" type="Texture" id=21]
 [ext_resource path="res://Info Icons/mouse.png" type="Texture" id=22]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://main_theme.tres" type="Theme" id=24]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -203,8 +204,10 @@ margin_top = 198.889
 margin_right = 526.667
 margin_bottom = 214.889
 rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 24 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 16 )
+meta_underlined = false
 text = "Arrows to move"
 
 [node name="Return" type="TextureRect" parent="InfoButton/Info/Background"]
