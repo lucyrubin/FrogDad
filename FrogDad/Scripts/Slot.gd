@@ -36,16 +36,16 @@ func refresh_style():
 	
 func pickFromSlot():
 	remove_child(item) # remove the item image 
-	var inventoryNode = find_parent("Inventory")
+	var inventoryNode = get_tree().get_root().find_node("Inventory", true, false)
 	inventoryNode.add_child(item)
+	print("Inventory node: " , inventoryNode)
 	item = null
 	refresh_style()
 
 func putIntoSlot(new_item):
 	item = new_item
+	item.get_parent().remove_child(item)
 	item.position = Vector2(0,0)
-	var inventoryNode = find_parent("Inventory")
-	inventoryNode.remove_child(item)
 	add_child(item)
 	refresh_style()
 	

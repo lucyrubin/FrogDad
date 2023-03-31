@@ -9,6 +9,7 @@ var state = ""
 var quest_state = "swaddle"
 var sprite_image = "carrying babies"
 var velocity
+var holding_item = null
 
 export(NodePath) var inventory_path
 

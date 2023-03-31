@@ -828,6 +828,7 @@ shape = SubResource( 16 )
 
 [node name="Inventory" type="Node2D" parent="Fridge"]
 position = Vector2( -2.22222, 81.1111 )
+scale = Vector2( 3, 3 )
 script = ExtResource( 12 )
 item_list = {
 0: [ "Fly", 3 ]
@@ -838,43 +839,42 @@ margin_left = 1.11111
 margin_top = -24.4445
 margin_right = 180.111
 margin_bottom = 25.5555
-custom_constants/hseparation = -7
 columns = 4
 
 [node name="Slot1" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_right = 50.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+margin_right = 18.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
 default_tex = ExtResource( 11 )
 empty_tex = ExtResource( 19 )
 
 [node name="Slot2" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
 default_tex = ExtResource( 11 )
 empty_tex = ExtResource( 19 )
 
 [node name="Slot3" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_left = 86.0
-margin_right = 136.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
 default_tex = ExtResource( 11 )
 empty_tex = ExtResource( 19 )
 
 [node name="Slot4" type="Panel" parent="Fridge/Inventory/GridContainer"]
-margin_left = 129.0
-margin_right = 179.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+margin_left = 66.0
+margin_right = 84.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 69 )
 script = ExtResource( 18 )
 default_tex = ExtResource( 11 )

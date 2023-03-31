@@ -6,7 +6,9 @@ var in_range
 var FrogDadNode 
 
 func _ready():
-	FrogDadNode = get_parent().get_parent().get_parent().get_parent().get_node("FrogDad")
+	#FrogDadNode = get_parent().get_parent().get_parent().get_parent().get_node("FrogDad")
+	FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
+	print("Frog Dad Node: " , FrogDadNode)
 
 func _input(event):
 	if event.is_action_pressed("pickup") && in_range: 
