@@ -105,8 +105,10 @@ func begin_intro_quest():
 
 func _on_KnockTimer_timeout():
 	print("Knock knock") # eventually replace this with a dialogue box showing up
+	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	var main_node = FrogDadNode.get_parent()
 	var note_sprite = FrogDadNode.get_parent().get_node("Home/YSort/Door/Note")
 	# add the note by the door
+	
 	note_sprite.visible = true

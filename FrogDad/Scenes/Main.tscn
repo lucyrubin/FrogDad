@@ -53,19 +53,16 @@ item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
 
 [node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( -384, 157 )
 item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
 
 [node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( -649, -198 )
 item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
 
 [node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( -944, -116 )
 item_name = "Log"
 frog_dad_path = NodePath("../FrogDad")
