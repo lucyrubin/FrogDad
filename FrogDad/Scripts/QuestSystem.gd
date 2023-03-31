@@ -4,6 +4,7 @@ var frog_dad_inventory
 var frog_dad_inventory_data
 var questCompleted = false
 var QuestContainerScene = preload("res://Scenes/QuestContainer.tscn")
+var DoorScript = preload("res://Scripts/Door.gd")
 var FrogDadNode 
 var questDictionary = { 
 	# (key, value) = (integer that represents the order that the quests progress, array)
@@ -101,7 +102,10 @@ func _on_ToggleQuestButton_pressed():
 
 func begin_intro_quest():
 	$KnockTimer.start()
-
+	var door_node = FrogDadNode.get_parent().get_node("Home/YSort/Door")
+	print(door_node)
+	door_node.set_locked(true)
+	
 
 func _on_KnockTimer_timeout():
 	print("Knock knock") # eventually replace this with a dialogue box showing up

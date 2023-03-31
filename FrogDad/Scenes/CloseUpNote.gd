@@ -24,4 +24,5 @@ func _on_CloseButton_pressed():
 	toggleQuestButton.visible = true
 	toggleQuestButton.blink() # need to write this method
 	FrogDadNode.state = ""
+	FrogDadNode.get_parent().get_node("Home/YSort/Door").set_locked(false)
 	## change scene to the cut scene of the eggs
