@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -13,6 +13,15 @@
 [ext_resource path="res://Temporary Clipart/DialogueBox.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/CloseUpNote.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/ToggleQuestButton.gd" type="Script" id=13]
+[ext_resource path="res://Art/info_icon.png" type="Texture" id=14]
+[ext_resource path="res://Art/note.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/InfoButton.gd" type="Script" id=16]
+[ext_resource path="res://Info Icons/I.png" type="Texture" id=17]
+[ext_resource path="res://Info Icons/return.png" type="Texture" id=18]
+[ext_resource path="res://Info Icons/Q.png" type="Texture" id=19]
+[ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=20]
+[ext_resource path="res://Info Icons/Z.png" type="Texture" id=21]
+[ext_resource path="res://Info Icons/mouse.png" type="Texture" id=22]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -102,6 +111,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
+frame = 4
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -132,6 +142,148 @@ zoom = Vector2( 0.6, 0.6 )
 visible = false
 position = Vector2( -683.333, 250 )
 z_index = 1000
+
+[node name="InfoButton" type="TextureButton" parent="."]
+margin_left = 894.0
+margin_top = -603.0
+margin_right = 982.0
+margin_bottom = -205.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 14 )
+script = ExtResource( 16 )
+
+[node name="Info" type="Node2D" parent="InfoButton"]
+
+[node name="Background" type="TextureRect" parent="InfoButton/Info"]
+visible = false
+margin_left = -1180.0
+margin_top = -344.667
+margin_right = -796.0
+margin_bottom = 167.333
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
+
+[node name="Arrows" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 25.7778
+margin_top = 84.6667
+margin_right = 409.778
+margin_bottom = 596.667
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Arrows"]
+margin_left = 316.667
+margin_top = 198.889
+margin_right = 526.667
+margin_bottom = 214.889
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Arrows to move"
+
+[node name="Return" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 25.778
+margin_top = 117.0
+margin_right = 409.778
+margin_bottom = 629.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Return"]
+margin_left = 316.667
+margin_top = 230.0
+margin_right = 526.667
+margin_bottom = 246.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Return to enter"
+
+[node name="Mouse" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 25.778
+margin_top = 152.444
+margin_right = 409.778
+margin_bottom = 664.444
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Mouse"]
+margin_left = 316.667
+margin_top = 230.0
+margin_right = 526.667
+margin_bottom = 246.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Arrow to open"
+
+[node name="I key" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 25.778
+margin_top = 182.444
+margin_right = 409.778
+margin_bottom = 694.444
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/I key"]
+margin_left = 316.667
+margin_top = 230.0
+margin_right = 526.667
+margin_bottom = 246.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "I to open inventory"
+
+[node name="Z key" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 25.778
+margin_top = 207.444
+margin_right = 409.778
+margin_bottom = 719.444
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Z key"]
+margin_left = 316.667
+margin_top = 230.0
+margin_right = 526.667
+margin_bottom = 246.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Z to pick up"
+
+[node name="Q key" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 25.778
+margin_top = 232.444
+margin_right = 409.778
+margin_bottom = 744.444
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Q key"]
+margin_left = 316.667
+margin_top = 230.0
+margin_right = 526.667
+margin_bottom = 246.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Q to drop
+"
+scroll_active = false
 
 [node name="CloseUpNote" type="TextureRect" parent="."]
 visible = false
@@ -186,5 +338,6 @@ item_list = {
 
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]
+[connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
 [connection signal="pressed" from="CloseUpNote/CloseButton" to="CloseUpNote" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
