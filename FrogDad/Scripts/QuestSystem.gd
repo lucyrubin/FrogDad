@@ -80,25 +80,26 @@ func collectResourceQuest(quest, amountRequired, itemType):
 
 
 func _on_ToggleQuestButton_pressed():
-	visible = !visible
-	if visible:
-		# add all current quests to the GUI
-		for quest in currentQuestArray:
-			if quest[0] == "resource collection":
-				collectResourceQuest(quest[1], quest[2], quest[3])
-		
-		if currentQuestArray.empty():
-			var noQuestLabel = Label.new()
-			noQuestLabel.text = "No active quests."
-			$VBoxContainer.add_child(noQuestLabel)
+	if !infoButtonOpen:
+		visible = !visible
+		if visible:
+			# add all current quests to the GUI
+			for quest in currentQuestArray:
+				if quest[0] == "resource collection":
+					collectResourceQuest(quest[1], quest[2], quest[3])
 			
-		FrogDadNode.state = "Quest"
-	else:
-		# remove all quests from the GUI
-		for child in $VBoxContainer.get_children():
-			child.queue_free()
-		
-		FrogDadNode.state = ""
+			if currentQuestArray.empty():
+				var noQuestLabel = Label.new()
+				noQuestLabel.text = "No active quests."
+				$VBoxContainer.add_child(noQuestLabel)
+				
+			FrogDadNode.state = "Quest"
+		else:
+			# remove all quests from the GUI
+			for child in $VBoxContainer.get_children():
+				child.queue_free()
+			
+			FrogDadNode.state = ""
 
 
 func begin_intro_quest():
@@ -120,7 +121,7 @@ func _on_KnockTimer_timeout():
 
 
 func _on_InfoButton_pressed():
-	if infoButtonOpen:
+	if infoButtonOpen && !visible:
 		infoButtonOpen = false
-	else:
+	elif !visible && !infoButtonOpen:
 		infoButtonOpen = true
