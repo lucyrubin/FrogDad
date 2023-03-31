@@ -1,6 +1,7 @@
 extends TextureButton
 
 var FrogDadNode
+var questButtonOpen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,9 +14,17 @@ func _ready():
 #	pass
 
 func _on_InfoButton_pressed():
-	if $Info/Background.visible == false:
-		$Info/Background.visible = true;
-		FrogDadNode.state = "Info"
+	if !questButtonOpen:
+		if $Info/Background.visible == false:
+			$Info/Background.visible = true;
+			FrogDadNode.state = "Info"
+		else:
+			$Info/Background.visible = false;
+			FrogDadNode.state = ""
+
+
+func _on_ToggleQuestButton_pressed():
+	if questButtonOpen:
+		questButtonOpen = false
 	else:
-		$Info/Background.visible = false;
-		FrogDadNode.state = ""
+		questButtonOpen = true

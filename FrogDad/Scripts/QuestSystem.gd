@@ -6,6 +6,7 @@ var questCompleted = false
 var QuestContainerScene = preload("res://Scenes/QuestContainer.tscn")
 var DoorScript = preload("res://Scripts/Door.gd")
 var FrogDadNode 
+var infoButtonOpen
 var questDictionary = { 
 	# (key, value) = (integer that represents the order that the quests progress, array)
 	# resource collection quest array template: ["resource collection", "quest name", number of item required, "item name", "sprite image path"]
@@ -79,25 +80,26 @@ func collectResourceQuest(quest, amountRequired, itemType):
 
 
 func _on_ToggleQuestButton_pressed():
-	visible = !visible
-	if visible:
-		# add all current quests to the GUI
-		for quest in currentQuestArray:
-			if quest[0] == "resource collection":
-				collectResourceQuest(quest[1], quest[2], quest[3])
-		
-		if currentQuestArray.empty():
-			var noQuestLabel = Label.new()
-			noQuestLabel.text = "No active quests."
-			$VBoxContainer.add_child(noQuestLabel)
+	if !infoButtonOpen:
+		visible = !visible
+		if visible:
+			# add all current quests to the GUI
+			for quest in currentQuestArray:
+				if quest[0] == "resource collection":
+					collectResourceQuest(quest[1], quest[2], quest[3])
 			
-		FrogDadNode.state = "Quest"
-	else:
-		# remove all quests from the GUI
-		for child in $VBoxContainer.get_children():
-			child.queue_free()
-		
-		FrogDadNode.state = ""
+			if currentQuestArray.empty():
+				var noQuestLabel = Label.new()
+				noQuestLabel.text = "No active quests."
+				$VBoxContainer.add_child(noQuestLabel)
+				
+			FrogDadNode.state = "Quest"
+		else:
+			# remove all quests from the GUI
+			for child in $VBoxContainer.get_children():
+				child.queue_free()
+			
+			FrogDadNode.state = ""
 
 
 func begin_intro_quest():
@@ -116,3 +118,10 @@ func _on_KnockTimer_timeout():
 	# add the note by the door
 	
 	note_sprite.visible = true
+
+
+func _on_InfoButton_pressed():
+	if infoButtonOpen:
+		infoButtonOpen = false
+	else:
+		infoButtonOpen = true

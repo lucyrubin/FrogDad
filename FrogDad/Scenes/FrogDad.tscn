@@ -111,7 +111,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 4
+frame = 3
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -143,6 +143,23 @@ visible = false
 position = Vector2( -683.333, 250 )
 z_index = 1000
 
+[node name="CloseUpNote" type="TextureRect" parent="."]
+visible = false
+margin_left = -490.0
+margin_top = -281.0
+margin_right = -148.0
+margin_bottom = -83.0
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 11 )
+script = ExtResource( 12 )
+
+[node name="CloseButton" type="Button" parent="CloseUpNote"]
+margin_left = 298.4
+margin_top = 16.4
+margin_right = 320.4
+margin_bottom = 36.4
+text = "X"
+
 [node name="InfoButton" type="TextureButton" parent="."]
 margin_left = 894.0
 margin_top = -603.0
@@ -153,6 +170,7 @@ texture_normal = ExtResource( 14 )
 script = ExtResource( 16 )
 
 [node name="Info" type="Node2D" parent="InfoButton"]
+z_index = 1000
 
 [node name="Background" type="TextureRect" parent="InfoButton/Info"]
 visible = false
@@ -285,23 +303,6 @@ text = "Q to drop
 "
 scroll_active = false
 
-[node name="CloseUpNote" type="TextureRect" parent="."]
-visible = false
-margin_left = -490.0
-margin_top = -281.0
-margin_right = -148.0
-margin_bottom = -83.0
-rect_scale = Vector2( 3, 3 )
-texture = ExtResource( 11 )
-script = ExtResource( 12 )
-
-[node name="CloseButton" type="Button" parent="CloseUpNote"]
-margin_left = 298.4
-margin_top = 16.4
-margin_right = 320.4
-margin_bottom = 36.4
-text = "X"
-
 [node name="ToggleQuestButton" type="TextureButton" parent="."]
 visible = false
 anchor_left = 0.5
@@ -338,6 +339,8 @@ item_list = {
 
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]
-[connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
 [connection signal="pressed" from="CloseUpNote/CloseButton" to="CloseUpNote" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
+[connection signal="pressed" from="InfoButton" to="ToggleQuestButton/Quest" method="_on_InfoButton_pressed"]
+[connection signal="pressed" from="ToggleQuestButton" to="InfoButton" method="_on_ToggleQuestButton_pressed"]
 [connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
