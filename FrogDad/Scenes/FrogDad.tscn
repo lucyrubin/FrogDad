@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -99,6 +99,9 @@ extents = Vector2( 166, 322.5 )
 size = 31
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 23 )
+
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 23 )
 
@@ -117,7 +120,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 1
+frame = 3
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -166,11 +169,27 @@ margin_right = 320.4
 margin_bottom = 36.4
 text = "X"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="CloseUpNote"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -143.5
+margin_top = -68.5
+margin_right = 143.5
+margin_bottom = 68.5
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 17 )
+text = "heyyyy - 
+here are some babies. 
+please take care of them!!!"
+scroll_active = false
+
 [node name="InfoButton" type="TextureButton" parent="."]
 margin_left = 894.0
 margin_top = -603.0
 margin_right = 982.0
-margin_bottom = -205.0
+margin_bottom = -511.0
 rect_scale = Vector2( 1.5, 1.5 )
 texture_normal = ExtResource( 14 )
 script = ExtResource( 16 )
@@ -209,6 +228,7 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 16 )
 meta_underlined = false
 text = "Arrows to move"
+scroll_active = false
 
 [node name="Return" type="TextureRect" parent="InfoButton/Info/Background"]
 margin_left = 25.778
@@ -313,7 +333,6 @@ text = "Q to drop
 scroll_active = false
 
 [node name="ToggleQuestButton" type="TextureButton" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -321,7 +340,7 @@ anchor_bottom = 0.5
 margin_left = 666.0
 margin_top = -589.0
 margin_right = 1178.0
-margin_bottom = 1744.0
+margin_bottom = -20.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture_normal = ExtResource( 6 )
 script = ExtResource( 13 )

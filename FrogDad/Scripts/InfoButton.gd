@@ -5,7 +5,7 @@ var questButtonOpen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	FrogDadNode = get_parent()
+	FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
 	$Info/Background.visible = false
 
 

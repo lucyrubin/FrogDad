@@ -6,8 +6,6 @@ export var speed = 300
 
 var screen_size
 var state = ""
-var quest_state = "swaddle"
-var sprite_image = "carrying babies"
 var velocity
 var holding_item = null
 
@@ -18,7 +16,7 @@ func _ready():
 func getInventoryNode():
 	return $UserInterface/Inventory
 func _physics_process(delta):
-	$QuestLabel.text = "Current quest: " + quest_state + " \nSprite image: " + sprite_image
+	$QuestLabel.text = "Current quest: " + MasterScript.quest_state + " \nSprite image: " + MasterScript.sprite_image
 	velocity = Vector2.ZERO
 	if state == "": # move as long as dialogue and inventory aren't active
 		if Input.is_action_pressed("move_down"):
@@ -35,7 +33,8 @@ func _physics_process(delta):
 			$AnimatedSprite.play()
 		else:
 			$AnimatedSprite.stop()
-	
+	else: 
+		$AnimatedSprite.stop()
 		
 	var _collision = move_and_collide(velocity*delta)
 

@@ -116,6 +116,14 @@ func update_slot_visual(slot_index, item_name, new_quantity):
 	else:
 		slot.initialize_item(item_name, new_quantity)
 
+func removeItems(numItems, itemType):
+	for item in inventory_data.inventory:
+		if inventory_data.inventory[item][0] == itemType:	
+			inventory_data.inventory[item][1] -= numItems
+			update_slot_visual(item, inventory_data.inventory[item][0], inventory_data.inventory[item][1])
+				
+			
+
 ### drop is not being used right now
 func drop():
 	if frog_dad.holding_item: 

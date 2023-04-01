@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Art/sinkHover.png" type="Texture" id=24]
 [ext_resource path="res://Temporary Clipart/DialogueBox.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/Note.gd" type="Script" id=26]
+[ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=27]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -689,6 +690,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 107.5, 38.75 )
 
+[sub_resource type="DynamicFont" id=102]
+size = 50
+font_data = ExtResource( 27 )
+
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 3050, 1500 )
 
@@ -1050,9 +1055,6 @@ shape = SubResource( 38 )
 position = Vector2( 493, -473 )
 collision_layer = 2
 script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Door"]
 scale = Vector2( 0.950521, 0.960938 )
@@ -1065,14 +1067,30 @@ shape = SubResource( 70 )
 
 [node name="Note" type="Area2D" parent="YSort/Door"]
 visible = false
-position = Vector2( -2, 172 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( -37, 177 )
+scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="TextureRect" type="TextureRect" parent="YSort/Door/Note"]
 margin_right = 342.0
 margin_bottom = 198.0
 texture = ExtResource( 25 )
+
+[node name="Label" type="Label" parent="YSort/Door/Note/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -129.0
+margin_top = -35.0
+margin_right = 129.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 102 )
+text = "READ ME"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/Note"]
 position = Vector2( 165, 100 )

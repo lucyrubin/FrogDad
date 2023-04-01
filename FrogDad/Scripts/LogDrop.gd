@@ -12,7 +12,7 @@ var being_picked_up = false
 var FrogDadScene = load("res://Scenes/FrogDad.tscn")
 export(NodePath) var frog_dad_path
 #onready var inventory_node = get_node(frog_dad_path).getInventoryNode()
-onready var inventory_node = get_parent().get_node("FrogDad/UserInterface/Inventory")
+onready var inventory_node = get_tree().get_root().find_node("Inventory", true, false)
 
 func pick_up_item(body):
 	player = body
@@ -28,7 +28,6 @@ func get_sprite():
 #		queue_free()
 
 func _ready():
-#	print(get_parent().get_node("FrogDad/UserInterface/Inventory"))
 	#$Sprite.z_index = $Sprite.position.y #default setup
 	if(item_name == null):
 		item_name = "Log"

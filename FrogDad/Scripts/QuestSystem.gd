@@ -2,41 +2,35 @@ extends Node2D
 
 var frog_dad_inventory
 var frog_dad_inventory_data
-var questCompleted = false
 var QuestContainerScene = preload("res://Scenes/QuestContainer.tscn")
 var DoorScript = preload("res://Scripts/Door.gd")
 var FrogDadNode 
 var infoButtonOpen
-var questDictionary = { 
-	# (key, value) = (integer that represents the order that the quests progress, array)
-	# resource collection quest array template: ["resource collection", "quest name", number of item required, "item name", "sprite image path"]
-	
-	0: ["resource collection", "Make a Swaddle", 5, "Cloth", "carrying babies image"],
-	1: ["resource collection", "Collect Logs for Crib", 100, "Log", "swaddling babies image"]
-	}
 
-var currentQuestNum = 0
-var currentQuestArray = [questDictionary[0]]
+
+
 export (NodePath) var inventory_path
 
 func _ready():
-	FrogDadNode = get_parent().get_parent()
+	FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
 	frog_dad_inventory = get_node(inventory_path)
 	frog_dad_inventory_data = frog_dad_inventory.inventory_data
 	
-	begin_intro_quest()
+	if MasterScript.currentQuestNum == -1 :
+		begin_intro_quest()
 
 func deleteQuest(SubQuest, QuestName):
-	# remove quest from currentQuestArray
-	currentQuestArray.remove(0) # if we have concurrent requests this should be changed to currentQuestNum, not totally sure what else we would need to change though
-	print(currentQuestArray)
-	if questDictionary.size() > currentQuestNum + 1:
-		currentQuestNum+=1
-		currentQuestArray.append(questDictionary[currentQuestNum])
+	# remove quest from MasterScript.currentQuestArray
+	print(MasterScript.currentQuestArray[0])
+	frog_dad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
+	MasterScript.currentQuestArray.remove(0) # if we have concurrent requests this should be changed to MasterScript.currentQuestNum, not totally sure what else we would need to change though
+	if MasterScript.questDictionary.size() > MasterScript.currentQuestNum + 1:
+		MasterScript.currentQuestNum+=1
+		MasterScript.currentQuestArray.append(MasterScript.questDictionary[MasterScript.currentQuestNum])
 
 		# for testing: show the quest and sprite image as labels
-		FrogDadNode.quest_state = currentQuestArray[0][1]
-		FrogDadNode.sprite_image = currentQuestArray[0][4]
+		MasterScript.quest_state = MasterScript.currentQuestArray[0][1]
+		MasterScript.sprite_image = MasterScript.currentQuestArray[0][4]
 	
 	# remove quest from GUI
 	SubQuest.queue_free()
@@ -84,11 +78,11 @@ func _on_ToggleQuestButton_pressed():
 		visible = !visible
 		if visible:
 			# add all current quests to the GUI
-			for quest in currentQuestArray:
+			for quest in MasterScript.currentQuestArray:
 				if quest[0] == "resource collection":
 					collectResourceQuest(quest[1], quest[2], quest[3])
 			
-			if currentQuestArray.empty():
+			if MasterScript.currentQuestArray.empty():
 				var noQuestLabel = Label.new()
 				noQuestLabel.text = "No active quests."
 				$VBoxContainer.add_child(noQuestLabel)
@@ -104,9 +98,9 @@ func _on_ToggleQuestButton_pressed():
 
 func begin_intro_quest():
 	$KnockTimer.start()
-	var door_node = FrogDadNode.get_parent().get_node("Home/YSort/Door")
-	print(door_node)
+	var door_node = get_tree().get_root().find_node("Door", true, false)
 	door_node.set_locked(true)
+	get_parent().visible = false
 	
 
 func _on_KnockTimer_timeout():
@@ -116,8 +110,8 @@ func _on_KnockTimer_timeout():
 	var main_node = FrogDadNode.get_parent()
 	var note_sprite = FrogDadNode.get_parent().get_node("Home/YSort/Door/Note")
 	# add the note by the door
-	
 	note_sprite.visible = true
+	
 
 
 func _on_InfoButton_pressed():
