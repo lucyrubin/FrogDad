@@ -1,16 +1,15 @@
 extends KinematicBody2D
-
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 
-var velocity = Vector2.ZERO
 export(String) var item_name
 
+var velocity = Vector2.ZERO
 var player = null
 var being_picked_up = false
 
 #Specifies which inventory item is added to
 var FrogDadScene = load("res://Scenes/FrogDad.tscn")
-export(NodePath) var frog_dad_path
+export(NodePath) var FrogDad_path
 onready var inventory_node = get_tree().get_root().find_node("Inventory", true, false)
 
 func _ready():

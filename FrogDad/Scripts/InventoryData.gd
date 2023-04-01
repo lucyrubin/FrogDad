@@ -1,16 +1,14 @@
 class_name InventoryData
 extends Node
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
+
 const SlotClass = preload("res://Scripts/Slot.gd")
 const ItemClass = preload("res://Scripts/Item.gd")
 const LogDropClass = preload("res://Scripts/LogDrop.gd")
+
 var NUM_INVENTORY_SLOTS
 
-var inventory = {
-#	0: ["Fly", 1], # slot_index: [item_name, item_quantity]
-#	1: ["Log", 98],
-#	2: ["Cloth", 4]
-}
+var inventory = {}
 
 func setup(slots_num, item_list):
 	NUM_INVENTORY_SLOTS = slots_num

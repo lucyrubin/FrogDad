@@ -23,7 +23,6 @@ func _on_Fridge_mouse_entered():
 	$AnimatedSprite.animation = "hover"
 	$AnimatedSprite.set_frame(current_fram)
 
-
 func _on_Fridge_mouse_exited():
 	$AnimatedSprite.animation = "default"
 	$AnimatedSprite.set_frame(current_fram)

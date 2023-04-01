@@ -1,30 +1,24 @@
 extends TextureButton
 
-var FrogDadNode
-var questButtonOpen
+var FrogDad
+var quest_button_open
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
+	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	$Info/Background.visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _on_InfoButton_pressed():
-	if !questButtonOpen:
+	if !quest_button_open:
 		if $Info/Background.visible == false:
 			$Info/Background.visible = true;
-			FrogDadNode.state = "Info"
+			FrogDad.state = "Info"
 		else:
 			$Info/Background.visible = false;
-			FrogDadNode.state = ""
-
+			FrogDad.state = ""
 
 func _on_ToggleQuestButton_pressed():
-	if questButtonOpen:
-		questButtonOpen = false
+	if quest_button_open:
+		quest_button_open = false
 	else:
-		questButtonOpen = true
+		quest_button_open = true

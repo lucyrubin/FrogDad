@@ -1,6 +1,7 @@
 extends Area2D
 
 export (PackedScene) var target_scene = load("res://Scenes/Outdoors.tscn")
+
 var door_opened = false
 var current_fram = 0
 var num_frames = 2
@@ -39,4 +40,3 @@ func _on_Door_area_exited(area):
 		door_opened = false
 		current_fram = 0#(current_fram-1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
-	

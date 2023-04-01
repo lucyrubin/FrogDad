@@ -1,14 +1,16 @@
 extends Node2D
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 const SlotClass = preload("res://Scripts/Slot.gd")
+
+export (Dictionary) var item_list
+
+onready var inventory_slots = $GridContainer
 var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
 var LogDropScene = preload("res://Scenes/LogDrop.tscn")
-onready var inventory_slots = $GridContainer
 var inventory_open = false
 var mouse_in_inventory = false
 var inventory_data = InventoryData.new()
-var frog_dad
-export (Dictionary) var item_list
+var FrogDad
 
 func _ready():
 	var slots = inventory_slots.get_children()
@@ -20,7 +22,7 @@ func _ready():
 		slots[i].slot_index = i
 	initialize_inventory()
 	
-	frog_dad = get_tree().get_root().find_node("FrogDad", true, false)
+	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
@@ -33,11 +35,11 @@ func initialize_inventory():
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton: 
 		if event.button_index == BUTTON_LEFT && event.pressed: 
-			if frog_dad.holding_item != null: # if currently holding an item
+			if FrogDad.holding_item != null: # if currently holding an item
 				if !slot.item: # if empty slot, place holding item to slot
 					left_click_empty_slot(slot)
 				else: # else, slot already has an item
-					if frog_dad.holding_item.item_name != slot.item.item_name: # the items are different, so swap them
+					if FrogDad.holding_item.item_name != slot.item.item_name: # the items are different, so swap them
 						left_click_different_item(event, slot)
 					else: #same item, so try to merge them
 						left_click_same_item(slot)
@@ -47,45 +49,45 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 # warning-ignore:unused_argument
 func _input(event):
 	# make the item that is being held follow the mouse
-	if frog_dad.holding_item:
-		frog_dad.holding_item.position = get_global_mouse_position()
-		frog_dad.holding_item.z_index = 4090
-		print("frog_dad.holding_item.global_position",frog_dad.holding_item.global_position)
-		print("frog_dad.holding_item.z_index", frog_dad.holding_item.z_index)
+	if FrogDad.holding_item:
+		FrogDad.holding_item.position = get_global_mouse_position()
+		FrogDad.holding_item.z_index = 4090
+		print("FrogDad.holding_item.global_position",FrogDad.holding_item.global_position)
+		print("FrogDad.holding_item.z_index", FrogDad.holding_item.z_index)
 		print("get_global_mouse_position()", get_global_mouse_position())
 
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
-	inventory_data.add_item_to_empty_slot(frog_dad.holding_item, slot)
-	slot.putIntoSlot(frog_dad.holding_item)
-	frog_dad.holding_item = null
+	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
+	slot.put_into_slot(FrogDad.holding_item)
+	FrogDad.holding_item = null
 	
 func left_click_different_item(event: InputEvent, slot: SlotClass): # swap items
 	inventory_data.remove_item(slot)
-	inventory_data.add_item_to_empty_slot(frog_dad.holding_item, slot)
+	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
 	var temp_item = slot.item
-	slot.pickFromSlot()
+	slot.pick_from_slot()
 	temp_item.global_position = event.global_position
-	slot.putIntoSlot(frog_dad.holding_item)
-	frog_dad.holding_item = temp_item
+	slot.put_into_slot(FrogDad.holding_item)
+	FrogDad.holding_item = temp_item
 	
 func left_click_same_item(slot: SlotClass):
 	var stack_size = int(JsonData.item_data[slot.item.item_name]["StackSize"]) # get the stack size for the item
 	var able_to_add = stack_size - slot.item.item_quantity # calculate how much more can fit in the slot
-	if able_to_add >= frog_dad.holding_item.item_quantity: # if there is enough room to add all of the stuff you are holding
-		inventory_data.add_item_quantity(slot, frog_dad.holding_item.item_quantity)
-		slot.item.add_item_quantity(frog_dad.holding_item.item_quantity)
-		frog_dad.holding_item.queue_free() # get rid of what you are holding
-		frog_dad.holding_item = null
+	if able_to_add >= FrogDad.holding_item.item_quantity: # if there is enough room to add all of the stuff you are holding
+		inventory_data.add_item_quantity(slot, FrogDad.holding_item.item_quantity)
+		slot.item.add_item_quantity(FrogDad.holding_item.item_quantity)
+		FrogDad.holding_item.queue_free() # get rid of what you are holding
+		FrogDad.holding_item = null
 	else : # if there is not enough room in the slot for everything that you are holding
 		inventory_data.add_item_quantity(slot, able_to_add)
 		slot.item.add_item_quantity(able_to_add) # add as much as you can
-		frog_dad.holding_item.decrease_item_quantity(able_to_add) # leave whatever is left over in your hand
+		FrogDad.holding_item.decrease_item_quantity(able_to_add) # leave whatever is left over in your hand
 
-func left_click_not_holding(slot: SlotClass): # remove item from slot and make it the frog_dad.holding_item
+func left_click_not_holding(slot: SlotClass): # remove item from slot and make it the FrogDad.holding_item
 	inventory_data.remove_item(slot)
-	frog_dad.holding_item = slot.item
-	slot.pickFromSlot()
-	frog_dad.holding_item.position = get_global_mouse_position()	
+	FrogDad.holding_item = slot.item
+	slot.pick_from_slot()
+	FrogDad.holding_item.position = get_global_mouse_position()	
 
 # Used from ItemDrop
 func add_item(item_name, item_quantity):
@@ -126,14 +128,13 @@ func removeItems(numItems, itemType):
 
 ### drop is not being used right now
 func drop():
-	if frog_dad.holding_item: 
+	if FrogDad.holding_item: 
 		var dropped_item = ItemDropClass.instance()
-		var quantity = frog_dad.holding_item.item_quantity - 1
-		frog_dad.holding_item.item_quantity = quantity
-		frog_dad.holding_item.label.text = str(quantity)
-		dropped_item.item_name = frog_dad.holding_item.item_name
+		var quantity = FrogDad.holding_item.item_quantity - 1
+		FrogDad.holding_item.item_quantity = quantity
+		FrogDad.holding_item.label.text = str(quantity)
+		dropped_item.item_name = FrogDad.holding_item.item_name
 		if quantity == 0:
-			frog_dad.holding_item.queue_free()
-			frog_dad.holding_item = null
+			FrogDad.holding_item.queue_free()
+			FrogDad.holding_item = null
 		return dropped_item
-	

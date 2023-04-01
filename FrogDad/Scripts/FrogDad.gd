@@ -3,13 +3,12 @@ class_name FrogDad
 extends KinematicBody2D
 
 export var speed = 300
+export(NodePath) var inventory_path
 
 var screen_size
 var state = ""
 var velocity
 var holding_item = null
-
-export(NodePath) var inventory_path
 
 func _ready():
 	screen_size = get_viewport_rect().size

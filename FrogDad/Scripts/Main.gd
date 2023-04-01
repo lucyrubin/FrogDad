@@ -4,8 +4,6 @@ const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
 const LogDropScene = preload("res://Scenes/LogDrop.tscn")
 
-
-
 func _process(delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 
 	#$BabyGertrude.z_index = $BabyGertrude.position.y - 60# behind things lower on the screen

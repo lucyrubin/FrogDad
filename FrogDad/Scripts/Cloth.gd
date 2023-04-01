@@ -1,17 +1,16 @@
 extends KinematicBody2D
-
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 
 const ACCELERATION = 460
 const MAX_SPEED = 225
-var velocity = Vector2.ZERO
-#var item_name
-
-var player = null
-var being_picked_up = false
 
 export(String) var item_name
 export(NodePath) var inventory_path
+
+#var item_name
+var velocity = Vector2.ZERO
+var player = null
+var being_picked_up = false
 onready var inventory_node = get_node(inventory_path)
 
 func _ready():

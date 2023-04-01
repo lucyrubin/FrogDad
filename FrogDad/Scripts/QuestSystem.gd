@@ -1,20 +1,18 @@
 extends Node2D
 
-var frog_dad_inventory
-var frog_dad_inventory_data
+var FrogDad_inventory
+var FrogDad_inventory_data
 var QuestContainerScene = preload("res://Scenes/QuestContainer.tscn")
 var DoorScript = preload("res://Scripts/Door.gd")
-var FrogDadNode 
-var infoButtonOpen
-
-
+var FrogDad 
+var info_button_open
 
 export (NodePath) var inventory_path
 
 func _ready():
-	FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
-	frog_dad_inventory = get_node(inventory_path)
-	frog_dad_inventory_data = frog_dad_inventory.inventory_data
+	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
+	FrogDad_inventory = get_node(inventory_path)
+	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
 	if MasterScript.currentQuestNum == -1 :
 		begin_intro_quest()
@@ -22,7 +20,7 @@ func _ready():
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from MasterScript.currentQuestArray
 	print(MasterScript.currentQuestArray[0])
-	frog_dad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
+	FrogDad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
 	MasterScript.currentQuestArray.remove(0) # if we have concurrent requests this should be changed to MasterScript.currentQuestNum, not totally sure what else we would need to change though
 	if MasterScript.questDictionary.size() > MasterScript.currentQuestNum + 1:
 		MasterScript.currentQuestNum+=1
@@ -58,9 +56,9 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	
 	# count up the amount of the item in the inventory
 	var totalItem = 0
-	for item in frog_dad_inventory_data.inventory:
-		if frog_dad_inventory_data.inventory[item][0] == itemType:
-			totalItem += frog_dad_inventory_data.inventory[item][1]
+	for item in FrogDad_inventory_data.inventory:
+		if FrogDad_inventory_data.inventory[item][0] == itemType:
+			totalItem += FrogDad_inventory_data.inventory[item][1]
 	
 	# update GUI based on amount in inventory
 	SubQuest.get_node("Label").text = "Collect " + str(amountRequired) + " " + str(itemType) + "s: \n" + str(totalItem) + "/" + str(amountRequired) 
@@ -74,7 +72,7 @@ func collectResourceQuest(quest, amountRequired, itemType):
 
 
 func _on_ToggleQuestButton_pressed():
-	if !infoButtonOpen:
+	if !info_button_open:
 		visible = !visible
 		if visible:
 			# add all current quests to the GUI
@@ -87,13 +85,13 @@ func _on_ToggleQuestButton_pressed():
 				noQuestLabel.text = "No active quests."
 				$VBoxContainer.add_child(noQuestLabel)
 				
-			FrogDadNode.state = "Quest"
+			FrogDad.state = "Quest"
 		else:
 			# remove all quests from the GUI
 			for child in $VBoxContainer.get_children():
 				child.queue_free()
 			
-			FrogDadNode.state = ""
+			FrogDad.state = ""
 
 
 func begin_intro_quest():
@@ -107,15 +105,13 @@ func _on_KnockTimer_timeout():
 	print("Knock knock") # eventually replace this with a dialogue box showing up
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
-	var main_node = FrogDadNode.get_parent()
-	var note_sprite = FrogDadNode.get_parent().get_node("Home/YSort/Door/Note")
+	var main_node = FrogDad.get_parent()
+	var note_sprite = FrogDad.get_parent().get_node("Home/YSort/Door/Note")
 	# add the note by the door
 	note_sprite.visible = true
-	
-
 
 func _on_InfoButton_pressed():
-	if infoButtonOpen && !visible:
-		infoButtonOpen = false
-	elif !visible && !infoButtonOpen:
-		infoButtonOpen = true
+	if info_button_open && !visible:
+		info_button_open = false
+	elif !visible && !info_button_open:
+		info_button_open = true
