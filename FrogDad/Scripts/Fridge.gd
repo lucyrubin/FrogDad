@@ -2,9 +2,11 @@ extends Area2D
 
 var current_fram = 0
 var num_frames = 2
-
+onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
+onready var fridge_inventory_node = get_tree().get_root().find_node("FridgeInventory",true, false)
+onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
 func _ready():
-	$Inventory.visible = false
+	fridge_inventory_node.visible = false
 	$AnimatedSprite.animation = "default"
 
 func _on_Fridge_input_event(viewport, event, shape_idx):
@@ -14,9 +16,13 @@ func _on_Fridge_input_event(viewport, event, shape_idx):
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
-			$Inventory.visible = true
+			fridge_inventory_node.visible = true
+			user_interface_node.visible = true
+			frogdad_node.state = "Inventory"
 		else:
-			$Inventory.visible = false
+			fridge_inventory_node.visible = false
+			user_interface_node.visible = false
+			frogdad_node.state = ""
 
 
 func _on_Fridge_mouse_entered():

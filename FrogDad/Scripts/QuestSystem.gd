@@ -4,6 +4,7 @@ var FrogDad_inventory
 var FrogDad_inventory_data
 var QuestContainerScene = preload("res://Scenes/QuestContainer.tscn")
 var DoorScript = preload("res://Scripts/Door.gd")
+var KeyIndicatorScene = preload("res://Scenes/KeyIndicator.tscn")
 var FrogDad 
 var info_button_open
 
@@ -109,6 +110,7 @@ func _on_KnockTimer_timeout():
 	var note_sprite = FrogDad.get_parent().get_node("Home/YSort/Door/Note")
 	# add the note by the door
 	note_sprite.visible = true
+	
 
 func _on_InfoButton_pressed():
 	if info_button_open && !visible:

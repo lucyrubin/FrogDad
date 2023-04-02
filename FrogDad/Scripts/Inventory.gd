@@ -52,9 +52,7 @@ func _input(event):
 	if FrogDad.holding_item:
 		FrogDad.holding_item.position = get_global_mouse_position()
 		FrogDad.holding_item.z_index = 4090
-		print("FrogDad.holding_item.global_position",FrogDad.holding_item.global_position)
-		print("FrogDad.holding_item.z_index", FrogDad.holding_item.z_index)
-		print("get_global_mouse_position()", get_global_mouse_position())
+		
 
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
 	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
