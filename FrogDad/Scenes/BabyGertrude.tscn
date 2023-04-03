@@ -76,7 +76,7 @@ size = 37
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 173, 158.5 )
+extents = Vector2( 142, 126.5 )
 
 [node name="BabyGertrude" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -122,8 +122,7 @@ one_shot = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2( -7, 17.5 )
+position = Vector2( -1, 6.5 )
 shape = SubResource( 12 )
 
 [connection signal="timeout" from="Speech/Timer" to="." method="_on_Timer_timeout"]
