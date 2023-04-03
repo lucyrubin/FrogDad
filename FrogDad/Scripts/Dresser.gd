@@ -9,10 +9,10 @@ func _ready():
 	dresser_inventory_node.visible = false
 	$AnimatedSprite.animation = "default"
 
-func _on_Dresser_input_event(viewport, event, shape_idx):
+func _on_Dresser_input_event(viewport, event, shape_idx):	
 	if event is InputEventMouseButton \
-	and event.button_index == BUTTON_LEFT \
-	and event.pressed:
+	and event.button_index == BUTTON_LEFT: #\
+	#and event.pressed:
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
@@ -24,6 +24,14 @@ func _on_Dresser_input_event(viewport, event, shape_idx):
 			user_interface_node.visible = false
 			frogdad_node.state = ""
 
+func _input(event):
+	# if escape is pressed and open, then close it all
+	if event.is_action_pressed("escape") and current_fram == 1:
+		dresser_inventory_node.visible = false
+		user_interface_node.visible = false
+		frogdad_node.state = ""
+		current_fram = (current_fram + 1) % num_frames
+		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_mouse_entered():
 	$AnimatedSprite.animation = "hover"

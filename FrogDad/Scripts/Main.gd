@@ -9,14 +9,14 @@ func _process(delta):
 	#$BabyGertrude.z_index = $BabyGertrude.position.y - 60# behind things lower on the screen
 	#NEEDS TO BE UNCOMMENTED
 func _input(event):
-	if event.is_action_pressed("talk")&&  $BabyGertrude/Speech.visible && !$FrogDad/DialogueBox.visible: # when A is pressed, open the dialogue box
-		toggle_dialogue_box_visibility()
-		$FrogDad.state = "dialogue"
-		$FrogDad/AnimatedSprite.stop()
-		$BabyGertrude/Speech.visible = false
-	if event.is_action_pressed("close_dialogue") && $FrogDad/DialogueBox.visible: # when Enter is pressed, close the dialogue box
-		toggle_dialogue_box_visibility()
-		$FrogDad.state = ""
+#	if event.is_action_pressed("talk")&&  $BabyGertrude/Speech.visible && !$FrogDad/DialogueBox.visible: # when A is pressed, open the dialogue box
+#		toggle_dialogue_box_visibility()
+#		$FrogDad.state = "dialogue"
+#		$FrogDad/AnimatedSprite.stop()
+#		#$BabyGertrude/Speech.visible = false
+#	if event.is_action_pressed("close_dialogue") && $FrogDad/DialogueBox.visible: # when Enter is pressed, close the dialogue box
+#		toggle_dialogue_box_visibility()
+#		$FrogDad.state = ""
 	if event.is_action_pressed("inventory") && $FrogDad.state == "": # if not doing anything, and inventory is pressed, open the inventory
 		$FrogDad/UserInterface.open_inventory()
 		$FrogDad/UserInterface.visible = true
