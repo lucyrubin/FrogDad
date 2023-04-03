@@ -10,7 +10,7 @@
 [ext_resource path="res://Scripts/ItemDrop.gd" type="Script" id=11]
 
 [node name="Main" type="Node2D"]
-position = Vector2( -1, -2 )
+position = Vector2( 47, -4 )
 script = ExtResource( 2 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
@@ -41,7 +41,7 @@ margin_bottom = 472.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="BabyGertrude" parent="." instance=ExtResource( 4 )]
-position = Vector2( -961, -256 )
+position = Vector2( 93, -160 )
 __meta__ = {
 "_edit_group_": true
 }
