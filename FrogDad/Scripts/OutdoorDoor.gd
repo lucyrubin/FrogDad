@@ -4,7 +4,7 @@ export (PackedScene) var target_scene = load("res://Scenes/Main.tscn")
 var door_opened
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("open"):
 		if !target_scene:
 			print("no scene in this door")
 		if door_opened:
