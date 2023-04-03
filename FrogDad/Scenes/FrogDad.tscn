@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Art/fridgeFull.png" type="Texture" id=26]
 [ext_resource path="res://Art/fridgeEmpty.png" type="Texture" id=27]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=28]
+[ext_resource path="res://Info Icons/enter.png" type="Texture" id=29]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -109,6 +110,21 @@ font_data = ExtResource( 23 )
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 23 )
 
+[sub_resource type="DynamicFont" id=85]
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=86]
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=87]
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=88]
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=89]
+font_data = ExtResource( 23 )
+
 [sub_resource type="StreamTexture" id=83]
 flags = 4
 
@@ -131,7 +147,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 4
+frame = 3
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -197,11 +213,11 @@ please take care of them!!!"
 scroll_active = false
 
 [node name="InfoButton" type="TextureButton" parent="."]
-margin_left = 1183.33
-margin_top = -753.333
-margin_right = 1271.33
-margin_bottom = -661.333
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 1203.33
+margin_top = -796.667
+margin_right = 1291.33
+margin_bottom = -704.667
+rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 14 )
 script = ExtResource( 16 )
 
@@ -210,18 +226,18 @@ z_index = 1000
 
 [node name="Background" type="TextureRect" parent="InfoButton/Info"]
 visible = false
-margin_left = -1180.0
-margin_top = -344.667
-margin_right = -796.0
-margin_bottom = 167.333
+margin_left = -1262.96
+margin_top = -309.259
+margin_right = -878.963
+margin_bottom = 202.741
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 
 [node name="Arrows" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 25.7778
-margin_top = 84.6667
-margin_right = 409.778
-margin_bottom = 596.667
+margin_left = 46.6667
+margin_top = 82.963
+margin_right = 430.667
+margin_bottom = 594.963
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 20 )
 __meta__ = {
@@ -229,23 +245,23 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Arrows"]
-margin_left = 316.667
-margin_top = 198.889
-margin_right = 526.667
-margin_bottom = 214.889
+margin_left = 296.667
+margin_top = 206.852
+margin_right = 506.667
+margin_bottom = 222.852
 rect_scale = Vector2( 2, 2 )
 theme = ExtResource( 24 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
 custom_fonts/normal_font = SubResource( 16 )
 meta_underlined = false
-text = "Arrows to move"
+text = "Use arrows to move"
 scroll_active = false
 
 [node name="Return" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 25.778
-margin_top = 117.0
-margin_right = 409.778
-margin_bottom = 629.0
+margin_left = 94.0741
+margin_top = 114.074
+margin_right = 478.074
+margin_bottom = 626.074
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 18 )
 __meta__ = {
@@ -253,19 +269,29 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Return"]
-margin_left = 316.667
-margin_top = 230.0
-margin_right = 526.667
-margin_bottom = 246.0
+margin_left = 277.778
+margin_top = 225.926
+margin_right = 487.778
+margin_bottom = 241.926
 rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Return to enter"
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 85 )
+text = "to open doors"
+scroll_active = false
+
+[node name="Enter" type="TextureRect" parent="InfoButton/Info/Background"]
+margin_left = 39.2593
+margin_top = 114.074
+margin_right = 423.259
+margin_bottom = 626.074
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 29 )
 
 [node name="Mouse" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 25.778
-margin_top = 152.444
-margin_right = 409.778
-margin_bottom = 664.444
+margin_left = 65.1852
+margin_top = 153.333
+margin_right = 449.185
+margin_bottom = 665.333
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 22 )
 __meta__ = {
@@ -273,19 +299,21 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Mouse"]
-margin_left = 316.667
-margin_top = 230.0
-margin_right = 526.667
-margin_bottom = 246.0
+margin_left = 240.0
+margin_top = 217.038
+margin_right = 450.0
+margin_bottom = 233.038
 rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Arrow to open"
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 86 )
+text = "Click to open"
+scroll_active = false
 
 [node name="I key" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 25.778
-margin_top = 182.444
-margin_right = 409.778
-margin_bottom = 694.444
+margin_left = 54.8148
+margin_top = 180.0
+margin_right = 438.815
+margin_bottom = 692.0
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 17 )
 __meta__ = {
@@ -293,19 +321,21 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/I key"]
-margin_left = 316.667
-margin_top = 230.0
-margin_right = 526.667
-margin_bottom = 246.0
+margin_left = 240.0
+margin_top = 218.0
+margin_right = 450.0
+margin_bottom = 242.0
 rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "I to open inventory"
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 87 )
+text = "to open inventory"
+scroll_active = false
 
 [node name="Z key" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 25.778
-margin_top = 207.444
-margin_right = 409.778
-margin_bottom = 719.444
+margin_left = 80.7408
+margin_top = 206.667
+margin_right = 464.741
+margin_bottom = 718.667
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 21 )
 __meta__ = {
@@ -313,19 +343,21 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Z key"]
-margin_left = 316.667
-margin_top = 230.0
-margin_right = 526.667
-margin_bottom = 246.0
+margin_left = 240.0
+margin_top = 220.148
+margin_right = 450.0
+margin_bottom = 241.148
 rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Z to pick up"
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 88 )
+text = "to pick up"
+scroll_active = false
 
 [node name="Q key" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 25.778
-margin_top = 232.444
-margin_right = 409.778
-margin_bottom = 744.444
+margin_left = 80.7408
+margin_top = 231.667
+margin_right = 464.741
+margin_bottom = 743.667
 rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 19 )
 __meta__ = {
@@ -333,13 +365,14 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Q key"]
-margin_left = 316.667
-margin_top = 230.0
-margin_right = 526.667
-margin_bottom = 246.0
+margin_left = 240.0
+margin_top = 218.89
+margin_right = 450.0
+margin_bottom = 238.89
 rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Q to drop
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 89 )
+text = "to drop
 "
 scroll_active = false
 
