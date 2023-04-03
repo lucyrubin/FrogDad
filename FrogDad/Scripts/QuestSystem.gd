@@ -53,8 +53,6 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	SubQuest.add_font_override("font", dynamic_font)
 	QuestName.add_color_override("font_color", Color(0,0,0,1))
 	
-
-	
 	# count up the amount of the item in the inventory
 	var totalItem = 0
 	for item in FrogDad_inventory_data.inventory:
@@ -69,8 +67,6 @@ func collectResourceQuest(quest, amountRequired, itemType):
 		SubQuest.get_node("CompletedButton").disabled = false
 	else: 
 		SubQuest.get_node("CompletedButton").disabled = true
-
-
 
 func _on_ToggleQuestButton_pressed():
 	if !info_button_open:
