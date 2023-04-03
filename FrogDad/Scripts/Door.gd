@@ -11,7 +11,7 @@ func _ready():
 	$AnimatedSprite.animation = "default"
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("open"):
 		if !target_scene:
 			print("no scene in this door")
 		if door_opened:

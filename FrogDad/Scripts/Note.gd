@@ -1,6 +1,6 @@
 extends Area2D
 
-var in_range
+var in_range = false
 var FrogDad 
 
 func _ready():
@@ -18,7 +18,5 @@ func _input(event):
 		queue_free()
 
 func _on_Note_area_entered(area):
+	print("note area entered")
 	in_range = true
-
-func _on_Note_area_exited(area):
-	in_range = false
