@@ -680,12 +680,12 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 107.5, 38.75 )
 
+[sub_resource type="RectangleShape2D" id=101]
+extents = Vector2( 1975, 1425 )
+
 [sub_resource type="DynamicFont" id=102]
 size = 50
 font_data = ExtResource( 27 )
-
-[sub_resource type="RectangleShape2D" id=101]
-extents = Vector2( 3050, 1500 )
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 9 )
@@ -1029,6 +1029,11 @@ script = ExtResource( 26 )
 [node name="KeyIndicator" parent="YSort/Door/Note" instance=ExtResource( 28 )]
 position = Vector2( 133.333, -106.667 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/Note"]
+position = Vector2( 166.667, 103.334 )
+scale = Vector2( 0.0999999, 0.0999999 )
+shape = SubResource( 101 )
+
 [node name="TextureRect" type="TextureRect" parent="YSort/Door/Note"]
 margin_right = 342.0
 margin_bottom = 198.0
@@ -1046,11 +1051,6 @@ margin_bottom = 35.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 102 )
 text = "READ ME"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/Note"]
-position = Vector2( 165, 100 )
-scale = Vector2( 0.0999999, 0.0999999 )
-shape = SubResource( 101 )
 
 [node name="Borders" type="StaticBody2D" parent="."]
 
@@ -1072,4 +1072,3 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="area_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="YSort/Door" to="YSort/Door" method="_on_Door_area_exited"]
 [connection signal="area_entered" from="YSort/Door/Note" to="YSort/Door/Note" method="_on_Note_area_entered"]
-[connection signal="area_exited" from="YSort/Door/Note" to="YSort/Door/Note" method="_on_Note_area_exited"]

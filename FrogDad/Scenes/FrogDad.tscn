@@ -1,11 +1,11 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
 [ext_resource path="res://Art/Untitled_Artwork.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/PickupZone.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Temporary Clipart/questicon.png" type="Texture" id=6]
+[ext_resource path="res://Art/quest_icon.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/DialogueBox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=9]
@@ -29,6 +29,8 @@
 [ext_resource path="res://Art/fridgeEmpty.png" type="Texture" id=27]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=28]
 [ext_resource path="res://Info Icons/enter.png" type="Texture" id=29]
+[ext_resource path="res://Art/info_hover.png" type="Texture" id=30]
+[ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=31]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -147,7 +149,6 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 3
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -219,6 +220,7 @@ margin_right = 1291.33
 margin_bottom = -704.667
 rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 30 )
 script = ExtResource( 16 )
 
 [node name="Info" type="Node2D" parent="InfoButton"]
@@ -381,12 +383,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 986.667
-margin_top = -753.333
-margin_right = 1498.67
-margin_bottom = -184.333
-rect_scale = Vector2( 0.25, 0.25 )
+margin_left = 1066.67
+margin_top = -780.0
+margin_right = 1206.67
+margin_bottom = -640.0
 texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 31 )
 script = ExtResource( 13 )
 
 [node name="Quest" parent="ToggleQuestButton" instance=ExtResource( 7 )]
