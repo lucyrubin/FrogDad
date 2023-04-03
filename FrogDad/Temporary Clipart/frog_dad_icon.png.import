@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frog_dad_sprite_sheet_1 (1).png-ada81fa98af667b1102a18c8a9d6de11.stex"
+path="res://.import/frog_dad_icon.png-03a2a10800e2e5b94e4ac037616610c5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Temporary Clipart/frog_dad_sprite_sheet_1 (1).png"
-dest_files=[ "res://.import/frog_dad_sprite_sheet_1 (1).png-ada81fa98af667b1102a18c8a9d6de11.stex" ]
+source_file="res://Temporary Clipart/frog_dad_icon.png"
+dest_files=[ "res://.import/frog_dad_icon.png-03a2a10800e2e5b94e4ac037616610c5.stex" ]
 
 [params]
 
