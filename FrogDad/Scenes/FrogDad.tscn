@@ -29,7 +29,7 @@
 [ext_resource path="res://Art/fridgeEmpty.png" type="Texture" id=27]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=28]
 [ext_resource path="res://Info Icons/enter.png" type="Texture" id=29]
-[ext_resource path="res://Art/info_hover.png" type="Texture" id=30]
+[ext_resource path="res://Art/info_icon_hover.png" type="Texture" id=30]
 [ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=31]
 
 [sub_resource type="CapsuleShape2D" id=13]
@@ -149,6 +149,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
+frame = 2
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -214,10 +215,10 @@ please take care of them!!!"
 scroll_active = false
 
 [node name="InfoButton" type="TextureButton" parent="."]
-margin_left = 1203.33
-margin_top = -796.667
-margin_right = 1291.33
-margin_bottom = -704.667
+margin_left = 1213.33
+margin_top = -773.333
+margin_right = 1301.33
+margin_bottom = -681.333
 rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 30 )
@@ -229,9 +230,9 @@ z_index = 1000
 [node name="Background" type="TextureRect" parent="InfoButton/Info"]
 visible = false
 margin_left = -1262.96
-margin_top = -309.259
+margin_top = -307.407
 margin_right = -878.963
-margin_bottom = 202.741
+margin_bottom = 204.593
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 
@@ -383,17 +384,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 1066.67
-margin_top = -780.0
-margin_right = 1206.67
-margin_bottom = -640.0
+margin_left = 1056.67
+margin_top = -783.333
+margin_right = 1196.67
+margin_bottom = -643.333
+rect_scale = Vector2( 1.4, 1.4 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 31 )
 script = ExtResource( 13 )
 
 [node name="Quest" parent="ToggleQuestButton" instance=ExtResource( 7 )]
 visible = false
-position = Vector2( -2664, 2340 )
+position = Vector2( -2004.76, 1788.1 )
+scale = Vector2( 0.76, 0.76 )
 z_index = 1000
 inventory_path = NodePath("../../UserInterface/Inventory")
 
