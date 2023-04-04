@@ -1,6 +1,5 @@
 extends Area2D
 const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
-const ClothClass = preload("res://Scripts/Cloth.gd")
 const LogDropClass = preload("res://Scripts/LogDrop.gd")
 #Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 
@@ -8,8 +7,9 @@ const LogDropClass = preload("res://Scripts/LogDrop.gd")
 var items_in_range = {} # a dictionary
 
 func _on_PickupZone_body_entered(body):
-	
-	if body is ItemDropClass || body is ClothClass || body is LogDropClass: ## TODO: Make the cloth be in the itemdrop class or some other class (basically need to make this more of an abstraction)
+	print(body)
+	if body is ItemDropClass || body is LogDropClass: ## TODO: Make the cloth be in the itemdrop class or some other class (basically need to make this more of an abstraction)
+		
 		items_in_range[body] = body # add body to items_in_range when the player touches it
 
 
