@@ -19,7 +19,7 @@ func _on_ToggleInventoryButton_pressed():
 	
 func _input(event):
 	if event.is_action_pressed("escape") and !ToggleInventoryButton.visible:
-		print("hi")
+		#print("hi")
 		$Inventory.inventory_open = false
 		visible = false
 		$Inventory.visible = false

@@ -59,6 +59,9 @@ func move_left():
 	$AnimatedSprite.flip_h = true
 	$AnimatedSprite.animation = "right"
 
+func toggle_dialogue_box_visibility():
+	$DialogueBox.visible = !$DialogueBox.visible
+
 
 #Code with acceleration and friction
 #extends KinematicBody2D

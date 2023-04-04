@@ -5,6 +5,7 @@ var num_frames = 2
 onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
 onready var fridge_inventory_node = get_tree().get_root().find_node("FridgeInventory",true, false)
 onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
+
 func _ready():
 	fridge_inventory_node.visible = false
 	$AnimatedSprite.animation = "default"

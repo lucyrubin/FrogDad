@@ -17,7 +17,7 @@ onready var text_animation = $Content/TextAnimation
 
 
 func _ready():
-	print("_ready", self)
+	#print("_ready", self)
 	hide_dialog_box()
 #	show_dialog_box([
 #		{avatar = "gertrude", text = "Hi, Frog Dad! \n (Press space key to continue the dialogue)"},

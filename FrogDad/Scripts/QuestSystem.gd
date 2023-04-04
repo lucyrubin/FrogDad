@@ -20,7 +20,7 @@ func _ready():
 
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from MasterScript.currentQuestArray
-	print(MasterScript.currentQuestArray[0])
+	#print(MasterScript.currentQuestArray[0])
 	FrogDad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
 	MasterScript.currentQuestArray.remove(0) # if we have concurrent requests this should be changed to MasterScript.currentQuestNum, not totally sure what else we would need to change though
 	if MasterScript.questDictionary.size() > MasterScript.currentQuestNum + 1:
@@ -99,7 +99,7 @@ func begin_intro_quest():
 	
 
 func _on_KnockTimer_timeout():
-	print("Knock knock") # eventually replace this with a dialogue box showing up
+	#print("Knock knock") # eventually replace this with a dialogue box showing up
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	var main_node = FrogDad.get_parent()
