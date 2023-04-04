@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -31,6 +31,10 @@
 [ext_resource path="res://Info Icons/enter.png" type="Texture" id=29]
 [ext_resource path="res://Art/info_icon_hover.png" type="Texture" id=30]
 [ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=31]
+[ext_resource path="res://Art/fridge_box.png" type="Texture" id=32]
+[ext_resource path="res://Art/dresserslotfull.png" type="Texture" id=33]
+[ext_resource path="res://Art/dresserslotempty.png" type="Texture" id=34]
+[ext_resource path="res://Art/dresser_box.png" type="Texture" id=35]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -149,7 +153,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -415,17 +419,36 @@ item_list = {
 }
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
+visible = false
 position = Vector2( 0, 110 )
 script = ExtResource( 28 )
 item_list = {
 0: [ "Fly", 3 ]
 }
 
+[node name="TextureRect" type="TextureRect" parent="UserInterface/FridgeInventory"]
+margin_left = -1.0
+margin_top = -15.6667
+margin_right = 280.0
+margin_bottom = 121.333
+rect_scale = Vector2( 0.428, 0.316 )
+texture = ExtResource( 32 )
+
+[node name="Label" type="Label" parent="UserInterface/FridgeInventory"]
+margin_left = 5.0
+margin_top = -7.33333
+margin_right = 277.0
+margin_bottom = 12.6667
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fridge Inventory"
+align = 1
+
 [node name="GridContainer" type="GridContainer" parent="UserInterface/FridgeInventory"]
-margin_left = 1.0
-margin_top = -24.0
-margin_right = 110.0
-margin_bottom = 26.0
+margin_left = 6.33333
+margin_top = 0.333336
+margin_right = 115.333
+margin_bottom = 50.3333
 columns = 5
 
 [node name="Slot1" type="Panel" parent="UserInterface/FridgeInventory/GridContainer"]
@@ -477,28 +500,35 @@ script = ExtResource( 25 )
 default_tex = ExtResource( 27 )
 empty_tex = ExtResource( 26 )
 
-[node name="Label" type="Label" parent="UserInterface/FridgeInventory"]
-margin_top = -6.0
-margin_right = 272.0
-margin_bottom = 14.0
-rect_scale = Vector2( 0.4, 0.4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Fridge Inventory"
-align = 1
-
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
-visible = false
 position = Vector2( 0, 110 )
 script = ExtResource( 28 )
 item_list = {
 0: [ "Cloth", 3 ]
 }
 
+[node name="TextureRect" type="TextureRect" parent="UserInterface/DresserInventory"]
+margin_top = -12.6667
+margin_right = 279.0
+margin_bottom = 116.333
+rect_scale = Vector2( 0.428, 0.316 )
+texture = ExtResource( 35 )
+
+[node name="Label" type="Label" parent="UserInterface/DresserInventory"]
+margin_left = 5.33333
+margin_top = -8.33333
+margin_right = 277.333
+margin_bottom = 11.6667
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Dresser Inventory"
+align = 1
+
 [node name="GridContainer" type="GridContainer" parent="UserInterface/DresserInventory"]
-margin_left = 1.0
-margin_top = -24.0
-margin_right = 110.0
-margin_bottom = 26.0
+margin_left = 6.33333
+margin_top = -1.33333
+margin_right = 115.333
+margin_bottom = 48.6667
 columns = 5
 
 [node name="Slot1" type="Panel" parent="UserInterface/DresserInventory/GridContainer"]
@@ -507,8 +537,8 @@ margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 84 )
 script = ExtResource( 25 )
-default_tex = ExtResource( 27 )
-empty_tex = ExtResource( 26 )
+default_tex = ExtResource( 33 )
+empty_tex = ExtResource( 34 )
 
 [node name="Slot2" type="Panel" parent="UserInterface/DresserInventory/GridContainer"]
 margin_left = 22.0
@@ -517,8 +547,8 @@ margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 84 )
 script = ExtResource( 25 )
-default_tex = ExtResource( 27 )
-empty_tex = ExtResource( 26 )
+default_tex = ExtResource( 33 )
+empty_tex = ExtResource( 34 )
 
 [node name="Slot3" type="Panel" parent="UserInterface/DresserInventory/GridContainer"]
 margin_left = 44.0
@@ -527,8 +557,8 @@ margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 84 )
 script = ExtResource( 25 )
-default_tex = ExtResource( 27 )
-empty_tex = ExtResource( 26 )
+default_tex = ExtResource( 33 )
+empty_tex = ExtResource( 34 )
 
 [node name="Slot4" type="Panel" parent="UserInterface/DresserInventory/GridContainer"]
 margin_left = 66.0
@@ -537,8 +567,8 @@ margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 84 )
 script = ExtResource( 25 )
-default_tex = ExtResource( 27 )
-empty_tex = ExtResource( 26 )
+default_tex = ExtResource( 33 )
+empty_tex = ExtResource( 34 )
 
 [node name="Slot5" type="Panel" parent="UserInterface/DresserInventory/GridContainer"]
 margin_left = 88.0
@@ -547,17 +577,8 @@ margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
 custom_styles/panel = SubResource( 84 )
 script = ExtResource( 25 )
-default_tex = ExtResource( 27 )
-empty_tex = ExtResource( 26 )
-
-[node name="Label" type="Label" parent="UserInterface/DresserInventory"]
-margin_top = -6.0
-margin_right = 272.0
-margin_bottom = 14.0
-rect_scale = Vector2( 0.4, 0.4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Dresser Inventory"
-align = 1
+default_tex = ExtResource( 33 )
+empty_tex = ExtResource( 34 )
 
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]
