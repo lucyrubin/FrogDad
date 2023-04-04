@@ -24,3 +24,15 @@ func _on_Sink_mouse_exited():
 	if frogdad_node.state =="":
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
+
+
+func _on_Sink_area_entered(area):
+	if frogdad_node.state =="":
+		$AnimatedSprite.animation = "hover"
+		$AnimatedSprite.set_frame(current_fram)
+
+
+func _on_Sink_area_exited(area):
+	if frogdad_node.state =="":
+		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.set_frame(current_fram)

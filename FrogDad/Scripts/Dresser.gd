@@ -40,3 +40,11 @@ func _on_Dresser_mouse_entered():
 func _on_Dresser_mouse_exited():
 	$AnimatedSprite.animation = "default"
 	$AnimatedSprite.set_frame(current_fram)
+
+func _on_Dresser_area_entered(area):
+	$AnimatedSprite.animation = "hover"
+	$AnimatedSprite.set_frame(current_fram)
+
+func _on_Dresser_area_exited(area):
+	$AnimatedSprite.animation = "default"
+	$AnimatedSprite.set_frame(current_fram)

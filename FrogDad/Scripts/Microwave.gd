@@ -24,3 +24,13 @@ func _on_Microwave_mouse_exited():
 	if frogdad_node.state =="":
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
+
+func _on_Microwave_area_entered(area):
+	if frogdad_node.state =="":
+		$AnimatedSprite.animation = "hover"
+		$AnimatedSprite.set_frame(current_fram)
+
+func _on_Microwave_area_exited(area):
+	if frogdad_node.state =="":
+		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.set_frame(current_fram)

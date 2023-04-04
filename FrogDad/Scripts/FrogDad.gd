@@ -12,8 +12,10 @@ var holding_item = null
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	
 func getInventoryNode():
 	return $UserInterface/Inventory
+	
 func _physics_process(delta):
 	$QuestLabel.text = "Current quest: " + MasterScript.quest_state + " \nSprite image: " + MasterScript.sprite_image
 	velocity = Vector2.ZERO
