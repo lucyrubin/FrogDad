@@ -8,10 +8,10 @@ func _input(event):
 		if !target_scene:
 			print("no scene in this door")
 		if door_opened:
-			go_outside()
+			go_inside()
 			#this works for now but worried it may cause issues in future
 
-func go_outside():
+func go_inside():
 		var ERR = get_tree().change_scene_to(target_scene)
 		if ERR != OK:
 			print("something failed in the door scene")
