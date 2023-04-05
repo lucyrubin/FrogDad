@@ -15,6 +15,7 @@ var questDictionary = {
 	1: ["resource collection", "Collect Logs for Crib", 100, "Log", "swaddling babies image"]
 	}
 
-var currentQuestNum = -1 # -1 means the intro of getting the note
+var currentQuestNum = -2 # -2 means the intro of getting the note
+# -1 is after the note cut scene
 
 var currentQuestArray = [questDictionary[0]]

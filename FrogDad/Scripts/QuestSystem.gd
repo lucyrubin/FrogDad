@@ -15,8 +15,10 @@ func _ready():
 	FrogDad_inventory = get_node(inventory_path)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
-	if MasterScript.currentQuestNum == -1 :
+	if MasterScript.currentQuestNum == -2 :
 		begin_intro_quest()
+	if MasterScript.currentQuestNum == -1:
+		after_note_appears()
 
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from MasterScript.currentQuestArray
@@ -99,13 +101,11 @@ func begin_intro_quest():
 	
 
 func _on_KnockTimer_timeout():
-	#print("Knock knock") # eventually replace this with a dialogue box showing up
+	print("Knock knock") # eventually replace this with a dialogue box showing up
+	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
-	var main_node = FrogDad.get_parent()
-	var note_sprite = FrogDad.get_parent().get_node("Home/YSort/Door/Note")
-	# add the note by the door
-	note_sprite.visible = true
+	
 	
 
 func _on_InfoButton_pressed():
@@ -113,3 +113,11 @@ func _on_InfoButton_pressed():
 		info_button_open = false
 	elif !visible && !info_button_open:
 		info_button_open = true
+func after_note_appears():
+	var door_node = get_tree().get_root().find_node("Door", true, false)
+	door_node.set_locked(true)
+	get_parent().visible = false
+	var main_node = FrogDad.get_parent()
+	var note_sprite = FrogDad.get_parent().get_node("Home/YSort/Door/Note")
+	# add the note by the door
+	note_sprite.visible = true

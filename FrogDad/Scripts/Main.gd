@@ -36,7 +36,7 @@ func _input(event):
 			$FrogDad/PickupZone.items_in_range.erase(pickup_item) # remove the item from in range
 	if event.is_action_pressed("drop") \
 	&& $FrogDad/UserInterface/Inventory.inventory_open == true \
-	&& $FrogDad/UserInterface/Inventory.holding_item != null:
+	&& $FrogDad.holding_item != null:
 		var dropped_item = $FrogDad/UserInterface/Inventory.drop()
 		#drop_item(dropped_item) this is commented out because we are just deleting the stuff for right now
 

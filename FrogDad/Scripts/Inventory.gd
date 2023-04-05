@@ -29,7 +29,7 @@ func initialize_inventory():
 	
 	for i in range(slots.size()):
 		# if there is something in the slot, initialize the item 
-		if inventory_data.inventory.has(i): 
+		if inventory_data.inventory.has(i) and inventory_data.inventory[i][1] > 0: 
 			slots[i].initialize_item(inventory_data.inventory[i][0], inventory_data.inventory[i][1])
 
 func slot_gui_input(event: InputEvent, slot: SlotClass):
@@ -111,16 +111,29 @@ func add_item(item_name, item_quantity):
 			
 func update_slot_visual(slot_index, item_name, new_quantity):
 	var slot = get_node("GridContainer/Slot" + str(slot_index + 1))
-	if slot.item != null:
+	if new_quantity <= 0:
+		print("emptying")
+		slot.empty_slot()
+	elif slot.item != null:
 		slot.item.set_item(item_name, new_quantity)
 	else:
 		slot.initialize_item(item_name, new_quantity)
+		
+
 
 func removeItems(numItems, itemType):
 	for item in inventory_data.inventory:
-		if inventory_data.inventory[item][0] == itemType:	
+		if inventory_data.inventory[item][0] == itemType:
+			print("found match: ", itemType)
 			inventory_data.inventory[item][1] -= numItems
-			update_slot_visual(item, inventory_data.inventory[item][0], inventory_data.inventory[item][1])
+			print("subtracting ", numItems)
+			print("updating: ", item , ": " , inventory_data.inventory[item][0] ,' ' , inventory_data.inventory[item][1])
+			if inventory_data.inventory[item][1] <= 0:
+				inventory_data.inventory.erase(item)
+				print("erase")
+				update_slot_visual(item, itemType, 0)
+			else: 
+				update_slot_visual(item, inventory_data.inventory[item][0], inventory_data.inventory[item][1])
 				
 			
 
@@ -134,5 +147,5 @@ func drop():
 		dropped_item.item_name = FrogDad.holding_item.item_name
 		if quantity == 0:
 			FrogDad.holding_item.queue_free()
-			FrogDad.holding_item = null
+			#FrogDad.holding_item = null
 		return dropped_item

@@ -37,6 +37,11 @@ func pick_from_slot():
 	#print("Inventory node: " , inventoryNode)
 	item = null
 	refresh_style()
+	
+func empty_slot():
+	remove_child(item) # remove the item image 
+	item = null
+	refresh_style()
 
 func put_into_slot(new_item):
 	item = new_item

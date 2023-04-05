@@ -16,14 +16,17 @@ func _on_ToggleInventoryButton_pressed():
 	FrogDad.get_node("AnimatedSprite").stop()
 	ToggleInventoryButton.visible = false
 	open_inventory()
+	print($Inventory.inventory_data.inventory)
 	
 func _input(event):
-	if event.is_action_pressed("escape") and !ToggleInventoryButton.visible:
-		#print("hi")
-		$Inventory.inventory_open = false
-		visible = false
-		$Inventory.visible = false
-		FrogDad.state = ""
-		FrogDad.get_node("AnimatedSprite").play()
-		ToggleInventoryButton.visible = true
+	if event.is_action_pressed("escape"):  #and !ToggleInventoryButton.visible:
+		if $Inventory.visible: # close inventory
+			$Inventory.inventory_open = false
+			visible = false
+			$Inventory.visible = false
+			FrogDad.state = ""
+			FrogDad.get_node("AnimatedSprite").play()
+			ToggleInventoryButton.visible = true
+		if !ToggleInventoryButton.visible:
+			ToggleInventoryButton.visible = true
 		
