@@ -6,7 +6,6 @@ export (Dictionary) var item_list
 
 onready var inventory_slots = $GridContainer
 var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
-var LogDropScene = preload("res://Scenes/LogDrop.tscn")
 var inventory_open = false
 var mouse_in_inventory = false
 var inventory_data = InventoryData.new()

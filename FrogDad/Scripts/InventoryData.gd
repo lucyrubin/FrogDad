@@ -4,7 +4,6 @@ extends Node
 
 const SlotClass = preload("res://Scripts/Slot.gd")
 const ItemClass = preload("res://Scripts/Item.gd")
-const LogDropClass = preload("res://Scripts/LogDrop.gd")
 
 var NUM_INVENTORY_SLOTS
 
