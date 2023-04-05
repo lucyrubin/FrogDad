@@ -12,8 +12,8 @@ func _process(delta):
 	if VELOCITY > 0 and start:
 		$Note.position.y += VELOCITY
 		VELOCITY -= ACCELERATION
-	
-		
+
+
 
 func _on_Timer_timeout():
 	SceneTransition.change_scene("res://Scenes/Main.tscn")

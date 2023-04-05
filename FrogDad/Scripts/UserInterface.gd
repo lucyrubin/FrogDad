@@ -7,7 +7,6 @@ func open_inventory():
 	#$Inventory.visible = !$Inventory.visible # toggle inventory visibility
 	$Inventory.initialize_inventory()
 
-
 func _on_ToggleInventoryButton_pressed():
 	visible = true
 	$Inventory.inventory_open = true
