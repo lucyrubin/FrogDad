@@ -50,5 +50,4 @@ func add_item_drop(type, x, y):
 	add_child(drop)
 
 
-func _on_Camera2D_draw():
-	$Canvas
+
