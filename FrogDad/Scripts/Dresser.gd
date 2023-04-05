@@ -19,6 +19,7 @@ func _on_Dresser_input_event(viewport, event, shape_idx):
 			dresser_inventory_node.visible = true
 			user_interface_node.visible = true
 			frogdad_node.state = "Inventory"
+			user_interface_node.open_inventory()
 		else:
 			dresser_inventory_node.visible = false
 			user_interface_node.visible = false

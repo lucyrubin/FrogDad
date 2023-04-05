@@ -18,6 +18,7 @@ func _input(event):
 			print("no scene in this door")
 		if door_opened and mouse_in:
 			go_outside()
+	
 
 func set_locked(boolean):
 	locked = boolean

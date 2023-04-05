@@ -20,6 +20,7 @@ func _on_Fridge_input_event(viewport, event, shape_idx):
 			fridge_inventory_node.visible = true
 			user_interface_node.visible = true
 			frogdad_node.state = "Inventory"
+			user_interface_node.open_inventory()
 		else:
 			fridge_inventory_node.visible = false
 			user_interface_node.visible = false

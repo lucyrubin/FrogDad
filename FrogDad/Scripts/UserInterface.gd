@@ -6,16 +6,20 @@ onready var ToggleInventoryButton = get_tree().get_root().find_node("ToggleInven
 func open_inventory():
 	#$Inventory.visible = !$Inventory.visible # toggle inventory visibility
 	$Inventory.initialize_inventory()
-
-func _on_ToggleInventoryButton_pressed():
 	visible = true
 	$Inventory.inventory_open = true
 	$Inventory.visible = true
 	FrogDad.state = "inventory"
 	FrogDad.get_node("AnimatedSprite").stop()
+
+func _on_ToggleInventoryButton_pressed():
+#	visible = true
+#	$Inventory.inventory_open = true
+#	$Inventory.visible = true
+#	FrogDad.state = "inventory"
+#	FrogDad.get_node("AnimatedSprite").stop()
 	ToggleInventoryButton.visible = false
 	open_inventory()
-	print($Inventory.inventory_data.inventory)
 	
 func _input(event):
 	if event.is_action_pressed("escape"):  #and !ToggleInventoryButton.visible:
