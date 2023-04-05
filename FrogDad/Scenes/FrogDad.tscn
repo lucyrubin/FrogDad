@@ -177,10 +177,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 15 )
 text = "enter text here"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 0.8, 0.8 )
-
 [node name="DialogueBox" parent="." instance=ExtResource( 8 )]
 visible = false
 position = Vector2( -683.333, 250 )

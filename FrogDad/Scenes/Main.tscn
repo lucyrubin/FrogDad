@@ -68,3 +68,18 @@ __meta__ = {
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9, -304 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="FrogDad"]
+current = true
+zoom = Vector2( 0.8, 0.8 )
+limit_left = -1143
+limit_top = -634
+limit_right = 760
+limit_bottom = 174
+editor_draw_limits = true
+__meta__ = {
+"_edit_group_": true
+}

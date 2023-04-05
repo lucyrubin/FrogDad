@@ -48,3 +48,7 @@ func add_item_drop(type, x, y):
 	var drop = ItemDropScene.instance()
 	drop.setup(x,y,type, $FrogDad/UserInterface/Inventory)
 	add_child(drop)
+
+
+func _on_Camera2D_draw():
+	$Canvas

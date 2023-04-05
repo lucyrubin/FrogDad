@@ -12,7 +12,7 @@ export (NodePath) var inventory_path
 
 func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
-	FrogDad_inventory = get_node(inventory_path)
+	FrogDad_inventory = FrogDad.getInventoryNode()#get_node(inventory_path)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
 	if MasterScript.currentQuestNum == -2 :
