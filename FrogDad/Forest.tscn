@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 124.5, 60 )
+
+[node name="Forest" type="Node2D"]
+
+[node name="TemporaryGrass" type="ColorRect" parent="."]
+margin_right = 1025.0
+margin_bottom = 1175.0
+color = Color( 0.305882, 0.443137, 0.243137, 1 )
+
+[node name="ForestExit" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="ColorRect" type="ColorRect" parent="ForestExit"]
+margin_left = 381.0
+margin_top = 1054.0
+margin_right = 630.0
+margin_bottom = 1175.0
+color = Color( 0.2, 0.156863, 0.109804, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ForestExit/ColorRect"]
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 232.0
+margin_bottom = 107.0
+text = "leave forest!"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForestExit"]
+position = Vector2( 505.5, 1114 )
+shape = SubResource( 1 )
