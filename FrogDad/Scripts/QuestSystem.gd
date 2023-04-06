@@ -7,6 +7,10 @@ var DoorScript = preload("res://Scripts/Door.gd")
 var KeyIndicatorScene = preload("res://Scenes/KeyIndicator.tscn")
 var FrogDad 
 var info_button_open
+var SmallPopUpBoxScene = preload("res://Scenes/SmallPopUpBox.tscn")
+var pop_up
+onready var HUD_node = get_tree().get_root().find_node("HUD", true, false)
+	
 
 export (NodePath) var inventory_path
 
@@ -14,6 +18,8 @@ func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)#FrogDad.getInventoryNode()#get_node(inventory_path)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
+	
+	
 	
 	if MasterScript.currentQuestNum == -2 :
 		begin_intro_quest()
@@ -101,9 +107,15 @@ func begin_intro_quest():
 	
 
 func _on_KnockTimer_timeout():
-	print("Knock knock") # eventually replace this with a dialogue box showing up
-	DialogueBox2.show_dialog_box({avatar = "gertrude", text = "Knock knock \n (Press space key to continue the dialogue)"})
-	#SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
+
+	# this code creates and displays a dialogue box	
+	var pop_up = SmallPopUpBoxScene.instance()
+	HUD_node.add_child(pop_up)
+	print(pop_up)
+	pop_up.show_dialog_box([{avatar = "", text = "*Knock knock* \n (space)"}])
+	# this code creates and displays a dialogue box	
+	print(pop_up.get_position_in_parent())
+	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	
@@ -115,6 +127,7 @@ func _on_InfoButton_pressed():
 	elif !visible && !info_button_open:
 		info_button_open = true
 func after_note_appears():
+	
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	door_node.set_locked(true)
 	get_parent().visible = false
@@ -122,3 +135,16 @@ func after_note_appears():
 	var note_sprite = FrogDad.get_parent().get_node("Home/YSort/Door/Note")
 	# add the note by the door
 	note_sprite.visible = true
+	
+	HUD_node.remove_child(pop_up)
+	# this code creates and displays a dialogue box	
+	var pop_up = SmallPopUpBoxScene.instance()
+	HUD_node.add_child(pop_up)
+	print(pop_up.get_position_in_parent())
+	print(pop_up)
+	pop_up.show_dialog_box([{avatar = "", text = "*hey knock* \n (space)"}])
+	# this code creates and displays a dialogue box	
+	
+	
+	
+	

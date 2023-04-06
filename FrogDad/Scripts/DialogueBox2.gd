@@ -11,24 +11,19 @@ var dialogs = []
 var current = 0
 
 onready var content = $Content
-onready var avatar = $Content/Avatar
 onready var next_indicator = $Content/NextIndicator
 onready var text_animation = $Content/TextAnimation
+onready var avatar 
 
 
 func _ready():
-	#print("_ready", self)
-	hide_dialog_box()
-#	show_dialog_box([
-#		{avatar = "gertrude", text = "Hi, Frog Dad! \n (Press space key to continue the dialogue)"},
-#		{avatar = "frogDad", text = "Hi, Gertrude!"},
-#		{avatar = "gertrude", text = "What are we doing today?"},
-#		{avatar = "frogDad", text = "Whatever you wish :)"}
-#	])
+	pass
+	#hide_dialog_box()
+
 
 
 func _input(event):
-	print("unhandles input", event)
+
 	# if user pressed "space key" before text animation ends,
 #	# the animation would be skipped and all text would show
 	if event.is_action_pressed("open"):
@@ -43,22 +38,32 @@ func _input(event):
 		#get_tree().set_input_as_handled()
 
 func hide_dialog_box():
-	print("hide_dialogue_box")
+
 	content.hide()
 	
 func show_dialog_box(_dialogs):
-	print("show_dialogue_box")
+	content = $Content
+	next_indicator = $Content/NextIndicator
+	text_animation = $Content/TextAnimation
+	if $Content.get_node("Avatar"):
+		avatar = $Content/Avatar
 	#content.hide()
 	dialogs = _dialogs
+	print(content)
 	content.show()
 	_show_dialog(0)
 	
 func _show_dialog(index):
-	print("show dialogue", index)
+	$Content.rect_position.x = 328
+	$Content.rect_position.y = 471
+	
+	
 	current = index
+	print(dialogs)
 	var dialog = dialogs[current]
 	content.text = dialog.text
-	avatar.texture = AVATAR_MAP[dialog.avatar]
+	if dialog.avatar != "":
+		avatar.texture = AVATAR_MAP[dialog.avatar]
 	
 	next_indicator.hide()
 	text_animation.interpolate_property(
@@ -68,19 +73,13 @@ func _show_dialog(index):
 	)
 	text_animation.start()
 	
-#func _on_text_animation_text_animation_all_completed():
-#	print(" _on_text_animation_text_animation_all_completed")
-#	next_indicator.show()
-#
-
-
 
 func _on_Content_visibility_changed():
-	print("content visibility")
+
 	get_tree().paused = content.visible
 
 
 func _on_TextAnimation_tween_all_completed():
-	print(" _on_text_animation_text_animation_all_completed")
+
 	next_indicator.show()
 	
