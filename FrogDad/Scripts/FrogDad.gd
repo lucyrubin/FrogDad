@@ -18,6 +18,7 @@ func getInventoryNode():
 	
 func _physics_process(delta):
 	$QuestLabel.text = "Current quest: " + MasterScript.quest_state + " \nSprite image: " + MasterScript.sprite_image
+	z_index = position.y
 	velocity = Vector2.ZERO
 	if state == "": # move as long as dialogue and inventory aren't active
 		if Input.is_action_pressed("move_down"):
