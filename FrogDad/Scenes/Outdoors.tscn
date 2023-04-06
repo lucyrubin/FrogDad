@@ -378,7 +378,7 @@ script = ExtResource( 2 )
 position = Vector2( 703, -227 )
 
 [node name="ExitHouse" type="Position2D" parent="."]
-position = Vector2( 119, 406 )
+position = Vector2( 121, 108 )
 
 [connection signal="area_entered" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_entered"]
 [connection signal="area_exited" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_exited"]

@@ -17,4 +17,6 @@ func _ready():
 
 
 func _on_Button_pressed():
+	MasterScript.findBabies = true
+	MasterScript.main = false
 	SceneTransition.change_scene("res://Scenes/Main.tscn")

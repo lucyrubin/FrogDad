@@ -25,6 +25,8 @@ func set_locked(boolean):
 
 func go_outside():
 	if !locked:
+		MasterScript.main = true
+		MasterScript.outdoors = false
 		var ERR = get_tree().change_scene_to(target_scene)
 		if ERR != OK:
 			print("something failed in the door scene")

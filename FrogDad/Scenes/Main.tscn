@@ -503,6 +503,9 @@ script = ExtResource( 11 )
 default_tex = ExtResource( 26 )
 empty_tex = ExtResource( 31 )
 
+[node name="EnterHome" type="Position2D" parent="."]
+position = Vector2( 484, -519 )
+
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleInventoryButton" to="FrogDad/Camera2D/HUD/UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleQuestButton" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/InfoButton" to="FrogDad/Camera2D/HUD/InfoButton" method="_on_InfoButton_pressed"]

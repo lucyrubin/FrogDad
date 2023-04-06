@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestExit.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Forest.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 124.5, 60 )
 
 [node name="Forest" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="TemporaryGrass" type="ColorRect" parent="."]
 margin_right = 1025.0
@@ -34,6 +36,9 @@ text = "leave forest!"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ForestExit"]
 position = Vector2( 505.5, 1114 )
 shape = SubResource( 1 )
+
+[node name="EnterForest" type="Position2D" parent="."]
+position = Vector2( 509, 1066 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
 position = Vector2( 508, 1067 )
