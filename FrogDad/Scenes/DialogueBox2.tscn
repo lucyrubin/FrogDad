@@ -94,4 +94,4 @@ anims/RESET = SubResource( 4 )
 [node name="TextAnimation" type="Tween" parent="Content"]
 
 [connection signal="visibility_changed" from="Content" to="." method="_on_Content_visibility_changed"]
-[connection signal="tween_all_completed" from="Content/TextAnimation" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="tween_all_completed" from="Content/TextAnimation" to="." method="_on_TextAnimation_tween_all_completed"]

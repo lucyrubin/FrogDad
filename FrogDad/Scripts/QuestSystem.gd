@@ -102,7 +102,8 @@ func begin_intro_quest():
 
 func _on_KnockTimer_timeout():
 	print("Knock knock") # eventually replace this with a dialogue box showing up
-	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
+	DialogueBox2.show_dialog_box({avatar = "gertrude", text = "Knock knock \n (Press space key to continue the dialogue)"})
+	#SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	
