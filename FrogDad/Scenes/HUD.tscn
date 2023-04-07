@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
 
 [sub_resource type="DynamicFont" id=93]
 font_data = ExtResource( 10 )
@@ -82,6 +83,11 @@ position = Vector2( -1350, 100 )
 z_index = 1000
 
 [node name="OneSecTimer" type="Timer" parent="ToggleQuestButton/Quest"]
+
+[node name="BouncingArrow" parent="ToggleQuestButton" instance=ExtResource( 30 )]
+visible = false
+position = Vector2( -250, 250 )
+rotation = -0.771436
 
 [node name="InfoButton" type="TextureButton" parent="."]
 margin_left = 1896.0

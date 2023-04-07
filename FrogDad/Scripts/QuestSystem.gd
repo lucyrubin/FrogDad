@@ -82,6 +82,8 @@ func collectResourceQuest(quest, amountRequired, itemType):
 		CompletedButton.visible = false
 
 func _on_ToggleQuestButton_pressed():
+	if 	get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible:
+			get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
 	if !info_button_open:
 		visible = !visible
 		if visible:
@@ -157,6 +159,6 @@ func they_look_so_small():
 
 func _on_OneSecTimer_timeout():
 	if MasterScript.currentQuestNum == 0:
-
+		get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
 		$OneSecTimer.stop()
 		#MasterScript.currentQuestNum+=1

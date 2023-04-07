@@ -11,7 +11,7 @@ func _on_CloseButton_pressed():
 	
 	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)
 	toggleQuestButton.visible = true
-	toggleQuestButton.blink() # need to write this method
+	
 	FrogDad.state = ""
 	FrogDad.get_tree().get_root().find_node("Door", true, false).set_locked(false)
 	MasterScript.currentQuestNum +=1

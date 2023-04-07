@@ -46,7 +46,10 @@ __meta__ = {
 }
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9, -304 )
+position = Vector2( 264, -386 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
 remote_path = NodePath("../Camera2D")
@@ -102,10 +105,19 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Current Quest Array:"
 autowrap = true
 
-[node name="SkipIntroButton" type="Button" parent="FrogDad/Camera2D/DebuggingData/ColorRect/VBoxContainer"]
+[node name="CameraPostion" type="Label" parent="FrogDad/Camera2D/DebuggingData/ColorRect/VBoxContainer"]
 margin_top = 54.0
 margin_right = 219.0
-margin_bottom = 74.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Camera Position
+:"
+autowrap = true
+
+[node name="SkipIntroButton" type="Button" parent="FrogDad/Camera2D/DebuggingData/ColorRect/VBoxContainer"]
+margin_top = 89.0
+margin_right = 219.0
+margin_bottom = 109.0
 text = "Skip Intro"
 
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 37 )]
