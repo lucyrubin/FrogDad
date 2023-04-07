@@ -285,5 +285,5 @@ script = ExtResource( 3 )
 default_tex = ExtResource( 6 )
 empty_tex = ExtResource( 5 )
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_TextureRect_mouse_exited"]

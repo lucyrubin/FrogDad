@@ -104,7 +104,8 @@ func _on_ToggleQuestButton_pressed():
 func begin_intro_quest():
 	$KnockTimer.start()
 	var door_node = get_tree().get_root().find_node("Door", true, false)
-	door_node.set_locked(true)
+	if door_node:
+		door_node.set_locked(true)
 	get_parent().visible = false
 	
 

@@ -32,4 +32,3 @@ func _input(event):
 			ToggleInventoryButton.visible = true
 		if !ToggleInventoryButton.visible:
 			ToggleInventoryButton.visible = true
-		

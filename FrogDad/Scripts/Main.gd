@@ -4,8 +4,12 @@ const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
 
 func _ready():
-	if MasterScript.outdoors || MasterScript.findBabies:
+	if MasterScript.enter_home:
 		$FrogDad.position = $EnterHome.position
+		MasterScript.enter_home = false
+	if MasterScript.findBabies:
+		$FrogDad.position = $EnterHome.position
+		MasterScript.findBabies = false
 
 func _process(delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 

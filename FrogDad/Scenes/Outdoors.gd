@@ -1,7 +1,9 @@
 extends Node2D
 
 func _ready():
-	if MasterScript.main:
+	if MasterScript.exit_home:
 		$FrogDad.position = $ExitHouse.position
-	if MasterScript.forest:
+		MasterScript.exit_home = false
+	if MasterScript.exit_forest:
 		$FrogDad.position = $ExitForest.position
+		MasterScript.exit_forest = false

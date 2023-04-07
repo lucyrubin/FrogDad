@@ -7,7 +7,6 @@ var quest_button_open
 func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	$Info/Background.visible = false
-	
 
 func _on_InfoButton_pressed():
 	if !quest_button_open:
@@ -30,5 +29,3 @@ func _input(event):
 			$Info/Background.visible = false
 			FrogDad.state = ""
 			FrogDad.get_node("AnimatedSprite").play()
-		
-		

@@ -5,11 +5,15 @@ extends Node
 var quest_state = "swaddle"
 var sprite_image = "carrying babies"
 
-var outdoors = false
-var main = false
-var forest = false 
-var findBabies = false
+var enter_home = false
+var exit_forest = false
+var exit_home = false
+var enter_forest = false
 
+#var outdoors = false
+#var home = false
+#var forest = false 
+var findBabies = false
 
 # quest variables
 var questDictionary = { 

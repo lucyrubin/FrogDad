@@ -14,8 +14,7 @@ func _input(event):
 			go_in_forest()
 
 func go_in_forest():
-	MasterScript.outdoors = true
-	MasterScript.forest = false
+	MasterScript.enter_forest = true
 	var ERR = get_tree().change_scene_to(target_scene)
 	if ERR != OK:
 		print("something failed in the door scene")

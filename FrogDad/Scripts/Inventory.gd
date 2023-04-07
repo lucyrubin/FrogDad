@@ -148,3 +148,9 @@ func drop():
 			FrogDad.holding_item.queue_free()
 			#FrogDad.holding_item = null
 		return dropped_item
+
+func _on_TextureRect_mouse_entered():
+	mouse_in_inventory = true;
+
+func _on_TextureRect_mouse_exited():
+	mouse_in_inventory = false;

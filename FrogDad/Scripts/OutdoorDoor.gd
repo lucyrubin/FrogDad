@@ -19,8 +19,7 @@ func _input(event):
 			#this works for now but worried it may cause issues in future
 
 func go_inside():
-	MasterScript.outdoors = true
-	MasterScript.main = false
+	MasterScript.enter_home = true
 	var ERR = get_tree().change_scene_to(target_scene)
 	if ERR != OK:
 		print("something failed in the door scene")

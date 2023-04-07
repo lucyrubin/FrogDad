@@ -152,6 +152,7 @@ texture_pressed = ExtResource( 23 )
 script = ExtResource( 14 )
 
 [node name="Info" type="Node2D" parent="FrogDad/Camera2D/HUD/InfoButton"]
+visible = false
 z_index = 1000
 
 [node name="Background" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info"]
