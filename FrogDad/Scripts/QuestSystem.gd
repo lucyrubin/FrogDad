@@ -59,8 +59,8 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	SubQuest.get_node("CompletedButton").connect("pressed", self, "deleteQuest", [SubQuest, QuestName])
 	QuestName.text = quest
 	var dynamic_font = DynamicFont.new()
-	dynamic_font.size = 25
-	dynamic_font.font_data = load("res://Fonts/VCR_OSD_MONO_1.001.ttf")
+	dynamic_font.size = 60
+	dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
 	QuestName.add_font_override("font", dynamic_font)
 	SubQuest.add_font_override("font", dynamic_font)
 	QuestName.add_color_override("font_color", Color(0,0,0,1))
@@ -72,13 +72,14 @@ func collectResourceQuest(quest, amountRequired, itemType):
 			totalItem += FrogDad_inventory_data.inventory[item][1]
 	
 	# update GUI based on amount in inventory
-	SubQuest.get_node("Label").text = "Collect " + str(amountRequired) + " " + str(itemType) + "s: \n" + str(totalItem) + "/" + str(amountRequired) 
+	SubQuest.get_node("Label").text = "Collect " + str(itemType) + "s: \n" + str(totalItem) + "/" + str(amountRequired) 
 	
 	# check if the requirements have been satisfied
+	var CompletedButton = SubQuest.find_node("CompletedButton", true, false)
 	if totalItem >= amountRequired:
-		SubQuest.get_node("CompletedButton").disabled = false
+		CompletedButton.visible = true
 	else: 
-		SubQuest.get_node("CompletedButton").disabled = true
+		CompletedButton.visible = false
 
 func _on_ToggleQuestButton_pressed():
 	if !info_button_open:
@@ -156,9 +157,6 @@ func they_look_so_small():
 
 func _on_OneSecTimer_timeout():
 	if MasterScript.currentQuestNum == 0:
-		# this code creates and displays a dialogue box	
-		PopUpNode.visible = true
-		PopUpNode.show_dialog_box([{avatar = "", text = "You can go back and check current quests by clicking on the quest icon in the upper right at any time"}])
-		# this code creates and displays a dialogue box	
+
 		$OneSecTimer.stop()
 		#MasterScript.currentQuestNum+=1
