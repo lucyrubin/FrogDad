@@ -33,6 +33,12 @@ func setup(xgiven, ygiven, name, inventory):
 	
 func _physics_process(delta):
 	if being_picked_up: # if it's not being picked up, apply gravity
+		if !MasterScript.picked_up_first_item:
+			MasterScript.picked_up_first_item = true
+			var PopUpNode = get_tree().get_root().find_node("SmallPopUpBox", true, false)
+			PopUpNode.visible = true
+			PopUpNode.show_dialog_box([{avatar = "", text = "You can access items that you pick up in your inventory. Press the leaf button in the upper left of the screen."}])
+	# this code creates and displays a dialogue box	
 		inventory_node.add_item(item_name, 1)
 		queue_free()
 

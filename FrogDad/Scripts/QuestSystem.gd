@@ -13,6 +13,8 @@ onready var PopUpNode = UserInterfaceNode.get_node("SmallPopUpBox")
 
 export (NodePath) var inventory_path
 
+func _process(delta):
+	print(MasterScript.currentQuestNum)
 func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)#FrogDad.getInventoryNode()#get_node(inventory_path)
@@ -148,15 +150,15 @@ func they_look_so_small():
 	PopUpNode.show_dialog_box([{avatar = "", text = "They look so small and fragile. How should I carry them?"},
 							{avatar = "", text = "I should go grab some cloth and make a swaddle."}])
 	# this code creates and displays a dialogue box	
-	MasterScript.currentQuestNum+=1
 	$OneSecTimer.start()
 	
 
 
 func _on_OneSecTimer_timeout():
-	if MasterScript.currentQuestNum == 1:
+	if MasterScript.currentQuestNum == 0:
 		# this code creates and displays a dialogue box	
 		PopUpNode.visible = true
 		PopUpNode.show_dialog_box([{avatar = "", text = "You can go back and check current quests by clicking on the quest icon in the upper right at any time"}])
 		# this code creates and displays a dialogue box	
-		MasterScript.currentQuestNum+=1
+		$OneSecTimer.stop()
+		#MasterScript.currentQuestNum+=1
