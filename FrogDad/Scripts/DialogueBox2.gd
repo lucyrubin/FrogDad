@@ -21,7 +21,10 @@ func _ready():
 	#hide_dialog_box()
 
 
-
+func _process(delta):
+	pass
+	#print(content.rect_position)
+	
 func _input(event):
 
 	# if user pressed "space key" before text animation ends,
@@ -42,6 +45,7 @@ func hide_dialog_box():
 	content.hide()
 	
 func show_dialog_box(_dialogs):
+	print("show dialogue box")
 	content = $Content
 	next_indicator = $Content/NextIndicator
 	text_animation = $Content/TextAnimation
@@ -49,17 +53,18 @@ func show_dialog_box(_dialogs):
 		avatar = $Content/Avatar
 	#content.hide()
 	dialogs = _dialogs
-	print(content)
+
 	content.show()
 	_show_dialog(0)
 	
 func _show_dialog(index):
-	$Content.rect_position.x = 328
-	$Content.rect_position.y = 471
+	
+	
+	
 	
 	
 	current = index
-	print(dialogs)
+
 	var dialog = dialogs[current]
 	content.text = dialog.text
 	if dialog.avatar != "":

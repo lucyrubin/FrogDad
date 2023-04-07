@@ -8,9 +8,8 @@ var KeyIndicatorScene = preload("res://Scenes/KeyIndicator.tscn")
 var FrogDad 
 var info_button_open
 var SmallPopUpBoxScene = preload("res://Scenes/SmallPopUpBox.tscn")
-var pop_up
-onready var HUD_node = get_tree().get_root().find_node("HUD", true, false)
-	
+onready var UserInterfaceNode = get_tree().get_root().find_node("UserInterface", true, false)
+onready var PopUpNode = UserInterfaceNode.get_node("SmallPopUpBox")
 
 export (NodePath) var inventory_path
 
@@ -19,12 +18,15 @@ func _ready():
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)#FrogDad.getInventoryNode()#get_node(inventory_path)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
-	
-	
+	print(MasterScript.currentQuestNum)
+#	pop_up = SmallPopUpBoxScene.instance()
 	if MasterScript.currentQuestNum == -2 :
 		begin_intro_quest()
-	if MasterScript.currentQuestNum == -1:
+	elif MasterScript.currentQuestNum == -1:
 		after_note_appears()
+	elif MasterScript.currentQuestNum == 0:
+		they_look_so_small()
+	
 
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from MasterScript.currentQuestArray
@@ -109,12 +111,11 @@ func begin_intro_quest():
 func _on_KnockTimer_timeout():
 
 	# this code creates and displays a dialogue box	
-	var pop_up = SmallPopUpBoxScene.instance()
-	HUD_node.add_child(pop_up)
-	print(pop_up)
-	pop_up.show_dialog_box([{avatar = "", text = "*Knock knock* \n (space)"}])
+	PopUpNode.visible = true
+	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}])
 	# this code creates and displays a dialogue box	
-	print(pop_up.get_position_in_parent())
+	
+
 	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
@@ -136,15 +137,26 @@ func after_note_appears():
 	# add the note by the door
 	note_sprite.visible = true
 	
-	HUD_node.remove_child(pop_up)
 	# this code creates and displays a dialogue box	
-	var pop_up = SmallPopUpBoxScene.instance()
-	HUD_node.add_child(pop_up)
-	print(pop_up.get_position_in_parent())
-	print(pop_up)
-	pop_up.show_dialog_box([{avatar = "", text = "*hey knock* \n (space)"}])
+	PopUpNode.visible = true
+	PopUpNode.show_dialog_box([{avatar = "", text = "What could that be?"}])
 	# this code creates and displays a dialogue box	
 	
+func they_look_so_small():
+	# this code creates and displays a dialogue box	
+	PopUpNode.visible = true
+	PopUpNode.show_dialog_box([{avatar = "", text = "They look so small and fragile. How should I carry them?"},
+							{avatar = "", text = "I should go grab some cloth and make a swaddle."}])
+	# this code creates and displays a dialogue box	
+	MasterScript.currentQuestNum+=1
+	$OneSecTimer.start()
 	
-	
-	
+
+
+func _on_OneSecTimer_timeout():
+	if MasterScript.currentQuestNum == 1:
+		# this code creates and displays a dialogue box	
+		PopUpNode.visible = true
+		PopUpNode.show_dialog_box([{avatar = "", text = "You can go back and check current quests by clicking on the quest icon in the upper right at any time"}])
+		# this code creates and displays a dialogue box	
+		MasterScript.currentQuestNum+=1

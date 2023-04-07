@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Art/dresser_box.png" type="Texture" id=32]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scenes/ToggleQuestButton.gd" type="Script" id=34]
+[ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=35]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 24 )
@@ -138,6 +139,8 @@ visible = false
 position = Vector2( -2000, 1750 )
 scale = Vector2( 0.76, 0.76 )
 z_index = 1000
+
+[node name="OneSecTimer" type="Timer" parent="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest"]
 
 [node name="InfoButton" type="TextureButton" parent="FrogDad/Camera2D/HUD"]
 margin_left = 1896.0
@@ -479,9 +482,13 @@ script = ExtResource( 11 )
 default_tex = ExtResource( 26 )
 empty_tex = ExtResource( 31 )
 
+[node name="SmallPopUpBox" parent="FrogDad/Camera2D/HUD/UserInterface" instance=ExtResource( 35 )]
+visible = false
+
 [node name="EnterHome" type="Position2D" parent="."]
 position = Vector2( 484, -519 )
 
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleInventoryButton" to="FrogDad/Camera2D/HUD/UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleQuestButton" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
+[connection signal="timeout" from="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest/OneSecTimer" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/InfoButton" to="FrogDad/Camera2D/HUD/InfoButton" method="_on_InfoButton_pressed"]

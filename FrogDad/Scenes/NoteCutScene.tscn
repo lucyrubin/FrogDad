@@ -440,7 +440,7 @@ position = Vector2( 18.5, 127.25 )
 shape = SubResource( 96 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.5
 one_shot = true
 
 [node name="WaitToStartAnimationTimer" type="Timer" parent="."]
