@@ -26,8 +26,9 @@ func _ready():
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == -1:
 		after_note_appears()
-	elif MasterScript.currentQuestNum == 0:
-		they_look_so_small()
+	elif MasterScript.currentQuestNum == 0 and !MasterScript.opened_quest_first_time:
+		MasterScript.opened_quest_first_time = true
+		get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
 	
 
 func deleteQuest(SubQuest, QuestName):
@@ -147,18 +148,18 @@ func after_note_appears():
 	PopUpNode.show_dialog_box([{avatar = "", text = "What could that be?"}])
 	# this code creates and displays a dialogue box	
 	
-func they_look_so_small():
-	# this code creates and displays a dialogue box	
-	PopUpNode.visible = true
-	PopUpNode.show_dialog_box([{avatar = "", text = "They look so small and fragile. How should I carry them?"},
-							{avatar = "", text = "I should go grab some cloth and make a swaddle."}])
-	# this code creates and displays a dialogue box	
-	$OneSecTimer.start()
-	
+#func they_look_so_small():
+#	# this code creates and displays a dialogue box	
+#	PopUpNode.visible = true
+#	PopUpNode.show_dialog_box([{avatar = "", text = "They look so small and fragile. How should I carry them?"},
+#							{avatar = "", text = "I should go grab some cloth and make a swaddle."}])
+#	# this code creates and displays a dialogue box	
+#	$OneSecTimer.start()
+#
 
-
-func _on_OneSecTimer_timeout():
-	if MasterScript.currentQuestNum == 0:
-		get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
-		$OneSecTimer.stop()
-		#MasterScript.currentQuestNum+=1
+#
+#func _on_OneSecTimer_timeout():
+#	if MasterScript.currentQuestNum == 0:
+#		get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
+#		$OneSecTimer.stop()
+#		#MasterScript.currentQuestNum+=1

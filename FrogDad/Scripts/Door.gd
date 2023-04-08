@@ -18,7 +18,7 @@ func _input(event):
 			print("no scene in this door")
 		if door_opened and mouse_in:
 			go_outside()
-	
+
 func set_locked(boolean):
 	locked = boolean
 
@@ -54,3 +54,5 @@ func _on_DoorMouseArea_mouse_exited():
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
 		mouse_in = false
+
+
