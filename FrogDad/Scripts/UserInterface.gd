@@ -19,6 +19,7 @@ func _on_ToggleInventoryButton_pressed():
 #	FrogDad.state = "inventory"
 #	FrogDad.get_node("AnimatedSprite").stop()
 	ToggleInventoryButton.visible = false
+	$DarkBackground.visible = true
 	open_inventory()
 	
 func _input(event):
@@ -30,5 +31,6 @@ func _input(event):
 			FrogDad.state = ""
 			FrogDad.get_node("AnimatedSprite").play()
 			ToggleInventoryButton.visible = true
+			$DarkBackground.visible = false
 		if !ToggleInventoryButton.visible:
 			ToggleInventoryButton.visible = true

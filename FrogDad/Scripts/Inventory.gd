@@ -87,7 +87,7 @@ func left_click_not_holding(slot: SlotClass): # remove item from slot and make i
 	inventory_data.remove_item(slot)
 	FrogDad.holding_item = slot.item
 	slot.pick_from_slot()
-	FrogDad.holding_item.position = get_global_mouse_position()	
+	FrogDad.holding_item.position = get_local_mouse_position()	
 
 # Used from ItemDrop
 func add_item(item_name, item_quantity):

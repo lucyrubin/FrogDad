@@ -255,13 +255,25 @@ text = "to drop
 scroll_active = false
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
-visible = false
 scale = Vector2( 3, 3 )
 transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 script = ExtResource( 3 )
 
+[node name="DarkBackground" type="ColorRect" parent="UserInterface"]
+visible = false
+modulate = Color( 1, 1, 1, 0.486275 )
+margin_top = 1.0
+margin_right = 342.0
+margin_bottom = 201.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
+visible = false
+position = Vector2( 120, 50 )
 scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_group_": true
+}
 item_list = {
 0: [ "Fly", 1 ],
 1: [ "Log", 98 ],
@@ -270,7 +282,7 @@ item_list = {
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 0, 110 )
+position = Vector2( 120, 165 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Fly", 3 ]
@@ -351,7 +363,8 @@ default_tex = ExtResource( 22 )
 empty_tex = ExtResource( 21 )
 
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
-position = Vector2( 0, 110 )
+visible = false
+position = Vector2( 120, 164 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Cloth", 3 ]
