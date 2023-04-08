@@ -10,10 +10,10 @@
 [ext_resource path="res://Scenes/ForestEntrance.gd" type="Script" id=8]
 [ext_resource path="res://Art/doorHover.png" type="Texture" id=9]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=99]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=100]
 points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 117.613, 34.9403, 120.962, 50.5688, 121.241, 66.4765, 112.589, 95.2219, 104.775, 107.501, 80.2158, 117.269, 46.4469, 115.595, 26.074, 112.525, 17.1433, 104.432, 11.0036, 78.1979, 11.0036, 53.9178, 31.6556, 21.8234, 68.2153, 9.54382 )
 
 [sub_resource type="TileSet" id=1]
@@ -55,14 +55,14 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 8 )
+2/shape = SubResource( 100 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 100 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -188,14 +188,14 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape = SubResource( 2 )
+11/shape = SubResource( 99 )
 11/shape_one_way = false
 11/shape_one_way_margin = 1.0
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 99 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
