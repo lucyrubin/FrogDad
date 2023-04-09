@@ -3,11 +3,18 @@
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/BabyGertrude.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/DebuggingData.gd" type="Script" id=36]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=37]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+#func _process(delta):
+	#print(\"Camera position: \", position.x, \", \", position.y)
+	#print(\"Texture rect position: \", $CanvasLayer/TextureRect.rect_position.x, \", \", $CanvasLayer/TextureRect.rect_position.y )
+"
 
 [node name="Main" type="Node2D"]
 position = Vector2( -40, 8 )
@@ -46,7 +53,7 @@ limit_top = -634
 limit_right = 760
 limit_bottom = 174
 editor_draw_limits = true
-script = ExtResource( 5 )
+script = SubResource( 1 )
 
 [node name="DebuggingData" type="CanvasLayer" parent="FrogDad/Camera2D"]
 script = ExtResource( 36 )
@@ -98,15 +105,7 @@ text = "Camera Position
 :"
 autowrap = true
 
-[node name="SkipIntroButton" type="Button" parent="FrogDad/Camera2D/DebuggingData/ColorRect/VBoxContainer"]
-margin_top = 89.0
-margin_right = 219.0
-margin_bottom = 109.0
-text = "Skip Intro"
-
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 37 )]
 
 [node name="EnterHome" type="Position2D" parent="."]
 position = Vector2( 484, -519 )
-
-[connection signal="pressed" from="FrogDad/Camera2D/DebuggingData/ColorRect/VBoxContainer/SkipIntroButton" to="FrogDad/Camera2D/DebuggingData" method="_on_SkipIntroButton_pressed"]

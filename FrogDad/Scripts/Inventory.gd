@@ -3,6 +3,7 @@ extends Node2D
 const SlotClass = preload("res://Scripts/Slot.gd")
 
 export (Dictionary) var item_list
+export (String) var inventory_type
 
 onready var inventory_slots = $GridContainer
 var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
@@ -10,6 +11,9 @@ var inventory_open = false
 var mouse_in_inventory = false
 var inventory_data = InventoryData.new()
 var FrogDad
+onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
+onready var dresser_inventory_node = get_tree().get_root().find_node("DresserInventory",true, false)
+onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
 
 func _ready():
 	var slots = inventory_slots.get_children()
@@ -27,6 +31,7 @@ func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 func initialize_inventory():
+	
 	var slots = inventory_slots.get_children()
 	
 	for i in range(slots.size()):
@@ -52,8 +57,9 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _input(event):
 	# make the item that is being held follow the mouse
 	if FrogDad.holding_item:
-		FrogDad.holding_item.position = get_global_mouse_position()
+		FrogDad.holding_item.position = get_global_mouse_position()  -  Vector2(130,55)
 		FrogDad.holding_item.z_index = 4090
+	
 		
 
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
@@ -66,9 +72,9 @@ func left_click_different_item(event: InputEvent, slot: SlotClass): # swap items
 	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
 	var temp_item = slot.item
 	slot.pick_from_slot()
-	temp_item.global_position = event.global_position
+	temp_item.global_position = event.global_position -  Vector2(130,55)
 	slot.put_into_slot(FrogDad.holding_item)
-	FrogDad.holding_item = temp_item
+	FrogDad.holding_item = temp_item 
 	
 func left_click_same_item(slot: SlotClass):
 	var stack_size = int(JsonData.item_data[slot.item.item_name]["StackSize"]) # get the stack size for the item
@@ -87,7 +93,7 @@ func left_click_not_holding(slot: SlotClass): # remove item from slot and make i
 	inventory_data.remove_item(slot)
 	FrogDad.holding_item = slot.item
 	slot.pick_from_slot()
-	FrogDad.holding_item.position = get_global_mouse_position()	
+	FrogDad.holding_item.position = get_global_mouse_position() -  Vector2(130,55)
 
 # Used from ItemDrop
 func add_item(item_name, item_quantity):

@@ -15,12 +15,8 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 18, 18 )
 
 [node name="Inventory" type="Node2D"]
-position = Vector2( 3, 2 )
 scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 item_list = {
 0: [ "Fly", 1 ],
 1: [ "Log", 98 ]
@@ -30,29 +26,25 @@ item_list = {
 priority = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 56.8333, 46.8333 )
+position = Vector2( 60.3333, 48.6667 )
 shape = SubResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -3.33333
-margin_top = -2.0
-margin_right = 291.667
-margin_bottom = 249.0
+anchor_right = 1.0
 rect_scale = Vector2( 0.43, 0.41 )
 texture = ExtResource( 1 )
 
 [node name="GridContainer" type="GridContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 3.33333
-margin_top = 4.66667
-margin_right = 111.333
-margin_bottom = 88.6667
+margin_left = 6.66667
+margin_top = 6.0
+margin_right = 112.667
+margin_bottom = 90.0
 rect_min_size = Vector2( 18, 18 )
 mouse_filter = 2
 columns = 5
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Slot1" type="Panel" parent="GridContainer"]
 margin_right = 18.0

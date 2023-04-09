@@ -255,26 +255,41 @@ text = "to drop
 scroll_active = false
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
-visible = false
 scale = Vector2( 3, 3 )
 transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 script = ExtResource( 3 )
 
+[node name="DarkBackground" type="ColorRect" parent="UserInterface"]
+visible = false
+modulate = Color( 1, 1, 1, 0.486275 )
+margin_left = -6.0
+margin_top = -8.0
+margin_right = 346.0
+margin_bottom = 207.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
+visible = false
+position = Vector2( 120, 50 )
 scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_group_": true
+}
 item_list = {
 0: [ "Fly", 1 ],
 1: [ "Log", 98 ],
 2: [ "Cloth", 4 ]
 }
+inventory_type = "player"
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 0, 110 )
+position = Vector2( 120, 165 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Fly", 3 ]
 }
+inventory_type = "fridge"
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/FridgeInventory"]
 margin_left = -1.0
@@ -351,11 +366,13 @@ default_tex = ExtResource( 22 )
 empty_tex = ExtResource( 21 )
 
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
-position = Vector2( 0, 110 )
+visible = false
+position = Vector2( 120, 164 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Cloth", 3 ]
 }
+inventory_type = "dresser"
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/DresserInventory"]
 margin_top = -12.6667
@@ -437,3 +454,7 @@ visible = false
 [connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="timeout" from="ToggleQuestButton/Quest/OneSecTimer" to="ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
 [connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
+[connection signal="mouse_entered" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
+[connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]

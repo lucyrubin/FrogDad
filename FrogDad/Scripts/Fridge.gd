@@ -21,10 +21,14 @@ func _on_Fridge_input_event(viewport, event, shape_idx):
 			user_interface_node.visible = true
 			frogdad_node.state = "Inventory"
 			user_interface_node.open_inventory()
+			var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
+			DarkBackground.visible = true
 		else:
 			fridge_inventory_node.visible = false
 			user_interface_node.visible = false
 			frogdad_node.state = ""
+			var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
+			DarkBackground.visible = false
 
 func _input(event):
 	# if escape is pressed and open, then close it all

@@ -16,15 +16,6 @@ onready var text_animation = $Content/TextAnimation
 onready var avatar 
 
 
-func _ready():
-	pass
-	#hide_dialog_box()
-
-
-func _process(delta):
-	pass
-	#print(content.rect_position)
-	
 func _input(event):
 
 	# if user pressed "space key" before text animation ends,
@@ -38,7 +29,7 @@ func _input(event):
 			_show_dialog(current + 1)
 		else:
 			hide_dialog_box()
-		#get_tree().set_input_as_handled()
+
 
 func hide_dialog_box():
 
@@ -51,17 +42,12 @@ func show_dialog_box(_dialogs):
 	text_animation = $Content/TextAnimation
 	if $Content.get_node("Avatar"):
 		avatar = $Content/Avatar
-	#content.hide()
 	dialogs = _dialogs
 
 	content.show()
 	_show_dialog(0)
 	
 func _show_dialog(index):
-	
-	
-	
-	
 	
 	current = index
 

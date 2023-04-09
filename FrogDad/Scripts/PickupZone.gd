@@ -7,8 +7,8 @@ const LogDropClass = preload("res://Scripts/LogDrop.gd")
 var items_in_range = {} # a dictionary
 
 func _on_PickupZone_body_entered(body):
-	#print(body)
-	if body is ItemDropClass: ## TODO: Make the cloth be in the itemdrop class or some other class (basically need to make this more of an abstraction)
+
+	if body is ItemDropClass: 
 		
 		items_in_range[body] = body # add body to items_in_range when the player touches it
 

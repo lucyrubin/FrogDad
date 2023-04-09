@@ -17,11 +17,10 @@ func _process(delta):
 	print(MasterScript.currentQuestNum)
 func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
-	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)#FrogDad.getInventoryNode()#get_node(inventory_path)
+	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
-	print(MasterScript.currentQuestNum)
-#	pop_up = SmallPopUpBoxScene.instance()
+
 	if MasterScript.currentQuestNum == -2 :
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == -1:
@@ -33,7 +32,7 @@ func _ready():
 
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from MasterScript.currentQuestArray
-	#print(MasterScript.currentQuestArray[0])
+
 	FrogDad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
 	MasterScript.currentQuestArray.remove(0) # if we have concurrent requests this should be changed to MasterScript.currentQuestNum, not totally sure what else we would need to change though
 	if MasterScript.questDictionary.size() > MasterScript.currentQuestNum + 1:
@@ -147,19 +146,3 @@ func after_note_appears():
 	PopUpNode.visible = true
 	PopUpNode.show_dialog_box([{avatar = "", text = "What could that be?"}])
 	# this code creates and displays a dialogue box	
-	
-#func they_look_so_small():
-#	# this code creates and displays a dialogue box	
-#	PopUpNode.visible = true
-#	PopUpNode.show_dialog_box([{avatar = "", text = "They look so small and fragile. How should I carry them?"},
-#							{avatar = "", text = "I should go grab some cloth and make a swaddle."}])
-#	# this code creates and displays a dialogue box	
-#	$OneSecTimer.start()
-#
-
-#
-#func _on_OneSecTimer_timeout():
-#	if MasterScript.currentQuestNum == 0:
-#		get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
-#		$OneSecTimer.stop()
-#		#MasterScript.currentQuestNum+=1
