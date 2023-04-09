@@ -33,3 +33,4 @@ func _on_OutdoorDoor_area_exited(area):
 	door_opened = false
 	current_fram -= 1
 	$AnimatedSprite.set_frame(current_fram)
+

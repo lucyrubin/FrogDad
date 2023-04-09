@@ -10,6 +10,7 @@ func _ready():
 	if MasterScript.findBabies:
 		$FrogDad.position = $EnterHome.position
 		MasterScript.findBabies = false
+	
 
 func _process(delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 

@@ -15,6 +15,7 @@ export (NodePath) var inventory_path
 
 func _process(delta):
 	print(MasterScript.currentQuestNum)
+
 func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)
@@ -107,6 +108,8 @@ func _on_ToggleQuestButton_pressed():
 
 
 func begin_intro_quest():
+	PopUpNode.visible = true
+	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Everyday is the same thing. I wake up. I work as a freelance writer. I sleep. I wish something more exciting will happen to me."}])
 	$KnockTimer.start()
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	door_node.set_locked(true)
@@ -114,13 +117,11 @@ func begin_intro_quest():
 	
 
 func _on_KnockTimer_timeout():
-
 	# this code creates and displays a dialogue box	
 	PopUpNode.visible = true
 	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}])
 	# this code creates and displays a dialogue box	
 	
-
 	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
