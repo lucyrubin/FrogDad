@@ -14,9 +14,9 @@ func _input(event):
 	if event.is_action_pressed("open"):
 		if !target_scene:
 			print("no scene in this door")
-		if door_opened:
+		if door_opened && mouse_in:
 			go_inside()
-			#this works for now but worried it may cause issues in future
+			
 
 func go_inside():
 	MasterScript.enter_home = true
@@ -33,4 +33,11 @@ func _on_OutdoorDoor_area_exited(area):
 	door_opened = false
 	current_fram -= 1
 	$AnimatedSprite.set_frame(current_fram)
+	
+func _on_Area2D_mouse_entered():
+	$AnimatedSprite.play("hover")
+	mouse_in = true
 
+func _on_Area2D_mouse_exited():
+	$AnimatedSprite.play("close")
+	mouse_in = false

@@ -1012,12 +1012,10 @@ text = "READ ME"
 [node name="DoorMouseArea" type="Area2D" parent="YSort/Door"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/Door/DoorMouseArea"]
-visible = false
 position = Vector2( 11, 9 )
 shape = SubResource( 103 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/DoorMouseArea"]
-visible = false
 position = Vector2( 11, 45 )
 shape = SubResource( 104 )
 __meta__ = {

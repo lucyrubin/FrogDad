@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -297,21 +297,30 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 384, 512 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=117]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 384, 512 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 10 ) ],
+"frames": [ SubResource( 3 ), SubResource( 3 ) ],
 "loop": true,
 "name": "close",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 117 ) ],
+"loop": true,
+"name": "hover",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 153.806, 204.387 )
+
+[sub_resource type="CapsuleShape2D" id=116]
+radius = 42.6528
+height = 105.319
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 126, 107.5 )
@@ -325,6 +334,7 @@ margin_left = -3.0
 margin_top = 1.0
 margin_right = 1916.0
 margin_bottom = 1612.0
+mouse_filter = 2
 color = Color( 0.713726, 0.768627, 0.568627, 1 )
 
 [node name="Grass" type="TileMap" parent="."]
@@ -351,6 +361,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -360,7 +371,7 @@ position = Vector2( -9, 104 )
 shape = SubResource( 106 )
 
 [node name="ForestEntrance" type="Area2D" parent="."]
-position = Vector2( 1280, -1 )
+position = Vector2( 1280, 2 )
 collision_layer = 8
 script = ExtResource( 8 )
 __meta__ = {
@@ -369,14 +380,14 @@ __meta__ = {
 
 [node name="TemporaryEntrance" type="ColorRect" parent="ForestEntrance"]
 margin_right = 128.0
-margin_bottom = 65.0
+margin_bottom = 127.0
 color = Color( 0.2, 0.156863, 0.109804, 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ForestEntrance/TemporaryEntrance"]
-margin_left = 20.0
-margin_top = 40.0
-margin_right = 106.0
-margin_bottom = 57.0
+margin_left = 22.0
+margin_top = 103.0
+margin_right = 108.0
+margin_bottom = 120.0
 text = "enter forest !"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ForestEntrance"]
@@ -391,6 +402,7 @@ collision_layer = 2
 margin_top = -22.0
 margin_right = 249.0
 margin_bottom = 192.0
+mouse_filter = 2
 color = Color( 0.482353, 0.380392, 0.333333, 1 )
 
 [node name="OutdoorDoor" type="Area2D" parent="OutdoorHouse"]
@@ -406,13 +418,22 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="OutdoorHouse/OutdoorDoor"]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 5 )
-animation = "close"
+animation = "hover"
 
 [node name="DoorDetector" type="CollisionShape2D" parent="OutdoorHouse/OutdoorDoor"]
+visible = false
 position = Vector2( 17.5484, 35.0967 )
 shape = SubResource( 6 )
 
+[node name="Area2D" type="Area2D" parent="OutdoorHouse/OutdoorDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutdoorHouse/OutdoorDoor/Area2D"]
+position = Vector2( 16.5162, 55.7418 )
+scale = Vector2( 3.33979, 2.23103 )
+shape = SubResource( 116 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutdoorHouse"]
+visible = false
 position = Vector2( 123, 85.5 )
 shape = SubResource( 7 )
 
@@ -433,6 +454,77 @@ polygon = PoolVector2Array( -1086, -1408, -1088, 257, 833, 253, 837, -1398, 869,
 position = Vector2( -2, 5 )
 polygon = PoolVector2Array( -1078, -1408, 835, -1401, 837, -1356, -1074, -1352 )
 
+[node name="Tree6" type="StaticBody2D" parent="."]
+position = Vector2( 1250, -19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="Tree6"]
+position = Vector2( 199, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree4" type="StaticBody2D" parent="Tree6/Tree7"]
+position = Vector2( -175, 29 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6/Tree7/Tree4"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree5" type="StaticBody2D" parent="Tree6/Tree7/Tree4"]
+position = Vector2( 155, -3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6/Tree7/Tree4/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1194, 563 )
 
@@ -443,7 +535,7 @@ remote_path = NodePath("../Camera2D")
 current = true
 zoom = Vector2( 0.8, 0.8 )
 limit_left = 595
-limit_top = 394
+limit_top = 332
 limit_right = 1924
 limit_bottom = 1164
 editor_draw_limits = true
@@ -453,3 +545,5 @@ editor_draw_limits = true
 [connection signal="area_entered" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_entered"]
 [connection signal="area_entered" from="OutdoorHouse/OutdoorDoor" to="OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_entered"]
 [connection signal="area_exited" from="OutdoorHouse/OutdoorDoor" to="OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_exited"]
+[connection signal="mouse_entered" from="OutdoorHouse/OutdoorDoor/Area2D" to="OutdoorHouse/OutdoorDoor" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="OutdoorHouse/OutdoorDoor/Area2D" to="OutdoorHouse/OutdoorDoor" method="_on_Area2D_mouse_exited"]
