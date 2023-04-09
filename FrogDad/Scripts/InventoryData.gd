@@ -15,7 +15,7 @@ func setup(slots_num, item_list):
 	
 func add_item_to_empty_slot(item: ItemClass, slot: SlotClass):
 	inventory[slot.slot_index] = [item.item_name, item.item_quantity]
-	#print(inventory)
+
 
 func remove_item(slot: SlotClass):
 	inventory.erase(slot.slot_index) # delete from the inventory dictionary

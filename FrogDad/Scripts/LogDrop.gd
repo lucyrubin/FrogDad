@@ -28,13 +28,13 @@ func get_sprite():
 #		queue_free()
 
 func _ready():
-	#$Sprite.z_index = $Sprite.position.y #default setup
+
 	if(item_name == null):
 		item_name = "Log"
 	if being_picked_up: # if it's not being picked up, apply gravity
 		inventory_node.add_item(item_name, 1)
 		queue_free()
-	#$Sprite.texture = load("res://Item Icons/" + item_name + ".png") 
+
 
 func setup(xgiven, ygiven, name, inventory):
 

@@ -10,14 +10,10 @@ var done_talking = false
 var mouse_in_area = false
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
-func _on_Timer_timeout(): # use this for small dialogue bubbles to make them disappear after a while
-	pass
-#	$Speech.visible = false # toggle speech bubble visibility
-#	done_talking = true
+
 	
 func _on_Area2D_body_entered(body): # if player is nearby, show the action bubble
 	if body is PlayerClass && !done_talking:
-		#print("inside")
 		$Speech.visible = true
 	$AnimatedSprite.play("default")
 
@@ -39,9 +35,6 @@ func _input(event):
 		FrogDad.get_node("AnimatedSprite").play()
 		$Speech.visible = true
 		
-
-
-
 
 func _on_ClickArea_mouse_entered():
 	mouse_in_area = true
