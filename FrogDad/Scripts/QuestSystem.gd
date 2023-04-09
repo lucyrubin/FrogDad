@@ -109,7 +109,7 @@ func _on_ToggleQuestButton_pressed():
 
 func begin_intro_quest():
 	PopUpNode.visible = true
-	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Everyday is the same thing. I wake up. I work as a freelance writer. I sleep. I wish something more exciting will happen to me."}])
+	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Everyday feels the same. I wake up, I work as a freelance writer, and I sleep. I wish something more exciting would happen..."}])
 	$KnockTimer.start()
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	door_node.set_locked(true)
