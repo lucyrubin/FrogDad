@@ -66,7 +66,6 @@ func _show_dialog(index):
 	
 
 func _on_Content_visibility_changed():
-
 	get_tree().paused = content.visible
 
 
