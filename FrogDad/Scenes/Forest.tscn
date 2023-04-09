@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestExit.gd" type="Script" id=2]
@@ -35,6 +35,10 @@
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=34]
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=35]
+[ext_resource path="res://Forest Art/tree2.png" type="Texture" id=36]
+[ext_resource path="res://Forest Art/tree3.png" type="Texture" id=37]
+[ext_resource path="res://Forest Art/tree4.png" type="Texture" id=38]
+[ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=39]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -268,6 +272,37 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 14/shapes = [  ]
 14/z_index = 0
 
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 38 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=122]
+animations = [ {
+"frames": [ SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=123]
+radius = 18.4391
+
 [sub_resource type="AtlasTexture" id=102]
 flags = 4
 atlas = ExtResource( 34 )
@@ -278,13 +313,85 @@ flags = 4
 atlas = ExtResource( 34 )
 region = Rect2( 300, 0, 300, 450 )
 
-[sub_resource type="SpriteFrames" id=101]
+[sub_resource type="AtlasTexture" id=104]
+flags = 4
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=105]
+flags = 4
+atlas = ExtResource( 34 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=106]
 animations = [ {
-"frames": [ SubResource( 102 ), SubResource( 103 ) ],
+"frames": [ SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="CircleShape2D" id=101]
+radius = 23.0217
+
+[sub_resource type="AtlasTexture" id=107]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=108]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=109]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=111]
+animations = [ {
+"frames": [ SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=112]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=113]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=114]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=116]
+animations = [ {
+"frames": [ SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=117]
+radius = 11.1803
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 124.5, 60 )
@@ -329,19 +436,234 @@ collision_layer = 8
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 0, 0, 5, 0, 0, 6, 1, 0, 7, 0, 0, 9, 1, 0, 10, 0, 0, 11, 13, 0, 12, 0, 0, 14, 0, 0, 65541, 0, 0, 65547, 13, 0, 65548, 1, 0, 65550, 0, 0, 131072, 14, 0, 131073, 13, 0, 131074, 0, 0, 131076, 0, 0, 131078, 0, 0, 131079, 1, 0, 131081, 0, 0, 131083, 14, 0, 131086, 1, 0, 196608, 1, 0, 196612, 13, 0, 196613, 0, 0, 196619, 14, 0, 196620, 0, 0, 196622, 0, 0, 262144, 0, 0, 262146, 1, 0, 262148, 14, 0, 262150, 0, 0, 262152, 1, 0, 262154, 0, 0, 327684, 13, 0, 327685, 1, 0, 327692, 1, 0, 327694, 0, 0, 393216, 0, 0, 393217, 1, 0, 393219, 0, 0, 393222, 0, 0, 393224, 0, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 458756, 1, 0, 458762, 1, 0, 458764, 1, 0, 458766, 0, 0, 524288, 13, 0, 524289, 13, 0, 524290, 14, 0, 524291, 14, 0, 524294, 0, 0, 524295, 14, 0, 524296, 13, 0, 524297, 0, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 589824, 1, 0, 589826, 0, 0, 589828, 1, 0, 589830, 0, 0, 589832, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 0, 0, 655364, 1, 0, 655365, 1, 0, 655366, 0, 0, 655368, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 720896, 0, 0, 720898, 1, 0, 720900, 13, 0, 720901, 0, 0, 720906, 0, 0, 720907, 1, 0, 720908, 1, 0, 720909, 14, 0, 720910, 0, 0, 786436, 14, 0, 786437, 0, 0, 786438, 14, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 14, 0, 851968, 0, 0, 851969, 14, 0, 851970, 1, 0, 851972, 13, 0, 851973, 0, 0, 851974, 14, 0, 851975, 1, 0, 851977, 1, 0, 851978, 0, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 0, 0, 917508, 14, 0, 917509, 1, 0, 917511, 0, 0, 917513, 1, 0, 917515, 0, 0, 917517, 1, 0, 917518, 14, 0, 983040, 1, 0, 983042, 0, 0, 983044, 13, 0, 983045, 1, 0, 983047, 1, 0, 983049, 14, 0, 983050, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 1048576, 0, 0, 1048578, 1, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 13, 0, 1048590, 0, 0, 1114126, 14, 0 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 273, 901 )
-frames = SubResource( 101 )
-frame = 1
+[node name="YSort" type="YSort" parent="."]
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 670, 712 )
-frames = SubResource( 101 )
+[node name="Tree13" type="StaticBody2D" parent="YSort"]
+position = Vector2( 862, 646 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree13"]
+position = Vector2( 31, 8 )
+frames = SubResource( 122 )
+frame = 2
+speed_scale = 0.3
+playing = true
 flip_h = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree13"]
+position = Vector2( 16, 101 )
+shape = SubResource( 123 )
+
+[node name="Tree12" type="StaticBody2D" parent="YSort"]
+position = Vector2( 461, 144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree12"]
+position = Vector2( 55, -31 )
+frames = SubResource( 106 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree12"]
+position = Vector2( 62, 124 )
+shape = SubResource( 101 )
+
+[node name="Tree11" type="StaticBody2D" parent="YSort"]
+position = Vector2( 61, 486 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree11"]
+position = Vector2( 20, -1 )
+frames = SubResource( 111 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree11"]
+position = Vector2( 16, 143 )
+shape = SubResource( 101 )
+
+[node name="Tree10" type="StaticBody2D" parent="YSort"]
+position = Vector2( 522, 462 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree10"]
+frames = SubResource( 122 )
+frame = 3
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree10"]
+position = Vector2( 16, 101 )
+shape = SubResource( 123 )
+
+[node name="Tree9" type="StaticBody2D" parent="YSort"]
+position = Vector2( 705, 970 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree9"]
+frames = SubResource( 122 )
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree9"]
+position = Vector2( 16, 101 )
+shape = SubResource( 123 )
+
+[node name="Tree8" type="StaticBody2D" parent="YSort"]
+position = Vector2( 128, 868 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree8"]
+position = Vector2( 20, -1 )
+frames = SubResource( 111 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree8"]
+position = Vector2( 16, 143 )
+shape = SubResource( 101 )
+
+[node name="Tree7" type="StaticBody2D" parent="YSort"]
+position = Vector2( 239, 648 )
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree7"]
+position = Vector2( 64, -26 )
+frames = SubResource( 106 )
+frame = 3
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree7"]
+position = Vector2( 62, 124 )
+shape = SubResource( 101 )
+
+[node name="Tree6" type="StaticBody2D" parent="YSort"]
+position = Vector2( 751, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree6"]
+position = Vector2( 51, -11 )
+frames = SubResource( 106 )
+frame = 3
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree6"]
+position = Vector2( 63, 124 )
+shape = SubResource( 101 )
+
+[node name="Tree5" type="StaticBody2D" parent="YSort"]
+position = Vector2( 931, 1021 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 116 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 117 )
+
+[node name="Tree4" type="StaticBody2D" parent="YSort"]
+position = Vector2( 330, 1003 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
+position = Vector2( 1, 0 )
+frames = SubResource( 116 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree4"]
+position = Vector2( -9, 104 )
+shape = SubResource( 117 )
+
+[node name="Tree3" type="StaticBody2D" parent="YSort"]
+position = Vector2( 441, 845 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
+position = Vector2( 1, 0 )
+frames = SubResource( 116 )
+frame = 3
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree3"]
+position = Vector2( -9, 104 )
+shape = SubResource( 117 )
+
+[node name="Tree2" type="StaticBody2D" parent="YSort"]
+position = Vector2( 613, 696 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
+frames = SubResource( 111 )
+frame = 2
+speed_scale = 0.3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree2"]
+position = Vector2( 16, 143 )
+shape = SubResource( 101 )
+
+[node name="Tree1" type="StaticBody2D" parent="YSort"]
+position = Vector2( 232, 217 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
+position = Vector2( 1, 0 )
+frames = SubResource( 106 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree1"]
+position = Vector2( -9, 135 )
+shape = SubResource( 101 )
+
 [node name="ForestExit" type="Area2D" parent="."]
+position = Vector2( 28, -23 )
+z_index = 20
 collision_layer = 8
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="ForestExit"]
 margin_left = 381.0
@@ -362,10 +684,34 @@ position = Vector2( 505.5, 1114 )
 shape = SubResource( 1 )
 
 [node name="EnterForest" type="Position2D" parent="."]
-position = Vector2( 509, 1066 )
+position = Vector2( 540, 941 )
+
+[node name="ItemDrop" parent="." instance=ExtResource( 39 )]
+position = Vector2( 299, 826 )
+item_name = "Log"
+
+[node name="ItemDrop2" parent="." instance=ExtResource( 39 )]
+position = Vector2( 902, 846 )
+item_name = "Log"
+
+[node name="ItemDrop3" parent="." instance=ExtResource( 39 )]
+position = Vector2( 688, 485 )
+item_name = "Log"
+
+[node name="ItemDrop4" parent="." instance=ExtResource( 39 )]
+position = Vector2( 52, 716 )
+item_name = "Log"
+
+[node name="Borders" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
+position = Vector2( 515, 579.5 )
+scale = Vector2( 56.3, 61.75 )
+polygon = PoolVector2Array( -9.68028, -9.77328, 9.46714, -9.75708, 9.02309, -9.35223, -9.21847, -9.40081, -9.20071, 9.23886, 9.02309, 9.27125, 9.02309, -9.35223, 9.46714, -9.75708, 9.39609, 9.57895, -9.66252, 9.64372 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 508, 1008 )
+position = Vector2( 520, 920 )
+z_index = 15
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
 current = true
@@ -751,6 +1097,8 @@ empty_tex = ExtResource( 31 )
 [node name="SmallPopUpBox" parent="FrogDad/Camera2D/HUD/UserInterface" instance=ExtResource( 5 )]
 visible = false
 
+[connection signal="area_entered" from="ForestExit" to="ForestExit" method="_on_ForestExit_area_entered"]
+[connection signal="area_exited" from="ForestExit" to="ForestExit" method="_on_ForestExit_area_exited"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleInventoryButton" to="FrogDad/Camera2D/HUD/UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleQuestButton" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="timeout" from="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest/OneSecTimer" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]

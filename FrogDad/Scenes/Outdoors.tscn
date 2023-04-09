@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/OutdoorDoor.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/ForestEntrance.gd" type="Script" id=8]
 [ext_resource path="res://Art/doorHover.png" type="Texture" id=9]
+[ext_resource path="res://Forest Art/tree3.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=99]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -258,6 +259,37 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="AtlasTexture" id=112]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=113]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=114]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=105]
+animations = [ {
+"frames": [ SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=106]
+radius = 11.1803
+
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 64, 32.5 )
 
@@ -285,6 +317,9 @@ extents = Vector2( 153.806, 204.387 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 126, 107.5 )
 
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 991, 26.5938 )
+
 [node name="Outdoors" type="Node2D"]
 position = Vector2( 15, 328 )
 script = ExtResource( 4 )
@@ -308,6 +343,26 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 0, 0, 6, 1, 0, 7, 0, 0, 
 tile_set = SubResource( 98 )
 format = 1
 tile_data = PoolIntArray( 65556, 0, 0, 65557, 0, 0, 131092, 0, 0, 131093, 0, 0, 196628, 0, 0, 196629, 0, 0, 262164, 0, 0, 262165, 0, 0, 327700, 0, 0, 327701, 0, 0, 393236, 0, 0, 393237, 0, 0, 458765, 0, 0, 458766, 0, 0, 458772, 0, 0, 458773, 0, 0, 524301, 0, 0, 524302, 0, 0, 524308, 0, 0, 524309, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Tree3" type="StaticBody2D" parent="YSort"]
+position = Vector2( 1131, 437 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree3"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
 
 [node name="ForestEntrance" type="Area2D" parent="."]
 position = Vector2( 1279, 0 )
@@ -373,7 +428,7 @@ position = Vector2( 1343, 75 )
 position = Vector2( 892, 407 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1168, 443 )
+position = Vector2( 1194, 563 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
 remote_path = NodePath("../Camera2D")
@@ -389,6 +444,17 @@ editor_draw_limits = true
 script = ExtResource( 3 )
 
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 2 )]
+
+[node name="Borders" type="StaticBody2D" parent="."]
+position = Vector2( 1085, 1354 )
+
+[node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
+position = Vector2( -2, 5 )
+polygon = PoolVector2Array( -1086, -1408, -1088, 257, 833, 253, 837, -1398, 869, -1398, 867, 286, -1130, 283, -1127, -1407 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2( -130, -1379.59 )
+shape = SubResource( 116 )
 
 [connection signal="area_entered" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_entered"]
 [connection signal="area_exited" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_exited"]

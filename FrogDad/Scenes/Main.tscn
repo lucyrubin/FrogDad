@@ -19,31 +19,15 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ItemDrop" parent="." instance=ExtResource( 8 )]
-position = Vector2( -817, -218 )
-item_name = "Log"
-
-[node name="ItemDrop2" parent="." instance=ExtResource( 8 )]
-position = Vector2( -384, 157 )
-item_name = "Log"
-
-[node name="ItemDrop3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -649, -198 )
-item_name = "Log"
-
-[node name="ItemDrop4" parent="." instance=ExtResource( 8 )]
-position = Vector2( -944, -116 )
-item_name = "Log"
-
-[node name="ItemDrop5" parent="." instance=ExtResource( 8 )]
-position = Vector2( -244, -3 )
-item_name = "Cloth"
-
 [node name="Home" parent="." instance=ExtResource( 9 )]
 position = Vector2( -24, -74 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ItemDrop5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 408, -167 )
+item_name = "Cloth"
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
 position = Vector2( 264, -386 )
