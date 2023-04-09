@@ -96,7 +96,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 4
+frame = 2
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -133,15 +133,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -143.5
-margin_top = -68.5
-margin_right = 143.5
-margin_bottom = 68.5
+margin_left = -143.222
+margin_top = -74.2222
+margin_right = 143.778
+margin_bottom = 70.7778
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 17 )
-text = "heyyyy - 
-here are some babies. 
-please take care of them!!!"
+text = "To whom it may concern, 
+
+These are my precious frog babies. I can't take care of them anymore ;( Please look after them!
+							<3"
 scroll_active = false
 
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]

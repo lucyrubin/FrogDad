@@ -433,7 +433,7 @@ tile_set = SubResource( 100 )
 show_collision = true
 collision_layer = 8
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 0, 0, 5, 0, 0, 6, 1, 0, 7, 0, 0, 9, 1, 0, 10, 0, 0, 11, 13, 0, 12, 0, 0, 14, 0, 0, 65541, 0, 0, 65547, 13, 0, 65548, 1, 0, 65550, 0, 0, 131072, 14, 0, 131073, 13, 0, 131074, 0, 0, 131076, 0, 0, 131078, 0, 0, 131079, 1, 0, 131081, 0, 0, 131083, 14, 0, 131086, 1, 0, 196608, 1, 0, 196612, 13, 0, 196613, 0, 0, 196619, 14, 0, 196620, 0, 0, 196622, 0, 0, 262144, 0, 0, 262146, 1, 0, 262148, 14, 0, 262150, 0, 0, 262152, 1, 0, 262154, 0, 0, 327684, 13, 0, 327685, 1, 0, 327692, 1, 0, 327694, 0, 0, 393216, 0, 0, 393217, 1, 0, 393219, 0, 0, 393222, 0, 0, 393224, 0, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 458756, 1, 0, 458762, 1, 0, 458764, 1, 0, 458766, 0, 0, 524288, 13, 0, 524289, 13, 0, 524290, 14, 0, 524291, 14, 0, 524294, 0, 0, 524295, 14, 0, 524296, 13, 0, 524297, 0, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 589824, 1, 0, 589826, 0, 0, 589828, 1, 0, 589830, 0, 0, 589832, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 0, 0, 655364, 1, 0, 655365, 1, 0, 655366, 0, 0, 655368, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 720896, 0, 0, 720898, 1, 0, 720900, 13, 0, 720901, 0, 0, 720906, 0, 0, 720907, 1, 0, 720908, 1, 0, 720909, 14, 0, 720910, 0, 0, 786436, 14, 0, 786437, 0, 0, 786438, 14, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 14, 0, 851968, 0, 0, 851969, 14, 0, 851970, 1, 0, 851972, 13, 0, 851973, 0, 0, 851974, 14, 0, 851975, 1, 0, 851977, 1, 0, 851978, 0, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 0, 0, 917508, 14, 0, 917509, 1, 0, 917511, 0, 0, 917513, 1, 0, 917515, 0, 0, 917517, 1, 0, 917518, 14, 0, 983040, 1, 0, 983042, 0, 0, 983044, 13, 0, 983045, 1, 0, 983047, 1, 0, 983049, 14, 0, 983050, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 1048576, 0, 0, 1048578, 1, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 13, 0, 1048590, 0, 0, 1114126, 14, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 0, 0, 5, 0, 0, 6, 1, 0, 7, 0, 0, 9, 1, 0, 10, 0, 0, 11, 13, 0, 12, 0, 0, 14, 0, 0, 65541, 0, 0, 65547, 13, 0, 65548, 1, 0, 65550, 0, 0, 131072, 14, 0, 131073, 13, 0, 131074, 0, 0, 131076, 0, 0, 131078, 0, 0, 131079, 1, 0, 131081, 0, 0, 131083, 14, 0, 131086, 1, 0, 196608, 1, 0, 196612, 13, 0, 196613, 0, 0, 196619, 14, 0, 196620, 0, 0, 196622, 0, 0, 262144, 0, 0, 262146, 1, 0, 262148, 14, 0, 262150, 0, 0, 262152, 1, 0, 262154, 0, 0, 327684, 13, 0, 327685, 1, 0, 327692, 1, 0, 327694, 0, 0, 393216, 0, 0, 393217, 1, 0, 393219, 0, 0, 393222, 0, 0, 393224, 0, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 458756, 1, 0, 458762, 1, 0, 458764, 1, 0, 458766, 0, 0, 524288, 13, 0, 524289, 13, 0, 524290, 14, 0, 524291, 14, 0, 524294, 0, 0, 524295, 14, 0, 524296, 13, 0, 524297, 0, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 589824, 1, 0, 589826, 0, 0, 589828, 1, 0, 589830, 0, 0, 589832, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 0, 0, 655364, 1, 0, 655365, 1, 0, 655366, 0, 0, 655368, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 720896, 0, 0, 720898, 1, 0, 720900, 13, 0, 720901, 0, 0, 720906, 0, 0, 720907, 1, 0, 720908, 1, 0, 720909, 14, 0, 720910, 0, 0, 786436, 14, 0, 786437, 0, 0, 786438, 14, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 14, 0, 851968, 0, 0, 851969, 14, 0, 851970, 1, 0, 851972, 13, 0, 851973, 0, 0, 851974, 14, 0, 851975, 1, 0, 851977, 1, 0, 851978, 0, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 0, 0, 917508, 14, 0, 917509, 1, 0, 917511, 0, 0, 917513, 1, 0, 917515, 0, 0, 917517, 1, 0, 917518, 14, 0, 983040, 1, 0, 983042, 0, 0, 983044, 13, 0, 983045, 1, 0, 983047, 6, 0, 983048, 6, 0, 983049, 14, 0, 983050, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 1048576, 0, 0, 1048578, 1, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 6, 0, 1048584, 6, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 13, 0, 1048590, 0, 0, 1114126, 14, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -446,6 +446,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree13"]
 position = Vector2( 31, 8 )
 frames = SubResource( 122 )
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -460,6 +461,7 @@ position = Vector2( 461, 144 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree12"]
 position = Vector2( 55, -31 )
 frames = SubResource( 106 )
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -477,7 +479,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree11"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -494,7 +496,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree10"]
 frames = SubResource( 122 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -510,7 +511,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree9"]
 frames = SubResource( 122 )
-frame = 2
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -527,6 +528,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree8"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -541,7 +543,6 @@ position = Vector2( 239, 648 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree7"]
 position = Vector2( 64, -26 )
 frames = SubResource( 106 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -558,7 +559,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree6"]
 position = Vector2( 51, -11 )
 frames = SubResource( 106 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -575,7 +575,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -593,7 +592,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -603,7 +601,7 @@ position = Vector2( -9, 104 )
 shape = SubResource( 117 )
 
 [node name="Tree3" type="StaticBody2D" parent="YSort"]
-position = Vector2( 441, 845 )
+position = Vector2( 442, 822 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -611,7 +609,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -627,6 +624,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
 frames = SubResource( 111 )
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -643,7 +641,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 106 )
-frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -653,7 +650,7 @@ position = Vector2( -9, 135 )
 shape = SubResource( 101 )
 
 [node name="ForestExit" type="Area2D" parent="."]
-position = Vector2( 28, -23 )
+position = Vector2( 27, -19 )
 z_index = 20
 collision_layer = 8
 script = ExtResource( 2 )
@@ -680,7 +677,7 @@ position = Vector2( 505.5, 1114 )
 shape = SubResource( 1 )
 
 [node name="EnterForest" type="Position2D" parent="."]
-position = Vector2( 540, 941 )
+position = Vector2( 521, 921 )
 
 [node name="ItemDrop" parent="." instance=ExtResource( 39 )]
 position = Vector2( 299, 826 )
@@ -715,7 +712,7 @@ zoom = Vector2( 0.8, 0.8 )
 limit_left = 0
 limit_top = 0
 limit_right = 1022
-limit_bottom = 1150
+limit_bottom = 1034
 editor_draw_limits = true
 
 [node name="HUD" type="CanvasLayer" parent="FrogDad/Camera2D"]
@@ -1093,7 +1090,6 @@ empty_tex = ExtResource( 31 )
 visible = false
 
 [connection signal="area_entered" from="ForestExit" to="ForestExit" method="_on_ForestExit_area_entered"]
-[connection signal="area_exited" from="ForestExit" to="ForestExit" method="_on_ForestExit_area_exited"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleInventoryButton" to="FrogDad/Camera2D/HUD/UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleQuestButton" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="timeout" from="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest/OneSecTimer" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
