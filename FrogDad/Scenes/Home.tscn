@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -11,11 +11,14 @@
 [ext_resource path="res://Scripts/Home.gd" type="Script" id=9]
 [ext_resource path="res://Art/fridgehover.png" type="Texture" id=10]
 [ext_resource path="res://Audios/home-sink-63084.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Art/side_table_hover.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/Door.gd" type="Script" id=13]
 [ext_resource path="res://Art/fridge.png" type="Texture" id=14]
 [ext_resource path="res://Art/door.png" type="Texture" id=15]
 [ext_resource path="res://Art/kitchen.png" type="Texture" id=16]
 [ext_resource path="res://Art/sink.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/SideTable.gd" type="Script" id=18]
+[ext_resource path="res://Art/side_table.png" type="Texture" id=19]
 [ext_resource path="res://Art/bedroom.png" type="Texture" id=20]
 [ext_resource path="res://Art/doorHover.png" type="Texture" id=21]
 [ext_resource path="res://Art/bedroom2Hover.png" type="Texture" id=22]
@@ -695,6 +698,45 @@ animations = [ {
 radius = 16.0
 height = 28.0
 
+[sub_resource type="AtlasTexture" id=108]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=109]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=110]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=111]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=112]
+animations = [ {
+"frames": [ SubResource( 108 ), SubResource( 109 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 110 ), SubResource( 111 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=113]
+extents = Vector2( 195, 111 )
+
+[sub_resource type="RectangleShape2D" id=114]
+extents = Vector2( 51.5, 57 )
+
 [node name="Home" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -925,7 +967,7 @@ __meta__ = {
 }
 
 [node name="Bedside Table" type="StaticBody2D" parent="YSort"]
-position = Vector2( -1018, -183 )
+position = Vector2( -1009, -188 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -959,7 +1001,7 @@ position = Vector2( 26.5, 50.75 )
 shape = SubResource( 51 )
 
 [node name="Couch" type="StaticBody2D" parent="YSort"]
-position = Vector2( 532, 30 )
+position = Vector2( 535, 69 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -1078,6 +1120,28 @@ position = Vector2( -348, 34 )
 rotation = 1.5708
 shape = SubResource( 42 )
 
+[node name="Side Table" type="Area2D" parent="YSort"]
+position = Vector2( 539, -137 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Side Table"]
+frames = SubResource( 112 )
+animation = "hover"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Side Table"]
+visible = false
+position = Vector2( 10, -13 )
+shape = SubResource( 113 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Side Table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Side Table/StaticBody2D"]
+position = Vector2( 10.5, 11 )
+shape = SubResource( 114 )
+
 [node name="Borders" type="StaticBody2D" parent="."]
 
 [node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
@@ -1116,3 +1180,8 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="pressed" from="YSort/Door/Note/Button" to="YSort/Door/Note" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="YSort/Door/DoorMouseArea" to="YSort/Door" method="_on_DoorMouseArea_mouse_entered"]
 [connection signal="mouse_exited" from="YSort/Door/DoorMouseArea" to="YSort/Door" method="_on_DoorMouseArea_mouse_exited"]
+[connection signal="area_entered" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_area_entered"]
+[connection signal="area_exited" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_area_exited"]
+[connection signal="input_event" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_input_event"]
+[connection signal="mouse_entered" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_mouse_entered"]
+[connection signal="mouse_exited" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_mouse_exited"]
