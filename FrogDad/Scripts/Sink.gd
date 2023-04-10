@@ -12,6 +12,7 @@ func _on_Sink_input_event(viewport, event, shape_idx):
 	and event.button_index == BUTTON_LEFT and event.pressed:
 		current_fram = (current_fram +1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
+		$AnimatedSprite/FaucetRunning.play()
 
 func _on_Sink_mouse_entered():
 	if frogdad_node.state =="":

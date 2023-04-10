@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/Dresser.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Home.gd" type="Script" id=9]
 [ext_resource path="res://Art/fridgehover.png" type="Texture" id=10]
+[ext_resource path="res://Audios/home-sink-63084.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Scripts/Door.gd" type="Script" id=13]
 [ext_resource path="res://Art/fridge.png" type="Texture" id=14]
 [ext_resource path="res://Art/door.png" type="Texture" id=15]
@@ -772,6 +773,12 @@ position = Vector2( -8.57144, -57.1428 )
 scale = Vector2( 2.1, 2.1 )
 frames = SubResource( 23 )
 animation = "hover"
+
+[node name="FaucetRunning" type="AudioStreamPlayer2D" parent="Sink/AnimatedSprite"]
+stream = ExtResource( 11 )
+volume_db = 0.014
+attenuation = 2.54912
+area_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
 visible = false

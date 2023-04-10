@@ -79,7 +79,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 166, 322.5 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=15]
 font_data = ExtResource( 23 )
 
 [node name="FrogDad" type="KinematicBody2D"]
@@ -96,7 +96,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 3
+frame = 4
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -138,7 +138,7 @@ margin_top = -74.2222
 margin_right = 143.778
 margin_bottom = 70.7778
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 17 )
+custom_fonts/normal_font = SubResource( 15 )
 text = "To whom it may concern, 
 
 These are my precious frog babies. I can't take care of them anymore ;( Please look after them!
