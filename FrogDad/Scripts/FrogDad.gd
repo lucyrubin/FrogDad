@@ -60,5 +60,12 @@ func move_left():
 	$AnimatedSprite.animation = "right"
 
 func toggle_dialogue_box_visibility():
-	$DialogueBox.visible = !$DialogueBox.visible
+#	$DialogueBox.visible = !$DialogueBox.visible
+	$DialogueBox2.visible = !$DialogueBox2.visible
+	$DialogueBox2.show_dialog_box([
+			{avatar = "gertrude", text = "Hi Frog Dad!"},
+			{avatar = "frogDad", text = "Hi Gertrude!"},
+			{avatar = "gertrude", text = "What are we doing today?"},
+			{avatar = "frogDad", text = "Whatever you want."}
+		])
 
