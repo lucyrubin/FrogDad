@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/purrple-cat-green-tea (1).mp3-011e083760e73166b348cba3b9023318.mp3str"
+
+[deps]
+
+source_file="res://Audios/purrple-cat-green-tea (1).mp3"
+dest_files=[ "res://.import/purrple-cat-green-tea (1).mp3-011e083760e73166b348cba3b9023318.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
