@@ -1150,6 +1150,7 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 29 )
+volume_db = -21.478
 
 [connection signal="area_entered" from="Sink" to="Sink" method="_on_Sink_area_entered"]
 [connection signal="area_exited" from="Sink" to="Sink" method="_on_Sink_area_exited"]
