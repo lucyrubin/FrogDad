@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Space-Jazz.mp3-5d92f4ba5624f1f8baf2cbb21bd0fd7c.mp3str"
+
+[deps]
+
+source_file="res://Audios/Space-Jazz.mp3"
+dest_files=[ "res://.import/Space-Jazz.mp3-5d92f4ba5624f1f8baf2cbb21bd0fd7c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
