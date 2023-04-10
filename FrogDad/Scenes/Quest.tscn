@@ -15,7 +15,6 @@ script = ExtResource( 3 )
 
 [node name="KnockingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-autoplay = true
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_left = 0.5
