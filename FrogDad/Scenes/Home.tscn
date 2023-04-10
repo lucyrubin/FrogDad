@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Scripts/Note.gd" type="Script" id=26]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=27]
 [ext_resource path="res://Scenes/KeyIndicator.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Audios/purrple-cat-green-tea (1).mp3" type="AudioStream" id=29]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -1146,6 +1147,9 @@ shape = SubResource( 114 )
 
 [node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
 polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -320, 867, 286, -1130, 283, -1128, -321 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
 
 [connection signal="area_entered" from="Sink" to="Sink" method="_on_Sink_area_entered"]
 [connection signal="area_exited" from="Sink" to="Sink" method="_on_Sink_area_exited"]
