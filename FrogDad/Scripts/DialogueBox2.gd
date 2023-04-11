@@ -14,6 +14,7 @@ onready var content = $Content
 onready var next_indicator = $Content/NextIndicator
 onready var text_animation = $Content/TextAnimation
 onready var avatar 
+onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 
 func _input(event):
@@ -28,6 +29,7 @@ func _input(event):
 		elif current + 1 < dialogs.size():
 			_show_dialog(current + 1)
 		else:
+			FrogDad.state = ""
 			hide_dialog_box()
 
 
