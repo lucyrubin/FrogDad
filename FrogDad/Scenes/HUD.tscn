@@ -447,6 +447,29 @@ script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
 
+[node name="SideTableInventory" type="Node2D" parent="UserInterface"]
+position = Vector2( 119.667, 154 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="UserInterface/SideTableInventory"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.428, 0.316 )
+texture = ExtResource( 24 )
+
+[node name="Label" type="Label" parent="UserInterface/SideTableInventory"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="GridContainer" type="GridContainer" parent="UserInterface/SideTableInventory"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+
 [node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
 visible = false
 
