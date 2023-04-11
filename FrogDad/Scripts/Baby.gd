@@ -8,7 +8,6 @@ const PlayerClass = preload("res://Scripts/FrogDad.gd")
 var velocity = Vector2.ZERO
 var done_talking = false
 var mouse_in_area = false
-onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 
 	
@@ -24,15 +23,15 @@ func _on_Area2D_body_exited(body): # if the player has left, hide the action bub
 
 func _input(event):
 	# when click on gertrude, open the dialogue box
-	if event.is_action_pressed("talk") and mouse_in_area and $Speech.visible:#and !FrogDad.get_node("DialogueBox").visible: 
-		FrogDad.toggle_dialogue_box_visibility()
-		FrogDad.state = "dialogue"
-		FrogDad.get_node("AnimatedSprite").stop()
+	if event.is_action_pressed("talk") and mouse_in_area and $Speech.visible:#and !MasterScript.FrogDad.get_node("DialogueBox").visible: 
+		MasterScript.FrogDad.toggle_dialogue_box_visibility()
+		MasterScript.FrogDad.state = "dialogue"
+		MasterScript.FrogDad.get_node("AnimatedSprite").stop()
 		$Speech.visible = false
-	elif event.is_action_pressed("closeDialogue") and FrogDad.get_node("DialogueBox").visible: # when Enter is pressed, close the dialogue box
-		FrogDad.toggle_dialogue_box_visibility()
-		FrogDad.state = ""
-		FrogDad.get_node("AnimatedSprite").play()
+	elif event.is_action_pressed("closeDialogue") and MasterScript.FrogDad.get_node("DialogueBox").visible: # when Enter is pressed, close the dialogue box
+		MasterScript.FrogDad.toggle_dialogue_box_visibility()
+		MasterScript.FrogDad.state = ""
+		MasterScript.FrogDad.get_node("AnimatedSprite").play()
 		$Speech.visible = true
 		
 

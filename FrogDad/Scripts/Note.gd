@@ -1,10 +1,6 @@
 extends Area2D
 
 var in_range = false
-var FrogDad 
-
-func _ready():
-	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 
 func _on_Note_area_entered(area):
@@ -16,9 +12,9 @@ func _on_Button_pressed():
 	#print("button pressed")
 	if in_range && MasterScript.currentQuestNum == -1: 
 		# when the note is picked up, show the close up note and delete the small one
-		var closeUpNoteNode = FrogDad.find_node("CloseUpNote", true, false)
+		var closeUpNoteNode = MasterScript.FrogDad.find_node("CloseUpNote", true, false)
 		closeUpNoteNode.visible = true
-		FrogDad.state = "reading note"
+		MasterScript.FrogDad.state = "reading note"
 		in_range = false
 		
 		queue_free()

@@ -1,4 +1,3 @@
-class_name FrogDad
 extends KinematicBody2D
 
 export var speed = 300

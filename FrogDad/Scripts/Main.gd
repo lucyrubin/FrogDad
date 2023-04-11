@@ -10,6 +10,13 @@ func _ready():
 	if MasterScript.findBabies:
 		$FrogDad.position = $EnterHome.position
 		MasterScript.findBabies = false
+		
+	var FrogDad = MasterScript.FrogDad
+	add_child(FrogDad)
+	var CameraNode = $Camera2D.duplicate()
+	$Camera2D.queue_free()
+	FrogDad.add_child(CameraNode)
+	CameraNode.add_child(MasterScript.HUD)
 	
 
 func _process(delta):

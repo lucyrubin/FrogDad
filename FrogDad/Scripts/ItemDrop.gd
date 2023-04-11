@@ -10,7 +10,7 @@ var player = null
 var being_picked_up = false
 var frog_dad_is_close = false
 
-onready var FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
+
 
 #Specifies which inventory item is added to
 var FrogDadScene = load("res://Scenes/FrogDad.tscn")
@@ -59,12 +59,12 @@ func get_sprite():
 
 func _on_Button_pressed():
 	
-	if frog_dad_is_close and FrogDadNode.state == "":
+	if frog_dad_is_close and MasterScript.FrogDad.state == "":
 		pick_up_item(self)
 
 
 func _on_Button_mouse_entered():
-	if frog_dad_is_close and FrogDadNode.state == "":
+	if frog_dad_is_close and MasterScript.FrogDad.state == "":
 		$Button.texture_normal = load("res://Item Icons/" + item_name + "Hover.png") 
 
 

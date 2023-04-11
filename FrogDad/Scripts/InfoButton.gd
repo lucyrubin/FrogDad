@@ -1,21 +1,20 @@
 extends TextureButton
 
-var FrogDad
+
 var quest_button_open
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	$Info/Background.visible = false
 
 func _on_InfoButton_pressed():
 	if !quest_button_open:
 		if $Info/Background.visible == false:
 			$Info/Background.visible = true;
-			FrogDad.state = "Info"
+			MasterScript.FrogDad.state = "Info"
 		else:
 			$Info/Background.visible = false;
-			FrogDad.state = ""
+			MasterScript.FrogDad.state = ""
 
 func _on_ToggleQuestButton_pressed():
 	if quest_button_open:
@@ -27,5 +26,5 @@ func _input(event):
 	if event.is_action_pressed("escape"):  
 		if $Info/Background.visible: # close info
 			$Info/Background.visible = false
-			FrogDad.state = ""
-			FrogDad.get_node("AnimatedSprite").play()
+			MasterScript.FrogDad.state = ""
+			MasterScript.FrogDad.get_node("AnimatedSprite").play()

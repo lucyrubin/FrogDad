@@ -15,6 +15,15 @@ var picked_up_first_item = false
 
 var opened_quest_first_time = false
 
+var FrogDad
+var HUD
+var FrogDadScene = preload("res://Scenes/FrogDad.tscn")
+var HUDScene = preload("res://Scenes/HUD.tscn")
+
+func _ready():
+	FrogDad = FrogDadScene.instance()
+	HUD = HUDScene.instance()
+
 
 
 # quest variables
