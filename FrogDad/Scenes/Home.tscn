@@ -934,7 +934,7 @@ shape = SubResource( 68 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="TV Stand" type="StaticBody2D" parent="YSort"]
-position = Vector2( 248, 41 )
+position = Vector2( 344, 40 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -1002,7 +1002,7 @@ position = Vector2( 26.5, 50.75 )
 shape = SubResource( 51 )
 
 [node name="Couch" type="StaticBody2D" parent="YSort"]
-position = Vector2( 535, 69 )
+position = Vector2( 736, 64 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -1122,7 +1122,7 @@ rotation = 1.5708
 shape = SubResource( 42 )
 
 [node name="Side Table" type="Area2D" parent="YSort"]
-position = Vector2( 539, -137 )
+position = Vector2( 741, -165 )
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true

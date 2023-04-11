@@ -122,14 +122,11 @@ func _on_KnockTimer_timeout():
 	PopUpNode.visible = true
 	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}])
 	# this code creates and displays a dialogue box	
-	
 	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
-	$KnockTimer.stop()
 	$KnockingSound.stop()
+	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	
-	
-
 func _on_InfoButton_pressed():
 	if info_button_open && !visible:
 		info_button_open = false

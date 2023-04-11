@@ -8,8 +8,6 @@ func _on_StartButton_pressed():
 func _on_QuitButton_pressed():
 	get_tree().quit()
 
-
 func _on_SkipIntroButton_pressed():
-
 	MasterScript.currentQuestNum = 0
 	SceneTransition.change_scene("res://Scenes/Main.tscn")

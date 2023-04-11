@@ -448,11 +448,16 @@ default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
 
 [node name="SideTableInventory" type="Node2D" parent="UserInterface"]
-position = Vector2( 119.667, 154 )
+visible = false
+position = Vector2( 120, 151 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
+item_list = {
+0: [ "Cloth", 1 ]
+}
+inventory_type = "table"
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/SideTableInventory"]
 margin_right = 40.0
@@ -461,14 +466,69 @@ rect_scale = Vector2( 0.428, 0.316 )
 texture = ExtResource( 24 )
 
 [node name="Label" type="Label" parent="UserInterface/SideTableInventory"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 40.0
+margin_top = 5.33334
+margin_right = 139.0
+margin_bottom = 19.3333
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Table Inventory"
 
 [node name="GridContainer" type="GridContainer" parent="UserInterface/SideTableInventory"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 6.66668
+margin_top = 13.6667
+margin_right = 111.667
+margin_bottom = 37.6667
+columns = 5
 
-[node name="Panel" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+[node name="Slot1" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+margin_right = 18.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 9 )
+default_tex = ExtResource( 20 )
+empty_tex = ExtResource( 23 )
+
+[node name="Slot2" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 9 )
+default_tex = ExtResource( 20 )
+empty_tex = ExtResource( 23 )
+
+[node name="Slot3" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 9 )
+default_tex = ExtResource( 20 )
+empty_tex = ExtResource( 23 )
+
+[node name="Slot4" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+margin_left = 66.0
+margin_right = 84.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 9 )
+default_tex = ExtResource( 20 )
+empty_tex = ExtResource( 23 )
+
+[node name="Slot5" type="Panel" parent="UserInterface/SideTableInventory/GridContainer"]
+margin_left = 88.0
+margin_right = 106.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 9 )
+default_tex = ExtResource( 20 )
+empty_tex = ExtResource( 23 )
 
 [node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
 visible = false

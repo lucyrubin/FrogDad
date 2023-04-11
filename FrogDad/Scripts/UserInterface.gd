@@ -8,9 +8,7 @@ onready var user_interface_node = get_tree().get_root().find_node("UserInterface
 onready var dresser_inventory_node = get_tree().get_root().find_node("DresserInventory",true, false)
 onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
 
-
 func open_inventory():
-
 	$Inventory.initialize_inventory()
 	visible = true
 	$Inventory.inventory_open = true
