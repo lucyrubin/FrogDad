@@ -651,7 +651,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -704,7 +703,6 @@ texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Bush"]
 position = Vector2( 0.535706, 27.0355 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 120 )
 
 [node name="Bush2" type="Area2D" parent="YSort"]
@@ -749,8 +747,8 @@ position = Vector2( 768, 627 )
 position = Vector2( 1085, 1354 )
 
 [node name="CollsionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
-position = Vector2( -2, 5 )
-polygon = PoolVector2Array( 837, -1359, -1088, -1358, -1088, 257, 833, 253, 837, -1397, 869, -1398, 867, 286, -1130, 283, -1127, -1407, 836, -1397 )
+position = Vector2( 4, 199 )
+polygon = PoolVector2Array( 837, -1359, 316, -1361, 314, -1527, 194, -1527, 188, -1362, -1088, -1358, -1088, 257, 212.52, 254.292, 833, 253, 837, -1397, 869, -1398, 867, 286, -1130, 283, -1127, -1407, 139, -1414, 141, -1568, 355, -1566, 352, -1411, 836, -1397 )
 
 [node name="Tree6" type="StaticBody2D" parent="."]
 position = Vector2( 1250, -19 )
@@ -761,7 +759,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -779,7 +777,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -797,6 +795,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -814,7 +813,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -834,7 +833,7 @@ visible = false
 polygon = PoolVector2Array( -46, -23, -45, 6, -10, 6, -9, 22, -53, 30, -51, 55, -7, 56, -5, 114, 7, 114, 9, 54, 47, 52, 47, 22, 8, 23, 5, 5, 34, 3, 50, -18, 27, -34, 7, -34, 6, -68, -6, -67, -5, -34 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1093, 671 )
+position = Vector2( 1067, 598 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
 remote_path = NodePath("../Camera2D")
