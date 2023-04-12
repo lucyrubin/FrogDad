@@ -73,8 +73,9 @@ func collectResourceQuest(quest, amountRequired, itemType):
 			totalItem += FrogDad_inventory_data.inventory[item][1]
 	
 	# update GUI based on amount in inventory
-	SubQuest.get_node("Label").text = "Collect " + str(itemType) + "s: \n" + str(totalItem) + "/" + str(amountRequired) 
-	
+	SubQuest.get_node("Label").text = "Collect " + str(itemType) 
+	SubQuest.get_node("Icon").texture = load("res://Item Icons/" + str(itemType) + ".png")
+	SubQuest.get_node("AmountLabel").text = str(totalItem) + "/" + str(amountRequired) 
 	# check if the requirements have been satisfied
 	var CompletedButton = SubQuest.find_node("CompletedButton", true, false)
 	if totalItem >= amountRequired:
@@ -96,6 +97,11 @@ func _on_ToggleQuestButton_pressed():
 			if MasterScript.currentQuestArray.empty():
 				var noQuestLabel = Label.new()
 				noQuestLabel.text = "No active quests."
+				var dynamic_font = DynamicFont.new()
+				dynamic_font.size = 60
+				dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
+				noQuestLabel.add_font_override("font", dynamic_font)
+				noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
 				$VBoxContainer.add_child(noQuestLabel)
 				
 			FrogDad.state = "Quest"
