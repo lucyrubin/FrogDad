@@ -21,22 +21,10 @@ var FrogDadScene = preload("res://Scenes/FrogDad.tscn")
 var HUDScene = preload("res://Scenes/HUD.tscn")
 
 func _ready():
-	print("ready")
 	FrogDad = FrogDadScene.instance()
-	add_child(FrogDad)
-	FrogDad = get_node("FrogDad")
 	HUD = HUDScene.instance()
-#	add_child(HUD)
-#	HUD = get_node("HUD")
 
-func addFrogDad(scene):
-	scene.add_child(FrogDad)
-	var CameraNode = scene.find_node("Camera2D", true, false)#.duplicate()
-	#scene.find_node("Camera2D", true, false).queue_free()
-	FrogDad.add_child(CameraNode)
-	CameraNode.add_child(HUD)
-	var remoteT = FrogDad.get_node("RemoteTransform2D")
-	FrogDad.get_node("RemoteTransform2D").remote_path = CameraNode.get_path()
+
 
 # quest variables
 var questDictionary = { 

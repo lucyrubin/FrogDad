@@ -9,7 +9,6 @@ var velocity
 var holding_item = null
 
 func _ready():
-	print("frogdad ready")
 	screen_size = get_viewport_rect().size
 	
 func getInventoryNode():

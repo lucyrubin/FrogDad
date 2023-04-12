@@ -15,7 +15,7 @@ var frog_dad_is_close = false
 #Specifies which inventory item is added to
 var FrogDadScene = load("res://Scenes/FrogDad.tscn")
 export(NodePath) var FrogDad_path
-onready var inventory_node = MasterScript.FrogDad.find_node("Inventory", true, false)
+onready var inventory_node = get_tree().get_root().find_node("Inventory", true, false)
 onready var Camera2DNode = get_tree().get_root().find_node("Camera2D", true, false)
 func _ready():
 	z_index = position.y #default setup

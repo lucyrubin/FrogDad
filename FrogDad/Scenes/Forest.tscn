@@ -1,8 +1,38 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=75 format=2]
 
+[ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestExit.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Forest.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ToggleQuestButton.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=7]
+[ext_resource path="res://main_theme.tres" type="Theme" id=8]
+[ext_resource path="res://Art/info_icon.png" type="Texture" id=9]
+[ext_resource path="res://Art/note.png" type="Texture" id=10]
 [ext_resource path="res://Audios/Space-Jazz.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Art/lightLeaf.png" type="Texture" id=12]
+[ext_resource path="res://Art/quest_icon.png" type="Texture" id=13]
+[ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/InfoButton.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Slot.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Info Icons/Q.png" type="Texture" id=19]
+[ext_resource path="res://Info Icons/return.png" type="Texture" id=20]
+[ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=21]
+[ext_resource path="res://Info Icons/I.png" type="Texture" id=22]
+[ext_resource path="res://Info Icons/Z.png" type="Texture" id=23]
+[ext_resource path="res://Info Icons/mouse.png" type="Texture" id=24]
+[ext_resource path="res://Info Icons/enter.png" type="Texture" id=25]
+[ext_resource path="res://Art/info_icon_hover.png" type="Texture" id=26]
+[ext_resource path="res://Art/fridge_box.png" type="Texture" id=27]
+[ext_resource path="res://Art/dresserslotfull.png" type="Texture" id=28]
+[ext_resource path="res://Art/fridgeFull.png" type="Texture" id=29]
+[ext_resource path="res://Art/fridgeEmpty.png" type="Texture" id=30]
+[ext_resource path="res://Art/dresserslotempty.png" type="Texture" id=31]
+[ext_resource path="res://Art/dresser_box.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=34]
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=35]
 [ext_resource path="res://Forest Art/tree2.png" type="Texture" id=36]
@@ -366,6 +396,30 @@ radius = 11.1803
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 124.5, 60 )
 
+[sub_resource type="DynamicFont" id=93]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=94]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=95]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=96]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=97]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=98]
+font_data = ExtResource( 4 )
+
+[sub_resource type="StreamTexture" id=92]
+flags = 4
+
+[sub_resource type="StyleBoxTexture" id=99]
+texture = SubResource( 92 )
+
 [node name="Forest" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -393,7 +447,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree13"]
 position = Vector2( 31, 8 )
 frames = SubResource( 122 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -408,7 +462,7 @@ position = Vector2( 461, 144 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree12"]
 position = Vector2( 55, -31 )
 frames = SubResource( 106 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -426,6 +480,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree11"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -442,7 +497,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree10"]
 frames = SubResource( 122 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -458,7 +513,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree9"]
 frames = SubResource( 122 )
-frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -475,7 +529,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree8"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -490,7 +544,7 @@ position = Vector2( 239, 648 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree7"]
 position = Vector2( 64, -26 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -507,7 +561,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree6"]
 position = Vector2( 51, -11 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -524,7 +578,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -542,7 +596,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -560,7 +614,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -576,7 +630,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -593,7 +647,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -655,9 +709,11 @@ position = Vector2( 515, 579.5 )
 scale = Vector2( 56.3, 61.75 )
 polygon = PoolVector2Array( -9.68028, -9.77328, 9.46714, -9.75708, 9.02309, -9.35223, -9.21847, -9.40081, -9.20071, 9.23886, 9.02309, 9.27125, 9.02309, -9.35223, 9.46714, -9.75708, 9.39609, 9.57895, -9.66252, 9.64372 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="FrogDad" parent="." instance=ExtResource( 1 )]
 position = Vector2( 520, 920 )
-scale = Vector2( 0.3, 0.3 )
+z_index = 15
+
+[node name="Camera2D" type="Camera2D" parent="FrogDad"]
 current = true
 zoom = Vector2( 0.8, 0.8 )
 limit_left = 0
@@ -666,8 +722,386 @@ limit_right = 1022
 limit_bottom = 1034
 editor_draw_limits = true
 
+[node name="HUD" type="CanvasLayer" parent="FrogDad/Camera2D"]
+scale = Vector2( 0.5, 0.5 )
+transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
+
+[node name="ToggleInventoryButton" type="TextureButton" parent="FrogDad/Camera2D/HUD"]
+margin_right = 139.0
+margin_bottom = 139.0
+texture_normal = ExtResource( 12 )
+
+[node name="ToggleQuestButton" type="TextureButton" parent="FrogDad/Camera2D/HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1250.0
+margin_top = -300.0
+margin_right = 1390.0
+margin_bottom = -160.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+script = ExtResource( 6 )
+
+[node name="Quest" parent="FrogDad/Camera2D/HUD/ToggleQuestButton" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( -2000, 1750 )
+scale = Vector2( 0.76, 0.76 )
+z_index = 1000
+
+[node name="OneSecTimer" type="Timer" parent="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest"]
+
+[node name="InfoButton" type="TextureButton" parent="FrogDad/Camera2D/HUD"]
+margin_left = 1896.0
+margin_right = 1984.0
+margin_bottom = 92.0
+rect_scale = Vector2( 1.4, 1.4 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 26 )
+script = ExtResource( 15 )
+
+[node name="Info" type="Node2D" parent="FrogDad/Camera2D/HUD/InfoButton"]
+visible = false
+z_index = 1000
+
+[node name="Background" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info"]
+visible = false
+margin_left = -1262.96
+margin_top = -307.407
+margin_right = -878.963
+margin_bottom = 204.593
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+
+[node name="Arrows" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 46.6667
+margin_top = 82.963
+margin_right = 430.667
+margin_bottom = 594.963
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background/Arrows"]
+margin_left = 296.667
+margin_top = 206.852
+margin_right = 506.667
+margin_bottom = 222.852
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 8 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 93 )
+meta_underlined = false
+text = "Use arrows to move"
+scroll_active = false
+
+[node name="Return" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 94.0741
+margin_top = 114.074
+margin_right = 478.074
+margin_bottom = 626.074
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background/Return"]
+margin_left = 277.778
+margin_top = 225.926
+margin_right = 487.778
+margin_bottom = 241.926
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 94 )
+text = "to open doors"
+scroll_active = false
+
+[node name="Enter" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 39.2593
+margin_top = 114.074
+margin_right = 423.259
+margin_bottom = 626.074
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 25 )
+
+[node name="Mouse" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 65.1852
+margin_top = 153.333
+margin_right = 449.185
+margin_bottom = 665.333
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background/Mouse"]
+margin_left = 240.0
+margin_top = 217.038
+margin_right = 450.0
+margin_bottom = 233.038
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 95 )
+text = "Click to open"
+scroll_active = false
+
+[node name="I key" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 54.8148
+margin_top = 180.0
+margin_right = 438.815
+margin_bottom = 692.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background/I key"]
+margin_left = 240.0
+margin_top = 218.0
+margin_right = 450.0
+margin_bottom = 242.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 96 )
+text = "to open inventory"
+scroll_active = false
+
+[node name="Z key" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 80.7408
+margin_top = 206.667
+margin_right = 464.741
+margin_bottom = 718.667
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background/Z key"]
+margin_left = 240.0
+margin_top = 220.148
+margin_right = 450.0
+margin_bottom = 241.148
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 97 )
+text = "to pick up"
+scroll_active = false
+
+[node name="Q key" type="TextureRect" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background"]
+margin_left = 80.7408
+margin_top = 231.667
+margin_right = 464.741
+margin_bottom = 743.667
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FrogDad/Camera2D/HUD/InfoButton/Info/Background/Q key"]
+margin_left = 240.0
+margin_top = 218.89
+margin_right = 450.0
+margin_bottom = 238.89
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
+custom_fonts/normal_font = SubResource( 98 )
+text = "to drop
+"
+scroll_active = false
+
+[node name="UserInterface" type="CanvasLayer" parent="FrogDad/Camera2D/HUD"]
+visible = false
+scale = Vector2( 3, 3 )
+transform = Transform2D( 3, 0, 0, 3, 0, 0 )
+script = ExtResource( 7 )
+
+[node name="Inventory" parent="FrogDad/Camera2D/HUD/UserInterface" instance=ExtResource( 33 )]
+scale = Vector2( 1, 1 )
+item_list = {
+0: [ "Fly", 1 ],
+1: [ "Log", 98 ],
+2: [ "Cloth", 4 ]
+}
+
+[node name="FridgeInventory" type="Node2D" parent="FrogDad/Camera2D/HUD/UserInterface"]
+visible = false
+position = Vector2( 0, 110 )
+script = ExtResource( 16 )
+item_list = {
+0: [ "Fly", 3 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory"]
+margin_left = -1.0
+margin_top = -15.6667
+margin_right = 280.0
+margin_bottom = 121.333
+rect_scale = Vector2( 0.428, 0.316 )
+texture = ExtResource( 27 )
+
+[node name="Label" type="Label" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory"]
+margin_left = 5.0
+margin_top = -7.33333
+margin_right = 277.0
+margin_bottom = 12.6667
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fridge Inventory"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory"]
+margin_left = 6.33333
+margin_top = 0.333336
+margin_right = 115.333
+margin_bottom = 50.3333
+columns = 5
+
+[node name="Slot1" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory/GridContainer"]
+margin_right = 18.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 30 )
+empty_tex = ExtResource( 29 )
+
+[node name="Slot2" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory/GridContainer"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 30 )
+empty_tex = ExtResource( 29 )
+
+[node name="Slot3" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory/GridContainer"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 30 )
+empty_tex = ExtResource( 29 )
+
+[node name="Slot4" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory/GridContainer"]
+margin_left = 66.0
+margin_right = 84.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 30 )
+empty_tex = ExtResource( 29 )
+
+[node name="Slot5" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/FridgeInventory/GridContainer"]
+margin_left = 88.0
+margin_right = 106.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 30 )
+empty_tex = ExtResource( 29 )
+
+[node name="DresserInventory" type="Node2D" parent="FrogDad/Camera2D/HUD/UserInterface"]
+position = Vector2( 0, 110 )
+script = ExtResource( 16 )
+item_list = {
+0: [ "Cloth", 3 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory"]
+margin_top = -12.6667
+margin_right = 279.0
+margin_bottom = 116.333
+rect_scale = Vector2( 0.428, 0.316 )
+texture = ExtResource( 32 )
+
+[node name="Label" type="Label" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory"]
+margin_left = 5.33333
+margin_top = -8.33333
+margin_right = 277.333
+margin_bottom = 11.6667
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Dresser Inventory"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory"]
+margin_left = 6.33333
+margin_top = -1.33333
+margin_right = 115.333
+margin_bottom = 48.6667
+columns = 5
+
+[node name="Slot1" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory/GridContainer"]
+margin_right = 18.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 28 )
+empty_tex = ExtResource( 31 )
+
+[node name="Slot2" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory/GridContainer"]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 28 )
+empty_tex = ExtResource( 31 )
+
+[node name="Slot3" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory/GridContainer"]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 28 )
+empty_tex = ExtResource( 31 )
+
+[node name="Slot4" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory/GridContainer"]
+margin_left = 66.0
+margin_right = 84.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 28 )
+empty_tex = ExtResource( 31 )
+
+[node name="Slot5" type="Panel" parent="FrogDad/Camera2D/HUD/UserInterface/DresserInventory/GridContainer"]
+margin_left = 88.0
+margin_right = 106.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+custom_styles/panel = SubResource( 99 )
+script = ExtResource( 17 )
+default_tex = ExtResource( 28 )
+empty_tex = ExtResource( 31 )
+
+[node name="SmallPopUpBox" parent="FrogDad/Camera2D/HUD/UserInterface" instance=ExtResource( 5 )]
+visible = false
+
 [node name="FunkyForestMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -9.609
 
 [connection signal="area_entered" from="ForestExit" to="ForestExit" method="_on_ForestExit_area_entered"]
+[connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleInventoryButton" to="FrogDad/Camera2D/HUD/UserInterface" method="_on_ToggleInventoryButton_pressed"]
+[connection signal="pressed" from="FrogDad/Camera2D/HUD/ToggleQuestButton" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
+[connection signal="timeout" from="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest/OneSecTimer" to="FrogDad/Camera2D/HUD/ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
+[connection signal="pressed" from="FrogDad/Camera2D/HUD/InfoButton" to="FrogDad/Camera2D/HUD/InfoButton" method="_on_InfoButton_pressed"]

@@ -31,9 +31,9 @@ run/main_scene="res://Scenes/TitleScreen.tscn"
 
 [autoload]
 
-MasterScript="*res://Scripts/MasterScript.gd"
 JsonData="*res://Scripts/JSONData.gd"
 SceneTransition="*res://Scenes/SceneTransition.tscn"
+MasterScript="*res://Scripts/MasterScript.gd"
 
 [display]
 

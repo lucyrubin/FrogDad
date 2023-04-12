@@ -13,9 +13,10 @@ onready var PopUpNode = UserInterfaceNode.get_node("SmallPopUpBox")
 
 export (NodePath) var inventory_path
 
+func _process(delta):
+	print(MasterScript.currentQuestNum)
 
 func _ready():
-	
 	FrogDad = MasterScript.FrogDad#get_tree().get_root().find_node("FrogDad", true, false)
 	FrogDad_inventory = get_tree().get_root().find_node("Inventory", true, false)#FrogDad.find_node("Inventory", true, false)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
@@ -56,7 +57,7 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	var SubQuest = QuestContainerScene.instance()
 	$VBoxContainer.add_child(QuestName)
 	$VBoxContainer.add_child(SubQuest)
-	SubQuest.find_node("CompletedButton", true, false).connect("pressed", self, "deleteQuest", [SubQuest, QuestName])
+	SubQuest.get_node("CompletedButton").connect("pressed", self, "deleteQuest", [SubQuest, QuestName])
 	QuestName.text = quest
 	var dynamic_font = DynamicFont.new()
 	dynamic_font.size = 60
@@ -72,9 +73,7 @@ func collectResourceQuest(quest, amountRequired, itemType):
 			totalItem += FrogDad_inventory_data.inventory[item][1]
 	
 	# update GUI based on amount in inventory
-	SubQuest.find_node("DefaultLabel", true, false).text = "Collect " + str(itemType) 
-	SubQuest.find_node("Icon", true, false).texture = load("res://Item Icons/" + itemType + ".png")
-	SubQuest.find_node("AdditionalLabel", true, false).text = "\n" + str(totalItem) + "/" + str(amountRequired) 
+	SubQuest.get_node("Label").text = "Collect " + str(itemType) + "s: \n" + str(totalItem) + "/" + str(amountRequired) 
 	
 	# check if the requirements have been satisfied
 	var CompletedButton = SubQuest.find_node("CompletedButton", true, false)

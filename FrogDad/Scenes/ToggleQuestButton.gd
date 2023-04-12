@@ -1,5 +1,5 @@
 extends TextureButton
-onready var FrogDad = MasterScript.FrogDad
+onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 func blink():
 	$BouncingArrow.visible = true
 	$BouncingArrow.get_node("TextureRect/AnimationPlayer").play()
