@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/dirt.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Outdoors.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Art/door.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/OutdoorDoor.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/ForestEntrance.gd" type="Script" id=8]
@@ -776,9 +778,13 @@ flip_h = true
 position = Vector2( -9, 104 )
 shape = SubResource( 106 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="FrogDad" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1194, 563 )
-scale = Vector2( 0.3, 0.3 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="FrogDad"]
 current = true
 zoom = Vector2( 0.8, 0.8 )
 limit_left = 595
@@ -786,6 +792,8 @@ limit_top = 332
 limit_right = 1924
 limit_bottom = 1164
 editor_draw_limits = true
+
+[node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 2 )]
 
 [connection signal="area_entered" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_entered"]
 [connection signal="area_entered" from="OutdoorHouse/OutdoorDoor" to="OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_entered"]

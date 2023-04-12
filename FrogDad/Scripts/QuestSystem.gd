@@ -17,8 +17,8 @@ func _process(delta):
 	print(MasterScript.currentQuestNum)
 
 func _ready():
-	FrogDad = MasterScript.FrogDad#get_tree().get_root().find_node("FrogDad", true, false)
-	FrogDad_inventory = get_tree().get_root().find_node("Inventory", true, false)#FrogDad.find_node("Inventory", true, false)
+	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
+	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
 
