@@ -1,13 +1,12 @@
 extends Node2D
-var FrogDad = MasterScript.FrogDad
+onready var FrogDad = MasterScript.FrogDad
 
 func _ready():
-	add_child(FrogDad)
-	var CameraNode = $Camera2D.duplicate()
-	$Camera2D.queue_free()
-	FrogDad.add_child(CameraNode)
-	CameraNode.add_child(MasterScript.HUD)
-	
+	## this script adds frog dad to the scene
+	FrogDad = MasterScript.FrogDad
+	MasterScript.addFrogDad(self)
+	## this script adds frog dad to the scene
+
 	for object in $YSort.get_children():
 		object.z_index = object.position.y + 20
 	

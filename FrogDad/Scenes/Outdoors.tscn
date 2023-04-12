@@ -541,7 +541,7 @@ animations = [ {
 radius = 11.1803
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 64, 32.5 )
+extents = Vector2( 64, 13.75 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -599,7 +599,7 @@ tile_data = PoolIntArray( -65512, 536870912, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 0,
 [node name="Path" type="TileMap" parent="."]
 tile_set = SubResource( 98 )
 format = 1
-tile_data = PoolIntArray( 131092, 6, 0, 131093, 7, 0, 196628, 8, 0, 196629, 1073741833, 0, 262164, 10, 0, 262165, 1073741833, 0, 327700, 10, 0, 327701, 1610612744, 0, 393236, 8, 0, 393237, 1073741833, 0, 458772, 8, 0, 458773, 1610612744, 0, 524301, 6, 0, 524302, 7, 0, 524308, 8, 0, 524309, 1073741833, 0, 589837, 8, 0, 589838, 1073741842, 0, 589839, -1610612728, 0, 589840, -1610612728, 0, 589841, -1610612728, 0, 589842, -1610612728, 0, 589843, -1610612728, 0, 589844, 1073741842, 0, 589845, 1610612744, 0, 655373, -1073741807, 0, 655374, -1073741816, 0, 655375, -1073741816, 0, 655376, -1073741816, 0, 655377, -1073741816, 0, 655378, -1073741816, 0, 655379, -1073741816, 0, 655380, -1073741816, 0, 655381, -536870895, 0 )
+tile_data = PoolIntArray( 65556, 10, 0, 65557, 11, 0, 131092, 10, 0, 131093, 11, 0, 196628, 8, 0, 196629, 1073741833, 0, 262164, 10, 0, 262165, 1073741833, 0, 327700, 10, 0, 327701, 1610612744, 0, 393236, 8, 0, 393237, 1073741833, 0, 458772, 8, 0, 458773, 1610612744, 0, 524301, 6, 0, 524302, 7, 0, 524308, 8, 0, 524309, 1073741833, 0, 589837, 8, 0, 589838, 1073741842, 0, 589839, -1610612728, 0, 589840, -1610612728, 0, 589841, -1610612728, 0, 589842, -1610612728, 0, 589843, -1610612728, 0, 589844, 1073741842, 0, 589845, 1610612744, 0, 655373, -1073741807, 0, 655374, -1073741816, 0, 655375, -1073741816, 0, 655376, -1073741816, 0, 655377, -1073741816, 0, 655378, -1073741816, 0, 655379, -1073741816, 0, 655380, -1073741816, 0, 655381, -536870895, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -612,7 +612,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -631,7 +631,7 @@ __meta__ = {
 
 [node name="TemporaryEntrance" type="ColorRect" parent="ForestEntrance"]
 margin_right = 128.0
-margin_bottom = 127.0
+margin_bottom = 67.0
 color = Color( 0.2, 0.156863, 0.109804, 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ForestEntrance/TemporaryEntrance"]
@@ -642,7 +642,7 @@ margin_bottom = 120.0
 text = "enter forest !"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ForestEntrance"]
-position = Vector2( 64, 33 )
+position = Vector2( 64, 14.25 )
 shape = SubResource( 9 )
 
 [node name="OutdoorHouse" type="StaticBody2D" parent="."]
@@ -689,10 +689,10 @@ position = Vector2( 123, 85.5 )
 shape = SubResource( 7 )
 
 [node name="ExitForest" type="Position2D" parent="."]
-position = Vector2( 1348, 234 )
+position = Vector2( 1345, 496 )
 
 [node name="ExitHouse" type="Position2D" parent="."]
-position = Vector2( 892, 407 )
+position = Vector2( 903, 797 )
 
 [node name="Borders" type="StaticBody2D" parent="."]
 position = Vector2( 1085, 1354 )
@@ -714,7 +714,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -732,7 +731,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -750,6 +748,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -767,7 +766,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true

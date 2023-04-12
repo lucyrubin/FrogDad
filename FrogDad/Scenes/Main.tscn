@@ -35,7 +35,7 @@ position = Vector2( -511, 127 )
 item_name = "Cloth"
 
 [node name="EnterHome" type="Position2D" parent="."]
-position = Vector2( 484, -519 )
+position = Vector2( 404, -379 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 264, -386 )
