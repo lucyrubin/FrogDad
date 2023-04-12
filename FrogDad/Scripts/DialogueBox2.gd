@@ -29,7 +29,7 @@ func _input(event):
 		elif current + 1 < dialogs.size():
 			_show_dialog(current + 1)
 		else:
-			FrogDad.state = ""
+#			FrogDad.state = ""
 			hide_dialog_box()
 
 
