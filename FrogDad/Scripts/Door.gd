@@ -31,7 +31,7 @@ func go_outside():
 
 func _on_Door_area_entered(area):
 	if !locked:
-		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.animation = "hover"
 		door_opened = true
 		current_fram = 1
 		$AnimatedSprite.set_frame(current_fram)
@@ -45,14 +45,10 @@ func _on_Door_area_exited(area):
 
 func _on_DoorMouseArea_mouse_entered():
 	if !locked && door_opened:
-		$AnimatedSprite.animation = "hover"
-		$AnimatedSprite.set_frame(current_fram)
 		mouse_in = true
 
 func _on_DoorMouseArea_mouse_exited():
 	if !locked && door_opened:
-		$AnimatedSprite.animation = "default"
-		$AnimatedSprite.set_frame(current_fram)
 		mouse_in = false
 
 

@@ -26,18 +26,20 @@ func go_inside():
 
 func _on_OutdoorDoor_area_entered(area):
 	door_opened = true
-	current_fram += 1
+	current_fram = 1
+	$AnimatedSprite.animation = "hover"
 	$AnimatedSprite.set_frame(current_fram)
 
 func _on_OutdoorDoor_area_exited(area):
 	door_opened = false
-	current_fram -= 1
+	current_fram = 0
+	$AnimatedSprite.animation = "default"
 	$AnimatedSprite.set_frame(current_fram)
-	
-func _on_Area2D_mouse_entered():
-	$AnimatedSprite.play("hover")
-	mouse_in = true
 
-func _on_Area2D_mouse_exited():
-	$AnimatedSprite.play("close")
+func _on_OutdoorDoor_mouse_entered():
+	mouse_in = true
+	$AnimatedSprite.animation = "hover"
+
+func _on_OutdoorDoor_mouse_exited():
 	mouse_in = false
+	$AnimatedSprite.animation = "default"
