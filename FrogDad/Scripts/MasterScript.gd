@@ -15,8 +15,6 @@ var picked_up_first_item = false
 
 var opened_quest_first_time = false
 
-
-
 # quest variables
 var questDictionary = { 
 	# (key, value) = (integer that represents the order that the quests progress, array)

@@ -1,55 +1,87 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://GIFs/korean-traditional-version-of-nyan-cat-2842.mp3" type="AudioStream" id=1]
-[ext_resource path="res://GIFs/Nyan_Cat.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/Channels.gd" type="Script" id=3]
+[ext_resource path="res://Art/TVHover.png" type="Texture" id=2]
+[ext_resource path="res://Art/TV.png" type="Texture" id=3]
+[ext_resource path="res://GIFs/New_Jeans1.png" type="Texture" id=4]
+[ext_resource path="res://GIFs/OMG.mp3" type="AudioStream" id=5]
+[ext_resource path="res://GIFs/New_Jeans3.png" type="Texture" id=6]
+[ext_resource path="res://GIFs/New_Jeans2.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/TV.gd" type="Script" id=8]
+[ext_resource path="res://GIFs/Nyan_Cat.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 384, 512 )
+
+[sub_resource type="AtlasTexture" id=116]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 384, 512 )
+
+[sub_resource type="SpriteFrames" id=117]
+animations = [ {
+"frames": [ SubResource( 115 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 116 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=118]
+extents = Vector2( 139.468, 195.5 )
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 220, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 440, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 660, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 880, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 1100, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 1320, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 1540, 0, 220, 220 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 9 )
 region = Rect2( 1760, 0, 220, 220 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=119]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
@@ -57,24 +89,207 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="TV" type="Node2D"]
-script = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 638, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1276, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 638, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1276, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 638, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1276, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 638, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1276, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 638, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1276, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 638, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1276, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 638, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1276, 0, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 638, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1276, 592, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 638, 1184, 638, 592 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1276, 1184, 638, 592 )
+
+[sub_resource type="SpriteFrames" id=120]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="TV" type="Area2D"]
+position = Vector2( 592, -427 )
+rotation = 1.5708
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 117 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8.53116, -5.5 )
+shape = SubResource( 118 )
 
 [node name="NyanCat" type="AnimatedSprite" parent="."]
-position = Vector2( 508, 270 )
-frames = SubResource( 10 )
+visible = false
+position = Vector2( 12, 7.99994 )
+rotation = 4.71239
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 119 )
 frame = 4
-playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NyanCat"]
 stream = ExtResource( 1 )
-autoplay = true
+volume_db = -15.0
 
-[node name="Button" type="Button" parent="."]
-margin_left = 503.0
-margin_top = 397.0
-margin_right = 523.0
-margin_bottom = 417.0
-text = "X"
+[node name="NewJeans" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 11.9903, 8.29102 )
+rotation = 4.71239
+scale = Vector2( 0.119728, 0.129462 )
+frames = SubResource( 120 )
+frame = 23
+speed_scale = 4.0
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NewJeans"]
+stream = ExtResource( 5 )
+volume_db = 20.0
+
+[node name="NextButton" type="Button" parent="."]
+margin_left = -26.0002
+margin_top = -54.9999
+margin_right = -6.00018
+margin_bottom = -34.9999
+text = "^"
+
+[node name="PauseButton" type="Button" parent="."]
+margin_left = -2.00021
+margin_top = -55.0
+margin_right = 17.9998
+margin_bottom = -35.0
+text = "="
+
+[connection signal="area_entered" from="." to="." method="_on_TV_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_TV_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_TV_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_TV_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_TV_mouse_exited"]
+[connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
