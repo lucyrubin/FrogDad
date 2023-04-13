@@ -20,7 +20,6 @@ func _ready():
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
-
 	if MasterScript.currentQuestNum == -2 :
 		yield(get_tree().create_timer(1.0), "timeout")
 		begin_intro_quest()
@@ -124,12 +123,13 @@ func begin_intro_quest():
 	
 
 func _on_KnockTimer_timeout():
-	# this code creates and displays a dialogue box	
+	# this code creates and displays a dialogue box
+	BackgroundMusic.stop()
 	$KnockingSound.play()
 	PopUpNode.visible = true
 	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}], "Knock knock")
 	$KnockingSound.stop()
-	$KnockingSound.queue_free()
+	BackgroundMusic.play()
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	# this code creates and displays a dialogue box	
@@ -144,7 +144,7 @@ func _on_InfoButton_pressed():
 		
 func after_note_appears():
 	var door_node = get_tree().get_root().find_node("Door", true, false)
-	door_node.set_locked(false)
+#	door_node.set_locked(false)
 	get_parent().visible = false
 	
 	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)

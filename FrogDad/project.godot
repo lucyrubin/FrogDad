@@ -40,6 +40,7 @@ run/main_scene="res://Scenes/TitleScreen.tscn"
 JsonData="*res://Scripts/JSONData.gd"
 SceneTransition="*res://Scenes/SceneTransition.tscn"
 MasterScript="*res://Scripts/MasterScript.gd"
+BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [display]
 

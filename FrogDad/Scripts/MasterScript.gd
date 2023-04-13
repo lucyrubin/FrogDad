@@ -1,9 +1,9 @@
 extends Node
 
-
 # frog dad variables
 var quest_state = "swaddle"
 var sprite_image = "carrying babies"
+
 
 var enter_home = false
 var exit_forest = false

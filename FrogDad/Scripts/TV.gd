@@ -6,6 +6,7 @@ var TVScene = "res://Scenes/TV.tscn"
 var channel = 0
 var mouse_in
 var in_area
+var TV_on
 
 func _ready():
 	in_area = false
@@ -19,6 +20,8 @@ func _on_TV_input_event(viewport, event, shape_idx):
 			turn_TV_on()
 
 func turn_TV_on():
+	TV_on = true
+	BackgroundMusic.stop()
 	$NyanCat.visible = true
 	$NyanCat.play()
 	$NyanCat/AudioStreamPlayer.play()
@@ -44,18 +47,21 @@ func _on_TV_mouse_exited():
 		$AnimatedSprite.animation = "default"
 
 func _on_NextButton_pressed():
-	if channel == 0:
-		stop_NyanCat()
-		play_NewJeans()
-		channel += 1
-	else:
-		stop_NewJeans()
-		play_NyanCat()
-		channel -= 1
+	if TV_on == true:
+		if channel == 0:
+			stop_NyanCat()
+			play_NewJeans()
+			channel += 1
+		else:
+			stop_NewJeans()
+			play_NyanCat()
+			channel -= 1
 
 func _on_PauseButton_pressed():
-	stop_NewJeans()
-	stop_NyanCat()
+	if TV_on == true:
+		stop_NewJeans()
+		stop_NyanCat()
+		BackgroundMusic.play()
 
 func play_NyanCat():
 	$NyanCat.visible = true

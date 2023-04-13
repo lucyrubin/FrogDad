@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Knocking-on-door-two-knocks-www.fesliyanstudios.com.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
