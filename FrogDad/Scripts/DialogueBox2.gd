@@ -15,13 +15,17 @@ onready var next_indicator = $Content/NextIndicator
 onready var text_animation = $Content/TextAnimation
 onready var avatar 
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
-
+var completed
+var dialogue_name
 
 func _input(event):
 
 	# if user pressed "space key" before text animation ends,
 #	# the animation would be skipped and all text would show
+
 	if event.is_action_pressed("open"):
+
+		print(event)
 		if text_animation.is_active():
 			text_animation.remove_all()
 			content.percent_visible = 1
@@ -34,11 +38,28 @@ func _input(event):
 
 
 func hide_dialog_box():
-
+	if FrogDad:
+		FrogDad.state = "" # player can move again
 	content.hide()
+	completed = true
+
 	
-func show_dialog_box(_dialogs):
-	print("show dialogue box")
+	# if the intro quest is active and you finish dialogue, start knock knock timer
+	if MasterScript.currentQuestNum == -2 and dialogue_name == "Another day": 
+		print("yo")
+		get_tree().get_root().find_node("KnockTimer", true, false).start()
+	elif dialogue_name == "Knock knock":
+		print(dialogue_name)
+		SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
+	elif dialogue_name == "Wow, someone trusted me with their babies?":
+		MasterScript.findBabies = true
+		SceneTransition.change_scene("res://Scenes/Main.tscn")
+	
+func show_dialog_box(_dialogs, dialogueName):
+	dialogue_name = dialogueName
+	if FrogDad:
+		FrogDad.state = "talking" # player can't move during dialogue
+	completed = false
 	content = $Content
 	next_indicator = $Content/NextIndicator
 	text_animation = $Content/TextAnimation
@@ -68,10 +89,10 @@ func _show_dialog(index):
 	
 
 func _on_Content_visibility_changed():
-	get_tree().paused = content.visible
+	pass
+	#get_tree().paused = content.visible
 
 
 func _on_TextAnimation_tween_all_completed():
-
 	next_indicator.show()
 	

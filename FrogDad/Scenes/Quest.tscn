@@ -26,6 +26,7 @@ margin_top = -514.0
 margin_right = 189.0
 margin_bottom = -2.00006
 rect_scale = Vector2( 4, 4 )
+mouse_filter = 2
 texture = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
@@ -53,7 +54,6 @@ __meta__ = {
 }
 
 [node name="KnockTimer" type="Timer" parent="."]
-wait_time = 2.0
 
 [connection signal="visibility_changed" from="." to="." method="_on_Quest_visibility_changed"]
 [connection signal="timeout" from="KnockTimer" to="." method="_on_KnockTimer_timeout"]

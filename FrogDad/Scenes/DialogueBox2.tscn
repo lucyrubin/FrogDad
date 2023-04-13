@@ -79,6 +79,7 @@ margin_left = 4.0
 margin_top = 7.0
 margin_right = 104.0
 margin_bottom = 111.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 stretch_mode = 6
 
@@ -87,6 +88,7 @@ margin_left = 988.0
 margin_top = 25.0
 margin_right = 1028.0
 margin_bottom = 65.0
+mouse_filter = 2
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Content/NextIndicator"]

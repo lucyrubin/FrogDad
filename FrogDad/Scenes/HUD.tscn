@@ -266,6 +266,7 @@ margin_left = -6.0
 margin_top = -8.0
 margin_right = 346.0
 margin_bottom = 207.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]

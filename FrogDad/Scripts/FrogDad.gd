@@ -67,5 +67,5 @@ func toggle_dialogue_box_visibility():
 			{avatar = "frogDad", text = "Hi Gertrude!"},
 			{avatar = "gertrude", text = "What are we doing today?"},
 			{avatar = "frogDad", text = "Whatever you want."}
-		])
+		], "Gertrude talk")
 

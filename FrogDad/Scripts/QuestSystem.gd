@@ -13,8 +13,6 @@ onready var PopUpNode = UserInterfaceNode.get_node("SmallPopUpBox")
 
 export (NodePath) var inventory_path
 
-func _process(delta):
-	print(MasterScript.currentQuestNum)
 
 func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
@@ -23,6 +21,7 @@ func _ready():
 	
 
 	if MasterScript.currentQuestNum == -2 :
+		yield(get_tree().create_timer(1.0), "timeout")
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == -1:
 		after_note_appears()
@@ -115,8 +114,8 @@ func _on_ToggleQuestButton_pressed():
 
 func begin_intro_quest():
 	PopUpNode.visible = true
-	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Everyday feels the same. I wake up, I work as a freelance writer, and I sleep. I wish something more exciting would happen..."}])
-	$KnockTimer.start()
+	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Everyday feels the same. I wake up, I work as a freelance writer, and I sleep. I wish something more exciting would happen..."}], "Another day")
+	#$KnockTimer.start()
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	door_node.set_locked(true)
 	get_parent().visible = false
@@ -126,12 +125,14 @@ func _on_KnockTimer_timeout():
 	# this code creates and displays a dialogue box	
 	$KnockingSound.play()
 	PopUpNode.visible = true
-	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}])
-	# this code creates and displays a dialogue box	
-	SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
+	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}], "Knock knock")
 	$KnockingSound.stop()
+	$KnockingSound.queue_free()
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
+	# this code creates and displays a dialogue box	
+	
+
 	
 func _on_InfoButton_pressed():
 	if info_button_open && !visible:
@@ -150,5 +151,5 @@ func after_note_appears():
 	
 	# this code creates and displays a dialogue box	
 	PopUpNode.visible = true
-	PopUpNode.show_dialog_box([{avatar = "", text = "What could that be?"}])
+	PopUpNode.show_dialog_box([{avatar = "", text = "What could that be?"}], "What could that be")
 	# this code creates and displays a dialogue box	

@@ -122,6 +122,7 @@ margin_top = -281.0
 margin_right = -148.0
 margin_bottom = -83.0
 rect_scale = Vector2( 3, 3 )
+mouse_filter = 2
 texture = ExtResource( 11 )
 script = ExtResource( 12 )
 
@@ -141,6 +142,7 @@ margin_left = -143.222
 margin_top = -74.2222
 margin_right = 143.778
 margin_bottom = 70.7778
+mouse_filter = 2
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 15 )
 text = "To whom it may concern, 
