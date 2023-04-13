@@ -43,29 +43,36 @@ func _on_TV_mouse_exited():
 		mouse_in = false
 		$AnimatedSprite.animation = "default"
 
-
 func _on_NextButton_pressed():
 	if channel == 0:
-		$NyanCat.visible = false
-		$NyanCat/AudioStreamPlayer.stop()
-		$NewJeans.visible = true
-		$NewJeans.play()
-		$NewJeans/AudioStreamPlayer.play()
+		stop_NyanCat()
+		play_NewJeans()
 		channel += 1
 	else:
-		$NewJeans.visible = false
-		$NewJeans.stop()
-		$NewJeans/AudioStreamPlayer.stop()
-		$NyanCat.visible = true
-		$NyanCat.play()
-		$NyanCat/AudioStreamPlayer.play()
+		stop_NewJeans()
+		play_NyanCat()
 		channel -= 1
 
-
 func _on_PauseButton_pressed():
+	stop_NewJeans()
+	stop_NyanCat()
+
+func play_NyanCat():
+	$NyanCat.visible = true
+	$NyanCat.play()
+	$NyanCat/AudioStreamPlayer.play()
+
+func stop_NyanCat():
 	$NyanCat.visible = false
 	$NyanCat.stop()
 	$NyanCat/AudioStreamPlayer.stop()
+	
+func play_NewJeans():
+	$NewJeans.visible = true
+	$NewJeans.play()
+	$NewJeans/AudioStreamPlayer.play()
+
+func stop_NewJeans():
 	$NewJeans.visible = false
 	$NewJeans.stop()
 	$NewJeans/AudioStreamPlayer.stop()

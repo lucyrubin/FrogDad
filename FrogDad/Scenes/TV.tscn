@@ -10,6 +10,9 @@
 [ext_resource path="res://Scripts/TV.gd" type="Script" id=8]
 [ext_resource path="res://GIFs/Nyan_Cat.png" type="Texture" id=9]
 
+[sub_resource type="RectangleShape2D" id=118]
+extents = Vector2( 139.468, 195.5 )
+
 [sub_resource type="AtlasTexture" id=115]
 flags = 4
 atlas = ExtResource( 3 )
@@ -32,9 +35,6 @@ animations = [ {
 "name": "hover",
 "speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 139.468, 195.5 )
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -240,12 +240,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 117 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8.53116, -5.5 )
 shape = SubResource( 118 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 117 )
 
 [node name="NyanCat" type="AnimatedSprite" parent="."]
 visible = false
