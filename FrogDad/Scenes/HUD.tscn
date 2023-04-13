@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -49,11 +49,17 @@ font_data = ExtResource( 10 )
 [sub_resource type="DynamicFont" id=98]
 font_data = ExtResource( 10 )
 
-[sub_resource type="StreamTexture" id=92]
-flags = 4
-
 [sub_resource type="StyleBoxTexture" id=99]
-texture = SubResource( 92 )
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 113, 106 )
+
+[sub_resource type="StyleBoxTexture" id=100]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 92, 91 )
+
+[sub_resource type="StyleBoxTexture" id=101]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 92, 91 )
 
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2( 0.5, 0.5 )
@@ -271,7 +277,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
 visible = false
-position = Vector2( 120, 50 )
+position = Vector2( 113.333, 53 )
 scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_group_": true
@@ -285,10 +291,12 @@ inventory_type = "player"
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 120, 165 )
+position = Vector2( 113.333, 127 )
 script = ExtResource( 8 )
 item_list = {
-0: [ "Fly", 3 ]
+0: [ "Fly", 3 ],
+1: [ "Milk", 1 ],
+2: [ "Egg", 3 ]
 }
 inventory_type = "fridge"
 
@@ -307,7 +315,7 @@ margin_right = 277.0
 margin_bottom = 12.6667
 rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Fridge Inventory"
+text = "Fridge"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="UserInterface/FridgeInventory"]
@@ -368,7 +376,7 @@ empty_tex = ExtResource( 21 )
 
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 120, 164 )
+position = Vector2( 113, 125.667 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Cloth", 3 ]
@@ -383,27 +391,27 @@ rect_scale = Vector2( 0.428, 0.316 )
 texture = ExtResource( 24 )
 
 [node name="Label" type="Label" parent="UserInterface/DresserInventory"]
-margin_left = 5.33333
-margin_top = -8.33333
+margin_left = 5.33334
+margin_top = -6.33333
 margin_right = 277.333
-margin_bottom = 11.6667
+margin_bottom = 13.6667
 rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Dresser Inventory"
+text = "Dresser"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="UserInterface/DresserInventory"]
-margin_left = 6.33333
-margin_top = -1.33333
-margin_right = 115.333
-margin_bottom = 48.6667
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 115.0
+margin_bottom = 22.0
 columns = 5
 
 [node name="Slot1" type="Panel" parent="UserInterface/DresserInventory/GridContainer"]
 margin_right = 18.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 100 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -413,7 +421,7 @@ margin_left = 22.0
 margin_right = 40.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 100 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -423,7 +431,7 @@ margin_left = 44.0
 margin_right = 62.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 100 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -433,7 +441,7 @@ margin_left = 66.0
 margin_right = 84.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 100 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -443,14 +451,14 @@ margin_left = 88.0
 margin_right = 106.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 100 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
 
 [node name="SideTableInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 120, 151 )
+position = Vector2( 113.333, 113 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -467,13 +475,13 @@ rect_scale = Vector2( 0.428, 0.316 )
 texture = ExtResource( 24 )
 
 [node name="Label" type="Label" parent="UserInterface/SideTableInventory"]
-margin_left = 40.0
-margin_top = 5.33334
-margin_right = 139.0
-margin_bottom = 19.3333
+margin_left = 47.3333
+margin_top = 5.0
+margin_right = 114.333
+margin_bottom = 19.0
 rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Table Inventory"
+text = "Side Table"
 
 [node name="GridContainer" type="GridContainer" parent="UserInterface/SideTableInventory"]
 margin_left = 6.66668
@@ -486,7 +494,7 @@ columns = 5
 margin_right = 18.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 101 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -496,7 +504,7 @@ margin_left = 22.0
 margin_right = 40.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 101 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -506,7 +514,7 @@ margin_left = 44.0
 margin_right = 62.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 101 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -516,7 +524,7 @@ margin_left = 66.0
 margin_right = 84.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 101 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
@@ -526,7 +534,7 @@ margin_left = 88.0
 margin_right = 106.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 18, 18 )
-custom_styles/panel = SubResource( 99 )
+custom_styles/panel = SubResource( 101 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
