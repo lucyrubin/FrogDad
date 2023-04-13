@@ -13,7 +13,7 @@ func _ready():
 func _on_Dresser_input_event(viewport, event, shape_idx):	
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
-	and event.pressed:
+	and event.pressed and frogdad_node.state == "":
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
@@ -40,17 +40,21 @@ func _input(event):
 		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_mouse_entered():
-	$AnimatedSprite.animation = "hover"
-	$AnimatedSprite.set_frame(current_fram)
+	if frogdad_node.state == "":
+		$AnimatedSprite.animation = "hover"
+		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_mouse_exited():
-	$AnimatedSprite.animation = "default"
-	$AnimatedSprite.set_frame(current_fram)
+	if frogdad_node.state == "":
+		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_area_entered(area):
-	$AnimatedSprite.animation = "hover"
-	$AnimatedSprite.set_frame(current_fram)
+	if frogdad_node.state == "":
+		$AnimatedSprite.animation = "hover"
+		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_area_exited(area):
-	$AnimatedSprite.animation = "default"
-	$AnimatedSprite.set_frame(current_fram)
+	if frogdad_node.state == "":
+		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.set_frame(current_fram)

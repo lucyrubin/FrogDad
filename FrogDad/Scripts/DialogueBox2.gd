@@ -44,14 +44,16 @@ func hide_dialog_box():
 	completed = true
 
 	
-	# if the intro quest is active and you finish dialogue, start knock knock timer
+
+	# this code handles what should happen after a dialogue finished
 	if MasterScript.currentQuestNum == -2 and dialogue_name == "Another day": 
-		print("yo")
+		# after ahhh another day
 		get_tree().get_root().find_node("KnockTimer", true, false).start()
 	elif dialogue_name == "Knock knock":
-		print(dialogue_name)
+		# after knock knock
 		SceneTransition.change_scene("res://Scenes/NoteCutScene.tscn")
 	elif dialogue_name == "Wow, someone trusted me with their babies?":
+		# after babies cut scene
 		MasterScript.findBabies = true
 		SceneTransition.change_scene("res://Scenes/Main.tscn")
 	
@@ -71,6 +73,8 @@ func show_dialog_box(_dialogs, dialogueName):
 	_show_dialog(0)
 	
 func _show_dialog(index):
+	if FrogDad:
+		FrogDad.state = "talking" # player can't move during dialogue
 	
 	current = index
 
