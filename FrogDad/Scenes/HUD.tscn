@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -30,6 +30,65 @@
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/PopUpNotification.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/HUD.gd" type="Script" id=32]
+
+[sub_resource type="Animation" id=103]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2050, 122 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=104]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.99 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "slide_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 2.46229, 0.233258 ),
+"update": 0,
+"values": [ Vector2( 2050, 122 ), Vector2( 1300, 122 ) ]
+}
 
 [sub_resource type="DynamicFont" id=93]
 font_data = ExtResource( 10 )
@@ -64,11 +123,23 @@ region_rect = Rect2( 0, 0, 92, 91 )
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2( 0.5, 0.5 )
 transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
+script = ExtResource( 32 )
 
 [node name="ToggleInventoryButton" type="TextureButton" parent="."]
 margin_right = 139.0
 margin_bottom = 139.0
 texture_normal = ExtResource( 25 )
+
+[node name="PopUpNotification" parent="." instance=ExtResource( 31 )]
+position = Vector2( 2050, 122 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PopUpNotification"]
+anims/RESET = SubResource( 103 )
+anims/fade_out = SubResource( 104 )
+anims/slide_in = SubResource( 102 )
+
+[node name="PopUpTimer" type="Timer" parent="PopUpNotification"]
+wait_time = 5.0
 
 [node name="ToggleQuestButton" type="TextureButton" parent="."]
 anchor_left = 0.5
@@ -543,6 +614,7 @@ empty_tex = ExtResource( 23 )
 visible = false
 
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
+[connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="timeout" from="ToggleQuestButton/Quest/OneSecTimer" to="ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
 [connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]

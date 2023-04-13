@@ -9,6 +9,7 @@ var FrogDad
 var info_button_open
 var SmallPopUpBoxScene = preload("res://Scenes/SmallPopUpBox.tscn")
 onready var UserInterfaceNode = get_tree().get_root().find_node("UserInterface", true, false)
+onready var HUDNode = get_tree().get_root().find_node("HUD", true, false)
 onready var PopUpNode = UserInterfaceNode.get_node("SmallPopUpBox")
 
 export (NodePath) var inventory_path
@@ -25,9 +26,10 @@ func _ready():
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == -1:
 		after_note_appears()
+		HUDNode.new_quest("Make a Swaddle")
 		if !MasterScript.opened_quest_first_time:
 			MasterScript.opened_quest_first_time = true
-			get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
+
 		
 
 func deleteQuest(SubQuest, QuestName):
