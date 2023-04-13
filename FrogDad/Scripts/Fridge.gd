@@ -13,7 +13,7 @@ func _ready():
 func _on_Fridge_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
-	and event.pressed  and frogdad_node.state == "":
+	and event.pressed and frogdad_node.state == "":
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
