@@ -25,10 +25,10 @@ func _ready():
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == -1:
 		after_note_appears()
-	elif MasterScript.currentQuestNum == 0 and !MasterScript.opened_quest_first_time:
-		MasterScript.opened_quest_first_time = true
-		get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
-	
+		if !MasterScript.opened_quest_first_time:
+			MasterScript.opened_quest_first_time = true
+			get_tree().get_root().find_node("ToggleQuestButton", true, false).blink() 
+		
 
 func deleteQuest(SubQuest, QuestName):
 	# remove quest from MasterScript.currentQuestArray
@@ -142,14 +142,13 @@ func _on_InfoButton_pressed():
 		
 func after_note_appears():
 	var door_node = get_tree().get_root().find_node("Door", true, false)
-	door_node.set_locked(true)
+	door_node.set_locked(false)
 	get_parent().visible = false
-	var main_node = FrogDad.get_parent()
-	var note_sprite = FrogDad.get_parent().get_node("Home/YSort/Door/Note")
-	# add the note by the door
-	note_sprite.visible = true
 	
-	# this code creates and displays a dialogue box	
-	PopUpNode.visible = true
-	PopUpNode.show_dialog_box([{avatar = "", text = "What could that be?"}], "What could that be")
-	# this code creates and displays a dialogue box	
+	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)
+	toggleQuestButton.visible = true
+
+
+
+
+

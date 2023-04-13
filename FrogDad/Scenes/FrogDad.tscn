@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -6,9 +6,6 @@
 [ext_resource path="res://Scripts/PickupZone.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/DialogueBox2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DialogueBox.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Temporary Clipart/DialogueBox.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/CloseUpNote.gd" type="Script" id=12]
-[ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=23]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -80,9 +77,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 166, 322.5 )
 
-[sub_resource type="DynamicFont" id=15]
-font_data = ExtResource( 23 )
-
 [node name="FrogDad" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
 collision_mask = 6
@@ -97,7 +91,6 @@ shape = SubResource( 13 )
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
 animation = "walk"
-frame = 4
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -115,42 +108,5 @@ z_index = 1000
 [node name="DialogueBox2" parent="." instance=ExtResource( 5 )]
 visible = false
 
-[node name="CloseUpNote" type="TextureRect" parent="."]
-visible = false
-margin_left = -490.0
-margin_top = -281.0
-margin_right = -148.0
-margin_bottom = -83.0
-rect_scale = Vector2( 3, 3 )
-mouse_filter = 2
-texture = ExtResource( 11 )
-script = ExtResource( 12 )
-
-[node name="CloseButton" type="Button" parent="CloseUpNote"]
-margin_left = 298.4
-margin_top = 16.4
-margin_right = 320.4
-margin_bottom = 36.4
-text = "X"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CloseUpNote"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -143.222
-margin_top = -74.2222
-margin_right = 143.778
-margin_bottom = 70.7778
-mouse_filter = 2
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 15 )
-text = "To whom it may concern, 
-
-These are my precious frog babies. I can't take care of them anymore ;( Please look after them!
-							<3"
-scroll_active = false
-
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]
-[connection signal="pressed" from="CloseUpNote/CloseButton" to="CloseUpNote" method="_on_CloseButton_pressed"]
