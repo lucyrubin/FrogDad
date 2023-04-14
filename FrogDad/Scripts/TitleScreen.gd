@@ -3,7 +3,8 @@ extends Control
 var MainScene = "res://Scenes/Main.tscn"
 
 func _ready():
-	BackgroundMusic.play()
+	if BackgroundMusic.playing == false:
+		BackgroundMusic.play()
 
 func _on_StartButton_pressed():
 	SceneTransition.change_scene(MainScene)
