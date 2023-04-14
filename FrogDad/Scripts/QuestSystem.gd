@@ -20,14 +20,15 @@ func _ready():
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
-	if MasterScript.currentQuestNum == -2 :
+	if MasterScript.currentQuestNum == -1 :
 		yield(get_tree().create_timer(1.0), "timeout")
 		begin_intro_quest()
-	elif MasterScript.currentQuestNum == -1:
+	elif MasterScript.currentQuestNum == 0:
 		after_note_appears()
 		HUDNode.new_quest("Make a Swaddle")
 		if !MasterScript.opened_quest_first_time:
 			MasterScript.opened_quest_first_time = true
+	
 
 		
 
@@ -43,11 +44,15 @@ func deleteQuest(SubQuest, QuestName):
 		# for testing: show the quest and sprite image as labels
 		MasterScript.quest_state = MasterScript.currentQuestArray[0][1]
 		MasterScript.sprite_image = MasterScript.currentQuestArray[0][4]
+		print(MasterScript.currentQuestArray[0][1])
+		HUDNode.new_quest(MasterScript.currentQuestArray[0][1])
 	
 	# remove quest from GUI
 	SubQuest.queue_free()
 	QuestName.queue_free()
 	_on_ToggleQuestButton_pressed()
+	
+	
 	
 func collectResourceQuest(quest, amountRequired, itemType):
 	amountRequired = int(amountRequired)

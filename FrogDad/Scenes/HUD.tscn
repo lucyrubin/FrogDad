@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/PopUpNotification.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scenes/HUD.gd" type="Script" id=32]
+[ext_resource path="res://Temporary Clipart/mute-speaker-sketch.png" type="Texture" id=33]
 
 [sub_resource type="Animation" id=103]
 length = 0.001
@@ -89,6 +90,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 2050, 122 ), Vector2( 1300, 122 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=93]
 font_data = ExtResource( 10 )
@@ -120,6 +133,9 @@ region_rect = Rect2( 0, 0, 92, 91 )
 texture = ExtResource( 23 )
 region_rect = Rect2( 0, 0, 92, 91 )
 
+[sub_resource type="DynamicFont" id=105]
+font_data = ExtResource( 10 )
+
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2( 0.5, 0.5 )
 transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
@@ -140,6 +156,7 @@ anims/slide_in = SubResource( 102 )
 
 [node name="PopUpTimer" type="Timer" parent="PopUpNotification"]
 wait_time = 5.0
+one_shot = true
 
 [node name="ToggleQuestButton" type="TextureButton" parent="."]
 anchor_left = 0.5
@@ -613,6 +630,26 @@ empty_tex = ExtResource( 23 )
 [node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
 visible = false
 
+[node name="MuteButton" type="TextureButton" parent="."]
+margin_left = 1938.0
+margin_top = 1100.0
+margin_right = 2050.0
+margin_bottom = 1202.0
+texture_normal = ExtResource( 33 )
+expand = true
+
+[node name="Label" type="Label" parent="MuteButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -52.0
+margin_top = -30.0
+margin_right = 38.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 105 )
+text = "Unmuted
+"
+
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
@@ -622,3 +659,4 @@ visible = false
 [connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
 [connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_MuteButton_pressed"]

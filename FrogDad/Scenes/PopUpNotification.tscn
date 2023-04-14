@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Temporary Clipart/DialogueBox.png" type="Texture" id=1]
+[ext_resource path="res://Art/note.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Art/quest_icon.png" type="Texture" id=3]
 
@@ -15,11 +15,11 @@ font_data = ExtResource( 2 )
 [node name="PopUpNotification" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 704.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 500, 100 )
+margin_left = -162.0
+margin_top = -68.0
+margin_right = 1038.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 1200, 300 )
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -29,31 +29,31 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = 20.0
-margin_right = -30.0
-margin_bottom = -20.0
+margin_left = 220.0
+margin_top = 100.0
+margin_right = -220.0
+margin_bottom = -100.0
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer"]
-margin_right = 50.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 50, 60 )
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
 texture = ExtResource( 3 )
 expand = true
 
 [node name="NewQuest" type="Label" parent="TextureRect/HBoxContainer"]
-margin_left = 54.0
-margin_top = 8.0
-margin_right = 260.0
-margin_bottom = 51.0
+margin_left = 104.0
+margin_top = 28.0
+margin_right = 310.0
+margin_bottom = 71.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "New Quest: "
 
 [node name="QuestNameLabel" type="Label" parent="TextureRect/HBoxContainer"]
-margin_left = 264.0
-margin_top = 8.0
-margin_right = 264.0
-margin_bottom = 51.0
+margin_left = 314.0
+margin_top = 28.0
+margin_right = 314.0
+margin_bottom = 71.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )

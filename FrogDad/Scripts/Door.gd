@@ -33,7 +33,7 @@ func go_outside():
 			print("something failed in the door scene")
 
 func _on_Door_area_entered(area):
-	if MasterScript.currentQuestNum == -2:
+	if MasterScript.currentQuestNum == -1:
 		current_fram = 0
 		$AnimatedSprite.set_frame(current_fram)
 	else:

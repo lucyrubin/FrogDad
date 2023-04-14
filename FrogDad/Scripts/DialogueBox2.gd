@@ -46,7 +46,7 @@ func hide_dialog_box():
 	
 
 	# this code handles what should happen after a dialogue finished
-	if MasterScript.currentQuestNum == -2 and dialogue_name == "Another day": 
+	if MasterScript.currentQuestNum == -1 and dialogue_name == "Another day": 
 		# after ahhh another day
 		get_tree().get_root().find_node("KnockTimer", true, false).start()
 	elif dialogue_name == "Knock knock":
