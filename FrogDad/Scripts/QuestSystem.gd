@@ -54,7 +54,6 @@ func deleteQuest(SubQuest):
 	
 func collectResourceQuest(quest, amountRequired, itemType):
 	amountRequired = int(amountRequired)
-	
 	# add a new quest to the GUI
 
 	var SubQuest = QuestContainerScene.instance()
@@ -87,6 +86,7 @@ func _on_ToggleQuestButton_pressed():
 	if !info_button_open:
 		visible = !visible
 		if visible:
+			FrogDad.state = "quest"
 			# add all current quests to the GUI
 			for quest in MasterScript.currentQuestArray:
 				if quest[0] == "resource collection":

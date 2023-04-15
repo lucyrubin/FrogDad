@@ -1,10 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Item Icons/Cloth.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -14,11 +24,13 @@ font_data = ExtResource( 2 )
 [node name="QuestContainer" type="Node2D"]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 100.0
 margin_right = 911.0
 margin_bottom = 206.0
+alignment = 1
 
 [node name="QuestTitleLabel" type="Label" parent="VBoxContainer"]
-margin_right = 1313.0
+margin_right = 1427.0
 margin_bottom = 92.0
 rect_clip_content = true
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -28,45 +40,46 @@ align = 1
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 96.0
-margin_right = 1313.0
-margin_bottom = 188.0
-custom_constants/hseparation = 20
+margin_right = 1427.0
+margin_bottom = 218.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 50
 columns = 4
 
 [node name="AmountLabel" type="Label" parent="VBoxContainer/GridContainer"]
-margin_right = 520.0
-margin_bottom = 92.0
-rect_clip_content = true
+margin_right = 669.0
+margin_bottom = 122.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Amount Text:"
+custom_fonts/font = SubResource( 3 )
+text = "Amount Text"
 
 [node name="Spacing" type="TextureRect" parent="VBoxContainer/GridContainer"]
-margin_left = 540.0
-margin_right = 560.0
-margin_bottom = 92.0
+margin_left = 719.0
+margin_right = 739.0
+margin_bottom = 122.0
 rect_min_size = Vector2( 20, 20 )
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer/GridContainer"]
-margin_left = 580.0
-margin_right = 1203.0
-margin_bottom = 92.0
-rect_clip_content = true
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+margin_left = 789.0
+margin_top = 24.0
+margin_right = 1287.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 0.192157, 0.192157, 0.192157, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Quest Text Here"
 
 [node name="Icon" type="TextureRect" parent="VBoxContainer/GridContainer"]
-margin_left = 1223.0
-margin_right = 1313.0
-margin_bottom = 92.0
+margin_left = 1337.0
+margin_right = 1427.0
+margin_bottom = 122.0
 rect_min_size = Vector2( 90, 90 )
 texture = ExtResource( 3 )
 expand = true
 
 [node name="CompletedButton" type="Button" parent="VBoxContainer"]
-margin_top = 192.0
-margin_right = 1313.0
-margin_bottom = 236.0
+margin_top = 222.0
+margin_right = 1427.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 500, 100 )
 custom_fonts/font = SubResource( 2 )
 text = "Complete"

@@ -7,6 +7,8 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
+outline_size = 7
+outline_color = Color( 0.827451, 0.843137, 0.772549, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Quest" type="Node2D"]
