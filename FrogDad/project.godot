@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Forest_Entrance",
 "language": "GDScript",
-"path": "res://Scenes/ForestEntrance.gd"
+"path": "res://Scripts/ForestEntrance.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "FrogDad",

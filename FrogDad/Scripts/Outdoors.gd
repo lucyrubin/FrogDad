@@ -13,5 +13,5 @@ func _ready():
 		if BackgroundMusic.playing == false:
 			BackgroundMusic.play()
 
-func _process(delta):
+func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y)

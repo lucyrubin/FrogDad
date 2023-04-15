@@ -12,7 +12,7 @@ func _ready():
 	in_area = false
 	mouse_in = false
 
-func _on_TV_input_event(viewport, event, shape_idx):
+func _on_TV_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and frogdad_node.state == "":
@@ -26,15 +26,6 @@ func turn_TV_on():
 	$NyanCat.play()
 	$NyanCat/AudioStreamPlayer.play()
 
-func _on_TV_area_entered(area):
-	if frogdad_node.state == "":
-		in_area = true
-		$AnimatedSprite.animation = "hover"
-
-func _on_TV_area_exited(area):
-	if frogdad_node.state == "":
-		in_area = false
-		$AnimatedSprite.animation = "default"
 
 func _on_TV_mouse_entered():
 	if frogdad_node.state == "":

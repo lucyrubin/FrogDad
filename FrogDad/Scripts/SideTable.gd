@@ -20,7 +20,7 @@ func _input(event):
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 
-func _on_Side_Table_input_event(viewport, event, shape_idx):
+func _on_Side_Table_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed and frogdad_node.state == "":
@@ -40,15 +40,6 @@ func _on_Side_Table_input_event(viewport, event, shape_idx):
 			var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 			DarkBackground.visible = false
 
-func _on_Side_Table_area_entered(area):
-	if frogdad_node.state == "":
-		$AnimatedSprite.animation = "hover"
-		$AnimatedSprite.set_frame(current_fram)
-
-func _on_Side_Table_area_exited(area):
-	if frogdad_node.state == "":
-		$AnimatedSprite.animation = "default"
-		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Side_Table_mouse_entered():
 	if frogdad_node.state == "":

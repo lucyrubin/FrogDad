@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ForestExit.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/ForestExit.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Forest.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audios/Space-Jazz.mp3" type="AudioStream" id=11]

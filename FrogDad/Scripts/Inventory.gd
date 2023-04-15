@@ -17,10 +17,8 @@ onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false
 
 func _ready():
 	var slots = inventory_slots.get_children()
-	
 		
 	inventory_data.setup(slots.size(), item_list)
-	
 	
 	# allow slots to be clicked on and give them each an index
 	for i in range(slots.size()):
@@ -53,8 +51,8 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 			elif slot.item: # not holding an item
 				left_click_not_holding(slot)
 
-# warning-ignore:unused_argument
-func _input(event):
+
+func _input(_event):
 	# make the item that is being held follow the mouse
 	if FrogDad.holding_item:
 		FrogDad.holding_item.position = get_global_mouse_position()  -  Vector2(130,55)

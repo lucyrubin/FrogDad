@@ -24,13 +24,13 @@ func go_inside():
 	if ERR != OK:
 		print("something failed in the door scene")
 
-func _on_OutdoorDoor_area_entered(area):
+func _on_OutdoorDoor_area_entered(_area):
 	door_opened = true
 	current_fram = 1
 	$AnimatedSprite.animation = "hover"
 	$AnimatedSprite.set_frame(current_fram)
 
-func _on_OutdoorDoor_area_exited(area):
+func _on_OutdoorDoor_area_exited(_area):
 	door_opened = false
 	current_fram = 0
 	$AnimatedSprite.animation = "default"

@@ -10,12 +10,13 @@ func _ready():
 	fridge_inventory_node.visible = false
 	$AnimatedSprite.animation = "default"
 
-func _on_Fridge_input_event(viewport, event, shape_idx):
+func _on_Fridge_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed and frogdad_node.state == "":
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
+		
 		if current_fram == 1:
 			fridge_inventory_node.visible = true
 			user_interface_node.visible = true
@@ -23,6 +24,7 @@ func _on_Fridge_input_event(viewport, event, shape_idx):
 			user_interface_node.open_inventory()
 			var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 			DarkBackground.visible = true
+		
 		else:
 			fridge_inventory_node.visible = false
 			user_interface_node.visible = false
@@ -49,12 +51,4 @@ func _on_Fridge_mouse_exited():
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
 
-func _on_Fridge_area_entered(area):
-	if frogdad_node.state == "":
-		$AnimatedSprite.animation = "hover"
-		$AnimatedSprite.set_frame(current_fram)
 
-func _on_Fridge_area_exited(area):
-	if frogdad_node.state == "":
-		$AnimatedSprite.animation = "default"
-		$AnimatedSprite.set_frame(current_fram)

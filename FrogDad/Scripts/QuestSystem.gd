@@ -4,7 +4,6 @@ var FrogDad_inventory
 var FrogDad_inventory_data
 var QuestContainerScene = preload("res://Scenes/QuestContainer.tscn")
 var DoorScript = preload("res://Scripts/Door.gd")
-var KeyIndicatorScene = preload("res://Scenes/KeyIndicator.tscn")
 var FrogDad 
 var info_button_open
 var SmallPopUpBoxScene = preload("res://Scenes/SmallPopUpBox.tscn")
@@ -32,7 +31,7 @@ func _ready():
 
 		
 
-func deleteQuest(SubQuest, QuestName):
+func deleteQuest(SubQuest):
 	# remove quest from MasterScript.currentQuestArray
 
 	FrogDad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
@@ -49,7 +48,6 @@ func deleteQuest(SubQuest, QuestName):
 	
 	# remove quest from GUI
 	SubQuest.queue_free()
-	QuestName.queue_free()
 	_on_ToggleQuestButton_pressed()
 	
 	
@@ -58,18 +56,11 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	amountRequired = int(amountRequired)
 	
 	# add a new quest to the GUI
-	var QuestName = Label.new()
+
 	var SubQuest = QuestContainerScene.instance()
-	$VBoxContainer.add_child(QuestName)
 	$VBoxContainer.add_child(SubQuest)
-	SubQuest.get_node("CompletedButton").connect("pressed", self, "deleteQuest", [SubQuest, QuestName])
-	QuestName.text = quest
-	var dynamic_font = DynamicFont.new()
-	dynamic_font.size = 60
-	dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
-	QuestName.add_font_override("font", dynamic_font)
-	SubQuest.add_font_override("font", dynamic_font)
-	QuestName.add_color_override("font_color", Color(0,0,0,1))
+	var CompletedButton = SubQuest.get_node("VBoxContainer/CompletedButton")
+	CompletedButton.connect("pressed", self, "deleteQuest", [SubQuest])
 	
 	# count up the amount of the item in the inventory
 	var totalItem = 0
@@ -78,11 +69,13 @@ func collectResourceQuest(quest, amountRequired, itemType):
 			totalItem += FrogDad_inventory_data.inventory[item][1]
 	
 	# update GUI based on amount in inventory
-	SubQuest.get_node("Label").text = "Collect " + str(itemType) 
-	SubQuest.get_node("Icon").texture = load("res://Item Icons/" + str(itemType) + ".png")
-	SubQuest.get_node("AmountLabel").text = str(totalItem) + "/" + str(amountRequired) 
+	SubQuest.get_node("VBoxContainer/GridContainer/DescriptionLabel").text = "Collect " + str(itemType) 
+	SubQuest.get_node("VBoxContainer/GridContainer/Icon").texture = load("res://Item Icons/" + str(itemType) + ".png")
+	SubQuest.get_node("VBoxContainer/GridContainer/AmountLabel").text = str(totalItem) + "/" + str(amountRequired) 
+	SubQuest.get_node("VBoxContainer/QuestTitleLabel").text = quest
+	
+
 	# check if the requirements have been satisfied
-	var CompletedButton = SubQuest.find_node("CompletedButton", true, false)
 	if totalItem >= amountRequired:
 		CompletedButton.visible = true
 	else: 
@@ -149,7 +142,6 @@ func _on_InfoButton_pressed():
 		
 func after_note_appears():
 	var door_node = get_tree().get_root().find_node("Door", true, false)
-#	door_node.set_locked(false)
 	get_parent().visible = false
 	
 	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)

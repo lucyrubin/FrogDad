@@ -7,7 +7,7 @@ onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false
 func _ready():
 	$AnimatedSprite.animation = "default"
 
-func _on_Microwave_input_event(viewport, event, shape_idx):
+func _on_Microwave_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and frogdad_node.state =="" \
 	and event.button_index == BUTTON_LEFT \
@@ -25,12 +25,3 @@ func _on_Microwave_mouse_exited():
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
 
-func _on_Microwave_area_entered(area):
-	if frogdad_node.state =="":
-		$AnimatedSprite.animation = "hover"
-		$AnimatedSprite.set_frame(current_fram)
-
-func _on_Microwave_area_exited(area):
-	if frogdad_node.state =="":
-		$AnimatedSprite.animation = "default"
-		$AnimatedSprite.set_frame(current_fram)

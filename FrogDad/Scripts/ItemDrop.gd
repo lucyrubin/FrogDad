@@ -17,6 +17,7 @@ var FrogDadScene = load("res://Scenes/FrogDad.tscn")
 export(NodePath) var FrogDad_path
 onready var inventory_node = get_tree().get_root().find_node("Inventory", true, false)
 onready var Camera2DNode = get_tree().get_root().find_node("Camera2D", true, false)
+
 func _ready():
 	z_index = position.y #default setup
 	if(item_name == null):
@@ -70,14 +71,11 @@ func _on_Button_mouse_entered():
 
 func _on_Button_mouse_exited():
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png") 
-	
 
 
-
-
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	frog_dad_is_close = true
 
 
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(_body):
 	frog_dad_is_close = false

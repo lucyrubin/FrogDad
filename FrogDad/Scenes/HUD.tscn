@@ -11,7 +11,7 @@
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=9]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/ToggleQuestButton.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
 [ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=13]
 [ext_resource path="res://Art/info_icon.png" type="Texture" id=14]
 [ext_resource path="res://Info Icons/Z.png" type="Texture" id=15]
@@ -31,7 +31,7 @@
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/PopUpNotification.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/HUD.gd" type="Script" id=32]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=32]
 [ext_resource path="res://Temporary Clipart/mute-speaker-sketch.png" type="Texture" id=33]
 
 [sub_resource type="Animation" id=103]

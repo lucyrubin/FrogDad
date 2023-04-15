@@ -24,8 +24,6 @@ func _input(event):
 #	# the animation would be skipped and all text would show
 
 	if event.is_action_pressed("open"):
-
-		print(event)
 		if text_animation.is_active():
 			text_animation.remove_all()
 			content.percent_visible = 1
@@ -42,8 +40,6 @@ func hide_dialog_box():
 		FrogDad.state = "" # player can move again
 	content.hide()
 	completed = true
-
-	
 
 	# this code handles what should happen after a dialogue finished
 	if MasterScript.currentQuestNum == -1 and dialogue_name == "Another day": 

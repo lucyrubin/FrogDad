@@ -10,6 +10,5 @@ func go_in_forest():
 	if ERR != OK:
 		print("something failed in the door scene")
 
-
-func _on_ForestEntrance_area_entered(area):
+func _on_ForestEntrance_area_entered(_area):
 	go_in_forest()

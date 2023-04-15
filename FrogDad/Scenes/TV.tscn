@@ -11,7 +11,7 @@
 [ext_resource path="res://GIFs/Nyan_Cat.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 139.468, 195.5 )
+extents = Vector2( 47.9998, 56.0002 )
 
 [sub_resource type="AtlasTexture" id=115]
 flags = 4
@@ -241,7 +241,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8.53116, -5.5 )
+position = Vector2( 11, -7.99994 )
 shape = SubResource( 118 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
