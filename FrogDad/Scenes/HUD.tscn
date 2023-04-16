@@ -363,11 +363,8 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
 visible = false
-position = Vector2( 113.333, 53 )
+position = Vector2( 50.6667, 63.3333 )
 scale = Vector2( 1, 1 )
-__meta__ = {
-"_edit_group_": true
-}
 item_list = {
 0: [ "Fly", 1 ],
 1: [ "Log", 98 ],
@@ -377,7 +374,7 @@ inventory_type = "player"
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 113.333, 127 )
+position = Vector2( 177.667, 83.3333 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Fly", 3 ],
@@ -462,7 +459,7 @@ empty_tex = ExtResource( 21 )
 
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 113, 125.667 )
+position = Vector2( 177.667, 82 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Cloth", 3 ]
@@ -544,7 +541,7 @@ empty_tex = ExtResource( 23 )
 
 [node name="SideTableInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 113.333, 113 )
+position = Vector2( 177.333, 69.3333 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -627,6 +624,9 @@ empty_tex = ExtResource( 23 )
 
 [node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
 visible = false
+
+[node name="InventoryCenter" type="Position2D" parent="UserInterface"]
+position = Vector2( 167, 91 )
 
 [node name="MuteButton" type="TextureButton" parent="."]
 margin_left = 1938.0
