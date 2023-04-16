@@ -109,4 +109,4 @@ autowrap = true
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 37 )]
 
 [node name="EnterHome" type="Position2D" parent="."]
-position = Vector2( 484, -519 )
+position = Vector2( 263, -384 )

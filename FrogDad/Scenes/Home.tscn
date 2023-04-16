@@ -926,6 +926,7 @@ rotation = 1.5708
 shape = SubResource( 48 )
 
 [node name="TV" parent="." instance=ExtResource( 31 )]
+position = Vector2( 586, -416 )
 z_index = -500
 
 [node name="YSort" type="YSort" parent="."]
