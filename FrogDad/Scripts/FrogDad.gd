@@ -19,26 +19,64 @@ func _physics_process(delta):
 	z_index = position.y
 	velocity = Vector2.ZERO
 	if state == "": # move as long as dialogue and inventory aren't active
-		if Input.is_action_pressed("move_down"):
-			move_down()
-		if Input.is_action_pressed("move_up"):
-			move_up()
-		if Input.is_action_pressed("move_right"):
-			move_right()
-		if Input.is_action_pressed("move_left"):
-			move_left()
-			
+		
+		if Input.is_action_pressed("move_down") and Input.is_action_pressed("move_left"):
+			move_down_and_left()
+		elif Input.is_action_pressed("move_down") and Input.is_action_pressed("move_right"):
+			move_down_and_right()
+		elif Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left"):
+			move_up_and_left()
+		elif Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right"):
+			move_up_and_right()
+		else:
+			if Input.is_action_pressed("move_down"):
+				move_down()
+			if Input.is_action_pressed("move_up"):
+				move_up()
+			if Input.is_action_pressed("move_right"):
+				move_right()
+			if Input.is_action_pressed("move_left"):
+				move_left()
+				
+		
 		if velocity.length() > 0:
+			print("go")
 			velocity = velocity.normalized() * speed
 			$AnimatedSprite.play()
 
 		else:
+			print("stop")
 			$AnimatedSprite.stop()
+		
 	else: 
 		$AnimatedSprite.stop()
 		
 	var _collision = move_and_collide(velocity*delta)
 
+func move_down_and_left():
+	velocity.x -= 1
+	velocity.y += 1
+	$AnimatedSprite.flip_h = true
+	$AnimatedSprite.animation = "right"
+
+func move_up_and_left():
+	velocity.x -= 1
+	velocity.y -= 1
+	$AnimatedSprite.flip_h = true
+	$AnimatedSprite.animation = "right"
+	
+func move_up_and_right():
+	velocity.x += 1
+	velocity.y -= 1
+	$AnimatedSprite.flip_h = false
+	$AnimatedSprite.animation = "right"
+
+func move_down_and_right():
+	velocity.x += 1
+	velocity.y += 1
+	$AnimatedSprite.flip_h = false
+	$AnimatedSprite.animation = "right"
+	
 func move_down():
 	velocity.y += 1
 	$AnimatedSprite.flip_h = false
