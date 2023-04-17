@@ -38,6 +38,7 @@ item_name = "Cloth"
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
 position = Vector2( 264, -386 )
+scale = Vector2( 0.45, 0.45 )
 __meta__ = {
 "_edit_group_": true
 }
