@@ -47,6 +47,7 @@ func _physics_process(delta):
 		else:
 			print("stop")
 			$AnimatedSprite.stop()
+			$AnimatedSprite.set_frame(0)
 		
 	else: 
 		$AnimatedSprite.stop()
