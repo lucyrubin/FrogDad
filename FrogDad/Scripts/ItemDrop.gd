@@ -10,6 +10,8 @@ var player = null
 var being_picked_up = false
 var frog_dad_is_close = false
 
+var direction_to_move # direction for item drop to move to get to the inventory leaf
+
 onready var FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
 
 #Specifies which inventory item is added to
@@ -38,13 +40,7 @@ func setup(xgiven, ygiven, name, inventory):
 	
 func _physics_process(delta):
 	if being_picked_up: # if it's not being picked up, apply gravity
-		var direction = global_position.direction_to(Camera2DNode.get_camera_position()- Vector2(330,200))
-		velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
-		
-		var distance = global_position.distance_to(Camera2DNode.get_camera_position() - Vector2(330,200))
-		if distance < 20:
-			inventory_node.add_item(item_name, 1)
-			queue_free()
+		velocity = velocity.move_toward(direction_to_move * MAX_SPEED, ACCELERATION * delta)
 	else:
 		velocity = Vector2(0,0)
 	velocity=move_and_slide(velocity, Vector2.UP)
@@ -52,7 +48,11 @@ func _physics_process(delta):
 func pick_up_item(body):
 	player = body
 	being_picked_up = true
+	direction_to_move = global_position.direction_to(Camera2DNode.get_camera_position() - Vector2(330,200))
+	inventory_node.add_item(item_name, 1)
 	$AnimationPlayer.play("fade")
+	FrogDadNode.find_node("Quest", true, false).check_if_quest_fulfilled()
+	
 
 func get_sprite():
 	return $Button
@@ -79,3 +79,7 @@ func _on_Area2D_body_entered(_body):
 
 func _on_Area2D_body_exited(_body):
 	frog_dad_is_close = false
+
+
+func _on_FlyingTime_timeout(): # after three seconds, stop flying and fading and delete
+	queue_free()

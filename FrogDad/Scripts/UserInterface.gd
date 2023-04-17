@@ -19,6 +19,8 @@ func open_inventory():
 func _on_ToggleInventoryButton_pressed():
 	ToggleInventoryButton.visible = false
 	$DarkBackground.visible = true
+	$Inventory/AnimationPlayer.current_animation = "swoosh_in"
+	$Inventory/AnimationPlayer.play()
 	open_inventory()
 	
 func _input(event):

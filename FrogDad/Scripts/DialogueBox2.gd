@@ -15,6 +15,7 @@ onready var next_indicator = $Content/NextIndicator
 onready var text_animation = $Content/TextAnimation
 onready var avatar 
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
+onready var HUDNode = FrogDad.find_node("HUD", true, false)
 var completed
 var dialogue_name
 
@@ -23,7 +24,7 @@ func _input(event):
 	# if user pressed "space key" before text animation ends,
 #	# the animation would be skipped and all text would show
 
-	if event.is_action_pressed("open"):
+	if event.is_action_pressed("open") and content.visible:
 		if text_animation.is_active():
 			text_animation.remove_all()
 			content.percent_visible = 1
@@ -36,11 +37,15 @@ func _input(event):
 
 
 func hide_dialog_box():
+	print("hide")
 	if FrogDad:
 		FrogDad.state = "" # player can move again
 	content.hide()
 	completed = true
-
+	##
+	##
+	##
+	# If you want to do something after a dialogue, do it here
 	# this code handles what should happen after a dialogue finished
 	if MasterScript.currentQuestNum == -1 and dialogue_name == "Another day": 
 		# after ahhh another day
@@ -52,6 +57,17 @@ func hide_dialog_box():
 		# after babies cut scene
 		MasterScript.findBabies = true
 		SceneTransition.change_scene("res://Scenes/Main.tscn")
+	elif dialogue_name == "Finished cloth quest": 
+		## after finished cloth quest dialouge
+		show_new_quest_notifcation_box()
+	# If you want to do something after a dialogue, do it here
+	##
+	##
+	##
+	
+func show_new_quest_notifcation_box():
+	HUDNode.new_quest(MasterScript.currentQuestArray[0][1])
+	
 	
 func show_dialog_box(_dialogs, dialogueName):
 	dialogue_name = dialogueName

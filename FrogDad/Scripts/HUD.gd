@@ -1,12 +1,8 @@
 extends CanvasLayer
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
 func new_quest(quest_text):
 	$PopUpNotification/TextureRect/HBoxContainer/QuestNameLabel.text = quest_text
 	$PopUpNotification.visible = true
