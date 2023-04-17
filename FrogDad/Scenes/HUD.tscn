@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -33,6 +33,9 @@
 [ext_resource path="res://Scenes/PopUpNotification.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=32]
 [ext_resource path="res://Temporary Clipart/mute-speaker-sketch.png" type="Texture" id=33]
+[ext_resource path="res://Art/fridge_close.png" type="Texture" id=34]
+[ext_resource path="res://Art/dresser1.png" type="Texture" id=35]
+[ext_resource path="res://Art/side_table1.png" type="Texture" id=36]
 
 [sub_resource type="Animation" id=103]
 length = 0.001
@@ -457,6 +460,14 @@ script = ExtResource( 9 )
 default_tex = ExtResource( 22 )
 empty_tex = ExtResource( 21 )
 
+[node name="FridgeIcon" type="TextureRect" parent="UserInterface/FridgeInventory"]
+margin_left = -20.0004
+margin_top = -35.0
+margin_right = 364.0
+margin_bottom = 477.0
+rect_scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 34 )
+
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
 visible = false
 position = Vector2( 177.667, 82 )
@@ -538,6 +549,14 @@ custom_styles/panel = SubResource( 100 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
+
+[node name="DresserIcon" type="TextureRect" parent="UserInterface/DresserInventory"]
+margin_left = -12.0004
+margin_top = -52.3333
+margin_right = 372.0
+margin_bottom = 459.667
+rect_scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 35 )
 
 [node name="SideTableInventory" type="Node2D" parent="UserInterface"]
 visible = false
@@ -621,6 +640,15 @@ custom_styles/panel = SubResource( 101 )
 script = ExtResource( 9 )
 default_tex = ExtResource( 20 )
 empty_tex = ExtResource( 23 )
+
+[node name="SideTableIcon" type="TextureRect" parent="UserInterface/SideTableInventory"]
+margin_left = -21.333
+margin_top = -47.0
+margin_right = 278.667
+margin_bottom = 403.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 36 )
+flip_h = true
 
 [node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
 visible = false

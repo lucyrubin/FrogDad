@@ -169,5 +169,13 @@ rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Backpack"
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 131.0
+margin_bottom = 131.0
+rect_scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 5 )
+
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="_on_TextureRect_mouse_exited"]
