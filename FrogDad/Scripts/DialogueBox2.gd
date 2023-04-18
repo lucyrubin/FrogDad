@@ -25,19 +25,24 @@ func _input(event):
 #	# the animation would be skipped and all text would show
 
 	if event.is_action_pressed("open") and content.visible:
+
+		if FrogDad:
+			FrogDad.state = "talking" # player can't move during dialogue
 		if text_animation.is_active():
+
 			text_animation.remove_all()
 			content.percent_visible = 1
 			_on_TextAnimation_tween_all_completed()
 		elif current + 1 < dialogs.size():
+
 			_show_dialog(current + 1)
 		else:
+
 #			FrogDad.state = ""
 			hide_dialog_box()
 
 
 func hide_dialog_box():
-	print("hide")
 	if FrogDad:
 		FrogDad.state = "" # player can move again
 	content.hide()
@@ -102,7 +107,9 @@ func _show_dialog(index):
 		interval * content.text.length(),
 		text_animation.TRANS_LINEAR
 	)
+	
 	text_animation.start()
+	
 	
 
 func _on_Content_visibility_changed():

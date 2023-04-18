@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -32,7 +32,6 @@
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/PopUpNotification.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=32]
-[ext_resource path="res://Temporary Clipart/mute-speaker-sketch.png" type="Texture" id=33]
 [ext_resource path="res://Art/fridge_close.png" type="Texture" id=34]
 [ext_resource path="res://Art/dresser1.png" type="Texture" id=35]
 [ext_resource path="res://Art/side_table1.png" type="Texture" id=36]
@@ -214,9 +213,6 @@ region_rect = Rect2( 0, 0, 92, 91 )
 [sub_resource type="StyleBoxTexture" id=101]
 texture = ExtResource( 23 )
 region_rect = Rect2( 0, 0, 92, 91 )
-
-[sub_resource type="DynamicFont" id=105]
-font_data = ExtResource( 10 )
 
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2( 0.5, 0.5 )
@@ -449,7 +445,7 @@ position = Vector2( 50.6667, 63.3333 )
 scale = Vector2( 1, 1 )
 item_list = {
 0: [ "Fly", 1 ],
-1: [ "Log", 98 ],
+1: [ "Log", 0 ],
 2: [ "Cloth", 4 ]
 }
 inventory_type = "player"
@@ -550,6 +546,7 @@ margin_top = -35.0
 margin_right = 364.0
 margin_bottom = 477.0
 rect_scale = Vector2( 0.09, 0.09 )
+mouse_filter = 2
 texture = ExtResource( 34 )
 
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
@@ -640,6 +637,7 @@ margin_top = -52.3333
 margin_right = 372.0
 margin_bottom = 459.667
 rect_scale = Vector2( 0.13, 0.13 )
+mouse_filter = 2
 texture = ExtResource( 35 )
 
 [node name="SideTableInventory" type="Node2D" parent="UserInterface"]
@@ -731,6 +729,7 @@ margin_top = -47.0
 margin_right = 278.667
 margin_bottom = 403.0
 rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
 texture = ExtResource( 36 )
 flip_h = true
 
@@ -739,26 +738,6 @@ visible = false
 
 [node name="InventoryCenter" type="Position2D" parent="UserInterface"]
 position = Vector2( 167, 91 )
-
-[node name="MuteButton" type="TextureButton" parent="."]
-margin_left = 1938.0
-margin_top = 1100.0
-margin_right = 2050.0
-margin_bottom = 1202.0
-texture_normal = ExtResource( 33 )
-expand = true
-
-[node name="Label" type="Label" parent="MuteButton"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -52.0
-margin_top = -30.0
-margin_right = 38.0
-margin_bottom = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 105 )
-text = "Unmuted
-"
 
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
@@ -769,4 +748,3 @@ text = "Unmuted
 [connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
 [connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
-[connection signal="pressed" from="MuteButton" to="." method="_on_MuteButton_pressed"]

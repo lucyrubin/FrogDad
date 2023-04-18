@@ -14,7 +14,7 @@ func _ready():
 
 func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 
-	#$BabyGertrude.z_index = $BabyGertrude.position.y - 60# behind things lower on the screen
+	$BabyGertrude.z_index = $BabyGertrude.position.y - 60# behind things lower on the screen
 	#NEEDS TO BE UNCOMMENTED
 
 func drop_item(item_drop : ItemDropClass):

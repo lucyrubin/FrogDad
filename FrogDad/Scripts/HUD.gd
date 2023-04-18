@@ -26,9 +26,3 @@ func _on_PopUpTimer_timeout():
 
 
 
-func _on_MuteButton_pressed():
-	BackgroundMusic.playing = !BackgroundMusic.playing
-	if BackgroundMusic.playing:
-		$MuteButton/Label.text = "Unmuted"
-	else:
-		$MuteButton/Label.text = "Muted"

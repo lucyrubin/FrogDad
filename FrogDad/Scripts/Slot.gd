@@ -34,7 +34,6 @@ func pick_from_slot():
 	remove_child(item) # remove the item image 
 	var inventoryNode = get_tree().get_root().find_node("Inventory", true, false)
 	inventoryNode.add_child(item)
-	#print("Inventory node: " , inventoryNode)
 	item = null
 	refresh_style()
 	

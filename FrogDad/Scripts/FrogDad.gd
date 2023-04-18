@@ -40,12 +40,12 @@ func _physics_process(delta):
 				
 		
 		if velocity.length() > 0:
-			print("go")
+
 			velocity = velocity.normalized() * speed
 			$AnimatedSprite.play()
 
 		else:
-			print("stop")
+
 			$AnimatedSprite.stop()
 			$AnimatedSprite.set_frame(0)
 		

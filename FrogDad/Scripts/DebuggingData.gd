@@ -6,6 +6,7 @@ func _process(_delta):
 	$ColorRect/VBoxContainer/CurrentQuestNumLabel.text = "Current Quest Number: " + str(MasterScript.currentQuestNum)
 	$ColorRect/VBoxContainer/CurrentQuestArrayLabel.text = "Current Quest Array: " + str(MasterScript.currentQuestArray)
 	$ColorRect/VBoxContainer/CameraPostion.text = "Camera Position: " + str(get_parent().get_camera_position())
+	$ColorRect/VBoxContainer/FrogDadState.text = "FrogDad State: " + FrogDad.state
 
 func _on_SkipIntroButton_pressed():
 	

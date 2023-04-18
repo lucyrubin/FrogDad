@@ -34,7 +34,7 @@ func _on_Button_pressed():
 
 
 func _on_Button_mouse_entered():
-	print("hi")
+
 	$Note/Label.add_color_override("font_color", Color(50,0,100,1))
 
 

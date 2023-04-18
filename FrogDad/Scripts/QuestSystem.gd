@@ -7,9 +7,11 @@ var DoorScript = preload("res://Scripts/Door.gd")
 var FrogDad 
 var info_button_open
 var SmallPopUpBoxScene = preload("res://Scenes/SmallPopUpBox.tscn")
+
 onready var UserInterfaceNode = get_tree().get_root().find_node("UserInterface", true, false)
 onready var HUDNode = get_tree().get_root().find_node("HUD", true, false)
 onready var PopUpNode = UserInterfaceNode.get_node("SmallPopUpBox")
+
 
 export (NodePath) var inventory_path
 
@@ -48,10 +50,11 @@ func deleteQuest(SubQuest):
 	## if you want to play dialogue after a quest is finshed, do it here
 	## if you want to play dialogue after a quest is finshed, do it here
 	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Make a Swaddle":
+		
 		PopUpNode.visible = true
 		# the second value of this is just an identifier for if you want to do something after dialogue has ended
 		PopUpNode.show_dialog_box([{avatar = "", text = "Yas I finished the cloth quest. hmmm maybe i should make a crib"}], "Finished cloth quest")
-		
+
 	## if you want to play dialogue after a quest is finshed, do it here
 		## if you want to play dialogue after a quest is finshed, do it here
 	
@@ -139,8 +142,9 @@ func check_if_quest_fulfilled():
 			
 func begin_intro_quest():
 	PopUpNode.visible = true
+	
 	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Every day feels the same. I wake up, I work as a freelance writer, and I sleep. I wish something more exciting would happen..."}], "Another day")
-	#$KnockTimer.start()
+
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	door_node.set_locked(true)
 	get_parent().visible = false
@@ -150,8 +154,10 @@ func _on_KnockTimer_timeout():
 	# this code creates and displays a dialogue box
 	BackgroundMusic.stop()
 	$KnockingSound.play()
+
 	PopUpNode.visible = true
 	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}], "Knock knock")
+
 	$KnockingSound.stop()
 	BackgroundMusic.play()
 	$KnockTimer.stop()

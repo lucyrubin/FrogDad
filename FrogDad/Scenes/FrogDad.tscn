@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Scenes/DialogueBox2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Art/frogdadfront2.png" type="Texture" id=6]
 [ext_resource path="res://Art/frogdadfront0.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/DialogueBox.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -76,11 +75,6 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
 shape = SubResource( 14 )
-
-[node name="DialogueBox" parent="." instance=ExtResource( 8 )]
-visible = false
-position = Vector2( -683.333, 250 )
-z_index = 1000
 
 [node name="DialogueBox2" parent="." instance=ExtResource( 5 )]
 visible = false
