@@ -34,6 +34,11 @@ region = Rect2( 1884, 0, 628, 2048 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "down",
+"speed": 6.0
+}, {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "right",
@@ -43,11 +48,6 @@ animations = [ {
 "loop": true,
 "name": "up",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "walk",
-"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=14]
@@ -66,8 +66,7 @@ shape = SubResource( 13 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.461783, 0.461783 )
 frames = SubResource( 3 )
-animation = "walk"
-speed_scale = 0.65
+animation = "down"
 
 [node name="PickupZone" type="Area2D" parent="."]
 position = Vector2( 7, 24.5 )
@@ -79,5 +78,6 @@ shape = SubResource( 14 )
 [node name="DialogueBox2" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_exited"]

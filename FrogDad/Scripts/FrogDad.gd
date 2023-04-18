@@ -39,15 +39,16 @@ func _physics_process(delta):
 				move_left()
 				
 		
-		if velocity.length() > 0:
-
+		if _is_moving():
 			velocity = velocity.normalized() * speed
-			$AnimatedSprite.play()
+			if !$AnimatedSprite.playing:
+				$AnimatedSprite.play()
+				$AnimatedSprite.frame += 1
 
 		else:
-
-			$AnimatedSprite.stop()
-			$AnimatedSprite.set_frame(0)
+			pass
+#			$AnimatedSprite.stop()
+#			$AnimatedSprite.set_frame(0)
 		
 	else: 
 		$AnimatedSprite.stop()
@@ -81,7 +82,7 @@ func move_down_and_right():
 func move_down():
 	velocity.y += 1
 	$AnimatedSprite.flip_h = false
-	$AnimatedSprite.animation = "walk"
+	$AnimatedSprite.animation = "down"
 
 func move_up():
 	velocity.y -= 1
@@ -108,3 +109,13 @@ func toggle_dialogue_box_visibility():
 			{avatar = "frogDad", text = "Whatever you want."}
 		], "Gertrude talk")
 
+func _is_moving():
+	return velocity.length() > 0
+
+func _animation_is_at_rest():
+	return $AnimatedSprite.frame == 0 or \
+		   $AnimatedSprite.frame == $AnimatedSprite.frames.get_frame_count($AnimatedSprite.animation) / 2
+
+func _on_AnimatedSprite_frame_changed():
+	if !_is_moving() and _animation_is_at_rest():
+		$AnimatedSprite.stop()
