@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Untitled_Artwork 2.png-397a21aa2d897554ee1531ef000011c9.stex"
+path="res://.import/frogdadfront1.png-853f9323d5039428327ee4b944ad183d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Untitled_Artwork 2.png"
-dest_files=[ "res://.import/Untitled_Artwork 2.png-397a21aa2d897554ee1531ef000011c9.stex" ]
+source_file="res://Art/frogdadfront1.png"
+dest_files=[ "res://.import/frogdadfront1.png-853f9323d5039428327ee4b944ad183d.stex" ]
 
 [params]
 
