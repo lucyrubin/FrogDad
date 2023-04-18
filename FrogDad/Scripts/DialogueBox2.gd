@@ -15,7 +15,7 @@ onready var next_indicator = $Content/NextIndicator
 onready var text_animation = $Content/TextAnimation
 onready var avatar 
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
-onready var HUDNode = FrogDad.find_node("HUD", true, false)
+
 var completed
 var dialogue_name
 
@@ -66,6 +66,7 @@ func hide_dialog_box():
 	##
 	
 func show_new_quest_notifcation_box():
+	var HUDNode = FrogDad.find_node("HUD", true, false)
 	HUDNode.new_quest(MasterScript.currentQuestArray[0][1])
 	
 	
