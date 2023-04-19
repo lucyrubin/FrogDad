@@ -24,7 +24,7 @@
 [ext_resource path="res://Art/bedroom2Hover.png" type="Texture" id=22]
 [ext_resource path="res://Art/microwave.png" type="Texture" id=23]
 [ext_resource path="res://Art/sinkHover.png" type="Texture" id=24]
-[ext_resource path="res://Art/TV_Stand.png" type="Texture" id=30]
+[ext_resource path="res://Art/interact_icon.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/TV.tscn" type="PackedScene" id=31]
 
 [sub_resource type="TileSet" id=55]
@@ -531,13 +531,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 109, 85 )
+extents = Vector2( 108.75, 82.25 )
 
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 108.5, 30.5 )
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 30, 153.5 )
 
 [sub_resource type="AtlasTexture" id=65]
 flags = 4
@@ -694,10 +691,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=113]
-extents = Vector2( 56, 60 )
+extents = Vector2( 70, 61.5 )
 
 [sub_resource type="RectangleShape2D" id=114]
 extents = Vector2( 51.5, 57 )
+
+[sub_resource type="RectangleShape2D" id=115]
+extents = Vector2( 143, 145.5 )
 
 [node name="Home" type="Node2D"]
 script = ExtResource( 9 )
@@ -819,32 +819,29 @@ visible = false
 shape = SubResource( 34 )
 
 [node name="Fridge" type="Area2D" parent="."]
-position = Vector2( 5, -393 )
+position = Vector2( 17, -390 )
 scale = Vector2( 0.9, 0.9 )
 z_index = -500
 collision_layer = 4
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Fridge"]
-position = Vector2( 10, 2.22223 )
 frames = SubResource( 15 )
 animation = "hover"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge"]
 visible = false
-position = Vector2( 80, -4.65289 )
+position = Vector2( 72.2222, -17.7778 )
 shape = SubResource( 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Fridge"]
-position = Vector2( 7.77778, -14.4445 )
+position = Vector2( 72.2222, -17.7778 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/StaticBody2D"]
 visible = false
-position = Vector2( 74.4445, 5 )
 shape = SubResource( 16 )
 
 [node name="Stove" type="StaticBody2D" parent="."]
@@ -881,8 +878,17 @@ scale = Vector2( 0.886067, 0.921387 )
 frames = SubResource( 62 )
 animation = "hover"
 
+[node name="Interact" type="TextureRect" parent="Dresser"]
+visible = false
+margin_left = 18.0
+margin_top = -158.0
+margin_right = 65.0
+margin_bottom = -113.0
+texture = ExtResource( 25 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser"]
-position = Vector2( 38, -24 )
+visible = false
+position = Vector2( 37.75, -26.75 )
 shape = SubResource( 63 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Dresser"]
@@ -892,31 +898,10 @@ visible = false
 position = Vector2( 38.5, 30.5 )
 shape = SubResource( 68 )
 
-[node name="TV Stand" type="StaticBody2D" parent="."]
-position = Vector2( 605, -357 )
-z_index = -500
-collision_layer = 4
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="TV Stand"]
-rotation = 1.5708
-texture = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TV Stand"]
-position = Vector2( -10.5, -15 )
-rotation = 1.5708
-shape = SubResource( 48 )
-
-[node name="TV" parent="." instance=ExtResource( 31 )]
-position = Vector2( 586, -416 )
-z_index = -500
-
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Cradle" type="StaticBody2D" parent="YSort"]
-position = Vector2( -936, 107 )
+position = Vector2( -659, 161 )
 z_index = 5
 collision_layer = 4
 __meta__ = {
@@ -935,7 +920,7 @@ __meta__ = {
 }
 
 [node name="Bed" type="StaticBody2D" parent="YSort"]
-position = Vector2( -971, -109 )
+position = Vector2( -967, -164 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -953,7 +938,7 @@ position = Vector2( 26.5, 50.75 )
 shape = SubResource( 51 )
 
 [node name="Couch" type="StaticBody2D" parent="YSort"]
-position = Vector2( 736, 64 )
+position = Vector2( 682, 65 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -1040,7 +1025,8 @@ rotation = 1.5708
 shape = SubResource( 42 )
 
 [node name="Side Table" type="Area2D" parent="YSort"]
-position = Vector2( -1003, -209 )
+position = Vector2( -1004, 13 )
+collision_layer = 4
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_group_": true
@@ -1051,9 +1037,17 @@ frames = SubResource( 112 )
 animation = "hover"
 flip_h = true
 
+[node name="Interact" type="TextureRect" parent="YSort/Side Table"]
+visible = false
+margin_left = -33.0
+margin_top = -103.0
+margin_right = 14.0
+margin_bottom = -58.0
+texture = ExtResource( 25 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Side Table"]
 visible = false
-position = Vector2( -13, 8 )
+position = Vector2( -7, 7.5 )
 shape = SubResource( 113 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="YSort/Side Table"]
@@ -1062,6 +1056,21 @@ shape = SubResource( 113 )
 visible = false
 position = Vector2( -13, 6 )
 shape = SubResource( 114 )
+
+[node name="Area2D" type="Area2D" parent="YSort/Side Table"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Side Table/Area2D"]
+position = Vector2( 59, -5.5 )
+shape = SubResource( 115 )
+
+[node name="TV" parent="YSort" instance=ExtResource( 31 )]
+position = Vector2( 527, -380 )
+z_index = -500
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Borders" type="StaticBody2D" parent="."]
 
@@ -1077,6 +1086,8 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
 [connection signal="mouse_entered" from="Fridge" to="Fridge" method="_on_Fridge_mouse_entered"]
 [connection signal="mouse_exited" from="Fridge" to="Fridge" method="_on_Fridge_mouse_exited"]
+[connection signal="area_entered" from="Dresser" to="Dresser" method="_on_Dresser_area_entered"]
+[connection signal="area_exited" from="Dresser" to="Dresser" method="_on_Dresser_area_exited"]
 [connection signal="input_event" from="Dresser" to="Dresser" method="_on_Dresser_input_event"]
 [connection signal="mouse_entered" from="Dresser" to="Dresser" method="_on_Dresser_mouse_entered"]
 [connection signal="mouse_exited" from="Dresser" to="Dresser" method="_on_Dresser_mouse_exited"]
@@ -1089,3 +1100,5 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="input_event" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_input_event"]
 [connection signal="mouse_entered" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_mouse_entered"]
 [connection signal="mouse_exited" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_mouse_exited"]
+[connection signal="area_entered" from="YSort/Side Table/Area2D" to="YSort/Side Table" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="YSort/Side Table/Area2D" to="YSort/Side Table" method="_on_Area2D_area_exited"]

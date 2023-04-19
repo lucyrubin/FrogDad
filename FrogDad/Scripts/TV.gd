@@ -5,77 +5,73 @@ onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false
 var TVScene = "res://Scenes/TV.tscn"
 var channel = 0
 var mouse_in
-var area_entered
 
 func _ready():
 	mouse_in = false
-	area_entered = false
+	$Interact.visible == false
 
 func _on_TV_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed \
 	and frogdad_node.state == "":
-		if mouse_in:
-			channel += 1
-			BackgroundMusic.stop()
-			if channel == 1:
-				play_NyanCat()
-			elif channel == 2:
-				stop_NyanCat()
-				play_NewJeans()
-			elif channel == 3:
-				stop_NewJeans()
-				play_FrogDad()
-			else:
-				stop_FrogDad()
-				channel = 0
-				BackgroundMusic.play()
+		channel += 1
+		BackgroundMusic.stop()
+		if channel == 1:
+			play_NyanCat()
+		elif channel == 2:
+			stop_NyanCat()
+			play_NewJeans()
+		elif channel == 3:
+			stop_NewJeans()
+			play_FrogDad()
+		else:
+			stop_FrogDad()
+			channel = 0
+			BackgroundMusic.play()
 
 func _on_TV_mouse_entered():
-	if frogdad_node.state == "" and area_entered:
-		mouse_in = true
+	if frogdad_node.state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 
 func _on_TV_mouse_exited():
-	if frogdad_node.state == "" and area_entered:
-		mouse_in = false
+	if frogdad_node.state == "" and $Interact.visible == false:
 		$AnimatedSprite.animation = "default"
-		
-func _on_TV_area_entered(area):
-	if frogdad_node.state == "":
-		area_entered = true
 
-func _on_TV_area_exited(area):
+func _on_Area2D_area_entered(area):
 	if frogdad_node.state == "":
-		area_entered = false
+		$Interact.visible = true
+
+func _on_Area2D_area_exited(area):
+	if frogdad_node.state == "":
+		$Interact.visible = false
 
 func play_NyanCat():
-	$NyanCat.visible = true
-	$NyanCat.play()
-	$NyanCat/AudioStreamPlayer.play()
+	$AnimatedSprite/NyanCat.visible = true
+	$AnimatedSprite/NyanCat.play()
+	$AnimatedSprite/NyanCat/AudioStreamPlayer.play()
 
 func stop_NyanCat():
-	$NyanCat.visible = false
-	$NyanCat.stop()
-	$NyanCat/AudioStreamPlayer.stop()
+	$AnimatedSprite/NyanCat.visible = false
+	$AnimatedSprite/NyanCat.stop()
+	$AnimatedSprite/NyanCat/AudioStreamPlayer.stop()
 	
 func play_NewJeans():
-	$NewJeans.visible = true
-	$NewJeans.play()
-	$NewJeans/AudioStreamPlayer.play()
+	$AnimatedSprite/NewJeans.visible = true
+	$AnimatedSprite/NewJeans.play()
+	$AnimatedSprite/NewJeans/AudioStreamPlayer.play()
 
 func stop_NewJeans():
-	$NewJeans.visible = false
-	$NewJeans.stop()
-	$NewJeans/AudioStreamPlayer.stop()
+	$AnimatedSprite/NewJeans.visible = false
+	$AnimatedSprite/NewJeans.stop()
+	$AnimatedSprite/NewJeans/AudioStreamPlayer.stop()
 	
 func play_FrogDad():
-	$FrogDadDoc.visible = true
-	$FrogDadDoc.play()
-	$FrogDadDoc/AudioStreamPlayer.play()
+	$AnimatedSprite/FrogDadDoc.visible = true
+	$AnimatedSprite/FrogDadDoc.play()
+	$AnimatedSprite/FrogDadDoc/AudioStreamPlayer.play()
 	
 func stop_FrogDad():
-	$FrogDadDoc.visible = false
-	$FrogDadDoc.stop()
-	$FrogDadDoc/AudioStreamPlayer.stop()
+	$AnimatedSprite/FrogDadDoc.visible = false
+	$AnimatedSprite/FrogDadDoc.stop()
+	$AnimatedSprite/FrogDadDoc/AudioStreamPlayer.stop()

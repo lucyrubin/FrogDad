@@ -43,12 +43,19 @@ func _input(event):
 		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_mouse_entered():
-	if frogdad_node.state == "":
+	if frogdad_node.state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_mouse_exited():
-	if frogdad_node.state == "":
+	if frogdad_node.state == "" and $Interact.visible == false:
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
 
+func _on_Dresser_area_entered(area):
+	if frogdad_node.state == "":
+		$Interact.visible = true
+		
+func _on_Dresser_area_exited(area):
+	if frogdad_node.state == "":
+		$Interact.visible = false
