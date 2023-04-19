@@ -44,6 +44,7 @@ BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [display]
 
+mouse_cursor/custom_image="res://Art/frog_hand.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
