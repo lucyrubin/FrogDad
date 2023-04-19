@@ -7,7 +7,7 @@
 [ext_resource path="res://Temporary Clipart/larger_next_indicator.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 20
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=2]
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 990, 80 ), Vector2( 990, 85 ) ]
+"values": [ Vector2( 970, 60 ), Vector2( 970, 65 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -59,26 +59,26 @@ script = ExtResource( 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = -8.0
-margin_right = -8.0
-margin_bottom = -8.0
+margin_left = 20.0
+margin_top = -20.0
+margin_right = -20.0
+margin_bottom = -20.0
 grow_vertical = 0
-rect_min_size = Vector2( 0, 94 )
+rect_min_size = Vector2( 0, 68 )
 custom_colors/font_color = Color( 0.196078, 0.133333, 0.180392, 1 )
 custom_constants/line_spacing = 2
 custom_fonts/font = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
-text = "HIIIIIII
-HUHU"
+text = "Hello!
+This is text for testing"
 autowrap = true
 max_lines_visible = 2
 
 [node name="Avatar" type="TextureRect" parent="Content"]
 margin_left = 1.0
-margin_top = -12.0
+margin_top = -30.0
 margin_right = 101.0
-margin_bottom = 92.0
+margin_bottom = 74.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 stretch_mode = 6
@@ -87,9 +87,9 @@ stretch_mode = 6
 margin_left = 988.0
 margin_top = 25.0
 margin_right = 1568.0
-margin_bottom = 305.0
+margin_bottom = 315.0
 rect_rotation = 180.0
-rect_scale = Vector2( 0.075, 0.075 )
+rect_scale = Vector2( 0.05, 0.05 )
 mouse_filter = 2
 texture = ExtResource( 5 )
 
