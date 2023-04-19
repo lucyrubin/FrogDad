@@ -751,7 +751,7 @@ margin_right = 980.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="PauseButton" type="TextureButton" parent="HBoxContainer"]
 margin_left = 984.0
 margin_right = 1000.0
 margin_bottom = 40.0
