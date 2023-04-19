@@ -4,10 +4,6 @@ onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 onready var ToggleInventoryButton = get_tree().get_root().find_node("ToggleInventoryButton", true, false)
 var mouse_in_inventory = false
 
-onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
-onready var dresser_inventory_node = get_tree().get_root().find_node("DresserInventory",true, false)
-onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
-
 func open_inventory():
 	$Inventory.initialize_inventory()
 	visible = true
@@ -35,7 +31,6 @@ func _input(event):
 			$DarkBackground.visible = false
 		if !ToggleInventoryButton.visible:
 			ToggleInventoryButton.visible = true
-			
 	
 func _on_TextureRect_mouse_entered():
 	mouse_in_inventory = true
@@ -43,3 +38,7 @@ func _on_TextureRect_mouse_entered():
 
 func _on_TextureRect_mouse_exited():
 	mouse_in_inventory = false
+
+
+func _on_DarkBackground_gui_input(event):
+	print("Hello")

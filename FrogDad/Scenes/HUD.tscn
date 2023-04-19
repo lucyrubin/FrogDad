@@ -744,6 +744,7 @@ position = Vector2( 167, 91 )
 [connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="timeout" from="ToggleQuestButton/Quest/OneSecTimer" to="ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
 [connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
+[connection signal="gui_input" from="UserInterface/DarkBackground" to="UserInterface" method="_on_DarkBackground_gui_input"]
 [connection signal="mouse_entered" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
 [connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]

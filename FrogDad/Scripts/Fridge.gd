@@ -2,9 +2,11 @@ extends Area2D
 
 var current_fram = 0
 var num_frames = 2
+
 onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
 onready var fridge_inventory_node = get_tree().get_root().find_node("FridgeInventory",true, false)
 onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
+onready var 	DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 
 func _ready():
 	fridge_inventory_node.visible = false
@@ -22,14 +24,12 @@ func _on_Fridge_input_event(_viewport, event, _shape_idx):
 			user_interface_node.visible = true
 			frogdad_node.state = "Inventory"
 			user_interface_node.open_inventory()
-			var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 			DarkBackground.visible = true
 		
 		else:
 			fridge_inventory_node.visible = false
 			user_interface_node.visible = false
 			frogdad_node.state = ""
-			var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 			DarkBackground.visible = false
 
 func _input(event):

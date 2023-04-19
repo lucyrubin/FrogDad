@@ -8,13 +8,15 @@ var num_frames = 2
 var locked = false
 var mouse_in = false
 
+onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
+
 func _ready():
 	$AnimatedSprite.animation = "default"
 	current_fram = 0
 	$AnimatedSprite.set_frame(current_fram)
 
 func _input(event):
-	if event.is_action_pressed("open"):
+	if event.is_action_pressed("open") && FrogDad.state == "":
 		if !target_scene:
 			print("no scene in this door")
 		if door_opened and mouse_in:
