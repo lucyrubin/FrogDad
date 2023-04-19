@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/note.png" type="Texture" id=2]
@@ -32,9 +32,11 @@
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/PopUpNotification.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=32]
+[ext_resource path="res://Temporary Clipart/pause_pressed.png" type="Texture" id=33]
 [ext_resource path="res://Art/fridge_close.png" type="Texture" id=34]
 [ext_resource path="res://Art/dresser1.png" type="Texture" id=35]
 [ext_resource path="res://Art/side_table1.png" type="Texture" id=36]
+[ext_resource path="res://Temporary Clipart/pause_normal.png" type="Texture" id=37]
 
 [sub_resource type="Animation" id=103]
 length = 0.001
@@ -738,6 +740,25 @@ visible = false
 
 [node name="InventoryCenter" type="Position2D" parent="UserInterface"]
 position = Vector2( 167, 91 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_right = -24.0
+margin_bottom = 40.0
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+margin_right = 980.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+margin_left = 984.0
+margin_right = 1000.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 16, 40 )
+rect_scale = Vector2( 10, 10 )
+texture_normal = ExtResource( 37 )
+texture_pressed = ExtResource( 33 )
 
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
