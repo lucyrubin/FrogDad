@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Outdoor Art/forest_sign.png" type="Texture" id=12]
 [ext_resource path="res://Outdoor Art/bush.png" type="Texture" id=13]
 [ext_resource path="res://Outdoor Art/jimothyjohnsbuilding.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Garden.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=99]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -644,6 +645,8 @@ tile_set = SubResource( 98 )
 format = 1
 tile_data = PoolIntArray( 20, 10, 0, 21, 11, 0, 65556, 10, 0, 65557, 11, 0, 131092, 8, 0, 131093, 11, 0, 196628, 8, 0, 196629, 1073741833, 0, 262164, 8, 0, 262165, 1073741833, 0, 327700, 8, 0, 327701, 1610612744, 0, 393236, 8, 0, 393237, 1073741833, 0, 458772, 8, 0, 458773, 1610612744, 0, 524308, 8, 0, 524309, 9, 0, 589844, 8, 0, 589845, 9, 0, 655371, 10, 0, 655372, 9, 0, 655380, 8, 0, 655381, 9, 0, 720907, 10, 0, 720908, 14, 0, 720909, -1610612728, 0, 720910, -1610612726, 0, 720911, -1610612728, 0, 720912, -1610612726, 0, 720913, -1610612726, 0, 720914, -1610612728, 0, 720915, -1610612728, 0, 720916, 18, 0, 720917, 9, 0, 786443, -1073741818, 0, 786444, -1073741814, 0, 786445, -1073741814, 0, 786446, -1073741814, 0, 786447, -1073741814, 0, 786448, -1073741814, 0, 786449, -1073741814, 0, 786450, -1073741814, 0, 786451, -1073741814, 0, 786452, 14, 0, 786453, 11, 0, 851988, 8, 0, 851989, 11, 0, 917524, 8, 0, 917525, 11, 0, 917539, 8, 0, 917540, 7, 0, 983060, 8, 0, 983061, 11, 0, 983062, 7, 0, 983063, 7, 0, 983064, 7, 0, 983065, 7, 0, 983066, 7, 0, 983067, 7, 0, 983068, 7, 0, 983069, 7, 0, 983070, 7, 0, 983071, 7, 0, 983072, 7, 0, 983073, 7, 0, 983074, 7, 0, 983075, 7, 0, 983076, 7, 0, 1048596, 12, 0, 1048597, 13, 0, 1048598, 13, 0, 1048599, 13, 0, 1048600, 13, 0, 1048601, 13, 0, 1048602, 13, 0, 1048603, 13, 0, 1048604, 13, 0, 1048605, 13, 0, 1048606, 13, 0, 1048607, 13, 0, 1048608, 13, 0, 1048609, 13, 0, 1048610, 13, 0, 1048611, 13, 0, 1048612, 13, 0 )
 
+[node name="Garden" parent="." instance=ExtResource( 15 )]
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Tree3" type="StaticBody2D" parent="YSort"]
@@ -655,7 +658,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -764,7 +766,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -782,7 +784,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -800,6 +802,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -817,7 +820,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -837,7 +840,7 @@ visible = false
 polygon = PoolVector2Array( -46, -23, -45, 6, -10, 6, -9, 22, -53, 30, -51, 55, -7, 56, -5, 114, 7, 114, 9, 54, 47, 52, 47, 22, 8, 23, 5, 5, 34, 3, 50, -18, 27, -34, 7, -34, 6, -68, -6, -67, -5, -34 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1067, 598 )
+position = Vector2( 1526, 1030 )
 scale = Vector2( 0.45, 0.45 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]

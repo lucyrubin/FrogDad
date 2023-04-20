@@ -1,0 +1,161 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Art/plot.png" type="Texture" id=1]
+[ext_resource path="res://Outdoor Art/lettuce_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Plot.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxTexture" id=122]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 137, 123 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 340, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 680, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=126]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1020, 255, 340 )
+
+[sub_resource type="SpriteFrames" id=127]
+animations = [ {
+"frames": [ SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Garden" type="GridContainer"]
+margin_left = 1024.0
+margin_top = 368.0
+margin_right = 1232.0
+margin_bottom = 676.0
+columns = 2
+
+[node name="Plot" type="Panel" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Plot"]
+position = Vector2( 46, 47 )
+frames = SubResource( 127 )
+
+[node name="ItemDrop" parent="Plot" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 50, 47 )
+z_index = 50
+item_name = "Lettuce"
+
+[node name="Plot2" type="Panel" parent="."]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Plot2"]
+position = Vector2( 46, 47 )
+frames = SubResource( 127 )
+
+[node name="ItemDrop" parent="Plot2" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 50, 47 )
+z_index = 50
+item_name = "Lettuce"
+
+[node name="Plot3" type="Panel" parent="."]
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Plot3"]
+position = Vector2( 46, 47 )
+frames = SubResource( 127 )
+
+[node name="ItemDrop" parent="Plot3" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 50, 47 )
+z_index = 50
+item_name = "Lettuce"
+
+[node name="Plot4" type="Panel" parent="."]
+margin_left = 104.0
+margin_top = 104.0
+margin_right = 204.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Plot4"]
+position = Vector2( 46, 47 )
+frames = SubResource( 127 )
+
+[node name="ItemDrop" parent="Plot4" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 50, 47 )
+z_index = 50
+item_name = "Lettuce"
+
+[node name="Plot5" type="Panel" parent="."]
+margin_top = 208.0
+margin_right = 100.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Plot5"]
+position = Vector2( 46, 47 )
+frames = SubResource( 127 )
+
+[node name="ItemDrop" parent="Plot5" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 50, 47 )
+z_index = 50
+item_name = "Lettuce"
+
+[node name="Plot6" type="Panel" parent="."]
+margin_left = 104.0
+margin_top = 208.0
+margin_right = 204.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Plot6"]
+position = Vector2( 46, 47 )
+frames = SubResource( 127 )
+
+[node name="ItemDrop" parent="Plot6" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 50, 47 )
+z_index = 50
+item_name = "Lettuce"
+
+[connection signal="gui_input" from="Plot" to="Plot" method="_on_Plot_gui_input"]
+[connection signal="gui_input" from="Plot2" to="Plot2" method="_on_Plot_gui_input"]
+[connection signal="gui_input" from="Plot3" to="Plot3" method="_on_Plot_gui_input"]
+[connection signal="gui_input" from="Plot4" to="Plot4" method="_on_Plot_gui_input"]
+[connection signal="gui_input" from="Plot5" to="Plot5" method="_on_Plot_gui_input"]
+[connection signal="gui_input" from="Plot6" to="Plot6" method="_on_Plot_gui_input"]

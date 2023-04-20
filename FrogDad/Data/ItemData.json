@@ -23,5 +23,10 @@
     "ItemCategory": "Consumable",
     "StackSize": 20,
     "Description": "An edible item."
+  },
+  "Lettuce": {
+    "ItemCategory": "Consumable",
+    "StackSize": 20,
+    "Description": "An edible item."
   }
 }

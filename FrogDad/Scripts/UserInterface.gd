@@ -6,7 +6,6 @@ var mouse_in_inventory = false
 
 func _ready():
 	$DarkBackground.connect("gui_input", self, "dark_background_input", []) 
-	
 
 func dark_background_input(event):
 	if event is InputEventMouseButton: 
