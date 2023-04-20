@@ -15,6 +15,7 @@ font_data = ExtResource( 2 )
 [node name="PopUpNotification" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+light_mask = 0
 margin_left = -162.0
 margin_top = -68.0
 margin_right = 1038.0

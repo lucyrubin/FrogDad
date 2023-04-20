@@ -14,7 +14,8 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed \
-	and frogdad_node.state == "":
+	and frogdad_node.state == "" \
+	and $Interact.visible == true:
 		channel += 1
 		BackgroundMusic.stop()
 		if channel == 1:
@@ -38,11 +39,11 @@ func _on_TV_mouse_exited():
 	if frogdad_node.state == "" and $Interact.visible == false:
 		$AnimatedSprite.animation = "default"
 
-func _on_Area2D_area_entered(area):
+func _on_TV_area_entered(area):
 	if frogdad_node.state == "":
 		$Interact.visible = true
 
-func _on_Area2D_area_exited(area):
+func _on_TV_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
 

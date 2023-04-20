@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://GIFs/korean-traditional-version-of-nyan-cat-2842.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Art/TVHover.png" type="Texture" id=2]
@@ -429,9 +429,6 @@ extents = Vector2( 58.5, 48 )
 [sub_resource type="RectangleShape2D" id=158]
 extents = Vector2( 57.5, 47 )
 
-[sub_resource type="RectangleShape2D" id=159]
-extents = Vector2( 152, 141 )
-
 [node name="TV" type="Area2D"]
 script = ExtResource( 8 )
 __meta__ = {
@@ -485,24 +482,19 @@ margin_bottom = -124.0
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 67.5, -52 )
 shape = SubResource( 118 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2( 67.5, -52 )
 shape = SubResource( 158 )
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 70, -53 )
-shape = SubResource( 159 )
-
+[connection signal="area_entered" from="." to="." method="_on_TV_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_TV_area_exited"]
 [connection signal="input_event" from="." to="." method="_on_TV_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_TV_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_TV_mouse_exited"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
