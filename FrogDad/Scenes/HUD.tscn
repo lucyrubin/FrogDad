@@ -747,14 +747,15 @@ margin_right = -24.0
 margin_bottom = 40.0
 
 [node name="Control" type="Control" parent="HBoxContainer"]
-margin_right = 980.0
-margin_bottom = 40.0
+margin_right = 896.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 
 [node name="PauseButton" type="TextureButton" parent="HBoxContainer"]
-margin_left = 984.0
+margin_left = 900.0
+margin_top = 20.0
 margin_right = 1000.0
-margin_bottom = 40.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 16, 40 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 33 )
