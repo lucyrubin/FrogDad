@@ -26,6 +26,11 @@ func _ready():
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == 0:
 		after_note_appears()
+		
+		## temporary to show the baby jar being carried
+		FrogDad.get_node("BabyJar").visible = true
+		## temporary to show the baby jar being carried
+		
 		HUDNode.new_quest("Make a Swaddle")
 		if !MasterScript.opened_quest_first_time:
 			MasterScript.opened_quest_first_time = true
@@ -49,6 +54,9 @@ func deleteQuest(SubQuest):
 	
 	## if you want to play dialogue after a quest is finshed, do it here
 	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Make a Swaddle":
+		## temporary to show the baby jar being carried
+		FrogDad.get_node("BabyJar").visible = false
+		## temporary to show the baby jar being carried
 		PopUpNode.visible = true
 		# the second value of this is just an identifier for if you want to do something after dialogue has ended
 		PopUpNode.show_dialog_box([{avatar = "", text = "This is perfect! Now they're safe and warm."},

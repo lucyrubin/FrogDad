@@ -62,6 +62,7 @@ func hide_dialog_box():
 		# after babies cut scene
 		MasterScript.findBabies = true
 		SceneTransition.change_scene("res://Scenes/Main.tscn")
+		
 	elif dialogue_name == "Finished cloth quest": 
 		## after finished cloth quest dialouge
 		show_new_quest_notifcation_box()

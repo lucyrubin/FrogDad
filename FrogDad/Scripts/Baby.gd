@@ -8,7 +8,6 @@ var done_talking = false
 var mouse_in_area = false
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
-
 # if player is nearby, show the action bubble
 func _on_Area2D_body_entered(body): 
 
