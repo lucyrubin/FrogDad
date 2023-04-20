@@ -756,7 +756,6 @@ margin_left = 984.0
 margin_right = 1000.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 16, 40 )
-rect_scale = Vector2( 10, 10 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 33 )
 

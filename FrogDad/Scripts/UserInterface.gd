@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 onready var ToggleInventoryButton = get_tree().get_root().find_node("ToggleInventoryButton", true, false)
 var mouse_in_inventory = false
+
 func _ready():
 	$DarkBackground.connect("gui_input", self, "dark_background_input", []) 
 	
@@ -12,6 +13,16 @@ func dark_background_input(event):
 		if event.button_index == BUTTON_LEFT && event.pressed: 
 			visible = false
 			FrogDad.state = ""
+			if $Inventory.visible: # close inventory
+				$Inventory.inventory_open = false
+				visible = false
+				$Inventory.visible = false
+				FrogDad.state = ""
+				FrogDad.get_node("AnimatedSprite").play()
+				ToggleInventoryButton.visible = true
+				$DarkBackground.visible = false
+			if !ToggleInventoryButton.visible:
+				ToggleInventoryButton.visible = true
 	
 func open_inventory():
 	$Inventory.initialize_inventory()
