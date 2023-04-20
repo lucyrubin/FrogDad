@@ -45,117 +45,132 @@ margin_bottom = 676.0
 columns = 2
 
 [node name="Plot" type="Panel" parent="."]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot"]
-position = Vector2( 46, 47 )
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 127 )
 frame = 3
 
 [node name="ItemDrop" parent="Plot" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 50, 47 )
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
 z_index = 50
 item_name = "Lettuce"
 
 [node name="Plot2" type="Panel" parent="."]
-margin_left = 104.0
-margin_right = 204.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 204.0
+margin_right = 404.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot2"]
-position = Vector2( 46, 47 )
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 127 )
 frame = 3
 
 [node name="ItemDrop" parent="Plot2" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 50, 47 )
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
 z_index = 50
 item_name = "Lettuce"
 
 [node name="Plot3" type="Panel" parent="."]
-margin_top = 104.0
-margin_right = 100.0
-margin_bottom = 204.0
-rect_min_size = Vector2( 100, 100 )
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot3"]
-position = Vector2( 46, 47 )
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 127 )
 frame = 3
 
 [node name="ItemDrop" parent="Plot3" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 50, 47 )
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
 z_index = 50
 item_name = "Lettuce"
 
 [node name="Plot4" type="Panel" parent="."]
-margin_left = 104.0
-margin_top = 104.0
-margin_right = 204.0
-margin_bottom = 204.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 204.0
+margin_top = 204.0
+margin_right = 404.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot4"]
-position = Vector2( 46, 47 )
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 127 )
 frame = 3
 
 [node name="ItemDrop" parent="Plot4" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 50, 47 )
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
 z_index = 50
 item_name = "Lettuce"
 
 [node name="Plot5" type="Panel" parent="."]
-margin_top = 208.0
-margin_right = 100.0
-margin_bottom = 308.0
-rect_min_size = Vector2( 100, 100 )
+margin_top = 408.0
+margin_right = 200.0
+margin_bottom = 608.0
+rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot5"]
-position = Vector2( 46, 47 )
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 127 )
 frame = 3
 
 [node name="ItemDrop" parent="Plot5" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 50, 47 )
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
 z_index = 50
 item_name = "Lettuce"
 
 [node name="Plot6" type="Panel" parent="."]
-margin_left = 104.0
-margin_top = 208.0
-margin_right = 204.0
-margin_bottom = 308.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 204.0
+margin_top = 408.0
+margin_right = 404.0
+margin_bottom = 608.0
+rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot6"]
-position = Vector2( 46, 47 )
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 127 )
 frame = 3
 
 [node name="ItemDrop" parent="Plot6" instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 50, 47 )
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
 z_index = 50
 item_name = "Lettuce"
 
