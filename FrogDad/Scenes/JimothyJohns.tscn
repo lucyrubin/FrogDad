@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="JimothyJohns" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 531.0
+margin_bottom = 224.0
+text = "Inside Jimothy Johns
+"

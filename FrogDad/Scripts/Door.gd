@@ -1,6 +1,6 @@
 extends Area2D
 
-export (PackedScene) var target_scene = load("res://Scenes/Outdoors.tscn")
+export (PackedScene) var target_scene 
 
 var door_opened = false
 var current_fram = 0

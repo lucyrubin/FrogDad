@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Art/microwave.png" type="Texture" id=23]
 [ext_resource path="res://Art/sinkHover.png" type="Texture" id=24]
 [ext_resource path="res://Art/interact_icon.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Outdoors.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/TV.tscn" type="PackedScene" id=31]
 
 [sub_resource type="TileSet" id=55]
@@ -956,6 +957,7 @@ frames = SubResource( 44 )
 position = Vector2( 268, -471 )
 collision_layer = 2
 script = ExtResource( 13 )
+target_scene = ExtResource( 26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door"]
 visible = false
