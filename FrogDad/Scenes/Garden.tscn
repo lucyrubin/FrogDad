@@ -54,6 +54,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot"]
 position = Vector2( 46, 47 )
 frames = SubResource( 127 )
+frame = 3
 
 [node name="ItemDrop" parent="Plot" instance=ExtResource( 4 )]
 visible = false
@@ -72,6 +73,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot2"]
 position = Vector2( 46, 47 )
 frames = SubResource( 127 )
+frame = 3
 
 [node name="ItemDrop" parent="Plot2" instance=ExtResource( 4 )]
 visible = false
@@ -90,6 +92,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot3"]
 position = Vector2( 46, 47 )
 frames = SubResource( 127 )
+frame = 3
 
 [node name="ItemDrop" parent="Plot3" instance=ExtResource( 4 )]
 visible = false
@@ -109,6 +112,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot4"]
 position = Vector2( 46, 47 )
 frames = SubResource( 127 )
+frame = 3
 
 [node name="ItemDrop" parent="Plot4" instance=ExtResource( 4 )]
 visible = false
@@ -127,6 +131,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot5"]
 position = Vector2( 46, 47 )
 frames = SubResource( 127 )
+frame = 3
 
 [node name="ItemDrop" parent="Plot5" instance=ExtResource( 4 )]
 visible = false
@@ -146,6 +151,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot6"]
 position = Vector2( 46, 47 )
 frames = SubResource( 127 )
+frame = 3
 
 [node name="ItemDrop" parent="Plot6" instance=ExtResource( 4 )]
 visible = false
