@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+onready var pause_menu = $PauseMenu
 
 
 func new_quest(quest_text):
@@ -26,3 +26,7 @@ func _on_PopUpTimer_timeout():
 
 
 
+
+
+func _on_PauseButton_pressed():
+	pause_menu.show_menu()
