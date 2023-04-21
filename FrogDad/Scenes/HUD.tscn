@@ -427,6 +427,7 @@ transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="DarkBackground" type="ColorRect" parent="UserInterface"]
+visible = false
 modulate = Color( 1, 1, 1, 0.486275 )
 margin_left = -6.0
 margin_top = -8.0
@@ -737,9 +738,8 @@ position = Vector2( 167, 91 )
 
 [node name="Quest" parent="UserInterface" instance=ExtResource( 29 )]
 visible = false
-position = Vector2( 85.6667, 24.3333 )
-scale = Vector2( 0.15, 0.15 )
-z_index = 1000
+position = Vector2( 88.6667, 30.6667 )
+scale = Vector2( 0.13, 0.13 )
 
 [node name="OneSecTimer" type="Timer" parent="UserInterface/Quest"]
 

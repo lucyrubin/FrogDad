@@ -19,6 +19,7 @@ onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 var completed
 var dialogue_name
 
+	
 func _input(event):
 
 	# if user pressed "space key" before text animation ends,

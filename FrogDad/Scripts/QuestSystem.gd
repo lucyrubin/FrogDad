@@ -96,6 +96,13 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	else: 
 		CompletedButton.visible = false
 
+func close_quest():
+	# remove all quests from the GUI
+	for child in $VBoxContainer.get_children():
+		child.queue_free()
+	
+	FrogDad.state = ""
+	
 func _on_ToggleQuestButton_pressed():
 	
 	if !MasterScript.opened_quest_first_time:
@@ -104,35 +111,29 @@ func _on_ToggleQuestButton_pressed():
 			get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
 
 
+	print(visible)
+	visible = true
+	
+	UserInterfaceNode.get_node("DarkBackground").visible = true
+	
+	FrogDad.state = "quest"
+	# add all current quests to the GUI
+	for quest in MasterScript.currentQuestArray:
+		if quest[0] == "resource collection":
+			collectResourceQuest(quest[1], quest[2], quest[3])
+	
+	if MasterScript.currentQuestArray.empty():
+		var noQuestLabel = Label.new()
+		noQuestLabel.text = "No active quests."
+		var dynamic_font = DynamicFont.new()
+		dynamic_font.size = 60
+		dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
+		noQuestLabel.add_font_override("font", dynamic_font)
+		noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
+		$VBoxContainer.add_child(noQuestLabel)
+		
+	FrogDad.state = "Quest"
 
-	visible = !visible
-	if visible:
-		
-		UserInterfaceNode.get_node("DarkBackground").visible = true
-		
-		FrogDad.state = "quest"
-		# add all current quests to the GUI
-		for quest in MasterScript.currentQuestArray:
-			if quest[0] == "resource collection":
-				collectResourceQuest(quest[1], quest[2], quest[3])
-		
-		if MasterScript.currentQuestArray.empty():
-			var noQuestLabel = Label.new()
-			noQuestLabel.text = "No active quests."
-			var dynamic_font = DynamicFont.new()
-			dynamic_font.size = 60
-			dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
-			noQuestLabel.add_font_override("font", dynamic_font)
-			noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
-			$VBoxContainer.add_child(noQuestLabel)
-			
-		FrogDad.state = "Quest"
-	else:
-		# remove all quests from the GUI
-		for child in $VBoxContainer.get_children():
-			child.queue_free()
-		
-		FrogDad.state = ""
 
 func check_if_quest_fulfilled():
 	# add all current quests to the GUI

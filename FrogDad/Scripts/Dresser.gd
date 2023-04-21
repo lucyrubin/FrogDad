@@ -13,15 +13,14 @@ func _ready():
 	$AnimatedSprite.animation = "default"
 	DarkBackground.connect("gui_input", self, "dark_background_input", []) 
 	
+
 func dark_background_input(event):
 	if event is InputEventMouseButton: 
-		if event.button_index == BUTTON_LEFT and event.pressed and current_fram == 1: 
-			dresser_inventory_node.visible = false
-			user_interface_node.visible = false
-			frogdad_node.state = ""
-			current_fram = (current_fram + 1) % num_frames
+		if event.button_index == BUTTON_LEFT and event.pressed: 
+			current_fram = 0
+			$AnimatedSprite.animation = "default"
 			$AnimatedSprite.set_frame(current_fram)
-
+			
 func _on_Dresser_input_event(_viewport, event, _shape_idx):	
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
@@ -37,20 +36,7 @@ func _on_Dresser_input_event(_viewport, event, _shape_idx):
 			user_interface_node.open_inventory()
 			DarkBackground.visible = true
 		
-		else:
-			dresser_inventory_node.visible = false
-			user_interface_node.visible = false
-			frogdad_node.state = ""
-			DarkBackground.visible = false
 
-func _input(event):
-	# if escape is pressed and open, then close it all
-	if event.is_action_pressed("escape") and current_fram == 1:
-		dresser_inventory_node.visible = false
-		user_interface_node.visible = false
-		frogdad_node.state = ""
-		current_fram = (current_fram + 1) % num_frames
-		$AnimatedSprite.set_frame(current_fram)
 
 func _on_Dresser_mouse_entered():
 	if frogdad_node.state == "" and $Interact.visible == true:
