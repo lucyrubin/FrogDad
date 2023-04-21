@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/NoteCutScene.gd" type="Script" id=1]
 [ext_resource path="res://Art/Untitled_Artwork (3).png" type="Texture" id=2]
-[ext_resource path="res://Art/door.png" type="Texture" id=3]
-[ext_resource path="res://Art/doorHover.png" type="Texture" id=4]
+[ext_resource path="res://House Art/door.png" type="Texture" id=3]
+[ext_resource path="res://House Art/doorHover.png" type="Texture" id=4]
 [ext_resource path="res://Temporary Clipart/DialogueBox.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=6]
 
