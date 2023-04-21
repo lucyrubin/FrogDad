@@ -10,6 +10,7 @@ var velocity
 var holding_item = null
 
 func _ready():
+	velocity = Vector2.ZERO
 	screen_size = get_viewport_rect().size
 	
 func getInventoryNode():
@@ -89,15 +90,10 @@ func move_left():
 #	$AnimatedSprite.flip_h = true
 	$AnimatedSprite.animation = "left"
 
-func toggle_dialogue_box_visibility():
+func toggle_dialogue_box_visibility(dialogue, dialogue_name):
 #	$DialogueBox.visible = !$DialogueBox.visible
 	$DialogueBox2.visible = !$DialogueBox2.visible
-	$DialogueBox2.show_dialog_box([
-			{avatar = "gertrude", text = "Hi Frog Dad!"},
-			{avatar = "frogDad", text = "Hi Gertrude!"},
-			{avatar = "gertrude", text = "What are we doing today?"},
-			{avatar = "frogDad", text = "Whatever you want."}
-		], "Gertrude talk")
+	$DialogueBox2.show_dialog_box(dialogue, dialogue_name)
 
 func _is_moving():
 	return velocity.length() > 0

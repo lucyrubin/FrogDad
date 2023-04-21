@@ -150,7 +150,6 @@ func check_if_quest_fulfilled():
 			# check if the requirements have been satisfied, if they have, show the arrow
 			if totalItem >= amountRequired: 
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = true
-			
 	
 			
 			
@@ -160,7 +159,8 @@ func begin_intro_quest():
 	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Every day feels the same. I wake up, I work as a freelance writer, and I sleep. I wish something more exciting would happen..."}], "Another day")
 
 	var door_node = get_tree().get_root().find_node("Door", true, false)
-	door_node.set_locked(true)
+	if door_node:
+		door_node.set_locked(true)
 	get_parent().visible = false
 	
 

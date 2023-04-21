@@ -12,6 +12,11 @@ func _ready():
 		MasterScript.exit_forest = false
 		if BackgroundMusic.playing == false:
 			BackgroundMusic.play()
+	if MasterScript.exitJimothyJohns:
+		$FrogDad.position = $ExitJimothyJohns.position
+		MasterScript.exitJimothyJohns = false
+		if BackgroundMusic.playing == false:
+			BackgroundMusic.play()
 
 func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y)

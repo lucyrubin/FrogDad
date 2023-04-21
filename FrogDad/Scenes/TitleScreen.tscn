@@ -148,6 +148,13 @@ margin_right = 214.0
 margin_bottom = 195.0
 text = "Skip Intro"
 
+[node name="SkipIntroGoToJJ" type="Button" parent="."]
+margin_top = 216.0
+margin_right = 214.0
+margin_bottom = 322.0
+text = "Skip Intro Go to Jimothy John's"
+
 [connection signal="pressed" from="UI/MainMenu/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="UI/MainMenu/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="SkipIntroButton" to="." method="_on_SkipIntroButton_pressed"]
+[connection signal="pressed" from="SkipIntroGoToJJ" to="." method="_on_SkipIntroGoToJJ_pressed"]

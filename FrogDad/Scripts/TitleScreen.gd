@@ -15,3 +15,8 @@ func _on_QuitButton_pressed():
 func _on_SkipIntroButton_pressed():
 	MasterScript.currentQuestNum = 0
 	SceneTransition.change_scene("res://Scenes/Main.tscn")
+
+
+func _on_SkipIntroGoToJJ_pressed():
+	MasterScript.currentQuestNum = 3
+	SceneTransition.change_scene("res://Scenes/JimothyJohns.tscn")

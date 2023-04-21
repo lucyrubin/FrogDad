@@ -24,7 +24,11 @@ func _on_Area2D_body_exited(_body):
 # when click on gertrude, open the dialogue box
 func _input(event):
 	if event.is_action_pressed("talk") and mouse_in_area and $Speech.visible:
-		FrogDad.toggle_dialogue_box_visibility()
+		FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "Hi Frog Dad!"},
+			{avatar = "frogDad", text = "Hi Gertrude!"},
+			{avatar = "gertrude", text = "What are we doing today?"},
+			{avatar = "frogDad", text = "Whatever you want."}
+		], "Gertrude talk")
 		FrogDad.state = "dialogue"
 		FrogDad.get_node("AnimatedSprite").stop()
 		$Speech.visible = false

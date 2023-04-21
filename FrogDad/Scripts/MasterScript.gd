@@ -10,7 +10,7 @@ var exit_forest = false
 var exit_home = false
 var enter_forest = false
 var findBabies = false
-
+var exitJimothyJohns = false
 var picked_up_first_item = false
 
 var opened_quest_first_time = false

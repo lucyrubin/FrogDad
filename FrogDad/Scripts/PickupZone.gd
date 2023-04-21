@@ -1,3 +1,4 @@
+
 extends Area2D
 const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const LogDropClass = preload("res://Scripts/LogDrop.gd")

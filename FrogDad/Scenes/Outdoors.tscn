@@ -660,6 +660,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -752,6 +753,9 @@ position = Vector2( 1345, 164 )
 [node name="ExitHouse" type="Position2D" parent="."]
 position = Vector2( 768, 627 )
 
+[node name="ExitJimothyJohns" type="Position2D" parent="."]
+position = Vector2( 2322, 771 )
+
 [node name="Borders" type="StaticBody2D" parent="."]
 position = Vector2( 1085, 1354 )
 
@@ -768,7 +772,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -786,7 +790,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -804,7 +808,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -822,7 +825,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
