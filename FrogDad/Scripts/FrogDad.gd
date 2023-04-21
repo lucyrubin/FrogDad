@@ -63,7 +63,6 @@ func move_up_and_right():
 	velocity.y -= 1
 	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "right"
-	$AnimatedSprite.scale = 0.55
 
 func move_down_and_right():
 	velocity.x += 1
