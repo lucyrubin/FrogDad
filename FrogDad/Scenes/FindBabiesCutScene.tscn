@@ -1,14 +1,24 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Art/jar3.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/FindBabiesCutScene.gd" type="Script" id=2]
 [ext_resource path="res://Art/jar2.png" type="Texture" id=3]
 [ext_resource path="res://Art/jar1.png" type="Texture" id=4]
+[ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -34,7 +44,14 @@ wait_time = 2.0
 position = Vector2( 492, 278 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 1 )
-frame = 2
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 640, 264 )
+scale = Vector2( 0.55, 0.6 )
+frames = SubResource( 4 )
+frame = 1
 speed_scale = 0.8
 playing = true
 
