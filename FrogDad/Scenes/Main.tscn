@@ -37,7 +37,7 @@ position = Vector2( -511, 127 )
 item_name = "Cloth"
 
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 275, -423 )
+position = Vector2( -296, -353 )
 scale = Vector2( 0.35, 0.35 )
 __meta__ = {
 "_edit_group_": true
@@ -120,4 +120,4 @@ autowrap = true
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 37 )]
 
 [node name="EnterHome" type="Position2D" parent="."]
-position = Vector2( 263, -384 )
+position = Vector2( -151, -485 )

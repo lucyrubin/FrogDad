@@ -1,8 +1,7 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
-[ext_resource path="res://Art/microwaveHover.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Fridge.gd" type="Script" id=4]
 [ext_resource path="res://Art/furniture1_spritesheet.png" type="Texture" id=5]
 [ext_resource path="res://Art/Untitled_Artwork (3).png" type="Texture" id=6]
@@ -23,10 +22,16 @@
 [ext_resource path="res://Art/doorHover.png" type="Texture" id=21]
 [ext_resource path="res://Art/bedroom2Hover.png" type="Texture" id=22]
 [ext_resource path="res://Art/microwave.png" type="Texture" id=23]
-[ext_resource path="res://Art/sinkHover.png" type="Texture" id=24]
 [ext_resource path="res://Art/interact_icon.png" type="Texture" id=25]
 [ext_resource path="res://Scenes/Outdoors.tscn" type="PackedScene" id=26]
+[ext_resource path="res://House Art/window1.png" type="Texture" id=27]
+[ext_resource path="res://House Art/worktable.png" type="Texture" id=28]
+[ext_resource path="res://Scripts/Typewriter.gd" type="Script" id=29]
+[ext_resource path="res://House Art/typewriter.png" type="Texture" id=30]
 [ext_resource path="res://Scenes/TV.tscn" type="PackedScene" id=31]
+[ext_resource path="res://House Art/lamp.png" type="Texture" id=32]
+[ext_resource path="res://Scripts/Lamp.gd" type="Script" id=33]
+[ext_resource path="res://Audios/typewriting.mp3" type="AudioStream" id=34]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -358,6 +363,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 61.5, 61 )
 
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 57, 58 )
+
 [sub_resource type="AtlasTexture" id=76]
 flags = 4
 atlas = ExtResource( 16 )
@@ -384,26 +392,11 @@ flags = 4
 atlas = ExtResource( 17 )
 region = Rect2( 384, 0, 384, 512 )
 
-[sub_resource type="AtlasTexture" id=99]
-flags = 4
-atlas = ExtResource( 24 )
-region = Rect2( 0, 0, 384, 512 )
-
-[sub_resource type="AtlasTexture" id=100]
-flags = 4
-atlas = ExtResource( 24 )
-region = Rect2( 384, 0, 384, 512 )
-
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
 "frames": [ SubResource( 77 ), SubResource( 78 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 99 ), SubResource( 100 ) ],
-"loop": true,
-"name": "hover",
 "speed": 5.0
 } ]
 
@@ -420,26 +413,11 @@ flags = 4
 atlas = ExtResource( 23 )
 region = Rect2( 384, 0, 384, 512 )
 
-[sub_resource type="AtlasTexture" id=97]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 384, 512 )
-
-[sub_resource type="AtlasTexture" id=98]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 384, 0, 384, 512 )
-
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
 "frames": [ SubResource( 95 ), SubResource( 96 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 97 ), SubResource( 98 ) ],
-"loop": true,
-"name": "hover",
 "speed": 5.0
 } ]
 
@@ -536,6 +514,61 @@ extents = Vector2( 108.75, 82.25 )
 
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 108.5, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=117]
+extents = Vector2( 96, 12.5 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 32 )
+region = Rect2( 0, 340, 255, 340 )
+
+[sub_resource type="SpriteFrames" id=126]
+animations = [ {
+"frames": [ SubResource( 124 ), SubResource( 125 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=127]
+radius = 19.0263
+
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 0, 0, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 0, 340, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 0, 680, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 0, 1020, 255, 340 )
+
+[sub_resource type="SpriteFrames" id=122]
+animations = [ {
+"frames": [ SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=123]
+extents = Vector2( 40.5, 35.5 )
 
 [sub_resource type="AtlasTexture" id=65]
 flags = 4
@@ -717,7 +750,7 @@ format = 1
 tile_data = PoolIntArray( -524305, 1073741830, 0, -524304, 1073741831, 0, -524303, 1073741831, 0, -524302, 1073741831, 0, -524301, 1073741831, 0, -524300, 1073741831, 0, -524299, 1073741831, 0, -524298, 1073741831, 0, -524297, 1073741831, 0, -524296, 1073741831, 0, -524295, 1073741831, 0, -524294, 1073741831, 0, -524293, 1073741831, 0, -524292, 1073741831, 0, -524291, 1073741831, 0, -524290, 1073741831, 0, -524289, 1073741831, 0, -589824, 1073741831, 0, -589823, 1073741831, 0, -589822, 1073741831, 0, -589821, 1073741831, 0, -589820, 1073741831, 0, -589819, 1073741831, 0, -589818, 1073741831, 0, -589817, 1073741831, 0, -589816, 1073741831, 0, -589815, 1073741831, 0, -589814, 1073741831, 0, -589813, 1073741831, 0, -589812, 1073741832, 0, -458769, 1073741827, 0, -458768, 1610612740, 0, -458767, 1610612740, 0, -458766, 1610612740, 0, -458765, 1610612740, 0, -458764, 1610612740, 0, -458763, 1610612740, 0, -458762, 1610612740, 0, -458761, 1610612740, 0, -458760, 1610612740, 0, -458759, 1610612740, 0, -458758, 1610612740, 0, -458757, 1610612740, 0, -458756, 1610612740, 0, -458755, 1610612740, 0, -458754, 1610612740, 0, -458753, 1610612740, 0, -524288, 1610612740, 0, -524287, 1610612740, 0, -524286, 1610612740, 0, -524285, 1610612740, 0, -524284, 1610612740, 0, -524283, 1610612740, 0, -524282, 1610612740, 0, -524281, 1610612740, 0, -524280, 1610612740, 0, -524279, 1610612740, 0, -524278, 1610612740, 0, -524277, 1610612740, 0, -524276, 1073741829, 0, -393233, 1073741827, 0, -393232, 1610612740, 0, -393231, 1610612740, 0, -393230, 1610612740, 0, -393229, 1610612740, 0, -393228, 1610612740, 0, -393227, 1610612740, 0, -393226, 1610612740, 0, -393225, 1610612740, 0, -393224, 1610612740, 0, -393223, 1610612740, 0, -393222, 1610612740, 0, -393221, 1610612740, 0, -393220, 1610612740, 0, -393219, 1610612740, 0, -393218, 1610612740, 0, -393217, 1610612740, 0, -458752, 1610612740, 0, -458751, 1610612740, 0, -458750, 1610612740, 0, -458749, 1610612740, 0, -458748, 1610612740, 0, -458747, 1610612740, 0, -458746, 1610612740, 0, -458745, 1610612740, 0, -458744, 1610612740, 0, -458743, 1610612740, 0, -458742, 1610612740, 0, -458741, 1610612740, 0, -458740, 1073741829, 0, -327697, 1073741824, 0, -327696, 1073741825, 0, -327695, 1610612737, 0, -327694, 1073741825, 0, -327693, 1610612737, 0, -327692, 1073741825, 0, -327691, 1610612737, 0, -327690, 1073741825, 0, -327689, 1610612737, 0, -327688, 1073741825, 0, -327687, 1073741825, 0, -327686, 1073741825, 0, -327685, 1073741825, 0, -327684, 1073741825, 0, -327683, 1073741825, 0, -327682, 1073741825, 0, -327681, 1073741825, 0, -393216, 1073741825, 0, -393215, 1073741825, 0, -393214, 1073741825, 0, -393213, 1610612737, 0, -393212, 1073741825, 0, -393211, 1610612737, 0, -393210, 1073741825, 0, -393209, 1610612737, 0, -393208, 1073741825, 0, -393207, 1610612737, 0, -393206, 1073741825, 0, -393205, 1610612737, 0, -393204, 1073741826, 0 )
 
 [node name="Window" type="StaticBody2D" parent="."]
-position = Vector2( -230, -497 )
+position = Vector2( 472, -510 )
 z_index = -500
 __meta__ = {
 "_edit_group_": true
@@ -732,8 +765,24 @@ visible = false
 position = Vector2( 8.5, 0 )
 shape = SubResource( 82 )
 
+[node name="Window2" type="StaticBody2D" parent="."]
+position = Vector2( -743, -506 )
+z_index = -500
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Window2"]
+scale = Vector2( 0.591146, 0.59082 )
+texture = ExtResource( 27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window2"]
+visible = false
+position = Vector2( 8, -3 )
+shape = SubResource( 116 )
+
 [node name="Counters" type="StaticBody2D" parent="."]
-position = Vector2( -71, -329 )
+position = Vector2( 599, -350 )
 scale = Vector2( 0.8, 0.8 )
 z_index = -500
 collision_layer = 4
@@ -764,20 +813,19 @@ scale = Vector2( 0.999999, 0.999999 )
 shape = SubResource( 27 )
 
 [node name="Sink" type="Area2D" parent="."]
-position = Vector2( -192, -351 )
+position = Vector2( 478, -372 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -500
 collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sink"]
 position = Vector2( -8.57144, -57.1428 )
 scale = Vector2( 2.1, 2.1 )
 frames = SubResource( 23 )
-animation = "hover"
 
 [node name="FaucetRunning" type="AudioStreamPlayer2D" parent="Sink/AnimatedSprite"]
 stream = ExtResource( 11 )
@@ -801,26 +849,24 @@ __meta__ = {
 }
 
 [node name="Microwave" type="Area2D" parent="."]
-position = Vector2( -65, -423 )
+position = Vector2( 352, -444 )
 z_index = -500
 collision_layer = 4
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Microwave"]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 33 )
-animation = "hover"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Microwave"]
 visible = false
 shape = SubResource( 34 )
 
 [node name="Fridge" type="Area2D" parent="."]
-position = Vector2( 17, -390 )
+position = Vector2( 687, -411 )
 scale = Vector2( 0.9, 0.9 )
 z_index = -500
 collision_layer = 4
@@ -846,12 +892,11 @@ visible = false
 shape = SubResource( 16 )
 
 [node name="Stove" type="StaticBody2D" parent="."]
-position = Vector2( -459, -366 )
+position = Vector2( 211, -387 )
 z_index = -500
 collision_layer = 4
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Stove"]
@@ -865,7 +910,7 @@ position = Vector2( -3, 64 )
 shape = SubResource( 30 )
 
 [node name="Dresser" type="Area2D" parent="."]
-position = Vector2( -917, -345 )
+position = Vector2( -976, -349 )
 z_index = -500
 collision_layer = 4
 script = ExtResource( 8 )
@@ -898,6 +943,58 @@ shape = SubResource( 63 )
 visible = false
 position = Vector2( 38.5, 30.5 )
 shape = SubResource( 68 )
+
+[node name="Work Table" type="StaticBody2D" parent="."]
+position = Vector2( -694, -358 )
+z_index = -500
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Work Table"]
+scale = Vector2( 1.8, 1.4 )
+texture = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Work Table"]
+visible = false
+position = Vector2( -1, 57 )
+shape = SubResource( 117 )
+
+[node name="Lamp" type="Area2D" parent="Work Table"]
+position = Vector2( 63, -70 )
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Work Table/Lamp"]
+scale = Vector2( 1.2, 1.2 )
+frames = SubResource( 126 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Work Table/Lamp"]
+visible = false
+position = Vector2( 6, 4 )
+shape = SubResource( 127 )
+
+[node name="Typewriter" type="Area2D" parent="."]
+position = Vector2( -707, -428 )
+z_index = -500
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Typewriter"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 122 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Typewriter"]
+visible = false
+position = Vector2( 12.5, 27.5 )
+shape = SubResource( 123 )
+
+[node name="Typewriting" type="AudioStreamPlayer" parent="Typewriter"]
+stream = ExtResource( 34 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -939,7 +1036,7 @@ position = Vector2( 26.5, 50.75 )
 shape = SubResource( 51 )
 
 [node name="Couch" type="StaticBody2D" parent="YSort"]
-position = Vector2( 682, 65 )
+position = Vector2( -422, -141 )
 collision_layer = 4
 __meta__ = {
 "_edit_group_": true
@@ -954,7 +1051,7 @@ scale = Vector2( 0.669271, 0.740234 )
 frames = SubResource( 44 )
 
 [node name="Door" type="Area2D" parent="YSort"]
-position = Vector2( 268, -471 )
+position = Vector2( -144, -471 )
 collision_layer = 2
 script = ExtResource( 13 )
 target_scene = ExtResource( 26 )
@@ -983,11 +1080,8 @@ frames = SubResource( 75 )
 animation = "hover"
 
 [node name="Table" type="StaticBody2D" parent="YSort"]
-position = Vector2( -246, -136 )
+position = Vector2( 469, -184 )
 collision_layer = 4
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Table"]
 scale = Vector2( 1.25521, 1.10547 )
@@ -1067,7 +1161,7 @@ position = Vector2( 59, -5.5 )
 shape = SubResource( 115 )
 
 [node name="TV" parent="YSort" instance=ExtResource( 31 )]
-position = Vector2( 551, -291 )
+position = Vector2( -477, -389 )
 z_index = -500
 collision_layer = 4
 __meta__ = {
@@ -1080,11 +1174,7 @@ __meta__ = {
 polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -320, 867, 286, -1130, 283, -1128, -321 )
 
 [connection signal="input_event" from="Sink" to="Sink" method="_on_Sink_input_event"]
-[connection signal="mouse_entered" from="Sink" to="Sink" method="_on_Sink_mouse_entered"]
-[connection signal="mouse_exited" from="Sink" to="Sink" method="_on_Sink_mouse_exited"]
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
-[connection signal="mouse_entered" from="Microwave" to="Microwave" method="_on_Microwave_mouse_entered"]
-[connection signal="mouse_exited" from="Microwave" to="Microwave" method="_on_Microwave_mouse_exited"]
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
 [connection signal="mouse_entered" from="Fridge" to="Fridge" method="_on_Fridge_mouse_entered"]
 [connection signal="mouse_exited" from="Fridge" to="Fridge" method="_on_Fridge_mouse_exited"]
@@ -1093,6 +1183,8 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 [connection signal="input_event" from="Dresser" to="Dresser" method="_on_Dresser_input_event"]
 [connection signal="mouse_entered" from="Dresser" to="Dresser" method="_on_Dresser_mouse_entered"]
 [connection signal="mouse_exited" from="Dresser" to="Dresser" method="_on_Dresser_mouse_exited"]
+[connection signal="input_event" from="Work Table/Lamp" to="Work Table/Lamp" method="_on_Lamp_input_event"]
+[connection signal="input_event" from="Typewriter" to="Typewriter" method="_on_Typewriter_input_event"]
 [connection signal="area_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="YSort/Door" to="YSort/Door" method="_on_Door_area_exited"]
 [connection signal="mouse_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_mouse_entered"]

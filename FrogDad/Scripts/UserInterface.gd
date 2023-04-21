@@ -11,7 +11,6 @@ func _ready():
 func dark_background_input(event):
 	if event is InputEventMouseButton: 
 		if event.button_index == BUTTON_LEFT && event.pressed: 
-
 			FrogDad.state = ""
 			for child in get_children():
 				child.visible = false
