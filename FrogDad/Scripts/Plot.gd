@@ -6,14 +6,6 @@ var num_frames = 4
 
 
 func _on_Plot_gui_input(event):
-#	if event is InputEventMouseButton: 
-#		if event.button_index == BUTTON_LEFT and event.pressed:
-#			current_fram = (current_fram + 1)
-#			if current_fram == 4:
-#				$AnimatedSprite.visible = false
-#				$ItemDrop.visible = true
-#			else:
-#				$AnimatedSprite.set_frame(current_fram)
 	if event is InputEventMouseButton: 
 			if event.button_index == BUTTON_LEFT and event.pressed:
 				current_fram = (current_fram - 1)

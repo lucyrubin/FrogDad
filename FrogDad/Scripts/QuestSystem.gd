@@ -24,16 +24,15 @@ func _ready():
 	if MasterScript.currentQuestNum == -1 :
 		yield(get_tree().create_timer(1.0), "timeout")
 		begin_intro_quest()
-	elif MasterScript.currentQuestNum == 0:
+	elif MasterScript.currentQuestNum == 0 and !MasterScript.opened_quest_first_time:
 		after_note_appears()
-		
+		get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = true
 		## temporary to show the baby jar being carried
 		FrogDad.get_node("BabyJar").visible = true
 		## temporary to show the baby jar being carried
 		
 		HUDNode.new_quest("Make a Swaddle")
-		if !MasterScript.opened_quest_first_time:
-			MasterScript.opened_quest_first_time = true
+		
 	
 
 		
@@ -98,34 +97,42 @@ func collectResourceQuest(quest, amountRequired, itemType):
 		CompletedButton.visible = false
 
 func _on_ToggleQuestButton_pressed():
+	
+	if !MasterScript.opened_quest_first_time:
+			MasterScript.opened_quest_first_time = true
 	if 	get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible:
 			get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
-	if !info_button_open:
-		visible = !visible
-		if visible:
-			FrogDad.state = "quest"
-			# add all current quests to the GUI
-			for quest in MasterScript.currentQuestArray:
-				if quest[0] == "resource collection":
-					collectResourceQuest(quest[1], quest[2], quest[3])
+
+
+
+	visible = !visible
+	if visible:
+		
+		UserInterfaceNode.get_node("DarkBackground").visible = true
+		
+		FrogDad.state = "quest"
+		# add all current quests to the GUI
+		for quest in MasterScript.currentQuestArray:
+			if quest[0] == "resource collection":
+				collectResourceQuest(quest[1], quest[2], quest[3])
+		
+		if MasterScript.currentQuestArray.empty():
+			var noQuestLabel = Label.new()
+			noQuestLabel.text = "No active quests."
+			var dynamic_font = DynamicFont.new()
+			dynamic_font.size = 60
+			dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
+			noQuestLabel.add_font_override("font", dynamic_font)
+			noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
+			$VBoxContainer.add_child(noQuestLabel)
 			
-			if MasterScript.currentQuestArray.empty():
-				var noQuestLabel = Label.new()
-				noQuestLabel.text = "No active quests."
-				var dynamic_font = DynamicFont.new()
-				dynamic_font.size = 60
-				dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
-				noQuestLabel.add_font_override("font", dynamic_font)
-				noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
-				$VBoxContainer.add_child(noQuestLabel)
-				
-			FrogDad.state = "Quest"
-		else:
-			# remove all quests from the GUI
-			for child in $VBoxContainer.get_children():
-				child.queue_free()
-			
-			FrogDad.state = ""
+		FrogDad.state = "Quest"
+	else:
+		# remove all quests from the GUI
+		for child in $VBoxContainer.get_children():
+			child.queue_free()
+		
+		FrogDad.state = ""
 
 func check_if_quest_fulfilled():
 	# add all current quests to the GUI

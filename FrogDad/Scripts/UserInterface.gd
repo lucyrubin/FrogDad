@@ -5,27 +5,33 @@ onready var ToggleInventoryButton = get_tree().get_root().find_node("ToggleInven
 var mouse_in_inventory = false
 
 func _ready():
+	visible = true
 	$DarkBackground.connect("gui_input", self, "dark_background_input", []) 
 
 func dark_background_input(event):
 	if event is InputEventMouseButton: 
 		if event.button_index == BUTTON_LEFT && event.pressed: 
-			visible = false
+			#visible = false
 			FrogDad.state = ""
-			if $Inventory.visible: # close inventory
-				$Inventory.inventory_open = false
-				visible = false
-				$Inventory.visible = false
-				FrogDad.state = ""
-				FrogDad.get_node("AnimatedSprite").play()
-				ToggleInventoryButton.visible = true
-				$DarkBackground.visible = false
-			if !ToggleInventoryButton.visible:
-				ToggleInventoryButton.visible = true
+			for child in get_children():
+				child.visible = false
+			FrogDad.find_node("Quest",true, false).visible = false
+			ToggleInventoryButton.visible = true
+			
+#			if $Inventory.visible: # close inventory
+#				$Inventory.inventory_open = false
+#				visible = false
+#				$Inventory.visible = false
+#				FrogDad.state = ""
+#				FrogDad.get_node("AnimatedSprite").play()
+#				ToggleInventoryButton.visible = true
+#				$DarkBackground.visible = false
+#			if !ToggleInventoryButton.visible:
+#				ToggleInventoryButton.visible = true
 	
 func open_inventory():
 	$Inventory.initialize_inventory()
-	visible = true
+	#visible = true
 	$Inventory.inventory_open = true
 	$Inventory.visible = true
 	FrogDad.state = "inventory"

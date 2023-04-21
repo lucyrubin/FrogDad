@@ -252,14 +252,8 @@ texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 13 )
 script = ExtResource( 12 )
 
-[node name="Quest" parent="ToggleQuestButton" instance=ExtResource( 29 )]
-visible = false
-position = Vector2( -1350, 100 )
-z_index = 1000
-
-[node name="OneSecTimer" type="Timer" parent="ToggleQuestButton/Quest"]
-
 [node name="BouncingArrow" parent="ToggleQuestButton" instance=ExtResource( 30 )]
+visible = false
 position = Vector2( -300, 0 )
 
 [node name="InfoButton" type="TextureButton" parent="."]
@@ -433,7 +427,6 @@ transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="DarkBackground" type="ColorRect" parent="UserInterface"]
-visible = false
 modulate = Color( 1, 1, 1, 0.486275 )
 margin_left = -6.0
 margin_top = -8.0
@@ -742,6 +735,14 @@ visible = false
 [node name="InventoryCenter" type="Position2D" parent="UserInterface"]
 position = Vector2( 167, 91 )
 
+[node name="Quest" parent="UserInterface" instance=ExtResource( 29 )]
+visible = false
+position = Vector2( 85.6667, 24.3333 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 1000
+
+[node name="OneSecTimer" type="Timer" parent="UserInterface/Quest"]
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 margin_left = 978.0
@@ -763,11 +764,11 @@ texture_pressed = ExtResource( 33 )
 
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
-[connection signal="pressed" from="ToggleQuestButton" to="ToggleQuestButton/Quest" method="_on_ToggleQuestButton_pressed"]
-[connection signal="timeout" from="ToggleQuestButton/Quest/OneSecTimer" to="ToggleQuestButton/Quest" method="_on_OneSecTimer_timeout"]
+[connection signal="pressed" from="ToggleQuestButton" to="UserInterface/Quest" method="_on_ToggleQuestButton_pressed"]
 [connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
 [connection signal="gui_input" from="UserInterface/DarkBackground" to="UserInterface" method="_on_DarkBackground_gui_input"]
 [connection signal="mouse_entered" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
 [connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
+[connection signal="timeout" from="UserInterface/Quest/OneSecTimer" to="UserInterface/Quest" method="_on_OneSecTimer_timeout"]
