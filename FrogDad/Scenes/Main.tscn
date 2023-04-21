@@ -58,6 +58,7 @@ editor_draw_limits = true
 script = SubResource( 1 )
 
 [node name="DebuggingData" type="CanvasLayer" parent="FrogDad/Camera2D"]
+visible = false
 script = ExtResource( 36 )
 
 [node name="ColorRect" type="ColorRect" parent="FrogDad/Camera2D/DebuggingData"]
