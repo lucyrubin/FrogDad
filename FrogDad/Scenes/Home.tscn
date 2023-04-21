@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -458,6 +458,37 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=133]
+resource_name = "Float"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, -140 ), Vector2( 50, -150 ), Vector2( 50, -140 ) ]
+}
+
+[sub_resource type="Animation" id=134]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, -140 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 78.8889, 137.986 )
 
@@ -509,6 +540,37 @@ animations = [ {
 "name": "hover",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=129]
+resource_name = "Float"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 19, -170 ), Vector2( 19, -180 ), Vector2( 19, -170 ) ]
+}
+
+[sub_resource type="Animation" id=130]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19, -170 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 108.75, 82.25 )
@@ -715,6 +777,37 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=131]
+resource_name = "Float"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -33, -103 ), Vector2( -33, -90 ), Vector2( -33, -103 ) ]
+}
+
+[sub_resource type="Animation" id=132]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -33, -103 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=113]
 extents = Vector2( 70, 61.5 )
 
@@ -870,6 +963,17 @@ __meta__ = {
 frames = SubResource( 15 )
 animation = "hover"
 
+[node name="Interact" type="TextureRect" parent="Fridge"]
+margin_left = 50.0
+margin_top = -140.0
+margin_right = 99.0
+margin_bottom = -91.0
+texture = ExtResource( 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fridge/Interact"]
+anims/Float = SubResource( 133 )
+anims/RESET = SubResource( 134 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge"]
 visible = false
 position = Vector2( 72.2222, -17.7778 )
@@ -922,6 +1026,10 @@ margin_top = -170.0
 margin_right = 68.0
 margin_bottom = -121.0
 texture = ExtResource( 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dresser/Interact"]
+anims/Float = SubResource( 129 )
+anims/RESET = SubResource( 130 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser"]
 visible = false
@@ -1130,9 +1238,13 @@ flip_h = true
 visible = false
 margin_left = -33.0
 margin_top = -103.0
-margin_right = 14.0
-margin_bottom = -58.0
+margin_right = 16.0
+margin_bottom = -54.0
 texture = ExtResource( 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/Side Table/Interact"]
+anims/Float = SubResource( 131 )
+anims/RESET = SubResource( 132 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Side Table"]
 visible = false
@@ -1168,6 +1280,8 @@ polygon = PoolVector2Array( -1088, -319, -1088, 256, 831, 257, 832, -320, 867, -
 
 [connection signal="input_event" from="Sink" to="Sink" method="_on_Sink_input_event"]
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
+[connection signal="area_entered" from="Fridge" to="Fridge" method="_on_Fridge_area_entered"]
+[connection signal="area_exited" from="Fridge" to="Fridge" method="_on_Fridge_area_exited"]
 [connection signal="input_event" from="Fridge" to="Fridge" method="_on_Fridge_input_event"]
 [connection signal="mouse_entered" from="Fridge" to="Fridge" method="_on_Fridge_mouse_entered"]
 [connection signal="mouse_exited" from="Fridge" to="Fridge" method="_on_Fridge_mouse_exited"]

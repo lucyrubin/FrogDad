@@ -42,10 +42,12 @@ func _on_TV_mouse_exited():
 func _on_TV_area_entered(area):
 	if frogdad_node.state == "":
 		$Interact.visible = true
+		$Interact/AnimationPlayer.play("Float")
 
 func _on_TV_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
+		$Interact/AnimationPlayer.stop()
 
 func play_NyanCat():
 	$AnimatedSprite/NyanCat.visible = true

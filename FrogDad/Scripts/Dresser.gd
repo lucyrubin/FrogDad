@@ -51,7 +51,9 @@ func _on_Dresser_mouse_exited():
 func _on_Dresser_area_entered(area):
 	if frogdad_node.state == "":
 		$Interact.visible = true
+		$Interact/AnimationPlayer.play("Float")
 		
 func _on_Dresser_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
+		$Interact/AnimationPlayer.stop()

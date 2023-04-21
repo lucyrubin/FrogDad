@@ -32,9 +32,6 @@ func _on_Side_Table_input_event(_viewport, event, _shape_idx):
 			frogdad_node.state = "Inventory"
 			user_interface_node.open_inventory()
 			DarkBackground.visible = true
-		
-			
-
 
 func _on_Side_Table_mouse_entered():
 	if frogdad_node.state == "" and $Interact.visible == true:
@@ -49,7 +46,9 @@ func _on_Side_Table_mouse_exited():
 func _on_Area2D_area_entered(area):
 	if frogdad_node.state == "":
 		$Interact.visible = true
+		$Interact/AnimationPlayer.play("Float")
 
 func _on_Area2D_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
+		$Interact/AnimationPlayer.stop()

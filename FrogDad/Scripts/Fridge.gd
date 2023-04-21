@@ -34,7 +34,6 @@ func _on_Fridge_input_event(_viewport, event, _shape_idx):
 			FrogDad.state = "Inventory"
 			user_interface_node.open_inventory()
 			DarkBackground.visible = true
-		
 
 func _on_Fridge_mouse_entered():
 	if FrogDad.state == "":
@@ -45,3 +44,13 @@ func _on_Fridge_mouse_exited():
 	if FrogDad.state == "":
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
+
+func _on_Fridge_area_entered(area):
+	if FrogDad.state == "":
+		$Interact.visible = true
+		$Interact/AnimationPlayer.play("Float")
+
+func _on_Fridge_area_exited(area):
+	if FrogDad.state == "":
+		$Interact.visible = false
+		$Interact/AnimationPlayer.stop()
