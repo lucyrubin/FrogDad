@@ -20,6 +20,7 @@ margin_top = -68.0
 margin_right = 1038.0
 margin_bottom = 232.0
 rect_min_size = Vector2( 1200, 300 )
+mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -33,11 +34,13 @@ margin_left = 220.0
 margin_top = 100.0
 margin_right = -220.0
 margin_bottom = -100.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
+mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
 
