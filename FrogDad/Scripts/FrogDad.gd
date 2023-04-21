@@ -19,7 +19,6 @@ func _physics_process(delta):
 	z_index = position.y
 	velocity = Vector2.ZERO
 	if state == "": # move as long as dialogue and inventory aren't active
-		
 		if Input.is_action_pressed("move_down") and Input.is_action_pressed("move_left"):
 			move_down_and_left()
 		elif Input.is_action_pressed("move_down") and Input.is_action_pressed("move_right"):
@@ -37,22 +36,14 @@ func _physics_process(delta):
 				move_right()
 			if Input.is_action_pressed("move_left"):
 				move_left()
-				
-		
 		if _is_moving():
 			velocity = velocity.normalized() * speed
 			if !$AnimatedSprite.playing:
 				$AnimatedSprite.play()
 				$AnimatedSprite.frame += 1
-
-		else:
-			pass
-#			$AnimatedSprite.stop()
-#			$AnimatedSprite.set_frame(0)
-		
 	else: 
 		$AnimatedSprite.stop()
-		
+
 	var _collision = move_and_collide(velocity*delta)
 
 func move_down_and_left():
