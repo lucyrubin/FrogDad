@@ -58,20 +58,21 @@ func _physics_process(delta):
 func move_down_and_left():
 	velocity.x -= 1
 	velocity.y += 1
-	$AnimatedSprite.flip_h = true
-	$AnimatedSprite.animation = "right"
+	$AnimatedSprite.flip_h = false
+	$AnimatedSprite.animation = "left"
 
 func move_up_and_left():
 	velocity.x -= 1
 	velocity.y -= 1
-	$AnimatedSprite.flip_h = true
-	$AnimatedSprite.animation = "right"
+	$AnimatedSprite.flip_h = false
+	$AnimatedSprite.animation = "left"
 	
 func move_up_and_right():
 	velocity.x += 1
 	velocity.y -= 1
 	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "right"
+	$AnimatedSprite.scale = 0.55
 
 func move_down_and_right():
 	velocity.x += 1
@@ -91,13 +92,12 @@ func move_up():
 
 func move_right():
 	velocity.x += 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "right"
 
 func move_left():
 	velocity.x -= 1
-	$AnimatedSprite.flip_h = true
-	$AnimatedSprite.animation = "right"
+#	$AnimatedSprite.flip_h = true
+	$AnimatedSprite.animation = "left"
 
 func toggle_dialogue_box_visibility():
 #	$DialogueBox.visible = !$DialogueBox.visible

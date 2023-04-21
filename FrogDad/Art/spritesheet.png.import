@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frogdadfront1.png-853f9323d5039428327ee4b944ad183d.stex"
+path="res://.import/spritesheet.png-3bb0a07fe2e08e659ed981de50110da6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/frogdadfront1.png"
-dest_files=[ "res://.import/frogdadfront1.png-853f9323d5039428327ee4b944ad183d.stex" ]
+source_file="res://Art/spritesheet.png"
+dest_files=[ "res://.import/spritesheet.png-3bb0a07fe2e08e659ed981de50110da6.stex" ]
 
 [params]
 

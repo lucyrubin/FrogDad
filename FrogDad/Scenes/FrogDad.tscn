@@ -1,51 +1,77 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
-[ext_resource path="res://Art/frog_dad_sprite_sheet_1.png" type="Texture" id=2]
-[ext_resource path="res://Art/frogdadfront1.png" type="Texture" id=3]
+[ext_resource path="res://Art/backspritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Art/spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/PickupZone.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/DialogueBox2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Art/frogdadfront2.png" type="Texture" id=6]
-[ext_resource path="res://Art/frogdadfront0.png" type="Texture" id=7]
+[ext_resource path="res://frogdadsideleft2.png" type="Texture" id=6]
+[ext_resource path="res://Art/frogdadside2.png" type="Texture" id=7]
 [ext_resource path="res://Art/frog egg sprite.png" type="Texture" id=8]
+[ext_resource path="res://Art/frogdadside3 1.png" type="Texture" id=9]
+[ext_resource path="res://Art/frogdadside1.png" type="Texture" id=10]
+[ext_resource path="res://Art/frogdadside0.png" type="Texture" id=11]
+[ext_resource path="res://frogdadsideleft0.png" type="Texture" id=12]
+[ext_resource path="res://frogdadsideleft1.png" type="Texture" id=13]
+[ext_resource path="res://frogdadside3.png" type="Texture" id=14]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
 height = 190.0
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 2512, 0, 628, 2048 )
+atlas = ExtResource( 3 )
+region = Rect2( 508, 0, 508, 1269 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 3140, 0, 628, 2048 )
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 508, 1269 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1256, 0, 628, 2048 )
+atlas = ExtResource( 3 )
+region = Rect2( 1524, 0, 508, 1269 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1016, 0, 508, 1269 )
+
+[sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 1884, 0, 628, 2048 )
+region = Rect2( 994, 0, 497, 1245 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 497, 1245 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 497, 0, 497, 1245 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ) ],
+"frames": [ SubResource( 20 ), SubResource( 19 ), SubResource( 20 ), SubResource( 22 ), SubResource( 21 ) ],
 "loop": true,
 "name": "down",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 31 ), SubResource( 33 ) ],
 "loop": true,
 "name": "up",
 "speed": 5.0
@@ -83,9 +109,11 @@ rotation = 1.57079
 shape = SubResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.461783, 0.461783 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "down"
+frame = 4
+playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
 position = Vector2( 7, 24.5 )
