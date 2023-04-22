@@ -3,7 +3,7 @@ extends CanvasLayer
 const AVATAR_MAP = {
 	"gertrude": preload("res://Temporary Clipart/gertrude copy (1).png"),
 	"frogDad": preload("res://Temporary Clipart/frog_dad_icon.png"),
-	"jimothy": preload("res://Art/JimothyHead.png")
+	"jimothy": preload("res://CharacterHeads/JimothyHead.png")
 }
 
 export var interval = 0.05 # interval betext_animation when each character shows up
@@ -67,11 +67,19 @@ func hide_dialog_box():
 	elif dialogue_name == "Finished cloth quest": 
 		## after finished cloth quest dialouge
 		show_new_quest_notifcation_box()
+	elif dialogue_name == "Finished log quest":
+		show_new_talk_quest_notification_box()
+	elif dialogue_name == "jimothy first talk":
+		MasterScript.currentQuestNum+=1
+		MasterScript.currentQuestArray = [MasterScript.questDictionary[3]]
+		show_new_quest_notifcation_box()
 	# If you want to do something after a dialogue, do it here
 	##
 	##
 	##
-	
+func show_new_talk_quest_notification_box():
+	var HUDNode = FrogDad.find_node("HUD", true, false)
+	HUDNode.new_quest(MasterScript.currentQuestArray[0][2])
 func show_new_quest_notifcation_box():
 	var HUDNode = FrogDad.find_node("HUD", true, false)
 	HUDNode.new_quest(MasterScript.currentQuestArray[0][1])

@@ -54,6 +54,12 @@ func deleteQuest(SubQuest):
 		
 	# remove quest from GUI
 	
+	# hide quest GUI
+	visible = false
+	UserInterfaceNode.get_node("DarkBackground").visible = false
+	MasterScript.frog_dad_state = ""
+	
+	
 	## if you want to play dialogue after a quest is finshed, do it here
 	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Make a Swaddle":
 		## temporary to show the baby jar being carried
@@ -64,10 +70,18 @@ func deleteQuest(SubQuest):
 		PopUpNode.show_dialog_box([{avatar = "", text = "This is perfect! Now they're safe and warm."},
 								{avatar = "", text = "But this won't last forever... These babies are going to grow up soon and need somewhere to sleep."},
 								{avatar = "", text = "There's a forest outside. Maybe I can get wood and make a cradle for them."}], "Finished cloth quest")
+								
+	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Collect Logs for Crib":
+		##temporary
+		print("crib made cut scene")
+		## temporary 
+		PopUpNode.visible = true
+		# the second value of this is just an identifier for if you want to do something after dialogue has ended
+		PopUpNode.show_dialog_box([{avatar = "", text = "crib is done, babies now grow up - i need flies from jimothy"}], "Finished cloth quest")
 	## if you want to play dialogue after a quest is finshed, do it here
 
 	SubQuest.queue_free()
-	_on_ToggleQuestButton_pressed()
+	
 	
 	
 	
@@ -99,6 +113,44 @@ func collectResourceQuest(quest, amountRequired, itemType):
 	else: 
 		CompletedButton.visible = false
 
+func talkQuest(broad_quest, quest_details, character):
+	# add a new quest to the GUI
+	var SubQuest = QuestContainerScene.instance()
+	$VBoxContainer.add_child(SubQuest)
+	
+	# count up the amount of the item in the inventory
+	SubQuest.get_node("VBoxContainer/GridContainer/DescriptionLabel").text = quest_details
+	SubQuest.get_node("VBoxContainer/GridContainer/Icon").texture = load("res://CharacterHeads/" + str(character) + "Head.png")
+	SubQuest.get_node("VBoxContainer/QuestTitleLabel").text = broad_quest
+	SubQuest.get_node("VBoxContainer/GridContainer/AmountLabel").text = ""
+	SubQuest.get_node("VBoxContainer/CompletedButton").visible = false
+
+	
+func resourceForCharacterQuest(quest, amountRequired, itemType):
+	amountRequired = int(amountRequired)
+	# add a new quest to the GUI
+
+	var SubQuest = QuestContainerScene.instance()
+	$VBoxContainer.add_child(SubQuest)
+	var CompletedButton = SubQuest.get_node("VBoxContainer/CompletedButton")
+	CompletedButton.connect("pressed", self, "deleteQuest", [SubQuest])
+	
+	# count up the amount of the item in the inventory
+	var totalItem = 0
+	for item in FrogDad_inventory_data.inventory:
+		if FrogDad_inventory_data.inventory[item][0] == itemType:
+			totalItem += FrogDad_inventory_data.inventory[item][1]
+	
+	# update GUI based on amount in inventory
+	SubQuest.get_node("VBoxContainer/GridContainer/DescriptionLabel").text = "Collect " + str(itemType) 
+	SubQuest.get_node("VBoxContainer/GridContainer/Icon").texture = load("res://Item Icons/" + str(itemType) + ".png")
+	SubQuest.get_node("VBoxContainer/GridContainer/AmountLabel").text = str(totalItem) + "/" + str(amountRequired) 
+	SubQuest.get_node("VBoxContainer/QuestTitleLabel").text = quest
+	
+	CompletedButton.visible = false
+
+	
+	
 func close_quest():
 	# remove all quests from the GUI
 	for child in $VBoxContainer.get_children():
@@ -107,6 +159,7 @@ func close_quest():
 	MasterScript.frog_dad_state = ""
 	
 func _on_ToggleQuestButton_pressed():
+	
 	if MasterScript.frog_dad_state == "":
 		if !MasterScript.opened_quest_first_time:
 				MasterScript.opened_quest_first_time = true
@@ -114,7 +167,7 @@ func _on_ToggleQuestButton_pressed():
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
 
 
-		print(visible)
+
 		visible = true
 		
 		UserInterfaceNode.get_node("DarkBackground").visible = true
@@ -124,6 +177,10 @@ func _on_ToggleQuestButton_pressed():
 		for quest in MasterScript.currentQuestArray:
 			if quest[0] == "resource collection":
 				collectResourceQuest(quest[1], quest[2], quest[3])
+			if quest[0] == "talk":
+				talkQuest(quest[1], quest[2], quest[3])
+			if quest[0] == "resource for character":
+				resourceForCharacterQuest(quest[1], quest[2], quest[3])
 		
 		if MasterScript.currentQuestArray.empty():
 			var noQuestLabel = Label.new()

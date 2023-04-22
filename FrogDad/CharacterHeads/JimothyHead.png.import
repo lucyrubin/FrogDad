@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JimothyHead.png-4db8228c48d60799d94da7c98f812b7d.stex"
+path="res://.import/JimothyHead.png-d5f33efee9150595c3e16022a3fbcfce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/JimothyHead.png"
-dest_files=[ "res://.import/JimothyHead.png-4db8228c48d60799d94da7c98f812b7d.stex" ]
+source_file="res://CharacterHeads/JimothyHead.png"
+dest_files=[ "res://.import/JimothyHead.png-d5f33efee9150595c3e16022a3fbcfce.stex" ]
 
 [params]
 

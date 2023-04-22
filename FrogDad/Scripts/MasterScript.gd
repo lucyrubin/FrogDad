@@ -25,7 +25,9 @@ var questDictionary = {
 	# resource collection quest array template: ["resource collection", "quest name", number of item required, "item name", "sprite image path"]
 	
 	0: ["resource collection", "Make a Swaddle", 5, "Cloth", "carrying babies image"],
-	1: ["resource collection", "Collect Logs for Crib", 7, "Log", "swaddling babies image"]
+	1: ["resource collection", "Collect Logs for Crib", 7, "Log", "swaddling babies image"],
+	2: ["talk", "Get flies from Jimothy John's", "Talk to Jimothy", "Jimothy", "image_here"],
+	3: ["resource for character", "Get lettuce for Jimothy", 10, "lettuce", "image_here"]
 	}
 
 var currentQuestNum = -1
