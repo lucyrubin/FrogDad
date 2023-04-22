@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://GIFs/korean-traditional-version-of-nyan-cat-2842.mp3" type="AudioStream" id=1]
 [ext_resource path="res://House Art/TVHover.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://GIFs/FrogDad_Doc.mp3" type="AudioStream" id=12]
 [ext_resource path="res://GIFs/FrogDad_Doc4.png" type="Texture" id=13]
 [ext_resource path="res://GIFs/FrogDad_Doc1.png" type="Texture" id=14]
-[ext_resource path="res://Art/interact_icon.png" type="Texture" id=15]
 
 [sub_resource type="AtlasTexture" id=115]
 flags = 4
@@ -423,39 +422,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=159]
-resource_name = "Float"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 45, -169 ), Vector2( 45, -180 ), Vector2( 45, -169 ) ]
-}
-
-[sub_resource type="Animation" id=160]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 45, -169 ) ]
-}
-
 [sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 124.5, 125.5 )
+extents = Vector2( 59.5, 48 )
+
+[sub_resource type="RectangleShape2D" id=159]
+extents = Vector2( 121.75, 108.75 )
 
 [sub_resource type="RectangleShape2D" id=158]
 extents = Vector2( 57.5, 47 )
@@ -504,22 +475,17 @@ frame = 2
 stream = ExtResource( 12 )
 volume_db = 20.0
 
-[node name="Interact" type="TextureRect" parent="."]
-visible = false
-margin_left = 45.0
-margin_top = -169.0
-margin_right = 94.0
-margin_bottom = -120.0
-texture = ExtResource( 15 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Interact"]
-anims/Float = SubResource( 159 )
-anims/RESET = SubResource( 160 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 66.5, -58.5 )
 shape = SubResource( 118 )
+
+[node name="TV Area" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TV Area"]
+position = Vector2( 67.25, -57.75 )
+shape = SubResource( 159 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -533,3 +499,5 @@ shape = SubResource( 158 )
 [connection signal="input_event" from="." to="." method="_on_TV_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_TV_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_TV_mouse_exited"]
+[connection signal="area_entered" from="TV Area" to="." method="_on_TV_Area_entered"]
+[connection signal="area_exited" from="TV Area" to="." method="_on_TV_Area_exited"]

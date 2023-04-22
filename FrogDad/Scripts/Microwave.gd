@@ -17,11 +17,12 @@ func _on_Microwave_input_event(_viewport, event, _shape_idx):
 
 func _on_Microwave_mouse_entered():
 	if MasterScript.frog_dad_state =="":
-#		$AnimatedSprite.animation = "hover"
+		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Microwave_mouse_exited():
 	if MasterScript.frog_dad_state =="":
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
-
+		Input.set_custom_mouse_cursor(MasterScript.hand)

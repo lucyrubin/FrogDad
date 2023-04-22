@@ -13,3 +13,15 @@ func _on_Sink_input_event(_viewport, event, _shape_idx):
 			$AnimatedSprite/FaucetRunning.play()
 		else:
 			$AnimatedSprite/FaucetRunning.stop()
+
+func _on_Sink_mouse_entered():
+	if MasterScript.frog_dad_state =="":
+		$AnimatedSprite.animation = "hover"
+		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
+
+func _on_Sink_mouse_exited():
+	if MasterScript.frog_dad_state =="":
+		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.hand)
