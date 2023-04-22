@@ -2,6 +2,7 @@ extends Area2D
 
 var current_fram = 0
 var num_frames = 2
+var in_area
 
 onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
 onready var table_inventory_node = get_tree().get_root().find_node("SideTableInventory",true, false)
@@ -23,7 +24,9 @@ func dark_background_input(event):
 func _on_Side_Table_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
-	and event.pressed and MasterScript.frog_dad_state == "":
+	and event.pressed \
+	and MasterScript.frog_dad_state == "" \
+	and in_area:
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
@@ -34,23 +37,27 @@ func _on_Side_Table_input_event(_viewport, event, _shape_idx):
 			DarkBackground.visible = true
 
 func _on_Side_Table_mouse_entered():
-	if MasterScript.frog_dad_state == "" and $Interact.visible == true:
+	if MasterScript.frog_dad_state == "" \
+		and $Interact.visible == true \
+		and in_area == true:
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Side_Table_mouse_exited():
-	if MasterScript.frog_dad_state == "" and $Interact.visible == false:
+	if MasterScript.frog_dad_state == "":
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.hand)
 
 func _on_Area2D_area_entered(_area):
 	if MasterScript.frog_dad_state == "":
+		in_area = true
 		$Interact.visible = true
 		$Interact/AnimationPlayer.play("Float")
 
 func _on_Area2D_area_exited(_area):
 	if MasterScript.frog_dad_state == "":
+		in_area = false
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
-		Input.set_custom_mouse_cursor(MasterScript.hand)

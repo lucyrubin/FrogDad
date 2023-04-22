@@ -4,18 +4,14 @@ onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false
 
 var TVScene = "res://Scenes/TV.tscn"
 var channel = 0
-var mouse_in
-
-func _ready():
-	mouse_in = false
-	$Interact.visible == false
+var in_area 
 
 func _on_TV_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed \
 	and MasterScript.frog_dad_state == "" \
-	and $Interact.visible == true:
+	and in_area == true:
 		channel += 1
 		BackgroundMusic.stop()
 		if channel == 1:
@@ -32,25 +28,22 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 			BackgroundMusic.play()
 
 func _on_TV_mouse_entered():
-	if MasterScript.frog_dad_state == "" and $Interact.visible == true:
+	if MasterScript.frog_dad_state == "" and in_area == true:
 		$AnimatedSprite.animation = "hover"
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_TV_mouse_exited():
-	if MasterScript.frog_dad_state == "" and $Interact.visible == false:
+	if MasterScript.frog_dad_state == "":
 		$AnimatedSprite.animation = "default"
-
-func _on_TV_area_entered(_area):
-	if MasterScript.frog_dad_state == "":
-		$Interact.visible = true
-		$Interact/AnimationPlayer.play("Float")
-
-func _on_TV_area_exited(_area):
-	if MasterScript.frog_dad_state == "":
-		$Interact.visible = false
-		$Interact/AnimationPlayer.stop()
 		Input.set_custom_mouse_cursor(MasterScript.hand)
 		
+func _on_TV_Area_entered(area):
+	if MasterScript.frog_dad_state == "":
+		in_area = true
+
+func _on_TV_Area_exited(area):
+	if MasterScript.frog_dad_state == "":
+		in_area = false
 
 func play_NyanCat():
 	$AnimatedSprite/NyanCat.visible = true

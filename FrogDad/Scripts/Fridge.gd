@@ -23,11 +23,11 @@ func dark_background_input(event):
 func _on_Fridge_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
-	and event.pressed and MasterScript.frog_dad_state == "":
-		
+	and event.pressed \
+	and MasterScript.frog_dad_state == "" \
+	and $Interact.visible == true:
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
-		
 		if current_fram == 1:
 			fridge_inventory_node.visible = true
 			user_interface_node.visible = true
@@ -36,7 +36,7 @@ func _on_Fridge_input_event(_viewport, event, _shape_idx):
 			DarkBackground.visible = true
 
 func _on_Fridge_mouse_entered():
-	if MasterScript.frog_dad_state == "":
+	if MasterScript.frog_dad_state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
@@ -45,6 +45,7 @@ func _on_Fridge_mouse_exited():
 	if MasterScript.frog_dad_state == "":
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.hand)
 
 func _on_Fridge_area_entered(_area):
 	if MasterScript.frog_dad_state == "":
@@ -55,4 +56,4 @@ func _on_Fridge_area_exited(_area):
 	if MasterScript.frog_dad_state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
-		Input.set_custom_mouse_cursor(MasterScript.hand)
+		
