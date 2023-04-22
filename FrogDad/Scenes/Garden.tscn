@@ -92,9 +92,6 @@ margin_bottom = 404.0
 rect_min_size = Vector2( 200, 200 )
 custom_styles/panel = SubResource( 122 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Plot3"]
 position = Vector2( 70, 105 )
@@ -175,8 +172,20 @@ z_index = 50
 item_name = "Lettuce"
 
 [connection signal="gui_input" from="Plot" to="Plot" method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="Plot" to="Plot" method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot" to="Plot" method="_on_Plot_mouse_exited"]
 [connection signal="gui_input" from="Plot2" to="Plot2" method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="Plot2" to="Plot2" method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot2" to="Plot2" method="_on_Plot_mouse_exited"]
 [connection signal="gui_input" from="Plot3" to="Plot3" method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="Plot3" to="Plot3" method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot3" to="Plot3" method="_on_Plot_mouse_exited"]
 [connection signal="gui_input" from="Plot4" to="Plot4" method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="Plot4" to="Plot4" method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot4" to="Plot4" method="_on_Plot_mouse_exited"]
 [connection signal="gui_input" from="Plot5" to="Plot5" method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="Plot5" to="Plot5" method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot5" to="Plot5" method="_on_Plot_mouse_exited"]
 [connection signal="gui_input" from="Plot6" to="Plot6" method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="Plot6" to="Plot6" method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="Plot6" to="Plot6" method="_on_Plot_mouse_exited"]

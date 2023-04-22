@@ -1,5 +1,9 @@
 extends Node
 
+#Mouse cursor variables
+var hand = load("res://Art/frog_hand.png")
+var pointer = load("res://Art/pointer.png")
+
 # frog dad variables
 var quest_state = "swaddle"
 var sprite_image = "carrying babies"

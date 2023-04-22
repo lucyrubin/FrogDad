@@ -35,13 +35,12 @@ func _on_Dresser_input_event(_viewport, event, _shape_idx):
 			frogdad_node.state = "Inventory"
 			user_interface_node.open_inventory()
 			DarkBackground.visible = true
-		
-
 
 func _on_Dresser_mouse_entered():
 	if frogdad_node.state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Dresser_mouse_exited():
 	if frogdad_node.state == "" and $Interact.visible == false:
@@ -57,3 +56,4 @@ func _on_Dresser_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
+		Input.set_custom_mouse_cursor(MasterScript.hand)

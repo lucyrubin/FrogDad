@@ -39,7 +39,9 @@ func _on_OutdoorDoor_area_exited(_area):
 func _on_OutdoorDoor_mouse_entered():
 	mouse_in = true
 	$AnimatedSprite.animation = "hover"
+	Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_OutdoorDoor_mouse_exited():
 	mouse_in = false
 	$AnimatedSprite.animation = "default"
+	Input.set_custom_mouse_cursor(MasterScript.hand)

@@ -43,6 +43,7 @@ func _on_Door_area_entered(_area):
 		door_opened = true
 		current_fram = 1
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Door_area_exited(_area):
 	if !locked:
@@ -50,10 +51,12 @@ func _on_Door_area_exited(_area):
 		door_opened = false
 		current_fram = 0
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.hand)
 
 func _on_DoorMouseArea_mouse_entered():
 	if !locked && door_opened:
 		mouse_in = true
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_DoorMouseArea_mouse_exited():
 	if !locked && door_opened:

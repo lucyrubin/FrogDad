@@ -14,3 +14,11 @@ func _on_Plot_gui_input(event):
 					$ItemDrop.visible = true
 				else:
 					$AnimatedSprite.set_frame(current_fram)
+
+
+func _on_Plot_mouse_entered():
+	Input.set_custom_mouse_cursor(MasterScript.pointer)
+
+
+func _on_Plot_mouse_exited():
+	Input.set_custom_mouse_cursor(MasterScript.hand)

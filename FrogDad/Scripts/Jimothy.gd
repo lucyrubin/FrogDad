@@ -6,23 +6,18 @@ var done_talking = false
 var mouse_in_area = false
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
-
-
-
-
 func _on_InteractableArea_body_entered(body):
 	
 	if body is PlayerClass && !done_talking:
 		$Speech.visible = true
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 	#$AnimatedSprite.play("default")
 
 # if the player has left, hide the action bubble
 func _on_InteractableArea_body_exited(body):
 	if $Speech.visible && !done_talking:
 		$Speech.visible = false
-
-
-
+		Input.set_custom_mouse_cursor(MasterScript.hand)
 
 # change this to be the sprite eventually 
 func _on_ColorRect_gui_input(event):

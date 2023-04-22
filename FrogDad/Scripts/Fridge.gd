@@ -39,6 +39,7 @@ func _on_Fridge_mouse_entered():
 	if FrogDad.state == "":
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 	
 func _on_Fridge_mouse_exited():
 	if FrogDad.state == "":
@@ -54,3 +55,4 @@ func _on_Fridge_area_exited(area):
 	if FrogDad.state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
+		Input.set_custom_mouse_cursor(MasterScript.hand)

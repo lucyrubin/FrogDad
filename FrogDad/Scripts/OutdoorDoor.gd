@@ -35,10 +35,13 @@ func _on_OutdoorDoor_area_exited(_area):
 	current_fram = 0
 	$AnimatedSprite.animation = "default"
 	$AnimatedSprite.set_frame(current_fram)
+	Input.set_custom_mouse_cursor(MasterScript.hand)
+	
 
 func _on_OutdoorDoor_mouse_entered():
 	mouse_in = true
 	$AnimatedSprite.animation = "hover"
+	Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_OutdoorDoor_mouse_exited():
 	mouse_in = false

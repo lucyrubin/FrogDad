@@ -34,6 +34,7 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 func _on_TV_mouse_entered():
 	if frogdad_node.state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_TV_mouse_exited():
 	if frogdad_node.state == "" and $Interact.visible == false:
@@ -48,6 +49,8 @@ func _on_TV_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
+		Input.set_custom_mouse_cursor(MasterScript.hand)
+		
 
 func play_NyanCat():
 	$AnimatedSprite/NyanCat.visible = true

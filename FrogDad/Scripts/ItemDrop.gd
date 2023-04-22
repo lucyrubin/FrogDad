@@ -66,11 +66,13 @@ func _on_Button_pressed():
 
 func _on_Button_mouse_entered():
 	if frog_dad_is_close and FrogDadNode.state == "":
-		$Button.texture_normal = load("res://Item Icons/" + item_name + "Hover.png") 
+		$Button.texture_normal = load("res://Item Icons/" + item_name + "Hover.png")
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 
 func _on_Button_mouse_exited():
-	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png") 
+	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png")
+	Input.set_custom_mouse_cursor(MasterScript.hand)
 
 
 func _on_Area2D_body_entered(_body):

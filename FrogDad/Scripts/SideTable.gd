@@ -37,6 +37,7 @@ func _on_Side_Table_mouse_entered():
 	if frogdad_node.state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Side_Table_mouse_exited():
 	if frogdad_node.state == "" and $Interact.visible == false:
@@ -52,3 +53,4 @@ func _on_Area2D_area_exited(area):
 	if frogdad_node.state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
+		Input.set_custom_mouse_cursor(MasterScript.hand)
