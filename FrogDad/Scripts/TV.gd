@@ -22,8 +22,11 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 		elif channel == 3:
 			stop_NewJeans()
 			play_FrogDad()
-		else:
+		elif channel == 4:
 			stop_FrogDad()
+			play_SpongeBob()
+		else:
+			stop_SpongeBob()
 			channel = 0
 			BackgroundMusic.play()
 
@@ -46,31 +49,41 @@ func _on_TV_Area_exited(area):
 		in_area = false
 
 func play_NyanCat():
-	$AnimatedSprite/NyanCat.visible = true
-	$AnimatedSprite/NyanCat.play()
-	$AnimatedSprite/NyanCat/AudioStreamPlayer.play()
+	$NyanCat.visible = true
+	$NyanCat.play()
+	$NyanCat/AudioStreamPlayer.play()
 
 func stop_NyanCat():
-	$AnimatedSprite/NyanCat.visible = false
-	$AnimatedSprite/NyanCat.stop()
-	$AnimatedSprite/NyanCat/AudioStreamPlayer.stop()
+	$NyanCat.visible = false
+	$NyanCat.stop()
+	$NyanCat/AudioStreamPlayer.stop()
 	
 func play_NewJeans():
-	$AnimatedSprite/NewJeans.visible = true
-	$AnimatedSprite/NewJeans.play()
-	$AnimatedSprite/NewJeans/AudioStreamPlayer.play()
+	$NewJeans.visible = true
+	$NewJeans.play()
+	$NewJeans/AudioStreamPlayer.play()
 
 func stop_NewJeans():
-	$AnimatedSprite/NewJeans.visible = false
-	$AnimatedSprite/NewJeans.stop()
-	$AnimatedSprite/NewJeans/AudioStreamPlayer.stop()
+	$NewJeans.visible = false
+	$NewJeans.stop()
+	$NewJeans/AudioStreamPlayer.stop()
 	
 func play_FrogDad():
-	$AnimatedSprite/FrogDadDoc.visible = true
-	$AnimatedSprite/FrogDadDoc.play()
-	$AnimatedSprite/FrogDadDoc/AudioStreamPlayer.play()
+	$FrogDadDoc.visible = true
+	$FrogDadDoc.play()
+	$FrogDadDoc/AudioStreamPlayer.play()
 	
 func stop_FrogDad():
-	$AnimatedSprite/FrogDadDoc.visible = false
-	$AnimatedSprite/FrogDadDoc.stop()
-	$AnimatedSprite/FrogDadDoc/AudioStreamPlayer.stop()
+	$FrogDadDoc.visible = false
+	$FrogDadDoc.stop()
+	$FrogDadDoc/AudioStreamPlayer.stop()
+	
+func play_SpongeBob():
+	$SpongeBob.visible = true
+	$SpongeBob.play()
+	$SpongeBob/AudioStreamPlayer.play()
+	
+func stop_SpongeBob():
+	$SpongeBob.visible = false
+	$SpongeBob.stop()
+	$SpongeBob/AudioStreamPlayer.stop()
