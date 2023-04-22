@@ -30,17 +30,18 @@ margin_bottom = 206.0
 alignment = 1
 
 [node name="QuestTitleLabel" type="Label" parent="VBoxContainer"]
-margin_right = 1427.0
+margin_right = 1459.0
 margin_bottom = 92.0
 rect_clip_content = true
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Amount Text:"
 align = 1
+autowrap = true
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 96.0
-margin_right = 1427.0
+margin_right = 1459.0
 margin_bottom = 218.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 50
@@ -70,15 +71,15 @@ text = "Quest Text Here"
 
 [node name="Icon" type="TextureRect" parent="VBoxContainer/GridContainer"]
 margin_left = 1337.0
-margin_right = 1427.0
+margin_right = 1459.0
 margin_bottom = 122.0
-rect_min_size = Vector2( 90, 90 )
+rect_min_size = Vector2( 122, 122 )
 texture = ExtResource( 3 )
 expand = true
 
 [node name="CompletedButton" type="Button" parent="VBoxContainer"]
 margin_top = 222.0
-margin_right = 1427.0
+margin_right = 1459.0
 margin_bottom = 322.0
 rect_min_size = Vector2( 500, 100 )
 custom_fonts/font = SubResource( 2 )
