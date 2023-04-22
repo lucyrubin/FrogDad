@@ -12,10 +12,10 @@ func _on_InfoButton_pressed():
 	if !quest_button_open:
 		if $Info/Background.visible == false:
 			$Info/Background.visible = true;
-			FrogDad.state = "Info"
+			MasterScript.frog_dad_state = "Info"
 		else:
 			$Info/Background.visible = false;
-			FrogDad.state = ""
+			MasterScript.frog_dad_state = ""
 
 func _on_ToggleQuestButton_pressed():
 	if quest_button_open:
@@ -23,9 +23,3 @@ func _on_ToggleQuestButton_pressed():
 	else:
 		quest_button_open = true
 
-func _input(event):
-	if event.is_action_pressed("escape"):  
-		if $Info/Background.visible: # close info
-			$Info/Background.visible = false
-			FrogDad.state = ""
-			FrogDad.get_node("AnimatedSprite").play()

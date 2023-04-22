@@ -22,7 +22,6 @@ func _ready():
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
 	
 	if MasterScript.currentQuestNum == -1 :
-		yield(get_tree().create_timer(1.0), "timeout")
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == 0 and !MasterScript.opened_quest_first_time:
 		after_note_appears()
@@ -35,6 +34,10 @@ func _ready():
 		
 	
 
+func _process(delta):
+	# can't do stuff while the intro is happening
+	if get_tree().get_root().find_node("FrogDad", true, false) and MasterScript.currentQuestNum == -1: 
+		MasterScript.frog_dad_state = "intro"
 		
 
 func deleteQuest(SubQuest):
@@ -101,38 +104,38 @@ func close_quest():
 	for child in $VBoxContainer.get_children():
 		child.queue_free()
 	
-	FrogDad.state = ""
+	MasterScript.frog_dad_state = ""
 	
 func _on_ToggleQuestButton_pressed():
-	
-	if !MasterScript.opened_quest_first_time:
-			MasterScript.opened_quest_first_time = true
-	if 	get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible:
-			get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
+	if MasterScript.frog_dad_state == "":
+		if !MasterScript.opened_quest_first_time:
+				MasterScript.opened_quest_first_time = true
+		if 	get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible:
+				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
 
 
-	print(visible)
-	visible = true
-	
-	UserInterfaceNode.get_node("DarkBackground").visible = true
-	
-	FrogDad.state = "quest"
-	# add all current quests to the GUI
-	for quest in MasterScript.currentQuestArray:
-		if quest[0] == "resource collection":
-			collectResourceQuest(quest[1], quest[2], quest[3])
-	
-	if MasterScript.currentQuestArray.empty():
-		var noQuestLabel = Label.new()
-		noQuestLabel.text = "No active quests."
-		var dynamic_font = DynamicFont.new()
-		dynamic_font.size = 60
-		dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
-		noQuestLabel.add_font_override("font", dynamic_font)
-		noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
-		$VBoxContainer.add_child(noQuestLabel)
+		print(visible)
+		visible = true
 		
-	FrogDad.state = "Quest"
+		UserInterfaceNode.get_node("DarkBackground").visible = true
+		
+		MasterScript.frog_dad_state = "quest"
+		# add all current quests to the GUI
+		for quest in MasterScript.currentQuestArray:
+			if quest[0] == "resource collection":
+				collectResourceQuest(quest[1], quest[2], quest[3])
+		
+		if MasterScript.currentQuestArray.empty():
+			var noQuestLabel = Label.new()
+			noQuestLabel.text = "No active quests."
+			var dynamic_font = DynamicFont.new()
+			dynamic_font.size = 60
+			dynamic_font.font_data = load("res://Fonts/Aaxiaolongti.ttf")
+			noQuestLabel.add_font_override("font", dynamic_font)
+			noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
+			$VBoxContainer.add_child(noQuestLabel)
+			
+		MasterScript.frog_dad_state = "Quest"
 
 
 func check_if_quest_fulfilled():
@@ -187,7 +190,6 @@ func _on_InfoButton_pressed():
 		info_button_open = true
 		
 func after_note_appears():
-	var door_node = get_tree().get_root().find_node("Door", true, false)
 	get_parent().visible = false
 	
 	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)

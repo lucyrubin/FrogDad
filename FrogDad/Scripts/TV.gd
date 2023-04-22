@@ -14,7 +14,7 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed \
-	and frogdad_node.state == "" \
+	and MasterScript.frog_dad_state == "" \
 	and $Interact.visible == true:
 		channel += 1
 		BackgroundMusic.stop()
@@ -32,21 +32,21 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 			BackgroundMusic.play()
 
 func _on_TV_mouse_entered():
-	if frogdad_node.state == "" and $Interact.visible == true:
+	if MasterScript.frog_dad_state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_TV_mouse_exited():
-	if frogdad_node.state == "" and $Interact.visible == false:
+	if MasterScript.frog_dad_state == "" and $Interact.visible == false:
 		$AnimatedSprite.animation = "default"
 
-func _on_TV_area_entered(area):
-	if frogdad_node.state == "":
+func _on_TV_area_entered(_area):
+	if MasterScript.frog_dad_state == "":
 		$Interact.visible = true
 		$Interact/AnimationPlayer.play("Float")
 
-func _on_TV_area_exited(area):
-	if frogdad_node.state == "":
+func _on_TV_area_exited(_area):
+	if MasterScript.frog_dad_state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
 		Input.set_custom_mouse_cursor(MasterScript.hand)

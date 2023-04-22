@@ -29,7 +29,7 @@ func _input(event):
 			{avatar = "gertrude", text = "What are we doing today?"},
 			{avatar = "frogDad", text = "Whatever you want."}
 		], "Gertrude talk")
-		FrogDad.state = "dialogue"
+		MasterScript.frog_dad_state = "dialogue"
 		FrogDad.get_node("AnimatedSprite").stop()
 		$Speech.visible = false
 	

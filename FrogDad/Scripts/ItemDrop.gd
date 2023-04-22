@@ -60,12 +60,12 @@ func get_sprite():
 
 func _on_Button_pressed():
 	
-	if frog_dad_is_close and FrogDadNode.state == "":
+	if frog_dad_is_close and MasterScript.frog_dad_state == "":
 		pick_up_item(self)
 
 
 func _on_Button_mouse_entered():
-	if frog_dad_is_close and FrogDadNode.state == "":
+	if frog_dad_is_close and MasterScript.frog_dad_state == "":
 		$Button.texture_normal = load("res://Item Icons/" + item_name + "Hover.png")
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 

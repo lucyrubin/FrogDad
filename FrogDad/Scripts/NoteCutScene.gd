@@ -22,15 +22,10 @@ func _on_WaitToStartAnimationTimer_timeout():
 
 
 func _on_Button_pressed():
-
-	
 	# when the note is picked up, show the close up note and delete the small one
-	#$Label.add_color_override("font_color", Color(0,0,0,1))
+
 	$CloseUpNote.visible = true
 	$DarkBackground.visible = true
-	#FrogDad.state = "reading note"
-	
-	#queue_free()
 
 
 func _on_Button_mouse_entered():

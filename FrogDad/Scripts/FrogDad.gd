@@ -5,7 +5,6 @@ export var speed = 300
 export(NodePath) var inventory_path
 
 var screen_size
-var state = ""
 var velocity
 var holding_item = null
 
@@ -19,7 +18,7 @@ func getInventoryNode():
 func _physics_process(delta):
 	z_index = position.y
 	velocity = Vector2.ZERO
-	if state == "": # move as long as dialogue and inventory aren't active
+	if MasterScript.frog_dad_state == "": # move as long as dialogue and inventory aren't active
 		if Input.is_action_pressed("move_down") and Input.is_action_pressed("move_left"):
 			move_down_and_left()
 		elif Input.is_action_pressed("move_down") and Input.is_action_pressed("move_right"):
@@ -92,7 +91,8 @@ func move_left():
 
 func toggle_dialogue_box_visibility(dialogue, dialogue_name):
 #	$DialogueBox.visible = !$DialogueBox.visible
-	$DialogueBox2.visible = !$DialogueBox2.visible
+	$DialogueBox2.visible = true
+	print($DialogueBox2.visible)
 	$DialogueBox2.show_dialog_box(dialogue, dialogue_name)
 
 func _is_moving():

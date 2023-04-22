@@ -16,7 +16,7 @@ func _ready():
 	$AnimatedSprite.set_frame(current_fram)
 
 func _input(event):
-	if event.is_action_pressed("open") && FrogDad.state == "":
+	if event.is_action_pressed("open") && MasterScript.frog_dad_state == "":
 		if !target_scene:
 			print("no scene in this door")
 		if door_opened and mouse_in:

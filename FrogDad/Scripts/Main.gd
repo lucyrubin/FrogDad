@@ -4,7 +4,7 @@ const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
 
 func _ready():
-	$FrogDad.state = ""
+	MasterScript.frog_dad_state = ""
 	if MasterScript.enter_home:
 		$FrogDad.position = $EnterHome.position
 		MasterScript.enter_home = false

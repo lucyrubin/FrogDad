@@ -2,7 +2,8 @@ extends CanvasLayer
 
 const AVATAR_MAP = {
 	"gertrude": preload("res://Temporary Clipart/gertrude copy (1).png"),
-	"frogDad": preload("res://Temporary Clipart/frog_dad_icon.png")
+	"frogDad": preload("res://Temporary Clipart/frog_dad_icon.png"),
+	"jimothy": preload("res://Art/JimothyHead.png")
 }
 
 export var interval = 0.05 # interval betext_animation when each character shows up
@@ -28,7 +29,7 @@ func _input(event):
 	if event.is_action_pressed("open") and content.visible:
 
 		if FrogDad:
-			FrogDad.state = "talking" # player can't move during dialogue
+			MasterScript.frog_dad_state= "talking" # player can't move during dialogue
 		if text_animation.is_active():
 
 			text_animation.remove_all()
@@ -38,16 +39,15 @@ func _input(event):
 
 			_show_dialog(current + 1)
 		else:
-
-#			FrogDad.state = ""
 			hide_dialog_box()
 
 
 func hide_dialog_box():
 	if FrogDad:
-		FrogDad.state = "" # player can move again
+		MasterScript.frog_dad_state = "" # player can move again
 	content.hide()
 	completed = true
+	$ColorRect.hide()
 	##
 	##
 	##
@@ -78,9 +78,10 @@ func show_new_quest_notifcation_box():
 	
 	
 func show_dialog_box(_dialogs, dialogueName):
+	$ColorRect.show()
 	dialogue_name = dialogueName
 	if FrogDad:
-		FrogDad.state = "talking" # player can't move during dialogue
+		MasterScript.frog_dad_state = "talking" # player can't move during dialogue
 	completed = false
 	content = $Content
 	next_indicator = $Content/NextIndicator
@@ -94,7 +95,7 @@ func show_dialog_box(_dialogs, dialogueName):
 	
 func _show_dialog(index):
 	if FrogDad:
-		FrogDad.state = "talking" # player can't move during dialogue
+		MasterScript.frog_dad_state= "talking" # player can't move during dialogue
 	
 	current = index
 

@@ -14,7 +14,7 @@ func _on_InteractableArea_body_entered(body):
 	#$AnimatedSprite.play("default")
 
 # if the player has left, hide the action bubble
-func _on_InteractableArea_body_exited(body):
+func _on_InteractableArea_body_exited(_body):
 	if $Speech.visible && !done_talking:
 		$Speech.visible = false
 		Input.set_custom_mouse_cursor(MasterScript.hand)
@@ -23,12 +23,17 @@ func _on_InteractableArea_body_exited(body):
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and $Speech.visible:
 		if event.button_index == BUTTON_LEFT && event.pressed: 
-			FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "Yoyoyoyo Frog Dad!"},
-			{avatar = "frogDad", text = "Hi Jimbo!"},
-			{avatar = "gertrude", text = "food?"},
-			{avatar = "frogDad", text = "yuh"}
+			FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Welcome to Jimothy John’s! What can I get for you?"},
+			{avatar = "frogDad", text = "Got anything with flies?"},
+			{avatar = "jimothy", text = "We got fly pies, flyjitas, fly alla parmigiana, flylafel, and french flies."},
+			{avatar = "frogDad", text = "On second thought...Could I just get a jar of flies? They’re for my babies"},
+			{avatar = "jimothy", text = "BABIES?! Like, more than one? Dang, pal."},
+			{avatar = "frogDad", text = "yup. I have three."},
+			{avatar = "jimothy", text = "Respect."},
+			{avatar = "jimothy", text = "Hey, I get you’re a single dad, so I’ll cut you a deal."},
+			{avatar = "jimothy", text = "I've been needing to harvest some lettuce out in the lettuce forest. Go get some for me and I’ll get you your flies."}
 		], "jimothy first talk")
-			FrogDad.state = "dialogue"
+			MasterScript.frog_dad_state = "dialogue"
 			FrogDad.get_node("AnimatedSprite").stop()
 			$Speech.visible = false
 

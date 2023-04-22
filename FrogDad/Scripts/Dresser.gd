@@ -12,7 +12,8 @@ func _ready():
 	dresser_inventory_node.visible = false
 	$AnimatedSprite.animation = "default"
 	DarkBackground.connect("gui_input", self, "dark_background_input", []) 
-	
+
+
 
 func dark_background_input(event):
 	if event is InputEventMouseButton: 
@@ -25,35 +26,35 @@ func _on_Dresser_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.pressed \
-	and frogdad_node.state == "":
+	and MasterScript.frog_dad_state== "":
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		
 		if current_fram == 1:
 			dresser_inventory_node.visible = true
 			user_interface_node.visible = true
-			frogdad_node.state = "Inventory"
+			MasterScript.frog_dad_state = "Inventory"
 			user_interface_node.open_inventory()
 			DarkBackground.visible = true
 
 func _on_Dresser_mouse_entered():
-	if frogdad_node.state == "" and $Interact.visible == true:
+	if MasterScript.frog_dad_state == "" and $Interact.visible == true:
 		$AnimatedSprite.animation = "hover"
 		$AnimatedSprite.set_frame(current_fram)
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Dresser_mouse_exited():
-	if frogdad_node.state == "" and $Interact.visible == false:
+	if MasterScript.frog_dad_state == "" and $Interact.visible == false:
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.set_frame(current_fram)
 
-func _on_Dresser_area_entered(area):
-	if frogdad_node.state == "":
+func _on_Dresser_area_entered(_area):
+	if MasterScript.frog_dad_state == "":
 		$Interact.visible = true
 		$Interact/AnimationPlayer.play("Float")
 		
-func _on_Dresser_area_exited(area):
-	if frogdad_node.state == "":
+func _on_Dresser_area_exited(_area):
+	if MasterScript.frog_dad_state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
 		Input.set_custom_mouse_cursor(MasterScript.hand)
