@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Outdoor Art/plot.png" type="Texture" id=1]
+[ext_resource path="res://Outdoor Art/lettuce_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Plot.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxTexture" id=122]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 137, 123 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 340, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 680, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=126]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1020, 255, 340 )
+
+[sub_resource type="SpriteFrames" id=127]
+animations = [ {
+"frames": [ SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Plot" type="Panel"]
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+custom_styles/panel = SubResource( 122 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 70, 105 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 127 )
+frame = 3
+
+[node name="ItemDrop" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 100, 80 )
+scale = Vector2( 4, 4 )
+z_index = 50
+item_name = "Lettuce"
+
+[connection signal="gui_input" from="." to="." method="_on_Plot_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_Plot_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Plot_mouse_exited"]

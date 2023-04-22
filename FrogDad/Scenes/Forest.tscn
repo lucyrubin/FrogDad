@@ -12,10 +12,10 @@
 [ext_resource path="res://Forest Art/tree4.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=39]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=125]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=126]
 points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 117.613, 34.9403, 120.962, 50.5688, 121.241, 66.4765, 112.589, 95.2219, 104.775, 107.501, 80.2158, 117.269, 46.4469, 115.595, 26.074, 112.525, 17.1433, 104.432, 11.0036, 78.1979, 11.0036, 53.9178, 31.6556, 21.8234, 68.2153, 9.54382 )
 
 [sub_resource type="TileSet" id=100]
@@ -57,14 +57,14 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 8 )
+2/shape = SubResource( 126 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 126 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -190,14 +190,14 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape = SubResource( 2 )
+11/shape = SubResource( 125 )
 11/shape_one_way = false
 11/shape_one_way_margin = 1.0
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 125 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
@@ -398,7 +398,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree13"]
 position = Vector2( 31, 8 )
 frames = SubResource( 122 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -413,7 +413,7 @@ position = Vector2( 461, 144 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree12"]
 position = Vector2( 55, -31 )
 frames = SubResource( 106 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -431,7 +431,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree11"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -448,6 +447,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree10"]
 frames = SubResource( 122 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -463,7 +463,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree9"]
 frames = SubResource( 122 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -480,7 +480,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree8"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -495,6 +495,7 @@ position = Vector2( 239, 648 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree7"]
 position = Vector2( 64, -26 )
 frames = SubResource( 106 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -511,6 +512,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree6"]
 position = Vector2( 51, -11 )
 frames = SubResource( 106 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -527,6 +529,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -544,6 +547,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -561,6 +565,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -576,7 +581,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
 frames = SubResource( 111 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -593,6 +598,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 106 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true

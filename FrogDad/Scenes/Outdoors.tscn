@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -14,14 +14,13 @@
 [ext_resource path="res://Outdoor Art/forest_sign.png" type="Texture" id=12]
 [ext_resource path="res://Outdoor Art/bush.png" type="Texture" id=13]
 [ext_resource path="res://Outdoor Art/jimothyjohnsbuilding.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Garden.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/JimothyDoor.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/JimothyJohns.tscn" type="PackedScene" id=17]
 
-[sub_resource type="ConvexPolygonShape2D" id=99]
+[sub_resource type="ConvexPolygonShape2D" id=122]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=100]
+[sub_resource type="ConvexPolygonShape2D" id=123]
 points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 117.613, 34.9403, 120.962, 50.5688, 121.241, 66.4765, 112.589, 95.2219, 104.775, 107.501, 80.2158, 117.269, 46.4469, 115.595, 26.074, 112.525, 17.1433, 104.432, 11.0036, 78.1979, 11.0036, 53.9178, 31.6556, 21.8234, 68.2153, 9.54382 )
 
 [sub_resource type="TileSet" id=1]
@@ -63,14 +62,14 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 100 )
+2/shape = SubResource( 123 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 100 ),
+"shape": SubResource( 123 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -196,14 +195,14 @@ points = PoolVector2Array( 88.5882, 8.42752, 100.868, 14.8464, 112.31, 25.4515, 
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape = SubResource( 99 )
+11/shape = SubResource( 122 )
 11/shape_one_way = false
 11/shape_one_way_margin = 1.0
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 99 ),
+"shape": SubResource( 122 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
@@ -647,8 +646,6 @@ tile_set = SubResource( 98 )
 format = 1
 tile_data = PoolIntArray( 20, 10, 0, 21, 11, 0, 65556, 10, 0, 65557, 11, 0, 131092, 8, 0, 131093, 11, 0, 196628, 8, 0, 196629, 1073741833, 0, 262164, 8, 0, 262165, 1073741833, 0, 327700, 8, 0, 327701, 1610612744, 0, 393236, 8, 0, 393237, 1073741833, 0, 458772, 8, 0, 458773, 1610612744, 0, 524308, 8, 0, 524309, 9, 0, 589844, 8, 0, 589845, 9, 0, 655371, 10, 0, 655372, 9, 0, 655380, 8, 0, 655381, 9, 0, 720907, 10, 0, 720908, 14, 0, 720909, -1610612728, 0, 720910, -1610612726, 0, 720911, -1610612728, 0, 720912, -1610612726, 0, 720913, -1610612726, 0, 720914, -1610612728, 0, 720915, -1610612728, 0, 720916, 18, 0, 720917, 9, 0, 786443, -1073741818, 0, 786444, -1073741814, 0, 786445, -1073741814, 0, 786446, -1073741814, 0, 786447, -1073741814, 0, 786448, -1073741814, 0, 786449, -1073741814, 0, 786450, -1073741814, 0, 786451, -1073741814, 0, 786452, 14, 0, 786453, 11, 0, 851988, 8, 0, 851989, 11, 0, 917524, 8, 0, 917525, 11, 0, 917539, 6, 0, 917540, 7, 0, 983060, 8, 0, 983061, -1610612728, 0, 983062, -536870903, 0, 983063, -536870903, 0, 983064, -536870903, 0, 983065, -1610612726, 0, 983066, -1610612728, 0, 983067, -536870903, 0, 983068, -1610612726, 0, 983069, -536870903, 0, 983070, -1610612726, 0, 983071, -536870903, 0, 983072, -536870903, 0, 983073, -536870903, 0, 983074, -536870903, 0, 983075, -1610612718, 0, 983076, 536870920, 0, 1048596, -1073741818, 0, 1048597, -1073741814, 0, 1048598, -1073741814, 0, 1048599, -1073741814, 0, 1048600, -536870902, 0, 1048601, -1073741814, 0, 1048602, -536870902, 0, 1048603, -1073741814, 0, 1048604, -1610612727, 0, 1048605, -536870902, 0, 1048606, -1073741814, 0, 1048607, -1073741814, 0, 1048608, -536870902, 0, 1048609, -1073741814, 0, 1048610, -1073741814, 0, 1048611, -1073741814, 0, 1048612, -536870906, 0 )
 
-[node name="Garden" parent="." instance=ExtResource( 15 )]
-
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Tree3" type="StaticBody2D" parent="YSort"]
@@ -660,7 +657,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -772,7 +769,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -790,7 +787,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -808,6 +805,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -825,7 +823,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
