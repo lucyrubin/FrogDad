@@ -50,10 +50,10 @@ remote_path = NodePath("../Camera2D")
 scale = Vector2( 1, 1 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
-limit_left = -1223
+limit_left = -969
 limit_top = -576
-limit_right = 692
-limit_bottom = 252
+limit_right = 502
+limit_bottom = 438
 editor_draw_limits = true
 script = SubResource( 1 )
 
