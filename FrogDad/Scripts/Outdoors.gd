@@ -20,3 +20,7 @@ func _ready():
 
 func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y)
+
+
+func _on_Area2D_body_exited(body):
+	pass # Replace with function body.

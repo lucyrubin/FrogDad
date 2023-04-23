@@ -27,11 +27,17 @@ var questDictionary = {
 	0: ["resource collection", "Make a Swaddle", 5, "Cloth", "carrying babies image"],
 	1: ["resource collection", "Collect Logs for Crib", 7, "Log", "swaddling babies image"],
 	2: ["talk", "Get flies from Jimothy John's", "Talk to Jimothy", "Jimothy", "image_here"],
-	3: ["resource for character", "Get lettuce for Jimothy", 10, "lettuce", "image_here"]
+	3: ["resource for character", "Get lettuce for Jimothy", 10, "Lettuce", "image_here"]
 	}
 
 var currentQuestNum = -1
 # -1 means the intro of getting the note
-# 0 is after the note cut scene
+# 0 is after the note cut scene (baby jar cut scene/swaddle quest)
+# 1 is the log quest
+# 2 is go get flies from jimothy (talk to jimothy)
+# 3 is get lettuce for jimothy
 
 var currentQuestArray = [questDictionary[0]]
+
+func _process(delta):
+	print(currentQuestNum)

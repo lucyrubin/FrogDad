@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 export (PackedScene) var target_scene
 
@@ -6,6 +6,8 @@ var door_opened
 var current_fram = 0
 var num_frames = 2
 var mouse_in = false
+var close_enough
+const PlayerClass = preload("res://Scripts/FrogDad.gd")
 
 func _ready():
 	current_fram = 0
@@ -23,25 +25,36 @@ func go_inside():
 	var ERR = get_tree().change_scene_to(target_scene)
 	if ERR != OK:
 		print("something failed in the door scene")
+	
 
-func _on_OutdoorDoor_area_entered(_area):
-	door_opened = true
-	current_fram = 1
-	$AnimatedSprite.animation = "hover"
-	$AnimatedSprite.set_frame(current_fram)
+func _on_Area2D_body_entered(body):
+	if body is PlayerClass:
+		door_opened = true
+		$Sprite.texture = load("res://JJ\'s Art/JimothyJohnsDoorOpen.png")
+		close_enough = true
 
-func _on_OutdoorDoor_area_exited(_area):
-	door_opened = false
-	current_fram = 0
-	$AnimatedSprite.animation = "default"
-	$AnimatedSprite.set_frame(current_fram)
 
-func _on_OutdoorDoor_mouse_entered():
-	mouse_in = true
-	$AnimatedSprite.animation = "hover"
-	Input.set_custom_mouse_cursor(MasterScript.pointer)
+func _on_Area2D_body_exited(body):
+	if body is PlayerClass: 
+		door_opened = false
+		$Sprite.texture = load("res://JJ\'s Art/JimothyJohns.png")
+		close_enough = false
 
-func _on_OutdoorDoor_mouse_exited():
+
+
+func _on_JimothyDoor_mouse_entered():
+	if close_enough:
+		mouse_in = true
+		$Sprite.texture = load("res://JJ\'s Art/JiimothyJohnsDoorHover.png")
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
+
+
+
+func _on_JimothyDoor_mouse_exited():
 	mouse_in = false
-	$AnimatedSprite.animation = "default"
 	Input.set_custom_mouse_cursor(MasterScript.hand)
+	if door_opened:
+		$Sprite.texture = load("res://JJ\'s Art/JimothyJohnsDoorOpen.png")
+	else:
+		$Sprite.texture =load("res://JJ\'s Art/JimothyJohns.png")
+

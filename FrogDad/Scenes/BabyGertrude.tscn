@@ -5,17 +5,17 @@
 [ext_resource path="res://Art/baby gertrude sprite sheet.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 576, 0, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 576, 256, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 192, 256 )
@@ -47,12 +47,12 @@ region = Rect2( 384, 256, 192, 256 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 17 ), SubResource( 4 ) ],
 "loop": true,
 "name": "crying",
 "speed": 5.0
@@ -80,7 +80,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 115.5, 119 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 33.5, 53.5 )
 
 [node name="BabyGertrude" type="KinematicBody2D"]
@@ -135,7 +135,7 @@ shape = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
 position = Vector2( -1.5, -28.5 )
-shape = SubResource( 15 )
+shape = SubResource( 18 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_BabyGertrude_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_BabyGertrude_mouse_exited"]

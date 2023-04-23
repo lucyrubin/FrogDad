@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -13,7 +13,7 @@
 [ext_resource path="res://Outdoor Art/house.png" type="Texture" id=11]
 [ext_resource path="res://Outdoor Art/forest_sign.png" type="Texture" id=12]
 [ext_resource path="res://Outdoor Art/bush.png" type="Texture" id=13]
-[ext_resource path="res://Outdoor Art/jimothyjohnsbuilding.png" type="Texture" id=14]
+[ext_resource path="res://JJ's Art/JimothyJohns.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/JimothyDoor.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/JimothyJohns.tscn" type="PackedScene" id=17]
 
@@ -621,6 +621,9 @@ extents = Vector2( 64, 32.5 )
 [sub_resource type="RectangleShape2D" id=121]
 extents = Vector2( 176.5, 80.5 )
 
+[sub_resource type="CircleShape2D" id=124]
+radius = 457.937
+
 [node name="Outdoors" type="Node2D"]
 position = Vector2( 15, 328 )
 script = ExtResource( 4 )
@@ -657,7 +660,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -751,7 +753,7 @@ position = Vector2( 1345, 164 )
 position = Vector2( 768, 627 )
 
 [node name="ExitJimothyJohns" type="Position2D" parent="."]
-position = Vector2( 2322, 771 )
+position = Vector2( 2318, 1634 )
 
 [node name="Borders" type="StaticBody2D" parent="."]
 position = Vector2( 1085, 1354 )
@@ -769,7 +771,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -787,7 +789,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -805,7 +807,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -823,7 +825,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -854,49 +856,50 @@ current = true
 limit_left = 19
 limit_top = 328
 limit_right = 2680
-limit_bottom = 1778
+limit_bottom = 2128
 editor_draw_limits = true
 
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 2 )]
 
 [node name="JimothyJohns" type="StaticBody2D" parent="."]
+script = ExtResource( 16 )
+target_scene = ExtResource( 17 )
 
 [node name="Sprite" type="Sprite" parent="JimothyJohns"]
-position = Vector2( 2319, 368 )
-scale = Vector2( 2.40704, 2.12782 )
-z_index = 416
+position = Vector2( 2298, 1009 )
+scale = Vector2( 3, 3 )
+z_index = 1000
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JimothyJohns"]
-position = Vector2( 2306.5, 657 )
+position = Vector2( 2295, 1468 )
 shape = SubResource( 121 )
 
 [node name="JimothyDoor" type="Area2D" parent="JimothyJohns"]
-position = Vector2( 2319, 661 )
+position = Vector2( 2305, 1473 )
 scale = Vector2( 0.4, 0.4 )
 z_index = 500
-script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
-target_scene = ExtResource( 17 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="JimothyJohns/JimothyDoor"]
-scale = Vector2( 1.4, 1.4 )
-frames = SubResource( 5 )
-animation = "hover"
-
-[node name="DoorDetector" type="CollisionShape2D" parent="JimothyJohns/JimothyDoor"]
-visible = false
-position = Vector2( 17.5484, 35.0967 )
+[node name="DoorClickDetector" type="CollisionShape2D" parent="JimothyJohns/JimothyDoor"]
+position = Vector2( 27.5001, 15 )
 shape = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="JimothyJohns"]
+
+[node name="DoorAreaDetector" type="CollisionShape2D" parent="JimothyJohns/Area2D"]
+position = Vector2( 2306, 1538 )
+scale = Vector2( 0.4, 0.4 )
+shape = SubResource( 124 )
 
 [connection signal="area_entered" from="YSort/OutdoorHouse/OutdoorDoor" to="YSort/OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_entered"]
 [connection signal="area_exited" from="YSort/OutdoorHouse/OutdoorDoor" to="YSort/OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_exited"]
 [connection signal="mouse_entered" from="YSort/OutdoorHouse/OutdoorDoor" to="YSort/OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_mouse_entered"]
 [connection signal="mouse_exited" from="YSort/OutdoorHouse/OutdoorDoor" to="YSort/OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_mouse_exited"]
 [connection signal="area_entered" from="ForestEntrance" to="ForestEntrance" method="_on_ForestEntrance_area_entered"]
-[connection signal="area_entered" from="JimothyJohns/JimothyDoor" to="JimothyJohns/JimothyDoor" method="_on_OutdoorDoor_area_entered"]
-[connection signal="area_exited" from="JimothyJohns/JimothyDoor" to="JimothyJohns/JimothyDoor" method="_on_OutdoorDoor_area_exited"]
-[connection signal="mouse_entered" from="JimothyJohns/JimothyDoor" to="JimothyJohns/JimothyDoor" method="_on_OutdoorDoor_mouse_entered"]
-[connection signal="mouse_exited" from="JimothyJohns/JimothyDoor" to="JimothyJohns/JimothyDoor" method="_on_OutdoorDoor_mouse_exited"]
+[connection signal="mouse_entered" from="JimothyJohns/JimothyDoor" to="JimothyJohns" method="_on_JimothyDoor_mouse_entered"]
+[connection signal="mouse_exited" from="JimothyJohns/JimothyDoor" to="JimothyJohns" method="_on_JimothyDoor_mouse_exited"]
+[connection signal="body_entered" from="JimothyJohns/Area2D" to="JimothyJohns" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="JimothyJohns/Area2D" to="JimothyJohns" method="_on_Area2D_body_exited"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=2]
 [ext_resource path="res://Scenes/LettucePlot.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Fly.tscn" type="PackedScene" id=6]
+
+[sub_resource type="GDScript" id=109]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -270,6 +273,7 @@ animations = [ {
 radius = 23.0217
 
 [node name="LettuceForest" type="Node2D"]
+script = SubResource( 109 )
 
 [node name="Grass" type="TileMap" parent="."]
 z_as_relative = false
@@ -297,7 +301,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -315,7 +319,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -333,7 +337,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree2"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -351,7 +355,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -424,3 +428,9 @@ limit_bottom = 1238
 editor_draw_limits = true
 
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 5 )]
+
+[node name="Fly" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1272, 1008 )
+
+[node name="Fly2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1376, 1016 )
