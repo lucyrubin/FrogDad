@@ -5,7 +5,6 @@ var num_frames = 2
 
 onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
 onready var fridge_inventory_node = get_tree().get_root().find_node("FridgeInventory",true, false)
-onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 onready var 	DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 
 func _ready():
@@ -56,4 +55,3 @@ func _on_Fridge_area_exited(_area):
 	if MasterScript.frog_dad_state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
-		

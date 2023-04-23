@@ -6,7 +6,6 @@ var in_area
 
 onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
 onready var dresser_inventory_node = get_tree().get_root().find_node("DresserInventory",true, false)
-onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
 onready 	var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 
 func _ready():
@@ -22,14 +21,9 @@ func dark_background_input(event):
 			$AnimatedSprite.set_frame(current_fram)
 			
 func _on_Dresser_input_event(_viewport, event, _shape_idx):	
-	if event is InputEventMouseButton \
-	and event.button_index == BUTTON_LEFT \
-	and event.pressed \
-	and MasterScript.frog_dad_state== ""\
-	and in_area == true:
+	if _left_click_in_area(event):
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
-		
 		if current_fram == 1:
 			dresser_inventory_node.visible = true
 			user_interface_node.visible = true
@@ -62,3 +56,10 @@ func _on_Dresser_area_exited(area):
 		in_area = false
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
+
+func _left_click_in_area(event):
+	return event is InputEventMouseButton \
+	and MasterScript.frog_dad_state == "" \
+	and event.button_index == BUTTON_LEFT \
+	and event.pressed \
+	and in_area

@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -35,6 +35,8 @@
 [ext_resource path="res://Scripts/Lamp.gd" type="Script" id=33]
 [ext_resource path="res://Audios/typewriting.mp3" type="AudioStream" id=34]
 [ext_resource path="res://House Art/microwaveHover.png" type="Texture" id=35]
+[ext_resource path="res://House Art/sinkHover.png" type="Texture" id=36]
+[ext_resource path="res://House Art/typewriterHover.png" type="Texture" id=37]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -395,11 +397,26 @@ flags = 4
 atlas = ExtResource( 17 )
 region = Rect2( 384, 0, 384, 512 )
 
+[sub_resource type="AtlasTexture" id=139]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 384, 512 )
+
+[sub_resource type="AtlasTexture" id=140]
+flags = 4
+atlas = ExtResource( 36 )
+region = Rect2( 384, 0, 384, 512 )
+
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
 "frames": [ SubResource( 77 ), SubResource( 78 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 139 ), SubResource( 140 ) ],
+"loop": true,
+"name": "hover",
 "speed": 5.0
 } ]
 
@@ -639,11 +656,36 @@ flags = 4
 atlas = ExtResource( 30 )
 region = Rect2( 0, 1020, 255, 340 )
 
+[sub_resource type="AtlasTexture" id=141]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 0, 0, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=142]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 0, 340, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=143]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 0, 680, 255, 340 )
+
+[sub_resource type="AtlasTexture" id=144]
+flags = 4
+atlas = ExtResource( 37 )
+region = Rect2( 0, 1020, 255, 340 )
+
 [sub_resource type="SpriteFrames" id=122]
 animations = [ {
 "frames": [ SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ) ],
+"loop": true,
+"name": "hover",
 "speed": 5.0
 } ]
 
@@ -932,6 +974,7 @@ __meta__ = {
 position = Vector2( -8.57144, -57.1428 )
 scale = Vector2( 2.1, 2.1 )
 frames = SubResource( 23 )
+animation = "hover"
 
 [node name="FaucetRunning" type="AudioStreamPlayer2D" parent="Sink/AnimatedSprite"]
 stream = ExtResource( 11 )
@@ -1319,9 +1362,13 @@ position = Vector2( 141, 352 )
 position = Vector2( -201, 127 )
 polygon = PoolVector2Array( -772, -1055, -773, -31, 699, -31, 700, -1053, 722, -1054, 723, -8, -802, -7, -799, -1054 )
 
+[connection signal="area_entered" from="Sink" to="Sink" method="_on_Sink_area_entered"]
+[connection signal="area_exited" from="Sink" to="Sink" method="_on_Sink_area_exited"]
 [connection signal="input_event" from="Sink" to="Sink" method="_on_Sink_input_event"]
 [connection signal="mouse_entered" from="Sink" to="Sink" method="_on_Sink_mouse_entered"]
 [connection signal="mouse_exited" from="Sink" to="Sink" method="_on_Sink_mouse_exited"]
+[connection signal="area_entered" from="Microwave" to="Microwave" method="_on_Microwave_area_entered"]
+[connection signal="area_exited" from="Microwave" to="Microwave" method="_on_Microwave_area_exited"]
 [connection signal="input_event" from="Microwave" to="Microwave" method="_on_Microwave_input_event"]
 [connection signal="mouse_entered" from="Microwave" to="Microwave" method="_on_Microwave_mouse_entered"]
 [connection signal="mouse_exited" from="Microwave" to="Microwave" method="_on_Microwave_mouse_exited"]
@@ -1336,7 +1383,11 @@ polygon = PoolVector2Array( -772, -1055, -773, -31, 699, -31, 700, -1053, 722, -
 [connection signal="mouse_entered" from="Dresser" to="Dresser" method="_on_Dresser_mouse_entered"]
 [connection signal="mouse_exited" from="Dresser" to="Dresser" method="_on_Dresser_mouse_exited"]
 [connection signal="input_event" from="Work Table/Lamp" to="Work Table/Lamp" method="_on_Lamp_input_event"]
+[connection signal="area_entered" from="Typewriter" to="Typewriter" method="_on_Typewriter_area_entered"]
+[connection signal="area_exited" from="Typewriter" to="Typewriter" method="_on_Typewriter_area_exited"]
 [connection signal="input_event" from="Typewriter" to="Typewriter" method="_on_Typewriter_input_event"]
+[connection signal="mouse_entered" from="Typewriter" to="Typewriter" method="_on_Typewriter_mouse_entered"]
+[connection signal="mouse_exited" from="Typewriter" to="Typewriter" method="_on_Typewriter_mouse_exited"]
 [connection signal="area_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_area_entered"]
 [connection signal="area_exited" from="YSort/Door" to="YSort/Door" method="_on_Door_area_exited"]
 [connection signal="mouse_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_mouse_entered"]
