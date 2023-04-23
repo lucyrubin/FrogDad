@@ -28,6 +28,7 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 469.0
 margin_top = 526.0
 margin_right = 581.0
@@ -51,7 +52,6 @@ playing = true
 position = Vector2( 640, 264 )
 scale = Vector2( 0.55, 0.6 )
 frames = SubResource( 4 )
-frame = 1
 speed_scale = 0.8
 playing = true
 
