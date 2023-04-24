@@ -18,6 +18,6 @@ func _on_SkipIntroButton_pressed():
 
 
 func _on_SkipIntroGoToJJ_pressed():
-	MasterScript.currentQuestNum = 3
-	MasterScript.currentQuestArray = [MasterScript.questDictionary[MasterScript.currentQuestNum-1]]
+	MasterScript.currentQuestNum = 2
+	MasterScript.currentQuestArray = [MasterScript.questDictionary[MasterScript.currentQuestNum]]
 	SceneTransition.change_scene("res://Scenes/JimothyJohns.tscn")

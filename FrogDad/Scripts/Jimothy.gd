@@ -24,7 +24,7 @@ func _on_InteractableArea_body_exited(_body):
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and $Speech.visible:
 		if event.button_index == BUTTON_LEFT && event.pressed: 
-			if MasterScript.currentQuestNum == 3:
+			if MasterScript.currentQuestNum == 2:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Welcome to Jimothy John's! What can I get for you?"},
 				{avatar = "frogDad", text = "Got anything with flies?"},
 				{avatar = "jimothy", text = "We got fly pies, flyjitas, fly alla parmigiana, flylafel, and french flies."},
@@ -35,7 +35,7 @@ func _on_ColorRect_gui_input(event):
 				{avatar = "jimothy", text = "Hey, I get you're a single dad, so I'll cut you a deal."},
 				{avatar = "jimothy", text = "I've been needing to harvest some lettuce out in the lettuce forest. Go get some for me and I'll get you your flies."}
 				], "jimothy first talk")
-			elif MasterScript.currentQuestNum == 4:
+			elif MasterScript.currentQuestNum == 3:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "If you get me some lettuce, I'd be happy to give you flies."}]
 				, "jimothy remind about lettuce")
 			
