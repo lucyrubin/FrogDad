@@ -21,7 +21,6 @@ func _on_PopUpTimer_timeout():
 	
 	yield($PopUpNotification/AnimationPlayer,'animation_finished')
 	
-
 	$PopUpNotification/AnimationPlayer.stop()
 
 
@@ -30,4 +29,4 @@ func _on_PopUpTimer_timeout():
 
 func _on_PauseButton_pressed():
 	pause_menu.show_menu()
-	$PauseButton.hide()
+#	$PauseButton.hide()
