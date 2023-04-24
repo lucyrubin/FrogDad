@@ -1,23 +1,11 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://main_theme.tres" type="Theme" id=1]
-[ext_resource path="res://Art/note.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=3]
-[ext_resource path="res://Info Icons/I.png" type="Texture" id=4]
-[ext_resource path="res://Info Icons/return.png" type="Texture" id=5]
-[ext_resource path="res://Info Icons/Q.png" type="Texture" id=6]
-[ext_resource path="res://Scripts/InfoButton.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=9]
-[ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
 [ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=13]
-[ext_resource path="res://Art/info_icon.png" type="Texture" id=14]
-[ext_resource path="res://Info Icons/Z.png" type="Texture" id=15]
-[ext_resource path="res://Info Icons/mouse.png" type="Texture" id=16]
-[ext_resource path="res://Info Icons/enter.png" type="Texture" id=17]
-[ext_resource path="res://Art/info_icon_hover.png" type="Texture" id=18]
 [ext_resource path="res://House Art/fridge_box.png" type="Texture" id=19]
 [ext_resource path="res://House Art/dresserslotfull.png" type="Texture" id=20]
 [ext_resource path="res://House Art/fridgeFull.png" type="Texture" id=21]
@@ -26,7 +14,6 @@
 [ext_resource path="res://House Art/dresser_box.png" type="Texture" id=24]
 [ext_resource path="res://Art/lightLeaf.png" type="Texture" id=25]
 [ext_resource path="res://Art/quest_icon.png" type="Texture" id=26]
-[ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
@@ -108,24 +95,6 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=93]
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=94]
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=95]
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=96]
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=97]
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=98]
-font_data = ExtResource( 10 )
-
 [sub_resource type="Animation" id=106]
 length = 0.001
 tracks/0/type = "value"
@@ -178,7 +147,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 0.133972 ),
 "update": 0,
-"values": [ Vector2( 8.33333, 9 ), Vector2( 50.6667, 63.3333 ) ]
+"values": [ Vector2( 329.333, 9.33334 ), Vector2( 176, 62 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -223,9 +192,10 @@ transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
 script = ExtResource( 32 )
 
 [node name="ToggleInventoryButton" type="TextureButton" parent="."]
-margin_left = -2.0
-margin_right = 137.0
-margin_bottom = 139.0
+margin_left = 1900.0
+margin_top = -10.0
+margin_right = 2039.0
+margin_bottom = 129.0
 texture_normal = ExtResource( 25 )
 
 [node name="PopUpNotification" parent="." instance=ExtResource( 31 )]
@@ -255,172 +225,7 @@ script = ExtResource( 12 )
 
 [node name="BouncingArrow" parent="ToggleQuestButton" instance=ExtResource( 30 )]
 visible = false
-position = Vector2( -300, 0 )
-
-[node name="InfoButton" type="TextureButton" parent="."]
-margin_left = 1896.0
-margin_right = 1984.0
-margin_bottom = 92.0
-rect_scale = Vector2( 1.4, 1.4 )
-texture_normal = ExtResource( 14 )
-texture_pressed = ExtResource( 18 )
-script = ExtResource( 7 )
-
-[node name="Info" type="Node2D" parent="InfoButton"]
-visible = false
-z_index = 1000
-
-[node name="Background" type="TextureRect" parent="InfoButton/Info"]
-visible = false
-margin_left = -1262.96
-margin_top = -307.407
-margin_right = -878.963
-margin_bottom = 204.593
-rect_scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
-
-[node name="Arrows" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 46.6667
-margin_top = 82.963
-margin_right = 430.667
-margin_bottom = 594.963
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 27 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Arrows"]
-margin_left = 296.667
-margin_top = 206.852
-margin_right = 506.667
-margin_bottom = 222.852
-rect_scale = Vector2( 2, 2 )
-theme = ExtResource( 1 )
-custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
-custom_fonts/normal_font = SubResource( 93 )
-meta_underlined = false
-text = "Use arrows to move"
-scroll_active = false
-
-[node name="Return" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 94.0741
-margin_top = 114.074
-margin_right = 478.074
-margin_bottom = 626.074
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Return"]
-margin_left = 277.778
-margin_top = 225.926
-margin_right = 487.778
-margin_bottom = 241.926
-rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
-custom_fonts/normal_font = SubResource( 94 )
-text = "to open doors"
-scroll_active = false
-
-[node name="Enter" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 39.2593
-margin_top = 114.074
-margin_right = 423.259
-margin_bottom = 626.074
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 17 )
-
-[node name="Mouse" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 65.1852
-margin_top = 153.333
-margin_right = 449.185
-margin_bottom = 665.333
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 16 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Mouse"]
-margin_left = 240.0
-margin_top = 217.038
-margin_right = 450.0
-margin_bottom = 233.038
-rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
-custom_fonts/normal_font = SubResource( 95 )
-text = "Click to open"
-scroll_active = false
-
-[node name="I key" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 54.8148
-margin_top = 180.0
-margin_right = 438.815
-margin_bottom = 692.0
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/I key"]
-margin_left = 240.0
-margin_top = 218.0
-margin_right = 450.0
-margin_bottom = 242.0
-rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
-custom_fonts/normal_font = SubResource( 96 )
-text = "to open inventory"
-scroll_active = false
-
-[node name="Z key" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 80.7408
-margin_top = 206.667
-margin_right = 464.741
-margin_bottom = 718.667
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Z key"]
-margin_left = 240.0
-margin_top = 220.148
-margin_right = 450.0
-margin_bottom = 241.148
-rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
-custom_fonts/normal_font = SubResource( 97 )
-text = "to pick up"
-scroll_active = false
-
-[node name="Q key" type="TextureRect" parent="InfoButton/Info/Background"]
-margin_left = 80.7408
-margin_top = 231.667
-margin_right = 464.741
-margin_bottom = 743.667
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoButton/Info/Background/Q key"]
-margin_left = 240.0
-margin_top = 218.89
-margin_right = 450.0
-margin_bottom = 238.89
-rect_scale = Vector2( 2, 2 )
-custom_colors/default_color = Color( 0.905882, 0.823529, 0.572549, 1 )
-custom_fonts/normal_font = SubResource( 98 )
-text = "to drop
-"
-scroll_active = false
+position = Vector2( -200, 0 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 scale = Vector2( 3, 3 )
@@ -456,7 +261,7 @@ anims/swoosh_in = SubResource( 107 )
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 177.667, 83.3333 )
+position = Vector2( 38.3333, 87 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Fly", 3 ],
@@ -550,7 +355,7 @@ texture = ExtResource( 34 )
 
 [node name="DresserInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 177.667, 82 )
+position = Vector2( 38.6667, 85.3333 )
 script = ExtResource( 8 )
 item_list = {
 0: [ "Cloth", 3 ]
@@ -641,7 +446,7 @@ texture = ExtResource( 35 )
 
 [node name="SideTableInventory" type="Node2D" parent="UserInterface"]
 visible = false
-position = Vector2( 177.333, 69.3333 )
+position = Vector2( 38.6667, 73.3333 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -746,10 +551,9 @@ scale = Vector2( 0.13, 0.13 )
 [node name="OneSecTimer" type="Timer" parent="UserInterface/Quest"]
 
 [node name="PauseButton" type="TextureButton" parent="."]
-margin_left = 982.0
-margin_top = 6.0
-margin_right = 1082.0
-margin_bottom = 106.0
+margin_left = 4.0
+margin_right = 104.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 16, 40 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 33 )
@@ -761,7 +565,6 @@ rect_scale = Vector2( 2, 2 )
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="pressed" from="ToggleQuestButton" to="UserInterface/Quest" method="_on_ToggleQuestButton_pressed"]
-[connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_InfoButton_pressed"]
 [connection signal="gui_input" from="UserInterface/DarkBackground" to="UserInterface" method="_on_DarkBackground_gui_input"]
 [connection signal="mouse_entered" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]

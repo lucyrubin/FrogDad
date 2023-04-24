@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -730,13 +730,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 139.5, 90.25 )
 
-[sub_resource type="RectangleShape2D" id=104]
-extents = Vector2( 88, 108 )
-
-[sub_resource type="CapsuleShape2D" id=136]
-radius = 87.0
-height = 82.0
-
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 107.5, 38.75 )
 
@@ -772,6 +765,9 @@ animations = [ {
 "name": "hover",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=145]
+extents = Vector2( 85, 57 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
@@ -1249,18 +1245,7 @@ collision_layer = 2
 script = ExtResource( 13 )
 target_scene = ExtResource( 26 )
 
-[node name="DoorMouseArea" type="Area2D" parent="YSort/Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/DoorMouseArea"]
-position = Vector2( 11, 45 )
-shape = SubResource( 104 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/Door/DoorMouseArea"]
-position = Vector2( 11, 23 )
-shape = SubResource( 136 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door"]
-visible = false
 position = Vector2( 18.5, 127.25 )
 shape = SubResource( 70 )
 
@@ -1268,6 +1253,13 @@ shape = SubResource( 70 )
 scale = Vector2( 0.950521, 0.960938 )
 frames = SubResource( 75 )
 animation = "hover"
+
+[node name="EnteranceArea" type="Area2D" parent="YSort/Door"]
+position = Vector2( 0, 104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/EnteranceArea"]
+position = Vector2( 8, 8 )
+shape = SubResource( 145 )
 
 [node name="Table" type="StaticBody2D" parent="YSort"]
 position = Vector2( 323, -141 )
@@ -1392,8 +1384,7 @@ polygon = PoolVector2Array( -772, -1055, -773, -31, 699, -31, 700, -1053, 722, -
 [connection signal="area_exited" from="YSort/Door" to="YSort/Door" method="_on_Door_area_exited"]
 [connection signal="mouse_entered" from="YSort/Door" to="YSort/Door" method="_on_Door_mouse_entered"]
 [connection signal="mouse_exited" from="YSort/Door" to="YSort/Door" method="_on_Door_mouse_exited"]
-[connection signal="mouse_entered" from="YSort/Door/DoorMouseArea" to="YSort/Door" method="_on_DoorMouseArea_mouse_entered"]
-[connection signal="mouse_exited" from="YSort/Door/DoorMouseArea" to="YSort/Door" method="_on_DoorMouseArea_mouse_exited"]
+[connection signal="body_entered" from="YSort/Door/EnteranceArea" to="YSort/Door" method="_on_EnteranceArea_body_entered"]
 [connection signal="input_event" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_input_event"]
 [connection signal="mouse_entered" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_mouse_entered"]
 [connection signal="mouse_exited" from="YSort/Side Table" to="YSort/Side Table" method="_on_Side_Table_mouse_exited"]

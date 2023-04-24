@@ -6,6 +6,7 @@ var door_opened
 var current_fram = 0
 var num_frames = 2
 var mouse_in = false
+const FrogDadClass = preload("res://Scripts/FrogDad.gd")
 
 func _ready():
 	current_fram = 0
@@ -20,9 +21,7 @@ func _input(event):
 
 func go_inside():
 	MasterScript.enter_home = true
-	var ERR = get_tree().change_scene_to(target_scene)
-	if ERR != OK:
-		print("something failed in the door scene")
+	SceneTransition.change_scene("res://Scenes/Main.tscn")
 
 func _on_OutdoorDoor_area_entered(_area):
 	door_opened = true
@@ -38,11 +37,7 @@ func _on_OutdoorDoor_area_exited(_area):
 	Input.set_custom_mouse_cursor(MasterScript.hand)
 	
 
-func _on_OutdoorDoor_mouse_entered():
-	mouse_in = true
-	$AnimatedSprite.animation = "hover"
-	Input.set_custom_mouse_cursor(MasterScript.pointer)
 
-func _on_OutdoorDoor_mouse_exited():
-	mouse_in = false
-	$AnimatedSprite.animation = "default"
+func _on_EnteranceArea_body_entered(body):
+	if body is FrogDadClass:
+		go_inside()

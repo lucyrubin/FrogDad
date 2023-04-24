@@ -6,9 +6,7 @@ export (PackedScene) var target_scene = load("res://Scenes/Forest.tscn")
 
 func go_in_forest():
 	MasterScript.enter_forest = true
-	var ERR = get_tree().change_scene_to(target_scene)
-	if ERR != OK:
-		print("something failed in the door scene")
+	SceneTransition.change_scene("res://Scenes/Forest.tscn")
 
 func _on_ForestEntrance_area_entered(_area):
 	go_in_forest()

@@ -39,5 +39,4 @@ var currentQuestNum = -1
 
 var currentQuestArray = [questDictionary[0]]
 
-func _process(delta):
-	print(currentQuestNum)
+
