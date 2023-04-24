@@ -1,6 +1,6 @@
 extends Control
 
-onready var pause_button = get_tree().get_root().get_node()
+
 
 func show_menu():
 	show()

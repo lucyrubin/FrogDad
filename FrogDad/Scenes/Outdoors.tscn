@@ -660,6 +660,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -771,7 +772,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -789,7 +789,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -807,7 +806,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -825,7 +824,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -845,13 +843,14 @@ visible = false
 polygon = PoolVector2Array( -46, -23, -45, 6, -10, 6, -9, 22, -53, 30, -51, 55, -7, 56, -5, 114, 7, 114, 9, 54, 47, 52, 47, 22, 8, 23, 5, 5, 34, 3, 50, -18, 27, -34, 7, -34, 6, -68, -6, -67, -5, -34 )
 
 [node name="FrogDad" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1526, 1030 )
-scale = Vector2( 0.45, 0.45 )
+position = Vector2( 1612, 986 )
+scale = Vector2( 0.35, 0.35 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
+scale = Vector2( 1, 1 )
 current = true
 limit_left = 19
 limit_top = 328
@@ -862,12 +861,13 @@ editor_draw_limits = true
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 2 )]
 
 [node name="JimothyJohns" type="StaticBody2D" parent="."]
+position = Vector2( -46, -463 )
 script = ExtResource( 16 )
 target_scene = ExtResource( 17 )
 
 [node name="Sprite" type="Sprite" parent="JimothyJohns"]
-position = Vector2( 2298, 1009 )
-scale = Vector2( 3, 3 )
+position = Vector2( 2304, 1264 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 1000
 texture = ExtResource( 14 )
 
