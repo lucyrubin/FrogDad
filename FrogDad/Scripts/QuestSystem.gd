@@ -77,7 +77,8 @@ func deleteQuest(SubQuest):
 		## temporary 
 		PopUpNode.visible = true
 		# the second value of this is just an identifier for if you want to do something after dialogue has ended
-		PopUpNode.show_dialog_box([{avatar = "", text = "crib is done, babies now grow up - i need flies from jimothy"}], "Finished cloth quest")
+		PopUpNode.show_dialog_box([{avatar = "", text = "The crib is done! Wow, they've grown up so fast, but now they're hungry all the time."},
+								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished log quest")
 	## if you want to play dialogue after a quest is finshed, do it here
 
 	SubQuest.queue_free()

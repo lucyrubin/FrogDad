@@ -25,15 +25,15 @@ func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and $Speech.visible:
 		if event.button_index == BUTTON_LEFT && event.pressed: 
 			if MasterScript.currentQuestNum == 2:
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Welcome to Jimothy John's! What can I get for you?"},
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Welcome to Jimothy John's! What can I get for you today?"},
 				{avatar = "frogDad", text = "Got anything with flies?"},
-				{avatar = "jimothy", text = "We got fly pies, flyjitas, fly alla parmigiana, flylafel, and french flies."},
-				{avatar = "frogDad", text = "On second thought...Could I just get a jar of flies? They're for my babies"},
-				{avatar = "jimothy", text = "BABIES?! Like, more than one? Dang, pal."},
-				{avatar = "frogDad", text = "yup. I have three."},
-				{avatar = "jimothy", text = "Respect."},
-				{avatar = "jimothy", text = "Hey, I get you're a single dad, so I'll cut you a deal."},
-				{avatar = "jimothy", text = "I've been needing to harvest some lettuce out in the lettuce forest. Go get some for me and I'll get you your flies."}
+				{avatar = "jimothy", text = "Hell yeah we do! We got fly pies, flyjitas, fly alla parmigiana, flylafel, french flies... Add a drink and you can make it a combo!"},
+				{avatar = "frogDad", text = "Wow! All of that sounds good, but... On second thought, could I just get a jar of flies? They're for my frog babies"},
+				{avatar = "jimothy", text = "BABIES?! Like, more than one? Dang, Frog Guy."},
+				{avatar = "frogDad", text = "It's Frog Dad now. And yeah, I have three."},
+				{avatar = "jimothy", text = "Respect, bro."},
+				{avatar = "jimothy", text = "Hey, since you're a single dad and all, I'll cut you a deal."},
+				{avatar = "jimothy", text = "I've been needing to harvest some lettuce out in the lettuce forest. Go get some for me and I'll get you your flies!"}
 				], "jimothy first talk")
 			elif MasterScript.currentQuestNum == 3:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "If you get me some lettuce, I'd be happy to give you flies."}]

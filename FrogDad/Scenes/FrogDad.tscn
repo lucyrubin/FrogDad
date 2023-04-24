@@ -5,15 +5,16 @@
 [ext_resource path="res://Art/spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/PickupZone.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/DialogueBox2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://frogdadsideleft2.png" type="Texture" id=6]
+[ext_resource path="res://Art/frogdadsideleft2.png" type="Texture" id=6]
 [ext_resource path="res://Art/frogdadside2.png" type="Texture" id=7]
 [ext_resource path="res://Art/frog egg sprite.png" type="Texture" id=8]
 [ext_resource path="res://Art/frogdadside3 1.png" type="Texture" id=9]
 [ext_resource path="res://Art/frogdadside1.png" type="Texture" id=10]
 [ext_resource path="res://Art/frogdadside0.png" type="Texture" id=11]
-[ext_resource path="res://frogdadsideleft0.png" type="Texture" id=12]
-[ext_resource path="res://frogdadsideleft1.png" type="Texture" id=13]
-[ext_resource path="res://frogdadside3.png" type="Texture" id=14]
+[ext_resource path="res://Art/frogdadsideleft0.png" type="Texture" id=12]
+[ext_resource path="res://Art/frogdadsideleft1.png" type="Texture" id=13]
+[ext_resource path="res://Art/frogdadside3.png" type="Texture" id=14]
+
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
