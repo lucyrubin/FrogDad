@@ -30,3 +30,4 @@ func _on_PopUpTimer_timeout():
 
 func _on_PauseButton_pressed():
 	pause_menu.show_menu()
+	$PauseButton.hide()

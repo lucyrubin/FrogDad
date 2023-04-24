@@ -9,9 +9,9 @@ func hide_menu():
 	hide()
 	
 
-
 func _on_ResumeButton_pressed():
 	hide_menu()
+	
 
 
 func _on_QuitButton_pressed():

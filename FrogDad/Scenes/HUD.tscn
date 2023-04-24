@@ -37,7 +37,7 @@
 [ext_resource path="res://House Art/dresser1.png" type="Texture" id=35]
 [ext_resource path="res://House Art/side_table1.png" type="Texture" id=36]
 [ext_resource path="res://Temporary Clipart/pause_normal.png" type="Texture" id=37]
-[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=38]
 
 [sub_resource type="Animation" id=103]
 length = 0.001
@@ -745,28 +745,18 @@ scale = Vector2( 0.13, 0.13 )
 
 [node name="OneSecTimer" type="Timer" parent="UserInterface/Quest"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-anchor_right = 1.0
-margin_left = 978.0
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 982.0
 margin_top = 6.0
-margin_right = 58.0
+margin_right = 1082.0
 margin_bottom = 106.0
-
-[node name="Control" type="Control" parent="HBoxContainer"]
-margin_bottom = 100.0
-size_flags_horizontal = 3
-
-[node name="PauseButton" type="TextureButton" parent="HBoxContainer"]
-margin_left = 4.0
-margin_right = 104.0
-margin_bottom = 100.0
 rect_min_size = Vector2( 16, 40 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 33 )
 
 [node name="PauseMenu" parent="." instance=ExtResource( 38 )]
 visible = false
+rect_scale = Vector2( 2, 2 )
 
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
@@ -778,4 +768,4 @@ visible = false
 [connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
 [connection signal="timeout" from="UserInterface/Quest/OneSecTimer" to="UserInterface/Quest" method="_on_OneSecTimer_timeout"]
-[connection signal="pressed" from="HBoxContainer/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
