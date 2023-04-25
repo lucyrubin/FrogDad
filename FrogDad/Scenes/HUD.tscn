@@ -1,11 +1,13 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
+[ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
+[ext_resource path="res://Art/todo_icon_hover.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=3]
+[ext_resource path="res://Art/lightLeafHover.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
-[ext_resource path="res://Art/quest_icon_hover.png" type="Texture" id=13]
 [ext_resource path="res://House Art/fridge_box.png" type="Texture" id=19]
 [ext_resource path="res://House Art/dresserslotfull.png" type="Texture" id=20]
 [ext_resource path="res://House Art/fridgeFull.png" type="Texture" id=21]
@@ -13,7 +15,6 @@
 [ext_resource path="res://House Art/dresserslotempty.png" type="Texture" id=23]
 [ext_resource path="res://House Art/dresser_box.png" type="Texture" id=24]
 [ext_resource path="res://Art/lightLeaf.png" type="Texture" id=25]
-[ext_resource path="res://Art/quest_icon.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Quest.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=30]
@@ -191,13 +192,6 @@ scale = Vector2( 0.5, 0.5 )
 transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
 script = ExtResource( 32 )
 
-[node name="ToggleInventoryButton" type="TextureButton" parent="."]
-margin_left = 1900.0
-margin_top = -10.0
-margin_right = 2039.0
-margin_bottom = 129.0
-texture_normal = ExtResource( 25 )
-
 [node name="PopUpNotification" parent="." instance=ExtResource( 31 )]
 position = Vector2( 2050, 122 )
 
@@ -215,17 +209,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 1250.0
-margin_top = -300.0
-margin_right = 1390.0
-margin_bottom = -160.0
-texture_normal = ExtResource( 26 )
-texture_pressed = ExtResource( 13 )
+margin_left = 1230.0
+margin_top = -296.0
+margin_right = 1297.0
+margin_bottom = -230.0
+rect_scale = Vector2( 2.3, 2.3 )
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
 script = ExtResource( 12 )
 
 [node name="BouncingArrow" parent="ToggleQuestButton" instance=ExtResource( 30 )]
 visible = false
 position = Vector2( -200, 0 )
+
+[node name="ToggleInventoryButton" type="TextureButton" parent="."]
+margin_left = 1898.0
+margin_top = 8.0
+margin_right = 2037.0
+margin_bottom = 147.0
+texture_normal = ExtResource( 25 )
+texture_hover = ExtResource( 4 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 scale = Vector2( 3, 3 )
@@ -562,9 +565,9 @@ texture_pressed = ExtResource( 33 )
 visible = false
 rect_scale = Vector2( 2, 2 )
 
-[connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="pressed" from="ToggleQuestButton" to="UserInterface/Quest" method="_on_ToggleQuestButton_pressed"]
+[connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="gui_input" from="UserInterface/DarkBackground" to="UserInterface" method="_on_DarkBackground_gui_input"]
 [connection signal="mouse_entered" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
