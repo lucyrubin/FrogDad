@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/space.png-7bd49fcd0268654b29f0ecd6207fd082.stex"
+path="res://.import/wasd.png-330a35db3b74597c3b85288877ff5509.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Info Icons/space.png"
-dest_files=[ "res://.import/space.png-7bd49fcd0268654b29f0ecd6207fd082.stex" ]
+source_file="res://Info Icons/wasd.png"
+dest_files=[ "res://.import/wasd.png-330a35db3b74597c3b85288877ff5509.stex" ]
 
 [params]
 

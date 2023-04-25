@@ -2,11 +2,23 @@
 
 [ext_resource path="res://Art/note.png" type="Texture" id=1]
 [ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=2]
-[ext_resource path="res://Info Icons/I.png" type="Texture" id=3]
-[ext_resource path="res://Info Icons/return.png" type="Texture" id=4]
-[ext_resource path="res://Info Icons/Q.png" type="Texture" id=5]
-[ext_resource path="res://Info Icons/Z.png" type="Texture" id=6]
 [ext_resource path="res://Info Icons/mouse.png" type="Texture" id=7]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/return.png-dabd6765bd4a2a20e7cb85f3647ebe7d.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/I.png-f586bd9d29e50a4e6a45e16f9719a46c.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Z.png-4ccd3d07ef03d18937edbe59b6f44b9d.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/Q.png-f307aa1aa1ca7593b584dd0e139c3663.stex"
 
 [node name="Info" type="Node2D"]
 
@@ -49,7 +61,7 @@ scroll_active = false
 margin_top = 112.0
 margin_right = 384.0
 margin_bottom = 624.0
-texture = ExtResource( 4 )
+texture = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -68,7 +80,7 @@ scroll_active = false
 margin_top = 224.0
 margin_right = 384.0
 margin_bottom = 736.0
-texture = ExtResource( 3 )
+texture = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -87,7 +99,7 @@ scroll_active = false
 margin_top = 336.0
 margin_right = 384.0
 margin_bottom = 848.0
-texture = ExtResource( 6 )
+texture = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -106,7 +118,7 @@ scroll_active = false
 margin_top = 448.0
 margin_right = 384.0
 margin_bottom = 960.0
-texture = ExtResource( 5 )
+texture = SubResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
