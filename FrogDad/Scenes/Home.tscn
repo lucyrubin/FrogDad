@@ -693,7 +693,7 @@ animations = [ {
 extents = Vector2( 40.5, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=128]
-extents = Vector2( 197.5, 87.25 )
+extents = Vector2( 165.5, 70 )
 
 [sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 153, 12 )
@@ -1174,7 +1174,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Couch"]
 visible = false
-position = Vector2( 0.5, 10.75 )
+position = Vector2( 0.5, 13 )
 shape = SubResource( 128 )
 
 [node name="TV Stand" type="StaticBody2D" parent="."]
