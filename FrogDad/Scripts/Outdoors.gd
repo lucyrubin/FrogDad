@@ -14,6 +14,9 @@ func _ready():
 	if MasterScript.exitJimothyJohns:
 		$FrogDad.position = $ExitJimothyJohns.position
 		MasterScript.exitJimothyJohns = false
+	if MasterScript.exit_lettuce_forest:
+		$FrogDad.position = $ExitLettuceForest.position
+		MasterScript.exit_lettuce_forest = false
 
 func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y)

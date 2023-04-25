@@ -13,9 +13,12 @@ var enter_home = false
 var exit_forest = false
 var exit_home = false
 var enter_forest = false
+var enter_lettuce_forest = false
+var exit_lettuce_forest = false
 var findBabies = false
 var exitJimothyJohns = false
 var picked_up_first_item = false
+var after_eggs_to_tadpoles = false
 
 var opened_quest_first_time = false
 

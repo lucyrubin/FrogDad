@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Fly.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ForestEntrance.gd" type="Script" id=7]
 
 [sub_resource type="GDScript" id=109]
 
@@ -272,6 +273,9 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=108]
 radius = 23.0217
 
+[sub_resource type="RectangleShape2D" id=110]
+extents = Vector2( 64, 32.5 )
+
 [node name="LettuceForest" type="Node2D"]
 script = SubResource( 109 )
 
@@ -413,7 +417,7 @@ margin_right = 1872.0
 margin_bottom = 264.0
 
 [node name="FrogDad" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1526, 1030 )
+position = Vector2( 224, 672 )
 scale = Vector2( 0.45, 0.45 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
@@ -434,3 +438,25 @@ position = Vector2( 1272, 1008 )
 
 [node name="Fly2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1376, 1016 )
+
+[node name="LettuceExit" type="Area2D" parent="."]
+position = Vector2( 152, 632 )
+rotation = 1.5708
+collision_layer = 8
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TemporaryEntrance" type="ColorRect" parent="LettuceExit"]
+margin_left = 84.0
+margin_top = 34.0
+margin_right = 212.0
+margin_bottom = 161.0
+color = Color( 0.2, 0.156863, 0.109804, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LettuceExit"]
+position = Vector2( 147, 67 )
+shape = SubResource( 110 )
+
+[connection signal="area_entered" from="LettuceExit" to="LettuceExit" method="_on_LettuceExit_area_entered"]

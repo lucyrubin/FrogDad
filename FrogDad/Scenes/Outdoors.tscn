@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -631,17 +631,9 @@ extents = Vector2( 2783.5, 10 )
 [sub_resource type="RectangleShape2D" id=128]
 extents = Vector2( 26.5, 2506.5 )
 
-[sub_resource type="RectangleShape2D" id=129]
-extents = Vector2( 535.75, 282 )
-
-[sub_resource type="RectangleShape2D" id=130]
-extents = Vector2( 352.828, 327.25 )
-
-[sub_resource type="RectangleShape2D" id=131]
-extents = Vector2( 459.656, 278 )
-
-[sub_resource type="RectangleShape2D" id=132]
-extents = Vector2( 453.283, 236.75 )
+[sub_resource type="CapsuleShape2D" id=129]
+radius = 511.0
+height = 234.0
 
 [sub_resource type="RectangleShape2D" id=121]
 extents = Vector2( 176.5, 87.25 )
@@ -666,7 +658,7 @@ tile_data = PoolIntArray( -2228245, 13, 0, -2228244, 13, 0, -2228243, 13, 0, -22
 z_index = -4000
 tile_set = SubResource( 98 )
 format = 1
-tile_data = PoolIntArray( -1769456, 10, 0, -1769455, 10, 0, -1769454, 10, 0, -1769453, 10, 0, -1703922, 10, 0, -1703921, 10, 0, -1703920, 10, 0, -1703919, 10, 0, -1703918, 10, 0, -1703917, 10, 0, -1703916, 10, 0, -1703915, 10, 0, -1638388, 10, 0, -1638387, 10, 0, -1638386, 10, 0, -1638385, 10, 0, -1638384, 10, 0, -1638383, 10, 0, -1638382, 10, 0, -1638381, 10, 0, -1638380, 10, 0, -1638379, 10, 0, -1638378, 10, 0, -1572855, 10, 0, -1572854, 10, 0, -1572853, 10, 0, -1572852, 10, 0, -1572851, 10, 0, -1572850, 10, 0, -1572849, 10, 0, -1572848, 10, 0, -1572844, 10, 0, -1572843, 10, 0, -1572842, 10, 0, -1507320, 10, 0, -1507319, 10, 0, -1507318, 10, 0, -1507317, 10, 0, -1507316, 10, 0, -1507315, 10, 0, -1507314, 10, 0, -1507308, 10, 0, -1507307, 10, 0, -1507306, 10, 0, -1507305, 10, 0, -1507304, 10, 0, -1507303, 10, 0, -1441786, 10, 0, -1441785, 10, 0, -1441784, 10, 0, -1441783, 10, 0, -1441782, 10, 0, -1441781, 10, 0, -1441771, 10, 0, -1441770, 10, 0, -1441769, 10, 0, -1441768, 10, 0, -1441767, 10, 0, -1376251, 10, 0, -1376250, 10, 0, -1376249, 10, 0, -1376248, 10, 0, -1376247, 10, 0, -1376246, 10, 0, -1376233, 10, 0, -1376232, 10, 0, -1310716, 10, 0, -1310715, 10, 0, -1310714, 10, 0, -1310713, 10, 0, -1310712, 10, 0, -1310711, 10, 0, -1310697, 10, 0, -1310696, 10, 0, -1245180, 10, 0, -1245179, 10, 0, -1245178, 10, 0, -1245177, 10, 0, -1245176, 10, 0, -1179644, 10, 0, -1179643, 10, 0, -1179642, 10, 0, -1179641, 10, 0, -1114107, 10, 0, -1114106, 10, 0, -1114105, 10, 0, -851965, 10, 0, -851964, 10, 0, -851921, 10, 0, -851920, 10, 0, -786429, 10, 0, -786428, 10, 0, -786385, 10, 0, -786384, 10, 0, -720893, 10, 0, -720892, 10, 0, -720852, 10, 0, -720851, 10, 0, -720850, 10, 0, -720849, 10, 0, -655357, 10, 0, -655356, 10, 0, -655317, 10, 0, -655316, 10, 0, -655315, 10, 0, -655314, 10, 0, -589822, 10, 0, -589821, 10, 0, -589820, 10, 0, -589786, 10, 0, -589785, 10, 0, -589784, 10, 0, -589783, 10, 0, -589782, 10, 0, -589781, 10, 0, -589780, 10, 0, -589779, 10, 0, -589778, 10, 0, -458761, 10, 0, -458760, 10, 0, -458759, 10, 0, -458758, 10, 0, -458757, 10, 0, -458756, 10, 0, -458755, 10, 0, -458754, 10, 0, -458753, 10, 0, -524288, 10, 0, -524287, 10, 0, -524286, 10, 0, -524285, 10, 0, -524284, 10, 0, -524253, 11, 0, -524252, 11, 0, -524251, 11, 0, -524250, 10, 0, -524249, 10, 0, -524248, 10, 0, -524247, 10, 0, -524246, 10, 0, -524245, 10, 0, -393225, 10, 0, -393224, 10, 0, -393223, 10, 0, -393222, 10, 0, -393221, 10, 0, -393220, 10, 0, -393219, 10, 0, -393218, 10, 0, -393217, 10, 0, -458752, 10, 0, -458751, 10, 0, -458750, 10, 0, -458749, 10, 0, -458717, 11, 0, -458716, 11, 0, -458715, 11, 0, -458714, 10, 0, -458713, 10, 0, -327683, 10, 0, -327682, 10, 0, -393181, 11, 0, -393180, 11, 0, -393179, 11, 0, -393178, 10, 0, -393177, 10, 0, -262147, 10, 0, -262146, 10, 0, -327648, 11, 0, -327647, 11, 0, -327646, 11, 0, -327645, 11, 0, -327644, 11, 0, -327643, 11, 0, -327642, 11, 0, -327641, 11, 0, -327640, 11, 0, -196611, 10, 0, -196610, 10, 0, -262113, 11, 0, -262112, 11, 0, -262111, 11, 0, -262110, 11, 0, -262109, 11, 0, -262108, 11, 0, -262107, 11, 0, -262106, 11, 0, -262105, 11, 0, -262104, 11, 0, -131075, 10, 0, -131074, 10, 0, -196578, 11, 0, -196577, 11, 0, -196576, 11, 0, -196575, 11, 0, -196574, 11, 0, -196573, 11, 0, -196572, 11, 0, -196571, 11, 0, -196570, 11, 0, -196569, 11, 0, -196553, 10, 0, -196552, 10, 0, -196551, 10, 0, -65539, 10, 0, -65538, 10, 0, -131043, 11, 0, -131042, 11, 0, -131041, 11, 0, -131040, 11, 0, -131039, 11, 0, -131038, 11, 0, -131037, 11, 0, -131036, 11, 0, -131035, 11, 0, -131034, 11, 0, -131017, 10, 0, -131016, 10, 0, -131015, 10, 0, -3, 10, 0, -2, 10, 0, -65508, 11, 0, -65507, 11, 0, -65506, 11, 0, -65481, 10, 0, -65480, 10, 0, -65479, 10, 0, 65533, 10, 0, 65534, 10, 0, 27, 11, 0, 28, 11, 0, 29, 11, 0, 55, 10, 0, 56, 10, 0, 57, 10, 0, 131069, 10, 0, 131070, 10, 0, 65561, 11, 0, 65562, 11, 0, 65563, 11, 0, 65564, 11, 0, 65565, 11, 0, 65591, 10, 0, 65592, 10, 0, 65593, 10, 0, 196605, 10, 0, 196606, 10, 0, 131096, 11, 0, 131097, 11, 0, 131098, 11, 0, 131099, 11, 0, 131100, 11, 0, 131127, 10, 0, 131128, 10, 0, 131129, 10, 0, 262141, 10, 0, 262142, 10, 0, 196631, 11, 0, 196632, 11, 0, 196633, 11, 0, 196663, 10, 0, 196664, 10, 0, 196665, 10, 0, 327677, 10, 0, 327678, 10, 0, 262165, 11, 0, 262166, 11, 0, 262167, 11, 0, 262168, 11, 0, 262199, 10, 0, 262200, 10, 0, 262201, 10, 0, 393213, 10, 0, 393214, 10, 0, 327700, 11, 0, 327701, 11, 0, 327702, 11, 0, 327734, 10, 0, 327735, 10, 0, 327736, 10, 0, 327737, 10, 0, 458749, 10, 0, 458750, 10, 0, 393235, 11, 0, 393236, 11, 0, 393237, 11, 0, 393269, 10, 0, 393270, 10, 0, 393271, 10, 0, 393272, 10, 0, 393273, 10, 0, 524285, 10, 0, 524286, 10, 0, 458771, 11, 0, 458772, 11, 0, 458773, 11, 0, 458805, 10, 0, 458806, 10, 0, 458807, 10, 0, 589821, 10, 0, 589822, 10, 0, 524307, 11, 0, 524308, 11, 0, 524309, 11, 0, 524340, 10, 0, 524341, 10, 0, 655357, 10, 0, 655358, 10, 0, 655359, 10, 0, 589843, 11, 0, 589844, 11, 0, 589845, 11, 0, 589875, 10, 0, 589876, 10, 0, 589877, 10, 0, 720893, 10, 0, 720894, 10, 0, 720895, 10, 0, 655371, 10, 0, 655372, 9, 0, 655380, 11, 0, 655381, 11, 0, 655382, 11, 0, 655410, 10, 0, 655411, 10, 0, 655412, 10, 0, 786430, 10, 0, 786431, 10, 0, 720907, 10, 0, 720908, 18, 0, 720916, 11, 0, 720917, 11, 0, 720918, 11, 0, 720919, 11, 0, 720946, 10, 0, 720947, 10, 0, 851966, 10, 0, 851967, 10, 0, 786443, -1073741818, 0, 786444, -1073741814, 0, 786453, 11, 0, 786454, 11, 0, 786455, 11, 0, 786456, 11, 0, 786457, 11, 0, 786481, 10, 0, 786482, 10, 0, 786483, 10, 0, 917502, 10, 0, 917503, 10, 0, 851979, 11, 0, 851980, 11, 0, 851990, 11, 0, 851991, 11, 0, 851992, 11, 0, 851993, 11, 0, 852016, 10, 0, 852017, 10, 0, 852018, 10, 0, 983038, 10, 0, 983039, 10, 0, 917515, 11, 0, 917516, 11, 0, 917527, 11, 0, 917528, 11, 0, 917529, 11, 0, 917530, 11, 0, 917551, 10, 0, 917552, 10, 0, 917553, 10, 0, 1048574, 10, 0, 1048575, 10, 0, 983051, 11, 0, 983052, 11, 0, 983053, 11, 0, 983054, 11, 0, 983055, 11, 0, 983056, 11, 0, 983057, 11, 0, 983058, 11, 0, 983059, 11, 0, 983060, 11, 0, 983061, 11, 0, 983062, 11, 0, 983063, 11, 0, 983064, 11, 0, 983065, 11, 0, 983066, 11, 0, 983067, 11, 0, 983068, 11, 0, 983069, 11, 0, 983070, 11, 0, 983071, 11, 0, 983072, 11, 0, 983073, 11, 0, 983074, 11, 0, 983075, 11, 0, 983076, 11, 0, 983077, 11, 0, 983078, 11, 0, 983079, 11, 0, 983080, 11, 0, 983081, 10, 0, 983082, 10, 0, 983083, 10, 0, 983084, 10, 0, 983085, 10, 0, 983086, 10, 0, 983087, 10, 0, 983088, 10, 0, 1114110, 10, 0, 1114111, 10, 0, 1048587, 11, 0, 1048588, 11, 0, 1048589, 11, 0, 1048590, 11, 0, 1048591, 11, 0, 1048592, 11, 0, 1048593, 11, 0, 1048594, 11, 0, 1048595, 11, 0, 1048596, 11, 0, 1048597, 11, 0, 1048598, 11, 0, 1048599, 11, 0, 1048600, 11, 0, 1048601, 11, 0, 1048602, 11, 0, 1048603, 11, 0, 1048604, 11, 0, 1048605, 11, 0, 1048606, 11, 0, 1048607, 11, 0, 1048608, 11, 0, 1048609, 11, 0, 1048610, 11, 0, 1048611, 11, 0, 1048612, 11, 0, 1048613, 11, 0, 1048614, 11, 0, 1048615, 11, 0, 1048616, 11, 0, 1048617, 10, 0, 1048618, 10, 0, 1048619, 10, 0, 1048620, 10, 0, 1048621, 10, 0, 1048622, 10, 0, 1048623, 10, 0, 1179646, 10, 0, 1179647, 10, 0, 1114112, 10, 0, 1114123, 11, 0, 1114124, 11, 0, 1114125, 11, 0, 1114126, 11, 0, 1114127, 11, 0, 1245182, 10, 0, 1245183, 10, 0, 1179648, 10, 0, 1179649, 10, 0, 1179650, 10, 0, 1179651, 10, 0, 1179652, 10, 0, 1179653, 10, 0, 1179654, 10, 0, 1179655, 10, 0, 1179656, 10, 0, 1179657, 10, 0, 1179658, 10, 0, 1179659, 11, 0, 1179660, 11, 0, 1179661, 11, 0, 1179662, 11, 0, 1179663, 11, 0, 1310719, 10, 0, 1245184, 10, 0, 1245185, 10, 0, 1245186, 10, 0, 1245187, 10, 0, 1245188, 10, 0, 1245189, 10, 0, 1245190, 10, 0, 1245191, 10, 0, 1245192, 10, 0, 1245193, 10, 0, 1245194, 10, 0, 1245195, 11, 0, 1245196, 11, 0, 1245197, 11, 0, 1245198, 11, 0, 1245199, 11, 0, 1310732, 10, 0, 1310733, 10, 0, 1376268, 10, 0, 1376269, 10, 0, 1441804, 10, 0, 1441805, 10, 0, 1507340, 10, 0, 1507341, 10, 0, 1572876, 10, 0, 1572877, 10, 0, 1638412, 10, 0, 1638413, 10, 0, 1703948, 10, 0, 1703949, 10, 0, 1769484, 10, 0, 1769485, 10, 0, 1835020, 10, 0, 1835021, 10, 0, 1900556, 10, 0, 1900557, 10, 0, 1966092, 10, 0, 1966093, 10, 0, 1966094, 10, 0, 2031629, 10, 0, 2031630, 10, 0, 2031631, 10, 0, 2031632, 10, 0, 2097166, 10, 0, 2097167, 10, 0, 2097168, 10, 0, 2097169, 10, 0, 2097170, 10, 0, 2097171, 10, 0, 2097172, 10, 0, 2097173, 10, 0, 2097174, 10, 0, 2097175, 10, 0, 2162704, 10, 0, 2162705, 10, 0, 2162706, 10, 0, 2162707, 10, 0, 2162708, 10, 0, 2162709, 10, 0, 2162710, 10, 0, 2162711, 10, 0, 2228244, 10, 0, 2228245, 10, 0, 2228246, 10, 0, 2228247, 10, 0 )
+tile_data = PoolIntArray( -1769457, 14, 0, -1769456, 14, 0, -1769455, 14, 0, -1769454, 14, 0, -1769453, 14, 0, -1769452, 14, 0, -1703923, 14, 0, -1703922, 14, 0, -1703921, 14, 0, -1703920, 14, 0, -1703919, 14, 0, -1703918, 14, 0, -1703917, 14, 0, -1703916, 14, 0, -1703915, 14, 0, -1638389, 14, 0, -1638388, 14, 0, -1638387, 14, 0, -1638386, 14, 0, -1638385, 14, 0, -1638384, 14, 0, -1638383, 14, 0, -1638382, 14, 0, -1638381, 14, 0, -1638380, 14, 0, -1638379, 14, 0, -1638378, 14, 0, -1572855, 14, 0, -1572854, 14, 0, -1572853, 14, 0, -1572852, 14, 0, -1572851, 14, 0, -1572850, 14, 0, -1572849, 14, 0, -1572848, 14, 0, -1572844, 14, 0, -1572843, 14, 0, -1572842, 14, 0, -1507320, 14, 0, -1507319, 14, 0, -1507318, 14, 0, -1507317, 14, 0, -1507316, 14, 0, -1507315, 14, 0, -1507314, 14, 0, -1507308, 14, 0, -1507307, 14, 0, -1507306, 14, 0, -1507305, 14, 0, -1507304, 14, 0, -1507303, 14, 0, -1441786, 14, 0, -1441785, 14, 0, -1441784, 14, 0, -1441783, 14, 0, -1441782, 14, 0, -1441781, 14, 0, -1441771, 14, 0, -1441770, 14, 0, -1441769, 14, 0, -1441768, 14, 0, -1441767, 14, 0, -1376251, 14, 0, -1376250, 14, 0, -1376249, 14, 0, -1376248, 14, 0, -1376247, 14, 0, -1376246, 14, 0, -1376233, 14, 0, -1376232, 14, 0, -1376231, 14, 0, -1310716, 14, 0, -1310715, 14, 0, -1310714, 14, 0, -1310713, 14, 0, -1310712, 14, 0, -1310711, 14, 0, -1310697, 14, 0, -1310696, 14, 0, -1310695, 14, 0, -1245180, 14, 0, -1245179, 14, 0, -1245178, 14, 0, -1245177, 14, 0, -1245176, 14, 0, -1179644, 14, 0, -1179643, 10, 0, -1179642, 14, 0, -1179641, 14, 0, -1114108, 14, 0, -1114107, 14, 0, -1114106, 14, 0, -1114105, 14, 0, -851965, 14, 0, -851964, 14, 0, -851921, 14, 0, -851920, 14, 0, -786429, 14, 0, -786428, 14, 0, -786385, 14, 0, -786384, 14, 0, -720893, 14, 0, -720892, 14, 0, -720852, 10, 0, -720851, 14, 0, -720850, 14, 0, -720849, 14, 0, -655357, 14, 0, -655356, 14, 0, -655317, 10, 0, -655316, 10, 0, -655315, 14, 0, -655314, 14, 0, -589822, 14, 0, -589821, 14, 0, -589820, 14, 0, -589786, 14, 0, -589785, 14, 0, -589784, 14, 0, -589783, 14, 0, -589782, 14, 0, -589781, 14, 0, -589780, 14, 0, -589779, 14, 0, -589778, 14, 0, -458761, 14, 0, -458760, 14, 0, -458759, 14, 0, -458758, 14, 0, -458757, 14, 0, -458756, 14, 0, -458755, 14, 0, -458754, 14, 0, -458753, 14, 0, -524288, 14, 0, -524287, 14, 0, -524286, 14, 0, -524285, 14, 0, -524284, 14, 0, -524253, 14, 0, -524252, 14, 0, -524251, 14, 0, -524250, 14, 0, -524249, 14, 0, -524248, 10, 0, -524247, 10, 0, -524246, 10, 0, -524245, 10, 0, -393225, 14, 0, -393224, 14, 0, -393223, 14, 0, -393222, 14, 0, -393221, 14, 0, -393220, 14, 0, -393219, 14, 0, -393218, 14, 0, -393217, 14, 0, -458752, 14, 0, -458751, 14, 0, -458750, 14, 0, -458749, 14, 0, -458719, 14, 0, -458718, 14, 0, -458717, 14, 0, -458716, 14, 0, -458715, 14, 0, -458714, 14, 0, -458713, 14, 0, -458712, 14, 0, -458711, 14, 0, -327684, 14, 0, -327683, 14, 0, -327682, 14, 0, -393184, 14, 0, -393183, 14, 0, -393182, 14, 0, -393181, 14, 0, -393180, 14, 0, -393179, 14, 0, -393178, 14, 0, -393177, 14, 0, -393176, 14, 0, -393175, 14, 0, -262148, 14, 0, -262147, 14, 0, -262146, 14, 0, -327649, 14, 0, -327648, 14, 0, -327647, 14, 0, -327646, 14, 0, -327645, 14, 0, -327644, 14, 0, -327643, 14, 0, -327642, 14, 0, -327641, 14, 0, -327640, 14, 0, -196612, 14, 0, -196611, 14, 0, -196610, 14, 0, -262114, 14, 0, -262113, 14, 0, -262112, 14, 0, -262111, 14, 0, -262110, 14, 0, -262109, 14, 0, -262108, 14, 0, -262107, 14, 0, -262106, 14, 0, -262105, 14, 0, -262104, 14, 0, -131076, 14, 0, -131075, 14, 0, -131074, 14, 0, -196579, 14, 0, -196578, 14, 0, -196577, 14, 0, -196576, 14, 0, -196575, 14, 0, -196574, 14, 0, -196573, 14, 0, -196572, 14, 0, -196571, 14, 0, -196570, 11, 0, -196569, 14, 0, -196553, 10, 0, -196552, 10, 0, -196551, 10, 0, -65540, 14, 0, -65539, 14, 0, -65538, 14, 0, -131044, 14, 0, -131043, 14, 0, -131042, 14, 0, -131041, 14, 0, -131040, 14, 0, -131039, 14, 0, -131038, 14, 0, -131037, 14, 0, -131036, 14, 0, -131035, 14, 0, -131034, 14, 0, -4, 14, 0, -3, 14, 0, -2, 14, 0, -65509, 14, 0, -65508, 14, 0, -65507, 14, 0, -65506, 14, 0, -65505, 14, 0, 65532, 14, 0, 65533, 14, 0, 65534, 14, 0, 26, 14, 0, 27, 14, 0, 28, 14, 0, 29, 14, 0, 30, 14, 0, 55, 14, 0, 56, 14, 0, 57, 14, 0, 131068, 14, 0, 131069, 14, 0, 131070, 14, 0, 65561, 14, 0, 65562, 14, 0, 65563, 14, 0, 65564, 14, 0, 65565, 14, 0, 65591, 14, 0, 65592, 14, 0, 65593, 14, 0, 196604, 14, 0, 196605, 14, 0, 196606, 14, 0, 131096, 14, 0, 131097, 14, 0, 131098, 14, 0, 131099, 14, 0, 131100, 14, 0, 131127, 14, 0, 131128, 14, 0, 131129, 14, 0, 262140, 14, 0, 262141, 14, 0, 262142, 14, 0, 196630, 14, 0, 196631, 14, 0, 196632, 14, 0, 196633, 14, 0, 196634, 14, 0, 196635, 14, 0, 196663, 14, 0, 196664, 14, 0, 196665, 14, 0, 327676, 14, 0, 327677, 14, 0, 327678, 14, 0, 262165, 14, 0, 262166, 14, 0, 262167, 14, 0, 262168, 14, 0, 262169, 14, 0, 262170, 14, 0, 262199, 14, 0, 262200, 14, 0, 262201, 14, 0, 393212, 14, 0, 393213, 14, 0, 393214, 14, 0, 327700, 14, 0, 327701, 14, 0, 327702, 14, 0, 327704, 14, 0, 327735, 14, 0, 327736, 14, 0, 327737, 14, 0, 458748, 14, 0, 458749, 14, 0, 458750, 14, 0, 393235, 14, 0, 393236, 14, 0, 393237, 11, 0, 393238, 14, 0, 393239, 14, 0, 393271, 14, 0, 393272, 14, 0, 393273, 14, 0, 524284, 14, 0, 524285, 14, 0, 524286, 14, 0, 458771, 14, 0, 458772, 14, 0, 458773, 11, 0, 458774, 14, 0, 458806, 14, 0, 458807, 14, 0, 458808, 14, 0, 458809, 14, 0, 589820, 14, 0, 589821, 14, 0, 589822, 14, 0, 524307, 14, 0, 524308, 14, 0, 524309, 14, 0, 524310, 14, 0, 524341, 14, 0, 524342, 14, 0, 524343, 14, 0, 524344, 14, 0, 524345, 14, 0, 655356, 14, 0, 655357, 14, 0, 655358, 14, 0, 655359, 14, 0, 589843, 14, 0, 589844, 14, 0, 589845, 14, 0, 589846, 14, 0, 589876, 14, 0, 589877, 14, 0, 589878, 14, 0, 589879, 14, 0, 589880, 14, 0, 720893, 14, 0, 720894, 14, 0, 720895, 14, 0, 655371, 10, 0, 655372, 9, 0, 655379, 14, 0, 655380, 14, 0, 655381, 14, 0, 655382, 14, 0, 655383, 14, 0, 655411, 14, 0, 655412, 14, 0, 655413, 14, 0, 655414, 14, 0, 655415, 14, 0, 786429, 14, 0, 786430, 14, 0, 786431, 14, 0, 720907, 10, 0, 720908, 18, 0, 720916, 14, 0, 720917, 14, 0, 720918, 14, 0, 720919, 14, 0, 720920, 14, 0, 720946, 14, 0, 720947, 14, 0, 720948, 14, 0, 720949, 14, 0, 720950, 14, 0, 851965, 14, 0, 851966, 14, 0, 851967, 14, 0, 786443, 14, 0, 786444, 14, 0, 786445, 14, 0, 786453, 14, 0, 786454, 14, 0, 786455, 14, 0, 786456, 14, 0, 786457, 14, 0, 786481, 14, 0, 786482, 14, 0, 786483, 14, 0, 786484, 14, 0, 786485, 14, 0, 917501, 14, 0, 917502, 14, 0, 917503, 14, 0, 851979, 14, 0, 851980, 14, 0, 851981, 14, 0, 851982, 14, 0, 851983, 14, 0, 851990, 14, 0, 851991, 14, 0, 851992, 14, 0, 851993, 14, 0, 851994, 14, 0, 852016, 14, 0, 852017, 14, 0, 852018, 14, 0, 852019, 14, 0, 852020, 14, 0, 983037, 14, 0, 983038, 14, 0, 983039, 14, 0, 917514, 14, 0, 917515, 14, 0, 917516, 14, 0, 917517, 14, 0, 917518, 14, 0, 917519, 14, 0, 917520, 14, 0, 917521, 14, 0, 917522, 14, 0, 917523, 14, 0, 917524, 14, 0, 917525, 14, 0, 917526, 14, 0, 917527, 14, 0, 917528, 14, 0, 917529, 14, 0, 917530, 14, 0, 917531, 14, 0, 917551, 14, 0, 917552, 14, 0, 917553, 14, 0, 917554, 14, 0, 917555, 14, 0, 1048573, 14, 0, 1048574, 14, 0, 1048575, 14, 0, 983049, 14, 0, 983050, 14, 0, 983051, 14, 0, 983052, 14, 0, 983053, 14, 0, 983054, 14, 0, 983055, 14, 0, 983056, 14, 0, 983057, 14, 0, 983058, 14, 0, 983059, 14, 0, 983060, 14, 0, 983061, 14, 0, 983062, 14, 0, 983063, 14, 0, 983064, 14, 0, 983065, 11, 0, 983066, 14, 0, 983067, 14, 0, 983068, 14, 0, 983069, 14, 0, 983070, 14, 0, 983071, 14, 0, 983072, 14, 0, 983073, 14, 0, 983074, 14, 0, 983075, 14, 0, 983076, 14, 0, 983077, 14, 0, 983078, 14, 0, 983079, 14, 0, 983080, 14, 0, 983081, 14, 0, 983082, 14, 0, 983083, 14, 0, 983084, 14, 0, 983085, 14, 0, 983086, 14, 0, 983087, 14, 0, 983088, 14, 0, 983089, 14, 0, 983090, 14, 0, 1114109, 14, 0, 1114110, 14, 0, 1114111, 14, 0, 1048584, 14, 0, 1048585, 14, 0, 1048586, 14, 0, 1048587, 14, 0, 1048588, 14, 0, 1048589, 14, 0, 1048590, 14, 0, 1048591, 14, 0, 1048592, 14, 0, 1048593, 14, 0, 1048594, 14, 0, 1048595, 14, 0, 1048596, 14, 0, 1048597, 14, 0, 1048598, 14, 0, 1048599, 14, 0, 1048600, 14, 0, 1048601, 14, 0, 1048602, 14, 0, 1048603, 14, 0, 1048604, 14, 0, 1048605, 14, 0, 1048606, 14, 0, 1048607, 14, 0, 1048608, 14, 0, 1048609, 14, 0, 1048610, 14, 0, 1048611, 14, 0, 1048612, 14, 0, 1048613, 14, 0, 1048614, 14, 0, 1048615, 14, 0, 1048616, 14, 0, 1048617, 14, 0, 1048618, 14, 0, 1048619, 14, 0, 1048620, 14, 0, 1048621, 14, 0, 1048622, 14, 0, 1048623, 14, 0, 1048624, 14, 0, 1048625, 14, 0, 1048626, 14, 0, 1179645, 14, 0, 1179646, 14, 0, 1179647, 14, 0, 1114112, 14, 0, 1114118, 14, 0, 1114119, 14, 0, 1114120, 14, 0, 1114121, 14, 0, 1114122, 14, 0, 1114123, 14, 0, 1114124, 14, 0, 1114125, 14, 0, 1114126, 14, 0, 1114127, 14, 0, 1114128, 14, 0, 1114129, 14, 0, 1114130, 14, 0, 1114131, 14, 0, 1114132, 14, 0, 1114133, 14, 0, 1114159, 14, 0, 1114160, 14, 0, 1114161, 14, 0, 1114162, 14, 0, 1245182, 14, 0, 1245183, 14, 0, 1179648, 14, 0, 1179649, 14, 0, 1179650, 14, 0, 1179651, 14, 0, 1179652, 14, 0, 1179653, 14, 0, 1179654, 14, 0, 1179655, 14, 0, 1179656, 14, 0, 1179657, 14, 0, 1179658, 14, 0, 1179659, 14, 0, 1179660, 14, 0, 1179661, 14, 0, 1179662, 14, 0, 1179663, 11, 0, 1179664, 14, 0, 1179665, 14, 0, 1179666, 14, 0, 1179667, 14, 0, 1179697, 14, 0, 1179698, 14, 0, 1179699, 14, 0, 1310719, 14, 0, 1245184, 14, 0, 1245185, 14, 0, 1245186, 14, 0, 1245187, 14, 0, 1245188, 14, 0, 1245189, 14, 0, 1245190, 14, 0, 1245191, 14, 0, 1245192, 14, 0, 1245193, 14, 0, 1245194, 14, 0, 1245195, 14, 0, 1245196, 14, 0, 1245197, 14, 0, 1245198, 14, 0, 1245199, 14, 0, 1245200, 14, 0, 1245201, 14, 0, 1245202, 14, 0, 1245234, 14, 0, 1245235, 14, 0, 1310728, 14, 0, 1310729, 14, 0, 1310730, 14, 0, 1310731, 14, 0, 1310732, 14, 0, 1310733, 14, 0, 1310734, 14, 0, 1310735, 14, 0, 1310736, 14, 0, 1310737, 14, 0, 1310770, 14, 0, 1310771, 14, 0, 1310772, 14, 0, 1376265, 14, 0, 1376266, 14, 0, 1376267, 14, 0, 1376268, 14, 0, 1376269, 14, 0, 1376270, 14, 0, 1376271, 14, 0, 1376272, 14, 0, 1376273, 14, 0, 1376307, 14, 0, 1376308, 14, 0, 1376309, 14, 0, 1441803, 14, 0, 1441804, 14, 0, 1441805, 14, 0, 1441806, 14, 0, 1441807, 14, 0, 1441808, 14, 0, 1441843, 14, 0, 1441844, 14, 0, 1441845, 14, 0, 1507339, 14, 0, 1507340, 14, 0, 1507341, 14, 0, 1507342, 14, 0, 1507343, 14, 0, 1507380, 14, 0, 1507381, 14, 0, 1507382, 14, 0, 1572876, 14, 0, 1572877, 14, 0, 1572878, 14, 0, 1572879, 14, 0, 1572917, 14, 0, 1572918, 14, 0, 1572919, 14, 0, 1638412, 14, 0, 1638413, 14, 0, 1638414, 14, 0, 1638415, 14, 0, 1638454, 14, 0, 1638455, 14, 0, 1703948, 14, 0, 1703949, 14, 0, 1703950, 14, 0, 1703951, 14, 0, 1703990, 14, 0, 1703991, 14, 0, 1703992, 14, 0, 1769484, 10, 0, 1769485, 14, 0, 1769486, 14, 0, 1769487, 14, 0, 1769526, 14, 0, 1769527, 14, 0, 1769528, 14, 0, 1835020, 10, 0, 1835021, 14, 0, 1835022, 14, 0, 1835023, 14, 0, 1835063, 14, 0, 1835064, 14, 0, 1900556, 14, 0, 1900557, 14, 0, 1900558, 14, 0, 1900559, 14, 0, 1900599, 14, 0, 1900600, 14, 0, 1900601, 14, 0, 1966092, 10, 0, 1966093, 14, 0, 1966094, 14, 0, 1966095, 14, 0, 1966096, 14, 0, 1966135, 14, 0, 1966136, 14, 0, 1966137, 14, 0, 2031629, 10, 0, 2031630, 14, 0, 2031631, 14, 0, 2031632, 14, 0, 2031633, 14, 0, 2031634, 14, 0, 2031635, 14, 0, 2031636, 14, 0, 2031637, 14, 0, 2031638, 14, 0, 2031639, 14, 0, 2031671, 14, 0, 2031672, 14, 0, 2031673, 14, 0, 2031674, 14, 0, 2031675, 14, 0, 2097166, 14, 0, 2097167, 14, 0, 2097168, 14, 0, 2097169, 14, 0, 2097170, 14, 0, 2097171, 14, 0, 2097172, 14, 0, 2097173, 14, 0, 2097174, 14, 0, 2097175, 14, 0, 2097208, 14, 0, 2097209, 14, 0, 2097210, 14, 0, 2097211, 14, 0, 2097212, 14, 0, 2097213, 14, 0, 2097214, 14, 0, 2097215, 14, 0, 2097216, 14, 0, 2097217, 14, 0, 2162704, 10, 0, 2162705, 14, 0, 2162706, 14, 0, 2162707, 14, 0, 2162708, 14, 0, 2162709, 14, 0, 2162710, 14, 0, 2162711, 14, 0, 2162745, 14, 0, 2162746, 14, 0, 2162747, 14, 0, 2162748, 14, 0, 2162749, 14, 0, 2162750, 14, 0, 2162751, 14, 0, 2162752, 14, 0, 2162753, 14, 0, 2228244, 14, 0, 2228245, 14, 0, 2228246, 14, 0, 2228247, 14, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -679,7 +671,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -718,7 +710,6 @@ animation = "hover"
 
 [node name="DoorDetector" type="CollisionShape2D" parent="YSort/OutdoorHouse/OutdoorDoor"]
 position = Vector2( 7.2251, 151.742 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
 [node name="EnteranceArea" type="Area2D" parent="YSort/OutdoorHouse"]
@@ -772,6 +763,9 @@ color = Color( 0.2, 0.156863, 0.109804, 1 )
 position = Vector2( 147, 67 )
 shape = SubResource( 9 )
 
+[node name="ExitLettuceForest" type="Position2D" parent="."]
+position = Vector2( 3886, 2096 )
+
 [node name="ExitForest" type="Position2D" parent="."]
 position = Vector2( 2415, -303 )
 
@@ -800,1391 +794,91 @@ shape = SubResource( 128 )
 position = Vector2( 3137, -1050 )
 shape = SubResource( 128 )
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
-position = Vector2( 1431.75, -2349 )
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 1404, -2447 )
+rotation = 1.5708
 shape = SubResource( 129 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
-position = Vector2( 1277, -2349 )
-shape = SubResource( 130 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
-position = Vector2( 1479.66, -2817 )
-shape = SubResource( 131 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
-position = Vector2( 977.874, -2540.34 )
-rotation = 2.25671
-shape = SubResource( 132 )
-
-[node name="Tree7" type="StaticBody2D" parent="."]
-position = Vector2( 2015, -687 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree7"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree7/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree7/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree7/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree7/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree7/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree7/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree7/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree7/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree10" type="StaticBody2D" parent="."]
-position = Vector2( 1685, -1237 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree10"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree10"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree10"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree10/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree10/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree10/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree10/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree10/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree10/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree10/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree10/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree14" type="StaticBody2D" parent="."]
-position = Vector2( 1778, -1434 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree14"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree14"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree14"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree14/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree14/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree14/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree14/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree14/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree14/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree14/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree14/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree15" type="StaticBody2D" parent="."]
-position = Vector2( 1881, -1608 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree15"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree15"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree15"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree15/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree15/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree15/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree15/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree15/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree15/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree15/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree15/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree16" type="StaticBody2D" parent="."]
-position = Vector2( 2150, -1753 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree16"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree16"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree16"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree16/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree16/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree16/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree16/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree16/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree16/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree16/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree16/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree17" type="StaticBody2D" parent="."]
-position = Vector2( 2498, -1749 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree17"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree17"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree17"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree17/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree17/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree17/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree17/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree17/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree17/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree17/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree17/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree18" type="StaticBody2D" parent="."]
-position = Vector2( 2782, -1749 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree18"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree18"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree18"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree18/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree18/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree18/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree18/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree18/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree18/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree18/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree18/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree19" type="StaticBody2D" parent="."]
-position = Vector2( 2815, -1608 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree19"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree19"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree19"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree19/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree19/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree19/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree19/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree19/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree19/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree19/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree19/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree20" type="StaticBody2D" parent="."]
-position = Vector2( 2873, -1422 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree20"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree20"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree20"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree20/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree20/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree20/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree20/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree20/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree20/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree20/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree20/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree21" type="StaticBody2D" parent="."]
-position = Vector2( 2887, -1242 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree21"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree21"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree21"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree21/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree21/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree21/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree21/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree21/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree21/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree21/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree21/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree22" type="StaticBody2D" parent="."]
-position = Vector2( 2881, -1014 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree22"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree22"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree22"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree22/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree22/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree22/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree22/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree22/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree22/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree22/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree22/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree23" type="StaticBody2D" parent="."]
-position = Vector2( 2866, -822 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree23"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree23"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree23"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree23/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree23/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree23/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree23/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree23/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree23/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree23/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree23/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree24" type="StaticBody2D" parent="."]
-position = Vector2( 2802, -793 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree24"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree24"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree24"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree24/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree24/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree24/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree24/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree24/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree24/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree24/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree24/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree25" type="StaticBody2D" parent="."]
-position = Vector2( 2802, -793 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree25"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree25"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree25"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree25/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree25/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree25/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree25/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree25/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree25/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree25/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 3
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree25/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree11" type="StaticBody2D" parent="."]
-position = Vector2( 1423, -1127 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree11"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree11"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree11"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree11/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree11/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree11/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree11/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 2
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree11/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree11/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree11/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree11/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree12" type="StaticBody2D" parent="."]
-position = Vector2( 1575, -945 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree12"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree12"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree12"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree12/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree12/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree12/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree12/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree12/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree12/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree12/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree12/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree13" type="StaticBody2D" parent="."]
-position = Vector2( 1754, -829 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree13"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree13"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree13"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree13/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree13/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree13/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree13/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree13/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree13/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree13/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree13/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree8" type="StaticBody2D" parent="."]
-position = Vector2( 2574, -663 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree8"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree8"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree8"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree8/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree8/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree8/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree8/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree8/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree8/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree8/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree8/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree9" type="StaticBody2D" parent="."]
-position = Vector2( 2259, -727 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree9"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree9"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree7" type="StaticBody2D" parent="Tree9"]
-position = Vector2( 199, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree9/Tree7"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree9/Tree7"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree4" type="StaticBody2D" parent="Tree9/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree9/Tree7/Tree4"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-frame = 1
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree9/Tree7/Tree4"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree5" type="StaticBody2D" parent="Tree9/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Tree9/Tree7/Tree4/Tree5"]
-position = Vector2( 1, 0 )
-frames = SubResource( 105 )
-speed_scale = 0.3
-playing = true
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree9/Tree7/Tree4/Tree5"]
-position = Vector2( -9, 104 )
-shape = SubResource( 106 )
-
-[node name="Tree6" type="StaticBody2D" parent="."]
+[node name="TreeYSort" type="YSort" parent="."]
 position = Vector2( 2243, -617 )
+
+[node name="EntranceTrees" type="StaticBody2D" parent="TreeYSort"]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="AnimatedSprite" parent="Tree6"]
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/EntranceTrees"]
 position = Vector2( -9, 104 )
 shape = SubResource( 106 )
 
-[node name="Tree7" type="StaticBody2D" parent="Tree6"]
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/EntranceTrees"]
 position = Vector2( 199, 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7"]
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/EntranceTrees/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree4" type="StaticBody2D" parent="TreeYSort/EntranceTrees/Tree7"]
+position = Vector2( -175, 29 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree7/Tree4"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/EntranceTrees/Tree7/Tree4"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/EntranceTrees/Tree7/Tree4"]
+position = Vector2( 155, -3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree7/Tree4/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/EntranceTrees/Tree7/Tree4/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch" type="YSort" parent="TreeYSort"]
+position = Vector2( 155, -455 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
 frame = 1
@@ -2192,17 +886,57 @@ speed_scale = 0.3
 playing = true
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6/Tree7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree5"]
 position = Vector2( -9, 104 )
 shape = SubResource( 106 )
 
-[node name="Tree4" type="StaticBody2D" parent="Tree6/Tree7"]
-position = Vector2( -175, 29 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( 33, -30 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4"]
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
 frame = 2
@@ -2210,17 +944,44 @@ speed_scale = 0.3
 playing = true
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6/Tree7/Tree4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree9"]
 position = Vector2( -9, 104 )
 shape = SubResource( 106 )
 
-[node name="Tree5" type="StaticBody2D" parent="Tree6/Tree7/Tree4"]
-position = Vector2( 155, -3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( 92, -144 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Tree6/Tree7/Tree4/Tree5"]
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
 frame = 1
@@ -2228,7 +989,1770 @@ speed_scale = 0.3
 playing = true
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6/Tree7/Tree4/Tree5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch2" type="YSort" parent="TreeYSort"]
+position = Vector2( -178, -552 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch2"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch2/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch3" type="YSort" parent="TreeYSort"]
+position = Vector2( -228, -329 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch3"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch3/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch4" type="YSort" parent="TreeYSort"]
+position = Vector2( 75, -163 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch4"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch4/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch5" type="YSort" parent="TreeYSort"]
+position = Vector2( 445, -261 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch5"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch5/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch6" type="YSort" parent="TreeYSort"]
+position = Vector2( 455, -543 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch6"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch6/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch7" type="YSort" parent="TreeYSort"]
+position = Vector2( 326, -676 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch7"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch7/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="TreeBunch8" type="YSort" parent="TreeYSort"]
+position = Vector2( 195, -528 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( 155, -3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( 33, -30 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( 89, 100 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( -62, 55 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( -105, -85 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( 92, -144 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/TreeBunch8"]
+position = Vector2( 223, 74 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/TreeBunch8/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="ForestTreeOutline" type="YSort" parent="TreeYSort"]
+position = Vector2( -109, -83 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -133, -64 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -251, -218 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -398, -234 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -343, -392 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -238, -500 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -316, -640 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -148, -705 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree13" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -19, -742 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree13"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree13"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree14" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 76, -660 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree14"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree14"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree15" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 226, -666 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree15"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree15"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree16" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 347, -757 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree16"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree16"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree17" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 468, -771 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree17"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree17"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree18" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 613, -771 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree18"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree18"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree19" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 699, -758 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree19"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree19"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree20" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 794, -647 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree20"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree20"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree21" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 898, -562 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree21"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree21"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree22" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 1059, -441 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree22"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree22"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree23" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 1010, -310 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree23"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree23"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree24" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 879, -163 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree24"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree24"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree25" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 785, -45 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree25"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree25"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree26" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 867, -274 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree26"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree26"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree27" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 690, 89 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree27"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree27"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree28" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 604, 57 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree28"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree28"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree29" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 503, 12 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree29"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree29"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree30" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 407, 12 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree30"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree30"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree31" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -584, -217 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree31"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree31"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree32" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -496, -538 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree32"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree32"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree33" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 121, -859 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree33"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree33"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree34" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 777, -1042 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree34"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree34"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree35" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 1298, -639 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree35"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree35"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree36" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 925, -682 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree36"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree36"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree37" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 1262, -229 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree37"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree37"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree38" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 961, 164 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree38"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree38"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree39" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( 614, 216 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree39"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree39"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree40" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -265, 246 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree40"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree40"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree41" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -722, 102 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree41"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree41"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree42" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -1110, -202 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree42"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree42"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree43" type="StaticBody2D" parent="TreeYSort/ForestTreeOutline"]
+position = Vector2( -1110, -202 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree43"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/ForestTreeOutline/Tree43"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree5" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2190, 1046 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree5"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree5"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree6" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -1986, 1595 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree6"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree6"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree7" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -1845, 502 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree7"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree7"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree8" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -1385, 218 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree8"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree8"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree9" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 411, 959 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree9"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree9"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree10" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2899, 2062 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree10"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree10"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree11" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2412, 2814 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree11"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree11"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree12" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2807, 986 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree12"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree12"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree13" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 54, 2500 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree13"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree13"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree14" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 1482, 1759 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree14"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree14"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree15" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 860, 2700 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree15"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree15"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree16" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -1228, 3073 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree16"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree16"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree17" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -3134, -1101 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree17"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree17"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree18" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2410, -868 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree18"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree18"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree19" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -3231, -493 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree19"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree19"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree20" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2042, -1462 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree20"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 3
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree20"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree21" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -808, -1294 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree21"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 2
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree21"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree22" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 1609, -1307 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree22"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree22"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree23" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 1835, 509 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree23"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree23"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree24" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( 1680, 2945 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree24"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+frame = 1
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree24"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree25" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2927, 3048 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree25"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree25"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree26" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -3334, 1374 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree26"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree26"]
+position = Vector2( -9, 104 )
+shape = SubResource( 106 )
+
+[node name="Tree27" type="StaticBody2D" parent="TreeYSort"]
+position = Vector2( -2009, 2485 )
+
+[node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree27"]
+position = Vector2( 1, 0 )
+frames = SubResource( 105 )
+speed_scale = 0.3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeYSort/Tree27"]
 position = Vector2( -9, 104 )
 shape = SubResource( 106 )
 
@@ -2236,29 +2760,12 @@ shape = SubResource( 106 )
 position = Vector2( 2323, -463 )
 
 [node name="Sprite" type="Sprite" parent="Forest Sign"]
+position = Vector2( -157, -1 )
 texture = ExtResource( 12 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Forest Sign"]
 visible = false
 polygon = PoolVector2Array( -46, -23, -45, 6, -10, 6, -9, 22, -53, 30, -51, 55, -7, 56, -5, 114, 7, 114, 9, 54, 47, 52, 47, 22, 8, 23, 5, 5, 34, 3, 50, -18, 27, -34, 7, -34, 6, -68, -6, -67, -5, -34 )
-
-[node name="FrogDad" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1612, 986 )
-scale = Vector2( 0.35, 0.35 )
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
-remote_path = NodePath("../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="FrogDad"]
-scale = Vector2( 1, 1 )
-current = true
-limit_left = -14
-limit_top = -5132
-limit_right = 5574
-limit_bottom = -2
-editor_draw_limits = true
-
-[node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 2 )]
 
 [node name="JimothyJohns" type="StaticBody2D" parent="."]
 position = Vector2( 1302, -1694 )
@@ -2285,7 +2792,6 @@ __meta__ = {
 
 [node name="DoorClickDetector" type="CollisionShape2D" parent="JimothyJohns/JimothyDoor"]
 position = Vector2( 27.5, 55.105 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="JimothyJohns"]
@@ -2295,7 +2801,7 @@ position = Vector2( 2306, 1538 )
 scale = Vector2( 0.4, 0.4 )
 shape = SubResource( 124 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="NeighborHouse1" type="TextureRect" parent="."]
 modulate = Color( 0.768627, 0.952941, 0.462745, 1 )
 margin_left = 58.0
 margin_top = -1330.0
@@ -2303,7 +2809,7 @@ margin_right = 587.0
 margin_bottom = -818.0
 texture = ExtResource( 11 )
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="NeighborDoor1" type="TextureRect" parent="."]
 margin_left = 182.0
 margin_top = -1004.0
 margin_right = 328.0
@@ -2311,7 +2817,7 @@ margin_bottom = -796.0
 texture = ExtResource( 15 )
 expand = true
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="NeighborHouse2" type="TextureRect" parent="."]
 modulate = Color( 0.972549, 0.615686, 0.529412, 1 )
 margin_left = -896.0
 margin_top = -880.0
@@ -2319,13 +2825,74 @@ margin_right = -367.0
 margin_bottom = -368.0
 texture = ExtResource( 11 )
 
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="NeightborDoor2" type="TextureRect" parent="."]
 margin_left = -779.0
 margin_top = -556.0
 margin_right = -633.0
 margin_bottom = -348.0
 texture = ExtResource( 15 )
 expand = true
+
+[node name="TempOdieHouse" type="TextureRect" parent="."]
+modulate = Color( 0.972549, 0.615686, 0.529412, 1 )
+margin_left = 1507.0
+margin_top = 1727.0
+margin_right = 2036.0
+margin_bottom = 2239.0
+texture = ExtResource( 11 )
+
+[node name="TempOdieDoor" type="TextureRect" parent="."]
+margin_left = 1629.0
+margin_top = 2041.0
+margin_right = 1775.0
+margin_bottom = 2249.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="FrogDad" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1612, 986 )
+scale = Vector2( 0.35, 0.35 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="FrogDad"]
+scale = Vector2( 1, 1 )
+current = true
+limit_left = -14
+limit_top = -5132
+limit_right = 5574
+limit_bottom = -2
+editor_draw_limits = true
+
+[node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 2 )]
+
+[node name="tempLettuceForestLabel" type="Label" parent="."]
+margin_left = 3951.0
+margin_top = 2108.0
+margin_right = 4065.0
+margin_bottom = 2122.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lettuce Forest -->"
+
+[node name="LettuceForestEnterance" type="Area2D" parent="."]
+position = Vector2( 4013, 2014 )
+collision_layer = 8
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TemporaryEntrance" type="ColorRect" parent="LettuceForestEnterance"]
+margin_left = 84.0
+margin_top = 34.0
+margin_right = 212.0
+margin_bottom = 161.0
+color = Color( 0.2, 0.156863, 0.109804, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LettuceForestEnterance"]
+position = Vector2( 147, 67 )
+shape = SubResource( 9 )
 
 [connection signal="area_entered" from="YSort/OutdoorHouse/OutdoorDoor" to="YSort/OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_entered"]
 [connection signal="area_exited" from="YSort/OutdoorHouse/OutdoorDoor" to="YSort/OutdoorHouse/OutdoorDoor" method="_on_OutdoorDoor_area_exited"]
@@ -2334,3 +2901,4 @@ expand = true
 [connection signal="body_entered" from="JimothyJohns/JimothyDoor" to="JimothyJohns" method="_on_JimothyDoor_body_entered"]
 [connection signal="body_entered" from="JimothyJohns/Area2D" to="JimothyJohns" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="JimothyJohns/Area2D" to="JimothyJohns" method="_on_Area2D_body_exited"]
+[connection signal="area_entered" from="LettuceForestEnterance" to="LettuceForestEnterance" method="_on_LettuceForestEnterance_area_entered"]

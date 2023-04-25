@@ -248,8 +248,8 @@ position = Vector2( 50.6667, 63.3333 )
 scale = Vector2( 1, 1 )
 item_list = {
 0: [ "Fly", 1 ],
-1: [ "Log", 0 ],
-2: [ "Cloth", 4 ],
+1: [ "Log", 7 ],
+2: [ "Cloth", 5 ],
 3: [ "Lettuce", 5 ]
 }
 inventory_type = "player"

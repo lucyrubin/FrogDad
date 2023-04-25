@@ -20,7 +20,6 @@ func _ready():
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 	FrogDad_inventory = FrogDad.find_node("Inventory", true, false)
 	FrogDad_inventory_data = FrogDad_inventory.inventory_data
-	
 	if MasterScript.currentQuestNum == -1 :
 		begin_intro_quest()
 	elif MasterScript.currentQuestNum == 0 and !MasterScript.opened_quest_first_time:
@@ -31,7 +30,10 @@ func _ready():
 		## temporary to show the baby jar being carried
 		
 		HUDNode.new_quest("Make a Swaddle")
-		
+	elif MasterScript.after_eggs_to_tadpoles:
+		PopUpNode.visible = true
+		PopUpNode.show_dialog_box([{avatar = "", text = "The crib is done! Wow, they've grown up so fast, but now they're hungry all the time."},
+								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished log quest")
 	
 
 func _process(delta):
@@ -73,12 +75,18 @@ func deleteQuest(SubQuest):
 								
 	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Collect Logs for Crib":
 		##temporary
+		####
 		print("crib made cut scene")
+		####
 		## temporary 
 		PopUpNode.visible = true
+		
+		###
+		SceneTransition.change_scene("res://Scenes/EggsIntoTadpolesCutScene.tscn")
+		
+		
 		# the second value of this is just an identifier for if you want to do something after dialogue has ended
-		PopUpNode.show_dialog_box([{avatar = "", text = "The crib is done! Wow, they've grown up so fast, but now they're hungry all the time."},
-								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished log quest")
+		
 	## if you want to play dialogue after a quest is finshed, do it here
 
 	SubQuest.queue_free()

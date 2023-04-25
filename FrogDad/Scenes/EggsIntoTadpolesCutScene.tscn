@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=1]
 [ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Art/gravy baby sprite sheet.png" type="Texture" id=4]
 [ext_resource path="res://Art/baby gertrude sprite sheet.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/EggsIntoTadpolesCutScene.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
@@ -196,6 +197,41 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=35]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "show_names"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Gertrude", "Gertrude   Gilbert", "Gertrude   Gilbert  Gravy Baby" ]
+}
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
@@ -252,25 +288,35 @@ playing = true
 [node name="Gilbert" type="AnimatedSprite" parent="."]
 position = Vector2( 504, 352 )
 frames = SubResource( 25 )
+frame = 1
 playing = true
 
 [node name="BabyGravy" type="AnimatedSprite" parent="."]
 position = Vector2( 736, 352 )
 frames = SubResource( 34 )
 animation = "default 1"
+frame = 1
 playing = true
 
-[node name="ContinueButton" type="Button" parent="."]
-margin_left = 416.0
-margin_top = 512.0
-margin_right = 574.0
-margin_bottom = 552.0
-text = "Continue to Next Stage"
+[node name="Names" type="Label" parent="."]
+visible = false
+margin_left = 264.0
+margin_top = 208.0
+margin_right = 409.0
+margin_bottom = 246.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Gertrude   Gilbert  Gravy Baby"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Names"]
+anims/RESET = SubResource( 36 )
+anims/show_names = SubResource( 37 )
 
 [node name="Jar" type="AnimatedSprite" parent="."]
 position = Vector2( 504, 300 )
 scale = Vector2( 0.583808, 0.6 )
 frames = SubResource( 1 )
+frame = 1
 speed_scale = 0.8
 playing = true
 
@@ -285,10 +331,23 @@ autoplay = "fade"
 anims/RESET = SubResource( 2 )
 anims/fade = SubResource( 3 )
 
+[node name="ContinueButton" type="Button" parent="."]
+visible = false
+margin_left = 416.0
+margin_top = 488.0
+margin_right = 574.0
+margin_bottom = 568.0
+text = "Continue to Next Stage"
+
+[node name="ShowContinueButtonTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 autostart = true
 
 [connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="timeout" from="ShowContinueButtonTimer" to="." method="_on_ShowContinueButtonTimer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
