@@ -168,6 +168,7 @@ func close_quest():
 	MasterScript.frog_dad_state = ""
 	
 func _on_ToggleQuestButton_pressed():
+	Input.set_custom_mouse_cursor(MasterScript.hand)
 	
 	if MasterScript.frog_dad_state == "":
 		if !MasterScript.opened_quest_first_time:

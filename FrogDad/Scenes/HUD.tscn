@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
 [ext_resource path="res://Art/todo_icon_hover.png" type="Texture" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Art/lightLeafHover.png" type="Texture" id=4]
 [ext_resource path="res://Info Icons/wasd.png" type="Texture" id=5]
 [ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/ToggleInventoryButton.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/PauseButton.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
 [ext_resource path="res://House Art/fridge_box.png" type="Texture" id=19]
@@ -253,6 +255,7 @@ margin_right = 2037.0
 margin_bottom = 147.0
 texture_normal = ExtResource( 25 )
 texture_hover = ExtResource( 4 )
+script = ExtResource( 7 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 scale = Vector2( 3, 3 )
@@ -581,13 +584,18 @@ margin_bottom = 100.0
 rect_min_size = Vector2( 16, 40 )
 texture_normal = ExtResource( 37 )
 texture_pressed = ExtResource( 33 )
+script = ExtResource( 10 )
 
 [node name="PauseMenu" parent="." instance=ExtResource( 38 )]
 visible = false
 rect_scale = Vector2( 2, 2 )
 
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
+[connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]
+[connection signal="mouse_exited" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_exited"]
 [connection signal="pressed" from="ToggleQuestButton" to="UserInterface/Quest" method="_on_ToggleQuestButton_pressed"]
+[connection signal="mouse_entered" from="ToggleInventoryButton" to="ToggleInventoryButton" method="_on_ToggleInventoryButton_mouse_entered"]
+[connection signal="mouse_exited" from="ToggleInventoryButton" to="ToggleInventoryButton" method="_on_ToggleInventoryButton_mouse_exited"]
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]
 [connection signal="gui_input" from="UserInterface/DarkBackground" to="UserInterface" method="_on_DarkBackground_gui_input"]
 [connection signal="mouse_entered" from="UserInterface/FridgeInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
@@ -595,4 +603,6 @@ rect_scale = Vector2( 2, 2 )
 [connection signal="mouse_entered" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_entered"]
 [connection signal="mouse_exited" from="UserInterface/DresserInventory/TextureRect" to="UserInterface" method="_on_TextureRect_mouse_exited"]
 [connection signal="timeout" from="UserInterface/Quest/OneSecTimer" to="UserInterface/Quest" method="_on_OneSecTimer_timeout"]
+[connection signal="mouse_entered" from="PauseButton" to="PauseButton" method="_on_PauseButton_mouse_entered"]
+[connection signal="mouse_exited" from="PauseButton" to="PauseButton" method="_on_PauseButton_mouse_exited"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
