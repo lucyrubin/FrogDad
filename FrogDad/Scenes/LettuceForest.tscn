@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=2]
@@ -276,6 +276,12 @@ radius = 23.0217
 [sub_resource type="RectangleShape2D" id=110]
 extents = Vector2( 64, 32.5 )
 
+[sub_resource type="RectangleShape2D" id=111]
+extents = Vector2( 47, 649 )
+
+[sub_resource type="RectangleShape2D" id=112]
+extents = Vector2( 1060, 68 )
+
 [node name="LettuceForest" type="Node2D"]
 script = SubResource( 109 )
 
@@ -305,7 +311,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -323,7 +328,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -341,7 +345,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree2"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -359,7 +363,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -433,12 +436,6 @@ editor_draw_limits = true
 
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 5 )]
 
-[node name="Fly" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1272, 1008 )
-
-[node name="Fly2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1376, 1016 )
-
 [node name="LettuceExit" type="Area2D" parent="."]
 position = Vector2( 152, 632 )
 rotation = 1.5708
@@ -458,5 +455,62 @@ color = Color( 0.2, 0.156863, 0.109804, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LettuceExit"]
 position = Vector2( 147, 67 )
 shape = SubResource( 110 )
+
+[node name="Fly" parent="." instance=ExtResource( 6 )]
+position = Vector2( 392, 624 )
+
+[node name="Fly2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1184, 312 )
+
+[node name="Fly3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 144, 1088 )
+
+[node name="Fly4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1544, 1112 )
+
+[node name="Fly5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 864, 136 )
+
+[node name="Fly6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1072, 936 )
+
+[node name="Fly7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1416, 464 )
+
+[node name="Fly8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1160, 640 )
+
+[node name="Fly9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 488, 1064 )
+
+[node name="Fly10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1504, 512 )
+
+[node name="Fly11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 480, 80 )
+
+[node name="Fly12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1904, 384 )
+
+[node name="Fly13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 24, 616 )
+
+[node name="Boundaries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2( -40, 648 )
+shape = SubResource( 111 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2( 2080, 648 )
+shape = SubResource( 111 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2( 1028, -60 )
+shape = SubResource( 112 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2( 1048, 1336 )
+shape = SubResource( 112 )
 
 [connection signal="area_entered" from="LettuceExit" to="LettuceExit" method="_on_LettuceExit_area_entered"]
