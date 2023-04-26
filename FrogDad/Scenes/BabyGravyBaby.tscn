@@ -74,8 +74,10 @@ height = 136.318
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "smiling"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -93, 81 )
 rotation = 1.57287
 shape = SubResource( 10 )
+disabled = true

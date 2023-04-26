@@ -4,6 +4,9 @@ var current_fram = 0
 var num_frames = 4
 var in_area
 
+func _ready():
+	z_index = global_position.y 
+	
 func _on_Typewriter_input_event(_viewport, event, _shape_idx):
 	if _left_click_in_area(event):
 			current_fram = (current_fram +1) % num_frames

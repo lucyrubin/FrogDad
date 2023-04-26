@@ -366,7 +366,7 @@ animations = [ {
 radius = 11.1803
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 124.5, 60 )
+extents = Vector2( 54, 42.5 )
 
 [sub_resource type="RectangleShape2D" id=124]
 extents = Vector2( 545.5, 59 )
@@ -632,7 +632,7 @@ margin_bottom = 107.0
 text = "leave forest!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ForestExit"]
-position = Vector2( 505.5, 1114 )
+position = Vector2( 482, 1179 )
 shape = SubResource( 1 )
 
 [node name="EnterForest" type="Position2D" parent="."]

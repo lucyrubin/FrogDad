@@ -16,7 +16,9 @@ func getInventoryNode():
 	return $UserInterface/Inventory
 	
 func _physics_process(delta):
-	z_index = position.y
+	z_index = global_position.y
+	print(z_index)
+
 	velocity = Vector2.ZERO
 	if MasterScript.frog_dad_state == "": # move as long as dialogue and inventory aren't active
 		if Input.is_action_pressed("move_down") and Input.is_action_pressed("move_left"):
