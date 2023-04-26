@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/BabyGilbert.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BabyGertrude.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BabyGravyBaby.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/ItemDrop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Home.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/DebuggingData.gd" type="Script" id=36]
@@ -21,10 +23,19 @@ position = Vector2( -114, 71 )
 script = ExtResource( 2 )
 
 [node name="BabyGertrude" parent="." instance=ExtResource( 4 )]
-position = Vector2( 93, -160 )
+position = Vector2( 131, -236 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="BabyGravyBaby" parent="." instance=ExtResource( 5 )]
+position = Vector2( 223, -535 )
+scale = Vector2( 0.35, 0.35 )
+
+[node name="BabyGilbert" parent="." instance=ExtResource( 3 )]
+position = Vector2( -608, 138 )
+scale = Vector2( 0.35, 0.35 )
+z_index = 100
 
 [node name="Home" parent="." instance=ExtResource( 9 )]
 position = Vector2( -24, -74 )
