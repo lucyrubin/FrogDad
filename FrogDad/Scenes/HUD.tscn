@@ -291,6 +291,7 @@ anims/RESET = SubResource( 106 )
 anims/swoosh_in = SubResource( 107 )
 
 [node name="FridgeInventory" type="Node2D" parent="UserInterface"]
+visible = false
 position = Vector2( 38.3333, 87 )
 script = ExtResource( 8 )
 item_list = {
