@@ -78,13 +78,14 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 115.5, 119 )
+extents = Vector2( 115.5, 153.5 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 33.5, 53.5 )
 
 [node name="BabyGertrude" type="KinematicBody2D"]
 script = ExtResource( 2 )
+baby_name = "Gertrude"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 3, -9 )
@@ -129,7 +130,7 @@ one_shot = true
 [node name="Interactable" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2( 3.5, -7 )
+position = Vector2( 3.5, 27.5 )
 shape = SubResource( 12 )
 
 [node name="ClickArea" type="Area2D" parent="."]
@@ -140,9 +141,8 @@ shape = SubResource( 18 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_BabyGertrude_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_BabyGertrude_mouse_exited"]
-[connection signal="timeout" from="Speech/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="body_entered" from="Interactable" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Interactable" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Interactable" to="." method="_on_Interactable_body_entered"]
+[connection signal="body_exited" from="Interactable" to="." method="_on_Interactable_body_exited"]
 [connection signal="input_event" from="Interactable" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="ClickArea" to="." method="_on_ClickArea_mouse_entered"]
 [connection signal="mouse_exited" from="ClickArea" to="." method="_on_ClickArea_mouse_exited"]
