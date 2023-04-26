@@ -309,10 +309,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="Tree1"]
-position = Vector2( 1, 0 )
+position = Vector2( 128, 15 )
 frames = SubResource( 107 )
+frame = 2
 speed_scale = 0.3
 playing = true
+offset = Vector2( -127, -15 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1"]
@@ -328,6 +330,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -345,7 +348,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree2"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -363,6 +366,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true

@@ -48,7 +48,7 @@ func _physics_process(delta):
 func pick_up_item(body):
 	player = body
 	being_picked_up = true
-	direction_to_move = global_position.direction_to(Camera2DNode.get_camera_position() - Vector2(330,200))
+	direction_to_move = global_position.direction_to(Camera2DNode.get_camera_position() +  Vector2(330,-200))
 	inventory_node.add_item(item_name, 1)
 	$AnimationPlayer.play("fade")
 	FrogDadNode.find_node("Quest", true, false).check_if_quest_fulfilled()

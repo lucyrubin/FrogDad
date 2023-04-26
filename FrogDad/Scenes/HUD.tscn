@@ -209,14 +209,17 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Controls" type="Node2D" parent="."]
-visible = false
-position = Vector2( 17.6667, 2 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -12, -96 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Controls"]
-margin_left = 466.0
-margin_top = 376.0
-margin_right = 824.0
-margin_bottom = 491.0
+margin_left = -13.6667
+margin_top = 962.0
+margin_right = 344.333
+margin_bottom = 1077.0
 rect_scale = Vector2( 3, 3 )
 
 [node name="TextureRect" type="TextureRect" parent="Controls/HBoxContainer"]
@@ -589,6 +592,9 @@ script = ExtResource( 10 )
 [node name="PauseMenu" parent="." instance=ExtResource( 38 )]
 visible = false
 rect_scale = Vector2( 2, 2 )
+
+[node name="LeafPosition" type="Position2D" parent="."]
+position = Vector2( 1974, 84 )
 
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]

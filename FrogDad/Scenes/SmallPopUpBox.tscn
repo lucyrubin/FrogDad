@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/DialogueBox2.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Temporary Clipart/generic-rpg-ui-text-box.png" type="Texture" id=2]
 [ext_resource path="res://Temporary Clipart/larger_next_indicator.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=4]

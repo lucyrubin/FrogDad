@@ -15,7 +15,6 @@
 [ext_resource path="res://Art/frogdadsideleft1.png" type="Texture" id=13]
 [ext_resource path="res://Art/frogdadside3.png" type="Texture" id=14]
 
-
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
 height = 190.0
@@ -113,7 +112,6 @@ shape = SubResource( 13 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "down"
-frame = 1
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -123,7 +121,7 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
 shape = SubResource( 14 )
 
-[node name="DialogueBox2" parent="." instance=ExtResource( 5 )]
+[node name="DialogueBox" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="BabyJar" type="AnimatedSprite" parent="."]

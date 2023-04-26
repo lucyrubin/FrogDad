@@ -26,7 +26,7 @@ var dialogue_name
 func _input(event):
 
 	# if user pressed "space key" before text animation ends,
-#	# the animation would be skipped and all text would show
+	# the animation would be skipped and all text would show
 
 	if event.is_action_pressed("open") and content.visible:
 
@@ -70,6 +70,7 @@ func hide_dialog_box():
 		## after finished cloth quest dialouge
 		show_new_quest_notifcation_box()
 	elif dialogue_name == "Finished log quest":
+
 		show_new_talk_quest_notification_box()
 	elif dialogue_name == "jimothy first talk":
 		MasterScript.currentQuestNum+=1
@@ -123,11 +124,6 @@ func _show_dialog(index):
 	
 	text_animation.start()
 	
-	
-
-func _on_Content_visibility_changed():
-	pass
-	#get_tree().paused = content.visible
 
 
 func _on_TextAnimation_tween_all_completed():

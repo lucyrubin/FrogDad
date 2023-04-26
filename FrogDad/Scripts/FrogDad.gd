@@ -92,10 +92,9 @@ func move_left():
 	$AnimatedSprite.animation = "left"
 
 func toggle_dialogue_box_visibility(dialogue, dialogue_name):
-#	$DialogueBox.visible = !$DialogueBox.visible
-	$DialogueBox2.visible = true
-	print($DialogueBox2.visible)
-	$DialogueBox2.show_dialog_box(dialogue, dialogue_name)
+	$DialogueBox.visible = true
+	print($DialogueBox.visible)
+	$DialogueBox.show_dialog_box(dialogue, dialogue_name)
 
 func _is_moving():
 	return velocity.length() > 0

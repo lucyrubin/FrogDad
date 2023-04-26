@@ -1,11 +1,5 @@
 extends StaticBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
+# sets z index of the cradle so that the cradle can be moved without messing up the perspective
 func _ready():
 	z_index = global_position.y - 100

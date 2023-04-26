@@ -33,7 +33,7 @@ position = Vector2( 223, -535 )
 scale = Vector2( 0.35, 0.35 )
 
 [node name="BabyGilbert" parent="." instance=ExtResource( 3 )]
-position = Vector2( -609, 138 )
+position = Vector2( -291, 189 )
 z_index = 100
 
 [node name="Home" parent="." instance=ExtResource( 9 )]
@@ -68,6 +68,7 @@ editor_draw_limits = true
 script = SubResource( 1 )
 
 [node name="DebuggingData" type="CanvasLayer" parent="FrogDad/Camera2D"]
+visible = false
 script = ExtResource( 36 )
 
 [node name="ColorRect" type="ColorRect" parent="FrogDad/Camera2D/DebuggingData"]
