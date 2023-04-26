@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -37,6 +37,8 @@
 [ext_resource path="res://House Art/microwaveHover.png" type="Texture" id=35]
 [ext_resource path="res://House Art/sinkHover.png" type="Texture" id=36]
 [ext_resource path="res://House Art/typewriterHover.png" type="Texture" id=37]
+[ext_resource path="res://Scripts/Cradle.gd" type="Script" id=38]
+[ext_resource path="res://Scripts/Work Table.gd" type="Script" id=39]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -767,7 +769,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=145]
-extents = Vector2( 85, 57 )
+extents = Vector2( 45.25, 57 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
@@ -1111,6 +1113,7 @@ shape = SubResource( 68 )
 [node name="Work Table" type="StaticBody2D" parent="."]
 position = Vector2( 343, 160 )
 z_index = -500
+script = ExtResource( 39 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1200,26 +1203,26 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="YSort" type="YSort" parent="."]
-
-[node name="Cradle" type="StaticBody2D" parent="YSort"]
+[node name="Cradle" type="StaticBody2D" parent="."]
 position = Vector2( -367, 282 )
-z_index = 5
 collision_layer = 4
+script = ExtResource( 38 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Cradle"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cradle"]
 frames = SubResource( 66 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Cradle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cradle"]
 visible = false
 position = Vector2( 0, 58.5 )
 shape = SubResource( 67 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="YSort" type="YSort" parent="."]
 
 [node name="Bed" type="StaticBody2D" parent="YSort"]
 position = Vector2( -707, 183 )
@@ -1258,7 +1261,7 @@ animation = "hover"
 position = Vector2( 0, 104 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Door/EnteranceArea"]
-position = Vector2( 8, 8 )
+position = Vector2( 16, -8 )
 shape = SubResource( 145 )
 
 [node name="Table" type="StaticBody2D" parent="YSort"]

@@ -11,6 +11,8 @@ const PlayerClass = preload("res://Scripts/FrogDad.gd")
 
 func _ready():
 	current_fram = 0
+	
+	
 
 
 func go_inside():

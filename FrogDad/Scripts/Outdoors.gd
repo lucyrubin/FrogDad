@@ -1,8 +1,6 @@
 extends Node2D
 
 func _ready():
-	for object in $YSort.get_children():
-		object.z_index = object.position.y + 20
 	if BackgroundMusic.playing == false:
 			BackgroundMusic.play()
 	if MasterScript.exit_home:
