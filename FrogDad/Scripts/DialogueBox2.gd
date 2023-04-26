@@ -3,7 +3,9 @@ extends CanvasLayer
 const AVATAR_MAP = {
 	"gertrude": preload("res://Temporary Clipart/gertrude copy (1).png"),
 	"frogDad": preload("res://Temporary Clipart/frog_dad_icon.png"),
-	"jimothy": preload("res://CharacterHeads/JimothyHead.png")
+	"jimothy": preload("res://CharacterHeads/JimothyHead.png"),
+	"gilbert": preload("res://CharacterHeads/gilberthead.png"),
+	"gravy": preload("res://CharacterHeads/gravyhead.png")
 }
 
 export var interval = 0.05 # interval betext_animation when each character shows up

@@ -14,8 +14,8 @@ func _ready():
 		
 	if MasterScript.currentQuestNum < 2:
 		$BabyGertrude.visible = false
-		$BabyGilbert.visible = false
-		$BabyGravyBaby.visible = false
+		$BabyGilbert.visible = true
+		$BabyGravyBaby.visible = true
 	else: 
 		$BabyGertrude.visible = true
 		$BabyGilbert.visible = true
