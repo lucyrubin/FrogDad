@@ -16,10 +16,6 @@ region_rect = Rect2( 0, 0, 139, 139 )
 [node name="Inventory" type="Node2D"]
 scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
-item_list = {
-0: [ "Fly", 1 ],
-1: [ "Log", 98 ]
-}
 
 [node name="Area2D" type="Area2D" parent="."]
 priority = 1.0

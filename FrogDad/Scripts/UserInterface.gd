@@ -6,7 +6,7 @@ var mouse_in_inventory = false
 
 func _ready():
 	visible = true
-	
+
 	
 func open_inventory():
 	$Inventory.initialize_inventory()

@@ -21,6 +21,7 @@ var picked_up_first_item = false
 var after_eggs_to_tadpoles = false
 
 var opened_quest_first_time = false
+var learn_control_first_time = false
 
 # quest variables
 var questDictionary = { 

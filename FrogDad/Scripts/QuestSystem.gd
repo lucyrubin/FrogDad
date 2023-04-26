@@ -30,6 +30,7 @@ func _ready():
 		## temporary to show the baby jar being carried
 		
 		HUDNode.new_quest("Make a Swaddle")
+
 	elif MasterScript.after_eggs_to_tadpoles:
 		PopUpNode.visible = true
 		PopUpNode.show_dialog_box([{avatar = "", text = "The crib is done! Wow, they've grown up so fast, but now they're hungry all the time."},
@@ -41,6 +42,11 @@ func _process(delta):
 	if get_tree().get_root().find_node("FrogDad", true, false) and MasterScript.currentQuestNum == -1: 
 		MasterScript.frog_dad_state = "intro"
 		
+	if MasterScript.currentQuestNum == 0 and !MasterScript.learn_control_first_time:
+		learn_controls()
+		MasterScript.learn_control_first_time = true
+	
+	
 
 func deleteQuest(SubQuest):
 	# remove quest from MasterScript.currentQuestArray
@@ -173,7 +179,6 @@ func _on_ToggleQuestButton_pressed():
 	if MasterScript.frog_dad_state == "":
 		if !MasterScript.opened_quest_first_time:
 				MasterScript.opened_quest_first_time = true
-				learn_controls()
 		if 	get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible:
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
 
@@ -229,6 +234,7 @@ func begin_intro_quest():
 	if door_node:
 		door_node.set_locked(true)
 	get_parent().visible = false
+	
 	
 func learn_controls():
 	var controls = get_tree().get_root().find_node("Controls", true, false)
