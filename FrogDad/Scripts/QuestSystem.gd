@@ -168,14 +168,14 @@ func close_quest():
 	MasterScript.frog_dad_state = ""
 	
 func _on_ToggleQuestButton_pressed():
+	Input.set_custom_mouse_cursor(MasterScript.hand)
 	
 	if MasterScript.frog_dad_state == "":
 		if !MasterScript.opened_quest_first_time:
 				MasterScript.opened_quest_first_time = true
+				learn_controls()
 		if 	get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible:
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
-
-
 
 		visible = true
 		
@@ -219,8 +219,6 @@ func check_if_quest_fulfilled():
 			# check if the requirements have been satisfied, if they have, show the arrow
 			if totalItem >= amountRequired: 
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = true
-	
-			
 			
 func begin_intro_quest():
 	PopUpNode.visible = true
@@ -232,7 +230,10 @@ func begin_intro_quest():
 		door_node.set_locked(true)
 	get_parent().visible = false
 	
-
+func learn_controls():
+	var controls = get_tree().get_root().find_node("Controls", true, false)
+	controls.visible = true
+	
 func _on_KnockTimer_timeout():
 	# this code creates and displays a dialogue box
 	BackgroundMusic.stop()
@@ -246,22 +247,8 @@ func _on_KnockTimer_timeout():
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 	# this code creates and displays a dialogue box	
-	
-
-	
-func _on_InfoButton_pressed():
-	if info_button_open && !visible:
-		info_button_open = false
-	elif !visible && !info_button_open:
-		info_button_open = true
 		
 func after_note_appears():
 	get_parent().visible = false
-	
 	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)
 	toggleQuestButton.visible = true
-
-
-
-
-

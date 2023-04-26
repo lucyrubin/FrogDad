@@ -2,6 +2,13 @@ extends CanvasLayer
 
 onready var pause_menu = $PauseMenu
 
+func _process(delta):
+	if Input.is_action_just_pressed("move_down") \
+	or Input.is_action_just_pressed("move_up") \
+	or Input.is_action_just_pressed("move_right") \
+	or Input.is_action_just_pressed("move_left"):
+		$Controls.visible = false
+
 func new_quest(quest_text):
 	$PopUpNotification/HBoxContainer/QuestNameLabel.text = quest_text
 	$PopUpNotification.visible = true

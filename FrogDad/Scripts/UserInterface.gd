@@ -22,7 +22,6 @@ func _on_ToggleInventoryButton_pressed():
 		$Inventory/AnimationPlayer.play()
 		open_inventory()
 
-
 func _on_DarkBackground_gui_input(event):
 	if event is InputEventMouseButton: 
 		if event.button_index == BUTTON_LEFT && event.pressed: 
