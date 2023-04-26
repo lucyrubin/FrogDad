@@ -19,7 +19,7 @@
 [ext_resource path="res://Scenes/JimothyJohns.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Odie.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scripts/TreeZIndex.gd" type="Script" id=19]
-[ext_resource path="res://Scenes/Sprite.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/Sprite.gd" type="Script" id=20]
 [ext_resource path="res://Scripts/ForestSignZIndex.gd" type="Script" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=122]
