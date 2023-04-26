@@ -88,7 +88,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _input(_event):
 	# make the item that is being held follow the mouse
 	if FrogDad.holding_item:
-		FrogDad.holding_item.position = get_global_mouse_position()  - Vector2(60,70)
+		FrogDad.holding_item.position = get_global_mouse_position() - Vector2(180,70)
 		FrogDad.holding_item.z_index = 4090
 	
 	
@@ -106,7 +106,7 @@ func left_click_different_item(event: InputEvent, slot: SlotClass): # swap items
 	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
 	var temp_item = slot.item
 	slot.pick_from_slot()
-	temp_item.global_position = event.global_position -  Vector2(60,70)
+	temp_item.global_position = event.global_position -  Vector2(180,70)
 	slot.put_into_slot(FrogDad.holding_item)
 	FrogDad.holding_item = temp_item 
 	
@@ -128,7 +128,7 @@ func left_click_not_holding(slot: SlotClass): # remove item from slot and make i
 	inventory_data.remove_item(slot)
 	FrogDad.holding_item = slot.item
 	slot.pick_from_slot()
-	FrogDad.holding_item.position = get_global_mouse_position() -  Vector2(60,70)
+	FrogDad.holding_item.position = get_global_mouse_position() -  Vector2(180,70)
 
 # Used from ItemDrop
 func add_item(item_name, item_quantity):
