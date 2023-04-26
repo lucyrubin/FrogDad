@@ -5,7 +5,8 @@ var num_frames = 4
 var in_area
 
 func _ready():
-	z_index = global_position.y 
+	var texture_height = $AnimatedSprite.get_sprite_frames().get_frame("default",0).get_height()
+	z_index = global_position.y - (texture_height / 8)
 	
 func _on_Typewriter_input_event(_viewport, event, _shape_idx):
 	if _left_click_in_area(event):

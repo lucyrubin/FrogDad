@@ -52,7 +52,7 @@ func _on_Interactable_body_entered(body):
 	$AnimatedSprite.play("default")
 
 # if the player has left, hide the action bubble
-func _on_Interactable_body_exited(body):
+func _on_Interactable_body_exited(_body):
 	if $Speech.visible && !dialogue_finished:
 		$Speech.visible = false
 		player_close_to_baby = false

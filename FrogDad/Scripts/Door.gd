@@ -23,8 +23,10 @@ func go_outside():
 	if !locked:
 		MasterScript.exit_home = true
 		SceneTransition.change_scene("res://Scenes/Outdoors.tscn")
-		
+
+# show open door frame		
 func _on_Door_area_entered(_area):
+	# dont let the door be opened during the intro
 	if MasterScript.currentQuestNum == -1:
 		set_frame(0)
 	else:
@@ -32,6 +34,7 @@ func _on_Door_area_entered(_area):
 		door_opened = true
 		set_frame(1)
 
+# show closed door frame
 func _on_Door_area_exited(_area):
 	if !locked:
 		$AnimatedSprite.animation = "default"

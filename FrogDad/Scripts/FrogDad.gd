@@ -16,8 +16,9 @@ func getInventoryNode():
 	return $UserInterface/Inventory
 	
 func _physics_process(delta):
-	z_index = global_position.y
-	print(z_index)
+	var texture_height = $AnimatedSprite.get_sprite_frames().get_frame("down",0).get_height()
+	z_index = global_position.y + (texture_height / 2)
+
 
 	velocity = Vector2.ZERO
 	if MasterScript.frog_dad_state == "": # move as long as dialogue and inventory aren't active
