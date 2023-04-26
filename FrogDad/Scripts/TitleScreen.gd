@@ -21,3 +21,19 @@ func _on_SkipIntroGoToJJ_pressed():
 	MasterScript.currentQuestNum = 2
 	MasterScript.currentQuestArray = [MasterScript.questDictionary[MasterScript.currentQuestNum]]
 	SceneTransition.change_scene("res://Scenes/JimothyJohns.tscn")
+
+
+func _on_StartButton_mouse_entered():
+	Input.set_custom_mouse_cursor(MasterScript.pointer)
+
+
+func _on_StartButton_mouse_exited():
+	Input.set_custom_mouse_cursor(MasterScript.hand)
+
+
+func _on_QuitButton_mouse_entered():
+	Input.set_custom_mouse_cursor(MasterScript.pointer)
+
+
+func _on_QuitButton_mouse_exited():
+	Input.set_custom_mouse_cursor(MasterScript.hand)
