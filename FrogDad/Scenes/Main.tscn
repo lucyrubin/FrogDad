@@ -33,8 +33,7 @@ position = Vector2( 223, -535 )
 scale = Vector2( 0.35, 0.35 )
 
 [node name="BabyGilbert" parent="." instance=ExtResource( 3 )]
-position = Vector2( -608, 138 )
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( -609, 138 )
 z_index = 100
 
 [node name="Home" parent="." instance=ExtResource( 9 )]

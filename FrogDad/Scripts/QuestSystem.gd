@@ -228,7 +228,7 @@ func check_if_quest_fulfilled():
 func begin_intro_quest():
 	PopUpNode.visible = true
 	
-	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone. Every day feels the same. I wake up, I work as a freelance writer, and I sleep. I wish something more exciting would happen..."}], "Another day")
+	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone..." }, {avatar = "", text = "Every day feels the same."}, {avatar = "", text = "I wake up..."}, {avatar = "", text = "I work as a freelance writer..."}, {avatar = "", text = "and I sleep."}, {avatar = "", text = "I wish something more exciting would happen..."}], "Another day")
 
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	if door_node:
