@@ -13,6 +13,7 @@ func _input(event):
 	if event.is_action_pressed("talk") and mouse_in_area and player_close_to_baby:
 		if baby_name == "Gertrude":
 			 #{question, correct_answer : , wrong_answer1: , wrong_answer2: , question_name : }
+			MasterScript.odie_quest_active = true # get rid of this once testing is done and give it to odie
 			FrogDad.toggle_riddle_visibility([[{avatar = "gertrude", text = "I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
 #			FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "Hi Frog Dad!"},
 #				{avatar = "frogDad", text = "Hi Gertrude!"},

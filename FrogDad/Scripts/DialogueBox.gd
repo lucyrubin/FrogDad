@@ -134,8 +134,9 @@ func _on_TextAnimation_tween_all_completed():
 	if !MasterScript.odie_quest_active:
 		next_indicator.show()
 	else: 
-		$RiddleHUD.visible = true
-		paused_for_riddle = true
+		if(get_node("RiddleHUD")):
+			$RiddleHUD.visible = true
+			paused_for_riddle = true
 
 # [{question, correct_answer : , wrong_answer1: , wrong_answer2: , question_name : ]
 func play_riddle (riddle):
