@@ -58,6 +58,7 @@ margin_top = -148.0
 margin_right = 482.0
 margin_bottom = 389.0
 rect_scale = Vector2( 0.1, 0.1 )
+mouse_filter = 2
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Speech"]
@@ -93,5 +94,6 @@ shape = SubResource( 7 )
 
 [connection signal="body_entered" from="Interactable" to="." method="_on_Interactable_body_entered"]
 [connection signal="body_exited" from="Interactable" to="." method="_on_Interactable_body_exited"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_ClickArea_input_event"]
 [connection signal="mouse_entered" from="ClickArea" to="." method="_on_ClickArea_mouse_entered"]
 [connection signal="mouse_exited" from="ClickArea" to="." method="_on_ClickArea_mouse_exited"]

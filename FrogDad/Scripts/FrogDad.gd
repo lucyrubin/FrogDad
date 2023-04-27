@@ -99,6 +99,7 @@ func toggle_dialogue_box_visibility(dialogue, dialogue_name):
 
 func toggle_riddle_visibility(riddle):
 	$DialogueBox.visible = true
+	$DialogueBox/RiddleHUD.visible = false
 	$DialogueBox.play_riddle(riddle)
 	
 func _is_moving():

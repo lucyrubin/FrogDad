@@ -5,7 +5,8 @@ const AVATAR_MAP = {
 	"frogDad": preload("res://Temporary Clipart/frog_dad_icon.png"),
 	"jimothy": preload("res://CharacterHeads/JimothyHead.png"),
 	"gilbert": preload("res://CharacterHeads/gilberthead.png"),
-	"gravy": preload("res://CharacterHeads/gravyhead.png")
+	"gravy": preload("res://CharacterHeads/gravyhead.png"),
+	"odie": preload("res://CharacterHeads/odiehead.png")
 }
 
 export var interval = 0.05 # interval betext_animation when each character shows up
@@ -23,13 +24,14 @@ var completed
 var dialogue_name
 var paused_for_riddle = false
 var current_riddle 
-	
+
 func _input(event):
 
 	# if user pressed "space key" before text animation ends,
 	# the animation would be skipped and all text would show
 
 	if event.is_action_pressed("open") and content.visible:
+		print("click")
 		if !paused_for_riddle:
 			if FrogDad:
 				MasterScript.frog_dad_state= "talking" # player can't move during dialogue
@@ -51,6 +53,8 @@ func hide_dialog_box():
 	content.hide()
 	completed = true
 	$ColorRect.hide()
+	if find_node("RiddleHUD", true, false):
+		$RiddleHUD.visible = false
 	##
 	##
 	##
@@ -136,6 +140,7 @@ func _on_TextAnimation_tween_all_completed():
 	else: 
 		if(get_node("RiddleHUD")):
 			$RiddleHUD.visible = true
+			$RiddleHUD/VBoxContainer.visible = true
 			paused_for_riddle = true
 
 # [{question, correct_answer : , wrong_answer1: , wrong_answer2: , question_name : ]
@@ -175,18 +180,25 @@ func _on_Option3_pressed():
 	_update_riddle($RiddleHUD/VBoxContainer/Option3)
 
 func _update_riddle(button):
-	$RiddleHUD.visible = false
-	paused_for_riddle = false
+	$RiddleHUD/VBoxContainer.visible = false
 	if button.text == current_riddle[1].correct_answer:
 		if button.text == "Promise":
-			play_riddle([[{avatar = "gertrude", text = "What flies when it's born, lies when it's alive, and runs when it's dead?" }],
+			show_dialog_box([{avatar = "odie", text = "That was right!."},], "promise was right")
+			play_riddle([[{avatar = "odie", text = "What flies when it's born, lies when it's alive, and runs when it's dead?" }],
 			{correct_answer = "A snowflake", wrong_answer1 = "A fly?", wrong_answer2 = "Lies when it's alive? My ex wife", question_name = "keyword"}])
 		if button.text == "A snowflake":
-			play_riddle([[{avatar = "gertrude", text = "What is always coming but never arrives?" }],
+			play_riddle([[{avatar = "odie", text = "What is always coming but never arrives?" }],
 			{correct_answer = "Tomorrow", wrong_answer1 = "My next paycheck!", wrong_answer2 = "My SnailMail food delivery", question_name = "keyword"}])
 	else:
 		MasterScript.odie_quest_active = false
-		if button.text == "A fly?":
-			show_dialog_box([{avatar = "gertrude", text = "Nice try. I did know a fly who liked to lie. He was a conniving son of a birch! Did I ever tell you the story about-"},
+		paused_for_riddle = false
+		if button.text == "Heart":
+			show_dialog_box([{avatar = "odie", text = "That was wrong."},], "heart")
+		elif button.text == "My Legs )-:":
+			show_dialog_box([{avatar = "odie", text = "That was wrong."},], "my legs")
+		elif button.text == "A fly?":
+			show_dialog_box([{avatar = "odie", text = "Nice try. I did know a fly who liked to lie. He was a conniving son of a birch! Did I ever tell you the story about-"},
 			{avatar = "frogDad", text = "I'm gonna stop you right there, pal. I think I left my stove on, catch you later!"},
-			{avatar = "gertrude", text = "What? Okay. Well, let me know if you wanna try again!"}], "IDJOWIJ")
+			{avatar = "odie", text = "What? Okay. Well, let me know if you wanna try again!"}], "A fly?")
+		
+		
