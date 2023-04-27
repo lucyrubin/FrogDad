@@ -13,6 +13,7 @@ func _ready():
 	$AnimatedSprite.animation = "default"
 	DarkBackground.connect("gui_input", self, "dark_background_input", []) 
 
+# reset the dresser texture when the dark background is clicked
 func dark_background_input(event):
 	if event is InputEventMouseButton: 
 		if event.button_index == BUTTON_LEFT and event.pressed: 
@@ -24,7 +25,7 @@ func _on_Dresser_input_event(_viewport, event, _shape_idx):
 	if _left_click_in_area(event):
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
-		if current_fram == 1:
+		if current_fram == 1: # open inventory
 			dresser_inventory_node.visible = true
 			user_interface_node.visible = true
 			MasterScript.frog_dad_state = "Inventory"

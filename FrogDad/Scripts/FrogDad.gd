@@ -97,6 +97,10 @@ func toggle_dialogue_box_visibility(dialogue, dialogue_name):
 	print($DialogueBox.visible)
 	$DialogueBox.show_dialog_box(dialogue, dialogue_name)
 
+func toggle_riddle_visibility(riddle):
+	$DialogueBox.visible = true
+	$DialogueBox.play_riddle(riddle)
+	
 func _is_moving():
 	return velocity.length() > 0
 

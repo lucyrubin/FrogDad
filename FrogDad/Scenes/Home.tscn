@@ -703,7 +703,7 @@ extents = Vector2( 165.5, 70 )
 extents = Vector2( 153, 12 )
 
 [sub_resource type="RectangleShape2D" id=67]
-extents = Vector2( 108, 26 )
+extents = Vector2( 108, 64 )
 
 [sub_resource type="AtlasTexture" id=87]
 flags = 4
@@ -1213,8 +1213,7 @@ scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cradle"]
-visible = false
-position = Vector2( 1, 78 )
+position = Vector2( -2, 40 )
 shape = SubResource( 67 )
 
 [node name="YSort" type="YSort" parent="."]
