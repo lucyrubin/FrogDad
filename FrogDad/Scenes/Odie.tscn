@@ -52,6 +52,7 @@ position = Vector2( -22, 73 )
 shape = SubResource( 4 )
 
 [node name="Speech" type="TextureRect" parent="."]
+visible = false
 margin_left = -18.0
 margin_top = -148.0
 margin_right = 482.0
