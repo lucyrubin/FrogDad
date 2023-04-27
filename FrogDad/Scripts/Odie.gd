@@ -1,4 +1,36 @@
 extends StaticBody2D
 
+const PlayerClass = preload("res://Scripts/FrogDad.gd")
+onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
+var dialogue_finished = false
+var mouse_in_area = false
+var player_close_to_odie = false
+
 func _ready():
 	$AnimatedSprite.play("default")
+
+func _input(event):
+	if event.is_action_pressed("talk") and mouse_in_area and player_close_to_odie:
+		MasterScript.odie_quest_active = true # get rid of this once testing is done and give it to odie
+		FrogDad.toggle_riddle_visibility([[{avatar = "gertrude", text = "I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
+
+# If the player is nearby, show the speech bubble
+func _on_Interactable_body_entered(body):
+	if body is PlayerClass && !dialogue_finished:
+		$Speech.visible = true
+		player_close_to_odie = true
+	$AnimatedSprite.play("default")
+
+# if the player has left, hide the speech bubble
+func _on_Interactable_body_exited(body):
+	if $Speech.visible && !dialogue_finished:
+		$Speech.visible = false
+		player_close_to_odie = false
+
+# handles whether the mouse is on odie or not
+func _on_ClickArea_mouse_entered():
+	mouse_in_area = true
+
+# handles whether the mouse is on odie or not
+func _on_ClickArea_mouse_exited():
+	mouse_in_area = false
