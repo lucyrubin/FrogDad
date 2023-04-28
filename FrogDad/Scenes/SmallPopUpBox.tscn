@@ -6,7 +6,7 @@
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 25
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=2]
@@ -68,7 +68,7 @@ margin_top = -20.0
 margin_right = -20.0
 margin_bottom = -20.0
 grow_vertical = 0
-rect_min_size = Vector2( 0, 68 )
+rect_min_size = Vector2( 0, 80 )
 custom_colors/font_color = Color( 0.196078, 0.133333, 0.180392, 1 )
 custom_constants/line_spacing = 2
 custom_fonts/font = SubResource( 1 )

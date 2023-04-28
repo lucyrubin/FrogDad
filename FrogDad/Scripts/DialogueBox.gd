@@ -41,6 +41,9 @@ func _input(event):
 					_show_dialog(current + 1)
 			else:
 				hide_dialog_box()
+				
+	if event.is_action_pressed("ui_cancel"):
+		hide_dialog_box()
 
 func hide_dialog_box():
 	if FrogDad:

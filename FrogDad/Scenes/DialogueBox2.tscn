@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Temporary Clipart/generic-rpg-ui-text-box.png" type="Texture" id=2]
 [ext_resource path="res://Temporary Clipart/gertrude copy (1).png" type="Texture" id=3]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Temporary Clipart/larger_next_indicator.png" type="Texture" id=5]
+[ext_resource path="res://flat_button_theme.tres" type="Theme" id=6]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 25
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=2]
@@ -78,19 +80,25 @@ custom_constants/separation = 30
 
 [node name="Option1" type="Button" parent="RiddleHUD/VBoxContainer"]
 margin_right = 276.0
-margin_bottom = 20.0
+margin_bottom = 45.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "Option1"
 
 [node name="Option2" type="Button" parent="RiddleHUD/VBoxContainer"]
-margin_top = 50.0
+margin_top = 75.0
 margin_right = 276.0
-margin_bottom = 70.0
+margin_bottom = 120.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "Option2"
 
 [node name="Option3" type="Button" parent="RiddleHUD/VBoxContainer"]
-margin_top = 100.0
+margin_top = 150.0
 margin_right = 276.0
-margin_bottom = 120.0
+margin_bottom = 195.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "Option3"
 
 [node name="Content" type="Label" parent="."]
@@ -102,7 +110,7 @@ margin_top = -20.0
 margin_right = -20.0
 margin_bottom = -20.0
 grow_vertical = 0
-rect_min_size = Vector2( 0, 68 )
+rect_min_size = Vector2( 0, 80 )
 custom_colors/font_color = Color( 0.196078, 0.133333, 0.180392, 1 )
 custom_constants/line_spacing = 2
 custom_fonts/font = SubResource( 1 )
