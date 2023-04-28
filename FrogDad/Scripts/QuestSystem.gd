@@ -33,10 +33,10 @@ func _ready():
 
 	elif MasterScript.after_eggs_to_tadpoles and !MasterScript.crib_dialogue_shown:
 		PopUpNode.visible = true
-		PopUpNode.show_dialog_box([{avatar = "", text = "The crib is done! Wow, they've grown up so fast, but now they're hungry all the time."},
+		PopUpNode.show_dialog_box([{avatar = "", text = "Wow, they've grown up so fast, but now they're hungry all the time."},
 								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished cloth quest")
 		MasterScript.crib_dialogue_shown = true
-	
+	 
 
 func _process(delta):
 	# can't do stuff while the intro is happening
@@ -50,6 +50,8 @@ func _process(delta):
 	
 
 func deleteQuest(SubQuest):
+	
+	
 	# remove quest from MasterScript.currentQuestArray
 	FrogDad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
 	MasterScript.currentQuestArray.remove(0) # if we have concurrent requests this should be changed to MasterScript.currentQuestNum, not totally sure what else we would need to change though
@@ -69,8 +71,9 @@ func deleteQuest(SubQuest):
 	MasterScript.frog_dad_state = ""
 	
 	
+		
 	## if you want to play dialogue after a quest is finshed, do it here
-	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Make a Swaddle":
+	if SubQuest and SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Make a Swaddle":
 		## temporary to show the baby jar being carried
 		FrogDad.get_node("BabyJar").visible = false
 		## temporary to show the baby jar being carried
@@ -80,23 +83,22 @@ func deleteQuest(SubQuest):
 								{avatar = "", text = "But this won't last forever... These babies are going to grow up soon and need somewhere to sleep."},
 								{avatar = "", text = "There's a forest outside. Maybe I can get wood and make a cradle for them."}], "Finished cloth quest")
 								
-	if SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Collect Logs for Crib":
-		##temporary
-		####
-		print("crib made cut scene")
-		####
-		## temporary 
-		PopUpNode.visible = true
+	if SubQuest and SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Collect Logs for Crib":
 		
-		###
-		SceneTransition.change_scene("res://Scenes/EggsIntoTadpolesCutScene.tscn")
+		SceneTransition.change_scene("res://Scenes/CradleCutScene.tscn")
 		
 		
+		
+	
+		
+		
+	
+	SubQuest.queue_free()
+								
 		# the second value of this is just an identifier for if you want to do something after dialogue has ended
 		
 	## if you want to play dialogue after a quest is finshed, do it here
 
-	SubQuest.queue_free()
 	
 	
 	
@@ -211,17 +213,34 @@ func check_if_quest_fulfilled():
 	for quest in MasterScript.currentQuestArray:
 		if quest[0] == "resource collection":
 			# count up the amount of the item in the inventory
-			var totalItem = 0
+			var item_type = quest[3]
+			var totalItem = count_num_item_in_inventory(item_type)
 			var amountRequired = quest[2]
-			var itemType = quest[3]
-			for item in FrogDad_inventory_data.inventory:
-				if FrogDad_inventory_data.inventory[item][0] == itemType:
-					totalItem += FrogDad_inventory_data.inventory[item][1]
 					
 			# check if the requirements have been satisfied, if they have, show the arrow
 			if totalItem >= amountRequired: 
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = true
+		elif quest[0] == "resource for character":
+			# count up the amount of the item in the inventory
+			var item_type = quest[3]
+			var totalItem = count_num_item_in_inventory(item_type)
+			var amountRequired = quest[2]
+					
+			# check if the requirements have been satisfied, if they have, start a new quest
+			if totalItem >= amountRequired: 
+				PopUpNode.visible = true
+				PopUpNode.show_dialog_box([{avatar = "", text = "Woohoo! I got the lettuce. Now I gotta bring this back to Jimothy."}],
+					"Finished collecting lettuce")
+				
+				
 
+# count up the amount of the item in the inventory				
+func count_num_item_in_inventory(itemType):
+	var totalItem = 0
+	for item in FrogDad_inventory_data.inventory:
+		if FrogDad_inventory_data.inventory[item][0] == itemType:
+			totalItem += FrogDad_inventory_data.inventory[item][1]
+	return totalItem
 func begin_intro_quest():
 	PopUpNode.visible = true
 	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone..." }, {avatar = "", text = "Every day feels the same."}, {avatar = "", text = "I wake up..."}, {avatar = "", text = "I work as a freelance writer..."}, {avatar = "", text = "and I sleep."}, {avatar = "", text = "I wish something more exciting would happen..."}], "Another day")

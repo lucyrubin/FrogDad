@@ -85,7 +85,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 2.46229, 0.233258 ),
 "update": 0,
-"values": [ Vector2( 2050, 122 ), Vector2( 1300, 122 ) ]
+"values": [ Vector2( 2050, 162 ), Vector2( 1134, 162 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:modulate")
@@ -277,7 +277,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
 visible = false
-position = Vector2( 176, 62 )
+position = Vector2( 50.6667, 63.3333 )
 scale = Vector2( 1, 1 )
 item_list = {
 0: [ "Fly", 1 ],

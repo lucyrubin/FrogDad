@@ -24,7 +24,10 @@ func _on_InteractableArea_body_exited(_body):
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and $Speech.visible:
 		if event.button_index == BUTTON_LEFT && event.pressed: 
-			if MasterScript.currentQuestNum == 2:
+			if MasterScript.currentQuestNum < 2:
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Hey bro, we're not open right now. Come back later."}]
+				, "jimothy remind about lettuce")
+			elif MasterScript.currentQuestNum == 2:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Welcome to Jimothy John's! What can I get for you today?"},
 				{avatar = "frogDad", text = "Got anything with flies?"},
 				{avatar = "jimothy", text = "Hell yeah we do! We got fly pies, flyjitas, fly alla parmigiana, flylafel, french flies... Add a drink and you can make it a combo!"},
@@ -38,7 +41,14 @@ func _on_ColorRect_gui_input(event):
 			elif MasterScript.currentQuestNum == 3:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "If you get me some lettuce, I'd be happy to give you flies."}]
 				, "jimothy remind about lettuce")
-			
+			elif MasterScript.currentQuestNum == 4:
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "YAS!!!! Now I don't need to take the trip to the lettuce forest. Thanks bro!!"}, 
+				{avatar = "frogDad", text = "About the flies...."},
+				{avatar = "jimothy", text = "Oh snap! I almost forgot haha. Sure thing, my guy!"}]
+				, "jimothy gives flies")
+				var frog_dad_inventory = get_tree().get_root().find_node("Inventory", true, false)
+				frog_dad_inventory.removeItems(10, "Lettuce")
+				
 			MasterScript.frog_dad_state = "dialogue"
 			FrogDad.get_node("AnimatedSprite").stop()
 			$Speech.visible = false

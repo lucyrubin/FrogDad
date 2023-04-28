@@ -514,7 +514,7 @@ position = Vector2( 1028, -60 )
 shape = SubResource( 112 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2( 1048, 1336 )
+position = Vector2( 1048, 1304 )
 shape = SubResource( 112 )
 
 [connection signal="area_entered" from="LettuceExit" to="LettuceExit" method="_on_LettuceExit_area_entered"]

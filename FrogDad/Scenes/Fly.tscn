@@ -17,11 +17,14 @@ func _process(delta):
 	velocity.x += rng.randf_range(-200, 200.0)
 	velocity.y += rng.randf_range(-200, 200.0)
 	move_and_slide(velocity * delta)
+	
+	
 "
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Fly" type="KinematicBody2D"]
+collision_mask = 0
 script = SubResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]

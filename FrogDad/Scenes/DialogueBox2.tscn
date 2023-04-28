@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Temporary Clipart/generic-rpg-ui-text-box.png" type="Texture" id=2]
-[ext_resource path="res://Temporary Clipart/gertrude copy (1).png" type="Texture" id=3]
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Temporary Clipart/larger_next_indicator.png" type="Texture" id=5]
 [ext_resource path="res://flat_button_theme.tres" type="Theme" id=6]
@@ -126,7 +125,6 @@ margin_top = -30.0
 margin_right = 101.0
 margin_bottom = 74.0
 mouse_filter = 2
-texture = ExtResource( 3 )
 stretch_mode = 6
 
 [node name="NextIndicator" type="TextureRect" parent="Content"]

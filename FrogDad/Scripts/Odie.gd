@@ -35,6 +35,6 @@ func _on_ClickArea_input_event(viewport, event, shape_idx):
 		and event.button_index == BUTTON_LEFT \
 		and event.pressed \
 		and player_close_to_odie:
-		MasterScript.odie_quest_active = true
+		MasterScript.odie_quest_active = true # need to get rid of thise eventually and set it true somewhere else 
 		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
 

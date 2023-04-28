@@ -20,6 +20,12 @@ func _ready():
 		$BabyGertrude.visible = true
 		$BabyGilbert.visible = true
 		$BabyGravyBaby.visible = true
+		
+	if MasterScript.enter_cradle_area:
+		$FrogDad.toggle_dialogue_box_visibility([{avatar = "", text = "Phew! It ain't much, but it's honest work!"},
+			{avatar = "", text = "They're almost too big for it! They'll grow out of it soon enough"}]
+				, "after cradle dialogue")
+		MasterScript.enter_cradle_area = false
 
 func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 

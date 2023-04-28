@@ -33,8 +33,9 @@ func _on_DarkBackground_gui_input(event):
 			var dresser_node = get_tree().get_root().find_node("Dresser",true, false)
 			var side_table_node = get_tree().get_root().find_node("Side Table",true, false)
 			var fridge_node = get_tree().get_root().find_node("Fridge",true, false)
-			side_table_node.dark_background_input(event)
-			dresser_node.dark_background_input(event)
-			fridge_node.dark_background_input(event)
+			if dresser_node:
+				side_table_node.dark_background_input(event)
+				dresser_node.dark_background_input(event)
+				fridge_node.dark_background_input(event)
 			FrogDad.find_node("Quest",true, false).visible = false
 			FrogDad.find_node("Quest",true, false).close_quest()
