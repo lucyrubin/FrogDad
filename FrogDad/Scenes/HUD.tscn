@@ -277,7 +277,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
 visible = false
-position = Vector2( 50.6667, 63.3333 )
+position = Vector2( 176, 62 )
 scale = Vector2( 1, 1 )
 item_list = {
 0: [ "Fly", 1 ],

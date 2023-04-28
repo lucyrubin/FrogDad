@@ -12,6 +12,7 @@ func open_inventory():
 	$Inventory.initialize_inventory()
 	$Inventory.inventory_open = true
 	$Inventory.visible = true
+	$DarkBackground.visible = true
 	MasterScript.frog_dad_state = "inventory"
 	FrogDad.get_node("AnimatedSprite").stop()
 
@@ -28,5 +29,12 @@ func _on_DarkBackground_gui_input(event):
 			MasterScript.frog_dad_state = ""
 			for child in get_children():
 				child.visible = false
+				
+			var dresser_node = get_tree().get_root().find_node("Dresser",true, false)
+			var side_table_node = get_tree().get_root().find_node("Side Table",true, false)
+			var fridge_node = get_tree().get_root().find_node("Fridge",true, false)
+			side_table_node.dark_background_input(event)
+			dresser_node.dark_background_input(event)
+			fridge_node.dark_background_input(event)
 			FrogDad.find_node("Quest",true, false).visible = false
 			FrogDad.find_node("Quest",true, false).close_quest()
