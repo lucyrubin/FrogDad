@@ -180,11 +180,13 @@ func _update_riddle(button):
 		if button.text == "A snowflake":
 			play_riddle([[{avatar = "odie", text = "What is always coming but never arrives?" }],
 			{correct_answer = "Tomorrow", wrong_answer1 = "My next paycheck!", wrong_answer2 = "My SnailMail food delivery", question_name = "keyword"}])
+		if button.text == "Tomorrow":
+			show_dialog_box([{avatar = "odie", text = "Good job! You win! Smart fella, aren't you?"},], "tomorrow")
 	else:
 		MasterScript.odie_quest_active = false
 		paused_for_riddle = false
 		if button.text == "Heart":
-			show_dialog_box([{avatar = "odie", text = "Tis better to have loved and lost, than to never have loved at all… I learned that from the back of a napkin at Jimothy John’s. Pretty good, right?"},
+			show_dialog_box([{avatar = "odie", text = "Tis better to have loved and lost, than to never have loved at all… I learned that from the back of a napkin at Jimothy John's. Pretty good, right?"},
 				{avatar = "frogDad", text = "... )-:"},
 				{avatar = "odie", text = "What? Why are you looking at me like that?"},
 				{avatar = "odie", text = "..."},
