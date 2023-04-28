@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _on_Timer_timeout():
 	$Gertrude.visible = true
 	$Gilbert.visible = true
@@ -11,7 +10,6 @@ func _on_Timer_timeout():
 	$Names/AnimationPlayer.play()
 	$ShowContinueButtonTimer.start()
 
-
 func _on_ContinueButton_pressed():
 	print("hi")
 	MasterScript.after_eggs_to_tadpoles = true
@@ -19,4 +17,3 @@ func _on_ContinueButton_pressed():
 
 func _on_ShowContinueButtonTimer_timeout():
 	$ContinueButton.visible = true
-	

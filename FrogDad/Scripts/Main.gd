@@ -30,12 +30,8 @@ func _process(_delta):
 func drop_item(item_drop : ItemDropClass):
 	item_drop.setup($FrogDad/AnimatedSprite.global_position.x + 100,$FrogDad/AnimatedSprite.global_position.y + 100,item_drop.item_name, $FrogDad/UserInterface/Inventory )
 	add_child(item_drop)	
-	
 
 func add_item_drop(type, x, y):
 	var drop = ItemDropScene.instance()
 	drop.setup(x,y,type, $FrogDad/UserInterface/Inventory)
 	add_child(drop)
-
-
-

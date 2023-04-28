@@ -3,8 +3,6 @@ extends Area2D
 var current_fram = 0
 var num_frames = 2
 
-
-
 func _on_Lamp_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 		and event.button_index == BUTTON_LEFT \

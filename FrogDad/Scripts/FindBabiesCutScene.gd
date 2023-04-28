@@ -8,9 +8,6 @@ func _ready():
 							{avatar = "", text = "I should go grab some cloth and make a swaddle."}, {avatar = "", text = "I think I have some around the house..."}], "Wow, someone trusted me with their babies?")
 	# this code creates and displays a dialogue box	
 	$Timer.queue_free()
-	
-
-
 
 func _on_Timer_timeout():
 	# this code creates and displays a dialogue box	

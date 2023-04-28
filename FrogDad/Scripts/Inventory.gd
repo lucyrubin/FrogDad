@@ -36,13 +36,10 @@ func _ready():
 		
 		slots[i].slot_index = i
 	initialize_inventory()
-	
 	FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 func initialize_inventory():
-	
 	var slots = inventory_slots.get_children()
-	
 	for i in range(slots.size()):
 		# if there is something in the slot, initialize the item 
 		if inventory_data.inventory.has(i) and inventory_data.inventory[i][1] > 0: 
@@ -84,16 +81,11 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 			elif slot.item: # not holding an item
 				left_click_not_holding(slot)
 
-
 func _input(_event):
 	# make the item that is being held follow the mouse
 	if FrogDad.holding_item:
 		FrogDad.holding_item.position = get_global_mouse_position() - Vector2(180,70)
 		FrogDad.holding_item.z_index = 4090
-	
-	
-	
-		
 
 func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
 	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
@@ -151,7 +143,7 @@ func add_item(item_name, item_quantity):
 			inventory_data.inventory[i] = [item_name, item_quantity]
 			update_slot_visual(i, inventory_data.inventory[i][0], inventory_data.inventory[i][1])
 			return
-			
+
 func update_slot_visual(slot_index, item_name, new_quantity):
 	var slot = get_node("GridContainer/Slot" + str(slot_index + 1))
 	if new_quantity <= 0:
@@ -161,8 +153,6 @@ func update_slot_visual(slot_index, item_name, new_quantity):
 		slot.item.set_item(item_name, new_quantity)
 	else:
 		slot.initialize_item(item_name, new_quantity)
-		
-
 
 func removeItems(numItems, itemType):
 	var item_list_to_update = []

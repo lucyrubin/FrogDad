@@ -28,14 +28,11 @@ func _ready():
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png") 
 
 func setup(xgiven, ygiven, name, inventory):
-	
 	global_position.x = xgiven 
 	global_position.y = ygiven
 	z_index = global_position.y
-
 	item_name = name
 	inventory_node = inventory
-
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png") 
 	
 func _physics_process(delta):
@@ -52,36 +49,29 @@ func pick_up_item(body):
 	inventory_node.add_item(item_name, 1)
 	$AnimationPlayer.play("fade")
 	FrogDadNode.find_node("Quest", true, false).check_if_quest_fulfilled()
-	
 
 func get_sprite():
 	return $Button
-
 
 func _on_Button_pressed():
 	
 	if frog_dad_is_close and MasterScript.frog_dad_state == "":
 		pick_up_item(self)
 
-
 func _on_Button_mouse_entered():
 	if frog_dad_is_close and MasterScript.frog_dad_state == "":
 		$Button.texture_normal = load("res://Item Icons/" + item_name + "Hover.png")
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
-
 func _on_Button_mouse_exited():
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png")
 	Input.set_custom_mouse_cursor(MasterScript.hand)
 
-
 func _on_Area2D_body_entered(_body):
 	frog_dad_is_close = true
 
-
 func _on_Area2D_body_exited(_body):
 	frog_dad_is_close = false
-
 
 func _on_FlyingTime_timeout(): # after three seconds, stop flying and fading and delete
 	queue_free()

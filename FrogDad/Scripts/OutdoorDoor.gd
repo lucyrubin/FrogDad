@@ -17,7 +17,6 @@ func _input(event):
 			print("no scene in this door")
 		if door_opened && mouse_in:
 			go_inside()
-			
 
 func go_inside():
 	MasterScript.enter_home = true
@@ -35,8 +34,6 @@ func _on_OutdoorDoor_area_exited(_area):
 	$AnimatedSprite.animation = "default"
 	$AnimatedSprite.set_frame(current_fram)
 	Input.set_custom_mouse_cursor(MasterScript.hand)
-	
-
 
 func _on_EnteranceArea_body_entered(body):
 	if body is FrogDadClass:

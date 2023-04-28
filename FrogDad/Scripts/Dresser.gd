@@ -20,7 +20,7 @@ func dark_background_input(event):
 			current_fram = 0
 			$AnimatedSprite.animation = "default"
 			$AnimatedSprite.set_frame(current_fram)
-			
+
 func _on_Dresser_input_event(_viewport, event, _shape_idx):	
 	if _left_click_in_area(event):
 		current_fram = (current_fram + 1) % num_frames

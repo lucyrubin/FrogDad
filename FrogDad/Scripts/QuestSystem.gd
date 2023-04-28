@@ -31,10 +31,11 @@ func _ready():
 		
 		HUDNode.new_quest("Make a Swaddle")
 
-	elif MasterScript.after_eggs_to_tadpoles:
+	elif MasterScript.after_eggs_to_tadpoles and !MasterScript.crib_dialogue_shown:
 		PopUpNode.visible = true
 		PopUpNode.show_dialog_box([{avatar = "", text = "The crib is done! Wow, they've grown up so fast, but now they're hungry all the time."},
-								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished log quest")
+								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished cloth quest")
+		MasterScript.crib_dialogue_shown = true
 	
 
 func _process(delta):
@@ -164,18 +165,15 @@ func resourceForCharacterQuest(quest, amountRequired, itemType):
 	
 	CompletedButton.visible = false
 
-	
-	
 func close_quest():
 	# remove all quests from the GUI
 	for child in $VBoxContainer.get_children():
 		child.queue_free()
-	
+
 	MasterScript.frog_dad_state = ""
-	
+
 func _on_ToggleQuestButton_pressed():
 	Input.set_custom_mouse_cursor(MasterScript.hand)
-	
 	if MasterScript.frog_dad_state == "":
 		if !MasterScript.opened_quest_first_time:
 				MasterScript.opened_quest_first_time = true
@@ -183,10 +181,9 @@ func _on_ToggleQuestButton_pressed():
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = false
 
 		visible = true
-		
 		UserInterfaceNode.get_node("DarkBackground").visible = true
-		
 		MasterScript.frog_dad_state = "quest"
+
 		# add all current quests to the GUI
 		for quest in MasterScript.currentQuestArray:
 			if quest[0] == "resource collection":
@@ -195,7 +192,7 @@ func _on_ToggleQuestButton_pressed():
 				talkQuest(quest[1], quest[2], quest[3])
 			if quest[0] == "resource for character":
 				resourceForCharacterQuest(quest[1], quest[2], quest[3])
-		
+
 		if MasterScript.currentQuestArray.empty():
 			var noQuestLabel = Label.new()
 			noQuestLabel.text = "No active quests."
@@ -224,22 +221,20 @@ func check_if_quest_fulfilled():
 			# check if the requirements have been satisfied, if they have, show the arrow
 			if totalItem >= amountRequired: 
 				get_tree().get_root().find_node("ToggleQuestButton", true, false).get_node("BouncingArrow").visible = true
-			
+
 func begin_intro_quest():
 	PopUpNode.visible = true
-	
 	PopUpNode.show_dialog_box([{avatar = "", text = "Ahhhh. Another day all alone..." }, {avatar = "", text = "Every day feels the same."}, {avatar = "", text = "I wake up..."}, {avatar = "", text = "I work as a freelance writer..."}, {avatar = "", text = "and I sleep."}, {avatar = "", text = "I wish something more exciting would happen..."}], "Another day")
 
 	var door_node = get_tree().get_root().find_node("Door", true, false)
 	if door_node:
 		door_node.set_locked(true)
 	get_parent().visible = false
-	
-	
+
 func learn_controls():
 	var controls = get_tree().get_root().find_node("Controls", true, false)
 	controls.visible = true
-	
+
 func _on_KnockTimer_timeout():
 	# this code creates and displays a dialogue box
 	BackgroundMusic.stop()
@@ -252,8 +247,7 @@ func _on_KnockTimer_timeout():
 	BackgroundMusic.play()
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
-	# this code creates and displays a dialogue box	
-		
+
 func after_note_appears():
 	get_parent().visible = false
 	var toggleQuestButton = get_tree().get_root().find_node("ToggleQuestButton", true, false)

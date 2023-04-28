@@ -30,4 +30,3 @@ func _on_DarkBackground_gui_input(event):
 				child.visible = false
 			FrogDad.find_node("Quest",true, false).visible = false
 			FrogDad.find_node("Quest",true, false).close_quest()
-

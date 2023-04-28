@@ -8,5 +8,3 @@ func _ready():
 			BackgroundMusic.stop()
 			$JimothyJohnsMusic.play()
 	$FrogDad.get_node("AnimatedSprite").animation = "up"
-	
-

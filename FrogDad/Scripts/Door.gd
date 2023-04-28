@@ -4,7 +4,6 @@ export (PackedScene) var target_scene
 const FrogDadClass = preload("res://Scripts/FrogDad.gd")
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
-
 var door_opened = false
 var current_fram = 0
 var num_frames = 2

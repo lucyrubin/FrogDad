@@ -11,14 +11,9 @@ const PlayerClass = preload("res://Scripts/FrogDad.gd")
 
 func _ready():
 	current_fram = 0
-	
-	
-
 
 func go_inside():
 	SceneTransition.change_scene("res://Scenes/JimothyJohns.tscn")
-	
-	
 
 func _on_Area2D_body_entered(body):
 	if body is PlayerClass:
@@ -26,14 +21,11 @@ func _on_Area2D_body_entered(body):
 		$Sprite.texture = load("res://JJ\'s Art/jimothydooropennew.png")
 		close_enough = true
 
-
 func _on_Area2D_body_exited(body):
 	if body is PlayerClass: 
 		door_opened = false
 		$Sprite.texture = load("res://JJ\'s Art/jimothynew.png")
 		close_enough = false
-
-
 
 func _on_JimothyDoor_body_entered(body):
 	print(body)

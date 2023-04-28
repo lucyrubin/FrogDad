@@ -23,6 +23,7 @@ var odie_quest_active = false
 
 var opened_quest_first_time = false
 var learn_control_first_time = false
+var crib_dialogue_shown = false
 
 # quest variables
 var questDictionary = { 
@@ -43,5 +44,3 @@ var currentQuestNum = -1
 # 3 is get lettuce for jimothy
 
 var currentQuestArray = [questDictionary[0]]
-
-
