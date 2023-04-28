@@ -185,7 +185,7 @@ func _update_riddle(button):
 		if button.text == "Promise":
 			show_dialog_box([{avatar = "odie", text = "That was right!."},], "promise was right")
 			play_riddle([[{avatar = "odie", text = "What flies when it's born, lies when it's alive, and runs when it's dead?" }],
-			{correct_answer = "A snowflake", wrong_answer1 = "A fly?", wrong_answer2 = "Lies when it's alive? My ex wife", question_name = "keyword"}])
+			{correct_answer = "A snowflake", wrong_answer1 = "A fly?", wrong_answer2 = "Lies when it's alive? That's my ex wife!", question_name = "keyword"}])
 		if button.text == "A snowflake":
 			play_riddle([[{avatar = "odie", text = "What is always coming but never arrives?" }],
 			{correct_answer = "Tomorrow", wrong_answer1 = "My next paycheck!", wrong_answer2 = "My SnailMail food delivery", question_name = "keyword"}])
@@ -193,12 +193,20 @@ func _update_riddle(button):
 		MasterScript.odie_quest_active = false
 		paused_for_riddle = false
 		if button.text == "Heart":
-			show_dialog_box([{avatar = "odie", text = "That was wrong."},], "heart")
-		elif button.text == "My Legs )-:":
-			show_dialog_box([{avatar = "odie", text = "That was wrong."},], "my legs")
+			show_dialog_box([{avatar = "odie", text = "Tis better to have loved and lost, than to never have loved at all… I learned that from the back of a napkin at Jimothy John’s. Pretty good, right?"},
+				{avatar = "frogDad", text = "... )-:"},
+				{avatar = "odie", text = "What? Why are you looking at me like that?"},
+				{avatar = "odie", text = "..."},
+				{avatar = "odie", text = "Are you crying? I'm sorry, buddy."}], "heart")
+		elif button.text == "My Leg )-:":
+			show_dialog_box([{avatar = "odie", text = "What? No. Try again!"},], "my legs")
 		elif button.text == "A fly?":
 			show_dialog_box([{avatar = "odie", text = "Nice try. I did know a fly who liked to lie. He was a conniving son of a birch! Did I ever tell you the story about-"},
-			{avatar = "frogDad", text = "I'm gonna stop you right there, pal. I think I left my stove on, catch you later!"},
-			{avatar = "odie", text = "What? Okay. Well, let me know if you wanna try again!"}], "A fly?")
-		
-		
+				{avatar = "frogDad", text = "I'm gonna stop you right there, pal. I think I left my stove on, catch you later!"},
+				{avatar = "odie", text = "What? Okay. Well, let me know if you wanna try again!"}], "A fly?")
+		elif button.text == "Lies when it's alive? That's my ex wife!":
+			show_dialog_box([{avatar = "odie", text = "Oh... that's just sad. Sorry, bud. Try again next time?"},], "My ex wife")
+		elif button.text == "My next paycheck!":
+			show_dialog_box([{avatar = "odie", text = "Haha! Good one, but not what I was looking for! You can always try again, though."},], "My paycheck")
+		elif button.text == "My SnailMail food delivery":
+			show_dialog_box([{avatar = "odie", text = "Huh? Food delivery? What's that?"},], "Snailmail")
