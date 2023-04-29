@@ -66,11 +66,15 @@ func _input(event):
 	
 # Handles whether the mouse is on Gertrude or not
 func _on_ClickArea_mouse_entered():
-	mouse_in_area = true 
+	if player_close_to_baby:
+		mouse_in_area = true
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 # Handles whether the mouse is on Gertrude or not
 func _on_ClickArea_mouse_exited():
-	mouse_in_area = false
+	if player_close_to_baby:
+		mouse_in_area = false
+		Input.set_custom_mouse_cursor(MasterScript.hand)
 
 # if player is nearby, show the action bubble
 func _on_Interactable_body_entered(body):
