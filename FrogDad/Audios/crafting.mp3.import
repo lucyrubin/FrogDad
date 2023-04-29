@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/crafting.mp3-60024b8f3e532be5fa28093772180beb.mp3str"
+
+[deps]
+
+source_file="res://Audios/crafting.mp3"
+dest_files=[ "res://.import/crafting.mp3-60024b8f3e532be5fa28093772180beb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
