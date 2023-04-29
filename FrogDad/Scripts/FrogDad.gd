@@ -111,3 +111,6 @@ func _animation_is_at_rest():
 func _on_AnimatedSprite_frame_changed():
 	if !_is_moving() and _animation_is_at_rest():
 		$AnimatedSprite.stop()
+
+func set_fly_jar_visiblity(visiblity):
+	$FlyJar.visible = visiblity

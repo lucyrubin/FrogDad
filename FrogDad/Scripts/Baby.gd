@@ -4,6 +4,7 @@ extends KinematicBody2D
 export (String) var baby_name
 const PlayerClass = preload("res://Scripts/FrogDad.gd")
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
+onready var QuestNode = get_tree().get_root().find_node("Quest", true, false)
 var dialogue_finished = false
 var mouse_in_area = false
 var player_close_to_baby = false
@@ -17,6 +18,15 @@ func _input(event):
 				{avatar = "gertrude", text = "What are we doing today?"},
 				{avatar = "frogDad", text = "Whatever you want."}
 			], "Gertrude talk")
+			if MasterScript.currentQuestNum == 5 and !MasterScript.gertrude_fed:
+				MasterScript.num_kids_fed_flies += 1
+				MasterScript.gertrude_fed = true
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "Yum!"}
+				], "Gertrude fed")
+
+			elif MasterScript.currentQuestNum == 5 and MasterScript.gertrude_fed:
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "No more flies, I'm stuffed!"}
+				], "Gertrude already fed")
 
 		if baby_name == "Gilbert":
 			FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "hi"},
@@ -24,6 +34,15 @@ func _input(event):
 					{avatar = "gilbert", text = "hiiiiii"},
 					{avatar = "frogDad", text = "hi :)"}
 				], "Gilbert talk")
+			if MasterScript.currentQuestNum == 5 and !MasterScript.gilbert_fed:
+				MasterScript.num_kids_fed_flies += 1
+				MasterScript.gilbert_fed = true
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "Yum!!! Im gilbert"}
+				], "gilbert fed")
+
+			elif MasterScript.currentQuestNum == 5 and MasterScript.gilbert_fed:
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "No more flies, I'm stuffed! Im gilbert"}
+				], "Gilbert already fed")
 		
 		if baby_name == "Gravy Baby":
 			FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "gravy"},
@@ -31,6 +50,15 @@ func _input(event):
 					{avatar = "gravy", text = "im gravy baby"},
 					{avatar = "frogDad", text = "yes"}
 				], "Gravy talk")
+			if MasterScript.currentQuestNum == 5 and !MasterScript.gravy_fed:
+				MasterScript.num_kids_fed_flies += 1
+				MasterScript.gravy_fed = true
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "Yum!!! Im gravy"}
+				], "gravy fed")
+				
+			elif MasterScript.currentQuestNum == 5 and MasterScript.gravy_fed:
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "No more flies, I'm stuffed! Im gravy"}
+				], "gravy already fed")
 		
 		MasterScript.frog_dad_state = "dialogue"
 		FrogDad.get_node("AnimatedSprite").stop()

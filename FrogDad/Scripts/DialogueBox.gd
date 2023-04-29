@@ -85,7 +85,18 @@ func hide_dialog_box():
 		show_new_quest_notifcation_box()
 	elif dialogue_name == "after cradle dialogue":
 		SceneTransition.change_scene("res://Scenes/EggsIntoTadpolesCutScene.tscn")
-
+	elif dialogue_name == "jimothy gives flies":
+		MasterScript.currentQuestNum+=1
+		MasterScript.currentQuestArray = [MasterScript.questDictionary[5]]
+		show_new_quest_notifcation_box()
+		FrogDad.set_fly_jar_visiblity(true)
+	elif dialogue_name == "gravy fed" or dialogue_name == "gilbert fed" or dialogue_name == "Gertrude fed":
+		var HUDNode = FrogDad.find_node("HUD", true, false)
+		var QuestNode = HUDNode.find_node("Quest", true, false)
+		QuestNode.check_if_quest_fulfilled()
+	elif dialogue_name == "Finished feeding flies":
+		MasterScript.currentQuestArray = []
+		print("grow up again")
 	# If you want to do something after a dialogue, do it here
 
 func show_new_talk_quest_notification_box():
@@ -95,6 +106,8 @@ func show_new_talk_quest_notification_box():
 func show_new_quest_notifcation_box():
 	var HUDNode = FrogDad.find_node("HUD", true, false)
 	HUDNode.new_quest(MasterScript.currentQuestArray[0][1])
+	var QuestNode = HUDNode.find_node("Quest", true, false)
+	QuestNode.check_if_quest_fulfilled()
 
 func show_dialog_box(_dialogs, dialogueName):
 	$ColorRect.show()

@@ -283,7 +283,7 @@ item_list = {
 0: [ "Fly", 1 ],
 1: [ "Log", 7 ],
 2: [ "Cloth", 5 ],
-3: [ "Lettuce", 5 ]
+3: [ "Lettuce", 10 ]
 }
 inventory_type = "player"
 

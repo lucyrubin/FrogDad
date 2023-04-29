@@ -15,7 +15,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 60
+size = 50
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -80,48 +80,52 @@ margin_bottom = 206.0
 alignment = 1
 
 [node name="QuestTitleLabel" type="Label" parent="VBoxContainer"]
-margin_right = 1459.0
+margin_right = 911.0
 margin_bottom = 92.0
 rect_clip_content = true
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Amount Text:"
+text = "Title"
 align = 1
 autowrap = true
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 96.0
-margin_right = 1459.0
+margin_right = 911.0
 margin_bottom = 218.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 50
 columns = 4
 
 [node name="AmountLabel" type="Label" parent="VBoxContainer/GridContainer"]
-margin_right = 669.0
+margin_right = 175.0
 margin_bottom = 122.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Amount Text"
+text = "0/0"
+valign = 1
 
 [node name="Spacing" type="TextureRect" parent="VBoxContainer/GridContainer"]
-margin_left = 719.0
-margin_right = 739.0
+visible = false
+margin_left = 225.0
+margin_right = 245.0
 margin_bottom = 122.0
 rect_min_size = Vector2( 20, 20 )
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer/GridContainer"]
-margin_left = 789.0
+margin_left = 225.0
 margin_top = 24.0
-margin_right = 1287.0
+margin_right = 725.0
 margin_bottom = 98.0
+rect_min_size = Vector2( 500, 74 )
 custom_colors/font_color = Color( 0.192157, 0.192157, 0.192157, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Quest Text Here"
+valign = 1
 
 [node name="Icon" type="TextureRect" parent="VBoxContainer/GridContainer"]
-margin_left = 1337.0
-margin_right = 1459.0
+margin_left = 775.0
+margin_right = 897.0
 margin_bottom = 122.0
 rect_min_size = Vector2( 122, 122 )
 texture = ExtResource( 3 )
@@ -129,7 +133,7 @@ expand = true
 
 [node name="CompletedButton" type="Button" parent="VBoxContainer"]
 margin_top = 222.0
-margin_right = 1459.0
+margin_right = 911.0
 margin_bottom = 322.0
 rect_min_size = Vector2( 500, 100 )
 theme = SubResource( 7 )

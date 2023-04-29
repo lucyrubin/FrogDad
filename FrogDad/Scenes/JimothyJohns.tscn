@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://JJ's Art/floor.png" type="Texture" id=1]
 [ext_resource path="res://JJ's Art/chair.png" type="Texture" id=2]
@@ -18,8 +18,7 @@
 [ext_resource path="res://JJ's Art/ketchupmustard.png" type="Texture" id=16]
 [ext_resource path="res://JJ's Art/clock.png" type="Texture" id=17]
 [ext_resource path="res://JJ's Art/glass.png" type="Texture" id=18]
-[ext_resource path="res://JJ's Art/flyjar1.png" type="Texture" id=19]
-[ext_resource path="res://JJ's Art/flyjar2.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/FlyJar.tscn" type="PackedScene" id=19]
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
@@ -74,14 +73,6 @@ extents = Vector2( 931, 39 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 157, 73.5 )
-
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [node name="JimothyJohns" type="Node2D"]
 script = ExtResource( 7 )
@@ -187,6 +178,7 @@ margin_bottom = 302.0
 position = Vector2( 587, 249 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 13 )
+frame = 2
 speed_scale = 0.25
 playing = true
 
@@ -422,13 +414,8 @@ position = Vector2( 309, 62 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 17 )
 
-[node name="FlyJar" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 157, 503 )
-frames = SubResource( 16 )
-frame = 1
-speed_scale = 0.5
-playing = true
+[node name="FlyJar" parent="." instance=ExtResource( 19 )]
+position = Vector2( 595, 224 )
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
 [connection signal="area_entered" from="Jimothy/InteractableArea" to="Jimothy" method="_on_InteractableArea_area_entered"]

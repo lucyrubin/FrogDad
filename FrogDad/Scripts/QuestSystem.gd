@@ -36,6 +36,9 @@ func _ready():
 		PopUpNode.show_dialog_box([{avatar = "", text = "Wow, they've grown up so fast, but now they're hungry all the time."},
 								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished cloth quest")
 		MasterScript.crib_dialogue_shown = true
+		
+	elif MasterScript.currentQuestNum == 5:
+		FrogDad.set_fly_jar_visiblity(true)
 	 
 
 func _process(delta):
@@ -143,7 +146,21 @@ func talkQuest(broad_quest, quest_details, character):
 	SubQuest.get_node("VBoxContainer/GridContainer/AmountLabel").text = ""
 	SubQuest.get_node("VBoxContainer/CompletedButton").visible = false
 
+func talkToKidsQuest(broad_quest, specific_task, item_type):
+	var amount_required = 3
 	
+	var SubQuest = QuestContainerScene.instance()
+	$VBoxContainer.add_child(SubQuest)
+	
+	# count up the amount of the item in the inventory
+	SubQuest.get_node("VBoxContainer/GridContainer/DescriptionLabel").text = specific_task
+	SubQuest.get_node("VBoxContainer/GridContainer/Icon").texture = load("res://Item Icons/" + str(item_type) + ".png")
+	SubQuest.get_node("VBoxContainer/QuestTitleLabel").text = broad_quest
+	SubQuest.get_node("VBoxContainer/GridContainer/AmountLabel").text = str(MasterScript.num_kids_fed_flies) + "/" + str(amount_required) 
+	SubQuest.get_node("VBoxContainer/CompletedButton").visible = false
+	
+	
+	#5: ["talk to kids", "Feed the kids", "Bring the flies home and give them to the kids", "Fly", "image_here"]
 func resourceForCharacterQuest(quest, amountRequired, itemType):
 	amountRequired = int(amountRequired)
 	# add a new quest to the GUI
@@ -190,10 +207,12 @@ func _on_ToggleQuestButton_pressed():
 		for quest in MasterScript.currentQuestArray:
 			if quest[0] == "resource collection":
 				collectResourceQuest(quest[1], quest[2], quest[3])
-			if quest[0] == "talk":
+			elif quest[0] == "talk":
 				talkQuest(quest[1], quest[2], quest[3])
-			if quest[0] == "resource for character":
+			elif quest[0] == "resource for character":
 				resourceForCharacterQuest(quest[1], quest[2], quest[3])
+			elif quest[0] == "talk to kids":
+				talkToKidsQuest(quest[1], quest[2], quest[3])
 
 		if MasterScript.currentQuestArray.empty():
 			var noQuestLabel = Label.new()
@@ -204,7 +223,7 @@ func _on_ToggleQuestButton_pressed():
 			noQuestLabel.add_font_override("font", dynamic_font)
 			noQuestLabel.add_color_override("font_color", Color(0,0,0,1))
 			$VBoxContainer.add_child(noQuestLabel)
-			
+		
 		MasterScript.frog_dad_state = "Quest"
 
 
@@ -231,7 +250,14 @@ func check_if_quest_fulfilled():
 				PopUpNode.visible = true
 				PopUpNode.show_dialog_box([{avatar = "", text = "Woohoo! I got the lettuce. Now I gotta bring this back to Jimothy."}],
 					"Finished collecting lettuce")
-				
+		elif quest[0] == "talk to kids":
+					
+			# check if the requirements have been satisfied, if they have, start a new quest
+			if MasterScript.num_kids_fed_flies == 3: 
+				PopUpNode.visible = true
+				FrogDad.set_fly_jar_visiblity(false)
+				PopUpNode.show_dialog_box([{avatar = "", text = "Yass they have been fed. Omg they are going to grow up soon"}],
+					"Finished feeding flies")
 				
 
 # count up the amount of the item in the inventory				

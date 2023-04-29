@@ -7,13 +7,15 @@
 [ext_resource path="res://Scenes/DialogueBox2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Art/frogdadsideleft2.png" type="Texture" id=6]
 [ext_resource path="res://Art/frogdadside2.png" type="Texture" id=7]
-[ext_resource path="res://Art/frog egg sprite.png" type="Texture" id=8]
+[ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=8]
 [ext_resource path="res://Art/frogdadside3 1.png" type="Texture" id=9]
 [ext_resource path="res://Art/frogdadside1.png" type="Texture" id=10]
 [ext_resource path="res://Art/frogdadside0.png" type="Texture" id=11]
 [ext_resource path="res://Art/frogdadsideleft0.png" type="Texture" id=12]
 [ext_resource path="res://Art/frogdadsideleft1.png" type="Texture" id=13]
 [ext_resource path="res://Art/frogdadside3.png" type="Texture" id=14]
+[ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/FlyJar.tscn" type="PackedScene" id=16]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -80,19 +82,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 166, 322.5 )
 
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 1180, 1640 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 8 )
-region = Rect2( 1180, 0, 1180, 1640 )
-
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -112,7 +104,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "down"
-frame = 4
+frame = 3
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -127,9 +119,15 @@ visible = false
 
 [node name="BabyJar" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 3.33333, 33.3333 )
+position = Vector2( 6.66667, -326.666 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 17 )
+frame = 1
+speed_scale = 0.6
+playing = true
+
+[node name="FlyJar" parent="." instance=ExtResource( 16 )]
+position = Vector2( 13.3333, -346.667 )
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]

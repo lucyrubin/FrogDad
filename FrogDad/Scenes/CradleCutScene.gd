@@ -9,15 +9,18 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	BackgroundMusic.stop()
-	$Cradle/Sprite.visible = false
+	$Cradle.visible = false
 	$Jar.visible = false
 	$Sparkles.visible = false
 	$Smoke.play()
-	$Cradle/Sprite.visible = true
+	$AudioStreamPlayer.play()
+	yield($Smoke,"animation_finished")
+	$Smoke.visible = false
+	$Cradle.visible = true
 	$Jar.visible = true
 	$Sparkles.visible = true
 	$Sparkles.play()
-	$AudioStreamPlayer.play()
+	
 
 func _on_Timer_timeout():
 	# change this to next to the cradle

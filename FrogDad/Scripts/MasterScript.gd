@@ -22,6 +22,11 @@ var after_eggs_to_tadpoles = false
 var odie_quest_active = false
 var enter_cradle_area = false
 
+var num_kids_fed_flies = 0
+var gertrude_fed = false
+var gilbert_fed = false
+var gravy_fed = false
+
 var opened_quest_first_time = false
 var learn_control_first_time = false
 var crib_dialogue_shown = false
@@ -35,7 +40,8 @@ var questDictionary = {
 	1: ["resource collection", "Collect Logs for Crib", 7, "Log", "swaddling babies image"],
 	2: ["talk", "Get flies from Jimothy John's", "Talk to Jimothy", "Jimothy", "image_here"],
 	3: ["resource for character", "Get lettuce for Jimothy", 10, "Lettuce", "image_here"],
-	4: ["talk", "Bring lettuce to Jimothy", "Talk to Jimothy", "Jimothy", "image_here"]
+	4: ["talk", "Bring lettuce to Jimothy", "Talk to Jimothy", "Jimothy", "image_here"],
+	5: ["talk to kids", "Feed the kids", "Bring the flies to the kids", "Fly", "image_here"]
 	}
 
 var currentQuestNum = -1
@@ -44,5 +50,7 @@ var currentQuestNum = -1
 # 1 is the log quest
 # 2 is go get flies from jimothy (talk to jimothy)
 # 3 is get lettuce for jimothy
+# 4 is bring the lettuce to jimothy
+# 5 is bring the flies home
 
 var currentQuestArray = [questDictionary[0]]
