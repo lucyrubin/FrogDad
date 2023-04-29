@@ -158,35 +158,25 @@ func removeItems(numItems, itemType):
 	var item_list_to_update = []
 	var num_left_to_remove = numItems
 	for item in inventory_data.inventory:
-		print(inventory_data.inventory[item][0])
 		if inventory_data.inventory[item][0] == itemType:
-			print("found match: ", itemType)
-
 			var items_in_slot = inventory_data.inventory[item][1]
-
 			if items_in_slot < num_left_to_remove:
 				inventory_data.inventory[item][1] -= items_in_slot
 				num_left_to_remove -= items_in_slot
-				print("num left 1: ", num_left_to_remove)
-				print("subtracting less than ", items_in_slot)
 			else:
 				inventory_data.inventory[item][1] -= num_left_to_remove
-				print("num left 2: ", num_left_to_remove)
-				print("subtracting more than ", num_left_to_remove)
 				num_left_to_remove = 0
 				
 
 			item_list_to_update.append(item)
 	for item in item_list_to_update:
-		print("updating: ", item , ": " , inventory_data.inventory[item][0] ,' ' , inventory_data.inventory[item][1])
 		if inventory_data.inventory[item][1] <= 0:
 			inventory_data.inventory.erase(item)
-			print("erase slot ", item)
 			update_slot_visual(item, itemType, 0)
 		
 		else: 
 			update_slot_visual(item, inventory_data.inventory[item][0], inventory_data.inventory[item][1])
-		print(inventory_data.inventory)
+
 
 ### drop is not being used right now
 func drop():

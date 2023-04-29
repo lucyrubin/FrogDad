@@ -231,7 +231,8 @@ func _update_riddle(button):
 		MasterScript.odie_quest_active = false
 		paused_for_riddle = false
 		if button.text == "Heart":
-			show_dialog_box([{avatar = "odie", text = "Tis better to have loved and lost, than to never have loved at all… I learned that from the back of a napkin at Jimothy John's. Pretty good, right?"},
+			show_dialog_box([{avatar = "odie", text = "Tis better to have loved and lost, than to never have loved at all…" }, 
+				{avatar = "odie", text = "I learned that from the back of a napkin at Jimothy John's. Pretty good, right?"},
 				{avatar = "frogDad", text = "... )-:"},
 				{avatar = "odie", text = "What? Why are you looking at me like that?"},
 				{avatar = "odie", text = "..."},
@@ -239,7 +240,10 @@ func _update_riddle(button):
 		elif button.text == "My Legs )-:":
 			show_dialog_box([{avatar = "odie", text = "What? No. Try again!"},], "my legs")
 		elif button.text == "A fly?":
-			show_dialog_box([{avatar = "odie", text = "Nice try. I did know a fly who liked to lie. He was a conniving son of a birch! Did I ever tell you the story about-"},
+			show_dialog_box([{avatar = "odie", text = "Nice try."}, 
+				{avatar = "odie", text = "I did know a fly who liked to lie."}, 
+				{avatar = "odie", text = "He was a conniving son of a birch!"}, 
+				{avatar = "odie", text = "Did I ever tell you the story about-"},
 				{avatar = "frogDad", text = "I'm gonna stop you right there, pal. I think I left my stove on, catch you later!"},
 				{avatar = "odie", text = "What? Okay. Well, let me know if you wanna try again!"}], "A fly?")
 		elif button.text == "Lies when it's alive? That's my ex wife!":
