@@ -21,24 +21,24 @@
 [ext_resource path="res://GIFs/spongebob.png" type="Texture" id=19]
 [ext_resource path="res://Audios/spongebob.mp3" type="AudioStream" id=20]
 
-[sub_resource type="AtlasTexture" id=115]
+[sub_resource type="AtlasTexture" id=206]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 384, 512 )
+region = Rect2( 0, 0, 140, 133 )
 
-[sub_resource type="AtlasTexture" id=116]
+[sub_resource type="AtlasTexture" id=207]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 384, 512 )
+region = Rect2( 0, 0, 140, 133 )
 
 [sub_resource type="SpriteFrames" id=117]
 animations = [ {
-"frames": [ SubResource( 115 ) ],
+"frames": [ SubResource( 206 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 116 ) ],
+"frames": [ SubResource( 207 ) ],
 "loop": true,
 "name": "hover",
 "speed": 5.0
@@ -662,13 +662,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 59.5, 48 )
+extents = Vector2( 64.75, 49.5 )
 
 [sub_resource type="RectangleShape2D" id=159]
 extents = Vector2( 121.75, 108.75 )
 
 [sub_resource type="RectangleShape2D" id=158]
-extents = Vector2( 57.5, 47 )
+extents = Vector2( 64.25, 49.5 )
 
 [node name="TV" type="Area2D"]
 script = ExtResource( 8 )
@@ -678,12 +678,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3, -4 )
+scale = Vector2( 1.1, 1.1 )
 frames = SubResource( 117 )
 
 [node name="NyanCat" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 55.5, -50.12 )
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( -13, 16 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 119 )
 frame = 4
 
@@ -693,8 +695,8 @@ volume_db = -15.0
 
 [node name="NewJeans" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 55.5, -50.12 )
-scale = Vector2( 0.119728, 0.129462 )
+position = Vector2( -13, 16 )
+scale = Vector2( 0.102, 0.112 )
 frames = SubResource( 120 )
 frame = 23
 speed_scale = 4.0
@@ -705,8 +707,8 @@ volume_db = 20.0
 
 [node name="FrogDadDoc" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 55.5, -50.12 )
-scale = Vector2( 0.264, 0.27 )
+position = Vector2( -13, 16 )
+scale = Vector2( 0.23, 0.23 )
 frames = SubResource( 157 )
 frame = 2
 
@@ -716,8 +718,8 @@ volume_db = 20.0
 
 [node name="SpongeBob" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 55, -50 )
-scale = Vector2( 0.146154, 0.2 )
+position = Vector2( -13, 16 )
+scale = Vector2( 0.126, 0.171 )
 frames = SubResource( 205 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpongeBob"]
@@ -726,7 +728,7 @@ volume_db = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 66.5, -58.5 )
+position = Vector2( 0.25, 14.5 )
 shape = SubResource( 118 )
 
 [node name="TV Area" type="Area2D" parent="."]
@@ -740,7 +742,7 @@ shape = SubResource( 159 )
 visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 67.5, -52 )
+position = Vector2( 0.75, 14.5 )
 shape = SubResource( 158 )
 
 [connection signal="area_entered" from="." to="." method="_on_TV_area_entered"]
