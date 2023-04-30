@@ -19,9 +19,9 @@ func _ready():
 		MasterScript.enter_cradle_area = false
 		
 	if MasterScript.currentQuestNum < 2:
-		$BabyGertrude.visible = false
-		$BabyGilbert.visible = false
-		$BabyGravyBaby.visible = false
+		$BabyGertrude.visible = true
+		$BabyGilbert.visible = true
+		$BabyGravyBaby.visible = true
 	else: 
 		$BabyGertrude.visible = true
 		$BabyGilbert.visible = true
