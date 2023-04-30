@@ -134,7 +134,7 @@ theme = ExtResource( 2 )
 text = "Quit"
 
 [node name="FrogDad" type="AnimatedSprite" parent="."]
-position = Vector2( 734, 64 )
+position = Vector2( 770, 76 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 10 )
 centered = false

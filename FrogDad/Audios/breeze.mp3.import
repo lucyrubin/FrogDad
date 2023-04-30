@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/breeze.mp3-41d7e20c17024549a891faaed39e87e3.mp3str"
+
+[deps]
+
+source_file="res://Audios/breeze.mp3"
+dest_files=[ "res://.import/breeze.mp3-41d7e20c17024549a891faaed39e87e3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

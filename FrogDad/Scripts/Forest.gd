@@ -5,6 +5,7 @@ func _ready():
 		BackgroundMusic.stop()
 	if $FunkyForestMusic.playing == false:
 		$FunkyForestMusic.play()
+		$Breeze.play()
 	for object in $YSort.get_children():
 		object.z_index = object.position.y + 20
 	if MasterScript.enter_forest:

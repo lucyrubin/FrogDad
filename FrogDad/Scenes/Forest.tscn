@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ForestExit.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Forest.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Forest Art/wind.png" type="Texture" id=5]
+[ext_resource path="res://Audios/breeze.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Audios/Space-Jazz.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=34]
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=35]
@@ -493,7 +494,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree13"]
 position = Vector2( 31, 8 )
 frames = SubResource( 122 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -508,7 +509,7 @@ position = Vector2( 461, 144 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree12"]
 position = Vector2( 55, -31 )
 frames = SubResource( 106 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -526,6 +527,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree11"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -542,7 +544,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree10"]
 frames = SubResource( 122 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -558,7 +560,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree9"]
 frames = SubResource( 122 )
-frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -575,7 +576,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree8"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -590,7 +591,7 @@ position = Vector2( 239, 648 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree7"]
 position = Vector2( 64, -26 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -607,7 +608,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree6"]
 position = Vector2( 51, -11 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -624,7 +625,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -642,7 +643,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -660,7 +661,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -676,7 +677,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -693,7 +694,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -761,6 +762,7 @@ position = Vector2( 354, 70 )
 item_name = "Log"
 
 [node name="Borders" type="StaticBody2D" parent="."]
+position = Vector2( 1, 107 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
 position = Vector2( 515, 579.5 )
@@ -789,34 +791,38 @@ editor_draw_limits = true
 [node name="Wind" type="AnimatedSprite" parent="."]
 position = Vector2( 354, 43 )
 frames = SubResource( 144 )
+frame = 2
 playing = true
 
 [node name="Wind2" type="AnimatedSprite" parent="."]
 position = Vector2( 247, 313 )
 frames = SubResource( 144 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Wind3" type="AnimatedSprite" parent="."]
 position = Vector2( 801, 416 )
 frames = SubResource( 144 )
-frame = 16
+frame = 1
 playing = true
 
 [node name="Wind4" type="AnimatedSprite" parent="."]
 position = Vector2( 922, 743 )
 frames = SubResource( 144 )
-frame = 15
 playing = true
 
 [node name="Wind5" type="AnimatedSprite" parent="."]
 position = Vector2( 211, 736 )
 frames = SubResource( 144 )
-frame = 14
+frame = 16
 playing = true
 
 [node name="FunkyForestMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -9.609
+
+[node name="Breeze" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
 
 [connection signal="area_entered" from="ForestExit" to="ForestExit" method="_on_ForestExit_area_entered"]
