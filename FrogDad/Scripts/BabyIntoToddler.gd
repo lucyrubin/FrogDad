@@ -27,7 +27,7 @@ func _ready():
 	
 	yield($Gilbert/ToddlerImage/AnimationPlayer, "animation_finished")
 	
-	
+	# show gilbert text
 	yield(show_stats("GILBERT:", "a little weird but very friendly",
 	"likes: \n     - flies\n     -  throwing pebbles",  
 	"dislikes: \n     - milk"), "completed")
@@ -48,6 +48,7 @@ func _ready():
 	
 	yield($Gravy/ToddlerImage/AnimationPlayer, "animation_finished")
 	
+	# show gravy text
 	yield(show_stats("GRAVY BABY:", "really wants to be a DJ",
 	"likes: \n     - being in the grove\n     -  small bags",  
 	"dislikes: \n     - being in a funk\n     - small pockets"), "completed")
