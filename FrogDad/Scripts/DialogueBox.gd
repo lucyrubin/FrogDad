@@ -96,7 +96,8 @@ func hide_dialog_box():
 		QuestNode.check_if_quest_fulfilled()
 	elif dialogue_name == "Finished feeding flies":
 		MasterScript.currentQuestArray = []
-		print("grow up again")
+		yield(get_tree().create_timer(1), "timeout")
+		SceneTransition.change_scene("res://Scenes/BabyIntoToddler.tscn")
 	# If you want to do something after a dialogue, do it here
 
 func show_new_talk_quest_notification_box():

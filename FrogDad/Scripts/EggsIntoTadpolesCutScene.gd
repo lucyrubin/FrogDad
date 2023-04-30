@@ -11,7 +11,6 @@ func _on_Timer_timeout():
 	$ShowContinueButtonTimer.start()
 
 func _on_ContinueButton_pressed():
-	print("hi")
 	MasterScript.after_eggs_to_tadpoles = true
 	SceneTransition.change_scene("res://Scenes/Main.tscn")
 

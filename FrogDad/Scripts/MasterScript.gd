@@ -31,6 +31,9 @@ var opened_quest_first_time = false
 var learn_control_first_time = false
 var crib_dialogue_shown = false
 
+var after_tadpoles_to_babies = false
+var after_tadpoles_to_babies_dialogue_shown = false
+
 # quest variables
 var questDictionary = { 
 	# (key, value) = (integer that represents the order that the quests progress, array)

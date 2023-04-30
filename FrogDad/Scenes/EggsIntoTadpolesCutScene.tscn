@@ -294,6 +294,7 @@ playing = true
 position = Vector2( 736, 352 )
 frames = SubResource( 34 )
 animation = "default 1"
+frame = 1
 playing = true
 
 [node name="Names" type="Label" parent="."]

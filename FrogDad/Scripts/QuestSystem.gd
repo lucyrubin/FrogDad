@@ -40,7 +40,11 @@ func _ready():
 	elif MasterScript.currentQuestNum == 5:
 		FrogDad.set_fly_jar_visiblity(true)
 	 
-
+	elif MasterScript.after_tadpoles_to_babies and !MasterScript.after_tadpoles_to_babies_dialogue_shown:
+		PopUpNode.visible = true
+		PopUpNode.show_dialog_box([{avatar = "", text = "They are so big now! I can't believe that they've started preschool. I should go see Odie."}], "Go see odiet")
+		MasterScript.after_tadpoles_to_babies_dialogue_shown = true
+		
 func _process(delta):
 	# can't do stuff while the intro is happening
 	if get_tree().get_root().find_node("FrogDad", true, false) and MasterScript.currentQuestNum == -1: 
@@ -258,6 +262,8 @@ func check_if_quest_fulfilled():
 				FrogDad.set_fly_jar_visiblity(false)
 				PopUpNode.show_dialog_box([{avatar = "", text = "Yass they have been fed. Omg they are going to grow up soon"}],
 					"Finished feeding flies")
+					
+				
 				
 
 # count up the amount of the item in the inventory				
