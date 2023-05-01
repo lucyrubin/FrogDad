@@ -50,7 +50,7 @@ func _ready():
 	
 	# show gravy text
 	yield(show_stats("GRAVY BABY:", "really wants to be a DJ",
-	"likes: \n     - being in the grove\n     -  small bags",  
+	"likes: \n     - being in the groove\n     -  small bags",  
 	"dislikes: \n     - being in a funk\n     - small pockets"), "completed")
 	
 	yield(get_tree().create_timer(1), "timeout")
