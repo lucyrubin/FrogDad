@@ -424,7 +424,7 @@ margin_right = 1872.0
 margin_bottom = 264.0
 
 [node name="FrogDad" parent="." instance=ExtResource( 4 )]
-position = Vector2( 224, 672 )
+position = Vector2( 201, 691 )
 scale = Vector2( 0.45, 0.45 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="FrogDad"]
@@ -510,7 +510,7 @@ position = Vector2( 2080, 648 )
 shape = SubResource( 111 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries"]
-position = Vector2( 1028, -60 )
+position = Vector2( 1026, 204 )
 shape = SubResource( 112 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
