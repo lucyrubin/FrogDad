@@ -1,0 +1,366 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/EndCredits.gd" type="Script" id=2]
+[ext_resource path="res://Art/title.png" type="Texture" id=3]
+[ext_resource path="res://Art/gravy baby sprite sheet.png" type="Texture" id=4]
+[ext_resource path="res://Art/baby gilbert sprite sheet.png" type="Texture" id=5]
+[ext_resource path="res://Art/baby gertrude sprite sheet.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1152, 0, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1152, 256, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 384, 256, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 256, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 768, 0, 384, 256 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 768, 256, 384, 256 )
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "default 1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "smiling",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "upset",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 576, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 576, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 192, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 192, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1, 11, 192, 250 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1, 259, 192, 248 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 384, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 384, 256, 192, 256 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 4 ) ],
+"loop": true,
+"name": "crying",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "smiling",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 576, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 576, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 384, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 192, 256, 192, 256 )
+
+[sub_resource type="SpriteFrames" id=44]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "smiling",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "upset",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=37]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2, 5 ),
+"transitions": PoolRealArray( 0.233258, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.164939, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.233258, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 609.0
+color = Color( 0.862745, 0.847059, 0.690196, 1 )
+
+[node name="GravyBaby" type="AnimatedSprite" parent="."]
+position = Vector2( 939, 388 )
+frames = SubResource( 42 )
+animation = "smiling"
+frame = 3
+speed_scale = 0.5
+playing = true
+
+[node name="GertrudeBaby" type="AnimatedSprite" parent="."]
+position = Vector2( 957, 438 )
+frames = SubResource( 43 )
+frame = 2
+speed_scale = 0.5
+playing = true
+
+[node name="GilbertBaby" type="AnimatedSprite" parent="."]
+position = Vector2( 129, 415 )
+frames = SubResource( 44 )
+animation = "upset"
+frame = 4
+speed_scale = 0.5
+playing = true
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+margin_right = 1031.0
+margin_bottom = 601.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DarkOverlay"]
+anims/RESET = SubResource( 37 )
+anims/fade_out = SubResource( 38 )
+
+[node name="ThanksForPlaying" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 1027.0
+margin_bottom = 218.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 2
+
+[node name="TextAnimation" type="Tween" parent="ThanksForPlaying"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThanksForPlaying"]
+anims/RESET = SubResource( 40 )
+anims/fade_out = SubResource( 41 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 228.0
+margin_top = 164.0
+margin_right = 801.0
+margin_bottom = 564.0
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+anims/RESET = SubResource( 2 )
+anims/fade_in = SubResource( 3 )
