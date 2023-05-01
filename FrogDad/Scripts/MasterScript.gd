@@ -33,6 +33,7 @@ var crib_dialogue_shown = false
 
 var after_tadpoles_to_babies = false
 var after_tadpoles_to_babies_dialogue_shown = false
+var began_odie_riddles = false
 
 # quest variables
 var questDictionary = { 

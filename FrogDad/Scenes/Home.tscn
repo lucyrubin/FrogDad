@@ -1201,6 +1201,7 @@ __meta__ = {
 }
 
 [node name="Cradle" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -270, 296 )
 collision_layer = 4
 script = ExtResource( 38 )

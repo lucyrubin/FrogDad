@@ -142,10 +142,8 @@ func show_text(label, text_to_show):
 	yield(get_tree().create_timer(0.1), "timeout")
 	label.visible = true
 
-
-
-
 func _on_ContinueButton_pressed():
+	MasterScript.currentQuestNum = 6
 	MasterScript.after_tadpoles_to_babies = true
 	SceneTransition.change_scene("res://Scenes/Main.tscn")
 	$CutSceneBackgroundMusic.stop()

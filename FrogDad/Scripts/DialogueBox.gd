@@ -98,6 +98,13 @@ func hide_dialog_box():
 		MasterScript.currentQuestArray = []
 		yield(get_tree().create_timer(1), "timeout")
 		SceneTransition.change_scene("res://Scenes/BabyIntoToddler.tscn")
+	elif dialogue_name == "coming back to odie":
+		MasterScript.odie_quest_active = true
+		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "Okay, first question. I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
+	elif dialogue_name == "start riddle":
+		MasterScript.odie_quest_active = true
+		MasterScript.began_odie_riddles = true
+		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "Okay, first question. I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
 	# If you want to do something after a dialogue, do it here
 
 func show_new_talk_quest_notification_box():
@@ -219,14 +226,17 @@ func _update_riddle(button):
 	if button.text == current_riddle[1].correct_answer:
 		if button.text == "Promise":
 			show_dialog_box([{avatar = "odie", text = "That was right!."},], "promise was right")
-			play_riddle([[{avatar = "odie", text = "What flies when it's born, lies when it's alive, and runs when it's dead?" }],
+			play_riddle([[{avatar = "odie", text = "Second question. What flies when it's born, lies when it's alive, and runs when it's dead?" }],
 			{correct_answer = "A snowflake", wrong_answer1 = "A fly?", wrong_answer2 = "Lies when it's alive? That's my ex wife!", question_name = "keyword"}])
 		elif button.text == "A snowflake":
-			play_riddle([[{avatar = "odie", text = "What is always coming but never arrives?" }],
+			play_riddle([[{avatar = "odie", text = "Last question. What is always coming but never arrives?" }],
 			{correct_answer = "Tomorrow", wrong_answer1 = "My next paycheck!", wrong_answer2 = "My SnailMail food delivery", question_name = "keyword"}])
 		elif button.text == "Tomorrow": # win
-			show_dialog_box([{avatar = "odie", text = "Good job! You win! Smart fella, aren't you?"},], "tomorrow")
+			show_dialog_box([{avatar = "odie", text = "Good job! You win! Smart fella, aren't you?"},
+			{avatar = "odie", text = "Here's your GameGirl, as promised."},
+			{avatar = "frogDad", text = "Thanks, Odie!"},], "tomorrow")
 			MasterScript.odie_quest_active = false
+			MasterScript.currentQuestNum += 1
 			paused_for_riddle = false
 	else: # lose the riddle
 		MasterScript.odie_quest_active = false
