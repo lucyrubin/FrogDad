@@ -178,7 +178,7 @@ margin_bottom = 302.0
 position = Vector2( 587, 249 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 13 )
-frame = 2
+frame = 1
 speed_scale = 0.25
 playing = true
 
@@ -416,6 +416,7 @@ texture = ExtResource( 17 )
 
 [node name="FlyJar" parent="." instance=ExtResource( 19 )]
 position = Vector2( 595, 224 )
+frame = 0
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
 [connection signal="area_entered" from="Jimothy/InteractableArea" to="Jimothy" method="_on_InteractableArea_area_entered"]

@@ -1,6 +1,18 @@
+# music used in this scene:
+# A Green Pig by @Pixverses on YouTube
 extends Node2D
 
 func _ready():
+	BackgroundMusic.stop()
+	$CutSceneBackgroundMusic.play()
+	yield(get_tree().create_timer(1), "timeout")
+	
+	# bring gertrude in
+	$Gertrude/BabyImage/AnimationPlayer.play("fly_up")
+	$SwooshAudio.play()
+	
+	
+	yield($Gertrude/BabyImage/AnimationPlayer, "animation_finished")
 	# wait
 	yield(get_tree().create_timer(1), "timeout")
 	
@@ -8,15 +20,20 @@ func _ready():
 	
 	yield($Gertrude/ToddlerImage/AnimationPlayer, "animation_finished")
 	
-	yield(show_stats("GERTRUDE:","will probably rule the world one day",  
-		"likes: \n     - animals\n     - fruit salad",  
-		"dislikes: \n     - cruel injustice"), "completed")
+	# show gertrude text
+	$GertrudeSparkleSound.play()
+	yield(show_stats("GERTRUDE","Will probably rule the world one day.",  
+		"Likes: \n     - Animals\n     - Fruit salad",  
+		"Dislikes: \n     - Cruel injustice"), "completed")
 	# move gertrude over so that gilbert can come in
 	$Gertrude/ToddlerImage/AnimationPlayer.play("move_to_side")
 	fade_out_and_reset_stats()
 	
+	
 	# bring gilbert in
 	$Gilbert/BabyImage/AnimationPlayer.play("fly_up")
+	yield(get_tree().create_timer(0.5), "timeout")
+	$SwooshAudio.play()
 	
 	yield($Gilbert/BabyImage/AnimationPlayer, "animation_finished")
 	
@@ -28,9 +45,10 @@ func _ready():
 	yield($Gilbert/ToddlerImage/AnimationPlayer, "animation_finished")
 	
 	# show gilbert text
-	yield(show_stats("GILBERT:", "a little weird but very friendly",
-	"likes: \n     - flies\n     -  throwing pebbles",  
-	"dislikes: \n     - milk"), "completed")
+	$GilbertSound.play()
+	yield(show_stats("GILBERT", "A little weird but very friendly.",
+	"Likes: \n     - Flies\n     -  Throwing pebbles",  
+	"Dislikes: \n     - Milk"), "completed")
 	
 	# move gilbert over so that gravy can come in
 	$Gilbert/ToddlerImage/AnimationPlayer.play("move_to_side")
@@ -38,6 +56,8 @@ func _ready():
 	
 	# bring gravy in
 	$Gravy/BabyImage/AnimationPlayer.play("fly_up")
+	yield(get_tree().create_timer(0.5), "timeout")
+	$SwooshAudio.play()
 	
 	yield($Gravy/BabyImage/AnimationPlayer, "animation_finished")
 	
@@ -49,27 +69,42 @@ func _ready():
 	yield($Gravy/ToddlerImage/AnimationPlayer, "animation_finished")
 	
 	# show gravy text
-	yield(show_stats("GRAVY BABY:", "really wants to be a DJ",
-	"likes: \n     - being in the groove\n     -  small bags",  
-	"dislikes: \n     - being in a funk\n     - small pockets"), "completed")
+	$GravySound.play()
+	yield(show_stats("GRAVY BABY", "Really wants to be a DJ.",
+	"Likes: \n     - Being in a groove\n     -  Small bags",  
+	"Dislikes: \n     - Being in a funk\n     - Small pockets"), "completed")
 	
 	yield(get_tree().create_timer(1), "timeout")
+	
+	# move everyone to the middle
+	#fade text twice as fast
+	$StatsText/AnimationPlayer.playback_speed = 2
+	$NameText/AnimationPlayer.playback_speed = 2
+	fade_out_and_reset_stats()
+	$Gertrude/ToddlerImage/AnimationPlayer.play("move_together")
+	$Gilbert/ToddlerImage/AnimationPlayer.play("move_together")
+	$Gravy/ToddlerImage/AnimationPlayer.play("move_together")
+	
+	yield($Gravy/ToddlerImage/AnimationPlayer, "animation_finished")
+	
 	$ContinueButton.visible = true
 	
 func fade_out_and_reset_stats():
 	$StatsText/AnimationPlayer.play("fade_out")
+	$NameText/AnimationPlayer.play("fade_out")
 	yield($StatsText/AnimationPlayer, "animation_finished")
 	
-	$StatsText/NameText.visible = false
+	$NameText.visible = false
 	$StatsText/StatText1.visible = false
 	$StatsText/StatText2.visible = false
 	$StatsText/StatText3.visible = false
 	$StatsText/AnimationPlayer.play("RESET")
+	$NameText/AnimationPlayer.play("RESET")
 	
 func show_stats(baby_name, stat1, stat2, stat3):
 	# show name text
-	show_text($StatsText/NameText, baby_name)
-	yield($StatsText/NameText/TextAnimation, "tween_all_completed")
+	show_text($NameText, baby_name)
+	yield($NameText/TextAnimation, "tween_all_completed")
 	yield(get_tree().create_timer(1), "timeout")
 	
 	#stat 1
@@ -113,3 +148,4 @@ func show_text(label, text_to_show):
 func _on_ContinueButton_pressed():
 	MasterScript.after_tadpoles_to_babies = true
 	SceneTransition.change_scene("res://Scenes/Main.tscn")
+	$CutSceneBackgroundMusic.stop()
