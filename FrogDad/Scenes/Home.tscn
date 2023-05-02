@@ -1158,6 +1158,7 @@ shape = SubResource( 123 )
 
 [node name="Typewriting" type="AudioStreamPlayer" parent="Typewriter"]
 stream = ExtResource( 34 )
+volume_db = 10.0
 
 [node name="Couch" type="StaticBody2D" parent="."]
 position = Vector2( -400, -106 )
