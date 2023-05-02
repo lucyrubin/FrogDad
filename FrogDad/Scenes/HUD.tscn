@@ -249,7 +249,7 @@ script = ExtResource( 12 )
 
 [node name="BouncingArrow" parent="ToggleQuestButton" instance=ExtResource( 30 )]
 visible = false
-position = Vector2( -200, 0 )
+position = Vector2( -200.87, 16.5217 )
 
 [node name="ToggleInventoryButton" type="TextureButton" parent="."]
 margin_left = 1898.0
