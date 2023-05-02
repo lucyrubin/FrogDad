@@ -16,7 +16,12 @@ func _ready():
 		$FrogDad.toggle_dialogue_box_visibility([{avatar = "", text = "Phew! It ain't much, but it's honest work!"},
 			{avatar = "", text = "They're almost too big for it! They'll grow out of it soon enough"}]
 				, "after cradle dialogue")
+		$Home/Cradle.visible = true
+		$Home/Cradle/CollisionShape2D.set_deferred("disabled", false)
 		MasterScript.enter_cradle_area = false
+	if MasterScript.after_eggs_to_tadpoles:
+		$FrogDad.position = $EnterCradle.position
+		MasterScript.after_eggs_to_tadpoles = false
 		
 	if MasterScript.currentQuestNum < 2:
 		$BabyGertrude.visible = true
