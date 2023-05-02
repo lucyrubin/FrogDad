@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://House Art/cradle.PNG" type="Texture" id=40]
 [ext_resource path="res://House Art/lampHover.png" type="Texture" id=41]
 [ext_resource path="res://Audios/lightswitch.mp3" type="AudioStream" id=42]
+[ext_resource path="res://Scenes/Cradle.gd" type="Script" id=43]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -1225,7 +1226,7 @@ __meta__ = {
 [node name="Cradle" type="StaticBody2D" parent="."]
 position = Vector2( -270, 296 )
 collision_layer = 4
-script = ExtResource( 38 )
+script = ExtResource( 43 )
 __meta__ = {
 "_edit_group_": true
 }
