@@ -3,7 +3,7 @@ extends Control
 var MainScene = "res://Scenes/Main.tscn"
 
 func _ready():
-	if BackgroundMusic.playing == false:
+	if !BackgroundMusic.playing:
 		BackgroundMusic.play()
 
 func _on_StartButton_pressed():

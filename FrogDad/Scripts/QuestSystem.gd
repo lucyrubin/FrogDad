@@ -288,6 +288,7 @@ func learn_controls():
 
 func _on_KnockTimer_timeout():
 	# this code creates and displays a dialogue box
+	MasterScript.music_position = BackgroundMusic.get_playback_position()
 	BackgroundMusic.stop()
 	$KnockingSound.play()
 
@@ -295,7 +296,7 @@ func _on_KnockTimer_timeout():
 	PopUpNode.show_dialog_box([{avatar = "", text = "*Knock knock*"}], "Knock knock")
 
 	$KnockingSound.stop()
-	BackgroundMusic.play()
+	BackgroundMusic.play(MasterScript.music_position)
 	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 

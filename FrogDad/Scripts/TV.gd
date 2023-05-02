@@ -13,6 +13,7 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 	and MasterScript.frog_dad_state == "" \
 	and in_area == true:
 		channel += 1
+		MasterScript.music_position = BackgroundMusic.get_playback_position()
 		BackgroundMusic.stop()
 		if channel == 1:
 			play_NyanCat()
@@ -28,7 +29,7 @@ func _on_TV_input_event(_viewport, event, _shape_idx):
 		else:
 			stop_SpongeBob()
 			channel = 0
-			BackgroundMusic.play()
+			BackgroundMusic.play(MasterScript.music_position)
 
 func _on_TV_mouse_entered():
 	if MasterScript.frog_dad_state == "" and in_area == true:

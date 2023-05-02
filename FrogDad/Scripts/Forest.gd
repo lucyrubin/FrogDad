@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	if BackgroundMusic.playing:
+		
 		BackgroundMusic.stop()
 	if $FunkyForestMusic.playing == false:
 		$FunkyForestMusic.play()
