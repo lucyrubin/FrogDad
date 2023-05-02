@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/EndCredits.gd" type="Script" id=2]
@@ -352,7 +352,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=57]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -364,12 +364,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -1292, -34 ) ]
 }
 
-[sub_resource type="Animation" id=55]
-resource_name = "move_right"
-length = 5.0
+[sub_resource type="Animation" id=58]
+resource_name = "walk_away"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -377,10 +377,77 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1045, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( -148, -2 ), Vector2( 460, -16 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "walk_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1292, -30 ), Vector2( -148, -2 ) ]
+}
+
+[sub_resource type="DynamicFont" id=53]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=60]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -782, -14 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -148, -2 ), Vector2( 460, -16 ) ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "walk_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1292, -30 ), Vector2( -148, -2 ) ]
 }
 
 [sub_resource type="Animation" id=51]
@@ -409,7 +476,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.267943, 1 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
 "update": 0,
 "values": [ Vector2( 300, 284 ), Vector2( 1134, 284 ) ]
 }
@@ -430,9 +497,115 @@ tracks/0/keys = {
 "values": [ Vector2( -115, 284 ), Vector2( 300, 284 ) ]
 }
 
-[sub_resource type="DynamicFont" id=53]
-size = 32
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 576, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 576, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 192, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 192, 256, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1, 11, 192, 250 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1, 259, 192, 248 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 384, 0, 192, 256 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 384, 256, 192, 256 )
+
+[sub_resource type="SpriteFrames" id=71]
+animations = [ {
+"frames": [ SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "crying",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 70 ) ],
+"loop": true,
+"name": "smiling",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=72]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -289, 427 ) ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 284 ), Vector2( 1134, 284 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "walk_in_from_side"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.659754, 1 ),
+"update": 0,
+"values": [ Vector2( -115, 284 ), Vector2( 300, 284 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -449,20 +622,21 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 13
+frame = 4
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 939, 388 )
 frames = SubResource( 42 )
 animation = "smiling"
+frame = 4
 speed_scale = 0.5
 playing = true
 
 [node name="GertrudeBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 957, 438 )
 frames = SubResource( 43 )
-frame = 4
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -536,19 +710,78 @@ z_index = 1
 visible = false
 
 [node name="Background" type="ColorRect" parent="SecondPart"]
-margin_right = 1024.0
-margin_bottom = 609.0
+margin_left = -1292.0
+margin_top = -34.0
+margin_right = -3.0
+margin_bottom = 608.0
 color = Color( 0.862745, 0.847059, 0.690196, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Background"]
-anims/RESET = SubResource( 54 )
-anims/move_right = SubResource( 55 )
+anims/RESET = SubResource( 57 )
+anims/walk_away = SubResource( 58 )
+anims/walk_in = SubResource( 59 )
+
+[node name="Label1" type="Label" parent="SecondPart"]
+visible = false
+margin_left = 565.0
+margin_top = 89.0
+margin_right = 996.0
+margin_bottom = 189.0
+rect_min_size = Vector2( 0, 100 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 53 )
+text = "Example text"
+autowrap = true
+
+[node name="TextAnimation" type="Tween" parent="SecondPart/Label1"]
+
+[node name="Label2" type="Label" parent="SecondPart"]
+visible = false
+margin_left = 559.0
+margin_top = 195.0
+margin_right = 990.0
+margin_bottom = 295.0
+rect_min_size = Vector2( 0, 100 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 53 )
+text = "Example text"
+autowrap = true
+
+[node name="TextAnimation" type="Tween" parent="SecondPart/Label2"]
+
+[node name="Label3" type="Label" parent="SecondPart"]
+visible = false
+margin_left = 563.0
+margin_top = 312.0
+margin_right = 994.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 0, 100 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 53 )
+text = "Example text"
+autowrap = true
+
+[node name="TextAnimation" type="Tween" parent="SecondPart/Label3"]
+
+[node name="Background2" type="ColorRect" parent="SecondPart"]
+visible = false
+margin_left = -782.0
+margin_top = -14.0
+margin_right = -169.997
+margin_bottom = 628.0
+color = Color( 0.862745, 0.847059, 0.690196, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Background2"]
+anims/RESET = SubResource( 60 )
+anims/walk_away = SubResource( 61 )
+anims/walk_in = SubResource( 62 )
 
 [node name="FrogDad" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -115, 284 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "right"
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/FrogDad"]
@@ -556,41 +789,16 @@ anims/RESET = SubResource( 51 )
 anims/walk_away = SubResource( 56 )
 anims/walk_in_from_side = SubResource( 52 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SecondPart"]
-margin_left = 565.0
-margin_top = 89.0
-margin_right = 996.0
-margin_bottom = 542.0
-custom_constants/separation = 30
+[node name="BabyGertrude" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( -289, 427 )
+frames = SubResource( 71 )
+frame = 2
+playing = true
 
-[node name="Label1" type="Label" parent="SecondPart/VBoxContainer"]
-visible = false
-margin_right = 431.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 53 )
-text = "Example text"
-autowrap = true
-
-[node name="TextAnimation" type="Tween" parent="SecondPart/VBoxContainer/Label1"]
-
-[node name="Label2" type="Label" parent="SecondPart/VBoxContainer"]
-visible = false
-margin_right = 431.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 53 )
-text = "Example text"
-autowrap = true
-
-[node name="TextAnimation" type="Tween" parent="SecondPart/VBoxContainer/Label2"]
-
-[node name="Label3" type="Label" parent="SecondPart/VBoxContainer"]
-visible = false
-margin_right = 431.0
-margin_bottom = 39.0
-custom_fonts/font = SubResource( 53 )
-text = "Example text"
-
-[node name="TextAnimation" type="Tween" parent="SecondPart/VBoxContainer/Label3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
+anims/RESET = SubResource( 72 )
+anims/walk_away = SubResource( 73 )
+anims/walk_in_from_side = SubResource( 74 )
 
 [connection signal="mouse_entered" from="FirstPart/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="FirstPart/Button" to="." method="_on_Button_mouse_exited"]

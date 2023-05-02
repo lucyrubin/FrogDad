@@ -9,7 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	run_intro()
-	#run_frog_dad()
+	
 
 func run_intro():
 	yield(get_tree().create_timer(1), "timeout")
@@ -55,27 +55,90 @@ func _on_Button_mouse_exited():
 
 func run_frog_dad():
 	$SecondPart.show()
-	$SecondPart/Background/AnimationPlayer.play("move_right")
+	$SecondPart/Background/AnimationPlayer.play("walk_in")
 	yield(get_tree().create_timer(1.5), "timeout")
 	
 	var frog_dad = $SecondPart/FrogDad
 	var frog_dad_animation_player = $SecondPart/FrogDad/AnimationPlayer
 	frog_dad_animation_player.play("walk_in_from_side")
 	yield(frog_dad_animation_player, "animation_finished")
-	frog_dad.playing = false
 	frog_dad.animation = "down"
 	frog_dad.frame = 0
 	
 	yield(get_tree().create_timer(1.5), "timeout")
-	show_text($SecondPart/VBoxContainer/Label1, "Frog Dad is doing this now")
-	yield($SecondPart/VBoxContainer/Label1/TextAnimation, "tween_all_completed")
+	show_text($SecondPart/Label1, "After becoming an empty nester, Frog Dad discovered his love for cooking, which brought him closer to Jimothy.")
+	yield($SecondPart/Label1/TextAnimation, "tween_all_completed")
 	yield(get_tree().create_timer(1), "timeout")
-	show_text($SecondPart/VBoxContainer/Label2, "Wow he is also doing this")
-	yield($SecondPart/VBoxContainer/Label2/TextAnimation, "tween_all_completed")
+	show_text($SecondPart/Label2, "")
+	yield($SecondPart/Label2/TextAnimation, "tween_all_completed")
 	yield(get_tree().create_timer(1), "timeout")
-	show_text($SecondPart/VBoxContainer/Label3, "He is so cool")
-	yield($SecondPart/VBoxContainer/Label3/TextAnimation, "tween_all_completed")
+	show_text($SecondPart/Label3, "His kids come over for flylafel dinner every Saturday night.")
+	yield($SecondPart/Label3/TextAnimation, "tween_all_completed")
 	
-	yield(get_tree().create_timer(5), "timeout")
+	yield(get_tree().create_timer(3), "timeout")
+	frog_dad.animation = "right"
+	frog_dad.frame = 0
 	frog_dad_animation_player.play("walk_away")
+	$SecondPart/Background2.show()
+	$SecondPart/Background2/AnimationPlayer.play("walk_away")
 	
+	run_gertrude()
+	
+	
+func run_gertrude():
+	$SecondPart.show()
+	$SecondPart/Background/AnimationPlayer.play("walk_in")
+	yield(get_tree().create_timer(1.5), "timeout")
+	
+	var gertrude = $SecondPart/BabyGertrude
+	var gertrude_animation_player = $SecondPart/BabyGertrude/AnimationPlayer
+	gertrude_animation_player.play("walk_in_from_side")
+	yield(gertrude_animation_player, "animation_finished")
+	
+	yield(get_tree().create_timer(1.5), "timeout")
+	show_text($SecondPart/Label1, "Gertrude became the youngest and first ever frog president of the united states. ")
+	yield($SecondPart/Label1/TextAnimation, "tween_all_completed")
+	yield(get_tree().create_timer(1), "timeout")
+	show_text($SecondPart/Label2, "She's also the only president in history with a 100% approval rate")
+	yield($SecondPart/Label2/TextAnimation, "tween_all_completed")
+	yield(get_tree().create_timer(1), "timeout")
+	show_text($SecondPart/Label3, "Her first actions as president were abolishing the electoral college and banning cruel injustice.")
+	yield($SecondPart/Label3/TextAnimation, "tween_all_completed")
+	
+	yield(get_tree().create_timer(3), "timeout")
+	
+	gertrude_animation_player.play("walk_away")
+	$SecondPart/Background2.show()
+	$SecondPart/Background2/AnimationPlayer.play("walk_away")
+	
+	
+	
+	
+	
+#	gertrude became the youngest and first ever frog president of the united states. 
+#	she's also the only president in history with a 100% approval rate
+#	her first actions as president were abolishing the electoral college and banningcruel injustice
+
+
+# Gilbert went on to a small liberal arts college where he made a groundbreaking, award-winning 
+# video game about his childhood 
+# he sends home money to his dad every week
+
+# Gravy baby became a 20-time grammy winning producer and DJ,
+# making the sickest beats known to man
+
+
+# Odie
+# RIP 1871-2023
+# Odie finally reunited with his beloved, Darla. He left everything behind to Mary-Beth
+
+# Snail
+# legend says he's still in front of the Jimothy John's, jamming out to his pink radio
+
+
+# jimothy
+# got closer to an old friend, and a budding romance has begun
+# but that's a story for another time...
+
+#Frog Dad 
+

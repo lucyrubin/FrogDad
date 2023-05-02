@@ -5,64 +5,64 @@
 [ext_resource path="res://Art/baby gertrude sprite sheet.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=63]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 576, 0, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=64]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 576, 256, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=65]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=66]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 256, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=67]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1, 11, 192, 250 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=68]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1, 259, 192, 248 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=69]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 384, 0, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=70]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 384, 256, 192, 256 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 4 ) ],
+"frames": [ SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ) ],
 "loop": true,
 "name": "crying",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 67 ), SubResource( 68 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 70 ) ],
 "loop": true,
 "name": "smiling",
 "speed": 5.0
@@ -91,7 +91,7 @@ baby_name = "Gertrude"
 position = Vector2( 3, -9 )
 scale = Vector2( 0.345833, 0.345833 )
 frames = SubResource( 9 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
