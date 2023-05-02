@@ -290,7 +290,6 @@ func _on_KnockTimer_timeout():
 
 	$KnockingSound.stop()
 	BackgroundMusic.play(MasterScript.music_position)
-	$KnockTimer.stop()
 	$KnockTimer.queue_free()
 
 func after_note_appears():

@@ -7,6 +7,8 @@ var pointer = load("res://Art/pointer.png")
 #Tracks background music's position
 var music_position
 
+var game_paused = false
+
 # frog dad variables
 var quest_state = "swaddle"
 var sprite_image = "carrying babies"

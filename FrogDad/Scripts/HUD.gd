@@ -28,5 +28,4 @@ func _on_PopUpTimer_timeout():
 	$PopUpNotification/AnimationPlayer.stop()
 
 func _on_PauseButton_pressed():
-	if MasterScript.frog_dad_state == "":
-		pause_menu.show_menu()
+	pause_menu.show_menu()

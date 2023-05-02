@@ -9,7 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	run_intro()
-
+	#run_frog_dad()
 
 func run_intro():
 	yield(get_tree().create_timer(1), "timeout")
@@ -41,7 +41,6 @@ func show_text(label, text_to_show):
 
 
 func _on_FrogDad_Button_pressed():
-	$FirstPart.hide()
 		
 	run_frog_dad()
 
@@ -56,8 +55,11 @@ func _on_Button_mouse_exited():
 
 func run_frog_dad():
 	$SecondPart.show()
-	var frog_dad = $SecondPart/Background/FrogDad
-	var frog_dad_animation_player = $SecondPart/Background/FrogDad/AnimationPlayer
+	$SecondPart/Background/AnimationPlayer.play("move_right")
+	yield(get_tree().create_timer(1.5), "timeout")
+	
+	var frog_dad = $SecondPart/FrogDad
+	var frog_dad_animation_player = $SecondPart/FrogDad/AnimationPlayer
 	frog_dad_animation_player.play("walk_in_from_side")
 	yield(frog_dad_animation_player, "animation_finished")
 	frog_dad.playing = false
@@ -74,4 +76,6 @@ func run_frog_dad():
 	show_text($SecondPart/VBoxContainer/Label3, "He is so cool")
 	yield($SecondPart/VBoxContainer/Label3/TextAnimation, "tween_all_completed")
 	
+	yield(get_tree().create_timer(5), "timeout")
+	frog_dad_animation_player.play("walk_away")
 	

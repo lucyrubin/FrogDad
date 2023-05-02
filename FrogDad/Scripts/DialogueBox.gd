@@ -28,7 +28,7 @@ var current_riddle
 func _input(event):
 	# if user pressed "space key" before text animation ends,
 	# the animation would be skipped and all text would show
-	if event.is_action_pressed("open") and content.visible:
+	if event.is_action_pressed("open") and content.visible and !MasterScript.game_paused:
 		print("click")
 		if !paused_for_riddle:
 			if FrogDad:
@@ -230,7 +230,7 @@ func _update_riddle(button):
 			{correct_answer = "A snowflake", wrong_answer1 = "A fly?", wrong_answer2 = "Lies when it's alive? That's my ex wife!", question_name = "keyword"}])
 		elif button.text == "A snowflake":
 			play_riddle([[{avatar = "odie", text = "Last question. What is always coming but never arrives?" }],
-			{correct_answer = "Tomorrow", wrong_answer1 = "My next paycheck!", wrong_answer2 = "My SnailMail food delivery", question_name = "keyword"}])
+			{correct_answer = "Tomorrow", wrong_answer1 = "My next paycheck!", wrong_answer2 = "My SnuberEats food delivery", question_name = "keyword"}])
 		elif button.text == "Tomorrow": # win
 			show_dialog_box([{avatar = "odie", text = "Good job! You win! Smart fella, aren't you?"},
 			{avatar = "odie", text = "Here's your GameGirl, as promised."},
@@ -261,5 +261,5 @@ func _update_riddle(button):
 			show_dialog_box([{avatar = "odie", text = "Oh... that's just sad. Sorry, bud. Try again next time?"},], "My ex wife")
 		elif button.text == "My next paycheck!":
 			show_dialog_box([{avatar = "odie", text = "Haha! Good one, but not what I was looking for! You can always try again, though."},], "My paycheck")
-		elif button.text == "My SnailMail food delivery":
-			show_dialog_box([{avatar = "odie", text = "Huh? Food delivery? What's that?"},], "Snailmail")
+		elif button.text == "My SnuberEats food delivery":
+			show_dialog_box([{avatar = "odie", text = "Huh? SnuberEats? What's that?"},], "Snailmail")

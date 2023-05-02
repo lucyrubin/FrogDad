@@ -56,7 +56,7 @@ func _on_ClickArea_input_event(viewport, event, shape_idx):
 			{avatar = "odie", text = "That little birdie being Mary-Beth - that is."},
 			{avatar = "odie", text = "How would you like a state-of-the-art, electronic square device??"},
 			{avatar = "frogDad", text = "You mean, a GameBoy??"},
-			{avatar = "odie", text = "What? Don't be so sexist, FrogDad. Girls can be gamers too."},
+			{avatar = "odie", text = "What? Don't be so sexist, Frog Dad. Girls can be gamers too."},
 			{avatar = "odie", text = "In fact, my lovely wife, Darla, rest her soul, was a gamer girl."},
 			{avatar = "odie", text = "So whadda you say? Wanna play?"},
 			{avatar = "frogDad", text = "Sure, why not?"}], "start riddle")

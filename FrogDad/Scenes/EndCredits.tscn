@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/EndCredits.gd" type="Script" id=2]
@@ -352,6 +352,37 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "move_right"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1045, 0 ), Vector2( 0, 0 ) ]
+}
+
 [sub_resource type="Animation" id=51]
 length = 0.001
 tracks/0/type = "value"
@@ -365,6 +396,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -115, 284 ) ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.267943, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 284 ), Vector2( 1134, 284 ) ]
 }
 
 [sub_resource type="Animation" id=52]
@@ -402,21 +449,20 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 3
+frame = 13
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 939, 388 )
 frames = SubResource( 42 )
 animation = "smiling"
-frame = 1
 speed_scale = 0.5
 playing = true
 
 [node name="GertrudeBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 957, 438 )
 frames = SubResource( 43 )
-frame = 3
+frame = 4
 speed_scale = 0.5
 playing = true
 
@@ -424,7 +470,7 @@ playing = true
 position = Vector2( 129, 415 )
 frames = SubResource( 44 )
 animation = "smiling"
-frame = 3
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -494,16 +540,20 @@ margin_right = 1024.0
 margin_bottom = 609.0
 color = Color( 0.862745, 0.847059, 0.690196, 1 )
 
-[node name="FrogDad" type="AnimatedSprite" parent="SecondPart/Background"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Background"]
+anims/RESET = SubResource( 54 )
+anims/move_right = SubResource( 55 )
+
+[node name="FrogDad" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -115, 284 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "right"
-frame = 2
 playing = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Background/FrogDad"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/FrogDad"]
 anims/RESET = SubResource( 51 )
+anims/walk_away = SubResource( 56 )
 anims/walk_in_from_side = SubResource( 52 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SecondPart"]
