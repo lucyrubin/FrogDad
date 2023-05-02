@@ -50,10 +50,6 @@ func _process(delta):
 	# can't do stuff while the intro is happening
 	if get_tree().get_root().find_node("FrogDad", true, false) and MasterScript.currentQuestNum == -1: 
 		MasterScript.frog_dad_state = "intro"
-		
-	if MasterScript.currentQuestNum == 0 and !MasterScript.learn_control_first_time:
-		learn_controls()
-		MasterScript.learn_control_first_time = true
 	
 	
 
@@ -282,10 +278,6 @@ func begin_intro_quest():
 	if door_node:
 		door_node.set_locked(true)
 	get_parent().visible = false
-
-func learn_controls():
-	var controls = get_tree().get_root().find_node("Controls", true, false)
-	controls.visible = true
 
 func _on_KnockTimer_timeout():
 	# this code creates and displays a dialogue box

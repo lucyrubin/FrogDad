@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
 [ext_resource path="res://Art/todo_icon_hover.png" type="Texture" id=2]
@@ -191,6 +191,49 @@ region_rect = Rect2( 0, 0, 92, 91 )
 texture = ExtResource( 23 )
 region_rect = Rect2( 0, 0, 92, 91 )
 
+[sub_resource type="Animation" id=108]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 358, 115 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HBoxContainer:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 528, -4.66667 ) ]
+}
+
+[sub_resource type="Animation" id=109]
+resource_name = "slide"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -9.333, -11.333 ), Vector2( 520.667, -11.3333 ) ]
+}
+
 [node name="HUD" type="CanvasLayer"]
 scale = Vector2( 0.5, 0.5 )
 transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
@@ -207,31 +250,6 @@ anims/slide_in = SubResource( 102 )
 [node name="PopUpTimer" type="Timer" parent="PopUpNotification"]
 wait_time = 5.0
 one_shot = true
-
-[node name="Controls" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -12, -96 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Controls"]
-margin_left = -13.6667
-margin_top = 962.0
-margin_right = 344.333
-margin_bottom = 1077.0
-rect_scale = Vector2( 3, 3 )
-
-[node name="TextureRect" type="TextureRect" parent="Controls/HBoxContainer"]
-margin_right = 176.0
-margin_bottom = 115.0
-texture = ExtResource( 6 )
-
-[node name="TextureRect2" type="TextureRect" parent="Controls/HBoxContainer"]
-margin_left = 180.0
-margin_right = 358.0
-margin_bottom = 115.0
-texture = ExtResource( 5 )
 
 [node name="ToggleQuestButton" type="TextureButton" parent="."]
 anchor_left = 0.5
@@ -595,6 +613,35 @@ rect_scale = Vector2( 2, 2 )
 
 [node name="LeafPosition" type="Position2D" parent="."]
 position = Vector2( 1974, 84 )
+
+[node name="Controls" type="Node2D" parent="."]
+visible = false
+position = Vector2( -1050, 410 )
+scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Controls"]
+anims/RESET = SubResource( 108 )
+anims/slide = SubResource( 109 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls"]
+margin_left = 528.0
+margin_top = -4.66667
+margin_right = 886.0
+margin_bottom = 110.333
+
+[node name="TextureRect" type="TextureRect" parent="Controls/HBoxContainer"]
+margin_right = 176.0
+margin_bottom = 115.0
+texture = ExtResource( 6 )
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/HBoxContainer"]
+margin_left = 180.0
+margin_right = 358.0
+margin_bottom = 115.0
+texture = ExtResource( 5 )
 
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]

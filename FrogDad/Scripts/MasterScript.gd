@@ -31,7 +31,7 @@ var gilbert_fed = false
 var gravy_fed = false
 
 var opened_quest_first_time = false
-var learn_control_first_time = false
+var learn_control_first_time = true
 var crib_dialogue_shown = false
 
 var after_tadpoles_to_babies = false

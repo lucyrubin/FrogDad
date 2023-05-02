@@ -2,7 +2,12 @@ extends CanvasLayer
 
 onready var pause_menu = $PauseMenu
 
+
 func _process(delta):
+	if MasterScript.currentQuestNum == 0 and MasterScript.learn_control_first_time:
+		$Controls.visible = true
+		$Controls/AnimationPlayer.play("slide")
+		MasterScript.learn_control_first_time = false
 	if Input.is_action_just_pressed("move_down") \
 	or Input.is_action_just_pressed("move_up") \
 	or Input.is_action_just_pressed("move_right") \
