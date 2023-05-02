@@ -283,7 +283,6 @@ color = Color( 0.941176, 0.835294, 0.866667, 1 )
 [node name="Gertrude" type="AnimatedSprite" parent="."]
 position = Vector2( 360, 352 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="Gilbert" type="AnimatedSprite" parent="."]

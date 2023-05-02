@@ -54,12 +54,11 @@ func get_sprite():
 	return $Button
 
 func _on_Button_pressed():
-	
-	if frog_dad_is_close and MasterScript.frog_dad_state == "":
+	if MasterScript.frog_dad_state == "":
 		pick_up_item(self)
 
 func _on_Button_mouse_entered():
-	if frog_dad_is_close and MasterScript.frog_dad_state == "":
+	if MasterScript.frog_dad_state == "":
 		$Button.texture_normal = load("res://Item Icons/" + item_name + "Hover.png")
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
@@ -67,11 +66,11 @@ func _on_Button_mouse_exited():
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png")
 	Input.set_custom_mouse_cursor(MasterScript.hand)
 
-func _on_Area2D_body_entered(_body):
-	frog_dad_is_close = true
-
-func _on_Area2D_body_exited(_body):
-	frog_dad_is_close = false
+#func _on_Area2D_body_entered(_body):
+#	frog_dad_is_close = true
+#
+#func _on_Area2D_body_exited(_body):
+#	frog_dad_is_close = false
 
 func _on_FlyingTime_timeout(): # after three seconds, stop flying and fading and delete
 	queue_free()

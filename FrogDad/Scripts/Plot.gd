@@ -18,9 +18,9 @@ func _on_Plot_gui_input(event):
 						$AnimatedSprite.set_frame(current_fram)
 
 func _on_Plot_mouse_entered():
-	if MasterScript.frog_dad_state =="":
+	if MasterScript.frog_dad_state =="" and $AnimatedSprite.visible == true:
 		Input.set_custom_mouse_cursor(MasterScript.pointer)
 
 func _on_Plot_mouse_exited():
-	if MasterScript.frog_dad_state =="":
+	if MasterScript.frog_dad_state =="" and $AnimatedSprite.visible == true:
 		Input.set_custom_mouse_cursor(MasterScript.hand)

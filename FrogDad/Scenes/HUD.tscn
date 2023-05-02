@@ -290,6 +290,9 @@ margin_bottom = 207.0
 mouse_filter = 1
 color = Color( 0, 0, 0, 1 )
 
+[node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
+visible = false
+
 [node name="Inventory" parent="UserInterface" instance=ExtResource( 28 )]
 visible = false
 position = Vector2( 176, 62 )
@@ -585,15 +588,18 @@ mouse_filter = 2
 texture = ExtResource( 36 )
 flip_h = true
 
-[node name="SmallPopUpBox" parent="UserInterface" instance=ExtResource( 11 )]
-visible = false
-
 [node name="Quest" parent="UserInterface" instance=ExtResource( 29 )]
 visible = false
 position = Vector2( 88.6667, 30.6667 )
 scale = Vector2( 0.13, 0.13 )
 
 [node name="OneSecTimer" type="Timer" parent="UserInterface/Quest"]
+
+[node name="PauseMenu" parent="UserInterface" instance=ExtResource( 38 )]
+visible = false
+margin_right = -339.0
+margin_bottom = -199.0
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="LeafPosition" type="Position2D" parent="."]
 position = Vector2( 1974, 84 )
@@ -626,10 +632,6 @@ margin_left = 180.0
 margin_right = 358.0
 margin_bottom = 115.0
 texture = ExtResource( 5 )
-
-[node name="PauseMenu" parent="." instance=ExtResource( 38 )]
-visible = false
-rect_scale = Vector2( 2, 2 )
 
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]

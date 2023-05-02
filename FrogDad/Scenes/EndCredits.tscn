@@ -449,20 +449,21 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 13
+frame = 7
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 939, 388 )
 frames = SubResource( 42 )
 animation = "smiling"
+frame = 4
 speed_scale = 0.5
 playing = true
 
 [node name="GertrudeBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 957, 438 )
 frames = SubResource( 43 )
-frame = 4
+frame = 2
 speed_scale = 0.5
 playing = true
 
@@ -470,7 +471,7 @@ playing = true
 position = Vector2( 129, 415 )
 frames = SubResource( 44 )
 animation = "smiling"
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -529,7 +530,6 @@ text = "Continue"
 [node name="BouncingArrow" parent="FirstPart" instance=ExtResource( 18 )]
 visible = false
 position = Vector2( 142, 552 )
-scale = Vector2( 1, 1 )
 z_index = 1
 
 [node name="SecondPart" type="Node2D" parent="."]
@@ -549,6 +549,7 @@ position = Vector2( -115, 284 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "right"
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/FrogDad"]
