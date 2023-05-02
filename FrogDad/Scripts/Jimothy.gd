@@ -47,7 +47,7 @@ func _on_ColorRect_gui_input(event):
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "If you get me some lettuce, I'd be happy to give you flies."}]
 				, "jimothy remind about lettuce")
 			elif MasterScript.currentQuestNum == 4:
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = ""}, 
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Sup bro, you're back?"}, 
 				{avatar = "frogDad", text = "About the flies...."},
 				{avatar = "jimothy", text = "Oh snap! I almost forgot haha."}, 
 				{avatar = "jimothy", text = "Sure thing, my guy!"}]

@@ -127,7 +127,6 @@ playing = true
 
 [node name="FlyJar" parent="." instance=ExtResource( 16 )]
 position = Vector2( 13.3333, -346.667 )
-frame = 0
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]

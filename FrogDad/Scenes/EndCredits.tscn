@@ -644,7 +644,7 @@ playing = true
 position = Vector2( 129, 415 )
 frames = SubResource( 44 )
 animation = "smiling"
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -703,7 +703,6 @@ text = "Continue"
 [node name="BouncingArrow" parent="FirstPart" instance=ExtResource( 18 )]
 visible = false
 position = Vector2( 142, 552 )
-scale = Vector2( 1, 1 )
 z_index = 1
 
 [node name="SecondPart" type="Node2D" parent="."]

@@ -23,6 +23,7 @@ func _ready():
 func initialize_item(item_name, item_quantity): # sets the slot to be the item given
 	if item == null: 
 		item = ItemClass.instance()
+		item.z_index = 0
 		add_child(item)
 		item.set_item(item_name, item_quantity)
 	else: 
@@ -46,6 +47,7 @@ func put_into_slot(new_item):
 	item = new_item
 	item.get_parent().remove_child(item)
 	item.position = Vector2(0,0)
+	item.z_index = 0
 	add_child(item)
 	refresh_style()
 
