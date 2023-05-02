@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lightswitch.mp3-9e34d8255b18628679f927745b94d057.mp3str"
+
+[deps]
+
+source_file="res://Audios/lightswitch.mp3"
+dest_files=[ "res://.import/lightswitch.mp3-9e34d8255b18628679f927745b94d057.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
