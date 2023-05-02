@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Digable Planets - Rebirth of Slick (Cool Like Dat) (Official Music Video).mp3-8827cecf3908c27b5681ddef593ab13d.mp3str"
+
+[deps]
+
+source_file="res://Audios/Digable Planets - Rebirth of Slick (Cool Like Dat) (Official Music Video).mp3"
+dest_files=[ "res://.import/Digable Planets - Rebirth of Slick (Cool Like Dat) (Official Music Video).mp3-8827cecf3908c27b5681ddef593ab13d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
