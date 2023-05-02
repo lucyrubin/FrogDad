@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/A Green Pig.mp3-2b41108b87224bfa8353a7b2fbd83905.mp3str"
+
+[deps]
+
+source_file="res://Audios/A Green Pig.mp3"
+dest_files=[ "res://.import/A Green Pig.mp3-2b41108b87224bfa8353a7b2fbd83905.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

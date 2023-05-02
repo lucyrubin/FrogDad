@@ -47,22 +47,22 @@ region = Rect2( 384, 256, 192, 256 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 4 ) ],
+"frames": [ SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 4 ) ],
 "loop": true,
 "name": "crying",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "smiling",
 "speed": 5.0
@@ -91,7 +91,7 @@ baby_name = "Gertrude"
 position = Vector2( 3, -9 )
 scale = Vector2( 0.345833, 0.345833 )
 frames = SubResource( 9 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -4,6 +4,8 @@ const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
 
 func _ready():
+	$FrogDad/AnimatedSprite.animation = "down"
+	$FrogDad/AnimatedSprite.frame = 0
 	MasterScript.frog_dad_state = ""
 	if MasterScript.enter_home:
 		$FrogDad.position = $EnterHome.position
@@ -24,13 +26,20 @@ func _ready():
 		MasterScript.after_eggs_to_tadpoles = false
 		
 	if MasterScript.currentQuestNum < 2:
+		$BabyGertrude.visible = false
+		$BabyGilbert.visible = false
+		$BabyGravyBaby.visible = false
+	elif MasterScript.currentQuestNum >= 2 and  MasterScript.currentQuestNum < 6: 
 		$BabyGertrude.visible = true
 		$BabyGilbert.visible = true
 		$BabyGravyBaby.visible = true
-	else: 
-		$BabyGertrude.visible = true
-		$BabyGilbert.visible = true
-		$BabyGravyBaby.visible = true
+		get_tree().get_root().find_node("Cradle", true, false).visible = true
+	else:
+		$BabyGertrude.visible = false
+		$BabyGilbert.visible = false
+		$BabyGravyBaby.visible = false
+		get_tree().get_root().find_node("Cradle", true, false).visible = true
+	
 
 func _process(_delta):
 	$FrogDad.z_index = ($FrogDad.position.y) # these two lines handle layers to that things that are higher on the screen are 

@@ -47,13 +47,28 @@ func _on_ColorRect_gui_input(event):
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "If you get me some lettuce, I'd be happy to give you flies."}]
 				, "jimothy remind about lettuce")
 			elif MasterScript.currentQuestNum == 4:
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "YAS!!!! Now I don't need to take the trip to the lettuce forest. Thanks bro!!"}, 
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = ""}, 
 				{avatar = "frogDad", text = "About the flies...."},
 				{avatar = "jimothy", text = "Oh snap! I almost forgot haha."}, 
 				{avatar = "jimothy", text = "Sure thing, my guy!"}]
 				, "jimothy gives flies")
 				var frog_dad_inventory = get_tree().get_root().find_node("Inventory", true, false)
 				frog_dad_inventory.removeItems(10, "Lettuce")
+			elif MasterScript.currentQuestNum > 4:
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "jimothy", text = "Hey Frog Dad, what's up?"}, 
+				{avatar = "frogDad", text = "Just saying hi."},
+				{avatar = "jimothy", text = "Aw, love ya man!"}, 
+				{avatar = "jimothy", text = "By the way, I'm releasing a new menu item next week..."},
+				{avatar = "jimothy", text = "The:"},
+				{avatar = "jimothy", text = "B"},
+				{avatar = "jimothy", text = "L"},
+				{avatar = "jimothy", text = "T"},
+				{avatar = "jimothy", text = "AKA the Bug, Lettuce, Tomato!!!!!"},
+				{avatar = "jimothy", text = "Hey, since we're bros... I'll give you a discount."},
+				{avatar = "jimothy", text = ";)"},
+				{avatar = "frogDad", text = "Good to know..."},
+				{avatar = "frogDad", text = ":) ?"}]
+				, "flirty jimothy")
 				
 			MasterScript.frog_dad_state = "dialogue"
 			FrogDad.get_node("AnimatedSprite").stop()

@@ -30,21 +30,22 @@ func _ready():
 		## temporary to show the baby jar being carried
 		
 		HUDNode.new_quest("Make a Swaddle")
-
 	elif MasterScript.after_eggs_to_tadpoles and !MasterScript.crib_dialogue_shown:
 		PopUpNode.visible = true
 		PopUpNode.show_dialog_box([{avatar = "", text = "Wow, they've grown up so fast, but now they're hungry all the time."},
 								{avatar = "", text = "I better explore the neighborhood and find some food. I heard Jimothy John's is pretty good, maybe they'll have something!"}], "Finished cloth quest")
 		MasterScript.crib_dialogue_shown = true
-		
 	elif MasterScript.currentQuestNum == 5:
 		FrogDad.set_fly_jar_visiblity(true)
-	 
-	elif MasterScript.after_tadpoles_to_babies and !MasterScript.after_tadpoles_to_babies_dialogue_shown:
-		PopUpNode.visible = true
-		PopUpNode.show_dialog_box([{avatar = "", text = "They are so big now! I can't believe that they've started preschool. I should go see Odie."}], "Go see odiet")
-		MasterScript.after_tadpoles_to_babies_dialogue_shown = true
-		
+	elif MasterScript.currentQuestNum >= 6:
+		FrogDad.set_fly_jar_visiblity(false)
+		if MasterScript.currentQuestNum == 6 and !MasterScript.after_tadpoles_to_babies_dialogue_shown:
+			MasterScript.after_tadpoles_to_babies_dialogue_shown = true
+			PopUpNode.visible = true
+			PopUpNode.show_dialog_box([{avatar = "", text = "Wow, they're already in pre school. The house feels so empty!"},
+			{avatar = "", text = "What am I gonna do all day? I don't even remember my life before them..."},
+			{avatar = "", text = "Maybe I should go explore the neighborhood... it's been a while since I've talked to my neighbors! I wonder how Odie is doing."}], "Talking to Odie")
+
 func _process(delta):
 	# can't do stuff while the intro is happening
 	if get_tree().get_root().find_node("FrogDad", true, false) and MasterScript.currentQuestNum == -1: 

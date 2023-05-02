@@ -32,3 +32,9 @@ func _on_QuitButton_mouse_entered():
 
 func _on_QuitButton_mouse_exited():
 	Input.set_custom_mouse_cursor(MasterScript.hand)
+
+
+func _on_SkipToToddler_pressed():
+	MasterScript.currentQuestNum = 6
+	SceneTransition.change_scene("res://Scenes/Main.tscn")
+	

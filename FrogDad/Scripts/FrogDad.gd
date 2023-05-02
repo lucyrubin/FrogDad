@@ -1,7 +1,7 @@
 class_name FrogDad
 extends KinematicBody2D
 
-export var speed = 1000
+export var speed = 300
 export(NodePath) var inventory_path
 
 var screen_size
@@ -51,35 +51,29 @@ func _physics_process(delta):
 func move_down_and_left():
 	velocity.x -= 1
 	velocity.y += 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "left"
 
 func move_up_and_left():
 	velocity.x -= 1
 	velocity.y -= 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "left"
 	
 func move_up_and_right():
 	velocity.x += 1
 	velocity.y -= 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "right"
 
 func move_down_and_right():
 	velocity.x += 1
 	velocity.y += 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "right"
 	
 func move_down():
 	velocity.y += 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "down"
 
 func move_up():
 	velocity.y -= 1
-	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.animation = "up"
 
 func move_right():

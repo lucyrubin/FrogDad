@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gilbert.wav-5c22894f8ac4fa565d0df09c01c4fe17.sample"
+
+[deps]
+
+source_file="res://Audios/Gilbert.wav"
+dest_files=[ "res://.import/Gilbert.wav-5c22894f8ac4fa565d0df09c01c4fe17.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -47,22 +47,22 @@ region = Rect2( 192, 256, 192, 256 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "smiling",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
 "name": "upset",
 "speed": 5.0
