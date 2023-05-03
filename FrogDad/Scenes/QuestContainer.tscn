@@ -80,7 +80,7 @@ margin_bottom = 206.0
 alignment = 1
 
 [node name="QuestTitleLabel" type="Label" parent="VBoxContainer"]
-margin_right = 911.0
+margin_right = 925.0
 margin_bottom = 92.0
 rect_clip_content = true
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -91,15 +91,16 @@ autowrap = true
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 96.0
-margin_right = 911.0
-margin_bottom = 218.0
+margin_right = 925.0
+margin_bottom = 246.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 50
 columns = 4
 
 [node name="AmountLabel" type="Label" parent="VBoxContainer/GridContainer"]
+margin_top = 14.0
 margin_right = 175.0
-margin_bottom = 122.0
+margin_bottom = 136.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "0/0"
@@ -114,9 +115,9 @@ rect_min_size = Vector2( 20, 20 )
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer/GridContainer"]
 margin_left = 225.0
-margin_top = 24.0
+margin_top = 38.0
 margin_right = 725.0
-margin_bottom = 98.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 500, 74 )
 custom_colors/font_color = Color( 0.192157, 0.192157, 0.192157, 1 )
 custom_fonts/font = SubResource( 4 )
@@ -125,16 +126,17 @@ valign = 1
 
 [node name="Icon" type="TextureRect" parent="VBoxContainer/GridContainer"]
 margin_left = 775.0
-margin_right = 897.0
-margin_bottom = 122.0
-rect_min_size = Vector2( 122, 122 )
+margin_right = 925.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
 texture = ExtResource( 3 )
 expand = true
+stretch_mode = 6
 
 [node name="CompletedButton" type="Button" parent="VBoxContainer"]
-margin_top = 222.0
-margin_right = 911.0
-margin_bottom = 322.0
+margin_top = 250.0
+margin_right = 925.0
+margin_bottom = 350.0
 rect_min_size = Vector2( 500, 100 )
 theme = SubResource( 7 )
 text = "Complete"

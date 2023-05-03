@@ -45,7 +45,7 @@ func _ready():
 			PopUpNode.show_dialog_box([{avatar = "", text = "Wow, they're already in pre school. The house feels so empty!"},
 			{avatar = "", text = "What am I gonna do all day? I don't even remember my life before them..."},
 			{avatar = "", text = "Maybe I should go explore the neighborhood... it's been a while since I've talked to my neighbors! I wonder how Odie is doing."}], "Talking to Odie")
-
+		
 func _process(delta):
 	# can't do stuff while the intro is happening
 	if get_tree().get_root().find_node("FrogDad", true, false) and MasterScript.currentQuestNum == -1: 

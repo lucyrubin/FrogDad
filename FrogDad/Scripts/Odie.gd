@@ -37,9 +37,9 @@ func _on_ClickArea_input_event(viewport, event, shape_idx):
 		and event.button_index == BUTTON_LEFT \
 		and event.pressed \
 		and player_close_to_odie:
-		if MasterScript.began_odie_riddles and MasterScript.currentQuestNum == 6:
+		if MasterScript.began_odie_riddles and MasterScript.currentQuestNum == 7:
 			FrogDad.toggle_dialogue_box_visibility([{avatar = "odie", text = "Back for more? Alright, pal."}], "coming back to odie")
-		elif  MasterScript.currentQuestNum == 6:
+		elif  MasterScript.currentQuestNum == 7:
 			FrogDad.toggle_dialogue_box_visibility([{avatar = "frogDad", text = "Hey Odie!"}, 
 			{avatar = "odie", text = "..."},
 			{avatar = "frogDad", text = "... Hello?"},

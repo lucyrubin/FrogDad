@@ -435,7 +435,6 @@ scale = Vector2( 0.45, 0.45 )
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
-current = true
 limit_left = -1532
 limit_top = -472
 limit_right = 462

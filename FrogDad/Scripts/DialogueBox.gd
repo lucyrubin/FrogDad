@@ -112,6 +112,11 @@ func hide_dialog_box():
 		FrogDad.toggle_dialogue_box_visibility([{avatar = "", text = "Wow. The kids are going to love this!"}], "gamegirl")
 	elif dialogue_name == "gamegirl":
 		SceneTransition.change_scene("res://Scenes/EndCredits.tscn")
+	elif dialogue_name == "Talking to Odie":
+		MasterScript.currentQuestNum+=1
+		MasterScript.currentQuestArray = [MasterScript.questDictionary[6]]
+		show_new_quest_notifcation_box()
+		
 	# If you want to do something after a dialogue, do it here
 
 func show_new_talk_quest_notification_box():
