@@ -19,8 +19,9 @@ func go_outside():
 func _on_ForestEntrance_area_entered(_area):
 	go_in_forest()
 
-func _on_LettuceGardenEnterance_area_entered(area):
-	go_in_lettuce_garden()
-
 func _on_LettuceExit_area_entered(area):
 	go_outside()
+
+
+func _on_LettuceForestEnterance_area_entered(area):
+	go_in_lettuce_garden()

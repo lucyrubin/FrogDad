@@ -257,7 +257,7 @@ func check_if_quest_fulfilled():
 			if MasterScript.num_kids_fed_flies == 3: 
 				PopUpNode.visible = true
 				FrogDad.set_fly_jar_visiblity(false)
-				PopUpNode.show_dialog_box([{avatar = "", text = "Yass they have been fed. Omg they are going to grow up soon"}],
+				PopUpNode.show_dialog_box([{avatar = "", text = "Phew! They have been fed. Oh my goodness, they are going to grow up soon. Time flies."}],
 					"Finished feeding flies")
 					
 				

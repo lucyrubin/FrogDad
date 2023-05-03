@@ -13,7 +13,7 @@ func _ready():
 		$FrogDad.position = $ExitJimothyJohns.position
 		MasterScript.exitJimothyJohns = false
 	if MasterScript.exit_lettuce_garden:
-		$FrogDad.position = $ExitLettuceGarden.position
+		$FrogDad.position = $LettuceForestExit.position
 		MasterScript.exit_lettuce_garden = false
 
 func _process(_delta):

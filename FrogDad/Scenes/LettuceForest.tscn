@@ -355,6 +355,30 @@ margin_top = 64.0
 margin_right = 1872.0
 margin_bottom = 264.0
 
+[node name="Plot9" parent="LettuceYSort" instance=ExtResource( 3 )]
+margin_left = 1008.0
+margin_top = 1014.0
+margin_right = 1208.0
+margin_bottom = 1214.0
+
+[node name="Plot10" parent="LettuceYSort" instance=ExtResource( 3 )]
+margin_left = 798.0
+margin_top = 283.0
+margin_right = 998.0
+margin_bottom = 483.0
+
+[node name="Plot11" parent="LettuceYSort" instance=ExtResource( 3 )]
+margin_left = 1915.0
+margin_top = 407.0
+margin_right = 2115.0
+margin_bottom = 607.0
+
+[node name="Plot12" parent="LettuceYSort" instance=ExtResource( 3 )]
+margin_left = 40.0
+margin_top = 162.0
+margin_right = 240.0
+margin_bottom = 362.0
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Tree1" type="StaticBody2D" parent="YSort"]
@@ -435,9 +459,10 @@ scale = Vector2( 0.45, 0.45 )
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
-limit_left = -1532
-limit_top = -472
-limit_right = 462
+current = true
+limit_left = -1544
+limit_top = -352
+limit_right = 488
 limit_bottom = 755
 editor_draw_limits = true
 
@@ -528,5 +553,8 @@ shape = SubResource( 113 )
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2( 16, 1184 )
 shape = SubResource( 113 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 197, 805 )
 
 [connection signal="area_entered" from="LettuceExit" to="LettuceExit" method="_on_LettuceExit_area_entered"]

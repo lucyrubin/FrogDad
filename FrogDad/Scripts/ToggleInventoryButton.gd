@@ -8,4 +8,4 @@ func _on_ToggleInventoryButton_mouse_entered():
 func _on_ToggleInventoryButton_mouse_exited():
 	if MasterScript.frog_dad_state == "":
 		Input.set_custom_mouse_cursor(MasterScript.hand)
-		texture_normal = load("res://Art/todo_icon.png")
+		texture_normal = load("res://Art/lightLeaf.png")

@@ -130,6 +130,7 @@ func show_new_quest_notifcation_box():
 	QuestNode.check_if_quest_fulfilled()
 
 func show_dialog_box(_dialogs, dialogueName):
+	content.hide()
 	$ColorRect.show()
 	dialogue_name = dialogueName
 
@@ -140,12 +141,14 @@ func show_dialog_box(_dialogs, dialogueName):
 	content = $Content
 	next_indicator = $Content/NextIndicator
 	text_animation = $Content/TextAnimation
+	
+	
 
 	if get_node("Avatar"):
 		avatar = $Avatar
 
 	dialogs = _dialogs
-	content.show()
+	
 	if avatar:
 		avatar.show()
 	_show_dialog(0)
@@ -168,6 +171,7 @@ func _show_dialog(index):
 		text_animation.TRANS_LINEAR
 	)
 	text_animation.start()
+	content.show()
 	
 	if dialog.text == "How would you like a state-of-the-art, electronic square device??":
 		HUD.find_node("GameGirl", true, false).find_node("AnimationPlayer", true, false).play("fade_in")
