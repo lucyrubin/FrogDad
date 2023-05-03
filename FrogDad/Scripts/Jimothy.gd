@@ -40,7 +40,7 @@ func _on_ColorRect_gui_input(event):
 				{avatar = "frogDad", text = "It's Frog Dad now. And yeah, I have three."},
 				{avatar = "jimothy", text = "Respect, bro."},
 				{avatar = "jimothy", text = "Hey, since you're a single dad and all, I'll cut you a deal."},
-				{avatar = "jimothy", text = "I've been needing to harvest some lettuce out in the lettuce forest."}, 
+				{avatar = "jimothy", text = "I've been needing to harvest some lettuce out in the lettuce garden."}, 
 				{avatar = "jimothy", text = "Go get some for me and I'll get you your flies!"}
 				], "jimothy first talk")
 			elif MasterScript.currentQuestNum == 3:
