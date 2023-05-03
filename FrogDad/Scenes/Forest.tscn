@@ -788,30 +788,31 @@ editor_draw_limits = true
 [node name="Wind" type="AnimatedSprite" parent="."]
 position = Vector2( 354, 43 )
 frames = SubResource( 144 )
+frame = 9
 playing = true
 
 [node name="Wind2" type="AnimatedSprite" parent="."]
 position = Vector2( 247, 313 )
 frames = SubResource( 144 )
-frame = 1
+frame = 10
 playing = true
 
 [node name="Wind3" type="AnimatedSprite" parent="."]
 position = Vector2( 801, 416 )
 frames = SubResource( 144 )
-frame = 16
+frame = 8
 playing = true
 
 [node name="Wind4" type="AnimatedSprite" parent="."]
 position = Vector2( 922, 743 )
 frames = SubResource( 144 )
-frame = 15
+frame = 7
 playing = true
 
 [node name="Wind5" type="AnimatedSprite" parent="."]
 position = Vector2( 211, 736 )
 frames = SubResource( 144 )
-frame = 14
+frame = 6
 playing = true
 
 [node name="FunkyForestMusic" type="AudioStreamPlayer" parent="."]

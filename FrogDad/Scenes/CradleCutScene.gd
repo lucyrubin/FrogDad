@@ -9,8 +9,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_custom_mouse_cursor(MasterScript.hand)
-	MasterScript.music_position = BackgroundMusic.get_playback_position()
-	BackgroundMusic.stop()
 	$Cradle.visible = false
 	$Jar.visible = false
 	$Sparkles.visible = false
@@ -26,6 +24,5 @@ func _ready():
 
 func _on_Timer_timeout():
 	# change this to next to the cradle
-	BackgroundMusic.play(MasterScript.music_position)
 	MasterScript.enter_cradle_area = true
 	SceneTransition.change_scene("res://Scenes/Main.tscn")

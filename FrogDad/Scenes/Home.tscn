@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=137 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -43,6 +43,8 @@
 [ext_resource path="res://House Art/lampHover.png" type="Texture" id=41]
 [ext_resource path="res://Audios/lightswitch.mp3" type="AudioStream" id=42]
 [ext_resource path="res://Scenes/Cradle.gd" type="Script" id=43]
+[ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=44]
+[ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=45]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -723,6 +725,14 @@ extents = Vector2( 153, 12 )
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 108, 64 )
 
+[sub_resource type="SpriteFrames" id=153]
+animations = [ {
+"frames": [ ExtResource( 45 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="AtlasTexture" id=87]
 flags = 4
 atlas = ExtResource( 20 )
@@ -1240,6 +1250,14 @@ texture = ExtResource( 40 )
 position = Vector2( -2, 40 )
 shape = SubResource( 67 )
 disabled = true
+
+[node name="Jar" type="AnimatedSprite" parent="."]
+position = Vector2( -272, 256 )
+scale = Vector2( 0.08, 0.08 )
+z_index = 500
+frames = SubResource( 153 )
+speed_scale = 0.8
+playing = true
 
 [node name="YSort" type="YSort" parent="."]
 

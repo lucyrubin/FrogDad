@@ -308,6 +308,7 @@ autostart = true
 position = Vector2( -272, 256 )
 scale = Vector2( 0.08, 0.08 )
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.8
 playing = true
 
