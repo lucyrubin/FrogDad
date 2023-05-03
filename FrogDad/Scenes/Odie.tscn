@@ -5,19 +5,19 @@
 [ext_resource path="res://Temporary Clipart/thoughtbubble.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=98]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 590, 0, 590, 775 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=99]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 590, 775 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"frames": [ SubResource( 98 ), SubResource( 99 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0

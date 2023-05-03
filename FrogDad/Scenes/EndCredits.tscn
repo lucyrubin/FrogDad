@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Fonts/Aaxiaolongti.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/EndCredits.gd" type="Script" id=2]
@@ -18,6 +18,29 @@
 [ext_resource path="res://Art/frogdadside3.png" type="Texture" id=16]
 [ext_resource path="res://flat_button_theme.tres" type="Theme" id=17]
 [ext_resource path="res://Scenes/BouncingArrow.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Art/OlderGertrude.png" type="Texture" id=19]
+[ext_resource path="res://Art/OlderGilbert.png" type="Texture" id=20]
+[ext_resource path="res://Art/OlderGravy.png" type="Texture" id=21]
+[ext_resource path="res://Art/frame_apngframe08.png" type="Texture" id=22]
+[ext_resource path="res://Art/frame_apngframe09.png" type="Texture" id=23]
+[ext_resource path="res://Art/frame_apngframe12.png" type="Texture" id=24]
+[ext_resource path="res://Art/frame_apngframe13.png" type="Texture" id=25]
+[ext_resource path="res://Art/frame_apngframe11.png" type="Texture" id=26]
+[ext_resource path="res://Art/frame_apngframe05.png" type="Texture" id=27]
+[ext_resource path="res://Art/frame_apngframe01.png" type="Texture" id=28]
+[ext_resource path="res://Art/frame_apngframe14.png" type="Texture" id=29]
+[ext_resource path="res://Art/odie.png" type="Texture" id=30]
+[ext_resource path="res://Art/frame_apngframe03.png" type="Texture" id=31]
+[ext_resource path="res://Art/frame_apngframe04.png" type="Texture" id=32]
+[ext_resource path="res://Art/frame_apngframe02.png" type="Texture" id=33]
+[ext_resource path="res://Art/frame_apngframe10.png" type="Texture" id=34]
+[ext_resource path="res://Art/jimothy.png" type="Texture" id=35]
+[ext_resource path="res://Art/frame_apngframe07.png" type="Texture" id=36]
+[ext_resource path="res://Art/frame_apngframe06.png" type="Texture" id=37]
+[ext_resource path="res://Audios/EndCreditMusic.mp3" type="AudioStream" id=38]
+[ext_resource path="res://Audios/Gravy.wav" type="AudioStream" id=39]
+[ext_resource path="res://Audios/gertrudesparklesound.wav" type="AudioStream" id=40]
+[ext_resource path="res://Audios/Gilbert.wav" type="AudioStream" id=41]
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
@@ -338,7 +361,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "fade_in"
-length = 4.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -346,7 +369,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 4.1 ),
 "transitions": PoolRealArray( 0.233258, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -400,7 +423,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=53]
-size = 32
+size = 28
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=60]
@@ -415,7 +438,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -782, -14 ) ]
+"values": [ Vector2( -880, -16 ) ]
 }
 
 [sub_resource type="Animation" id=61]
@@ -574,6 +597,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -289, 427 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=73]
 resource_name = "walk_away"
@@ -607,6 +658,441 @@ tracks/0/keys = {
 "values": [ Vector2( -115, 284 ), Vector2( 300, 284 ) ]
 }
 
+[sub_resource type="SpriteFrames" id=76]
+animations = [ {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=77]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 272, 944 ) ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "fly_up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.203063, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 900 ), Vector2( 272, 296 ) ]
+}
+
+[sub_resource type="Animation" id=79]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 284 ), Vector2( 1134, 284 ) ]
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=81]
+resource_name = "walk_in_from_side"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.659754, 1 ),
+"update": 0,
+"values": [ Vector2( -115, 284 ), Vector2( 300, 284 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=82]
+animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=83]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 272, 944 ) ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "fly_up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.203063, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 900 ), Vector2( 272, 296 ) ]
+}
+
+[sub_resource type="Animation" id=85]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 296 ), Vector2( 1134, 284 ) ]
+}
+
+[sub_resource type="Animation" id=94]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20, 284 ) ]
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=93]
+resource_name = "walk_in_from_side"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.659754, 1 ),
+"update": 0,
+"values": [ Vector2( -20, 284 ), Vector2( 380, 284 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=89]
+animations = [ {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=105]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 272, 952 ) ]
+}
+
+[sub_resource type="Animation" id=90]
+resource_name = "fly_up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.203063, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 900 ), Vector2( 272, 296 ) ]
+}
+
+[sub_resource type="Animation" id=91]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 296 ), Vector2( 1300, 284 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 689, 955 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 35 )
+region = Rect2( 0, 955, 689, 955 )
+
+[sub_resource type="SpriteFrames" id=95]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=96]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -216, 296 ) ]
+}
+
+[sub_resource type="Animation" id=106]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 284 ), Vector2( 1300, 284 ) ]
+}
+
+[sub_resource type="Animation" id=97]
+resource_name = "walk_in_from_side"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.659754, 1 ),
+"update": 0,
+"values": [ Vector2( -200, 284 ), Vector2( 300, 284 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=98]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 590, 0, 590, 775 )
+
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 30 )
+region = Rect2( 0, 0, 590, 775 )
+
+[sub_resource type="SpriteFrames" id=100]
+animations = [ {
+"frames": [ SubResource( 98 ), SubResource( 99 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=109]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1300, 284 ) ]
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 284 ), Vector2( 1300, 284 ) ]
+}
+
+[sub_resource type="Animation" id=101]
+resource_name = "walk_in_from_side"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.659754, 1 ),
+"update": 0,
+"values": [ Vector2( -200, 284 ), Vector2( 300, 284 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=102]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "back_and_forth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=104]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -200, 284 ) ]
+}
+
+[sub_resource type="Animation" id=108]
+resource_name = "walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
+"update": 0,
+"values": [ Vector2( 400, 296 ), Vector2( 1400, 284 ) ]
+}
+
+[sub_resource type="Animation" id=103]
+resource_name = "walk_in_from_side"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.659754, 1 ),
+"update": 0,
+"values": [ Vector2( -200, 284 ), Vector2( 400, 284 ) ]
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -622,21 +1108,21 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 4
+frame = 13
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 939, 388 )
 frames = SubResource( 42 )
 animation = "smiling"
-frame = 4
+frame = 1
 speed_scale = 0.5
 playing = true
 
 [node name="GertrudeBaby" type="AnimatedSprite" parent="FirstPart"]
 position = Vector2( 957, 438 )
 frames = SubResource( 43 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -644,7 +1130,7 @@ playing = true
 position = Vector2( 129, 415 )
 frames = SubResource( 44 )
 animation = "smiling"
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -702,11 +1188,16 @@ text = "Continue"
 
 [node name="BouncingArrow" parent="FirstPart" instance=ExtResource( 18 )]
 visible = false
-position = Vector2( 142, 552 )
+position = Vector2( 142, 540 )
 z_index = 1
 
 [node name="SecondPart" type="Node2D" parent="."]
+
+[node name="PermanentBackground" type="ColorRect" parent="SecondPart"]
 visible = false
+margin_right = 1080.0
+margin_bottom = 624.0
+color = Color( 0.862745, 0.847059, 0.690196, 1 )
 
 [node name="Background" type="ColorRect" parent="SecondPart"]
 margin_left = -1292.0
@@ -722,11 +1213,11 @@ anims/walk_in = SubResource( 59 )
 
 [node name="Label1" type="Label" parent="SecondPart"]
 visible = false
-margin_left = 565.0
-margin_top = 89.0
+margin_left = 512.0
+margin_top = 56.0
 margin_right = 996.0
-margin_bottom = 189.0
-rect_min_size = Vector2( 0, 100 )
+margin_bottom = 206.0
+rect_min_size = Vector2( 0, 150 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 53 )
 text = "Example text"
@@ -736,11 +1227,11 @@ autowrap = true
 
 [node name="Label2" type="Label" parent="SecondPart"]
 visible = false
-margin_left = 559.0
-margin_top = 195.0
+margin_left = 512.0
+margin_top = 216.0
 margin_right = 990.0
-margin_bottom = 295.0
-rect_min_size = Vector2( 0, 100 )
+margin_bottom = 366.0
+rect_min_size = Vector2( 0, 150 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 53 )
 text = "Example text"
@@ -750,11 +1241,11 @@ autowrap = true
 
 [node name="Label3" type="Label" parent="SecondPart"]
 visible = false
-margin_left = 563.0
-margin_top = 312.0
+margin_left = 512.0
+margin_top = 376.0
 margin_right = 994.0
-margin_bottom = 412.0
-rect_min_size = Vector2( 0, 100 )
+margin_bottom = 526.0
+rect_min_size = Vector2( 0, 150 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 53 )
 text = "Example text"
@@ -763,11 +1254,10 @@ autowrap = true
 [node name="TextAnimation" type="Tween" parent="SecondPart/Label3"]
 
 [node name="Background2" type="ColorRect" parent="SecondPart"]
-visible = false
-margin_left = -782.0
-margin_top = -14.0
-margin_right = -169.997
-margin_bottom = 628.0
+margin_left = -880.0
+margin_top = -16.0
+margin_right = -284.0
+margin_bottom = 626.0
 color = Color( 0.862745, 0.847059, 0.690196, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Background2"]
@@ -780,7 +1270,7 @@ position = Vector2( -115, 284 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "right"
-frame = 4
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/FrogDad"]
@@ -791,14 +1281,135 @@ anims/walk_in_from_side = SubResource( 52 )
 [node name="BabyGertrude" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -289, 427 )
 frames = SubResource( 71 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
 anims/RESET = SubResource( 72 )
+anims/fade_out = SubResource( 75 )
 anims/walk_away = SubResource( 73 )
 anims/walk_in_from_side = SubResource( 74 )
+
+[node name="OlderGertrude" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( 272, 944 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 76 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/OlderGertrude"]
+anims/RESET = SubResource( 77 )
+anims/fly_up = SubResource( 78 )
+anims/walk_away = SubResource( 79 )
+
+[node name="BabyGilbert" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( -120, 296 )
+frames = SubResource( 44 )
+animation = "smiling"
+frame = 2
+speed_scale = 0.5
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGilbert"]
+anims/fade_out = SubResource( 80 )
+anims/walk_in_from_side = SubResource( 81 )
+
+[node name="OlderGilbert" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( 272, 944 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 82 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/OlderGilbert"]
+anims/RESET = SubResource( 83 )
+anims/fly_up = SubResource( 84 )
+anims/walk_away = SubResource( 85 )
+
+[node name="BabyGravy" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( -20, 284 )
+frames = SubResource( 42 )
+animation = "smiling"
+frame = 1
+speed_scale = 0.5
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGravy"]
+anims/RESET = SubResource( 94 )
+anims/fade_out = SubResource( 92 )
+anims/walk_in_from_side = SubResource( 93 )
+
+[node name="OlderGravy" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( 272, 952 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 89 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/OlderGravy"]
+anims/RESET = SubResource( 105 )
+anims/fly_up = SubResource( 90 )
+anims/walk_away = SubResource( 91 )
+
+[node name="Jimothy" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( -216, 296 )
+scale = Vector2( 0.55, 0.55 )
+frames = SubResource( 95 )
+frame = 5
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Jimothy"]
+anims/RESET = SubResource( 96 )
+anims/walk_away = SubResource( 106 )
+anims/walk_in_from_side = SubResource( 97 )
+
+[node name="Odie" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( 1300, 284 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 100 )
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Odie"]
+anims/RESET = SubResource( 109 )
+anims/walk_away = SubResource( 107 )
+anims/walk_in_from_side = SubResource( 101 )
+
+[node name="Snail" type="AnimatedSprite" parent="SecondPart"]
+position = Vector2( -200, 284 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 102 )
+animation = "right"
+frame = 1
+speed_scale = 0.5
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Snail"]
+anims/RESET = SubResource( 104 )
+anims/walk_away = SubResource( 108 )
+anims/walk_in_from_side = SubResource( 103 )
+
+[node name="CreditMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 38 )
+
+[node name="GertrudeSparkleSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 40 )
+volume_db = -10.0
+
+[node name="GilbertSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 41 )
+volume_db = -10.0
+
+[node name="GravySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 39 )
+volume_db = -20.0
+
+[node name="QuitButton" type="Button" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 496.0
+margin_top = 264.0
+margin_right = 650.0
+margin_bottom = 358.0
+theme = ExtResource( 17 )
+disabled = true
+text = "Quit"
 
 [connection signal="mouse_entered" from="FirstPart/Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="FirstPart/Button" to="." method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="FirstPart/Button" to="." method="_on_FrogDad_Button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
