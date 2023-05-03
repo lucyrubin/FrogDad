@@ -515,7 +515,7 @@ playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree12"]
-position = Vector2( 62, 124 )
+position = Vector2( 48, 104 )
 shape = SubResource( 101 )
 
 [node name="Tree11" type="StaticBody2D" parent="YSort"]
@@ -533,7 +533,7 @@ playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree11"]
-position = Vector2( 16, 143 )
+position = Vector2( 5, 144 )
 shape = SubResource( 101 )
 
 [node name="Tree10" type="StaticBody2D" parent="YSort"]
@@ -596,7 +596,7 @@ speed_scale = 0.3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree7"]
-position = Vector2( 62, 124 )
+position = Vector2( 75, 111 )
 shape = SubResource( 101 )
 
 [node name="Tree6" type="StaticBody2D" parent="YSort"]
@@ -666,7 +666,7 @@ speed_scale = 0.3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Tree3"]
-position = Vector2( -9, 104 )
+position = Vector2( 10, 103 )
 shape = SubResource( 117 )
 
 [node name="Tree2" type="StaticBody2D" parent="YSort"]
@@ -791,31 +791,31 @@ editor_draw_limits = true
 [node name="Wind" type="AnimatedSprite" parent="."]
 position = Vector2( 354, 43 )
 frames = SubResource( 144 )
-frame = 11
+frame = 12
 playing = true
 
 [node name="Wind2" type="AnimatedSprite" parent="."]
 position = Vector2( 247, 313 )
 frames = SubResource( 144 )
-frame = 12
+frame = 13
 playing = true
 
 [node name="Wind3" type="AnimatedSprite" parent="."]
 position = Vector2( 801, 416 )
 frames = SubResource( 144 )
-frame = 10
+frame = 11
 playing = true
 
 [node name="Wind4" type="AnimatedSprite" parent="."]
 position = Vector2( 922, 743 )
 frames = SubResource( 144 )
-frame = 9
+frame = 10
 playing = true
 
 [node name="Wind5" type="AnimatedSprite" parent="."]
 position = Vector2( 211, 736 )
 frames = SubResource( 144 )
-frame = 8
+frame = 9
 playing = true
 
 [node name="FunkyForestMusic" type="AudioStreamPlayer" parent="."]
