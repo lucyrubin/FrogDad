@@ -620,7 +620,7 @@ extents = Vector2( 30, 44.625 )
 extents = Vector2( 109.464, 70.1072 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 77.5, 78.25 )
+extents = Vector2( 35, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=127]
 extents = Vector2( 2783.5, 10 )
@@ -770,7 +770,7 @@ extents = Vector2( 402.5, 175 )
 extents = Vector2( 66.5, 63 )
 
 [sub_resource type="RectangleShape2D" id=133]
-extents = Vector2( 23.9865, 104.422 )
+extents = Vector2( 53.7528, 35.8513 )
 
 [sub_resource type="SpriteFrames" id=135]
 animations = [ {
@@ -830,7 +830,7 @@ animations = [ {
 extents = Vector2( 97.75, 14.75 )
 
 [node name="Outdoors" type="Node2D"]
-position = Vector2( 1311, -2901 )
+position = Vector2( 1311, -2900 )
 script = ExtResource( 4 )
 
 [node name="Grass" type="TileMap" parent="."]
@@ -3770,7 +3770,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LettuceForestEnterance"]
-position = Vector2( 160.5, 96.75 )
+position = Vector2( 203, 88.5 )
 shape = SubResource( 9 )
 
 [node name="Archway" type="StaticBody2D" parent="LettuceForestEnterance"]
@@ -3785,8 +3785,7 @@ position = Vector2( -64.2319, 366.174 )
 texture = ExtResource( 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LettuceForestEnterance/Archway"]
-visible = false
-position = Vector2( -36.8245, 378.571 )
+position = Vector2( -66.5908, 447.142 )
 shape = SubResource( 133 )
 
 [node name="Odie" parent="." instance=ExtResource( 18 )]
@@ -3800,7 +3799,7 @@ collision_mask = 9
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="SnuberEats"]
 frames = SubResource( 135 )
-frame = 7
+frame = 10
 speed_scale = 0.5
 playing = true
 
@@ -3828,6 +3827,7 @@ volume_db = 21.914
 
 [node name="Waterwell" type="StaticBody2D" parent="."]
 position = Vector2( 869, 1113 )
+z_index = 1100
 __meta__ = {
 "_edit_group_": true
 }
@@ -3836,7 +3836,6 @@ __meta__ = {
 texture = ExtResource( 41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waterwell"]
-visible = false
 position = Vector2( -10, 59 )
 shape = SubResource( 141 )
 
