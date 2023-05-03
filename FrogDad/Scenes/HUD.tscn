@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
 [ext_resource path="res://Art/todo_icon_hover.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/ToggleInventoryButton.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=9]
+[ext_resource path="res://GameGirl.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
 [ext_resource path="res://House Art/fridge_box.png" type="Texture" id=19]
@@ -229,6 +230,37 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -9.333, -11.333 ), Vector2( 520.667, -11.3333 ) ]
+}
+
+[sub_resource type="Animation" id=110]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=111]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="HUD" type="CanvasLayer"]
@@ -632,6 +664,15 @@ margin_left = 180.0
 margin_right = 358.0
 margin_bottom = 115.0
 texture = ExtResource( 5 )
+
+[node name="GameGirl" parent="." instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -4, -166 )
+scale = Vector2( 2, 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameGirl"]
+anims/RESET = SubResource( 110 )
+anims/fade_in = SubResource( 111 )
 
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/backspritesheet.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Art/frogdadside3.png" type="Texture" id=14]
 [ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/FlyJar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GameGirl.tscn" type="PackedScene" id=17]
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
@@ -104,6 +105,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "down"
+frame = 2
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -121,12 +123,17 @@ visible = false
 position = Vector2( 6.66667, -326.666 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 17 )
-frame = 1
 speed_scale = 0.6
 playing = true
 
 [node name="FlyJar" parent="." instance=ExtResource( 16 )]
 position = Vector2( 13.3333, -346.667 )
+frame = 0
+
+[node name="GameGirl" parent="." instance=ExtResource( 17 )]
+visible = false
+position = Vector2( -243.333, -476.667 )
+scale = Vector2( 0.5, 0.5 )
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_PickupZone_body_entered"]

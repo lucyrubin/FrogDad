@@ -19,13 +19,14 @@ onready var next_indicator = $Content/NextIndicator
 onready var text_animation = $Content/TextAnimation
 onready var avatar 
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
-
+onready var HUD = get_tree().get_root().find_node("HUD", true, false)
 var completed
 var dialogue_name
 var paused_for_riddle = false
 var current_riddle 
 
 func _input(event):
+	
 	# if user pressed "space key" before text animation ends,
 	# the animation would be skipped and all text would show
 	if event.is_action_pressed("open") and content.visible and !MasterScript.game_paused:
@@ -100,9 +101,15 @@ func hide_dialog_box():
 		MasterScript.odie_quest_active = true
 		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "Okay, first question. I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
 	elif dialogue_name == "start riddle":
+		HUD.find_node("GameGirl", true, false).hide()
 		MasterScript.odie_quest_active = true
 		MasterScript.began_odie_riddles = true
 		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "Okay, first question. I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
+	elif dialogue_name == "tomorrow":
+		FrogDad.get_node("GameGirl").show()
+		FrogDad.toggle_dialogue_box_visibility([{avatar = "", text = "Wow. The kids are going to love this!"}], "gamegirl")
+	elif dialogue_name == "gamegirl":
+		SceneTransition.change_scene("res://Scenes/EndCredits.tscn")
 	# If you want to do something after a dialogue, do it here
 
 func show_new_talk_quest_notification_box():
@@ -152,6 +159,9 @@ func _show_dialog(index):
 		text_animation.TRANS_LINEAR
 	)
 	text_animation.start()
+	
+	if dialog.text == "How would you like a state-of-the-art, electronic square device??":
+		HUD.find_node("GameGirl", true, false).find_node("AnimationPlayer", true, false).play("fade_in")
 
 func _on_TextAnimation_tween_all_completed():
 	if !MasterScript.odie_quest_active:
