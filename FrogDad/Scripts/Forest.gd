@@ -2,9 +2,11 @@ extends Node2D
 
 func _ready():
 	if BackgroundMusic.playing:
+		MasterScript.music_position = BackgroundMusic.get_playback_position()
 		BackgroundMusic.stop()
-	if $FunkyForestMusic.playing == false:
+	if !$FunkyForestMusic.playing:
 		$FunkyForestMusic.play()
+	if !$Breeze.playing:
 		$Breeze.play()
 	for object in $YSort.get_children():
 		object.z_index = object.position.y + 20

@@ -19,6 +19,7 @@ func _ready():
 			{avatar = "", text = "They're almost too big for it! They'll grow out of it soon enough"}]
 				, "after cradle dialogue")
 		$Home/Cradle.visible = true
+		$Home/Jar.visible = true
 		$Home/Cradle/CollisionShape2D.disabled = false
 		
 	if MasterScript.after_eggs_to_tadpoles:
@@ -37,12 +38,14 @@ func _ready():
 		$BabyGilbert.visible = false
 		$BabyGravyBaby.visible = false
 	elif MasterScript.currentQuestNum >= 2 and  MasterScript.currentQuestNum < 6: 
+		$Home/Jar.visible = false
 		$BabyGertrude.visible = true
 		$BabyGilbert.visible = true
 		$BabyGravyBaby.visible = true
 		$Home/Cradle/CollisionShape2D.disabled = false
 		get_tree().get_root().find_node("Cradle", true, false).visible = true
 		if MasterScript.enter_cradle_area:
+			$Home/Jar.visible = true
 			$BabyGilbert.visible = false
 			MasterScript.enter_cradle_area = false
 	else:
