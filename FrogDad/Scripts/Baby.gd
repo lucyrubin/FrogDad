@@ -29,35 +29,35 @@ func _input(event):
 				], "Gertrude already fed")
 
 		if baby_name == "Gilbert":
-			FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "hi"},
-					{avatar = "frogDad", text = "Hi gilbert!"},
-					{avatar = "gilbert", text = "hiiiiii"},
-					{avatar = "frogDad", text = "hi :)"}
+			FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "Hi dada"},
+					{avatar = "frogDad", text = "Hi Gilbert!"},
+					{avatar = "gilbert", text = "Hiiiiii"},
+					{avatar = "frogDad", text = "Hi :)"}
 				], "Gilbert talk")
 			if MasterScript.currentQuestNum == 5 and !MasterScript.gilbert_fed:
 				MasterScript.num_kids_fed_flies += 1
 				MasterScript.gilbert_fed = true
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "Yum!!! Im gilbert"}
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "Dis is da best ting ever tasted!"}
 				], "gilbert fed")
 
 			elif MasterScript.currentQuestNum == 5 and MasterScript.gilbert_fed:
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "No more flies, I'm stuffed! Im gilbert"}
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "I'm full!"}
 				], "Gilbert already fed")
 		
 		if baby_name == "Gravy Baby":
-			FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "gravy"},
-					{avatar = "frogDad", text = "yes"},
-					{avatar = "gravy", text = "im gravy baby"},
-					{avatar = "frogDad", text = "yes"}
+			FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "Gravy!"},
+					{avatar = "frogDad", text = "Yes, you are Gravy. "},
+					{avatar = "gravy", text = "I'm Gravy Baby."},
+					{avatar = "frogDad", text = "Yes :)"}
 				], "Gravy talk")
 			if MasterScript.currentQuestNum == 5 and !MasterScript.gravy_fed:
 				MasterScript.num_kids_fed_flies += 1
 				MasterScript.gravy_fed = true
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "Yum!!! Im gravy"}
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "aaaaaaaaaaaaa :P"}
 				], "gravy fed")
 				
 			elif MasterScript.currentQuestNum == 5 and MasterScript.gravy_fed:
-				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "No more flies, I'm stuffed! Im gravy"}
+				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "Noooooooooo"}
 				], "gravy already fed")
 		
 		MasterScript.frog_dad_state = "dialogue"

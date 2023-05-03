@@ -50,7 +50,7 @@ var questDictionary = {
 	2: ["talk", "Get flies from Jimothy John's", "Talk to Jimothy", "Jimothy", "image_here"],
 	3: ["resource for character", "Get lettuce for Jimothy", 10, "Lettuce", "image_here"],
 	4: ["talk", "Bring lettuce to Jimothy", "Talk to Jimothy", "Jimothy", "image_here"],
-	5: ["talk to kids", "Feed the kids", "Bring the flies to the kids", "Fly", "image_here"]
+	5: ["talk to kids", "Feed the kids", "Bring flies to kids", "Fly", "image_here"]
 	}
 
 var currentQuestNum = -1

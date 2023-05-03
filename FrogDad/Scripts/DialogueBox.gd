@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 const AVATAR_MAP = {
-	"gertrude": preload("res://Temporary Clipart/gertrude copy (1).png"),
-	"frogDad": preload("res://Temporary Clipart/frog_dad_icon.png"),
+	"gertrude": preload("res://CharacterHeads/gertrudehead.png"),
+	"frogDad": preload("res://CharacterHeads/frogdadhead.png"),
 	"jimothy": preload("res://CharacterHeads/JimothyHead.png"),
 	"gilbert": preload("res://CharacterHeads/gilberthead.png"),
 	"gravy": preload("res://CharacterHeads/gravyhead.png"),
@@ -49,6 +49,8 @@ func hide_dialog_box():
 		MasterScript.frog_dad_state = "" # player can move again
 
 	content.hide()
+	if avatar:
+		avatar.hide()
 	completed = true
 	$ColorRect.hide()
 
@@ -134,11 +136,13 @@ func show_dialog_box(_dialogs, dialogueName):
 	next_indicator = $Content/NextIndicator
 	text_animation = $Content/TextAnimation
 
-	if $Content.get_node("Avatar"):
-		avatar = $Content/Avatar
+	if get_node("Avatar"):
+		avatar = $Avatar
 
 	dialogs = _dialogs
 	content.show()
+	if avatar:
+		avatar.show()
 	_show_dialog(0)
 
 func _show_dialog(index):

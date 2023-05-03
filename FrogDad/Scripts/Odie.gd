@@ -24,10 +24,12 @@ func _on_Interactable_body_exited(body):
 
 # handles whether the mouse is on odie or not
 func _on_ClickArea_mouse_entered():
+	Input.set_custom_mouse_cursor(MasterScript.pointer)
 	mouse_in_area = true
 
 # handles whether the mouse is on odie or not
 func _on_ClickArea_mouse_exited():
+	Input.set_custom_mouse_cursor(MasterScript.hand)
 	mouse_in_area = false
 
 func _on_ClickArea_input_event(viewport, event, shape_idx):

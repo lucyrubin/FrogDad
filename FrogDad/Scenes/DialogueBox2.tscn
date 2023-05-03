@@ -103,6 +103,14 @@ theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 7 )
 text = "Option 3"
 
+[node name="Avatar" type="TextureRect" parent="."]
+margin_left = 22.0
+margin_top = 392.0
+margin_right = 174.0
+margin_bottom = 526.0
+mouse_filter = 2
+stretch_mode = 6
+
 [node name="Content" type="Label" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -119,16 +127,9 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "Hello!
 This is text for testing"
+align = 1
 autowrap = true
 max_lines_visible = 3
-
-[node name="Avatar" type="TextureRect" parent="Content"]
-margin_left = 1.0
-margin_top = -30.0
-margin_right = 101.0
-margin_bottom = 74.0
-mouse_filter = 2
-stretch_mode = 6
 
 [node name="NextIndicator" type="TextureRect" parent="Content"]
 margin_left = 988.0
