@@ -15,9 +15,9 @@ func _ready():
 func _process(delta):
 	rng.randomize()
 	velocity.x += rng.randf_range(-10, 10.0)
-	velocity.y += rng.randf_range(-10, 10.0)
-	#move_and_slide(velocity * delta)
+	velocity.y += rng.randf_range(-10, 10.0)	
 	
+	# collision code from https://www.oreilly.com/library/view/godot-engine-game/9781788831505/16b3afbd-9066-4592-8c87-05eb31da43c5.xhtml
 	var collide = move_and_collide(velocity * delta)
 	if collide:
 		velocity = velocity.bounce(collide.normal)

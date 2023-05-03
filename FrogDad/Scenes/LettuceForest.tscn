@@ -282,6 +282,7 @@ extents = Vector2( 47, 649 )
 extents = Vector2( 1060, 68 )
 
 [node name="LettuceForest" type="Node2D"]
+position = Vector2( -1568, -496 )
 script = ExtResource( 8 )
 
 [node name="Grass" type="TileMap" parent="."]
@@ -435,10 +436,10 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
 current = true
-limit_left = 3
-limit_top = 0
-limit_right = 2028
-limit_bottom = 1238
+limit_left = -1532
+limit_top = -472
+limit_right = 462
+limit_bottom = 755
 editor_draw_limits = true
 
 [node name="HUD" parent="FrogDad/Camera2D" instance=ExtResource( 5 )]
