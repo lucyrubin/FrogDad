@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	if !BackgroundMusic.playing:
-			BackgroundMusic.play(MasterScript.music_position)
+		BackgroundMusic.play(MasterScript.music_position)
 	if MasterScript.exit_home:
 		$FrogDad.position = $ExitHouse.position
 		MasterScript.exit_home = false

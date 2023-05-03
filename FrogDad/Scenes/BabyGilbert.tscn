@@ -98,6 +98,7 @@ playing = true
 position = Vector2( -6, 24 )
 rotation = -1.57029
 shape = SubResource( 10 )
+disabled = true
 
 [node name="Speech" type="TextureRect" parent="."]
 visible = false

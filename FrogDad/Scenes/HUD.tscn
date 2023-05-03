@@ -331,8 +331,8 @@ position = Vector2( 176, 62 )
 scale = Vector2( 1, 1 )
 item_list = {
 0: [ "Fly", 0 ],
-1: [ "Log", 0 ],
-2: [ "Cloth", 0 ],
+1: [ "Log", 7 ],
+2: [ "Cloth", 5 ],
 3: [ "Lettuce", 0 ]
 }
 inventory_type = "player"
@@ -441,7 +441,7 @@ visible = false
 position = Vector2( 38.6667, 85.3333 )
 script = ExtResource( 8 )
 item_list = {
-0: [ "Cloth", 3 ]
+0: [ "Cloth", 1 ]
 }
 inventory_type = "dresser"
 

@@ -11,14 +11,14 @@ func _on_InteractableArea_body_entered(body):
 	
 	if body is PlayerClass && !done_talking:
 		$Speech.visible = true
-		Input.set_custom_mouse_cursor(MasterScript.pointer)
+		
 	#$AnimatedSprite.play("default")
 
 # if the player has left, hide the action bubble
 func _on_InteractableArea_body_exited(_body):
 	if $Speech.visible && !done_talking:
 		$Speech.visible = false
-		Input.set_custom_mouse_cursor(MasterScript.hand)
+		
 
 # change this to be the sprite eventually 
 func _on_ColorRect_gui_input(event):
@@ -74,3 +74,11 @@ func _on_ColorRect_gui_input(event):
 			FrogDad.get_node("AnimatedSprite").stop()
 			$Speech.visible = false
 
+
+
+func _on_ColorRect_mouse_entered():
+	if $Speech.visible:
+		Input.set_custom_mouse_cursor(MasterScript.pointer)
+
+func _on_ColorRect_mouse_exited():
+	Input.set_custom_mouse_cursor(MasterScript.hand)

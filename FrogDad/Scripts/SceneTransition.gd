@@ -6,3 +6,7 @@ func change_scene(target: String) -> void:
 	yield($AnimationPlayer,'animation_finished')
 	get_tree().change_scene(target)
 	$AnimationPlayer.play_backwards('dissolve')
+	MasterScript.frog_dad_state = "changing scene"
+	yield($AnimationPlayer, "animation_finished")
+	MasterScript.frog_dad_state = ""
+	

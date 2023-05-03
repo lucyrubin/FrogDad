@@ -1239,6 +1239,7 @@ texture = ExtResource( 40 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cradle"]
 position = Vector2( -2, 40 )
 shape = SubResource( 67 )
+disabled = true
 
 [node name="YSort" type="YSort" parent="."]
 

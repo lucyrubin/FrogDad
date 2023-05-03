@@ -128,7 +128,6 @@ playing = true
 
 [node name="FlyJar" parent="." instance=ExtResource( 16 )]
 position = Vector2( 13.3333, -346.667 )
-frame = 0
 
 [node name="GameGirl" parent="." instance=ExtResource( 17 )]
 visible = false

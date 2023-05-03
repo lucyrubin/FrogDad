@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_custom_mouse_cursor(MasterScript.hand)
 	MasterScript.music_position = BackgroundMusic.get_playback_position()
 	BackgroundMusic.stop()
 	$Cradle.visible = false

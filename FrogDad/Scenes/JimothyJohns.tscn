@@ -54,7 +54,8 @@ extents = Vector2( 122.375, 107 )
 extents = Vector2( 477.5, 133 )
 
 [sub_resource type="CapsuleShape2D" id=15]
-height = 8.0
+radius = 4.0
+height = 0.0
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 19.5, 429 )
@@ -178,6 +179,7 @@ margin_bottom = 302.0
 position = Vector2( 587, 249 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 13 )
+frame = 2
 speed_scale = 0.25
 playing = true
 
@@ -241,7 +243,7 @@ shape = SubResource( 1 )
 
 [node name="Chair" type="StaticBody2D" parent="."]
 position = Vector2( 220, 358 )
-z_index = 320
+z_index = 950
 
 [node name="TextureRect" type="TextureRect" parent="Chair"]
 margin_right = 197.0
@@ -257,7 +259,7 @@ shape = SubResource( 15 )
 
 [node name="Chair2" type="StaticBody2D" parent="."]
 position = Vector2( 370, 358 )
-z_index = 320
+z_index = 950
 
 [node name="TextureRect" type="TextureRect" parent="Chair2"]
 margin_right = 197.0
@@ -273,7 +275,7 @@ shape = SubResource( 15 )
 
 [node name="Chair3" type="StaticBody2D" parent="."]
 position = Vector2( 520, 358 )
-z_index = 320
+z_index = 950
 
 [node name="TextureRect" type="TextureRect" parent="Chair3"]
 margin_right = 197.0
@@ -289,7 +291,7 @@ shape = SubResource( 15 )
 
 [node name="Chair4" type="StaticBody2D" parent="."]
 position = Vector2( 670, 358 )
-z_index = 320
+z_index = 950
 
 [node name="TextureRect" type="TextureRect" parent="Chair4"]
 margin_right = 197.0
@@ -305,7 +307,7 @@ shape = SubResource( 15 )
 
 [node name="Chair5" type="StaticBody2D" parent="."]
 position = Vector2( 820, 357 )
-z_index = 320
+z_index = 950
 
 [node name="TextureRect" type="TextureRect" parent="Chair5"]
 margin_right = 197.0
@@ -418,6 +420,8 @@ position = Vector2( 595, 224 )
 frame = 0
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
+[connection signal="mouse_entered" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_mouse_entered"]
+[connection signal="mouse_exited" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_mouse_exited"]
 [connection signal="area_entered" from="Jimothy/InteractableArea" to="Jimothy" method="_on_InteractableArea_area_entered"]
 [connection signal="body_entered" from="Jimothy/InteractableArea" to="Jimothy" method="_on_InteractableArea_body_entered"]
 [connection signal="body_exited" from="Jimothy/InteractableArea" to="Jimothy" method="_on_InteractableArea_body_exited"]

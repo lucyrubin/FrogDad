@@ -1,7 +1,7 @@
 class_name FrogDad
 extends KinematicBody2D
 
-export var speed = 300
+export var speed = 1000
 export(NodePath) var inventory_path
 
 var screen_size
@@ -11,6 +11,7 @@ var holding_item = null
 func _ready():
 	velocity = Vector2.ZERO
 	screen_size = get_viewport_rect().size
+	$AnimatedSprite.frame = 0
 	
 func getInventoryNode():
 	return $UserInterface/Inventory

@@ -4,7 +4,8 @@ var current_fram = 3
 var num_frames = 4
 
 func _ready():
-	$AnimatedSprite.z_index = rect_position.y
+	if MasterScript.currentQuestNum >= 4:
+		$AnimatedSprite.visible = false
 
 func _on_Plot_gui_input(event):
 	if MasterScript.frog_dad_state =="":

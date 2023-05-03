@@ -14,9 +14,15 @@ func _ready():
 	
 func _process(delta):
 	rng.randomize()
-	velocity.x += rng.randf_range(-200, 200.0)
-	velocity.y += rng.randf_range(-200, 200.0)
-	move_and_slide(velocity * delta)
+	velocity.x += rng.randf_range(-10, 10.0)
+	velocity.y += rng.randf_range(-10, 10.0)
+	#move_and_slide(velocity * delta)
+	
+	var collide = move_and_collide(velocity * delta)
+	if collide:
+		velocity = velocity.bounce(collide.normal)
+	
+
 	
 	
 "

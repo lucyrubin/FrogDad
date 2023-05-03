@@ -19,12 +19,19 @@ func _ready():
 			{avatar = "", text = "They're almost too big for it! They'll grow out of it soon enough"}]
 				, "after cradle dialogue")
 		$Home/Cradle.visible = true
-		$Home/Cradle/CollisionShape2D.set_deferred("disabled", false)
-		MasterScript.enter_cradle_area = false
+		$Home/Cradle/CollisionShape2D.disabled = false
+		
 	if MasterScript.after_eggs_to_tadpoles:
 		$FrogDad.position = $EnterCradle.position
 		MasterScript.after_eggs_to_tadpoles = false
-		
+	if MasterScript.currentQuestNum != 0:
+		$ItemDrop5.hide()
+		$ItemDrop6.hide()
+		$ItemDrop7.hide()
+	if MasterScript.currentQuestNum == 0:
+		$ItemDrop5.show()
+		$ItemDrop6.show()
+		$ItemDrop7.show()
 	if MasterScript.currentQuestNum < 2:
 		$BabyGertrude.visible = false
 		$BabyGilbert.visible = false
@@ -33,7 +40,11 @@ func _ready():
 		$BabyGertrude.visible = true
 		$BabyGilbert.visible = true
 		$BabyGravyBaby.visible = true
+		$Home/Cradle/CollisionShape2D.disabled = false
 		get_tree().get_root().find_node("Cradle", true, false).visible = true
+		if MasterScript.enter_cradle_area:
+			$BabyGilbert.visible = false
+			MasterScript.enter_cradle_area = false
 	else:
 		$BabyGertrude.visible = false
 		$BabyGilbert.visible = false

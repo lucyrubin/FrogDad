@@ -46,6 +46,14 @@ __meta__ = {
 position = Vector2( 443, 128 )
 item_name = "Cloth"
 
+[node name="ItemDrop6" parent="." instance=ExtResource( 8 )]
+position = Vector2( -658, 142 )
+item_name = "Cloth"
+
+[node name="ItemDrop7" parent="." instance=ExtResource( 8 )]
+position = Vector2( -488, -384 )
+item_name = "Cloth"
+
 [node name="FrogDad" parent="." instance=ExtResource( 1 )]
 position = Vector2( -117, -240 )
 scale = Vector2( 0.35, 0.35 )

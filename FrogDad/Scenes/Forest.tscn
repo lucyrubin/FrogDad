@@ -494,7 +494,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree13"]
 position = Vector2( 31, 8 )
 frames = SubResource( 122 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -509,7 +509,7 @@ position = Vector2( 461, 144 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree12"]
 position = Vector2( 55, -31 )
 frames = SubResource( 106 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -527,6 +527,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree11"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -543,7 +544,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree10"]
 frames = SubResource( 122 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -559,7 +560,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Tree9"]
 frames = SubResource( 122 )
-frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -576,7 +576,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree8"]
 position = Vector2( 20, -1 )
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -591,7 +591,7 @@ position = Vector2( 239, 648 )
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree7"]
 position = Vector2( 64, -26 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -608,7 +608,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree6"]
 position = Vector2( 51, -11 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -625,7 +625,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -643,7 +643,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -661,7 +661,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 116 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -677,7 +677,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
 frames = SubResource( 111 )
-frame = 1
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -694,7 +694,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 106 )
-frame = 2
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -746,7 +746,7 @@ position = Vector2( 52, 716 )
 item_name = "Log"
 
 [node name="ItemDrop5" parent="." instance=ExtResource( 39 )]
-position = Vector2( 891, 408 )
+position = Vector2( 917, 391 )
 item_name = "Log"
 
 [node name="ItemDrop6" parent="." instance=ExtResource( 39 )]
@@ -782,7 +782,7 @@ current = true
 zoom = Vector2( 0.8, 0.8 )
 limit_left = 0
 limit_top = 0
-limit_right = 1022
+limit_right = 1016
 limit_bottom = 1034
 editor_draw_limits = true
 
@@ -791,31 +791,31 @@ editor_draw_limits = true
 [node name="Wind" type="AnimatedSprite" parent="."]
 position = Vector2( 354, 43 )
 frames = SubResource( 144 )
-frame = 4
+frame = 7
 playing = true
 
 [node name="Wind2" type="AnimatedSprite" parent="."]
 position = Vector2( 247, 313 )
 frames = SubResource( 144 )
-frame = 5
+frame = 8
 playing = true
 
 [node name="Wind3" type="AnimatedSprite" parent="."]
 position = Vector2( 801, 416 )
 frames = SubResource( 144 )
-frame = 3
+frame = 6
 playing = true
 
 [node name="Wind4" type="AnimatedSprite" parent="."]
 position = Vector2( 922, 743 )
 frames = SubResource( 144 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="Wind5" type="AnimatedSprite" parent="."]
 position = Vector2( 211, 736 )
 frames = SubResource( 144 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="FunkyForestMusic" type="AudioStreamPlayer" parent="."]
