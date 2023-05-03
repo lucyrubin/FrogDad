@@ -342,12 +342,6 @@ visible = false
 visible = false
 position = Vector2( 176, 62 )
 scale = Vector2( 1, 1 )
-item_list = {
-0: [ "Fly", 0 ],
-1: [ "Log", 0 ],
-2: [ "Cloth", 0 ],
-3: [ "Lettuce", 0 ]
-}
 inventory_type = "player"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/Inventory"]

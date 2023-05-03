@@ -351,9 +351,9 @@ margin_bottom = 1216.0
 
 [node name="Plot8" parent="LettuceYSort" instance=ExtResource( 3 )]
 margin_left = 1672.0
-margin_top = 64.0
+margin_top = 178.0
 margin_right = 1872.0
-margin_bottom = 264.0
+margin_bottom = 378.0
 
 [node name="Plot9" parent="LettuceYSort" instance=ExtResource( 3 )]
 margin_left = 1008.0
@@ -390,6 +390,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree1"]
 position = Vector2( 128, 15 )
 frames = SubResource( 107 )
+frame = 1
 speed_scale = 0.3
 playing = true
 offset = Vector2( -127, -15 )
@@ -408,6 +409,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -425,7 +427,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree2"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
-frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -443,6 +444,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="YSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 107 )
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -462,7 +464,7 @@ remote_path = NodePath("../Camera2D")
 current = true
 limit_left = -1544
 limit_top = -352
-limit_right = 488
+limit_right = 450
 limit_bottom = 755
 editor_draw_limits = true
 
