@@ -1,5 +1,5 @@
 extends CanvasLayer
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
+
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 onready var ToggleInventoryButton = get_tree().get_root().find_node("ToggleInventoryButton", true, false)
 var mouse_in_inventory = false
@@ -39,3 +39,9 @@ func _on_DarkBackground_gui_input(event):
 				fridge_node.dark_background_input(event)
 			FrogDad.find_node("Quest",true, false).visible = false
 			FrogDad.find_node("Quest",true, false).close_quest()
+
+
+func _on_ToggleMapButton_pressed():
+	if MasterScript.frog_dad_state == "":
+		$DarkBackground.visible = true
+		$Map.visible = true

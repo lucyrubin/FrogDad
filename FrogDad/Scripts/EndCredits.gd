@@ -7,7 +7,15 @@ func _ready():
 	# end credit music by @HeatleyBros on YoutTube
 	yield(run_intro(), "completed")
 	
-	
+var credit_text = ["Code for inventory system from @Arkeve on YouTube", 
+"Dissolve scene transition code is from @TheShaggyDev on YouTube",
+"A Green Pig by @Pixverses on YouTube",
+"8 Bit Ending! by @HeatleyBros on YouTube",
+"NewJeans OMG / 8 Bit Cover by @jhn_studio on YouTube",
+"Developers: Lilly Lu, Jaylynn Rodriguez, Lucy Rubin, Helena Zhu",
+"Made in 2023"]
+
+var credit_index = 0
 
 
 func run_intro():
@@ -29,7 +37,7 @@ func run_intro():
 func show_text(label, text_to_show):
 	label.visible = false
 	var text_animation = label.get_node("TextAnimation")
-	var interval = 0.05
+	var interval = 0.01
 	label.text = text_to_show
 	text_animation.interpolate_property(
 			label, "percent_visible", 0, 1, 
@@ -110,6 +118,9 @@ func run_frog_dad():
 	
 	$SecondPart.show()
 	$SecondPart/Background2/AnimationPlayer.play("RESET")
+	$SecondPart/ActualCredits/Label.text = ""
+	$SecondPart/ActualCredits/Label/AnimationPlayer.play("RESET")
+	
 	$SecondPart/Label1.text = ""
 	$SecondPart/Label2.text = ""
 	$SecondPart/Label3.text = ""
@@ -122,6 +133,8 @@ func run_frog_dad():
 	var frog_dad_animation_player = $SecondPart/FrogDad/AnimationPlayer
 	frog_dad_animation_player.play("walk_in_from_side")
 	yield(frog_dad_animation_player, "animation_finished")
+	show_text($SecondPart/ActualCredits/Label, credit_text[credit_index])
+	credit_index+=1
 	frog_dad.animation = "down"
 	frog_dad.frame = 0
 	
@@ -141,6 +154,7 @@ func run_frog_dad():
 	frog_dad_animation_player.play("walk_away")
 	$SecondPart/Background2.show()
 	$SecondPart/Background2/AnimationPlayer.play("walk_away")
+	$SecondPart/ActualCredits/Label/AnimationPlayer.play("fade_out")
 	
 	
 	
@@ -148,6 +162,8 @@ func run_baby(baby_animation_player, older_animation_player, text1, text2, text3
 	# reset stuff
 	$SecondPart.show()
 	$SecondPart/Background2/AnimationPlayer.play("RESET")
+	$SecondPart/ActualCredits/Label.text = ""
+	$SecondPart/ActualCredits/Label/AnimationPlayer.play("RESET")
 	$SecondPart/Label1.text = ""
 	$SecondPart/Label2.text = ""
 	$SecondPart/Label3.text = ""
@@ -158,6 +174,9 @@ func run_baby(baby_animation_player, older_animation_player, text1, text2, text3
 	
 	baby_animation_player.play("walk_in_from_side")
 	yield(baby_animation_player, "animation_finished")
+	
+	show_text($SecondPart/ActualCredits/Label, credit_text[credit_index])
+	credit_index+=1
 	
 	yield(get_tree().create_timer(1), "timeout")
 	
@@ -190,6 +209,7 @@ func run_baby(baby_animation_player, older_animation_player, text1, text2, text3
 	older_animation_player.play("walk_away")
 	$SecondPart/Background2.show()
 	$SecondPart/Background2/AnimationPlayer.play("walk_away")
+	$SecondPart/ActualCredits/Label/AnimationPlayer.play("fade_out")
 	
 	yield($SecondPart/Background2/AnimationPlayer, "animation_finished")
 	
@@ -200,6 +220,8 @@ func run_side_character(animation_player, text1, text2, text3):
 	# reset stuff
 	$SecondPart.show()
 	$SecondPart/Background2/AnimationPlayer.play("RESET")
+	$SecondPart/ActualCredits/Label.text = ""
+	$SecondPart/ActualCredits/Label/AnimationPlayer.play("RESET")
 	$SecondPart/Label1.text = ""
 	$SecondPart/Label2.text = ""
 	$SecondPart/Label3.text = ""
@@ -210,6 +232,9 @@ func run_side_character(animation_player, text1, text2, text3):
 	
 	animation_player.play("walk_in_from_side")
 	yield(animation_player, "animation_finished")
+	
+	show_text($SecondPart/ActualCredits/Label, credit_text[credit_index])
+	credit_index+=1
 	
 	if animation_player == $SecondPart/Snail/AnimationPlayer:
 		$SecondPart/Snail.animation = "back_and_forth"
@@ -236,6 +261,7 @@ func run_side_character(animation_player, text1, text2, text3):
 	animation_player.play("walk_away")
 	$SecondPart/Background2.show()
 	$SecondPart/Background2/AnimationPlayer.play("walk_away")
+	$SecondPart/ActualCredits/Label/AnimationPlayer.play("fade_out")
 	
 	yield($SecondPart/Background2/AnimationPlayer, "animation_finished")
 

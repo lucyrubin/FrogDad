@@ -1,5 +1,5 @@
 extends Panel
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
+
 
 # load in textures for the slots
 #var default_tex = preload("res://Temporary Clipart/darkLeaf.png")

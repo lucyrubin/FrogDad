@@ -1252,6 +1252,7 @@ shape = SubResource( 67 )
 disabled = true
 
 [node name="Jar" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -272, 256 )
 scale = Vector2( 0.08, 0.08 )
 z_index = 500

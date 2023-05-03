@@ -53,6 +53,8 @@ func _ready():
 		$BabyGilbert.visible = false
 		$BabyGravyBaby.visible = false
 		get_tree().get_root().find_node("Cradle", true, false).visible = true
+		$Home/Cradle/CollisionShape2D.disabled = false
+		$Home/Jar.visible = false
 	
 
 func _process(_delta):

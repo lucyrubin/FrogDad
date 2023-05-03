@@ -32,8 +32,8 @@ func _input(event):
 	if event.is_action_pressed("open") and content.visible and !MasterScript.game_paused:
 		print("click")
 		if !paused_for_riddle:
-			if FrogDad:
-				MasterScript.frog_dad_state= "talking" # player can't move during dialogue
+	
+			MasterScript.frog_dad_state = "talking" # player can't move during dialogue
 			if text_animation.is_active(): # skip dialogue
 				text_animation.remove_all()
 				content.percent_visible = 1

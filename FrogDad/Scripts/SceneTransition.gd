@@ -1,4 +1,4 @@
-# Dissolve scene transition code is from The Shaggy Dev on YouTube: https://www.youtube.com/watch?v=yZQStB6nHuI
+
 extends CanvasLayer
 
 func change_scene(target: String) -> void:

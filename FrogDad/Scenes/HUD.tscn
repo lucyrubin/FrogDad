@@ -1,9 +1,8 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
 [ext_resource path="res://Art/todo_icon_hover.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/UserInterface.gd" type="Script" id=3]
-[ext_resource path="res://Art/lightLeafHover.png" type="Texture" id=4]
 [ext_resource path="res://Info Icons/wasd.png" type="Texture" id=5]
 [ext_resource path="res://Info Icons/arrowkeys.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/ToggleInventoryButton.gd" type="Script" id=7]
@@ -12,6 +11,8 @@
 [ext_resource path="res://GameGirl.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/ToggleMapButton.gd" type="Script" id=13]
+[ext_resource path="res://Art/baby gertrude sprite sheet.png" type="Texture" id=14]
 [ext_resource path="res://House Art/fridge_box.png" type="Texture" id=19]
 [ext_resource path="res://House Art/dresserslotfull.png" type="Texture" id=20]
 [ext_resource path="res://House Art/fridgeFull.png" type="Texture" id=21]
@@ -288,15 +289,28 @@ anchor_bottom = 0.5
 margin_left = 1230.0
 margin_top = -296.0
 margin_right = 1297.0
-margin_bottom = -230.0
+margin_bottom = -228.0
 rect_scale = Vector2( 2.3, 2.3 )
 texture_normal = ExtResource( 1 )
-texture_hover = ExtResource( 2 )
 script = ExtResource( 12 )
 
 [node name="BouncingArrow" parent="ToggleQuestButton" instance=ExtResource( 30 )]
 visible = false
 position = Vector2( -200.87, 16.5217 )
+
+[node name="ToggleMapButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -507.0
+margin_top = -296.0
+margin_right = -440.0
+margin_bottom = -228.0
+rect_scale = Vector2( 2.3, 2.3 )
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 13 )
 
 [node name="ToggleInventoryButton" type="TextureButton" parent="."]
 margin_left = 1898.0
@@ -304,7 +318,6 @@ margin_top = 8.0
 margin_right = 2037.0
 margin_bottom = 147.0
 texture_normal = ExtResource( 25 )
-texture_hover = ExtResource( 4 )
 script = ExtResource( 7 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
@@ -331,8 +344,8 @@ position = Vector2( 176, 62 )
 scale = Vector2( 1, 1 )
 item_list = {
 0: [ "Fly", 0 ],
-1: [ "Log", 7 ],
-2: [ "Cloth", 5 ],
+1: [ "Log", 0 ],
+2: [ "Cloth", 0 ],
 3: [ "Lettuce", 0 ]
 }
 inventory_type = "player"
@@ -633,6 +646,15 @@ margin_right = -339.0
 margin_bottom = -199.0
 rect_scale = Vector2( 0.5, 0.5 )
 
+[node name="Map" type="TextureRect" parent="UserInterface"]
+visible = false
+margin_left = 57.0
+margin_top = 22.0
+margin_right = 829.0
+margin_bottom = 534.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
+
 [node name="LeafPosition" type="Position2D" parent="."]
 position = Vector2( 1974, 84 )
 
@@ -678,6 +700,9 @@ anims/fade_in = SubResource( 111 )
 [connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]
 [connection signal="mouse_exited" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_exited"]
 [connection signal="pressed" from="ToggleQuestButton" to="UserInterface/Quest" method="_on_ToggleQuestButton_pressed"]
+[connection signal="mouse_entered" from="ToggleMapButton" to="ToggleMapButton" method="_on_ToggleMapButton_mouse_entered"]
+[connection signal="mouse_exited" from="ToggleMapButton" to="ToggleMapButton" method="_on_ToggleMapButton_mouse_exited"]
+[connection signal="pressed" from="ToggleMapButton" to="UserInterface" method="_on_ToggleMapButton_pressed"]
 [connection signal="mouse_entered" from="ToggleInventoryButton" to="ToggleInventoryButton" method="_on_ToggleInventoryButton_mouse_entered"]
 [connection signal="mouse_exited" from="ToggleInventoryButton" to="ToggleInventoryButton" method="_on_ToggleInventoryButton_mouse_exited"]
 [connection signal="pressed" from="ToggleInventoryButton" to="UserInterface" method="_on_ToggleInventoryButton_pressed"]

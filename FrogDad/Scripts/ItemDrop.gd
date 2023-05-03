@@ -1,5 +1,5 @@
 extends KinematicBody2D
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
+
 
 export(String) var item_name
 const MAX_SPEED = 600

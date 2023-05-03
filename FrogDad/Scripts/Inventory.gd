@@ -1,5 +1,5 @@
 extends Node2D
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
+
 const SlotClass = preload("res://Scripts/Slot.gd")
 
 export (Dictionary) var item_list

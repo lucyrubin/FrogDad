@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 
 var velocity = Vector2.ZERO
 export(String) var item_name

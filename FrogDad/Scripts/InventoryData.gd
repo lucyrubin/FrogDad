@@ -1,6 +1,5 @@
 class_name InventoryData
 extends Node
-#Code for inventory system is from Arkeve on YouTube: https://www.youtube.com/watch?v=FHYb63ppHmk
 
 const SlotClass = preload("res://Scripts/Slot.gd")
 const ItemClass = preload("res://Scripts/Item.gd")
