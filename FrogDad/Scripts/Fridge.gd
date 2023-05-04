@@ -20,11 +20,7 @@ func dark_background_input(event):
 			$AnimatedSprite.set_frame(current_fram)
 			
 func _on_Fridge_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton \
-	and event.button_index == BUTTON_LEFT \
-	and event.pressed \
-	and MasterScript.frog_dad_state == "" \
-	and $Interact.visible == true:
+	if _left_click_in_area(event):
 		current_fram = (current_fram + 1) % num_frames
 		$AnimatedSprite.set_frame(current_fram)
 		if current_fram == 1:
@@ -55,3 +51,10 @@ func _on_Fridge_area_exited(_area):
 	if MasterScript.frog_dad_state == "":
 		$Interact.visible = false
 		$Interact/AnimationPlayer.stop()
+		
+func _left_click_in_area(event):
+	return event is InputEventMouseButton \
+	and event.button_index == BUTTON_LEFT \
+	and event.pressed \
+	and MasterScript.frog_dad_state == "" \
+	and $Interact.visible == true

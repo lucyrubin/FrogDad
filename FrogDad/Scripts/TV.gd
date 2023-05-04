@@ -1,17 +1,11 @@
 extends Area2D
 
-onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
-
 var TVScene = "res://Scenes/TV.tscn"
 var channel = 0
 var in_area 
 
 func _on_TV_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton \
-	and event.button_index == BUTTON_LEFT \
-	and event.pressed \
-	and MasterScript.frog_dad_state == "" \
-	and in_area == true:
+	if _left_click_in_area(event):
 		channel += 1
 		MasterScript.music_position = BackgroundMusic.get_playback_position()
 		BackgroundMusic.stop()
@@ -48,6 +42,13 @@ func _on_TV_Area_entered(area):
 func _on_TV_Area_exited(area):
 	if MasterScript.frog_dad_state == "":
 		in_area = false
+
+func _left_click_in_area(event):
+	return event is InputEventMouseButton \
+	and MasterScript.frog_dad_state == "" \
+	and event.button_index == BUTTON_LEFT \
+	and event.pressed \
+	and in_area
 
 func play_NyanCat():
 	$NyanCat.visible = true
