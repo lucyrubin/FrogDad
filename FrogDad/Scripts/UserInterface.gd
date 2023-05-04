@@ -45,4 +45,6 @@ func _on_ToggleMapButton_pressed():
 	if MasterScript.frog_dad_state == "":
 		$DarkBackground.visible = true
 		$Map.visible = true
+		$MapBorder.visible = true
 		MasterScript.frog_dad_state = "map"
+		get_tree().get_root().find_node("ToggleMapButton", true, false).texture_normal = load("res://Info Icons/map icon normal.png")
