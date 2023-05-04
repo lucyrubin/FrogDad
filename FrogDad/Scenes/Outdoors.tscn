@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=43]
 [ext_resource path="res://Forest Art/tree2.png" type="Texture" id=44]
 [ext_resource path="res://Forest Art/tree4.png" type="Texture" id=45]
+[ext_resource path="res://Outdoor Art/odie_house.png" type="Texture" id=46]
 
 [sub_resource type="ConvexPolygonShape2D" id=122]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -763,6 +764,12 @@ radius = 18.4391
 radius = 11.0
 height = 18.0
 
+[sub_resource type="RectangleShape2D" id=158]
+extents = Vector2( 172.5, 135 )
+
+[sub_resource type="RectangleShape2D" id=159]
+extents = Vector2( 257.25, 35.5 )
+
 [sub_resource type="RectangleShape2D" id=157]
 extents = Vector2( 155, 67 )
 
@@ -1001,6 +1008,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1019,7 +1027,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1039,6 +1047,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1057,7 +1066,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/EntranceTrees/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1076,7 +1085,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1092,7 +1100,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1108,7 +1116,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1124,6 +1132,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1139,7 +1148,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1155,7 +1164,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1171,7 +1180,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1187,7 +1196,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1206,7 +1214,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1222,7 +1230,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1238,6 +1246,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1253,7 +1262,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1269,7 +1278,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1285,7 +1294,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1301,7 +1309,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1317,7 +1324,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch2/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1336,7 +1342,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1352,7 +1358,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1368,6 +1374,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1383,7 +1390,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1399,7 +1406,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1415,7 +1422,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1431,7 +1437,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1447,7 +1452,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch3/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1466,6 +1470,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1481,6 +1486,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1496,7 +1502,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1512,7 +1518,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1528,7 +1533,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1544,7 +1548,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1560,7 +1564,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1576,7 +1580,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch4/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1595,7 +1599,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1611,7 +1615,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1627,7 +1631,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1643,7 +1646,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1659,7 +1662,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1675,6 +1678,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1690,6 +1694,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1705,6 +1710,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch5/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1722,7 +1728,7 @@ position = Vector2( 155, -3 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1737,7 +1743,7 @@ position = Vector2( 33, -30 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1752,7 +1758,6 @@ position = Vector2( 89, 100 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1767,7 +1772,7 @@ position = Vector2( -62, 55 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1782,7 +1787,7 @@ position = Vector2( -105, -85 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1797,6 +1802,7 @@ position = Vector2( 92, -144 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1811,6 +1817,7 @@ position = Vector2( 223, 74 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1825,6 +1832,7 @@ position = Vector2( 223, 74 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch6/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1842,7 +1850,6 @@ position = Vector2( 155, -3 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1857,7 +1864,6 @@ position = Vector2( 33, -30 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1872,7 +1878,7 @@ position = Vector2( 89, 100 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1887,6 +1893,7 @@ position = Vector2( -62, 55 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1901,6 +1908,7 @@ position = Vector2( -105, -85 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1915,7 +1923,7 @@ position = Vector2( 92, -144 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1930,7 +1938,7 @@ position = Vector2( 223, 74 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1945,7 +1953,7 @@ position = Vector2( 223, 74 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch7/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1963,7 +1971,7 @@ position = Vector2( 155, -3 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1978,7 +1986,7 @@ position = Vector2( 33, -30 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -1993,6 +2001,7 @@ position = Vector2( 89, 100 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2007,7 +2016,7 @@ position = Vector2( -62, 55 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2022,7 +2031,7 @@ position = Vector2( -105, -85 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2037,7 +2046,6 @@ position = Vector2( 92, -144 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2052,7 +2060,6 @@ position = Vector2( 223, 74 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2067,7 +2074,6 @@ position = Vector2( 223, 74 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/TreeBunch8/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2085,7 +2091,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2101,7 +2106,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2117,6 +2122,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2132,6 +2138,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2147,6 +2154,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2162,7 +2170,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2178,7 +2186,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2194,7 +2201,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2210,7 +2217,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree13"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2226,6 +2233,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree14"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2241,7 +2249,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree15"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2257,7 +2265,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree16"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2273,7 +2281,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree17"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2289,7 +2297,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree18"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2305,7 +2312,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree19"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2321,6 +2328,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree20"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2336,6 +2344,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree21"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2351,7 +2360,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree22"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2367,7 +2376,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree23"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2383,7 +2391,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree24"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2399,7 +2406,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree25"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2415,7 +2421,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree26"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2431,7 +2436,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree27"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2447,6 +2452,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree28"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2462,7 +2468,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree29"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2478,7 +2484,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree30"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2494,7 +2499,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree31"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2510,7 +2514,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree32"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2526,6 +2530,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree33"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2541,6 +2546,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree34"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2556,7 +2562,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree35"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2572,7 +2578,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree36"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2588,7 +2593,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree37"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2604,7 +2609,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree38"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2620,6 +2625,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree39"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2635,6 +2641,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree40"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2650,7 +2657,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree41"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2666,7 +2673,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree42"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2682,7 +2688,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/ForestTreeOutline/Tree43"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2698,7 +2703,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree5"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2714,7 +2719,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree6"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2730,7 +2734,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree7"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2746,7 +2750,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree8"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2762,7 +2766,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree9"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2778,6 +2782,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree10"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2793,6 +2798,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree11"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2808,6 +2814,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree12"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2823,7 +2830,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree13"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2839,7 +2846,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree14"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2855,7 +2862,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree15"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2871,7 +2877,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree16"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2887,7 +2892,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree17"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2903,7 +2908,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree18"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2919,6 +2924,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree19"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2934,6 +2940,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree20"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2949,7 +2956,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree21"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2965,7 +2972,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree22"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2981,7 +2987,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree23"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -2997,7 +3002,6 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree24"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3013,7 +3017,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree25"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3029,7 +3033,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree26"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3045,7 +3049,7 @@ script = ExtResource( 19 )
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree27"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3064,7 +3068,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree3"]
 position = Vector2( 1, 0 )
 frames = SubResource( 105 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3083,7 +3086,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree1"]
 position = Vector2( 1, 0 )
 frames = SubResource( 147 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3102,7 +3105,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree4"]
 position = Vector2( 1, 0 )
 frames = SubResource( 147 )
-frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3121,7 +3123,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree28"]
 position = Vector2( 1, 0 )
 frames = SubResource( 147 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3140,6 +3142,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree29"]
 position = Vector2( 1, 0 )
 frames = SubResource( 147 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3157,7 +3160,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree2"]
 position = Vector2( 1, 0 )
 frames = SubResource( 147 )
-frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3175,7 +3177,6 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree30"]
 position = Vector2( 1, 0 )
 frames = SubResource( 147 )
-frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3193,7 +3194,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree31"]
 position = Vector2( 33, 16 )
 frames = SubResource( 147 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3212,7 +3213,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree32"]
 position = Vector2( 33, 16 )
 frames = SubResource( 147 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3231,7 +3232,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree33"]
 position = Vector2( 33, 16 )
 frames = SubResource( 147 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3250,6 +3251,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree34"]
 position = Vector2( 33, 16 )
 frames = SubResource( 147 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3268,6 +3270,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree35"]
 position = Vector2( 33, 16 )
 frames = SubResource( 147 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3285,6 +3288,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree36"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3301,6 +3305,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree37"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3317,7 +3322,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree38"]
 frames = SubResource( 149 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -3334,7 +3339,6 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree39"]
 frames = SubResource( 149 )
-frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3351,7 +3355,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree40"]
 frames = SubResource( 149 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -3368,7 +3372,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree41"]
 frames = SubResource( 149 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -3385,7 +3389,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree42"]
 frames = SubResource( 149 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -3402,6 +3406,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree44"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3419,6 +3424,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree45"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3436,6 +3442,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree46"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3453,6 +3460,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree47"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3470,6 +3478,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="TreeYSort/Tree43"]
 frames = SubResource( 149 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3486,7 +3495,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree48"]
 frames = SubResource( 154 )
-frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3503,7 +3511,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree49"]
 frames = SubResource( 154 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 
@@ -3520,6 +3528,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree50"]
 frames = SubResource( 154 )
+frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3536,7 +3545,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree51"]
 frames = SubResource( 154 )
-frame = 3
+frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -3553,7 +3562,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree52"]
 frames = SubResource( 154 )
-frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3570,7 +3578,6 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree53"]
 frames = SubResource( 154 )
-frame = 2
 speed_scale = 0.3
 playing = true
 
@@ -3587,7 +3594,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree54"]
 frames = SubResource( 154 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3605,7 +3612,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree55"]
 frames = SubResource( 154 )
-frame = 1
+frame = 3
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3623,6 +3630,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree56"]
 frames = SubResource( 154 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3640,6 +3648,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TreeYSort/Tree57"]
 frames = SubResource( 154 )
+frame = 2
 speed_scale = 0.3
 playing = true
 flip_h = true
@@ -3660,6 +3669,25 @@ texture = ExtResource( 12 )
 position = Vector2( -154, 116 )
 rotation = 1.5708
 shape = SubResource( 131 )
+
+[node name="OdieHouse" type="StaticBody2D" parent="."]
+position = Vector2( 1805, 1932 )
+z_index = 2000
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="OdieHouse"]
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 46 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OdieHouse"]
+position = Vector2( -6.5, 140 )
+shape = SubResource( 158 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OdieHouse"]
+position = Vector2( 3.75, 260.5 )
+shape = SubResource( 159 )
 
 [node name="JimothyJohns" type="StaticBody2D" parent="."]
 position = Vector2( 1302, -1694 )
@@ -3728,22 +3756,6 @@ margin_bottom = -348.0
 texture = ExtResource( 15 )
 expand = true
 
-[node name="TempOdieHouse" type="TextureRect" parent="."]
-modulate = Color( 0.972549, 0.615686, 0.529412, 1 )
-margin_left = 1507.0
-margin_top = 1727.0
-margin_right = 2036.0
-margin_bottom = 2239.0
-texture = ExtResource( 11 )
-
-[node name="TempOdieDoor" type="TextureRect" parent="."]
-margin_left = 1629.0
-margin_top = 2041.0
-margin_right = 1775.0
-margin_bottom = 2249.0
-texture = ExtResource( 15 )
-expand = true
-
 [node name="LettuceForestSign" type="StaticBody2D" parent="."]
 position = Vector2( 4015, 1965 )
 z_index = 1950
@@ -3791,7 +3803,7 @@ position = Vector2( -35.8167, 479.032 )
 shape = SubResource( 156 )
 
 [node name="Odie" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1534, 2194 )
+position = Vector2( 1507, 2241 )
 z_index = 2194
 
 [node name="SnuberEats" type="StaticBody2D" parent="."]
@@ -3802,7 +3814,7 @@ collision_mask = 9
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="SnuberEats"]
 frames = SubResource( 135 )
-frame = 3
+frame = 1
 speed_scale = 0.5
 playing = true
 
