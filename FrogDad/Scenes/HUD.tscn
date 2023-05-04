@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
 [ext_resource path="res://Outdoor Art/Outdoors_Map.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/SmallPopUpBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/ToggleQuestButton.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/ToggleMapButton.gd" type="Script" id=13]
+[ext_resource path="res://map_label_font.tres" type="DynamicFont" id=14]
 [ext_resource path="res://House Art/fridge_box.png" type="Texture" id=19]
 [ext_resource path="res://House Art/dresserslotfull.png" type="Texture" id=20]
 [ext_resource path="res://House Art/fridgeFull.png" type="Texture" id=21]
@@ -648,6 +649,52 @@ margin_right = 852.667
 margin_bottom = 873.333
 rect_scale = Vector2( 0.125, 0.126 )
 texture = ExtResource( 2 )
+
+[node name="JJLabel" type="Label" parent="UserInterface/Map"]
+margin_left = 990.0
+margin_top = 530.0
+margin_right = 1283.0
+margin_bottom = 655.0
+custom_fonts/font = ExtResource( 14 )
+text = "Jimothy
+John's"
+align = 1
+
+[node name="OdieHouseLabel" type="Label" parent="UserInterface/Map"]
+margin_left = 550.0
+margin_top = 1050.0
+margin_right = 896.0
+margin_bottom = 1111.0
+custom_fonts/font = ExtResource( 14 )
+text = "Odie's House"
+
+[node name="HomeLabel" type="Label" parent="UserInterface/Map"]
+margin_left = 325.0
+margin_top = 680.0
+margin_right = 651.0
+margin_bottom = 769.0
+custom_fonts/font = ExtResource( 14 )
+text = "Frog Dad's
+House"
+align = 1
+
+[node name="LettuceGardenLabel" type="Label" parent="UserInterface/Map"]
+margin_left = 850.0
+margin_top = 760.0
+margin_right = 1146.0
+margin_bottom = 885.0
+custom_fonts/font = ExtResource( 14 )
+text = "Lettuce
+Garden"
+align = 1
+
+[node name="ForestLabel" type="Label" parent="UserInterface/Map"]
+margin_left = 600.0
+margin_top = 340.0
+margin_right = 779.0
+margin_bottom = 401.0
+custom_fonts/font = ExtResource( 14 )
+text = "Forest"
 
 [node name="LeafPosition" type="Position2D" parent="."]
 position = Vector2( 1974, 84 )
