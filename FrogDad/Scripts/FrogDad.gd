@@ -21,7 +21,6 @@ func getInventoryNode():
 func _physics_process(delta):
 	var texture_height = $AnimatedSprite.get_sprite_frames().get_frame("down",0).get_height()
 	z_index = global_position.y + (texture_height / 2)
-	print(z_index)
 	velocity = Vector2.ZERO
 	
 	if MasterScript.frog_dad_state == "": # move as long as dialogue and inventory aren't active
@@ -91,7 +90,6 @@ func move_left():
 
 func toggle_dialogue_box_visibility(dialogue, dialogue_name):
 	$DialogueBox.visible = true
-	print($DialogueBox.visible)
 	$DialogueBox.show_dialog_box(dialogue, dialogue_name)
 
 func toggle_riddle_visibility(riddle):

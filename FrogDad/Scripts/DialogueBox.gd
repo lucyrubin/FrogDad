@@ -30,7 +30,6 @@ func _input(event):
 	# if user pressed "space key" before text animation ends,
 	# the animation would be skipped and all text would show
 	if event.is_action_pressed("open") and content.visible and !MasterScript.game_paused:
-		print("click")
 		if !paused_for_riddle:
 	
 			MasterScript.frog_dad_state = "talking" # player can't move during dialogue
@@ -242,7 +241,6 @@ func enable_option_buttons():
 	$RiddleHUD/VBoxContainer/Option3.disabled = false
 	
 func _update_riddle(button):
-	print(button.text)
 	$RiddleHUD/VBoxContainer.visible = false
 	if button.text == current_riddle[1].correct_answer:
 		if button.text == "Promise":

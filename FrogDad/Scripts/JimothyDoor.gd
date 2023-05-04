@@ -28,6 +28,6 @@ func _on_Area2D_body_exited(body):
 		close_enough = false
 
 func _on_JimothyDoor_body_entered(body):
-	print(body)
+
 	if body is PlayerClass:
 		go_inside()

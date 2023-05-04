@@ -6,19 +6,15 @@
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/return.png-dabd6765bd4a2a20e7cb85f3647ebe7d.stex"
 
 [sub_resource type="StreamTexture" id=2]
 flags = 4
-load_path = "res://.import/I.png-f586bd9d29e50a4e6a45e16f9719a46c.stex"
 
 [sub_resource type="StreamTexture" id=3]
 flags = 4
-load_path = "res://.import/Z.png-4ccd3d07ef03d18937edbe59b6f44b9d.stex"
 
 [sub_resource type="StreamTexture" id=4]
 flags = 4
-load_path = "res://.import/Q.png-f307aa1aa1ca7593b584dd0e139c3663.stex"
 
 [node name="Info" type="Node2D"]
 

@@ -148,7 +148,6 @@ func add_item(item_name, item_quantity):
 func update_slot_visual(slot_index, item_name, new_quantity):
 	var slot = get_node("GridContainer/Slot" + str(slot_index + 1))
 	if new_quantity <= 0:
-		print("emptying slot ", slot_index)
 		slot.empty_slot()
 	elif slot.item != null:
 		slot.item.set_item(item_name, new_quantity)
