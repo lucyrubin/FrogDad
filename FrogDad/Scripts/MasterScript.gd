@@ -13,6 +13,7 @@ var game_paused = false
 var quest_state = "swaddle"
 var sprite_image = "carrying babies"
 var frog_dad_state = ""
+var item_list = {}
 
 var enter_home = false
 var exit_forest = false

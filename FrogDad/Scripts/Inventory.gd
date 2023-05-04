@@ -2,7 +2,8 @@ extends Node2D
 
 const SlotClass = preload("res://Scripts/Slot.gd")
 
-export (Dictionary) var item_list
+#export (Dictionary) var item_list
+var item_list = MasterScript.item_list
 export (String) var inventory_type
 
 onready var inventory_slots = $GridContainer

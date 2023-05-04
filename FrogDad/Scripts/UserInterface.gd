@@ -45,3 +45,4 @@ func _on_ToggleMapButton_pressed():
 	if MasterScript.frog_dad_state == "":
 		$DarkBackground.visible = true
 		$Map.visible = true
+		MasterScript.frog_dad_state = "map"
