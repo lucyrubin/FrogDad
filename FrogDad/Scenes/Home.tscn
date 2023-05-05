@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -46,6 +46,7 @@
 [ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=44]
 [ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=45]
 [ext_resource path="res://Audios/Door.mp3" type="AudioStream" id=46]
+[ext_resource path="res://Home Art/work_chair.png" type="Texture" id=47]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -661,6 +662,9 @@ animations = [ {
 radius = 20.0
 height = 24.0
 
+[sub_resource type="RectangleShape2D" id=154]
+extents = Vector2( 53.8889, 23.0556 )
+
 [sub_resource type="AtlasTexture" id=118]
 flags = 4
 atlas = ExtResource( 30 )
@@ -718,7 +722,7 @@ animations = [ {
 extents = Vector2( 40.5, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=128]
-extents = Vector2( 182.5, 62 )
+extents = Vector2( 182.5, 28.5 )
 
 [sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 153, 12 )
@@ -1172,6 +1176,18 @@ energy = 0.49
 [node name="Switch" type="AudioStreamPlayer" parent="Work Table/Lamp"]
 stream = ExtResource( 42 )
 
+[node name="Work Chair" type="StaticBody2D" parent="."]
+position = Vector2( 341, 264 )
+scale = Vector2( 0.9, 0.9 )
+z_index = 150
+
+[node name="Sprite" type="Sprite" parent="Work Chair"]
+texture = ExtResource( 47 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Work Chair"]
+position = Vector2( 1.66669, 74.7223 )
+shape = SubResource( 154 )
+
 [node name="Typewriter" type="Area2D" parent="."]
 position = Vector2( 326, 87 )
 z_index = -1000
@@ -1207,8 +1223,7 @@ scale = Vector2( 0.842, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Couch"]
-visible = false
-position = Vector2( -0.5, -1 )
+position = Vector2( -0.5, 32.5 )
 shape = SubResource( 128 )
 
 [node name="TV Stand" type="StaticBody2D" parent="."]
