@@ -77,6 +77,7 @@ extents = Vector2( 931, 39 )
 extents = Vector2( 157, 73.5 )
 
 [node name="JimothyJohns" type="Node2D"]
+position = Vector2( -1000, 0 )
 script = ExtResource( 7 )
 
 [node name="Background5" type="TextureRect" parent="."]
@@ -160,7 +161,7 @@ texture = ExtResource( 14 )
 energy = 0.3
 
 [node name="Light2D4" type="Light2D" parent="."]
-position = Vector2( 659, 170 )
+position = Vector2( 655, 170 )
 rotation = -0.509636
 scale = Vector2( 3.32788, 4.6378 )
 texture = ExtResource( 14 )
@@ -380,9 +381,9 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
 current = true
-limit_left = 11
-limit_top = -132
-limit_right = 1030
+limit_left = -984
+limit_top = -138
+limit_right = 28
 limit_bottom = 808
 editor_draw_limits = true
 
@@ -422,6 +423,7 @@ texture = ExtResource( 17 )
 
 [node name="FlyJar" parent="." instance=ExtResource( 19 )]
 position = Vector2( 595, 224 )
+frame = 0
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
 [connection signal="mouse_entered" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_mouse_entered"]

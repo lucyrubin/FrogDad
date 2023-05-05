@@ -1386,7 +1386,7 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 12
+frame = 1
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
@@ -1394,7 +1394,7 @@ position = Vector2( -424, 280 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 112 )
 animation = "default 1"
-frame = 10
+frame = 6
 playing = true
 offset = Vector2( 3648.57, 337.143 )
 
@@ -1402,7 +1402,7 @@ offset = Vector2( 3648.57, 337.143 )
 position = Vector2( 136, 448 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 114 )
-frame = 14
+frame = 16
 speed_scale = 3.0
 playing = true
 
@@ -1410,7 +1410,6 @@ playing = true
 position = Vector2( 960, 440 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 113 )
-frame = 11
 speed_scale = 2.0
 playing = true
 
@@ -1567,7 +1566,7 @@ position = Vector2( 1200, 264 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 129 )
 animation = "down"
-frame = 4
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -1582,7 +1581,7 @@ position = Vector2( -289, 427 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 71 )
 animation = "new texture"
-frame = 6
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
@@ -1606,7 +1605,7 @@ position = Vector2( -115, 284 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 137 )
 animation = "new texture"
-frame = 11
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGilbert"]
@@ -1628,7 +1627,7 @@ position = Vector2( -112, 288 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 141 )
 animation = "new texture"
-frame = 12
+frame = 8
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGravy"]
@@ -1650,7 +1649,7 @@ anims/walk_away = SubResource( 91 )
 position = Vector2( -216, 296 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 95 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Jimothy"]
