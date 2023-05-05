@@ -37,7 +37,7 @@ func run_intro():
 func show_text(label, text_to_show):
 	label.visible = false
 	var text_animation = label.get_node("TextAnimation")
-	var interval = 0.01
+	var interval = 0.05
 	label.text = text_to_show
 	text_animation.interpolate_property(
 			label, "percent_visible", 0, 1, 

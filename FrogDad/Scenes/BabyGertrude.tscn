@@ -19,7 +19,7 @@ extents = Vector2( 106, 23.5 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
@@ -32,7 +32,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 174.25, 221.75 )
+extents = Vector2( 369.5, 347 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 109, 118.25 )
@@ -50,16 +50,16 @@ disabled = true
 position = Vector2( 3, -9 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 9 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Speech" type="TextureRect" parent="."]
 visible = false
-margin_left = -22.0
-margin_top = -88.0
-margin_right = 478.0
-margin_bottom = 449.0
-rect_scale = Vector2( 0.1, 0.1 )
+margin_left = -58.0
+margin_top = -224.0
+margin_right = 442.0
+margin_bottom = 313.0
+rect_scale = Vector2( 0.2, 0.2 )
 mouse_filter = 2
 texture = ExtResource( 1 )
 
@@ -85,7 +85,7 @@ one_shot = true
 [node name="Interactable" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2( -12, -8 )
+position = Vector2( -12.5, -11 )
 shape = SubResource( 12 )
 
 [node name="ClickArea" type="Area2D" parent="."]
