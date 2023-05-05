@@ -1,19 +1,17 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/FrogDad.gd" type="Script" id=1]
 [ext_resource path="res://Art/backspritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Art/spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/PickupZone.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/DialogueBox2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Art/frogdadsideleft2.png" type="Texture" id=6]
-[ext_resource path="res://Art/frogdadside2.png" type="Texture" id=7]
+[ext_resource path="res://Art/frogdadrightFIXED (1).png" type="Texture" id=6]
+[ext_resource path="res://Art/frogdadrightFIXED (3).png" type="Texture" id=7]
 [ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=8]
-[ext_resource path="res://Art/frogdadside3 1.png" type="Texture" id=9]
-[ext_resource path="res://Art/frogdadside1.png" type="Texture" id=10]
-[ext_resource path="res://Art/frogdadside0.png" type="Texture" id=11]
-[ext_resource path="res://Art/frogdadsideleft0.png" type="Texture" id=12]
-[ext_resource path="res://Art/frogdadsideleft1.png" type="Texture" id=13]
-[ext_resource path="res://Art/frogdadside3.png" type="Texture" id=14]
+[ext_resource path="res://Art/frogdadrightFIXED (2).png" type="Texture" id=9]
+[ext_resource path="res://Art/frogdadleftFIXED.png" type="Texture" id=10]
+[ext_resource path="res://Art/frogdadrightFIXED (4).png" type="Texture" id=11]
+[ext_resource path="res://Art/frogdadHOLDINGSPRITE.png" type="Texture" id=12]
 [ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/FlyJar.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GameGirl.tscn" type="PackedScene" id=17]
@@ -42,6 +40,46 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1016, 0, 508, 1269 )
 
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 999, 0, 484, 1272 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 13, 0, 487, 1272 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1480, 0, 483, 1272 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 505, 0, 483, 1272 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 457, 0, 433, 1286 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 457, 1286 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 882, 0, 429, 1286 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1302, 0, 426, 1286 )
+
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 2 )
@@ -64,12 +102,17 @@ animations = [ {
 "name": "down",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 6 ) ],
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 34 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "down_holding",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 38 ), SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
@@ -106,7 +149,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "down"
-frame = 1
+frame = 3
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -131,6 +174,7 @@ playing = true
 
 [node name="FlyJar" parent="." instance=ExtResource( 16 )]
 position = Vector2( 13.3333, -346.667 )
+frame = 1
 
 [node name="GameGirl" parent="." instance=ExtResource( 17 )]
 visible = false

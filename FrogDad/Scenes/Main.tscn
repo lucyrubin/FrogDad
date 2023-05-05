@@ -24,16 +24,18 @@ script = ExtResource( 2 )
 
 [node name="BabyGertrude" parent="." instance=ExtResource( 4 )]
 position = Vector2( 131, -236 )
+scale = Vector2( 0.5, 0.5 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="BabyGravyBaby" parent="." instance=ExtResource( 5 )]
 position = Vector2( 223, -535 )
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="BabyGilbert" parent="." instance=ExtResource( 3 )]
 position = Vector2( -291, 189 )
+scale = Vector2( 0.5, 0.5 )
 z_index = 100
 
 [node name="Home" parent="." instance=ExtResource( 9 )]

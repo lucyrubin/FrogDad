@@ -422,7 +422,7 @@ texture = ExtResource( 17 )
 
 [node name="FlyJar" parent="." instance=ExtResource( 19 )]
 position = Vector2( 595, 224 )
-frame = 0
+frame = 1
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
 [connection signal="mouse_entered" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_mouse_entered"]

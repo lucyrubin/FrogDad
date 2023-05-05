@@ -72,8 +72,11 @@ func move_down_and_right():
 	$AnimatedSprite.animation = "right"
 	
 func move_down():
+	if MasterScript.currentQuestNum >= 5:
+		$AnimatedSprite.animation = "down_holding"
+	else:
+		$AnimatedSprite.animation = "down"
 	velocity.y += 1
-	$AnimatedSprite.animation = "down"
 
 func move_up():
 	velocity.y -= 1
