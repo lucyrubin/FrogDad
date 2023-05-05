@@ -23,7 +23,7 @@ func _on_Button_pressed():
 	$DarkBackground.visible = true
 
 func _on_Button_mouse_entered():
-	$Note/Label.add_color_override("font_color", Color(0, 0.501961, 0, 1))
+	$Note/Label.add_color_override("font_color", Color(100, 0, 100, 1))
 
 func _on_Button_mouse_exited():
 	$Note/Label.add_color_override("font_color", Color(0, 0, 0, 1))

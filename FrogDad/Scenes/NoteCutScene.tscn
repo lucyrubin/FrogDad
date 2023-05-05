@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/NoteCutScene.gd" type="Script" id=1]
 [ext_resource path="res://Art/Untitled_Artwork (3).png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://House Art/doorHover.png" type="Texture" id=4]
 [ext_resource path="res://Art/note.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/AaChuaiYiDouKaiXinManZaiErGui2.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Art/sparkles1.png" type="Texture" id=7]
+[ext_resource path="res://Art/sparkles2.png" type="Texture" id=8]
+[ext_resource path="res://Art/sparkles3.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=93]
 0/name = "Untitled_Artwork (3).png 0"
@@ -321,6 +324,74 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 8/shapes = [  ]
 8/z_index = 0
 
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 720, 0, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 720, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 720, 720, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 720, 0, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 720, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 720, 720, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 720, 0, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 720, 720, 720 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 720, 720, 720, 720 )
+
+[sub_resource type="SpriteFrames" id=100]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=97]
 extents = Vector2( 5066.67, 3066.67 )
 
@@ -396,11 +467,21 @@ __meta__ = {
 }
 
 [node name="Note" type="Area2D" parent="."]
-position = Vector2( 448, -553 )
+position = Vector2( 475, -555 )
 scale = Vector2( 0.3, 0.3 )
+z_index = -10
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Sparkles" type="AnimatedSprite" parent="Note"]
+modulate = Color( 0.941176, 0.537255, 1, 1 )
+position = Vector2( 133.333, 143.333 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 5
+frames = SubResource( 100 )
+frame = 4
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note"]
 position = Vector2( 213.333, 226.667 )

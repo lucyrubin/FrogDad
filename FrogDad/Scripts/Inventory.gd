@@ -2,8 +2,8 @@ extends Node2D
 
 const SlotClass = preload("res://Scripts/Slot.gd")
 
-#export (Dictionary) var item_list
-var item_list = MasterScript.item_list
+export (Dictionary) var item_list
+
 export (String) var inventory_type
 
 onready var inventory_slots = $GridContainer
@@ -21,6 +21,8 @@ onready var dresser_inventory_node = get_tree().get_root().find_node("DresserInv
 onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
 
 func _ready():
+	if inventory_type == "player":
+		item_list = MasterScript.item_list
 	
 	var slots = inventory_slots.get_children()
 		

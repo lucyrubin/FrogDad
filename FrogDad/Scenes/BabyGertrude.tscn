@@ -91,7 +91,6 @@ baby_name = "Gertrude"
 position = Vector2( 3, -9 )
 scale = Vector2( 0.345833, 0.345833 )
 frames = SubResource( 9 )
-frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

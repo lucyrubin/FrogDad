@@ -382,6 +382,11 @@ anims/swoosh_in = SubResource( 107 )
 visible = false
 position = Vector2( 38.3333, 87 )
 script = ExtResource( 8 )
+item_list = {
+0: [ "Milk", 2 ],
+1: [ "Egg", 1 ],
+2: [ "Fly", 4 ]
+}
 inventory_type = "fridge"
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/FridgeInventory"]
@@ -471,6 +476,9 @@ texture = ExtResource( 34 )
 visible = false
 position = Vector2( 38.6667, 85.3333 )
 script = ExtResource( 8 )
+item_list = {
+0: [ "Cloth", 1 ]
+}
 inventory_type = "dresser"
 
 [node name="TextureRect" type="TextureRect" parent="UserInterface/DresserInventory"]
@@ -561,6 +569,9 @@ position = Vector2( 38.6667, 73.3333 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
+}
+item_list = {
+0: [ "Cloth", 1 ]
 }
 inventory_type = "table"
 
