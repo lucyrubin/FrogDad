@@ -2,6 +2,7 @@ extends Area2D
 
 export (PackedScene) var target_scene 
 const FrogDadClass = preload("res://Scripts/FrogDad.gd")
+const PickUpZoneClass = preload("res://Scripts/PickupZone.gd")
 onready var FrogDad = get_tree().get_root().find_node("FrogDad", true, false)
 
 var door_opened = false
@@ -25,21 +26,23 @@ func go_outside():
 		SceneTransition.change_scene("res://Scenes/Outdoors.tscn")
 
 # show open door frame		
-func _on_Door_area_entered(_area):
-	# dont let the door be opened during the intro
-	if MasterScript.currentQuestNum == -1:
-		set_frame(0)
-	else:
-		$AnimatedSprite.animation = "hover"
-		door_opened = true
-		set_frame(1)
+func _on_Door_area_entered(area):
+	if area is PickUpZoneClass:
+		# dont let the door be opened during the intro
+		if MasterScript.currentQuestNum == -1:
+			set_frame(0)
+		else:
+			$AnimatedSprite.animation = "hover"
+			door_opened = true
+			set_frame(1)
 
 # show closed door frame
-func _on_Door_area_exited(_area):
-	if !locked:
-		$AnimatedSprite.animation = "default"
-		door_opened = false
-		set_frame(0)
+func _on_Door_area_exited(area):
+	if area is PickUpZoneClass:
+		if !locked:
+			$AnimatedSprite.animation = "default"
+			door_opened = false
+			set_frame(0)
 
 func _on_EnteranceArea_body_entered(body):
 	if body is FrogDadClass and !locked:
