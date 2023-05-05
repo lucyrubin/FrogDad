@@ -111,8 +111,8 @@ anims/RESET = SubResource( 1 )
 anims/wiggle = SubResource( 2 )
 
 [node name="MainMenu" type="VBoxContainer" parent="UI"]
-margin_left = 460.0
-margin_top = 405.0
+margin_left = 459.0
+margin_top = 404.0
 margin_right = 565.0
 margin_bottom = 494.0
 size_flags_horizontal = 4
@@ -169,7 +169,6 @@ margin_bottom = 195.0
 text = "Skip Intro"
 
 [node name="SkipIntroGoToJJ" type="Button" parent="."]
-visible = false
 margin_top = 216.0
 margin_right = 214.0
 margin_bottom = 322.0
