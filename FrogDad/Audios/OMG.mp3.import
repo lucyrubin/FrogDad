@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OMG.mp3-7362c6639d0f0ef6206da0e61668d307.mp3str"
+
+[deps]
+
+source_file="res://Audios/OMG.mp3"
+dest_files=[ "res://.import/OMG.mp3-7362c6639d0f0ef6206da0e61668d307.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

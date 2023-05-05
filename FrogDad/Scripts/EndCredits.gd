@@ -8,7 +8,7 @@ func _ready():
 	yield(run_intro(), "completed")
 	
 var credit_text = ["Code for inventory system from @Arkeve on YouTube", 
-"Dissolve scene transition code is from @TheShaggyDev on YouTube",
+"Scene transition code from @TheShaggyDev on YouTube",
 "A Green Pig by @Pixverses on YouTube",
 "8 Bit Ending! by @HeatleyBros on YouTube",
 "NewJeans OMG / 8 Bit Cover by @jhn_studio on YouTube",

@@ -9,13 +9,13 @@ var velocity = Vector2.ZERO
 var player = null
 var being_picked_up = false
 var frog_dad_is_close = false
-
 var direction_to_move # direction for item drop to move to get to the inventory leaf
 
 onready var FrogDadNode = get_tree().get_root().find_node("FrogDad", true, false)
 
 #Specifies which inventory item is added to
 var FrogDadScene = load("res://Scenes/FrogDad.tscn")
+
 export(NodePath) var FrogDad_path
 onready var inventory_node = get_tree().get_root().find_node("Inventory", true, false)
 onready var Camera2DNode = get_tree().get_root().find_node("Camera2D", true, false)
@@ -24,7 +24,6 @@ func _ready():
 	z_index = position.y #default setup
 	if(item_name == null):
 		item_name = "Log"
-		
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png") 
 
 func setup(xgiven, ygiven, name, inventory):
@@ -66,12 +65,6 @@ func _on_Button_mouse_entered():
 func _on_Button_mouse_exited():
 	$Button.texture_normal = load("res://Item Icons/" + item_name + ".png")
 	Input.set_custom_mouse_cursor(MasterScript.hand)
-
-#func _on_Area2D_body_entered(_body):
-#	frog_dad_is_close = true
-#
-#func _on_Area2D_body_exited(_body):
-#	frog_dad_is_close = false
 
 func _on_FlyingTime_timeout(): # after three seconds, stop flying and fading and delete
 	queue_free()

@@ -8,7 +8,6 @@ func _ready():
 	num_frames = 4
 	$AnimatedSprite.animation = "default"
 	$AnimatedSprite.set_frame(current_fram)
-
 	if MasterScript.currentQuestNum >= 4:
 		$AnimatedSprite.visible = false
 

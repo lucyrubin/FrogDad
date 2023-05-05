@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Art/inventory_box.png" type="Texture" id=1]
+[ext_resource path="res://Art/UI/inventory_box.png" type="Texture" id=1]
 [ext_resource path="res://Audios/pop.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=4]
-[ext_resource path="res://Art/lightLeaf.png" type="Texture" id=5]
-[ext_resource path="res://Art/darkLeaf.png" type="Texture" id=6]
+[ext_resource path="res://Art/UI/lightLeaf.png" type="Texture" id=5]
+[ext_resource path="res://Art/UI/darkLeaf.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 57.5833, 27.625 )

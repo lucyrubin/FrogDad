@@ -26,12 +26,10 @@ var paused_for_riddle = false
 var current_riddle 
 
 func _input(event):
-	
 	# if user pressed "space key" before text animation ends,
 	# the animation would be skipped and all text would show
 	if event.is_action_pressed("open") and content.visible and !MasterScript.game_paused:
 		if !paused_for_riddle:
-	
 			MasterScript.frog_dad_state = "talking" # player can't move during dialogue
 			if text_animation.is_active(): # skip dialogue
 				text_animation.remove_all()
@@ -42,22 +40,16 @@ func _input(event):
 			else:
 				hide_dialog_box()
 
-
 func hide_dialog_box():
 	if FrogDad:
 		MasterScript.frog_dad_state = "" # player can move again
-
 	content.hide()
 	if avatar:
 		avatar.hide()
 	completed = true
 	$ColorRect.hide()
-
 	if find_node("RiddleHUD", true, false):
 		$RiddleHUD.visible = false
-	##
-	##
-	##
 	# If you want to do something after a dialogue, do it here
 	# this code handles what should happen after a dialogue finished
 	if MasterScript.currentQuestNum == -1 and dialogue_name == "Another day": 
@@ -74,50 +66,61 @@ func hide_dialog_box():
 		## after finished cloth quest dialouge
 		show_new_quest_notifcation_box()
 	elif dialogue_name == "Finished log quest":
+		# after finished log quest dialogue
 		show_new_talk_quest_notification_box()
 	elif dialogue_name == "jimothy first talk":
+		# after you talk to jimothy and he tells you to get lettuce
 		MasterScript.currentQuestNum+=1
 		MasterScript.currentQuestArray = [MasterScript.questDictionary[3]]
 		show_new_quest_notifcation_box()
 	elif dialogue_name == "Finished collecting lettuce":
+		# after you have collected all lettuce
 		MasterScript.currentQuestNum+=1
 		MasterScript.currentQuestArray = [MasterScript.questDictionary[4]]
 		show_new_quest_notifcation_box()
 	elif dialogue_name == "after cradle dialogue":
+		# after the cradle has been built
 		SceneTransition.change_scene("res://Scenes/EggsIntoTadpolesCutScene.tscn")
 	elif dialogue_name == "jimothy gives flies":
+		# after jimothy gives you the fly jar
 		MasterScript.currentQuestNum+=1
 		MasterScript.currentQuestArray = [MasterScript.questDictionary[5]]
 		show_new_quest_notifcation_box()
 		FrogDad.set_fly_jar_visiblity(true)
 	elif dialogue_name == "gravy fed" or dialogue_name == "gilbert fed" or dialogue_name == "Gertrude fed":
+		# after you feed a baby
 		var HUDNode = FrogDad.find_node("HUD", true, false)
 		var QuestNode = HUDNode.find_node("Quest", true, false)
 		var FlyJarParticle = FrogDad.get_node("FlyJar").get_node("Flies")
 		FlyJarParticle.visible = false
 		QuestNode.check_if_quest_fulfilled()
 	elif dialogue_name == "Finished feeding flies":
+		# after all the babies have been fed
 		MasterScript.currentQuestArray = []
 		yield(get_tree().create_timer(1), "timeout")
 		SceneTransition.change_scene("res://Scenes/BabyIntoToddler.tscn")
 	elif dialogue_name == "coming back to odie":
+		# when you come back to try riddles again
 		MasterScript.odie_quest_active = true
 		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "Okay, first question. I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
 	elif dialogue_name == "start riddle":
+		# first time the riddle is being played
 		HUD.find_node("GameGirl", true, false).hide()
 		MasterScript.odie_quest_active = true
 		MasterScript.began_odie_riddles = true
 		FrogDad.toggle_riddle_visibility([[{avatar = "odie", text = "Okay, first question. I can be broken without being touched or seen. What am I?" }], {correct_answer = "Promise", wrong_answer1 = "Heart", wrong_answer2 = "My Legs )-:", question_name = "keyword"}])
 	elif dialogue_name == "tomorrow":
+		# win the riddles
 		FrogDad.get_node("GameGirl").show()
 		FrogDad.toggle_dialogue_box_visibility([{avatar = "", text = "Wow. The kids are going to love this!"}], "gamegirl")
 	elif dialogue_name == "gamegirl":
+		# game finished
 		SceneTransition.change_scene("res://Scenes/EndCredits.tscn")
 	elif dialogue_name == "Talking to Odie":
+		# after odie quest is introduced
 		MasterScript.currentQuestNum+=1
 		MasterScript.currentQuestArray = [MasterScript.questDictionary[6]]
 		show_new_quest_notifcation_box()
-		
 	# If you want to do something after a dialogue, do it here
 
 func show_new_talk_quest_notification_box():
@@ -134,22 +137,15 @@ func show_dialog_box(_dialogs, dialogueName):
 	content.hide()
 	$ColorRect.show()
 	dialogue_name = dialogueName
-
 	if FrogDad:
 		MasterScript.frog_dad_state = "talking" # player can't move during dialogue
-
 	completed = false
 	content = $Content
 	next_indicator = $Content/NextIndicator
 	text_animation = $Content/TextAnimation
-	
-	
-
 	if get_node("Avatar"):
 		avatar = $Avatar
-
 	dialogs = _dialogs
-	
 	if avatar:
 		avatar.show()
 	_show_dialog(0)
@@ -157,14 +153,11 @@ func show_dialog_box(_dialogs, dialogueName):
 func _show_dialog(index):
 	if FrogDad:
 		MasterScript.frog_dad_state= "talking" # player can't move during dialogue
-
 	current = index
 	var dialog = dialogs[current]
 	content.text = dialog.text
-
 	if dialog.avatar != "":
 		avatar.texture = AVATAR_MAP[dialog.avatar]
-	
 	next_indicator.hide()
 	text_animation.interpolate_property(
 		content, "percent_visible", 0, 1, 
@@ -173,7 +166,7 @@ func _show_dialog(index):
 	)
 	text_animation.start()
 	content.show()
-	
+	# show the game girl
 	if dialog.text == "How would you like a state-of-the-art, electronic square device??":
 		HUD.find_node("GameGirl", true, false).find_node("AnimationPlayer", true, false).play("fade_in")
 		HUD.find_node("GameGirl", true, false).find_node("Ahhh", true, false).play()
@@ -183,24 +176,21 @@ func _on_TextAnimation_tween_all_completed():
 		next_indicator.show()
 	else: 
 		if(get_node("RiddleHUD")):
-			
 			paused_for_riddle = true
 			yield(get_tree().create_timer(0.5), "timeout")
-			enable_option_buttons()
-#			
-			
+			enable_option_buttons()			
 
+# format for riddles: 
 # [{question, correct_answer : , wrong_answer1: , wrong_answer2: , question_name : ]
 func play_riddle (riddle):
 	disable_option_buttons()
 	paused_for_riddle = false
 	current_riddle = riddle
 	show_dialog_box(riddle[0], riddle[1].question_name)
-	
 	var options = [riddle[1].correct_answer, riddle[1].wrong_answer1, riddle[1].wrong_answer2]
 	
+	# show the buttons in a random order
 	var rng = RandomNumberGenerator.new()
-	
 	rng.randomize()
 	var rand_int = rng.randi_range(0, options.size()-1)#(randi() % options.size()) - 1
 	$RiddleHUD/VBoxContainer/Option1.set_text(options[rand_int])
@@ -218,7 +208,6 @@ func play_riddle (riddle):
 
 func _on_Option1_pressed():
 	disable_option_buttons()
-	
 	_update_riddle($RiddleHUD/VBoxContainer/Option1)
 
 func _on_Option2_pressed():
@@ -245,6 +234,7 @@ func enable_option_buttons():
 	
 func _update_riddle(button):
 	$RiddleHUD/VBoxContainer.visible = false
+	# if you choose the correct answer
 	if button.text == current_riddle[1].correct_answer:
 		if button.text == "Promise":
 			play_riddle([[{avatar = "odie", text = "That was right! Second question. What flies when it's born, lies when it's alive, and runs when it's dead?" }],

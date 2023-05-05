@@ -1,9 +1,6 @@
 extends Panel
 
-
 # load in textures for the slots
-#var default_tex = preload("res://Temporary Clipart/darkLeaf.png")
-#var empty_tex = preload("res://Temporary Clipart/lightLeaf.png")
 export(Texture) var default_tex
 export(Texture) var empty_tex
 
@@ -30,7 +27,6 @@ func initialize_item(item_name, item_quantity): # sets the slot to be the item g
 		item.set_item(item_name, item_quantity)
 	refresh_style()
 
-	
 func pick_from_slot():
 	remove_child(item) # remove the item image 
 	var inventoryNode = get_tree().get_root().find_node("Inventory", true, false)

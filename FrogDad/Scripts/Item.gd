@@ -13,14 +13,12 @@ func _ready():
 		item_name = "Fly"
 	else :
 		item_name = "Log"
-	
 	# pick the icon image
 	$TextureRect.texture = load("res://Item Icons/" + item_name + ".png") 
 	# get the stack size from the JSON dictionary
 	var stack_size = int(JsonData.item_data[item_name]["StackSize"])
 	# pick a random item_quanitity (just for prototype purposes
 	item_quantity = randi() % stack_size + 1
-	
 	# if the item can't be stacked, don't display the label
 	if stack_size == 1:
 		$Label.visible = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/korean-traditional-version-of-nyan-cat-2842.mp3-4e4406710f6927b404d92df48bfc0b5c.mp3str"
+
+[deps]
+
+source_file="res://Audios/korean-traditional-version-of-nyan-cat-2842.mp3"
+dest_files=[ "res://.import/korean-traditional-version-of-nyan-cat-2842.mp3-4e4406710f6927b404d92df48bfc0b5c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

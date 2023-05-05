@@ -8,7 +8,7 @@
 [ext_resource path="res://Audios/breeze.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Audios/Space-Jazz.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=34]
-[ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=35]
+[ext_resource path="res://Outdoor Art/Untitled_Artwork (2).png" type="Texture" id=35]
 [ext_resource path="res://Forest Art/tree2.png" type="Texture" id=36]
 [ext_resource path="res://Forest Art/tree3.png" type="Texture" id=37]
 [ext_resource path="res://Forest Art/tree4.png" type="Texture" id=38]

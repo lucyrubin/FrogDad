@@ -35,6 +35,10 @@ _global_script_class_icons={
 config/name="FrogDad"
 run/main_scene="res://Scenes/TitleScreen.tscn"
 
+[audio]
+
+default_bus_layout=""
+
 [autoload]
 
 JsonData="*res://Scripts/JSONData.gd"
@@ -44,7 +48,7 @@ BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [display]
 
-mouse_cursor/custom_image="res://Art/frog_hand.png"
+mouse_cursor/custom_image="res://Art/UI/frog_hand.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -153,7 +157,3 @@ project/assembly_name="FrogDad0.2"
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

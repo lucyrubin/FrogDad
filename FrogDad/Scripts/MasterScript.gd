@@ -1,8 +1,8 @@
 extends Node
 
 #Mouse cursor variables
-var hand = load("res://Art/frog_hand.png")
-var pointer = load("res://Art/pointer.png")
+var hand = load("res://Art/UI/frog_hand.png")
+var pointer = load("res://Art/UI/pointer.png")
 
 #Tracks background music's position
 var music_position
@@ -15,28 +15,30 @@ var sprite_image = "carrying babies"
 var frog_dad_state = ""
 var item_list = {}
 
+# position variables
 var enter_home = false
 var exit_forest = false
 var exit_home = false
 var enter_forest = false
 var enter_lettuce_garden = false
 var exit_lettuce_garden = false
-var findBabies = false
 var exitJimothyJohns = false
-var picked_up_first_item = false
-var after_eggs_to_tadpoles = false
-var odie_quest_active = false
 var enter_cradle_area = false
 
+# feeding quest
 var num_kids_fed_flies = 0
 var gertrude_fed = false
 var gilbert_fed = false
 var gravy_fed = false
 
+# quest variables
+var findBabies = false
+var picked_up_first_item = false
+var after_eggs_to_tadpoles = false
+var odie_quest_active = false
 var opened_quest_first_time = false
 var learn_control_first_time = true
 var crib_dialogue_shown = false
-
 var after_tadpoles_to_babies = false
 var after_tadpoles_to_babies_dialogue_shown = false
 var began_odie_riddles = false
@@ -54,8 +56,6 @@ var questDictionary = {
 	5: ["talk to kids", "Feed the kids", "Bring flies to kids", "Fly", "image_here"],
 	6: ["talk", "Catch up with Odie", "Talk to Odie", "Odie", "image_here"]
 	}
-
-var currentQuestNum = -1
 # -1 means the intro of getting the note
 # 0 is after the note cut scene (baby jar cut scene/swaddle quest)
 # 1 is the log quest
@@ -63,5 +63,7 @@ var currentQuestNum = -1
 # 3 is get lettuce for jimothy
 # 4 is bring the lettuce to jimothy
 # 5 is bring the flies home
+# 6 is the odie riddles
 
+var currentQuestNum = -1
 var currentQuestArray = [questDictionary[0]]

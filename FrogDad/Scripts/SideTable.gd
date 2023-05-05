@@ -7,7 +7,7 @@ var in_area
 onready var user_interface_node = get_tree().get_root().find_node("UserInterface",true, false)
 onready var table_inventory_node = get_tree().get_root().find_node("SideTableInventory",true, false)
 onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
-onready 	var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
+onready var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
 
 func _ready():
 	table_inventory_node.visible = false

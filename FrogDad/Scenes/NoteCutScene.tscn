@@ -1,14 +1,14 @@
 [gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/NoteCutScene.gd" type="Script" id=1]
-[ext_resource path="res://Art/Untitled_Artwork (3).png" type="Texture" id=2]
+[ext_resource path="res://Home Art/Untitled_Artwork (3).png" type="Texture" id=2]
 [ext_resource path="res://Home Art/door.png" type="Texture" id=3]
 [ext_resource path="res://Home Art/doorHover.png" type="Texture" id=4]
-[ext_resource path="res://Art/note.png" type="Texture" id=5]
-[ext_resource path="res://Fonts/AaChuaiYiDouKaiXinManZaiErGui2.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Art/sparkles1.png" type="Texture" id=7]
-[ext_resource path="res://Art/sparkles2.png" type="Texture" id=8]
-[ext_resource path="res://Art/sparkles3.png" type="Texture" id=9]
+[ext_resource path="res://Art/cutscenes/note.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/handwrittenfont.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Art/cutscenes/sparkles1.png" type="Texture" id=7]
+[ext_resource path="res://Art/cutscenes/sparkles2.png" type="Texture" id=8]
+[ext_resource path="res://Art/cutscenes/sparkles3.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=93]
 0/name = "Untitled_Artwork (3).png 0"

@@ -8,8 +8,6 @@ var screen_size
 var velocity
 var holding_item = null
 
-
-
 func _ready():
 	velocity = Vector2.ZERO
 	screen_size = get_viewport_rect().size

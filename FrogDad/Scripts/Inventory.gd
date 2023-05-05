@@ -9,9 +9,6 @@ export (String) var inventory_type
 onready var inventory_slots = $GridContainer
 var ItemDropClass = preload("res://Scenes/ItemDrop.tscn")
 
-const ItemHoverInfoScript = preload("res://Scripts/ItemHoverInfo.gd")
-var ItemHoverInfoClass = preload("res://Scenes/ItemHoverInfo.tscn")
-
 var inventory_open = false
 var mouse_in_inventory = false
 var inventory_data = InventoryData.new()
@@ -23,9 +20,7 @@ onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false
 func _ready():
 	if inventory_type == "player":
 		item_list = MasterScript.item_list
-	
 	var slots = inventory_slots.get_children()
-		
 	inventory_data.setup(slots.size(), item_list)
 	
 	# allow slots to be clicked on and give them each an index
@@ -33,8 +28,8 @@ func _ready():
 		slots[i].connect("gui_input", self, "slot_gui_input", [slots[i]]) 
 		
 		## this is code that i wrote trying to make item info show up when you hover, it doesn't work yet - lucy
-#		slots[i].connect("mouse_entered", self, "slot_mouse_entered", [slots[i]])
-#		slots[i].connect("mouse_entered", self, "slot_mouse_exited", [slots[i]])
+		#slots[i].connect("mouse_entered", self, "slot_mouse_entered", [slots[i]])
+		#slots[i].connect("mouse_entered", self, "slot_mouse_exited", [slots[i]])
 		## this is code that i wrote trying to make item info show up when you hover, it doesn't work yet - lucy
 		
 		slots[i].slot_index = i
@@ -47,28 +42,6 @@ func initialize_inventory():
 		# if there is something in the slot, initialize the item 
 		if inventory_data.inventory.has(i) and inventory_data.inventory[i][1] > 0: 
 			slots[i].initialize_item(inventory_data.inventory[i][0], inventory_data.inventory[i][1])
-
-## this is code that i wrote trying to make item info show up when you hover, it doesn't work yet - lucy
-#func slot_mouse_entered (slot: SlotClass):
-#	if slot.get_child_count() == 1:
-#		print(slot)
-#		var hover_info = ItemHoverInfoClass.instance()
-#		hover_info.get_node("Label").text = "hi"
-#		slot.add_child(hover_info)
-#
-#		print(slot.get_children())
-#		print(hover_info.visible)
-#
-#
-#
-#
-#func slot_mouse_exited (slot: SlotClass):
-#	if not Rect2(Vector2(), slot.rect_size	).has_point(get_local_mouse_position()):
-#		print("leave")
-#		for child in slot.get_children():
-#			if child is ItemHoverInfoScript:
-#				slot.remove_child(child)
-## this is code that i wrote trying to make item info show up when you hover, it doesn't work yet - lucy	
 
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton: 
@@ -173,18 +146,14 @@ func removeItems(numItems, itemType):
 			else:
 				inventory_data.inventory[item][1] -= num_left_to_remove
 				num_left_to_remove = 0
-				
-
 			item_list_to_update.append(item)
 	for item in item_list_to_update:
 		if inventory_data.inventory[item][1] <= 0:
 			inventory_data.inventory.erase(item)
 			update_slot_visual(item, itemType, 0)
-		
 		else: 
 			update_slot_visual(item, inventory_data.inventory[item][0], inventory_data.inventory[item][1])
-
-
+			
 ### drop is not being used right now
 func drop():
 	if FrogDad.holding_item: 
@@ -195,7 +164,7 @@ func drop():
 		dropped_item.item_name = FrogDad.holding_item.item_name
 		if quantity == 0:
 			FrogDad.holding_item.queue_free()
-			#FrogDad.holding_item = null
+			FrogDad.holding_item = null
 		return dropped_item
 
 func _on_TextureRect_mouse_entered():
@@ -203,3 +172,26 @@ func _on_TextureRect_mouse_entered():
 
 func _on_TextureRect_mouse_exited():
 	mouse_in_inventory = false;
+
+
+## this is code that i wrote trying to make item info show up when you hover, it doesn't work yet - lucy
+#func slot_mouse_entered (slot: SlotClass):
+#	if slot.get_child_count() == 1:
+#		print(slot)
+#		var hover_info = ItemHoverInfoClass.instance()
+#		hover_info.get_node("Label").text = "hi"
+#		slot.add_child(hover_info)
+#
+#		print(slot.get_children())
+#		print(hover_info.visible)
+#
+#
+#
+#
+#func slot_mouse_exited (slot: SlotClass):
+#	if not Rect2(Vector2(), slot.rect_size	).has_point(get_local_mouse_position()):
+#		print("leave")
+#		for child in slot.get_children():
+#			if child is ItemHoverInfoScript:
+#				slot.remove_child(child)
+## this is code that i wrote trying to make item info show up when you hover, it doesn't work yet - lucy	

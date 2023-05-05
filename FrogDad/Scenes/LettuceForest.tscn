@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Forest Art/tree1.png" type="Texture" id=1]
-[ext_resource path="res://Art/Untitled_Artwork (2).png" type="Texture" id=2]
+[ext_resource path="res://Outdoor Art/Untitled_Artwork (2).png" type="Texture" id=2]
 [ext_resource path="res://Scenes/LettucePlot.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/FrogDad.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Fly.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/ForestEntrance.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/LettuceForest.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/LettuceForest.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )

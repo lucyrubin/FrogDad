@@ -10,14 +10,13 @@ func _ready():
 	# bring gertrude in
 	$Gertrude/BabyImage/AnimationPlayer.play("fly_up")
 	$SwooshAudio.play()
-	
-	
 	yield($Gertrude/BabyImage/AnimationPlayer, "animation_finished")
+	
 	# wait
 	yield(get_tree().create_timer(1), "timeout")
 	
+	# gertrude grows up
 	baby_grow_up($Gertrude)
-	
 	yield($Gertrude/ToddlerImage/AnimationPlayer, "animation_finished")
 	
 	# show gertrude text
@@ -25,23 +24,22 @@ func _ready():
 	yield(show_stats("GERTRUDE","Will probably rule the world one day.",  
 		"Likes: \n     - Animals\n     - Fruit salad",  
 		"Dislikes: \n     - Cruel injustice"), "completed")
+	
 	# move gertrude over so that gilbert can come in
 	$Gertrude/ToddlerImage/AnimationPlayer.play("move_to_side")
 	fade_out_and_reset_stats()
-	
 	
 	# bring gilbert in
 	$Gilbert/BabyImage/AnimationPlayer.play("fly_up")
 	yield(get_tree().create_timer(0.5), "timeout")
 	$SwooshAudio.play()
-	
 	yield($Gilbert/BabyImage/AnimationPlayer, "animation_finished")
 	
 	# wait
 	yield(get_tree().create_timer(1), "timeout")
 	
+	#gilbert grows up
 	baby_grow_up($Gilbert)
-	
 	yield($Gilbert/ToddlerImage/AnimationPlayer, "animation_finished")
 	
 	# show gilbert text
@@ -58,14 +56,13 @@ func _ready():
 	$Gravy/BabyImage/AnimationPlayer.play("fly_up")
 	yield(get_tree().create_timer(0.5), "timeout")
 	$SwooshAudio.play()
-	
 	yield($Gravy/BabyImage/AnimationPlayer, "animation_finished")
 	
 	# wait
 	yield(get_tree().create_timer(1), "timeout")
 	
+	# gilbert grows up
 	baby_grow_up($Gravy)
-	
 	yield($Gravy/ToddlerImage/AnimationPlayer, "animation_finished")
 	
 	# show gravy text
@@ -74,6 +71,7 @@ func _ready():
 	"Likes: \n     - Being in a groove\n     -  Small bags",  
 	"Dislikes: \n     - Being in a funk\n     - Small pockets"), "completed")
 	
+	# wait
 	yield(get_tree().create_timer(1), "timeout")
 	
 	# move everyone to the middle

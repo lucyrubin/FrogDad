@@ -9,11 +9,11 @@
 [ext_resource path="res://Scripts/JimothyJohns.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Jimothy.gd" type="Script" id=8]
 [ext_resource path="res://Fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Temporary Clipart/thoughtbubble.png" type="Texture" id=10]
-[ext_resource path="res://Art/jimothy.png" type="Texture" id=11]
-[ext_resource path="res://Art/JimothyJohn's.png" type="Texture" id=12]
-[ext_resource path="res://Temporary Clipart/Christmas icons created by Freepik.png" type="Texture" id=13]
-[ext_resource path="res://Art/darkLeaf.png" type="Texture" id=14]
+[ext_resource path="res://Art/UI/thoughtbubble.png" type="Texture" id=10]
+[ext_resource path="res://Art/jimothy/jimothy.png" type="Texture" id=11]
+[ext_resource path="res://JJ's Art/JimothyJohn's.png" type="Texture" id=12]
+[ext_resource path="res://JJ's Art/Christmas icons created by Freepik.png" type="Texture" id=13]
+[ext_resource path="res://Art/UI/darkLeaf.png" type="Texture" id=14]
 [ext_resource path="res://Audios/Lobby-Time.mp3" type="AudioStream" id=15]
 [ext_resource path="res://JJ's Art/ketchupmustard.png" type="Texture" id=16]
 [ext_resource path="res://JJ's Art/clock.png" type="Texture" id=17]
@@ -180,7 +180,7 @@ margin_bottom = 302.0
 position = Vector2( 587, 249 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 13 )
-frame = 1
+frame = 2
 speed_scale = 0.25
 playing = true
 
@@ -422,7 +422,6 @@ texture = ExtResource( 17 )
 
 [node name="FlyJar" parent="." instance=ExtResource( 19 )]
 position = Vector2( 595, 224 )
-frame = 1
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
 [connection signal="mouse_entered" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_mouse_entered"]
