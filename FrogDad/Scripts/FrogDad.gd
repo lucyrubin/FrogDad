@@ -7,6 +7,7 @@ export(NodePath) var inventory_path
 var screen_size
 var velocity
 var holding_item = null
+var quest_number = MasterScript.currentQuestNum
 
 func _ready():
 	velocity = Vector2.ZERO
@@ -51,43 +52,86 @@ func _physics_process(delta):
 
 func move_down_and_left():
 	velocity.x -= 1
-	velocity.y += 1
-	$AnimatedSprite.animation = "left"
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "left_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "left_swaddle"
+	else:
+		$AnimatedSprite.animation = "left"
 
 func move_up_and_left():
 	velocity.x -= 1
-	velocity.y -= 1
-	$AnimatedSprite.animation = "left"
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "left_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "left_swaddle"
+	else:
+		$AnimatedSprite.animation = "left"
 	
 func move_up_and_right():
 	velocity.x += 1
 	velocity.y -= 1
-	$AnimatedSprite.animation = "right"
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "right_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "right_swaddle"
+	else:
+		$AnimatedSprite.animation = "right"
 
 func move_down_and_right():
 	velocity.x += 1
 	velocity.y += 1
-	$AnimatedSprite.animation = "right"
-	
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "right_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "right_swaddle"
+	else:
+		$AnimatedSprite.animation = "right"
+
+# -1 means the intro of getting the note
+# 0 is after the note cut scene (baby jar cut scene/swaddle quest)
+# 1 is the log quest
+# 2 is go get flies from jimothy (talk to jimothy)
+# 3 is get lettuce for jimothy
+# 4 is bring the lettuce to jimothy
+# 5 is bring the flies home
+# 6 is the odie riddles
+
 func move_down():
-	if MasterScript.currentQuestNum >= 5:
+	velocity.y += 1
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
 		$AnimatedSprite.animation = "down_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "down_swaddle"
 	else:
 		$AnimatedSprite.animation = "down"
-	velocity.y += 1
 
 func move_up():
 	velocity.y -= 1
-	$AnimatedSprite.animation = "up"
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "up_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "up_swaddle"
+	else:
+		$AnimatedSprite.animation = "up"
 
 func move_right():
 	velocity.x += 1
-	$AnimatedSprite.animation = "right"
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "right_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "right_swaddle"
+	else:
+		$AnimatedSprite.animation = "right"
 
 func move_left():
 	velocity.x -= 1
-#	$AnimatedSprite.flip_h = true
-	$AnimatedSprite.animation = "left"
+	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+		$AnimatedSprite.animation = "left_holding"
+	elif quest_number == 1:
+		$AnimatedSprite.animation = "left_swaddle"
+	else:
+		$AnimatedSprite.animation = "left"
 
 func toggle_dialogue_box_visibility(dialogue, dialogue_name):
 	$DialogueBox.visible = true
