@@ -54,7 +54,6 @@ func _process(delta):
 	
 
 func deleteQuest(SubQuest):
-	$CompleteSound.play()
 	# remove quest from MasterScript.currentQuestArray
 	FrogDad_inventory.removeItems(MasterScript.currentQuestArray[0][2], MasterScript.currentQuestArray[0][3])
 	MasterScript.currentQuestArray.remove(0) # if we have concurrent requests this should be changed to MasterScript.currentQuestNum, not totally sure what else we would need to change though
@@ -95,7 +94,7 @@ func deleteQuest(SubQuest):
 	
 		
 		
-	
+	$CompleteSound.play()
 	SubQuest.queue_free()
 								
 		# the second value of this is just an identifier for if you want to do something after dialogue has ended
