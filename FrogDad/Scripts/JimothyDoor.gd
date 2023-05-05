@@ -13,6 +13,7 @@ func _ready():
 	current_fram = 0
 
 func go_inside():
+	$DoorSound.play()
 	SceneTransition.change_scene("res://Scenes/JimothyJohns.tscn")
 
 func _on_Area2D_body_entered(body):

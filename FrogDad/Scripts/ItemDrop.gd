@@ -43,6 +43,7 @@ func _physics_process(delta):
 	velocity=move_and_slide(velocity, Vector2.UP)
 
 func pick_up_item(body):
+	$Pop.play()
 	player = body
 	being_picked_up = true
 	direction_to_move = global_position.direction_to(Camera2DNode.get_camera_position() +  Vector2(330,-200))

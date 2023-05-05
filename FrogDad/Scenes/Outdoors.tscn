@@ -771,7 +771,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=148]
-radius = 37.0135
+radius = 23.0217
 
 [sub_resource type="AtlasTexture" id=107]
 flags = 4
@@ -802,7 +802,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=150]
-radius = 31.0
+radius = 23.0217
 
 [sub_resource type="AtlasTexture" id=153]
 flags = 4
@@ -872,7 +872,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=136]
-radius = 22.3726
+radius = 188.889
 height = 640.57
 
 [sub_resource type="AtlasTexture" id=137]
@@ -894,7 +894,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=140]
-radius = 132.061
+radius = 244.0
 
 [sub_resource type="RectangleShape2D" id=141]
 extents = Vector2( 59, 48 )
@@ -918,7 +918,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=145]
-extents = Vector2( 9, 14.75 )
+extents = Vector2( 97.75, 14.75 )
 
 [node name="Outdoors" type="Node2D"]
 position = Vector2( 1311, -2900 )
@@ -3932,7 +3932,6 @@ scale = Vector2( 0.35, 0.35 )
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="FrogDad"]
-scale = Vector2( 1, 1 )
 current = true
 limit_left = 28
 limit_top = -5086
