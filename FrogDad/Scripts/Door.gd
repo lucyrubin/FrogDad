@@ -20,6 +20,7 @@ func set_locked(boolean):
 
 func go_outside():
 	if !locked:
+		$DoorSound.play()
 		MasterScript.exit_home = true
 		SceneTransition.change_scene("res://Scenes/Outdoors.tscn")
 

@@ -75,6 +75,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 		if event.button_index == BUTTON_LEFT && event.pressed: 
 			if FrogDad.holding_item != null: # if currently holding an item
 				if !slot.item: # if empty slot, place holding item to slot
+					$Pop.play()
 					left_click_empty_slot(slot)
 				else: # else, slot already has an item
 					if FrogDad.holding_item.item_name != slot.item.item_name: # the items are different, so swap them

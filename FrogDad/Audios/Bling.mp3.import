@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bling.mp3-20a08275d5c0701023dc5b298d703aa9.mp3str"
+
+[deps]
+
+source_file="res://Audios/Bling.mp3"
+dest_files=[ "res://.import/Bling.mp3-20a08275d5c0701023dc5b298d703aa9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

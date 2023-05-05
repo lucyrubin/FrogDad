@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Scripts/Sink.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Microwave.gd" type="Script" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://Scenes/Cradle.gd" type="Script" id=43]
 [ext_resource path="res://Art/frog egg sprite (v2) copy.png" type="Texture" id=44]
 [ext_resource path="res://Art/frog egg sprite (v2) copy 2.png" type="Texture" id=45]
+[ext_resource path="res://Audios/Door.mp3" type="AudioStream" id=46]
 
 [sub_resource type="TileSet" id=55]
 0/name = "Untitled_Artwork (3).png 0"
@@ -1257,6 +1258,7 @@ position = Vector2( -272, 256 )
 scale = Vector2( 0.08, 0.08 )
 z_index = 500
 frames = SubResource( 153 )
+frame = 1
 speed_scale = 0.8
 playing = true
 
@@ -1294,6 +1296,10 @@ shape = SubResource( 70 )
 scale = Vector2( 0.950521, 0.960938 )
 frames = SubResource( 75 )
 animation = "hover"
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="YSort/Door"]
+stream = ExtResource( 46 )
+volume_db = 10.0
 
 [node name="EnteranceArea" type="Area2D" parent="YSort/Door"]
 position = Vector2( 0, 104 )

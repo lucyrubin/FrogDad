@@ -19,6 +19,7 @@ func _input(event):
 			go_inside()
 
 func go_inside():
+	$DoorSound.play()
 	MasterScript.enter_home = true
 	SceneTransition.change_scene("res://Scenes/Main.tscn")
 
