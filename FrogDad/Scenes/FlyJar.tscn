@@ -17,6 +17,7 @@ visible = false
 position = Vector2( 157, 503 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 16 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
