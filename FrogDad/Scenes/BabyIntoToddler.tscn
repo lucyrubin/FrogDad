@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://Art/cutscenes/Gertrude_Character_Sheet__Colored___1_-removebg-preview (1).png" type="Texture" id=1]
 [ext_resource path="res://Scripts/BabyIntoToddler.gd" type="Script" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://Art/gravybaby/gravybaby (6).png" type="Texture" id=43]
 [ext_resource path="res://Art/gertrude/gertrude (1).png" type="Texture" id=44]
 [ext_resource path="res://Art/gertrude/gertrude (8).png" type="Texture" id=45]
+[ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=46]
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
@@ -662,7 +663,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 68, 321.333 ) ]
+"values": [ Vector2( -22, 361.333 ) ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -987,7 +988,7 @@ position = Vector2( 155.714, 702.857 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 22 )
 animation = "new texture"
-frame = 18
+frame = 13
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gertrude/BabyImage"]
@@ -1020,7 +1021,7 @@ position = Vector2( 68, 321.333 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 27 )
 animation = "new texture"
-frame = 9
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gilbert/BabyImage"]
@@ -1049,11 +1050,11 @@ position = Vector2( 526, 281 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="BabyImage" type="AnimatedSprite" parent="Gravy"]
-position = Vector2( 68, 321.333 )
+position = Vector2( -22, 361.333 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 36 )
 animation = "new texture"
-frame = 7
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gravy/BabyImage"]
@@ -1144,12 +1145,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 188.0
-margin_top = 529.0
-margin_right = 1066.0
-margin_bottom = 623.0
+margin_left = 350.0
+margin_top = 530.0
+margin_right = 810.0
+margin_bottom = 608.0
 rect_scale = Vector2( 0.75, 0.75 )
 theme = ExtResource( 10 )
+custom_fonts/font = ExtResource( 46 )
 text = "Continue to Next Life Stage"
 
 [node name="CutSceneBackgroundMusic" type="AudioStreamPlayer" parent="."]
