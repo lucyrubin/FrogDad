@@ -98,6 +98,7 @@ func left_click_empty_slot(slot: SlotClass): # place holding item into the slot
 	FrogDad.find_node("Quest", true, false).check_if_quest_fulfilled()
 	
 func left_click_different_item(event: InputEvent, slot: SlotClass): # swap items
+	$Pop.play()
 	inventory_data.remove_item(slot)
 	inventory_data.add_item_to_empty_slot(FrogDad.holding_item, slot)
 	var temp_item = slot.item
@@ -110,17 +111,20 @@ func left_click_same_item(slot: SlotClass):
 	var stack_size = int(JsonData.item_data[slot.item.item_name]["StackSize"]) # get the stack size for the item
 	var able_to_add = stack_size - slot.item.item_quantity # calculate how much more can fit in the slot
 	if able_to_add >= FrogDad.holding_item.item_quantity: # if there is enough room to add all of the stuff you are holding
+		$Pop.play()
 		inventory_data.add_item_quantity(slot, FrogDad.holding_item.item_quantity)
 		slot.item.add_item_quantity(FrogDad.holding_item.item_quantity)
 		FrogDad.holding_item.queue_free() # get rid of what you are holding
 		FrogDad.holding_item = null
 	else : # if there is not enough room in the slot for everything that you are holding
+		$Pop.play()
 		inventory_data.add_item_quantity(slot, able_to_add)
 		slot.item.add_item_quantity(able_to_add) # add as much as you can
 		FrogDad.holding_item.decrease_item_quantity(able_to_add) # leave whatever is left over in your hand
 	FrogDad.find_node("Quest", true, false).check_if_quest_fulfilled()
 	
 func left_click_not_holding(slot: SlotClass): # remove item from slot and make it the FrogDad.holding_item
+	$Pop.play()
 	inventory_data.remove_item(slot)
 	FrogDad.holding_item = slot.item
 	slot.pick_from_slot()

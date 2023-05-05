@@ -1,8 +1,8 @@
 [gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://GIFs/korean-traditional-version-of-nyan-cat-2842.mp3" type="AudioStream" id=1]
-[ext_resource path="res://House Art/TVHover.png" type="Texture" id=2]
-[ext_resource path="res://House Art/TV.png" type="Texture" id=3]
+[ext_resource path="res://Home Art/TVHover.png" type="Texture" id=2]
+[ext_resource path="res://Home Art/TV.png" type="Texture" id=3]
 [ext_resource path="res://GIFs/New_Jeans1.png" type="Texture" id=4]
 [ext_resource path="res://GIFs/OMG.mp3" type="AudioStream" id=5]
 [ext_resource path="res://GIFs/New_Jeans3.png" type="Texture" id=6]
