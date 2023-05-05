@@ -86,7 +86,7 @@ func deleteQuest(SubQuest):
 								{avatar = "", text = "There's a forest outside. Maybe I can get wood and make a cradle for them."}], "Finished cloth quest")
 								
 	if SubQuest and SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Collect Logs for Crib":
-		
+		MasterScript.music_position = BackgroundMusic.get_playback_position()
 		SceneTransition.change_scene("res://Scenes/CradleCutScene.tscn")
 		
 		
