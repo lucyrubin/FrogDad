@@ -50,7 +50,7 @@ disabled = true
 position = Vector2( 3, -9 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 9 )
-frame = 4
+frame = 15
 playing = true
 
 [node name="Speech" type="TextureRect" parent="."]

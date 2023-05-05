@@ -18,7 +18,7 @@
 
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 20.0006
-height = 190.0
+height = 213.332
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
@@ -149,7 +149,7 @@ shape = SubResource( 13 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "down"
-frame = 3
+frame = 1
 playing = true
 
 [node name="PickupZone" type="Area2D" parent="."]
@@ -168,13 +168,11 @@ visible = false
 position = Vector2( 6.66667, -326.666 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 17 )
-frame = 1
 speed_scale = 0.6
 playing = true
 
 [node name="FlyJar" parent="." instance=ExtResource( 16 )]
 position = Vector2( 13.3333, -346.667 )
-frame = 1
 
 [node name="GameGirl" parent="." instance=ExtResource( 17 )]
 visible = false

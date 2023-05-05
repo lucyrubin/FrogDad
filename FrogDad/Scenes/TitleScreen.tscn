@@ -111,39 +111,40 @@ anims/RESET = SubResource( 1 )
 anims/wiggle = SubResource( 2 )
 
 [node name="MainMenu" type="VBoxContainer" parent="UI"]
-margin_left = 464.0
-margin_top = 404.0
-margin_right = 560.0
-margin_bottom = 488.0
+margin_left = 460.0
+margin_top = 405.0
+margin_right = 565.0
+margin_bottom = 494.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme = SubResource( 8 )
 
 [node name="StartButton" type="Button" parent="UI/MainMenu"]
-margin_right = 96.0
-margin_bottom = 37.0
+margin_right = 106.0
+margin_bottom = 40.0
 size_flags_vertical = 2
 theme = ExtResource( 2 )
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="UI/MainMenu"]
-margin_top = 47.0
-margin_right = 96.0
-margin_bottom = 84.0
+margin_top = 50.0
+margin_right = 106.0
+margin_bottom = 90.0
 theme = ExtResource( 2 )
 text = "Quit"
 
 [node name="FrogDad" type="AnimatedSprite" parent="."]
-position = Vector2( 770, 76 )
+position = Vector2( 780, 80 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 10 )
 centered = false
 
 [node name="Gertrude" type="Sprite" parent="."]
-position = Vector2( 205, 288 )
+position = Vector2( 210, 300 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 5 )
 centered = false
+flip_h = true
 
 [node name="Gravy" type="Sprite" parent="."]
 position = Vector2( 135, 433 )
