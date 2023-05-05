@@ -611,10 +611,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=130]
-length = 0.001
+[sub_resource type="Animation" id=142]
+resource_name = "RESET"
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../FrogDad:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -623,37 +623,39 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -208, 264 ) ]
+"values": [ Vector2( -200, 264 ) ]
 }
 
-[sub_resource type="Animation" id=131]
+[sub_resource type="Animation" id=143]
+resource_name = "walk_away"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../FrogDad:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.435275, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 300, 264 ), Vector2( 1200, 264 ) ]
+"values": [ Vector2( 300, 264 ), Vector2( 1300, 264 ) ]
 }
 
-[sub_resource type="Animation" id=132]
+[sub_resource type="Animation" id=144]
+resource_name = "walk_in"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../FrogDad:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.307786, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -208, 264 ), Vector2( 300, 264 ) ]
+"values": [ Vector2( -200, 264 ), Vector2( 300, 264 ) ]
 }
 
 [sub_resource type="AtlasTexture" id=63]
@@ -1386,7 +1388,7 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 1
+frame = 4
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
@@ -1394,7 +1396,7 @@ position = Vector2( -424, 280 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 112 )
 animation = "default 1"
-frame = 6
+frame = 5
 playing = true
 offset = Vector2( 3648.57, 337.143 )
 
@@ -1402,7 +1404,7 @@ offset = Vector2( 3648.57, 337.143 )
 position = Vector2( 136, 448 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 114 )
-frame = 16
+frame = 11
 speed_scale = 3.0
 playing = true
 
@@ -1410,6 +1412,7 @@ playing = true
 position = Vector2( 960, 440 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 113 )
+frame = 7
 speed_scale = 2.0
 playing = true
 
@@ -1562,26 +1565,25 @@ anims/RESET = SubResource( 110 )
 anims/fade_out = SubResource( 111 )
 
 [node name="FrogDad" type="AnimatedSprite" parent="SecondPart"]
-position = Vector2( 1200, 264 )
+position = Vector2( -200, 264 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 129 )
-animation = "down"
-frame = 1
+animation = "right"
+frame = 4
 speed_scale = 0.5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/FrogDad"]
-root_node = NodePath("")
-anims/RESET = SubResource( 130 )
-anims/walk_away = SubResource( 131 )
-anims/walk_in_from_side = SubResource( 132 )
+anims/RESET = SubResource( 142 )
+anims/walk_away = SubResource( 143 )
+anims/walk_in = SubResource( 144 )
 
 [node name="BabyGertrude" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -289, 427 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 71 )
 animation = "new texture"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
@@ -1605,7 +1607,7 @@ position = Vector2( -115, 284 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 137 )
 animation = "new texture"
-frame = 7
+frame = 6
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGilbert"]
@@ -1627,7 +1629,7 @@ position = Vector2( -112, 288 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 141 )
 animation = "new texture"
-frame = 8
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGravy"]
@@ -1649,7 +1651,7 @@ anims/walk_away = SubResource( 91 )
 position = Vector2( -216, 296 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 95 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Jimothy"]
@@ -1661,6 +1663,7 @@ anims/walk_in_from_side = SubResource( 97 )
 position = Vector2( 1300, 284 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 100 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Odie"]
@@ -1673,7 +1676,6 @@ position = Vector2( -200, 284 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 102 )
 animation = "right"
-frame = 1
 speed_scale = 0.5
 playing = true
 

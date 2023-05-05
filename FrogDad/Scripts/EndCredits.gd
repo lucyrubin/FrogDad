@@ -1,12 +1,5 @@
 extends Node2D
 
-
-func _ready():
-	BackgroundMusic.stop()
-	$CreditMusic.play()
-	# end credit music by @HeatleyBros on YoutTube
-	#yield(run_intro(), "completed")
-	run_frog_dad()
 var credit_text = ["Code for inventory system from @Arkeve on YouTube", 
 "Scene transition code from @TheShaggyDev on YouTube",
 "A Green Pig by @Pixverses on YouTube",
@@ -17,6 +10,11 @@ var credit_text = ["Code for inventory system from @Arkeve on YouTube",
 
 var credit_index = 0
 
+func _ready():
+	BackgroundMusic.stop()
+	$CreditMusic.play()
+	# end credit music by @HeatleyBros on YoutTube
+	yield(run_intro(), "completed")
 
 func run_intro():
 	yield(get_tree().create_timer(1), "timeout")
@@ -31,8 +29,6 @@ func run_intro():
 	$FirstPart/DarkOverlay.hide()
 	$FirstPart/Button.show()
 	$FirstPart/BouncingArrow.show()
-	
-	
 
 func show_text(label, text_to_show):
 	label.visible = false
@@ -131,12 +127,13 @@ func run_frog_dad():
 	
 	var frog_dad = $SecondPart/FrogDad
 	var frog_dad_animation_player = $SecondPart/FrogDad/AnimationPlayer
-	frog_dad_animation_player.play("walk_in_from_side")
+	frog_dad_animation_player.play("walk_in")
 	yield(frog_dad_animation_player, "animation_finished")
 	show_text($SecondPart/ActualCredits/Label, credit_text[credit_index])
 	credit_index+=1
 	frog_dad.animation = "down"
 	frog_dad.frame = 0
+	frog_dad.playing = false
 	
 	yield(get_tree().create_timer(1.5), "timeout")
 	show_text($SecondPart/Label1, "After becoming an empty nester, Frog Dad discovered his love for cooking, which brought him closer to Jimothy.")
@@ -152,6 +149,7 @@ func run_frog_dad():
 	frog_dad.animation = "right"
 	frog_dad.frame = 0
 	frog_dad_animation_player.play("walk_away")
+	frog_dad.playing = true
 	$SecondPart/Background2.show()
 	$SecondPart/Background2/AnimationPlayer.play("walk_away")
 	$SecondPart/ActualCredits/Label/AnimationPlayer.play("fade_out")
