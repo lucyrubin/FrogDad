@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	BackgroundMusic.stop()
+	MasterScript.music_position = BackgroundMusic.get_playback_position()
 	$CutSceneBackgroundMusic.play()
 	yield(get_tree().create_timer(1), "timeout")
 	
@@ -145,3 +146,4 @@ func _on_ContinueButton_pressed():
 	MasterScript.after_tadpoles_to_babies = true
 	SceneTransition.change_scene("res://Scenes/Main.tscn")
 	$CutSceneBackgroundMusic.stop()
+	BackgroundMusic.play(MasterScript.music_position)
