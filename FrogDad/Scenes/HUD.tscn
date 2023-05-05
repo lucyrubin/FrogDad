@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Art/todo_icon.png" type="Texture" id=1]
 [ext_resource path="res://Outdoor Art/Outdoors_Map.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scripts/ToggleMapButton.gd" type="Script" id=13]
 [ext_resource path="res://map_label_font.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Audios/pop.mp3" type="AudioStream" id=15]
+[ext_resource path="res://Audios/ahhhh.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Home Art/fridge_box.png" type="Texture" id=19]
 [ext_resource path="res://Home Art/dresserslotfull.png" type="Texture" id=20]
 [ext_resource path="res://Home Art/fridgeFull.png" type="Texture" id=21]
@@ -757,6 +758,10 @@ scale = Vector2( 2, 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameGirl"]
 anims/RESET = SubResource( 110 )
 anims/fade_in = SubResource( 111 )
+
+[node name="Ahhh" type="AudioStreamPlayer" parent="GameGirl"]
+stream = ExtResource( 16 )
+volume_db = -5.0
 
 [connection signal="timeout" from="PopUpNotification/PopUpTimer" to="." method="_on_PopUpTimer_timeout"]
 [connection signal="mouse_entered" from="ToggleQuestButton" to="ToggleQuestButton" method="_on_ToggleQuestButton_mouse_entered"]

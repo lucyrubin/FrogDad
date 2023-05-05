@@ -176,6 +176,7 @@ func _show_dialog(index):
 	
 	if dialog.text == "How would you like a state-of-the-art, electronic square device??":
 		HUD.find_node("GameGirl", true, false).find_node("AnimationPlayer", true, false).play("fade_in")
+		HUD.find_node("GameGirl", true, false).find_node("Ahhh", true, false).play()
 
 func _on_TextAnimation_tween_all_completed():
 	if !MasterScript.odie_quest_active:
