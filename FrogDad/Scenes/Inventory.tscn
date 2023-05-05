@@ -20,6 +20,7 @@ script = ExtResource( 4 )
 
 [node name="Pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -10.0
 
 [node name="Area2D" type="Area2D" parent="."]
 priority = 1.0

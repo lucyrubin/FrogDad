@@ -8,6 +8,7 @@ onready var user_interface_node = get_tree().get_root().find_node("UserInterface
 onready var table_inventory_node = get_tree().get_root().find_node("SideTableInventory",true, false)
 onready var frogdad_node = get_tree().get_root().find_node("FrogDad",true, false)
 onready var DarkBackground = get_tree().get_root().find_node("DarkBackground", true, false)
+const PickUpZoneClass = preload("res://Scripts/PickupZone.gd")
 
 func _ready():
 	table_inventory_node.visible = false
@@ -50,14 +51,16 @@ func _on_Side_Table_mouse_exited():
 		$AnimatedSprite.set_frame(current_fram)
 		Input.set_custom_mouse_cursor(MasterScript.hand)
 
-func _on_Area2D_area_entered(_area):
-	if MasterScript.frog_dad_state == "":
-		in_area = true
-		$Interact.visible = true
-		$Interact/AnimationPlayer.play("Float")
+func _on_Area2D_area_entered(area):
+	if area is PickUpZoneClass:
+		if MasterScript.frog_dad_state == "":
+			in_area = true
+			$Interact.visible = true
+			$Interact/AnimationPlayer.play("Float")
 
-func _on_Area2D_area_exited(_area):
-	if MasterScript.frog_dad_state == "":
-		in_area = false
-		$Interact.visible = false
-		$Interact/AnimationPlayer.stop()
+func _on_Area2D_area_exited(area):
+	if area is PickUpZoneClass:
+		if MasterScript.frog_dad_state == "":
+			in_area = false
+			$Interact.visible = false
+			$Interact/AnimationPlayer.stop()

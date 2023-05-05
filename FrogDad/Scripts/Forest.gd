@@ -33,6 +33,9 @@ func _ready():
 		$FrogDad/AnimatedSprite.animation = "up_holding"
 	elif MasterScript.currentQuestNum == 1:
 		$FrogDad/AnimatedSprite.animation = "up_swaddle"
+	else: 
+		$FrogDad/AnimatedSprite.animation = "up"
+		
 
 func _process(delta):
 	$FrogDad.z_index = $FrogDad.position.y

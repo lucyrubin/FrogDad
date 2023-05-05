@@ -404,7 +404,7 @@ energy = 0.79
 
 [node name="JimothyJohnsMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
-volume_db = -10.739
+volume_db = -2.0
 
 [node name="Glass" type="Sprite" parent="."]
 position = Vector2( 841, 295 )
@@ -423,7 +423,6 @@ texture = ExtResource( 17 )
 
 [node name="FlyJar" parent="." instance=ExtResource( 19 )]
 position = Vector2( 595, 224 )
-frame = 0
 
 [connection signal="gui_input" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_gui_input"]
 [connection signal="mouse_entered" from="Jimothy/ColorRect" to="Jimothy" method="_on_ColorRect_mouse_entered"]

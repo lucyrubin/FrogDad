@@ -163,12 +163,14 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="SkipIntroButton" type="Button" parent="."]
+visible = false
 margin_top = 89.0
 margin_right = 214.0
 margin_bottom = 195.0
 text = "Skip Intro"
 
 [node name="SkipIntroGoToJJ" type="Button" parent="."]
+visible = false
 margin_top = 216.0
 margin_right = 214.0
 margin_bottom = 322.0

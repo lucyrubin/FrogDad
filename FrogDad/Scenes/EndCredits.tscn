@@ -1376,7 +1376,6 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="FirstPart" type="Node2D" parent="."]
-visible = false
 
 [node name="Background" type="ColorRect" parent="FirstPart"]
 margin_right = 1024.0
@@ -1388,7 +1387,7 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 4
+frame = 12
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
@@ -1396,7 +1395,7 @@ position = Vector2( -424, 280 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 112 )
 animation = "default 1"
-frame = 5
+frame = 13
 playing = true
 offset = Vector2( 3648.57, 337.143 )
 
@@ -1404,7 +1403,7 @@ offset = Vector2( 3648.57, 337.143 )
 position = Vector2( 136, 448 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 114 )
-frame = 11
+frame = 8
 speed_scale = 3.0
 playing = true
 
@@ -1412,7 +1411,7 @@ playing = true
 position = Vector2( 960, 440 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 113 )
-frame = 7
+frame = 10
 speed_scale = 2.0
 playing = true
 
@@ -1569,7 +1568,7 @@ position = Vector2( -200, 264 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 129 )
 animation = "right"
-frame = 4
+frame = 3
 speed_scale = 0.5
 playing = true
 
@@ -1583,7 +1582,7 @@ position = Vector2( -289, 427 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 71 )
 animation = "new texture"
-frame = 1
+frame = 9
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
@@ -1607,7 +1606,7 @@ position = Vector2( -115, 284 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 137 )
 animation = "new texture"
-frame = 6
+frame = 14
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGilbert"]
@@ -1629,7 +1628,7 @@ position = Vector2( -112, 288 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 141 )
 animation = "new texture"
-frame = 7
+frame = 15
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGravy"]
@@ -1651,7 +1650,7 @@ anims/walk_away = SubResource( 91 )
 position = Vector2( -216, 296 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 95 )
-frame = 4
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Jimothy"]
@@ -1686,6 +1685,7 @@ anims/walk_in_from_side = SubResource( 103 )
 
 [node name="CreditMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 38 )
+volume_db = -5.0
 
 [node name="GertrudeSparkleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 40 )
