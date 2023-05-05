@@ -76,7 +76,7 @@ func deleteQuest(SubQuest):
 		PopUpNode.show_dialog_box([{avatar = "", text = "This is perfect! Now they're safe and warm."},
 				{avatar = "", text = "But this won't last forever... These babies are going to grow up soon and need somewhere to sleep."},
 				{avatar = "", text = "There's a forest outside. Maybe I can get wood and make a cradle for them."}], "Finished cloth quest")
-								
+		FrogDad.get_node("AnimatedSprite").animation = "down_swaddle"
 	if SubQuest and SubQuest.get_node("VBoxContainer/QuestTitleLabel").text == "Collect Logs for Crib":
 		MasterScript.music_position = BackgroundMusic.get_playback_position()
 		SceneTransition.change_scene("res://Scenes/CradleCutScene.tscn")

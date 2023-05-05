@@ -29,6 +29,10 @@ func _ready():
 		$ItemDrop6.show()
 		$ItemDrop7.show()
 		$ItemDrop8.show()
+	if MasterScript.currentQuestNum == 0 or MasterScript.currentQuestNum == 5:
+		$FrogDad/AnimatedSprite.animation = "up_holding"
+	elif MasterScript.currentQuestNum == 1:
+		$FrogDad/AnimatedSprite.animation = "up_swaddle"
 
 func _process(delta):
 	$FrogDad.z_index = $FrogDad.position.y

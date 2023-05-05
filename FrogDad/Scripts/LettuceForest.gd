@@ -9,3 +9,7 @@ func _ready():
 		sprite.z_index = object.rect_position.y + 130
 		item_drop.z_index = item_drop.position.y + 20
 	$FrogDad.position = $Position2D.position
+	if MasterScript.currentQuestNum == 0 or MasterScript.currentQuestNum == 5:
+		$FrogDad/AnimatedSprite.animation = "down_holding"
+	elif MasterScript.currentQuestNum == 1:
+		$FrogDad/AnimatedSprite.animation = "down_swaddle"

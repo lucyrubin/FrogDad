@@ -151,14 +151,14 @@ color = Color( 0.862745, 0.847059, 0.690196, 1 )
 position = Vector2( 360, 360 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 38 )
-frame = 14
+frame = 15
 playing = true
 
 [node name="Gilbert" type="AnimatedSprite" parent="."]
 position = Vector2( 520, 352 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 39 )
-frame = 9
+frame = 10
 speed_scale = 2.0
 playing = true
 
@@ -167,7 +167,7 @@ position = Vector2( 640, 368 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 40 )
 animation = "default 1"
-frame = 12
+frame = 15
 playing = true
 
 [node name="Names" type="Label" parent="."]

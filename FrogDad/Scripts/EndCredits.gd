@@ -5,8 +5,8 @@ func _ready():
 	BackgroundMusic.stop()
 	$CreditMusic.play()
 	# end credit music by @HeatleyBros on YoutTube
-	yield(run_intro(), "completed")
-	
+	#yield(run_intro(), "completed")
+	run_frog_dad()
 var credit_text = ["Code for inventory system from @Arkeve on YouTube", 
 "Scene transition code from @TheShaggyDev on YouTube",
 "A Green Pig by @Pixverses on YouTube",

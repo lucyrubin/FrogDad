@@ -7,3 +7,7 @@ func _ready():
 		BackgroundMusic.stop()
 		$JimothyJohnsMusic.play()
 	$FrogDad.get_node("AnimatedSprite").animation = "up"
+	if MasterScript.currentQuestNum == 0:
+		$FrogDad/AnimatedSprite.animation = "up_holding"
+	elif MasterScript.currentQuestNum == 1:
+		$FrogDad/AnimatedSprite.animation = "up_swaddle"

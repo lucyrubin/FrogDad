@@ -32,7 +32,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 369.5, 347 )
+extents = Vector2( 521, 536 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 109, 118.25 )
@@ -50,7 +50,7 @@ disabled = true
 position = Vector2( 3, -9 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 9 )
-frame = 15
+frame = 18
 playing = true
 
 [node name="Speech" type="TextureRect" parent="."]
@@ -85,7 +85,7 @@ one_shot = true
 [node name="Interactable" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2( -12.5, -11 )
+position = Vector2( 24, -11 )
 shape = SubResource( 12 )
 
 [node name="ClickArea" type="Area2D" parent="."]

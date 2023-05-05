@@ -4,7 +4,13 @@ const ItemDropClass = preload("res://Scripts/ItemDrop.gd")
 const ItemDropScene = preload("res://Scenes/ItemDrop.tscn")
 
 func _ready():
-	$FrogDad/AnimatedSprite.animation = "down"
+	
+	if MasterScript.currentQuestNum == 0 or MasterScript.currentQuestNum == 5:
+		$FrogDad/AnimatedSprite.animation = "down_holding"
+	elif MasterScript.currentQuestNum == 1:
+		$FrogDad/AnimatedSprite.animation = "down_swaddle"
+	else: 
+		$FrogDad/AnimatedSprite.animation = "down"
 	$FrogDad/AnimatedSprite.frame = 0
 	MasterScript.frog_dad_state = ""
 	_handle_itemdrop_visibility()

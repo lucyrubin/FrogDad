@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=2]
+[gd_scene load_steps=213 format=2]
 
 [ext_resource path="res://Fonts/defaultfont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/EndCredits.gd" type="Script" id=2]
@@ -71,6 +71,21 @@
 [ext_resource path="res://Art/gilbert/gilbert (1).png" type="Texture" id=69]
 [ext_resource path="res://Art/gilbert/gilbert (4).png" type="Texture" id=70]
 [ext_resource path="res://Art/gilbert/gilbert (8).png" type="Texture" id=71]
+[ext_resource path="res://Art/frogdad/right_swaddle/right_swaddle (1).png" type="Texture" id=72]
+[ext_resource path="res://Art/frogdad/frogdadrightFIXED (4).png" type="Texture" id=73]
+[ext_resource path="res://Art/frogdad/frogdadleftFIXED.png" type="Texture" id=74]
+[ext_resource path="res://Art/frogdad/frogdadrightFIXED (2).png" type="Texture" id=75]
+[ext_resource path="res://Art/frogdad/frogdadHOLDINGSPRITE.png" type="Texture" id=76]
+[ext_resource path="res://Art/frogdad/frogdadrightFIXED (1).png" type="Texture" id=77]
+[ext_resource path="res://Art/frogdad/left_holding.png" type="Texture" id=78]
+[ext_resource path="res://Art/frogdad/frogdadrightFIXED (3).png" type="Texture" id=79]
+[ext_resource path="res://Art/frogdad/up_holding.png" type="Texture" id=80]
+[ext_resource path="res://Art/frogdad/right_swaddle/right_swaddle (4).png" type="Texture" id=81]
+[ext_resource path="res://Art/frogdad/upswaddle.png" type="Texture" id=82]
+[ext_resource path="res://Art/frogdad/right_swaddle/right_swaddle (3).png" type="Texture" id=83]
+[ext_resource path="res://Art/frogdad/down_swaddle.png" type="Texture" id=84]
+[ext_resource path="res://Art/frogdad/right_swaddle/right_swaddle (2).png" type="Texture" id=85]
+[ext_resource path="res://Art/frogdad/rightholding.png" type="Texture" id=86]
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
@@ -368,10 +383,238 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="AtlasTexture" id=115]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 508, 0, 508, 1269 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 508, 1269 )
+
+[sub_resource type="AtlasTexture" id=116]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1524, 0, 508, 1269 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1016, 0, 508, 1269 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 76 )
+region = Rect2( 999, 0, 484, 1272 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 76 )
+region = Rect2( 13, 0, 487, 1272 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 76 )
+region = Rect2( 1480, 0, 483, 1272 )
+
+[sub_resource type="AtlasTexture" id=117]
+flags = 4
+atlas = ExtResource( 76 )
+region = Rect2( 505, 0, 483, 1272 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 84 )
+region = Rect2( 506, 0, 506, 1267 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 84 )
+region = Rect2( 0, 0, 506, 1267 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 84 )
+region = Rect2( 1518, 0, 506, 1267 )
+
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 84 )
+region = Rect2( 1012, 0, 506, 1267 )
+
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 74 )
+region = Rect2( 457, 0, 433, 1286 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 74 )
+region = Rect2( 0, 0, 457, 1286 )
+
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 74 )
+region = Rect2( 882, 0, 429, 1286 )
+
+[sub_resource type="AtlasTexture" id=121]
+flags = 4
+atlas = ExtResource( 74 )
+region = Rect2( 1302, 0, 426, 1286 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 1404, 0, 463, 1283 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 941, 0, 463, 1283 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 467, 0, 467, 1283 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 78 )
+region = Rect2( 0, 0, 467, 1283 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 86 )
+region = Rect2( 1410, 0, 470, 1295 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 86 )
+region = Rect2( 0, 0, 470, 1295 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 86 )
+region = Rect2( 470, 0, 470, 1295 )
+
+[sub_resource type="AtlasTexture" id=122]
+flags = 4
+atlas = ExtResource( 86 )
+region = Rect2( 940, 0, 470, 1295 )
+
+[sub_resource type="AtlasTexture" id=123]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 994, 0, 497, 1245 )
+
+[sub_resource type="AtlasTexture" id=124]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 497, 1245 )
+
+[sub_resource type="AtlasTexture" id=125]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 497, 0, 497, 1245 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 80 )
+region = Rect2( 0, 0, 494, 1253 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 80 )
+region = Rect2( 988, 0, 494, 1253 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 80 )
+region = Rect2( 494, 0, 494, 1253 )
+
+[sub_resource type="AtlasTexture" id=126]
+flags = 4
+atlas = ExtResource( 82 )
+region = Rect2( 512, 0, 512, 1298 )
+
+[sub_resource type="AtlasTexture" id=127]
+flags = 4
+atlas = ExtResource( 82 )
+region = Rect2( 0, 0, 512, 1298 )
+
+[sub_resource type="AtlasTexture" id=128]
+flags = 4
+atlas = ExtResource( 82 )
+region = Rect2( 1024, 0, 512, 1298 )
+
+[sub_resource type="SpriteFrames" id=129]
+animations = [ {
+"frames": [ SubResource( 115 ), SubResource( 19 ), SubResource( 115 ), SubResource( 116 ), SubResource( 21 ) ],
+"loop": true,
+"name": "down",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 34 ), SubResource( 36 ), SubResource( 117 ) ],
+"loop": true,
+"name": "down_holding",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 42 ), SubResource( 44 ), SubResource( 118 ) ],
+"loop": true,
+"name": "down_swaddle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 119 ), SubResource( 39 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 46 ), SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "left_holding",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "left_swaddle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 77 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 50 ), SubResource( 52 ), SubResource( 122 ) ],
+"loop": true,
+"name": "right_holding",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 85 ), ExtResource( 83 ), ExtResource( 85 ), ExtResource( 81 ), ExtResource( 72 ) ],
+"loop": true,
+"name": "right_swaddle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 123 ), SubResource( 124 ), SubResource( 123 ), SubResource( 125 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 54 ), SubResource( 56 ) ],
+"loop": true,
+"name": "up_holding",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 126 ), SubResource( 127 ), SubResource( 126 ), SubResource( 128 ) ],
+"loop": true,
+"name": "up_swaddle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=130]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../../FrogDad:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -380,39 +623,37 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -115, 284 ) ]
+"values": [ Vector2( -208, 264 ) ]
 }
 
-[sub_resource type="Animation" id=56]
-resource_name = "walk_away"
+[sub_resource type="Animation" id=131]
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../../FrogDad:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.615572, 1 ),
+"transitions": PoolRealArray( 0.435275, 1 ),
 "update": 0,
-"values": [ Vector2( 300, 284 ), Vector2( 1134, 284 ) ]
+"values": [ Vector2( 300, 264 ), Vector2( 1200, 264 ) ]
 }
 
-[sub_resource type="Animation" id=52]
-resource_name = "walk_in_from_side"
+[sub_resource type="Animation" id=132]
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../../FrogDad:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.659754, 1 ),
+"transitions": PoolRealArray( 0.307786, 1 ),
 "update": 0,
-"values": [ Vector2( -115, 284 ), Vector2( 300, 284 ) ]
+"values": [ Vector2( -208, 264 ), Vector2( 300, 264 ) ]
 }
 
 [sub_resource type="AtlasTexture" id=63]
@@ -613,22 +854,22 @@ tracks/0/keys = {
 "values": [ Vector2( 300, 284 ), Vector2( 1134, 284 ) ]
 }
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=133]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 576, 0, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=134]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 576, 256, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=135]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 192, 256 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=136]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 256, 192, 256 )
@@ -653,14 +894,14 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 192, 256, 192, 256 )
 
-[sub_resource type="SpriteFrames" id=44]
+[sub_resource type="SpriteFrames" id=137]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 49 ) ],
+"frames": [ SubResource( 133 ), SubResource( 133 ), SubResource( 133 ), SubResource( 133 ), SubResource( 134 ) ],
 "loop": true,
 "name": "angry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 50 ) ],
+"frames": [ SubResource( 135 ), SubResource( 135 ), SubResource( 135 ), SubResource( 135 ), SubResource( 136 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
@@ -794,22 +1035,22 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 384, 256 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=138]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 256, 384, 256 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=139]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 768, 0, 384, 256 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=140]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 768, 256, 384, 256 )
 
-[sub_resource type="SpriteFrames" id=42]
+[sub_resource type="SpriteFrames" id=141]
 animations = [ {
 "frames": [ SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
@@ -826,12 +1067,12 @@ animations = [ {
 "name": "new texture",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 46 ) ],
+"frames": [ SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 30 ), SubResource( 138 ) ],
 "loop": true,
 "name": "smiling",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 48 ) ],
+"frames": [ SubResource( 139 ), SubResource( 139 ), SubResource( 139 ), SubResource( 139 ), SubResource( 140 ) ],
 "loop": true,
 "name": "upset",
 "speed": 5.0
@@ -1133,6 +1374,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="FirstPart" type="Node2D" parent="."]
+visible = false
 
 [node name="Background" type="ColorRect" parent="FirstPart"]
 margin_right = 1024.0
@@ -1144,7 +1386,7 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 13
+frame = 12
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
@@ -1152,7 +1394,7 @@ position = Vector2( -424, 280 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 112 )
 animation = "default 1"
-frame = 16
+frame = 10
 playing = true
 offset = Vector2( 3648.57, 337.143 )
 
@@ -1160,7 +1402,7 @@ offset = Vector2( 3648.57, 337.143 )
 position = Vector2( 136, 448 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 114 )
-frame = 6
+frame = 14
 speed_scale = 3.0
 playing = true
 
@@ -1168,6 +1410,7 @@ playing = true
 position = Vector2( 960, 440 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 113 )
+frame = 11
 speed_scale = 2.0
 playing = true
 
@@ -1320,24 +1563,26 @@ anims/RESET = SubResource( 110 )
 anims/fade_out = SubResource( 111 )
 
 [node name="FrogDad" type="AnimatedSprite" parent="SecondPart"]
-position = Vector2( -115, 284 )
+position = Vector2( 1200, 264 )
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 45 )
-animation = "right"
-frame = 3
+frames = SubResource( 129 )
+animation = "down"
+frame = 4
+speed_scale = 0.5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/FrogDad"]
-anims/RESET = SubResource( 51 )
-anims/walk_away = SubResource( 56 )
-anims/walk_in_from_side = SubResource( 52 )
+root_node = NodePath("")
+anims/RESET = SubResource( 130 )
+anims/walk_away = SubResource( 131 )
+anims/walk_in_from_side = SubResource( 132 )
 
 [node name="BabyGertrude" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -289, 427 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 71 )
 animation = "new texture"
-frame = 12
+frame = 6
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
@@ -1359,9 +1604,9 @@ anims/walk_away = SubResource( 79 )
 [node name="BabyGilbert" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -115, 284 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 44 )
+frames = SubResource( 137 )
 animation = "new texture"
-frame = 17
+frame = 11
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGilbert"]
@@ -1381,9 +1626,9 @@ anims/walk_away = SubResource( 85 )
 [node name="BabyGravy" type="AnimatedSprite" parent="SecondPart"]
 position = Vector2( -112, 288 )
 scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 42 )
+frames = SubResource( 141 )
 animation = "new texture"
-frame = 18
+frame = 12
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGravy"]
@@ -1405,7 +1650,7 @@ anims/walk_away = SubResource( 91 )
 position = Vector2( -216, 296 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 95 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Jimothy"]
@@ -1429,6 +1674,7 @@ position = Vector2( -200, 284 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 102 )
 animation = "right"
+frame = 1
 speed_scale = 0.5
 playing = true
 

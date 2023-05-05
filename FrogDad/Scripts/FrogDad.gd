@@ -1,13 +1,13 @@
 class_name FrogDad
 extends KinematicBody2D
 
-export var speed = 1000
+export var speed = 300
 export(NodePath) var inventory_path
 
 var screen_size
 var velocity
 var holding_item = null
-var quest_number = MasterScript.currentQuestNum
+
 
 func _ready():
 	velocity = Vector2.ZERO
@@ -49,21 +49,50 @@ func _physics_process(delta):
 		$AnimatedSprite.stop()
 
 	var _collision = move_and_collide(velocity*delta)
-
+	
+func _process(delta):
+	if MasterScript.currentQuestNum == 0:
+		$BabyJar.show()
+		if $AnimatedSprite.animation == "down_holding":
+			$BabyJar.position.x = -6
+			$BabyJar.position.y = -20
+		elif $AnimatedSprite.animation == "left_holding":
+			$BabyJar.position.x = -80
+			$BabyJar.position.y = -30
+		elif $AnimatedSprite.animation == "right_holding":
+			$BabyJar.position.x = 80
+			$BabyJar.position.y = -30
+		elif $AnimatedSprite.animation == "up_holding":
+			$BabyJar.hide()
+	elif MasterScript.currentQuestNum == 5:
+		$FlyJar.show()
+		if $AnimatedSprite.animation == "down_holding":
+			$FlyJar.position.x = -6
+			$FlyJar.position.y = -20
+		elif $AnimatedSprite.animation == "left_holding":
+			$FlyJar.position.x = -80
+			$FlyJar.position.y = -40
+		elif $AnimatedSprite.animation == "right_holding":
+			$FlyJar.position.x = 80
+			$FlyJar.position.y = -40
+		elif $AnimatedSprite.animation == "up_holding":
+			$FlyJar.hide()
+	
+	
 func move_down_and_left():
 	velocity.x -= 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "left_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "left_swaddle"
 	else:
 		$AnimatedSprite.animation = "left"
 
 func move_up_and_left():
 	velocity.x -= 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "left_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "left_swaddle"
 	else:
 		$AnimatedSprite.animation = "left"
@@ -71,9 +100,9 @@ func move_up_and_left():
 func move_up_and_right():
 	velocity.x += 1
 	velocity.y -= 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "right_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "right_swaddle"
 	else:
 		$AnimatedSprite.animation = "right"
@@ -81,9 +110,9 @@ func move_up_and_right():
 func move_down_and_right():
 	velocity.x += 1
 	velocity.y += 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "right_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "right_swaddle"
 	else:
 		$AnimatedSprite.animation = "right"
@@ -99,36 +128,36 @@ func move_down_and_right():
 
 func move_down():
 	velocity.y += 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "down_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "down_swaddle"
 	else:
 		$AnimatedSprite.animation = "down"
 
 func move_up():
 	velocity.y -= 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "up_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "up_swaddle"
 	else:
 		$AnimatedSprite.animation = "up"
 
 func move_right():
 	velocity.x += 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "right_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "right_swaddle"
 	else:
 		$AnimatedSprite.animation = "right"
 
 func move_left():
 	velocity.x -= 1
-	if quest_number == 5 or quest_number == 6 or quest_number == 0:
+	if MasterScript.currentQuestNum == 5 or MasterScript.currentQuestNum == 6 or MasterScript.currentQuestNum == 0:
 		$AnimatedSprite.animation = "left_holding"
-	elif quest_number == 1:
+	elif MasterScript.currentQuestNum == 1:
 		$AnimatedSprite.animation = "left_swaddle"
 	else:
 		$AnimatedSprite.animation = "left"

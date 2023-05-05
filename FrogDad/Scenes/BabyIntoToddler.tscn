@@ -988,7 +988,7 @@ position = Vector2( 155.714, 702.857 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 22 )
 animation = "new texture"
-frame = 13
+frame = 15
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gertrude/BabyImage"]
@@ -1021,7 +1021,7 @@ position = Vector2( 68, 321.333 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 27 )
 animation = "new texture"
-frame = 4
+frame = 6
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gilbert/BabyImage"]
@@ -1054,7 +1054,7 @@ position = Vector2( -22, 361.333 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 36 )
 animation = "new texture"
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gravy/BabyImage"]
@@ -1156,6 +1156,7 @@ text = "Continue to Next Life Stage"
 
 [node name="CutSceneBackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = 3.0
 
 [node name="GertrudeSparkleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )

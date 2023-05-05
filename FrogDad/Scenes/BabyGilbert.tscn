@@ -33,7 +33,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 252, 268 )
+extents = Vector2( 352, 368 )
 
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 71.5, 79.5 )
@@ -51,7 +51,7 @@ disabled = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 9 )
-frame = 6
+frame = 9
 speed_scale = 2.0
 playing = true
 
@@ -86,7 +86,7 @@ one_shot = true
 [node name="Interactable" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2( -4, 4 )
+position = Vector2( 24, 0 )
 shape = SubResource( 26 )
 
 [node name="ClickArea" type="Area2D" parent="."]

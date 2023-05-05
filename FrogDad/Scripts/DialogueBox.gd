@@ -87,6 +87,7 @@ func hide_dialog_box():
 		MasterScript.currentQuestArray = [MasterScript.questDictionary[5]]
 		show_new_quest_notifcation_box()
 		FrogDad.set_fly_jar_visiblity(true)
+		FrogDad.get_node("AnimatedSprite").animation = "up_holding"
 	elif dialogue_name == "gravy fed" or dialogue_name == "gilbert fed" or dialogue_name == "Gertrude fed":
 		# after you feed a baby
 		var HUDNode = FrogDad.find_node("HUD", true, false)
@@ -112,6 +113,7 @@ func hide_dialog_box():
 	elif dialogue_name == "tomorrow":
 		# win the riddles
 		FrogDad.get_node("GameGirl").show()
+		FrogDad.get_node("AnimatedSprite").animation = "down_holding"
 		FrogDad.toggle_dialogue_box_visibility([{avatar = "", text = "Wow. The kids are going to love this!"}], "gamegirl")
 	elif dialogue_name == "gamegirl":
 		# game finished
