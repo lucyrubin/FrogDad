@@ -93,6 +93,8 @@ func hide_dialog_box():
 	elif dialogue_name == "gravy fed" or dialogue_name == "gilbert fed" or dialogue_name == "Gertrude fed":
 		var HUDNode = FrogDad.find_node("HUD", true, false)
 		var QuestNode = HUDNode.find_node("Quest", true, false)
+		var FlyJarParticle = FrogDad.get_node("FlyJar").get_node("Flies")
+		FlyJarParticle.visible = false
 		QuestNode.check_if_quest_fulfilled()
 	elif dialogue_name == "Finished feeding flies":
 		MasterScript.currentQuestArray = []

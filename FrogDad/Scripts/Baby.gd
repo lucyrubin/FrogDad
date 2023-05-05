@@ -21,8 +21,10 @@ func _input(event):
 			if MasterScript.currentQuestNum == 5 and !MasterScript.gertrude_fed:
 				MasterScript.num_kids_fed_flies += 1
 				MasterScript.gertrude_fed = true
+				var FlyJarParticle = FrogDad.get_node("FlyJar").get_node("Flies")
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "Yum!"}
 				], "Gertrude fed")
+				FlyJarParticle.visible = true
 
 			elif MasterScript.currentQuestNum == 5 and MasterScript.gertrude_fed:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "gertrude", text = "No more flies, I'm stuffed!"}
@@ -37,8 +39,10 @@ func _input(event):
 			if MasterScript.currentQuestNum == 5 and !MasterScript.gilbert_fed:
 				MasterScript.num_kids_fed_flies += 1
 				MasterScript.gilbert_fed = true
+				var FlyJarParticle = FrogDad.get_node("FlyJar").get_node("Flies")
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "Dis is da best ting ever tasted!"}
 				], "gilbert fed")
+				FlyJarParticle.visible = true
 
 			elif MasterScript.currentQuestNum == 5 and MasterScript.gilbert_fed:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "gilbert", text = "I'm full!"}
@@ -53,8 +57,10 @@ func _input(event):
 			if MasterScript.currentQuestNum == 5 and !MasterScript.gravy_fed:
 				MasterScript.num_kids_fed_flies += 1
 				MasterScript.gravy_fed = true
+				var FlyJarParticle = FrogDad.get_node("FlyJar").get_node("Flies")
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "aaaaaaaaaaaaa :P"}
 				], "gravy fed")
+				FlyJarParticle.visible = true
 				
 			elif MasterScript.currentQuestNum == 5 and MasterScript.gravy_fed:
 				FrogDad.toggle_dialogue_box_visibility([{avatar = "gravy", text = "Noooooooooo"}
