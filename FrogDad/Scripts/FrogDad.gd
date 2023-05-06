@@ -1,7 +1,7 @@
 class_name FrogDad
 extends KinematicBody2D
 
-export var speed = 500
+export var speed = 400
 export(NodePath) var inventory_path
 
 var screen_size
