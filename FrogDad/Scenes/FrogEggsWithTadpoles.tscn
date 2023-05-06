@@ -18,7 +18,7 @@ extents = Vector2( 440, 479 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-speed_scale = 0.5
+speed_scale = 0.45
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
