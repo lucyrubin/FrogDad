@@ -148,14 +148,14 @@ rect_min_size = Vector2( 100, 100 )
 color = Color( 0.862745, 0.847059, 0.690196, 1 )
 
 [node name="Gertrude" type="AnimatedSprite" parent="."]
-position = Vector2( 360, 360 )
+position = Vector2( 360, 300 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 38 )
 frame = 15
 playing = true
 
 [node name="Gilbert" type="AnimatedSprite" parent="."]
-position = Vector2( 520, 352 )
+position = Vector2( 510, 300 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 39 )
 frame = 10
@@ -163,20 +163,20 @@ speed_scale = 2.0
 playing = true
 
 [node name="BabyGravy" type="AnimatedSprite" parent="."]
-position = Vector2( 640, 368 )
+position = Vector2( 640, 330 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 40 )
 animation = "default 1"
-frame = 15
+frame = 5
 playing = true
 
 [node name="Names" type="Label" parent="."]
 visible = false
 margin_left = 264.0
-margin_top = 208.0
-margin_right = 409.0
-margin_bottom = 246.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = 120.0
+margin_right = 752.0
+margin_bottom = 158.0
+custom_colors/font_color = Color( 0.278431, 0.321569, 0.184314, 1 )
 custom_fonts/font = SubResource( 35 )
 text = "Gertrude   Gilbert  Gravy Baby"
 
@@ -208,10 +208,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 330.0
-margin_top = 500.0
-margin_right = 790.0
-margin_bottom = 601.0
+margin_left = 360.0
+margin_top = 450.0
+margin_right = 733.0
+margin_bottom = 521.0
 rect_scale = Vector2( 0.75, 0.75 )
 theme = ExtResource( 8 )
 custom_fonts/font = ExtResource( 39 )

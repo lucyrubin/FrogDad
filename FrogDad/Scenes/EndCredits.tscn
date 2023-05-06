@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=2]
+[gd_scene load_steps=214 format=2]
 
 [ext_resource path="res://Fonts/defaultfont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/EndCredits.gd" type="Script" id=2]
@@ -86,6 +86,7 @@
 [ext_resource path="res://Art/frogdad/down_swaddle.png" type="Texture" id=84]
 [ext_resource path="res://Art/frogdad/right_swaddle/right_swaddle (2).png" type="Texture" id=85]
 [ext_resource path="res://Art/frogdad/rightholding.png" type="Texture" id=86]
+[ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=87]
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
@@ -1387,7 +1388,7 @@ position = Vector2( 244, 266 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 45 )
 animation = "down"
-frame = 12
+frame = 2
 playing = true
 
 [node name="GravyBaby" type="AnimatedSprite" parent="FirstPart"]
@@ -1395,7 +1396,7 @@ position = Vector2( -424, 280 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 112 )
 animation = "default 1"
-frame = 13
+frame = 3
 playing = true
 offset = Vector2( 3648.57, 337.143 )
 
@@ -1403,7 +1404,7 @@ offset = Vector2( 3648.57, 337.143 )
 position = Vector2( 136, 448 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 114 )
-frame = 8
+frame = 10
 speed_scale = 3.0
 playing = true
 
@@ -1411,7 +1412,7 @@ playing = true
 position = Vector2( 960, 440 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 113 )
-frame = 10
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -1459,17 +1460,18 @@ anims/fade_in = SubResource( 3 )
 
 [node name="Button" type="Button" parent="FirstPart"]
 visible = false
-margin_left = 387.0
+margin_left = 475.0
 margin_top = 530.0
-margin_right = 694.0
-margin_bottom = 624.0
+margin_right = 625.0
+margin_bottom = 601.0
 rect_scale = Vector2( 0.7, 0.7 )
 theme = ExtResource( 17 )
+custom_fonts/font = ExtResource( 87 )
 text = "Continue"
 
 [node name="BouncingArrow" parent="FirstPart" instance=ExtResource( 18 )]
 visible = false
-position = Vector2( 142, 540 )
+position = Vector2( 275, 530 )
 z_index = 1
 
 [node name="SecondPart" type="Node2D" parent="."]
@@ -1499,7 +1501,7 @@ margin_top = 56.0
 margin_right = 996.0
 margin_bottom = 206.0
 rect_min_size = Vector2( 0, 150 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.286275, 0.333333, 0.192157, 1 )
 custom_fonts/font = SubResource( 53 )
 text = "Example text"
 autowrap = true
@@ -1513,7 +1515,7 @@ margin_top = 216.0
 margin_right = 990.0
 margin_bottom = 366.0
 rect_min_size = Vector2( 0, 150 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.286275, 0.333333, 0.192157, 1 )
 custom_fonts/font = SubResource( 53 )
 text = "Example text"
 autowrap = true
@@ -1527,7 +1529,7 @@ margin_top = 376.0
 margin_right = 994.0
 margin_bottom = 526.0
 rect_min_size = Vector2( 0, 150 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.286275, 0.333333, 0.192157, 1 )
 custom_fonts/font = SubResource( 53 )
 text = "Example text"
 autowrap = true
@@ -1582,7 +1584,7 @@ position = Vector2( -289, 427 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 71 )
 animation = "new texture"
-frame = 9
+frame = 19
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGertrude"]
@@ -1606,7 +1608,7 @@ position = Vector2( -115, 284 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 137 )
 animation = "new texture"
-frame = 14
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGilbert"]
@@ -1628,7 +1630,7 @@ position = Vector2( -112, 288 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 141 )
 animation = "new texture"
-frame = 15
+frame = 5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/BabyGravy"]
@@ -1650,7 +1652,7 @@ anims/walk_away = SubResource( 91 )
 position = Vector2( -216, 296 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 95 )
-frame = 7
+frame = 8
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SecondPart/Jimothy"]
@@ -1675,6 +1677,7 @@ position = Vector2( -200, 284 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 102 )
 animation = "right"
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -1703,11 +1706,12 @@ volume_db = -20.0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 432.0
-margin_top = 264.0
-margin_right = 586.0
-margin_bottom = 358.0
+margin_left = 465.0
+margin_top = 290.0
+margin_right = 565.0
+margin_bottom = 361.0
 theme = ExtResource( 17 )
+custom_fonts/font = ExtResource( 87 )
 disabled = true
 text = "Quit"
 
