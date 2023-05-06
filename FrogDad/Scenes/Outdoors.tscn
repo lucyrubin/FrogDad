@@ -19,7 +19,7 @@
 [ext_resource path="res://Scenes/JimothyJohns.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Odie.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scripts/TreeZIndex.gd" type="Script" id=19]
-[ext_resource path="res://Art/Untitled_Artwork (7).png" type="Texture" id=20]
+[ext_resource path="res://Outdoor Art/Untitled_Artwork (7).png" type="Texture" id=20]
 [ext_resource path="res://Scripts/ForestSignZIndex.gd" type="Script" id=21]
 [ext_resource path="res://Outdoor Art/archway.png" type="Texture" id=22]
 [ext_resource path="res://Outdoor Art/garden_sign.png" type="Texture" id=23]
